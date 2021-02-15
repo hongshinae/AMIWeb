@@ -1,20 +1,20 @@
 <template>
 	<div id="app">
 		<Header />
-		<Menu />
+		<Menu2 />
 		<router-view />
 	</div>
 </template>
 
 <script>
 import Header from "./components/layout/Header.vue";
-import Menu from "./components/layout/Menu.vue";
+import Menu2 from "./components/layout/Menu2.vue";
 
 export default {
 	name: "App",
 	components: {
 		Header,
-		Menu
+		Menu2
 	}
 };
 </script>

@@ -1,17 +1,16 @@
 <template>
 	<div>
-		<b-sidebar id="sidebar-variant" title="Sidebar" bg-variant="dark" text-variant="light" shadow>
-			<div class="px-3 py-2">
-				<p>
-					Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-					consectetur ac, vestibulum at eros.
-				</p>
-				<b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
-			</div>
-		</b-sidebar>
+		<b-nav tabs justified vertical>
+			<b-nav-item active>Active</b-nav-item>
+			<b-nav-item>Link</b-nav-item>
+			<b-nav-item>Link with a long name </b-nav-item>
+			<b-nav-item disabled>Disabled</b-nav-item>
+		</b-nav>
 	</div>
 </template>
 
-<script></script>
+<script>
+export default {};
+</script>
 
 <style></style>
