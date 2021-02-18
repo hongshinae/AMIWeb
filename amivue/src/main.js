@@ -1,8 +1,8 @@
 import Vue from "vue";
-import App from "./App.vue";
-import config from "./config";
-import router from "./router";
-import store from "./store";
+import App from "@/App.vue";
+import config from "@/config";
+import router from "@/routes";
+import store from "@/store";
 import { BootstrapVue, IconsPlugin, NavbarPlugin } from "bootstrap-vue";
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
