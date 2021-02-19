@@ -6,10 +6,23 @@
 	src:url(../font/NanumGothic.eot);
 	src:local(※),url(../font/NanumGothic.woff) ,url(../font/NanumGothic.ttf) format('truetype'); 
 	}
+@font-face{
+	font-family:alarm_clock;
+	font-style:normal;
+	font-weight:normal;
+	src:url(../font/alarm_clock.eot);
+	src:local(��),url(../font/alarm_clock.woff) ,url(../font/alarm_clock.ttf) format('truetype'); 
+	}
 	
 /* CSS Document */
-
 html {width:100%; height:100%;}
-body {height:100%;font: 1em sans-serif;}
+body {height:100%;font-family: 'NanumSquare', sans-serif !important;}
 .row {margin: 0 !important;}
 .row:after {clear: inherit !important;}
+.hide {display: none;}
+
+/*scrollbar*/
+::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px rgb(255, 255, 255);border-radius: 10px;background-color: rgb(134, 134, 134);}
+::-webkit-scrollbar{width:3px;background-color: #e2eeff;border-radius: 10px;}
+::-webkit-scrollbar-thumb{border-radius: 5px;-webkit-box-shadow: inset 0 0 6px rgb(112, 114, 117);background-color: #eaecf1;cursor: pointer;}
+::-webkit-scrollbar-corner {background-color: #000;}
