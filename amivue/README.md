@@ -83,7 +83,7 @@
 	], // 특정 파일별로 옵션을 다르게 지정함, ESLint 방식 사용
   }
   ```
-  추가적으로 vscode룰이 있다. vscode에서 prettier가 안정적으로 사용되기 위해서는 다음과같은 필수옵션들이 존재하며 모든 개발자에게 동일한 환경제공을 위해 프로젝트 내에 **.vscode**폴더에서 옵션값들이 관리되고 있다. 이 또한 추가수정이 필요할 경우 개발자들간에 검토를 통해 진행하길 권장한다.
+  추가적으로 vscode가 있다. vscode에서 prettier가 안정적으로 사용되기 위해서는 다음과같은 필수옵션들이 존재하며 모든 개발자에게 동일한 환경제공을 위해 프로젝트 내에 **.vscode**폴더에서 옵션값들이 관리되고 있다. 이 또한 추가수정이 필요할 경우 개발자들간에 검토를 통해 진행하길 권장한다.
   ```jsonc
   .vscode/settings.json 내용 발췌
   {
@@ -97,5 +97,8 @@
 	},
   }
   ```
+  정상적으로 수행이 마쳐지면 코딩 수행시 (저장, 붙여넣기) 자동 formatting이 이루어 지며 개발 패턴을 통일화가 가능해진다.
+  ![dev1](https://user-images.githubusercontent.com/20449373/108466522-1d443600-72c7-11eb-9b4b-9ac93cf38bec.gif)
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
