@@ -49,7 +49,7 @@
 
   코드룰은 기본적으로 eslint + prettier로 구성되어 작성되었으며, 소스 관리는 prettier 우선순위로 적용할 수 있는 룰을 작성할 수 있도록 유도해준다. 추가 필요시엔 개발자들끼리 검토를 통해 추진하는것이 올바른 습관이다.
 
-  ```javascript
+  ```jsonc
   .prettierrc 발췌
   {
 	"arrowParens": "avoid", // 화살표 함수 괄호 사용 방식
@@ -84,7 +84,8 @@
   }
   ```
   추가적으로 vscode룰이 있다. vscode에서 prettier가 안정적으로 사용되기 위해서는 다음과같은 필수옵션들이 존재하며 모든 개발자에게 동일한 환경제공을 위해 프로젝트 내에 **.vscode**폴더에서 옵션값들이 관리되고 있다. 이 또한 추가수정이 필요할 경우 개발자들간에 검토를 통해 진행하길 권장한다.
-  ```javascript
+  ```jsonc
+  .vscode/settings.json 내용 발췌
   {
 	"editor.codeActionsOnSave": {
 		// For ESLint
