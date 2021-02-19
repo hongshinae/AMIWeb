@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Highmaps Example</title>
+
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+<script src="../../code/highmaps.js"></script>
+<script src="../../code/modules/exporting.js"></script>
+<script src="../../code/modules/offline-exporting.js"></script>
+<script src="./kr-all.js"></script>
+<script src="../../code/themes/dark-unica.js"></script>
+
+<div id="container" style="height: 800px; min-width: 300px; max-width: 500px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+var data = [
+    ['kr-4194', 0],
+    ['kr-kg', 1],
+    ['kr-cb', 2],
+    ['kr-kn', 3],
+    ['kr-2685', 4],
+    ['kr-pu', 5],
+    ['kr-2688', 6],
+    ['kr-sj', 7],
+    ['kr-tj', 8],
+    ['kr-ul', 9],
+    ['kr-in', 10],
+    ['kr-kw', 11],
+    ['kr-gn', 12],
+    ['kr-cj', 13],
+    ['kr-gb', 14],
+    ['kr-so', 15],
+    ['kr-tg', 16],
+    ['kr-kj', 17]
+];
+
+// Create the chart
+Highcharts.mapChart('container', {
+    chart: {
+        map: 'countries/kr/kr-all'
+    },
+
+    title: {
+        text: 'Korea'
+    },
+
+    mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+
+    colorAxis: {
+        min: 0
+    },
+
+    series: [{
+        data: data,
+        name: 'Random data',
+        states: {
+            hover: {
+                color: '#BADA55'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+});
+		</script>
+	</body>
+</html>

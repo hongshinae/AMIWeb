@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<title></title>
+	<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
+	<link rel="stylesheet" href="resources/css/reset.css"  type="text/css" media="screen" />
+	<link rel="stylesheet" href="resources/css/common.css"  type="text/css" media="screen" />
+  <link rel="stylesheet" href="resources/css/layout.css"  type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>   
+    <script src="resources/js/common.js"></script> 
+    <script src="resources/js/bootstrap.min.js"></script> 
+    <script src="resources/js/jquery.min.js"></script> 
+    <script src="resources/js/jquery-ui.min.js"></script> 
+
+</head>
+
+
+<body>
+
+  <body data-sidebar-position="left" data-sidebar-behavior="sticky" class="status-board">
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+      <a class="logoWrap"></a>
+      <ul class="sidebarNav">
+        <li>
+          <a>설비</a>
+          <ul>
+            <li><a>단지관리</a></li>
+            <li><a>매핑관</a></li>
+            <li><a>단지관리</a></li>
+            <li><a>단지관리</a></li>
+            <li><a>단지관리</a></li>
+          </ul>
+        </li>
+        <li>
+          <a>검침</a>
+          <ul>
+            <li><a>검침현황</a></li>
+            <li><a>검침조회</a></li>
+            <li><a>검침정보</a></li>
+            <li><a>월 검침</a></li>
+          </ul>
+        </li>
+        <li>
+          <a>요금</a>
+          <ul>
+            <li><a>요금</a></li>
+            <li><a>검침고지서</a></li>
+          </ul>
+        </li>
+        <li>
+          <a>장애</a>
+          <ul>
+            <li><a>장애현황</a></li>
+            <li><a>장애/상태코드</a></li>
+            <li><a>네트워크 상태</a></li>
+            <li><a>미검침정보</a></li>
+          </ul>
+        </li>
+        <li>
+          <a>분석</a>
+          <ul>
+            <li><a>사용량 통계</a></li>
+            <li><a>최대 수요</a></li>
+            <li><a>장애발생빈도</a></li>
+            <li><a>보고서</a></li>
+            <li><a>신뢰성 분석</a></li>
+            <li><a>적시검침윫분석</a></li>
+          </ul>
+        </li>
+        <li>
+          <a>고객 지원</a>
+          <ul>
+            <li><a>문의 게시판</a></li>
+            <li><a>qa</a></li>
+          </ul>
+        </li>
+        <li>
+          <a>설정</a>
+          <ul>
+            <li><a>사용자 관리</a></li>
+            <li><a>설정관리</a></li>
+          </ul>
+        </li>
+      </ul>
+		</nav>
+		<div class="main">
+			<nav class="navbar navbar-expand">
+				<a class="sidebar-toggle">
+          <i class="">슬라이드버튼</i>
+        </a>
+        <ul class="infowrap">
+          <li>알람</li>
+          <li>알람</li>
+          <li>씨앤유</li>
+          <li>관리자</li>
+          <li>로그아웃</li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div class="row">
+          <!--LEFT-->
+          <div class="col-md-4">
+            <div class="">2021.1.23 15:11:11</div>
+            <div class="box power">
+              <h5>
+                전국전력사용양
+                <b>45.452kWh</b>
+              </h5>  
+            </div>
+            <div class="box">
+              <h5>
+                적시검침률
+                <b>45.452kWh</b>
+              </h5>
+            </div>
+            <div class="box">
+              <h5>
+                금일 장애
+                <b>5건</b>
+              </h5>
+            </div>
+            <div class="box">
+              <h5>
+                오늘의 날씨
+              </h5>
+            </div>
+          </div>
+          <!--//LEFT-->
+          <!--CONT-->
+          <div class="col-md-4">
+            <!--map test-->
+            <div class="highch">
+
+<script src="resources/Highcharts-Maps-8.2.2/code/highmaps.js"></script>
+<script src="resources/Highcharts-Maps-8.2.2/code/modules/exporting.js"></script>
+<script src="resources/Highcharts-Maps-8.2.2/code/modules/offline-exporting.js"></script>
+<script src="resources/Highcharts-Maps-8.2.2/examples/all-areas-as-null/kr-all.js"></script>
+<script src="resources/Highcharts-Maps-8.2.2/code/themes/dark-unica.js"></script>
+
+<div id="container" style="height: 800px; min-width: 300px; max-width: 500px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+var data = [
+    ['kr-4194', 0],
+    ['kr-kg', 1],
+    ['kr-cb', 2],
+    ['kr-kn', 3],
+    ['kr-2685', 4],
+    ['kr-pu', 5],
+    ['kr-2688', 6],
+    ['kr-sj', 7],
+    ['kr-tj', 8],
+    ['kr-ul', 9],
+    ['kr-in', 10],
+    ['kr-kw', 11],
+    ['kr-gn', 12],
+    ['kr-cj', 13],
+    ['kr-gb', 14],
+    ['kr-so', 15],
+    ['kr-tg', 16],
+    ['kr-kj', 17]
+];
+
+// Create the chart
+Highcharts.mapChart('container', {
+    chart: {
+        map: 'countries/kr/kr-all'
+    },
+
+    title: {
+        text: 'Korea'
+    },
+
+    mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+
+    colorAxis: {
+        min: 0
+    },
+
+    series: [{
+        data: data,
+        name: 'Random data',
+        states: {
+            hover: {
+                color: '#BADA55'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+});
+		</script>
+
+
+
+		</div>
+	</div>
+            <!--//map test-->
+          </div>
+          <!--//CONT-->
+          <!--RIGHT-->
+          <div class="col-md-4">
+            <div class="presentMenu">
+              <ul>
+                <li>전기</li>
+                <li>가스</li>
+                <li>수도</li>
+                <li>온수</li>
+                <li>난방</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h5>
+               서버운영정보
+              </h5>
+            </div>
+            <div class="box">
+              <h5>
+              등록장비
+              </h5>
+            </div>
+            <div class="box">
+              <h5>
+              지역별 사용
+              </h5>
+            </div>
+          </div>
+          <!--//RIGHT-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>   
+    <script src="resources/js/common.js"></script>
+    <script src="resources/js/vue.js"></script>  
+    <script src="resources/js/bootstrap.min.js"></script> 
+    <script src="resources/js/jquery.min.js"></script> 
+    <script src="resources/js/jquery-ui.min.js"></script> 
+
+
+</body>
+</html>
