@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/pages/Home.vue";
+// import Home from "@/pages/Home.vue";
+import DashboardLayout from "@/pages/Layout/MainLayout";
 
 Vue.use(VueRouter);
 
@@ -9,32 +10,32 @@ const routes = [
 		path: "/",
 		name: "Home",
 		redirect: "/dashboard",
-		component: Home,
+		component: DashboardLayout,
 		children: [
 			{
 				path: "dashboard",
 				name: "Dashboard",
-				// route level code-splitting
-				// this generates a separate chunk (about.[hash].js) for this route
-				// which is lazy-loaded when the route is visited.
+				component: () => import(/* webpackChunkName: "about" */ "@/pages/Dashboard")
+			},
+			{
+				path: "about",
+				name: "About",
 				component: () => import(/* webpackChunkName: "about" */ "@/pages/About")
 			}
 		]
-	},
-	{
-		path: "/about",
-		name: "About",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ "@/pages/About.vue")
 	}
+	// {
+	// 	path: "/about",
+	// 	name: "About",
+	// 	component: () => import(/* webpackChunkName: "about" */ "@/pages/About.vue")
+	// }
 ];
 
 const router = new VueRouter({
 	mode: "history",
 	base: process.env.BASE_URL,
-	routes
+	routes,
+	linkExactActiveClass: "nav-item active" // 클릭시 삽입할 class
 });
 
 export default router;

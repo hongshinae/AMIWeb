@@ -3,15 +3,15 @@
 	font-family: Nanum Gothic;
 	font-style: normal;
 	font-weight: normal;
-	src: url(../font/NanumGothic.eot);
-	src: local(※), url(../font/NanumGothic.woff), url(../font/NanumGothic.ttf) format("truetype");
+	src: url(../font/NanumSquareB.eot);
+	src: local(※), url(../font/NanumSquareB.woff), url(../font/NanumSquareB.ttf) format("truetype");
 }
 @font-face {
 	font-family: alarm_clock;
 	font-style: normal;
 	font-weight: normal;
 	src: url(../font/alarm_clock.eot);
-	src: local(��), url(../font/alarm_clock.woff), url(../font/alarm_clock.ttf) format("truetype");
+	src: local(��), url(../font/alarm_clock.woff) format("truetype");
 }
 
 /* CSS Document */
