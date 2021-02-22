@@ -387,8 +387,8 @@ ul.infowrap li {
 	font-size: 0.9em;
 	box-shadow: 0px 1px 1px 0 rgb(255 255 255 / 20%), inset 0px 1px 1px 0 rgb(44 54 91 / 50%);
 	background-color: #111c31;
-	display: inline-block;
-	/* float: right; */
+	display: block;
+	float: right;
 }
 .presentMenu ul li {
 	cursor: default;
