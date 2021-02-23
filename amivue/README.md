@@ -97,6 +97,11 @@
 	},
   }
   ```
+  위 설정들이 마쳐지면 자동 저장 시 자동코드 보정이 일어나야하지만 vscode에선 이 기능을 수동으로 활성화 시켜줘야한다.   
+  일반적으로 키는 방법은 확인되지 않았고 파란색 오류코드라고 보이는 흔적을 발견하여 클릭하면 아래와 같이 활성화 시켜주는 창이 보여진다.
+  ![image](https://user-images.githubusercontent.com/20449373/108644696-7abcca80-74f3-11eb-98a7-1e29ee77c7bb.png)
+  이 때 'Allow Everywhere'을 눌러 항시 활성화를 시켜주자.
+ 
   정상적으로 수행이 마쳐지면 코딩 수행시 (저장, 붙여넣기) 자동 formatting이 이루어 지며 개발 패턴을 통일화가 가능해진다.
   ![dev1](https://user-images.githubusercontent.com/20449373/108466522-1d443600-72c7-11eb-9b4b-9ac93cf38bec.gif)
 
