@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<b-nav class="navbar navbar-expand">
+		<b-nav class="navbar">
 			<a class="sidebar-toggle">
 				<i class="menu"></i>
 			</a>

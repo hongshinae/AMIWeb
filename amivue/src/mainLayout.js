@@ -7,4 +7,7 @@ import "es6-promise/auto";
 import "@/assets/css/layout.css";
 import "@/assets/css/reset.css";
 
+// Main scss
+import "@/assets/scss/style.scss";
+
 export default {};
