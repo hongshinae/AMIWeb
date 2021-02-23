@@ -1,5 +1,5 @@
 import Vue from "vue";
-import App from "@/App.vue";
+import App from "@/App";
 import config from "@/config";
 import router from "@/routes";
 import store from "@/store";
@@ -21,7 +21,6 @@ Vue.use(GlobalDirectives);
 Vue.use(MainDashboard);
 
 new Vue({
-	el: "#app",
 	router,
 	store,
 	config,

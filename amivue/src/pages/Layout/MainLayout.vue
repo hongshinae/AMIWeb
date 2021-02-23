@@ -1,22 +1,24 @@
 <template>
-	<div id="app">
-		<!-- <Header /> -->
+	<div id="app" class="wrapper status-board">
 		<Menu />
-		<!-- <Dashboard /> -->
+		<div class="main">
+			<Header />
+			<Dashboard-Content />
+		</div>
 	</div>
 </template>
 
 <script>
 import Menu from "@/components/layout/Menu";
-// import Header from "@/components/layout/Header";
-// import Dashboard from "@/pages/Dashboard";
+import Header from "@/components/layout/Header";
+import DashboardContent from "@/pages/Layout/DashboardContent";
 
 export default {
 	name: "App",
 	components: {
-		// Header,
-		Menu
-		// Dashboard
+		Header,
+		Menu,
+		DashboardContent
 	}
 };
 </script>
