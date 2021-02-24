@@ -34,9 +34,9 @@ const routes = [
 				component: () => import("@/pages/Menu/Equip/MappingManagement")
 			},
 			{
-				path: "networkStatus",
-				name: "NetworkStatus",
-				component: () => import("@/pages/Menu/Equip/NetworkStatus")
+				path: "networkCondition",
+				name: "NetworkCondition",
+				component: () => import("@/pages/Menu/Equip/NetworkCondition")
 			},
 			{
 				path: "nms",
