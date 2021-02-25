@@ -201,7 +201,12 @@
             // Create the chart
             Highcharts.mapChart('container', {
                 chart: {
-                    map: 'countries/kr/kr-all'
+                    map: 'countries/kr/kr-all',
+					events: {
+						load: function () {
+							this.mapZoom(0.7);
+						}
+					}
                 },
 
                 title: {
