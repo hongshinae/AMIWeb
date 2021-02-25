@@ -3,6 +3,7 @@ import App from "@/App";
 import config from "@/config";
 import router from "@/routes";
 import store from "@/store";
+import VueMoment from "vue-moment";
 import { BootstrapVue, IconsPlugin, NavbarPlugin } from "bootstrap-vue";
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
@@ -19,6 +20,7 @@ Vue.use(IconsPlugin);
 Vue.use(NavbarPlugin);
 Vue.use(GlobalDirectives);
 Vue.use(MainDashboard);
+Vue.use(VueMoment);
 
 new Vue({
 	router,

@@ -1,6 +1,7 @@
 <template>
 	<div class="home">
-		<div>{{ mNow() }}</div>
+		<div>현재 : {{ mNow() | moment("YYYY-MM-DD hh:mm:ss a") }}</div>
+		<div>변형 : {{ cNow | moment("YYYY-MM-DD hh:mm:ss a") }}</div>
 	</div>
 </template>
 
@@ -13,8 +14,14 @@ export default {
 	components: {
 		// HelloWorld
 	},
+	data: () => {
+		return {
+			now: Date.now()
+		};
+	},
 	computed: {
-		now: () => {
+		cNow: () => {
+			// return this.data.now - 86400000 + 1000;
 			return Date.now();
 		}
 	},

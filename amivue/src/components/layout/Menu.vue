@@ -1,14 +1,14 @@
 <template>
 	<b-nav id="sidebar" class="sidebar" tabs justified vertical>
-		<a class="logoWrap"></a>
+		<router-link class="logoWrap" to="/dashboard"></router-link>
 		<ul class="sidebarNav">
 			<li class="on">
 				<a class="facilities" href="#documentation"><i></i><span>설비</span></a>
 				<ul class="subNav">
-					<router-link tag="li" to="/dashboard"><a>단지 관리</a></router-link>
+					<router-link tag="li" to="/complexManagement"><a>단지 관리</a></router-link>
 					<router-link tag="li" to="/equipmentManagement"><a>장비 관리</a></router-link>
 					<router-link tag="li" to="/mappingManagement"><a>매핑 관리</a></router-link>
-					<router-link tag="li" to="/networkStatus"><a>네트워크 현황</a></router-link>
+					<router-link tag="li" to="/networkCondition"><a>네트워크 현황</a></router-link>
 					<router-link tag="li" to="/nms"><a>NMS ( SNMP )</a></router-link>
 					<router-link tag="li" to="/serverStatus"><a>서버 현황</a></router-link>
 				</ul>
@@ -16,6 +16,7 @@
 			<li class="on">
 				<a class="read"><i></i><span>검침</span></a>
 				<ul class="subNav">
+					<router-link tag="li" to="/metering"><a>test</a></router-link>
 					<router-link tag="li" to="/meteringStatus"><a>검침 현황</a></router-link>
 					<router-link tag="li" to="/meteringInquiry"><a>검침 조회</a></router-link>
 					<router-link tag="li" to="/meteringInformation"><a>검침 정보</a></router-link>

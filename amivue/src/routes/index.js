@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import Home from "@/pages/Home.vue";
 import MainLayout from "@/pages/Layout/MainLayout";
 
 Vue.use(VueRouter);
@@ -167,7 +166,7 @@ const router = new VueRouter({
 	mode: "history",
 	base: process.env.BASE_URL,
 	routes,
-	linkActiveClass: "active",
+	// linkActiveClass: "active",
 	linkExactActiveClass: "on", // 클릭시 삽입할 class
 	tag: "li"
 });
