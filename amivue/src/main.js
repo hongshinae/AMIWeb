@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import GlobalDirectives from "@/globalDirectives";
-import MainDashboard from "@/mainLayout";
+import MainLayout from "@/mainLayout";
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue);
@@ -19,7 +19,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(NavbarPlugin);
 Vue.use(GlobalDirectives);
-Vue.use(MainDashboard);
+Vue.use(MainLayout);
 Vue.use(VueMoment);
 
 new Vue({

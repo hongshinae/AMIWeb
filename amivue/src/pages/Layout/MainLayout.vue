@@ -11,7 +11,7 @@
 <script>
 import Menu from "@/components/layout/Menu";
 import Header from "@/components/layout/Header";
-import DashboardContent from "@/pages/Layout/DashboardContent";
+import DashboardContent from "@/components/layout/DashboardContent";
 
 export default {
 	name: "App",

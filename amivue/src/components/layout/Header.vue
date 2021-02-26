@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<b-nav class="navbar">
+		<nav class="navbar">
 			<a class="sidebar-toggle">
 				<i class="menu"></i>
 			</a>
@@ -11,11 +11,13 @@
 				<li class="uerName">관리자</li>
 				<li class="logout"><a href="#">로그아웃</a></li>
 			</ul>
-		</b-nav>
+		</nav>
 	</div>
 </template>
 
 <script>
+// Header css
+import "@/assets/css/header.css";
 export default {
 	name: "Header"
 };

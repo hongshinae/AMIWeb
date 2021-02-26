@@ -156,8 +156,8 @@ const routes = [
 		]
 	},
 	{
-		path: "/dashboard",
-		name: "Dashboard",
+		path: "/mainDashboard",
+		name: "MainDashboard",
 		component: () => import("@/pages/Dashboard")
 	}
 ];
@@ -167,8 +167,7 @@ const router = new VueRouter({
 	base: process.env.BASE_URL,
 	routes,
 	// linkActiveClass: "active",
-	linkExactActiveClass: "on", // 클릭시 삽입할 class
-	tag: "li"
+	linkExactActiveClass: "on" // 클릭시 삽입할 class
 });
 
 export default router;

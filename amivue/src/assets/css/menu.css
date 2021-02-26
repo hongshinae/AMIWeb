@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+.sidebar {
+	min-width: 260px;
+	max-width: 260px;
+	transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
+	direction: ltr;
+	background: #07132b;
+}
+a.logoWrap {
+	cursor: pointer;
+	width: 152px;
+	height: 22px;
+	display: block;
+	margin: 17px 0px 13px 16px;
+	background: url("../images/logo.png") 0 0 no-repeat;
+}
+.status-board ul.sidebarNav {
+	margin-top: 5px !important;
+	border-top: 1px solid #14203d;
+}
+.sidebarNav li {
+	position: relative;
+}
+.status-board ul.sidebarNav > li > a:before {
+	content: " ";
+	border: solid;
+	border-width: 0 0.1rem 0.1rem 0;
+	display: inline-block;
+	padding: 2px;
+	transform: rotate(45deg);
+	position: absolute;
+	top: 1.3rem;
+	right: 1.5rem;
+	transition: all 0.2s ease-out;
+}
+.status-board ul.sidebarNav > li.on > a:before {
+	transform: rotate(-135deg);
+	top: 1.1rem;
+}
+.status-board ul.sidebarNav > li.on .subNav {
+	display: block;
+}
+.status-board .subNav a {
+	font-size: 13px !important;
+	color: #b3b3b3 !important;
+}
+.status-board ul.sidebarNav a {
+	color: #e4e4e4;
+	font-size: 14px;
+	cursor: pointer;
+}
+.status-board ul.sidebarNav a:hover {
+	text-decoration: none;
+}
+.status-board ul.sidebarNav > li > a {
+	font-weight: bold;
+	height: 38px;
+	line-height: 38px;
+	width: 260px;
+	border-bottom: 1px solid #14203d;
+	display: inline-block;
+}
+.status-board ul.sidebarNav > li > a:hover {
+	background: #091734;
+}
+.status-board ul.subNav {
+	border-top: 1px solid #14203d;
+	background: #050e21;
+	display: none;
+}
+.status-board ul.subNav li {
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px solid #14203d;
+	display: block;
+	padding: 0px 30px 0 42px;
+}
+.status-board ul.subNav li:hover {
+	background: #07122b;
+}
+.status-board ul.subNav li.on a {
+	color: #ffffff !important;
+	font-weight: bold;
+}
+.status-board .sidebarNav i {
+	width: 16px;
+	display: block;
+	margin-right: 12px;
+	float: left;
+	margin-left: 15px;
+	height: 38px;
+	line-height: 38px;
+}
+.status-board .sidebarNav .facilities i {
+	background: url(../images/img.png) 0px 8px no-repeat;
+}
+.status-board .sidebarNav .read i {
+	background: url(../images/img.png) 0px -40px no-repeat;
+}
+.status-board .sidebarNav .charge i {
+	background: url(../images/img.png) 0px -88px no-repeat;
+}
+.status-board .sidebarNav .error i {
+	background: url(../images/img.png) 0px -136px no-repeat;
+}
+.status-board .sidebarNav .analysis i {
+	background: url(../images/img.png) 0px -182px no-repeat;
+}
+.status-board .sidebarNav .customer i {
+	background: url(../images/img.png) 0px -230px no-repeat;
+}
+.status-board .sidebarNav .set i {
+	background: url(../images/img.png) 0px -279px no-repeat;
+}
+.status-board .sidebarNav .on .facilities i {
+	background: url(../images/img.png) -51px 8px no-repeat;
+}
+.status-board .sidebarNav .on .read i {
+	background: url(../images/img.png) -51px -40px no-repeat;
+}
+.status-board .sidebarNav .on .charge i {
+	background: url(../images/img.png) -51px -88px no-repeat;
+}
+.status-board .sidebarNav .on .error i {
+	background: url(../images/img.png) -51px -136px no-repeat;
+}
+.status-board .sidebarNav .on .analysis i {
+	background: url(../images/img.png) -51px -182px no-repeat;
+}
+.status-board .sidebarNav .on .customer i {
+	background: url(../images/img.png) -51px -230px no-repeat;
+}
+.status-board .sidebarNav .on .set i {
+	background: url(../images/img.png) -51px -279px no-repeat;
+}
+
+.status-board .on span {
+	color: #1ee4df;
+}

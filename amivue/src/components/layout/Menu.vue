@@ -3,7 +3,7 @@
 		<router-link class="logoWrap" to="/dashboard"></router-link>
 		<ul class="sidebarNav">
 			<li class="on">
-				<a class="facilities" href="#documentation"><i></i><span>설비</span></a>
+				<a class="facilities"><i></i><span>설비</span></a>
 				<ul class="subNav">
 					<router-link tag="li" to="/complexManagement"><a>단지 관리</a></router-link>
 					<router-link tag="li" to="/equipmentManagement"><a>장비 관리</a></router-link>
@@ -69,6 +69,8 @@
 </template>
 
 <script>
+// Menu css
+import "@/assets/css/menu.css";
 export default {};
 </script>
 
