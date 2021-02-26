@@ -32,6 +32,15 @@ body {
 .hide {
 	display: none;
 }
+.status-board {
+	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
+	color: #ffffff !important;
+}
+.wrapper {
+	align-items: stretch;
+	display: flex;
+	width: 100%;
+}
 
 /*scrollbar*/
 ::-webkit-scrollbar-track {
