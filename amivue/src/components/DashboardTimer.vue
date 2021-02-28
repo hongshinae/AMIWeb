@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="time">
-			<div>{{ time | moment("hh") }}<span class="blink">:</span>{{ time | moment("mm") }}<span class="blink">:</span>{{ time | moment("ss") }}</div>
+			<div>{{ time | moment("A h") }}<span class="blink">:</span>{{ time | moment("mm") }}<span class="blink">:</span>{{ time | moment("ss") }}</div>
 		</div>
 	</div>
 </template>

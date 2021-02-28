@@ -13,7 +13,7 @@
 					</h5>
 					<div class="chartWarp">
 						<div class="">
-							<img src="resources/images/charhimg01.png" alt="" title="" />
+							<img src="@/assets/images/charhimg01.png" alt="" title="" />
 						</div>
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 					</h5>
 					<div class="chartWarp">
 						<div class="">
-							<img src="resources/images/charhimg02.png" alt="" title="" />
+							<img src="@/assets/images/charhimg02.png" alt="" title="" />
 						</div>
 					</div>
 				</div>
@@ -43,7 +43,7 @@
 					</h5>
 					<div class="chartWarp">
 						<div class="">
-							<img src="resources/images/charhimg03.png" alt="" title="" />
+							<img src="@/assets/images/charhimg03.png" alt="" title="" />
 						</div>
 					</div>
 				</div>

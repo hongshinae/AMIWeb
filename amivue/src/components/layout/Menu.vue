@@ -1,6 +1,9 @@
 <template>
 	<b-nav id="sidebar" class="sidebar" tabs justified vertical>
 		<router-link class="logoWrap" to="/dashboard"></router-link>
+		<menu-sub-slot :uri="menu">
+			<template v-slot:link :to="equipmentManagement"> </template>
+		</menu-sub-slot>
 		<ul class="sidebarNav">
 			<li class="on">
 				<a class="facilities"><i></i><span>설비</span></a>
@@ -71,7 +74,23 @@
 <script>
 // Menu css
 import "@/assets/css/menu.css";
-export default {};
+import MenuSubSlot from "@/components/MenuSubSlot";
+export default {
+	name: "Menu",
+	components: {
+		MenuSubSlot
+	},
+	data() {
+		return {
+			menu: {
+				complexManagement: {
+					name: "",
+					uri: ""
+				}
+			}
+		};
+	}
+};
 </script>
 
 <style></style>
