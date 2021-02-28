@@ -159,6 +159,11 @@ const routes = [
 		path: "/mainDashboard",
 		name: "MainDashboard",
 		component: () => import("@/pages/Dashboard")
+	},
+	{
+		path: "/login",
+		name: "Login",
+		component: () => import("@/pages/Login")
 	}
 ];
 
