@@ -41,6 +41,18 @@ body {
 	display: flex;
 	width: 100%;
 }
+.b-sidebar-outer {
+	float: left !important;
+	position: inherit !important;
+	top: inherit !important;
+	left: inherit !important;
+	right: inherit !important;
+	height: inherit !important;
+}
+.b-sidebar {
+	width: 263px !important;
+	position: relative !important;
+}
 
 /*scrollbar*/
 ::-webkit-scrollbar-track {
