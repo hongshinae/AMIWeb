@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="timeWrap">
-					<div class="date">{{ Date.now() | moment("YYYY.M.DD") }}</div>
+					<div class="date">{{ Date.now() | moment("YYYY.M.D") }}</div>
 					<dashboard-timer></dashboard-timer>
 				</div>
 				<div class="box power">
@@ -64,11 +64,6 @@
 			</div>
 			<div class="col-lg-4"></div>
 		</div>
-		<div class="col-lg-4">
-			<div>현재 : {{ mNow() | moment("YYYY년 MM월 DD일 hh:mm:ss a") }}</div>
-			<div>변형 : {{ cNow | moment("YYYY년 MM월 DD일 hh:mm:ss a") }}</div>
-			<button v-on:click="plus">클릭!</button>
-		</div>
 	</div>
 </template>
 
@@ -93,13 +88,6 @@ export default {
 			return this.now - 86400000 + 1000;
 		}
 	},
-	methods: {
-		mNow() {
-			return this.now;
-		},
-		plus() {
-			this.now += 1000;
-		}
-	}
+	methods: {}
 };
 </script>
