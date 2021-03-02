@@ -11,7 +11,7 @@
 	height: 52px;
 	padding: 2px;
 	box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.2);
-	background-color: #07132b;
+	background-color: #ffffff;
 	margin-bottom: 20px;
 	padding: 0px 25px;
 }
@@ -22,7 +22,6 @@
 	float: left;
 	overflow: hidden;
 	cursor: pointer;
-	margin-top: 4px;
 }
 ul.infowrap {
 	height: 52px;
@@ -33,7 +32,7 @@ ul.infowrap li {
 	line-height: 39px;
 }
 .infowrap a {
-	color: #d3d3d3;
+	color: #36383a;
 	font-size: 14px;
 }
 .infowrap a:hover {
@@ -43,39 +42,39 @@ nav.navbar > a.navbar-brand {
 	width: 152px;
 	height: 22px;
 	display: block;
-	background: url(../images/logo.png) no-repeat;
+	background: url(../images/logo_wh.png) no-repeat;
 }
 .main .menu {
 	width: 20px;
 	height: 20px;
 	display: block;
-	background: url(../images/img.png) -152px -56px no-repeat;
+	background: url(../images/img_wh.png) -149px -73px no-repeat;
 	border: 0;
 }
 .infowrap .aram i,
 .infowrap .error i {
-	width: 20px;
-	height: 20px;
-	margin-top: 9px;
+	width: 27px;
+	height: 27px;
+	margin-top: 4px;
 }
 .infowrap .aram a,
 .infowrap .error a {
 	padding: 0.5rem 0;
 }
 .infowrap .aram i {
-	background: url(../images/img.png) -379px -2px no-repeat;
+	background: url(../images/img_wh.png) -367px -13px no-repeat;
 	display: inline-block;
 }
 .infowrap .aram.on i {
-	background: url(../images/img.png) -410px -2px no-repeat;
+	background: url(../images/img_wh.png) -410px -2px no-repeat;
 }
 .infowrap .error {
 	margin-right: 4px;
 }
 .infowrap .error i {
-	background: url(../images/img.png) -441px -2px no-repeat;
+	background: url(../images/img_wh.png) -438px -13px no-repeat;
 	display: inline-block;
 }
 .infowrap .error.on i {
-	background: url(../images/img.png) -460px -2px no-repeat;
+	background: url(../images/img_wh.png) -460px -2px no-repeat;
 }
