@@ -8,27 +8,23 @@
 
 <script>
 export default {
-	props: {
-		timer: Number
-	},
+	props: {},
 	data: () => {
 		return {
-			time: Date.now()
+			time: Date.now(),
+			timer: Number
 		};
 	},
 	created() {
 		this.time = Date.now();
-		this.timer = setInterval(() => this.countdown(), 1000);
+		this.timer = setInterval(() => this.counting(), 1000);
 	},
 	destoryed() {
 		clearInterval(this.timer);
 	},
 	methods: {
-		countdown: function() {
+		counting: function() {
 			this.time = Date.now();
-		},
-		padTime: function(time) {
-			return (time < 10 ? "0" : "") + time;
 		}
 	},
 	computed: {}
