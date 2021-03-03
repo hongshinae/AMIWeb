@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+// import VueCookies from "vue-cookies";
 import MainLayout from "@/pages/Layout/MainLayout";
 
 Vue.use(VueRouter);
@@ -163,7 +164,8 @@ const routes = [
 	{
 		path: "/login",
 		name: "Login",
-		component: () => import("@/pages/Login")
+		component: () => import("@/pages/Login"),
+		meta: { unauthorized: true }
 	}
 ];
 
@@ -174,5 +176,18 @@ const router = new VueRouter({
 	// linkActiveClass: "active",
 	linkExactActiveClass: "on" // 클릭시 삽입할 class
 });
+
+// router.beforeEach(async (to, from, next) => {
+// 	if (VueCookies.get("token") === null && VueCookies.get("refresh_token") !== null) {
+// 		// await refreshToken();	// 나중에 수정해야함
+// 	}
+
+// 	if (to.matched.some(record => record.meta.unauthorized) || VueCookies.get("token")) {
+// 		return next();
+// 	}
+
+// 	alert("로그인 해주세요");
+// 	return next("/login");
+// });
 
 export default router;
