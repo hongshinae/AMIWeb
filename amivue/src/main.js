@@ -4,6 +4,7 @@ import config from "@/config";
 import router from "@/routes";
 import store from "@/store";
 import VueMoment from "vue-moment";
+import Axios from "@/axios";
 import { BootstrapVue, IconsPlugin, NavbarPlugin } from "bootstrap-vue";
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
@@ -21,6 +22,9 @@ Vue.use(NavbarPlugin);
 Vue.use(GlobalDirectives);
 Vue.use(MainLayout);
 Vue.use(VueMoment);
+
+// axios 프로토타입 정의
+Vue.prototype.$axios = Axios;
 
 new Vue({
 	router,
