@@ -22,6 +22,7 @@ Vue.use(NavbarPlugin);
 Vue.use(GlobalDirectives);
 Vue.use(MainLayout);
 Vue.use(VueMoment);
+Vue.use(Axios);
 
 // axios 프로토타입 정의
 Vue.prototype.$axios = Axios;

@@ -1,5 +1,19 @@
-import VueCookies from "vue-cookies";
-
+export default {
+	async login(param) {
+		return await this.$axios({
+			url: "/login",
+			method: "get",
+			param: param
+		});
+	},
+	async refreshToken() {
+		return await this.$axios({
+			url: "/refreshToken",
+			method: "get"
+		});
+	}
+};
+/*
 export async function login() {
 	try {
 		const token = await this.$axios.get("/login");
@@ -21,3 +35,4 @@ export async function refreshToken() {
 		return err;
 	}
 }
+*/

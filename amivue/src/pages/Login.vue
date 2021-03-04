@@ -3,9 +3,11 @@
 		<div class="loginWrap">
 			<div class="logo"></div>
 			<div class="lnputWrap">
-				<b-input placeholder="id"></b-input>
-				<b-input placeholder="password"></b-input>
-				<b-button block variant="primary">로그인</b-button>
+				<form @submit.prevent="login(userId, password)">
+					<b-input v-model="userId" placeholder="id"></b-input>
+					<b-input type="password" v-model="password" placeholder="password"></b-input>
+					<b-button type="submit" block variant="primary">로그인</b-button>
+				</form>
 			</div>
 			<ul>
 				<li>아이디나 비밀번호가 기억나지 않으세요?</li>
@@ -20,8 +22,25 @@
 </template>
 
 <script>
+// import VueCookies from "vue-cookies";
+// import Login from "@/service/login";
+
 export default {
-	name: "App"
+	name: "Login",
+	data() {
+		return {
+			userId: "",
+			password: ""
+		};
+	},
+	methods: {
+		login(userId, password) {
+			this.$store
+				.dispatch("LOGIN", { userId, password })
+				.then(() => this.redirect())
+				.catch(({ message }) => (this.msg = message));
+		}
+	}
 };
 </script>
 
