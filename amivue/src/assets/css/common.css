@@ -32,31 +32,47 @@ body {
 .hide {
 	display: none;
 }
-.status-board {
-	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
-	color: #ffffff !important;
-}
 .wrapper {
 	align-items: stretch;
 	display: flex;
 	width: 100%;
 }
-
+.b-sidebar-outer {
+	float: left !important;
+	position: inherit !important;
+	top: inherit !important;
+	left: inherit !important;
+	right: inherit !important;
+	height: inherit !important;
+	background: #0f1a30;
+}
+.b-sidebar {
+	width: 260px !important;
+	position: relative !important;
+}
+.main {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+	min-width: 0;
+	transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
+	flex-direction: column;
+}
 /*scrollbar*/
 ::-webkit-scrollbar-track {
-	/*-webkit-box-shadow: inset 0 0 6px rgb(255, 255, 255);*/
+	/*-webkit-box-shadow: inset 0 0 6px rgb(112, 114, 117);*/
 	border-radius: 10px;
-	background-color: rgb(134, 134, 134);
+	background-color: rgb(21 37 59);
 }
 ::-webkit-scrollbar {
 	width: 3px;
-	background-color: #e2eeff;
+	background-color: #0f1c34;
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
 	border-radius: 5px;
 	/*-webkit-box-shadow: inset 0 0 6px rgb(112, 114, 117);*/
-	background-color: #eaecf1;
+	background-color: #101c35;
 	cursor: pointer;
 }
 ::-webkit-scrollbar-corner {

@@ -9,7 +9,9 @@ rect.highcharts-legend-box {
 }
 /*dashbord content*/
 .content {
-	padding: 0 15px;
+	padding: 15px;
+	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
+	color: #fff;
 }
 .status-board .box {
 	width: 100%;
@@ -41,45 +43,6 @@ rect.highcharts-legend-box {
 	overflow: hidden;
 	padding: 10px;
 	width: 100%;
-}
-
-/* for MS계열 브라우저 */
-@keyframes blink {
-	0% {
-		color: rgba(255, 255, 255, 0.5);
-	}
-	50% {
-		color: rgba(255, 255, 255, 1);
-	}
-}
-
-/* for Chrome, Safari */
-@-webkit-keyframes blink {
-	0% {
-		color: rgba(255, 255, 255, 0.5);
-	}
-	50% {
-		color: rgba(255, 255, 255, 1);
-	}
-}
-
-/*시간*/
-.timeWrap {
-	height: 30px;
-	margin: 0px 0 15px 0;
-	width: 100%;
-}
-.timeWrap .date {
-	float: left;
-}
-.timeWrap .time {
-	float: right;
-	font-size: 1.8em;
-	font-family: alarm_clock;
-}
-.blink {
-	animation: blink 1s step-end infinite;
-	-webkit-animation: blink 1s step-end infinite;
 }
 
 /*검침률*/

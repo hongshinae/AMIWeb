@@ -30,3 +30,41 @@ export default {
 	computed: {}
 };
 </script>
+<style>
+/* for MS계열 브라우저 */
+@keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+
+/* for Chrome, Safari */
+@-webkit-keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+.timeWrap {
+	height: 30px;
+	margin: 0px 0 15px 0;
+	width: 100%;
+}
+.timeWrap .date {
+	float: left;
+}
+.timeWrap .time {
+	float: right;
+	font-size: 1.8em;
+	font-family: alarm_clock;
+}
+.blink {
+	animation: blink 1s step-end infinite;
+	-webkit-animation: blink 1s step-end infinite;
+}
+</style>
