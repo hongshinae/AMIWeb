@@ -186,8 +186,7 @@ router.beforeEach(async (to, from, next) => {
 		return next();
 	}
 
-	alert("로그인 해주세요");
-	return next("/login");
+	return next();
 });
 
 export default router;
