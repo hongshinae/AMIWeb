@@ -146,3 +146,6 @@ ul.subNav li.on a {
 .on span {
 	color: #1ee4df;
 }
+.nav-tabs {
+	border-bottom: 0 none !important;
+}
