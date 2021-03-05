@@ -2,17 +2,21 @@ import Axios from "axios";
 import VueCookies from "vue-cookies";
 // import Login from "@/service/login";
 
-Axios.create({
-	baseURL: "http://localhost:9099/api",
+const axios = Axios.create({
+	baseURL: "/api",
+	// baseURL: "http://localhost:18099",
 	timeout: 3000
 });
 
-Axios.interceptors.request.use(
+axios.interceptors.request.use(
 	async function(config) {
 		// 요청 성공 직전 호출됩니다.
 		// axios 설정값을 넣습니다. (사용자 정의 설정도 추가 가능)
 		config.headers.TOKEN = VueCookies.get("TOKEN");
 		config.headers.REFRESH_TOKEN = VueCookies.get("REFRESH_TOKEN");
+		config.headers["Access-Control-Allow-Origin"] = "*";
+		config.headers["Access-Control-Allow-Headers"] = "*";
+		// config.headers["Content-Type"] = "application/json; charset = utf-8";
 		console.log(config);
 
 		return config;
@@ -23,28 +27,33 @@ Axios.interceptors.request.use(
 	}
 );
 
-Axios.interceptors.response.use(
+axios.interceptors.response.use(
 	function(response) {
-		// http status가 200인 경우 응답 성공 직전 호출됩니다
-		// .then() 으로 이어집니다.
+		// Response Success
+
 		return response;
 	},
-	function(error) {
-		// http status가 200인 경우 응답 에러 직전 호출됩니다
-		// .catch() 로 이어집니다.
-		console.log("에러일 경우", error);
+	function(error, param) {
+		// Response Error
 		const errorAPI = error.config;
-		console.log(errorAPI);
+		console.log(error);
+		console.log(param);
 
-		// if (error.response.data.status === 401 && errorAPI.retry === undefined) {
-		// 	errorAPI.retry = true;
-		// 	console.log("토큰이 이상한 오류일 경우");
-		// 	await Login.refreshToken();
-		// 	return await Axios(errorAPI);
-		// }
+		if (error.response.data.status === 401 && errorAPI.retry === undefined) {
+			errorAPI.retry = true;
+			// 	console.log("토큰이 이상한 오류일 경우");
+			// 	await Login.refreshToken();
+			// return await Axios(errorAPI);
+		}
 
 		return Promise.reject(error);
+		// return error;
 	}
 );
 
-export default Axios;
+export default axios;
+// export default {
+// 	install(Vue) {
+// 		Vue.prototype.$axios = Axios;
+// 	}
+// };

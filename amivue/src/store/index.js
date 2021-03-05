@@ -1,11 +1,17 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import Login from "@/service/login";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
 	state: {
 		accessToken: null
+	},
+	getters: {
+		getAccessToken: state => {
+			return state.accessToken;
+		}
 	},
 	mutations: {
 		LOGIN(state, { accessToken }) {
@@ -16,8 +22,15 @@ export default new Vuex.Store({
 		}
 	},
 	actions: {
-		LOGIN({ commit }, { userId, password }) {
-			return this.$axios.get("/login", { userId, password }).then(({ data }) => commit("LOGIN", data));
+		LOGIN({ commit /*, dispatch*/ }, { userid, password }) {
+			Login.login({ userid, password })
+				.then(result => {
+					commit("LOGIN", result.data.response);
+				})
+				.catch(result => {
+					//dispatch("LOGOUT");	// action내 action 처리가능
+					console.log(result);
+				});
 		},
 		LOGOUT({ commit }) {
 			commit("LOGOUT");
@@ -25,3 +38,4 @@ export default new Vuex.Store({
 	},
 	modules: {}
 });
+export default store;

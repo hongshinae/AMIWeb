@@ -1,13 +1,15 @@
+import Send from "@/axios";
+
 export default {
-	async login(param) {
-		return await this.$axios({
+	login(params) {
+		return Send({
 			url: "/login",
 			method: "get",
-			param: param
+			params: params
 		});
 	},
-	async refreshToken() {
-		return await this.$axios({
+	refreshToken() {
+		return Send({
 			url: "/refreshToken",
 			method: "get"
 		});

@@ -16,29 +16,32 @@
 			<div class="lnputWrap">
 				<b-button block variant="outline-primary">회원 가입</b-button>
 			</div>
-			<div class="copyright">COPYRIGHT ⓒ CUN GLOBAL Corp.</div>
+			<div class="copyright">COPYRIGHT ⓒ CNU GLOBAL Corp.</div>
 		</div>
 	</div>
 </template>
 
 <script>
-// import VueCookies from "vue-cookies";
-// import Login from "@/service/login";
-
 export default {
 	name: "Login",
 	data() {
 		return {
+			msg: String,
 			userId: "",
 			password: ""
 		};
 	},
 	methods: {
-		login(userId, password) {
+		login(userid, password) {
 			this.$store
-				.dispatch("LOGIN", { userId, password })
-				.then(() => this.redirect())
-				.catch(({ message }) => (this.msg = message));
+				.dispatch("LOGIN", { userid, password })
+				.then(result => {
+					console.log(result);
+				})
+				.catch(result => {
+					console.log(result);
+					this.msg = result;
+				});
 		}
 	}
 };
