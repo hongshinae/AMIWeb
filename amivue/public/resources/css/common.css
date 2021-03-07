@@ -18,6 +18,7 @@
 html {
 	width: 100%;
 	height: 100%;
+	font-size: 16px;
 }
 body {
 	height: 100%;
@@ -37,6 +38,36 @@ body {
 	display: flex;
 	width: 100%;
 }
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+	display: block;
+	line-height: 0;
+}
+.clearfix:after {
+	clear: both;
+}
+/*color*/
+.btn-primary {
+	background: #3b82ec !important;
+	border: 0 !important;
+}
+.btn-light {
+	background: #ffffff !important;
+	border: #ced4da !important;
+}
+.b-Color {
+	color: #495057 !important;
+}
+.p-Color {
+	color: #007fff !important;
+}
+.r-color {
+	color: #d9534f !important;
+}
+/*layout*/
 .b-sidebar-outer {
 	float: left !important;
 	position: inherit !important;
