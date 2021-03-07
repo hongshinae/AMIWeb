@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+		<title></title>
+		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css" />
+		<link rel="stylesheet" href="resources/css/reset.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="resources/css/login.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+	</head>
+
+	<body>
+		<div class="loginBg">
+			<div class="loginWrap">
+				<div class="logo"></div>
+				<div class="lnputWrap">
+					<b-input v-model="text" placeholder="id"></b-input>
+					<b-input v-model="password" placeholder="password"></b-input>
+					<b-button block variant="primary">로그인</b-button>
+				</div>
+				<ul>
+					<router-link tag="li" to="">아이디나 비밀번호가 기억나지 않으세요?</router-link>
+					<router-link tag="li" to=""><a>아이디 비밀번호 찾기</a></router-link>
+				</ul>
+				<div class="lnputWrap">
+					<b-button block variant="outline-primary">회원 가입</b-button>
+				</div>
+				<div class="copyright">COPYRIGHT ⓒ CUN GLOBAL Corp.</div>
+			</div>
+		</div>
+	</body>
+</html>
