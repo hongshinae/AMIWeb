@@ -3,15 +3,15 @@
 	font-family: NanumSquare;
 	font-style: normal;
 	font-weight: normal;
-	src: url(../font/NanumSquareB.eot);
-	src: url(../font/NanumSquareB.woff), url(../font/NanumSquareB.ttf) format("truetype");
+	src: url(/@/assets/font/NanumSquareB.eot);
+	src: url(/@/assets/font/NanumSquareB.woff), url(/@/assets/font/NanumSquareB.ttf) format("truetype");
 }
 @font-face {
 	font-family: alarm_clock;
 	font-style: normal;
 	font-weight: normal;
-	src: url(../font/alarm_clock.eot);
-	src: url(../font/alarm_clock.woff), url(../font/alarm_clock.ttf) format("truetype");
+	src: url(/@/assets/font/alarm_clock.eot);
+	src: url(/@/assets/font/alarm_clock.woff), url(/@/assets/font/alarm_clock.ttf) format("truetype");
 }
 
 /* CSS Document */
