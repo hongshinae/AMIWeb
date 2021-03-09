@@ -4,7 +4,7 @@
 			<h1>매핑 정보</h1>
 			<div class="main-location">
 				<div class="home-img">
-					<b-icon icon="arrow-up"></b-icon>
+					<b-icon icon="house"></b-icon>
 				</div>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#" target="_self" class="">홈</a></li>
@@ -14,26 +14,9 @@
 			</div>
 		</div>
 		<div class="search-wrap clearfix">
-			<div class="box-wh">
+			<div class="wbox whbg">
 				<div class="search-img">
-					<svg
-						viewBox="0 0 16 16"
-						width="1.2em"
-						height="1.2em"
-						focusable="false"
-						role="img"
-						aria-label="search"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="currentColor"
-						class="bi-search mx-auto b-icon bi"
-						data-v-41be6633=""
-					>
-						<g data-v-41be6633="">
-							<path
-								d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-							></path>
-						</g>
-					</svg>
+					<b-icon icon="search"></b-icon>
 				</div>
 				<div class="search">
 					<!--검색영역-->
@@ -112,7 +95,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-4">
-				<div class="box-wh">
+				<div class="wbox whbg">
 					<form class="one-row">
 						<div id="" role="group" class="form-group row">
 							<label id="" for="input-1" class="d-block col-lg-4">지역 코드</label>
@@ -144,12 +127,13 @@
 						</div>
 					</form>
 				</div>
-				<div class="box-wh">
-					<h5>
-						<div><i class="icon-arroew"></i>서울아파트 : <span class="p-Color">1007</span>세대 검침일 : <span class="p-Color">1</span>일</div>
+				<div class="wbox whbg">
+					<h5 class="tltle">
+						<b-icon icon="arrow-return-right"></b-icon>
+						<span>서울아파트 : <i class="p-Color">1007</i> 세대 검침일 : <i class="p-Color">1</i>일</span>
 					</h5>
 					<div class="table-wrap">
-						<table class="table b-table" id="">
+						<table class="table b-table basic-table" id="">
 							<!----><!---->
 							<thead role="rowgroup" class="">
 								<!---->
@@ -186,7 +170,7 @@
 							<!---->
 						</table>
 					</div>
-					<div class="pa-wrap">
+					<div class="pa-wrap" align-h="center">
 						<nav aria-hidden="false" aria-label="Pagination">
 							<ul aria-disabled="false" class="pagination b-pagination">
 								<li aria-hidden="true" class="page-item disabled">
@@ -225,24 +209,7 @@
 				<div class="btn-wrap clearfix">
 					<div role="group" class="btn-group">
 						<button type="button" class="btn btn-primary">
-							<svg
-								viewBox="0 0 16 16"
-								width="1em"
-								height="1em"
-								focusable="false"
-								role="img"
-								aria-label="pencil fill"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="currentColor"
-								class="bi-pencil-fill mx-auto b-icon bi"
-								data-v-41be6633=""
-							>
-								<g data-v-41be6633="">
-									<path
-										d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
-									></path>
-								</g>
-							</svg>
+							<b-icon icon="pencil-fill"></b-icon>
 							신규 등록
 						</button>
 					</div>
@@ -323,12 +290,69 @@
 								<td class="">NS09_0101A</td>
 								<td class=""><span class="linkage">연동</span></td>
 							</tr>
+							<tr role="row" class="">
+								<td class="">1006동</td>
+								<td class="">101호</td>
+								<td class="">29140192159</td>
+								<td class="">1일</td>
+								<td class="">00:00:AC:5E:8C:A0:38:63</td>
+								<td class="">NS09_0101A</td>
+								<td class=""><span class="linkage">연동</span></td>
+							</tr>
+							<tr role="row" class="">
+								<td class="">1006동</td>
+								<td class="">101호</td>
+								<td class="">29140192159</td>
+								<td class="">1일</td>
+								<td class="">00:00:AC:5E:8C:A0:38:63</td>
+								<td class="">NS09_0101A</td>
+								<td class=""><span class="linkage">연동</span></td>
+							</tr>
+							<tr role="row" class="">
+								<td class="">1006동</td>
+								<td class="">101호</td>
+								<td class="">29140192159</td>
+								<td class="">1일</td>
+								<td class="">00:00:AC:5E:8C:A0:38:63</td>
+								<td class="">NS09_0101A</td>
+								<td class=""><span class="linkage">연동</span></td>
+							</tr>
 							<!----><!---->
 						</tbody>
 						<!---->
 					</table>
 				</div>
 			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="wbox whbg">
+					<h5 class="tltle">
+						지역별 현황
+						<b class="p-Color">45.452kWh</b>
+					</h5>
+					<div class="chart-wrap">chart</div>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="wbox blbg">
+					<h5 class="tltle">적시 검침률</h5>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="wbox abbg">
+					<h5 class="tltle">검침 신뢰성</h5>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<button type="button" class="btn btn-primary">
+				<b-icon icon="pencil-fill"></b-icon>
+				신규 등록
+			</button>
+			<button type="button" class="btn btn-primary">신규 등록</button>
+			<button type="button" class="btn btn-light">다운로드</button>
+			<button type="button" class="btn btn-blight">블루버튼</button>
 		</div>
 	</div>
 </template>

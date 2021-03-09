@@ -22,7 +22,7 @@ html {
 }
 body {
 	height: 100%;
-	font-family: "NanumSquare", sans-serif !important;
+	font-family: "Nanum Gothic", sans-serif !important;
 }
 .row {
 	margin: 0 !important;
@@ -50,19 +50,28 @@ body {
 	clear: both;
 }
 /*color*/
+.btn {
+	font-size: 0.8rem !important;
+}
 .btn-primary {
 	background: #3b82ec !important;
 	border: 0 !important;
 }
 .btn-light {
 	background: #ffffff !important;
-	border: #ced4da !important;
+	border: 1px solid #ced4da !important;
+}
+.btn-blight {
+	background: #ffffff !important;
+	border: 1px solid #3b82ec !important;
+	color: #3b82ec !important;
 }
 .b-Color {
 	color: #495057 !important;
 }
 .p-Color {
 	color: #007fff !important;
+	font-style: normal;
 }
 .r-color {
 	color: #d9534f !important;

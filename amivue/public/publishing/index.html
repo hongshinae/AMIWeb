@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="resources/css/contents_wh.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="resources/css/vue.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet" />
 
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -160,10 +161,10 @@
 						</div>
 					</div>
 					<div class="search-wrap clearfix">
-						<div class="box-wh">
+						<div class="wbox whbg">
 							<div class="search-img">
 								<svg
-									viewBox="0 0 16 16"
+									viewbox="0 0 16 16"
 									width="1.2em"
 									height="1.2em"
 									focusable="false"
@@ -268,7 +269,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-4">
-							<div class="box-wh">
+							<div class="wbox whbg">
 								<form class="one-row">
 									<div id="" role="group" class="form-group row">
 										<label id="" for="input-1" class="d-block col-lg-4">지역 코드</label>
@@ -300,14 +301,14 @@
 									</div>
 								</form>
 							</div>
-							<div class="box-wh">
-								<h5>
-									<div>
-										<i class="icon-arroew"></i>서울아파트 : <span class="p-Color">1007</span>세대 검침일 : <span class="p-Color">1</span>일
-									</div>
+							<div class="wbox whbg">
+								<h5 class="tltle">
+									<i class="icon-arroew"></i>
+									<span>서울아파트 : <i class="p-Color">1007</i> 세대 검침일 : <i class="p-Color">1</i>일</span>
+									<b class=""></b>
 								</h5>
 								<div class="table-wrap">
-									<table class="table b-table" id="">
+									<table class="table b-table basic-table" id="">
 										<!----><!---->
 										<thead role="rowgroup" class="">
 											<!---->
@@ -493,12 +494,69 @@
 											<td class="">NS09_0101A</td>
 											<td class=""><span class="linkage">연동</span></td>
 										</tr>
+										<tr role="row" class="">
+											<td class="">1006동</td>
+											<td class="">101호</td>
+											<td class="">29140192159</td>
+											<td class="">1일</td>
+											<td class="">00:00:AC:5E:8C:A0:38:63</td>
+											<td class="">NS09_0101A</td>
+											<td class=""><span class="linkage">연동</span></td>
+										</tr>
+										<tr role="row" class="">
+											<td class="">1006동</td>
+											<td class="">101호</td>
+											<td class="">29140192159</td>
+											<td class="">1일</td>
+											<td class="">00:00:AC:5E:8C:A0:38:63</td>
+											<td class="">NS09_0101A</td>
+											<td class=""><span class="linkage">연동</span></td>
+										</tr>
+										<tr role="row" class="">
+											<td class="">1006동</td>
+											<td class="">101호</td>
+											<td class="">29140192159</td>
+											<td class="">1일</td>
+											<td class="">00:00:AC:5E:8C:A0:38:63</td>
+											<td class="">NS09_0101A</td>
+											<td class=""><span class="linkage">연동</span></td>
+										</tr>
 										<!----><!---->
 									</tbody>
 									<!---->
 								</table>
 							</div>
 						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="wbox whbg">
+								<h5 class="tltle">
+									지역별 현황
+									<b class="p-Color">45.452kWh</b>
+								</h5>
+								<div class="chart-wrap">chart</div>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="wbox blbg">
+								<h5 class="tltle">적시 검침률</h5>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="wbox abbg">
+								<h5 class="tltle">검침 신뢰성</h5>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<button type="button" class="btn btn-primary">
+							<b-icon icon="pencil-fill"></b-icon>
+							신규 등록
+						</button>
+						<button type="button" class="btn btn-primary">신규 등록</button>
+						<button type="button" class="btn btn-light">다운로드</button>
+						<button type="button" class="btn btn-blight">블루버튼</button>
 					</div>
 				</div>
 			</div>
