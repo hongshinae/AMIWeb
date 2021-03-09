@@ -3,10 +3,11 @@
 		<div class="loginWrap">
 			<div class="logo"></div>
 			<div class="lnputWrap">
-				<form @submit.prevent="login(userId, password)">
+				<form action="/dashboard" @submit.prevent="login(userId, password)">
 					<b-input v-model="userId" placeholder="id"></b-input>
 					<b-input type="password" v-model="password" placeholder="password"></b-input>
 					<b-button type="submit" block variant="primary">로그인</b-button>
+					<div class="error">{{ msg }}</div>
 				</form>
 			</div>
 			<ul>
@@ -26,7 +27,7 @@ export default {
 	name: "Login",
 	data() {
 		return {
-			msg: String,
+			msg: "",
 			userId: "",
 			password: ""
 		};
@@ -35,12 +36,11 @@ export default {
 		login(userid, password) {
 			this.$store
 				.dispatch("LOGIN", { userid, password })
-				.then(result => {
-					console.log(result);
+				.then(() => {
+					this.$router.push("/dashboard");
 				})
-				.catch(result => {
-					console.log(result);
-					this.msg = result;
+				.catch(({ response }) => {
+					this.msg = response.data.response.error_message;
 				});
 		}
 	}
@@ -85,5 +85,8 @@ $color-bg: #ecf2f6;
 		margin: 20px;
 		text-align: center;
 	}
+}
+.error {
+	color: red;
 }
 </style>

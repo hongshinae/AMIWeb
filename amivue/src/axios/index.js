@@ -33,11 +33,9 @@ axios.interceptors.response.use(
 
 		return response;
 	},
-	function(error, param) {
+	function(error) {
 		// Response Error
 		const errorAPI = error.config;
-		console.log(error);
-		console.log(param);
 
 		if (error.response.data.status === 401 && errorAPI.retry === undefined) {
 			errorAPI.retry = true;

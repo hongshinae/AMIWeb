@@ -172,6 +172,7 @@ const routes = [
 const router = new VueRouter({
 	mode: "history",
 	base: process.env.BASE_URL,
+	saveScrollPosition: true,
 	routes,
 	// linkActiveClass: "active",
 	linkExactActiveClass: "on" // 클릭시 삽입할 class
@@ -182,13 +183,15 @@ router.beforeEach(async (to, from, next) => {
 		// await refreshToken();	// 나중에 수정해야함
 	}
 
-	if (to.matched.some(record => record.meta.unauthorized) || VueCookies.get("token")) {
+//	console.log(router);
+	var store = router.app.$store;
+	if (to.matched.some(record => record.meta.unauthorized) || (store && store.state.loginStore.accessToken)) {
 		return next();
 	}
 
-	return next();
-	// alert("로그인 해주세요");
-	// return next("/login");
+	// return next();
+	alert("로그인 해주세요");
+	return next("/login");
 });
 
 export default router;
