@@ -10,6 +10,9 @@ const state = {
 };
 
 const getters = {
+	getUser: state => {
+		state.userid, state.email, state.info, state.level, state.name, state.password, state.phone, state.regdate;
+	},
 	getUserId: state => state.userid,
 	getEmail: state => state.email,
 	getInfo: state => state.info,
@@ -21,33 +24,46 @@ const getters = {
 };
 
 const mutations = {
+	USER(state, userid, email, info, level, name, password, phone, regdate) {
+		state.userid = userid;
+		state.email = email;
+		state.info = info;
+		state.level = level;
+		state.name = name;
+		state.password = password;
+		state.phone = phone;
+		state.regdate = regdate;
+	},
 	USERID(state, userid) {
-		state.accessToken = userid;
+		state.userid = userid;
 	},
 	EMAIL(state, email) {
-		state.accessToken = email;
+		state.email = email;
 	},
 	INFO(state, info) {
-		state.accessToken = info;
+		state.info = info;
 	},
 	LEVEL(state, level) {
-		state.accessToken = level;
+		state.level = level;
 	},
 	NAME(state, name) {
-		state.accessToken = name;
+		state.name = name;
 	},
 	PASSWORD(state, password) {
-		state.accessToken = password;
+		state.password = password;
 	},
 	PHONE(state, phone) {
-		state.accessToken = phone;
+		state.phone = phone;
 	},
 	REGDATE(state, regdate) {
-		state.accessToken = regdate;
+		state.regdate = regdate;
 	}
 };
 
 const actions = {
+	USER({ commit }) {
+		commit("USER");
+	},
 	USERID({ commit }) {
 		commit("USERID");
 	},

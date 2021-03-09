@@ -1,6 +1,5 @@
 import Axios from "axios";
-import VueCookies from "vue-cookies";
-// import Login from "@/service/login";
+import store from "@/store";
 
 const axios = Axios.create({
 	baseURL: "/api",
@@ -12,8 +11,8 @@ axios.interceptors.request.use(
 	async function(config) {
 		// 요청 성공 직전 호출됩니다.
 		// axios 설정값을 넣습니다. (사용자 정의 설정도 추가 가능)
-		config.headers.TOKEN = VueCookies.get("TOKEN");
-		config.headers.REFRESH_TOKEN = VueCookies.get("REFRESH_TOKEN");
+		config.headers.TOKEN = store.state.loginStore.accessToken;
+		config.headers.REFRESH_TOKEN = store.state.loginStore.refreshToken;
 		config.headers["Access-Control-Allow-Origin"] = "*";
 		config.headers["Access-Control-Allow-Headers"] = "*";
 		// config.headers["Content-Type"] = "application/json; charset = utf-8";
