@@ -38,7 +38,10 @@ const store = new Vuex.Store({
 	// 	}
 	// },
 	modules: { loginStore, userStore },
-	plugins: [createPersistedState("loginStore")]
+	plugins: [
+		createPersistedState({ paths: ["loginStore.refreshToken"], storage: window.localStorage, overwrite: true }),
+		createPersistedState({ paths: ["loginStore.accessToken"], storage: window.sessionStorage, overwrite: true })
+	]
 });
 
 export default store;

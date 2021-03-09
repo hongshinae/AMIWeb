@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import VueCookies from "vue-cookies";
 import MainLayout from "@/pages/Layout/MainLayout";
+import store from "@/store";
 
 Vue.use(VueRouter);
 
@@ -179,17 +179,14 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-	if (VueCookies.get("token") === null && VueCookies.get("refresh_token") !== null) {
+	if (store.state.loginStore.accessToken && !store.state.loginStore.accessToken) {
 		// await refreshToken();	// 나중에 수정해야함
 	}
 
-//	console.log(router);
-	var store = router.app.$store;
-	if (to.matched.some(record => record.meta.unauthorized) || (store && store.state.loginStore.accessToken)) {
+	if (to.matched.some(record => record.meta.unauthorized) || store.state.loginStore.accessToken) {
 		return next();
 	}
 
-	// return next();
 	alert("로그인 해주세요");
 	return next("/login");
 });
