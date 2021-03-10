@@ -19,140 +19,92 @@ const routes = [
 			},
 			// 설비
 			{
-				path: "complexManagement",
-				name: "ComplexManagement",
-				component: () => import("@/pages/Menu/Equip/ComplexManagement")
+				path: "estate",
+				name: "Estate",
+				component: () => import("@/pages/Menu/Device/Estate")
 			},
 			{
-				path: "equipmentManagement",
-				name: "EquipmentManagement",
-				component: () => import("@/pages/Menu/Equip/EquipmentManagement")
+				path: "building",
+				name: "Building",
+				component: () => import("@/pages/Menu/Device/Building")
 			},
 			{
-				path: "mappingManagement",
-				name: "MappingManagement",
-				component: () => import("@/pages/Menu/Equip/MappingManagement")
+				path: "equipment",
+				name: "Equipment",
+				component: () => import("@/pages/Menu/Device/Equipment")
 			},
 			{
-				path: "networkCondition",
-				name: "NetworkCondition",
-				component: () => import("@/pages/Menu/Equip/NetworkCondition")
+				path: "mapping",
+				name: "Mapping",
+				component: () => import("@/pages/Menu/Device/Mapping")
+			},
+			{
+				path: "network",
+				name: "Network",
+				component: () => import("@/pages/Menu/Device/Network")
 			},
 			{
 				path: "nms",
 				name: "NMS",
-				component: () => import("@/pages/Menu/Equip/NMS")
+				component: () => import("@/pages/Menu/Device/NMS")
 			},
 			{
-				path: "serverStatus",
-				name: "ServerStatus",
-				component: () => import("@/pages/Menu/Equip/ServerStatus")
+				path: "server",
+				name: "Server",
+				component: () => import("@/pages/Menu/Device/Server")
 			},
 			// 검침
 			{
-				path: "meteringStatus",
-				name: "MeteringStatus",
-				component: () => import("@/pages/Menu/Metering/MeteringStatus")
+				path: "mBoard",
+				name: "MBoard",
+				component: () => import("@/pages/Menu/Metering/MBoard")
 			},
 			{
-				path: "meteringInquiry",
-				name: "MeteringInquiry",
-				component: () => import("@/pages/Menu/Metering/MeteringInquiry")
+				path: "lookup",
+				name: "Lookup",
+				component: () => import("@/pages/Menu/Metering/Lookup")
 			},
 			{
-				path: "meteringInformation",
-				name: "MeteringInformation",
-				component: () => import("@/pages/Menu/Metering/MeteringInformation")
+				path: "info",
+				name: "Info",
+				component: () => import("@/pages/Menu/Metering/Info")
 			},
 			{
-				path: "monthMetering",
-				name: "MonthMetering",
-				component: () => import("@/pages/Menu/Metering/MonthMetering")
-			},
-			// 요금
-			{
-				path: "bill",
-				name: "Bill",
-				component: () => import("@/pages/Menu/Bill/Bill")
-			},
-			{
-				path: "meteringBill",
-				name: "MeteringBill",
-				component: () => import("@/pages/Menu/Bill/MeteringBill")
+				path: "regular",
+				name: "Regular",
+				component: () => import("@/pages/Menu/Metering/Regular")
 			},
 			// 장애
 			{
-				path: "disabilityStatus",
-				name: "DisabilityStatus",
-				component: () => import("@/pages/Menu/Disability/DisabilityStatus")
+				path: "fBoard",
+				name: "FBoard",
+				component: () => import("@/pages/Menu/Failure/FBoard")
 			},
 			{
-				path: "disabilityStatusCode",
-				name: "DisabilityStatusCode",
-				component: () => import("@/pages/Menu/Disability/DisabilityStatusCode")
+				path: "code",
+				name: "Code",
+				component: () => import("@/pages/Menu/Failure/Code")
 			},
 			{
-				path: "networkStatus",
-				name: "NetworkStatus",
-				component: () => import("@/pages/Menu/Disability/NetworkStatus")
+				path: "status",
+				name: "Status",
+				component: () => import("@/pages/Menu/Failure/Status")
 			},
 			{
-				path: "unMeteringInformation",
-				name: "UnMeteringInformation",
-				component: () => import("@/pages/Menu/Disability/UnMeteringInformation")
-			},
-			// 분석
-			{
-				path: "usageStatistics",
-				name: "UsageStatistics",
-				component: () => import("@/pages/Menu/Analysis/UsageStatistics")
-			},
-			{
-				path: "maximumDemand",
-				name: "MaximumDemand",
-				component: () => import("@/pages/Menu/Analysis/MaximumDemand")
-			},
-			{
-				path: "disabilityFrequency",
-				name: "DisabilityFrequency",
-				component: () => import("@/pages/Menu/Analysis/DisabilityFrequency")
-			},
-			{
-				path: "report",
-				name: "Report",
-				component: () => import("@/pages/Menu/Analysis/Report")
-			},
-			{
-				path: "reliabilityAnalysis",
-				name: "ReliabilityAnalysis",
-				component: () => import("@/pages/Menu/Analysis/ReliabilityAnalysis")
-			},
-			{
-				path: "timeRateAnalysis",
-				name: "TimeRateAnalysis",
-				component: () => import("@/pages/Menu/Analysis/TimeRateAnalysis")
+				path: "reading",
+				name: "Reading",
+				component: () => import("@/pages/Menu/Failure/Reading")
 			},
 			// 고객 지원
 			{
-				path: "board",
-				name: "Board",
-				component: () => import("@/pages/Menu/Support/Board")
+				path: "ask",
+				name: "Ask",
+				component: () => import("@/pages/Menu/Support/Ask")
 			},
 			{
-				path: "qa",
-				name: "QA",
-				component: () => import("@/pages/Menu/Support/QA")
-			},
-			// 설정
-			{
-				path: "userManagement",
-				name: "UserManagement",
-				component: () => import("@/pages/Menu/Settings/UserManagement")
-			},
-			{
-				path: "settingsManagement",
-				name: "SettingsManagement",
-				component: () => import("@/pages/Menu/Settings/SettingsManagement")
+				path: "qna",
+				name: "QnA",
+				component: () => import("@/pages/Menu/Support/QnA")
 			}
 		]
 	},

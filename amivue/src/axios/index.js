@@ -16,7 +16,6 @@ axios.interceptors.request.use(
 		config.headers["Access-Control-Allow-Origin"] = "*";
 		config.headers["Access-Control-Allow-Headers"] = "*";
 		// config.headers["Content-Type"] = "application/json; charset = utf-8";
-		console.log(config);
 
 		return config;
 	},

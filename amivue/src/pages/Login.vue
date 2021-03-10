@@ -62,7 +62,7 @@ $color-bg: #ecf2f6;
 	.logo {
 		width: 362px;
 		height: 53px;
-		background: url("/assets/images/logo_login.png") 0 0 no-repeat;
+		background: url("../assets/images/logo_login.png") 0 0 no-repeat;
 		margin: 10px auto 23px auto;
 	}
 	.lnputWrap {
