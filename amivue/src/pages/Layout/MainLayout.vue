@@ -25,9 +25,9 @@ import DashboardContent from "@/components/layout/DashboardContent";
 
 Vue.use(VueSideBar);
 
-const separator = {
-	template: `<hr style="border-color: rgba(0, 0, 0, 0.1); margin: 20px;">`
-};
+// const separator = {
+// 	template: `<hr style="border-color: rgba(0, 0, 0, 0.1); margin: 20px;">`
+// };
 export default {
 	name: "App",
 	components: {
@@ -111,9 +111,9 @@ export default {
 					title: "Styling",
 					icon: "fa fa-palette"
 				},
-				{
-					component: separator
-				},
+				// {
+				// 	component: separator
+				// },
 				{
 					header: true,
 					title: "Example",
