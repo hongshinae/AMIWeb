@@ -5,14 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
 		<title></title>
-		<link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css" />
-		<link rel="stylesheet" href="/resources/css/reset.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/resources/css/common.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/resources/css/header_wh.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/resources/css/menu_wh.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/resources/css/contents_wh.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/resources/css/vue.css" type="text/css" media="screen" />
+		<link rel="shortcut icon" type="image/x-icon" href="../resources/images/favicon.ico" />
+		<link rel="stylesheet" href="../resources/css/reset.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/common.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/header.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/menu.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/contents.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/vue.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet" />
 
@@ -23,78 +22,79 @@
 	</head>
 
 	<body>
-		<div class="wrapper">
+		<div class="wrapper status-board">
 			<nav id="sidebar" class="sidebar">
-				<a class="logoWrap"></a>
+				<a class="logoWrap" href="index.html"></a>
 				<ul class="sidebarNav">
 					<li class="on">
 						<a class="facilities" href="#documentation"><i></i><span>설비</span></a>
 						<ul class="subNav">
-							<li class="on"><a>단지 관리</a></li>
-							<li><a>장비 관리</a></li>
-							<li><a>매핑 관리</a></li>
-							<li><a>네트워크 현황</a></li>
-							<li><a>NMS ( SNMP )</a></li>
-							<li><a>서버 현황</a></li>
+							<li class="on"><a href="estate.html">단지 관리</a></li>
+							<li><a href="building.html">동 관리</a></li>
+							<li><a href="equip.html">장비 관리</a></li>
+							<li><a href="mapping.html" target="">매핑 관리</a></li>
+							<li><a href="network.html">네트워크 현황</a></li>
+							<li><a href="nms.html">NMS ( SNMP )</a></li>
+							<li><a href="server.html">서버 현황</a></li>
 						</ul>
 					</li>
 					<li>
 						<a class="read"><i></i><span>검침</span></a>
 						<ul class="subNav">
-							<li><a>검침 현황</a></li>
-							<li><a>검침 조회</a></li>
-							<li><a>검침 정보</a></li>
-							<li><a>월 검침</a></li>
+							<li><a href="MBoard.html">검침 현황</a></li>
+							<li><a href="lookup.html">검침 조회</a></li>
+							<li><a href="info.html">검침 정보</a></li>
+							<li><a href="reading.html">월 검침</a></li>
 						</ul>
 					</li>
 					<li>
 						<a class="charge"><i></i><span>요금</span></a>
 						<ul class="subNav">
-							<li><a>요금</a></li>
-							<li><a>검침 고지서</a></li>
+							<li><a href="">요금</a></li>
+							<li><a href="">검침 고지서</a></li>
 						</ul>
 					</li>
 					<li>
 						<a class="error"><i></i><span>장애</span></a>
 						<ul class="subNav">
-							<li><a>장애 현황</a></li>
-							<li><a>장애/상태코드</a></li>
-							<li><a>네트워크 상태</a></li>
-							<li><a>미 검침 정보</a></li>
+							<li><a href="">장애 현황</a></li>
+							<li><a href="">장애/상태코드</a></li>
+							<li><a href="">네트워크 상태</a></li>
+							<li><a href="">미 검침 정보</a></li>
 						</ul>
 					</li>
 					<li>
 						<a class="analysis"><i></i><span>분석</span></a>
 						<ul class="subNav">
-							<li><a>사용량 통계</a></li>
-							<li><a>최대 수요</a></li>
-							<li><a>장애 발생 빈도</a></li>
-							<li><a>보고서</a></li>
-							<li><a>신뢰성 분석</a></li>
-							<li><a>적시 검침윫 분석</a></li>
+							<li><a href="">사용량 통계</a></li>
+							<li><a href="">최대 수요</a></li>
+							<li><a href="">장애 발생 빈도</a></li>
+							<li><a href="">보고서</a></li>
+							<li><a href="">신뢰성 분석</a></li>
+							<li><a href="">적시 검침윫 분석</a></li>
 						</ul>
 					</li>
 					<li>
 						<a class="customer"><i></i><span>고객 지원</span></a>
 						<ul class="subNav">
-							<li><a>문의 게시판</a></li>
-							<li><a>qa</a></li>
+							<li><a href="ask.html">문의 게시판</a></li>
+							<li><a href="qna.html">qa</a></li>
 						</ul>
 					</li>
 					<li>
 						<a class="set"><i></i><span>설정</span></a>
 						<ul class="subNav">
-							<li><a>사용자 관리</a></li>
-							<li><a>설정 관리</a></li>
+							<li><a href="">사용자 관리</a></li>
+							<li><a href="">설정 관리</a></li>
 						</ul>
 					</li>
 				</ul>
 			</nav>
 			<div class="main">
-				<div class="navWrap shadow">
+				<div class="navWrap">
 					<div class="row">
 						<nav class="navbar navbar-light bg-faded navbar-expand">
-							<a href="#" target="_self" class="navbar-brand"></a>
+							<!--<a href="#" target="_self" class="navbar-brand"></a>-->
 							<a class="sidebar-toggle">
 								<button
 									type="button"
@@ -124,445 +124,325 @@
 						</ul>
 					</div>
 				</div>
-				<div class="main-bg content">
-					<div class="main-location-wrap clearfix">
-						<h1>매핑 정보</h1>
-						<div class="main-location">
-							<div class="home-img">
-								<svg
-									data-v-41be6633=""
-									viewBox="0 0 16 16"
-									width="1.2em"
-									height="1.2em"
-									focusable="false"
-									role="img"
-									aria-label="house"
-									xmlns="http://www.w3.org/2000/svg"
-									fill="currentColor"
-									class="bi-house mx-auto b-icon bi"
-								>
-									<g data-v-41be6633="">
-										<path
-											fill-rule="evenodd"
-											d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-										></path>
-										<path
-											fill-rule="evenodd"
-											d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-										></path>
-									</g>
-								</svg>
-							</div>
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="#" target="_self" class="">홈</a></li>
-								<li class="breadcrumb-item"><a href="#" target="_self" class="">설비</a></li>
-								<li class="breadcrumb-item active"><span aria-current="location">매핑정보</span></li>
-							</ol>
-						</div>
-					</div>
-					<div class="search-wrap clearfix">
-						<div class="wbox whbg">
-							<div class="search-img">
-								<svg
-									viewbox="0 0 16 16"
-									width="1.2em"
-									height="1.2em"
-									focusable="false"
-									role="img"
-									aria-label="search"
-									xmlns="http://www.w3.org/2000/svg"
-									fill="currentColor"
-									class="bi-search mx-auto b-icon bi"
-									data-v-41be6633=""
-								>
-									<g data-v-41be6633="">
-										<path
-											d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-										></path>
-									</g>
-								</svg>
-							</div>
-							<div class="search">
-								<!--검색영역-->
-								<form>
-									<div class="row">
-										<div class="col-lg-4">
-											<div id="" role="group" class="form-group row">
-												<label id="" for="input-1" class="d-block col-lg-4">지역 코드</label>
-												<div class="col-lg-8">
-													<input id="input-1" type="text" placeholder="전기" class="form-control" />
-													<!----><!--<small tabindex="-1" id="input-group-1__BV_description_" class="form-text text-muted"></small>-->
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-4">
-											<div id="" role="group" class="form-group row">
-												<label id="" for="input-2" class="d-block col-lg-4">단지 명</label>
-												<div class="col-lg-8">
-													<input
-														id="input-2"
-														type="text"
-														placeholder="반도 유보라 10차 아파트"
-														class="form-control col"
-													/><!----><!----><!---->
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-4">
-											<div id="" role="group" class="form-group row">
-												<label id="" for="input-3" class="d-block col-lg-4">조회 시간</label>
-												<div class="col-lg-8">
-													<select id="input-3" class="custom-select"
-														><option value="06:00">06:00</option
-														><option value="07:00">07:00</option
-														><option value="08:00">08:00</option
-														><option value="09:00">09:00</option
-														><option value="10:00">10:00</option></select
-													><!----><!----><!---->
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-4">
-											<div id="input-group-1" role="group" class="form-group row">
-												<label id="" for="input-1" class="d-block col-lg-4">지역 코드</label>
-												<div class="col-lg-8">
-													<input id="input-1" type="text" placeholder="전기" class="form-control" />
-													<!----><!--<small tabindex="-1" id="input-group-1__BV_description_" class="form-text text-muted"></small>-->
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-4">
-											<div id="" role="group" class="form-group row">
-												<label id="" for="input-2" class="d-block col-lg-4">단지 명</label>
-												<div class="col-lg-8">
-													<input
-														id="input-2"
-														type="text"
-														placeholder="반도 유보라 10차 아파트"
-														class="form-control col"
-													/><!----><!----><!---->
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-4">
-											<div id="" role="group" class="form-group row">
-												<label id="" for="input-3" class="d-block col-lg-4">조회 시간</label>
-												<div class="col-lg-8">
-													<select id="input-3" class="custom-select"
-														><option value="06:00">06:00</option
-														><option value="07:00">07:00</option
-														><option value="08:00">08:00</option
-														><option value="09:00">09:00</option
-														><option value="10:00">10:00</option></select
-													><!----><!----><!---->
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-								<!--//검색영역-->
-							</div>
-							<div class="btn-wrap ml-auto">
-								<button type="button" class="btn btn-primary btn-block">검 색</button>
-							</div>
-						</div>
-					</div>
+				<div class="content">
 					<div class="row">
+						<!--LEFT-->
 						<div class="col-lg-4">
-							<div class="wbox whbg">
-								<form class="one-row">
-									<div id="" role="group" class="form-group row">
-										<label id="" for="input-1" class="d-block col-lg-4">지역 코드</label>
-										<div class="col-lg-8">
-											<input id="input-1" type="text" placeholder="전기" class="form-control" />
-											<!----><!--<small tabindex="-1" id="input-group-1__BV_description_" class="form-text text-muted"></small>-->
-										</div>
-									</div>
-									<div id="" role="group" class="form-group row">
-										<label id="" for="input-1" class="d-block col-lg-4">지역 코드</label>
-										<div class="col-lg-8">
-											<input id="input-1" type="text" placeholder="전기" class="form-control" />
-											<!----><!--<small tabindex="-1" id="input-group-1__BV_description_" class="form-text text-muted"></small>-->
-										</div>
-									</div>
-									<div id="" role="group" class="form-group row">
-										<label id="" for="input-1" class="d-block col-lg-4">지역 코드</label>
-										<div class="col-lg-8">
-											<input id="input-1" type="text" placeholder="전기" class="form-control" />
-											<!----><!--<small tabindex="-1" id="input-group-1__BV_description_" class="form-text text-muted"></small>-->
-										</div>
-									</div>
-									<div id="" role="group" class="form-group row">
-										<label id="" for="input-1" class="d-block col-lg-4"></label>
-										<div class="col-lg-8">
-											<button type="button" class="btn btn-primary btn-block">검 색</button>
-											<!----><!--<small tabindex="-1" id="input-group-1__BV_description_" class="form-text text-muted"></small>-->
-										</div>
-									</div>
-								</form>
+							<div class="timeWrap">
+								<div class="date">2021.1.23</div>
+								<div class="time">15<span class="blink">:</span>11<span class="blink">:</span>11</div>
 							</div>
-							<div class="wbox whbg">
-								<h5 class="tltle">
-									<i class="icon-arroew"></i>
-									<span>서울아파트 : <i class="p-Color">1007</i> 세대 검침일 : <i class="p-Color">1</i>일</span>
-									<b class=""></b>
+							<div class="box power">
+								<h5>
+									<span>전국 전력 사용량</span>
+									<b class="fontC">45.452kWh</b>
 								</h5>
-								<div class="table-wrap">
-									<table class="table b-table basic-table" id="">
-										<!----><!---->
-										<thead role="rowgroup" class="">
-											<!---->
-											<tr role="row" class="">
-												<th class=""><div>번호</div></th>
-												<th class=""><div>이력날짜</div></th>
-												<th class=""><div>변경수</div></th>
-											</tr>
-										</thead>
-										<tbody role="rowgroup">
-											<!---->
-											<tr role="row" class="">
-												<td class="">1</td>
-												<td class="">2020-12-12 17:21:28</td>
-												<td class="">2</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">1</td>
-												<td class="">2020-12-12 17:21:28</td>
-												<td class="">2</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">1</td>
-												<td class="">2020-12-12 17:21:28</td>
-												<td class="">2</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">1</td>
-												<td class="">2020-12-12 17:21:28</td>
-												<td class="">2</td>
-											</tr>
-											<!----><!---->
-										</tbody>
-										<!---->
-									</table>
+								<div class="chartWarp">
+									<div class="">
+										<img src="/resources/images/charhimg01.png" alt="" title="" />
+									</div>
 								</div>
-								<div class="pa-wrap">
-									<nav aria-hidden="false" aria-label="Pagination">
-										<ul aria-disabled="false" class="pagination b-pagination">
-											<li aria-hidden="true" class="page-item disabled">
-												<span aria-label="Go to first page" aria-disabled="true" class="page-link">«</span>
-											</li>
-											<li aria-hidden="true" class="page-item disabled">
-												<span aria-label="Go to previous page" aria-disabled="true" class="page-link">‹</span>
-											</li>
-											<!----><!---->
-											<li class="page-item">
-												<a
-													href="/docs/components/pagination-nav"
-													class="page-link nuxt-link-active"
-													aria-label="Go to page 1"
-													target="_self"
-													>1</a
-												>
-											</li>
-											<li class="page-item">
-												<a href="/docs/components/pagination-nav?page=2" class="page-link" aria-label="Go to page 2" target="_self"
-													>2</a
-												>
-											</li>
-											<li class="page-item">
-												<a href="/docs/components/pagination-nav?page=3" class="page-link" aria-label="Go to page 3" target="_self"
-													>3</a
-												>
-											</li>
-											<li class="page-item bv-d-xs-down-none">
-												<a href="/docs/components/pagination-nav?page=4" class="page-link" aria-label="Go to page 4" target="_self"
-													>4</a
-												>
-											</li>
-											<li role="separator" class="page-item disabled bv-d-xs-down-none"><span class="page-link">…</span></li>
-											<!---->
-											<li aria-hidden="true" class="page-item disabled">
-												<span aria-label="Go to next page" aria-disabled="true" class="page-link">›</span>
-											</li>
-											<li aria-hidden="true" class="page-item disabled">
-												<span aria-label="Go to last page" aria-disabled="true" class="page-link">»</span>
-											</li>
-										</ul>
-									</nav>
+							</div>
+							<div class="box">
+								<h5>
+									<ul class="inspection">
+										<li>
+											<span>적시 검침률</span>
+											<b class="fontC">99%</b>
+										</li>
+										<li>
+											<span>검침 신뢰성</span>
+											<b class="fontC">100%</b>
+										</li>
+									</ul>
+								</h5>
+								<div class="chartWarp">
+									<div class="">
+										<img src="/resources/images/charhimg02.png" alt="" title="" />
+									</div>
+								</div>
+							</div>
+							<div class="box">
+								<h5>
+									금일 장애
+									<b class="fontC">5건</b>
+								</h5>
+								<div class="chartWarp">
+									<div class="">
+										<img src="/resources/images/charhimg03.png" alt="" title="" />
+									</div>
+								</div>
+							</div>
+							<div class="row double">
+								<div class="col-lg-6">
+									<div class="todayWeather box">
+										<h4>오늘의 날씨</h4>
+										<span class="good"></span>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="detaeWeather box">
+										<h4>데이터 날씨</h4>
+										<span class="good"></span>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-8">
-							<div class="btn-wrap clearfix">
-								<div role="group" class="btn-group">
-									<button type="button" class="btn btn-primary">
-										<svg
-											viewBox="0 0 16 16"
-											width="1em"
-											height="1em"
-											focusable="false"
-											role="img"
-											aria-label="pencil fill"
-											xmlns="http://www.w3.org/2000/svg"
-											fill="currentColor"
-											class="bi-pencil-fill mx-auto b-icon bi"
-											data-v-41be6633=""
+						<!--//LEFT-->
+						<!--CONT-->
+						<div class="col-lg-4">
+							<!--map test-->
+							<div class="highch">
+								<script src="/resources/Highcharts-Maps-8.2.2/code/highmaps.js"></script>
+								<script src="/resources/Highcharts-Maps-8.2.2/code/modules/exporting.js"></script>
+								<script src="/resources/Highcharts-Maps-8.2.2/code/modules/offline-exporting.js"></script>
+								<script src="/resources/Highcharts-Maps-8.2.2/examples/all-areas-as-null/kr-all.js"></script>
+								<script src="/resources/Highcharts-Maps-8.2.2/code/themes/dark-unica.js"></script>
+								<div id="container" style="height: 800px; min-width: 300px; max-width: 500px; margin: 0 auto"></div>
+								<script type="text/javascript">
+									var data = [
+										["kr-4194", 0],
+										["kr-kg", 1],
+										["kr-cb", 2],
+										["kr-kn", 3],
+										["kr-2685", 4],
+										["kr-pu", 5],
+										["kr-2688", 6],
+										["kr-sj", 7],
+										["kr-tj", 8],
+										["kr-ul", 9],
+										["kr-in", 10],
+										["kr-kw", 11],
+										["kr-gn", 12],
+										["kr-cj", 13],
+										["kr-gb", 14],
+										["kr-so", 15],
+										["kr-tg", 16],
+										["kr-kj", 17]
+									];
+
+									// Create the chart
+									Highcharts.mapChart("container", {
+										chart: {
+											map: "countries/kr/kr-all",
+											events: {
+												load: function() {
+													this.mapZoom(0.7);
+												}
+											}
+										},
+
+										title: {
+											text: "Korea"
+										},
+
+										mapNavigation: {
+											enabled: true,
+											buttonOptions: {
+												verticalAlign: "bottom"
+											}
+										},
+
+										colorAxis: {
+											min: 0
+										},
+
+										series: [
+											{
+												data: data,
+												name: "Random data",
+												states: {
+													hover: {
+														color: "#BADA55"
+													}
+												},
+												dataLabels: {
+													enabled: true,
+													format: "{point.name}"
+												}
+											}
+										]
+									});
+								</script>
+							</div>
+							<!--//map test-->
+						</div>
+						<!--//CONT-->
+						<!--RIGHT-->
+						<div class="col-lg-4">
+							<div class="presentMenu">
+								<ul>
+									<li>난방</li>
+									<li>온수</li>
+									<li>수도</li>
+									<li>가스</li>
+									<li class="on">전기</li>
+								</ul>
+							</div>
+							<div class="box">
+								<h5>
+									<span>서버운영정보</span>
+									<b class="fontC">정상</b>
+								</h5>
+								<div class="dutyCycle cpu">
+									<h4>
+										<span class="title">OS CPU 사용률</span>
+										<span class="deta">0.000%</span>
+									</h4>
+									<div class="progress">
+										<div
+											class="progress-bar"
+											role="progressbar"
+											aria-valuenow="60"
+											aria-valuemin="0"
+											aria-valuemax="100"
+											style="width: 60%;"
 										>
-											<g data-v-41be6633="">
-												<path
-													d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
-												></path>
-											</g>
-										</svg>
-										신규 등록
-									</button>
+											<span class="sr-only">60% Complete</span>
+										</div>
+									</div>
 								</div>
-								<div role="group" class="btn-group">
-									<button type="button" class="btn btn-light">엑셀 다운로드</button>
-									<button type="button" class="btn btn-light">전체 연동 확인</button>
-									<button type="button" class="btn btn-light">저장</button>
+								<div class="dutyCycle">
+									<h4>
+										<span class="title">OS CPU 사용률</span>
+										<span class="deta">0.000%</span>
+									</h4>
+									<div class="progress">
+										<div
+											class="progress-bar"
+											role="progressbar"
+											aria-valuenow="60"
+											aria-valuemin="0"
+											aria-valuemax="100"
+											style="width: 60%;"
+										>
+											<span class="sr-only">60% Complete</span>
+										</div>
+									</div>
 								</div>
+								<ul class="serveInfo">
+									<li>
+										<h6>JVMUSED</h6>
+										<span>0.330</span>
+									</li>
+									<li>
+										<h6>JVMFREE</h6>
+										<span>1.243</span>
+									</li>
+									<li>
+										<h6>JVMTOTAL</h6>
+										<span>1.573</span>
+									</li>
+									<li>
+										<h6>JVMMAX</h6>
+										<span>26.665</span>
+									</li>
+								</ul>
 							</div>
-							<div class="table-wrap">
-								<table class="table bgtable b-table table-striped table-hover" id="">
-									<!----><!---->
-									<thead role="rowgroup" class="">
-										<!---->
-										<tr role="row" class="">
-											<th class=""><div>동</div></th>
-											<th class=""><div>호수</div></th>
-											<th class=""><div>METER ID</div></th>
-											<th class=""><div>검침일</div></th>
-											<th class=""><div>MAC ADDR</div></th>
-											<th class=""><div>DCU ID</div></th>
-											<th class=""><div>연동확인</div></th>
-										</tr>
-									</thead>
-									<tbody role="rowgroup">
-										<!---->
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">1006동</td>
-											<td class="">101호</td>
-											<td class="">29140192159</td>
-											<td class="">1일</td>
-											<td class="">00:00:AC:5E:8C:A0:38:63</td>
-											<td class="">NS09_0101A</td>
-											<td class=""><span class="linkage">연동</span></td>
-										</tr>
-										<!----><!---->
-									</tbody>
-									<!---->
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="wbox whbg">
-								<h5 class="tltle">
-									지역별 현황
-									<b class="p-Color">45.452kWh</b>
+							<div class="box">
+								<h5>
+									<span>등록장비</span>
+									<b class="fontC">11건</b>
 								</h5>
-								<div class="chart-wrap">chart</div>
+								<div class="chartWarp">
+									<div class="">
+										<img src="/resources/images/charhimg04.png" alt="" title="" />
+									</div>
+								</div>
+							</div>
+							<div class="box">
+								<h5>
+									지역별 사용
+								</h5>
+								<div class="tableWarp">
+									<div class="tableContainer">
+										<table class="tableContent table">
+											<thead>
+												<tr>
+													<th>지역</th>
+													<th>사용</th>
+													<th>사용량 quater</th>
+													<th>데이터A</th>
+													<th>데이터A quater</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>서울</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>인천</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>강원</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>경기</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>충북</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>대전</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>나주</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>경북</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>제주</td>
+													<td>254</td>
+													<td></td>
+													<td>11</td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col-lg-3">
-							<div class="wbox blbg">
-								<h5 class="tltle">적시 검침률</h5>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="wbox abbg">
-								<h5 class="tltle">검침 신뢰성</h5>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<button type="button" class="btn btn-primary">
-							<b-icon icon="pencil-fill"></b-icon>
-							신규 등록
-						</button>
-						<button type="button" class="btn btn-primary">신규 등록</button>
-						<button type="button" class="btn btn-light">다운로드</button>
-						<button type="button" class="btn btn-blight">블루버튼</button>
+						<!--//RIGHT-->
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<script src="resources/js/vue.js"></script>
-		<script src="resources/js/bootstrap.min.js"></script>
+		<script src="../resources/js/vue.js"></script>
+		<script src="../resources/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	</body>
 </html>

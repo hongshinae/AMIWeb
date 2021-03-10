@@ -58,6 +58,7 @@ $color-bg: #ecf2f6;
 	width: 500px;
 	height: 520px;
 	margin: 0 auto;
+	padding-top: 100px;
 	color: #6c757d;
 	.logo {
 		width: 362px;

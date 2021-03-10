@@ -5,10 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
 		<title></title>
-		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css" />
-		<link rel="stylesheet" href="resources/css/reset.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="resources/css/login.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/resources/css/reset.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/resources/css/login.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 
 		<!--[if lt IE 9]>
@@ -20,22 +20,26 @@
 	</head>
 
 	<body>
-		<div class="loginBg">
+		<div id="app" class="loginBg">
 			<div class="loginWrap">
 				<div class="logo"></div>
 				<div class="lnputWrap">
-					<b-input v-model="text" placeholder="id"></b-input>
-					<b-input v-model="password" placeholder="password"></b-input>
-					<b-button block variant="primary">로그인</b-button>
+					<form action="/dashboard">
+						<input type="text" placeholder="id" class="form-control" id="__BVID__57" /><input
+							type="password"
+							placeholder="password"
+							class="form-control"
+							id="__BVID__58"
+						/><button type="submit" class="btn btn-primary btn-block">로그인</button>
+						<div class="error"></div>
+					</form>
 				</div>
 				<ul>
-					<router-link tag="li" to="">아이디나 비밀번호가 기억나지 않으세요?</router-link>
-					<router-link tag="li" to=""><a>아이디 비밀번호 찾기</a></router-link>
+					<li>아이디나 비밀번호가 기억나지 않으세요?</li>
+					<li><a>아이디 비밀번호 찾기</a></li>
 				</ul>
-				<div class="lnputWrap">
-					<b-button block variant="outline-primary">회원 가입</b-button>
-				</div>
-				<div class="copyright">COPYRIGHT ⓒ CUN GLOBAL Corp.</div>
+				<div class="lnputWrap"><button type="button" class="btn btn-outline-primary btn-block">회원 가입</button></div>
+				<div class="copyright">COPYRIGHT ⓒ CNU GLOBAL Corp.</div>
 			</div>
 		</div>
 	</body>

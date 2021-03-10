@@ -8,7 +8,6 @@ nav.navbar.navbar-light.bg-faded.navbar-expand {
 	float: left;
 }
 ul.nav.infowrap.ml-auto {
-	width: 280px;
 	height: 52px;
 	float: right;
 }
@@ -65,4 +64,15 @@ ul.nav.infowrap.ml-auto {
 .blink {
 	animation: blink 1s step-end infinite;
 	-webkit-animation: blink 1s step-end infinite;
+}
+.btn-excel svg {
+	margin-right: 4px;
+	vertical-align: middle;
+}
+.modal-dialog {
+	position: absolute !important;
+	top: 300px;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
 }
