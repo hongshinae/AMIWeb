@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div>
 		<dashboard-timer v-bind:timer="value"> </dashboard-timer>
 		<button v-on:click="divide">1시간 전으로</button>
 	</div>

@@ -1,5 +1,5 @@
 <template>
-	<div id="app" class="wrapper status-board">
+	<div id="app" class="wrapper status-board" :class="[{ collapsed: collapsed }, { onmobile: isOnMobile }]">
 		<!-- <Menu /> -->
 		<sidebar-menu
 			:menu="menu"
@@ -87,8 +87,8 @@ export default {
 					icon: "fa fa-download"
 				},
 				{
-					href: "/basic-usage",
-					title: "Basic Usage",
+					href: "/estate",
+					title: "설비",
 					icon: "fa fa-code"
 				},
 				{
@@ -194,3 +194,15 @@ export default {
 	}
 };
 </script>
+<style>
+#app {
+	padding-left: 350px;
+	transition: 0.3s ease;
+}
+#app.collapsed {
+	padding-left: 50px;
+}
+#app.onmobile {
+	padding-left: 50px;
+}
+</style>
