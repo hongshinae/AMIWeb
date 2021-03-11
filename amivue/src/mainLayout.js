@@ -6,6 +6,7 @@ import "es6-promise/auto";
 // Main css
 import "@/assets/css/common.css";
 import "@/assets/css/reset.css";
+import "@/assets/css/menu.css";
 
 // Main scss
 import "@/assets/scss/style.scss";

@@ -1,14 +1,19 @@
 <template>
 	<div id="app" class="wrapper status-board" :class="[{ collapsed: collapsed }, { onmobile: isOnMobile }]">
 		<!-- <Menu /> -->
-		<sidebar-menu
-			:menu="menu"
-			:collapsed="collapsed"
-			:theme="selectedTheme"
-			:show-one-child="true"
-			@toggle-collapse="onToggleCollapse"
-			@item-click="onItemClick"
-		/>
+		<div>
+			<sidebar-menu
+				:width="width"
+				:widthCollapsed="widthCollapsed"
+				:hideToggle="footHideToggle"
+				:menu="menu"
+				:collapsed="collapsed"
+				:theme="selectedTheme"
+				:show-one-child="true"
+				@toggle-collapse="onToggleCollapse"
+				@item-click="onItemClick"
+			/>
+		</div>
 		<div class="main">
 			<Header />
 			<Dashboard-Content />
@@ -22,6 +27,7 @@ import VueSideBar from "@/components/plugin/VueSideBar";
 // import Menu from "@/components/layout/Menu";
 import Header from "@/components/layout/Header";
 import DashboardContent from "@/components/layout/DashboardContent";
+import Logo from "@/components/Logo";
 
 Vue.use(VueSideBar);
 
@@ -62,7 +68,10 @@ export default {
 	},
 	data() {
 		return {
-			collapsed: false,
+			width: "260px",
+			widthCollapsed: "50px",
+			footHideToggle: false,
+			collapsed: true,
 			themes: [
 				{
 					name: "Default theme",
@@ -73,119 +82,122 @@ export default {
 					input: "white-theme"
 				}
 			],
-			selectedTheme: "white-theme",
+			selectedTheme: "black-theme",
 			isOnMobile: false,
 			menu: [
 				{
-					header: true,
-					title: "Getting Started",
-					hiddenOnCollapse: true
+					component: Logo
 				},
 				{
-					href: "/",
-					title: "Installation",
-					icon: "fa fa-download"
-				},
-				{
-					href: "/estate",
+					href: "",
 					title: "설비",
-					icon: "fa fa-code"
-				},
-				{
-					header: true,
-					title: "Usage",
-					hiddenOnCollapse: true
-				},
-				{
-					href: "/props",
-					title: "Props",
-					icon: "fa fa-cogs"
-				},
-				{
-					href: "/events",
-					title: "Events",
-					icon: "fa fa-bell"
-				},
-				{
-					href: "/styling",
-					title: "Styling",
-					icon: "fa fa-palette"
-				},
-				// {
-				// 	component: separator
-				// },
-				{
-					header: true,
-					title: "Example",
-					hiddenOnCollapse: true
-				},
-				{
-					href: "/disabled",
-					title: "Disabled page",
-					icon: "fa fa-lock",
-					disabled: true
-				},
-				{
-					title: "Badge",
-					icon: "fa fa-cog",
-					badge: {
-						text: "new",
-						class: "vsm--badge_default"
-					}
-				},
-				{
-					href: "/page",
-					title: "Dropdown Page",
-					icon: "fa fa-list-ul",
+					icon: "fa fa-download",
 					child: [
 						{
-							href: "/page/sub-page-1",
-							title: "Sub Page 01",
-							icon: "fa fa-file-alt"
+							href: "/estate",
+							title: "단지관리",
+							icon: ""
 						},
 						{
-							href: "/page/sub-page-2",
-							title: "Sub Page 02",
-							icon: "fa fa-file-alt"
+							href: "/building",
+							title: "동관리",
+							icon: ""
+						},
+						{
+							href: "/equipment",
+							title: "장비관리",
+							icon: ""
+						},
+						{
+							href: "/mapping",
+							title: "매핑관리",
+							icon: ""
+						},
+						{
+							href: "/network",
+							title: "네트워크현황",
+							icon: ""
+						},
+						{
+							href: "/nms",
+							title: "NMS",
+							icon: ""
+						},
+						{
+							href: "/server",
+							title: "서버현황",
+							icon: ""
 						}
 					]
 				},
 				{
-					title: "Multiple Level",
-					icon: "fa fa-list-alt",
+					href: "",
+					title: "검침",
+					icon: "fa fa-code",
 					child: [
 						{
-							title: "page"
+							href: "/MBoard",
+							title: "검침현황",
+							icon: ""
 						},
 						{
-							title: "Level 2 ",
-							child: [
-								{
-									title: "page"
-								},
-								{
-									title: "Page"
-								}
-							]
+							href: "/lookup",
+							title: "검침조회",
+							icon: ""
 						},
 						{
-							title: "Page"
+							href: "/info",
+							title: "검침정보",
+							icon: ""
 						},
 						{
-							title: "Another Level 2",
-							child: [
-								{
-									title: "Level 3",
-									child: [
-										{
-											title: "Page"
-										},
-										{
-											title: "Page"
-										}
-									]
-								}
-							]
+							href: "/regular",
+							title: "월검침",
+							icon: ""
+						}
+					]
+				},
+				{
+					href: "",
+					title: "장애",
+					icon: "fa fa-cogs",
+					child: [
+						{
+							href: "/FBoard",
+							title: "장애현황",
+							icon: ""
+						},
+						{
+							href: "/code",
+							title: "상태코드관리",
+							icon: ""
+						},
+						{
+							href: "/status",
+							title: "네트워크상태",
+							icon: ""
+						},
+						{
+							href: "/reading",
+							title: "미검침정보",
+							icon: ""
+						}
+					]
+				},
+				{
+					href: "",
+					title: "고객지원",
+					icon: "fa fa-palette",
+					child: [
+						{
+							href: "/ask",
+							title: "문의게시판",
+							icon: ""
+						},
+						{
+							href: "/qna",
+							title: "QnA",
+							icon: ""
 						}
 					]
 				}
@@ -196,7 +208,7 @@ export default {
 </script>
 <style>
 #app {
-	padding-left: 350px;
+	padding-left: 260px;
 	transition: 0.3s ease;
 }
 #app.collapsed {
