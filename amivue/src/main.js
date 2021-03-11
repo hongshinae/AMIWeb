@@ -13,6 +13,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import GlobalDirectives from "@/globalDirectives";
 import MainLayout from "@/mainLayout";
+import i18n from "./i18n";
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue);
@@ -28,5 +29,6 @@ new Vue({
 	store,
 	config,
 	Promise,
+	i18n,
 	render: h => h(App)
 }).$mount("#app");
