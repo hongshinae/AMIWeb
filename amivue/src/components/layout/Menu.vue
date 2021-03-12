@@ -1,71 +1,190 @@
 <template>
-	<b-sidebar id="sidebar-1" title="" shadow>
-		<b-nav id="sidebar" class="sidebar" tabs justified vertical>
-			<router-link class="logoWrap" to="/dashboard"></router-link>
-			<menu-sub-slot :uri="menu">
-				<template v-slot:link :to="equipmentManagement"> </template>
-			</menu-sub-slot>
-			<ul class="sidebarNav">
-				<li class="on">
-					<a class="facilities"><i></i><span>설비</span></a>
-					<ul class="subNav">
-						<router-link tag="li" to="/estate"><a>단지관리</a></router-link>
-						<router-link tag="li" to="/building"><a>동관리</a></router-link>
-						<router-link tag="li" to="/equipment"><a>장비관리</a></router-link>
-						<router-link tag="li" to="/mapping"><a>매핑관리</a></router-link>
-						<router-link tag="li" to="/network"><a>네트워크현황</a></router-link>
-						<router-link tag="li" to="/nms"><a>NMS</a></router-link>
-						<router-link tag="li" to="/server"><a>서버현황</a></router-link>
-					</ul>
-				</li>
-				<li class="on">
-					<a class="read"><i></i><span>검침</span></a>
-					<ul class="subNav">
-						<router-link tag="li" to="/metering"><a>test</a></router-link>
-						<router-link tag="li" to="/meteringStatus"><a>검침 현황</a></router-link>
-						<router-link tag="li" to="/meteringInquiry"><a>검침 조회</a></router-link>
-						<router-link tag="li" to="/meteringInformation"><a>검침 정보</a></router-link>
-						<router-link tag="li" to="/monthMetering"><a>월 검침</a></router-link>
-					</ul>
-				</li>
-				<li class="on">
-					<a class="error"><i></i><span>장애</span></a>
-					<ul class="subNav">
-						<router-link tag="li" to="/disabilityStatus"><a>장애 현황</a></router-link>
-						<router-link tag="li" to="/disabilityStatusCode"><a>장애/상태코드</a></router-link>
-						<router-link tag="li" to="/networkStatus"><a>네트워크 상태</a></router-link>
-						<router-link tag="li" to="/unMeteringInformation"><a>미검침 정보</a></router-link>
-					</ul>
-				</li>
-				<li class="on">
-					<a class="customer"><i></i><span>고객 지원</span></a>
-					<ul class="subNav">
-						<router-link tag="li" to="/board"><a>문의 게시판</a></router-link>
-						<router-link tag="li" to="/qa"><a>QA</a></router-link>
-					</ul>
-				</li>
-			</ul>
-		</b-nav>
-	</b-sidebar>
+	<sidebar-menu
+		:width="width"
+		:widthCollapsed="widthCollapsed"
+		:hideToggle="footHideToggle"
+		:menu="menu"
+		:collapsed="collapsed"
+		:theme="selectedTheme"
+		:show-one-child="true"
+		@toggle-collapse="onToggleCollapse"
+		@item-click="onItemClick"
+		:class="[{ collapsed: collapsed }, { onmobile: isOnMobile }]"
+	/>
 </template>
 
 <script>
 // Menu css
 import "@/assets/css/menu.css";
-import MenuSubSlot from "@/components/MenuSubSlot";
+import Vue from "vue";
+import VueSideBar from "@/components/plugin/VueSideBar";
+import Logo from "@/components/Logo";
+
+Vue.use(VueSideBar);
 export default {
-	name: "Menu",
-	components: {
-		MenuSubSlot
+	name: "App",
+	mounted() {
+		this.onResize();
+		window.addEventListener("resize", this.onResize);
+	},
+	methods: {
+		onToggleCollapse(collapsed) {
+			console.log(collapsed);
+			this.collapsed = collapsed;
+			this.$emit("toggle-collapse", this.collapsed);
+		},
+		onItemClick(/*event, item, node*/) {
+			console.log("onItemClick");
+			// console.log(event)
+			// console.log(item)
+			// console.log(node)
+		},
+		onResize() {
+			if (window.innerWidth <= 767) {
+				this.isOnMobile = true;
+				this.collapsed = true;
+			} else {
+				this.isOnMobile = false;
+				this.collapsed = false;
+			}
+		}
 	},
 	data() {
 		return {
-			menu: {
-				complexManagement: {
-					name: "",
-					uri: ""
+			width: "239px",
+			widthCollapsed: "50px",
+			footHideToggle: false,
+			collapsed: true,
+			themes: [
+				{
+					name: "Default theme",
+					input: ""
+				},
+				{
+					name: "White theme",
+					input: "white-theme"
 				}
-			}
+			],
+			selectedTheme: "black-theme",
+			isOnMobile: false,
+			menu: [
+				{
+					component: Logo
+				},
+				{
+					href: "",
+					title: "설비",
+					icon: "fa fa-download",
+					child: [
+						{
+							href: "/estate",
+							title: "단지관리",
+							icon: ""
+						},
+						{
+							href: "/building",
+							title: "동관리",
+							icon: ""
+						},
+						{
+							href: "/equipment",
+							title: "장비관리",
+							icon: ""
+						},
+						{
+							href: "/mapping",
+							title: "매핑관리",
+							icon: ""
+						},
+						{
+							href: "/network",
+							title: "네트워크현황",
+							icon: ""
+						},
+						{
+							href: "/nms",
+							title: "NMS",
+							icon: ""
+						},
+						{
+							href: "/server",
+							title: "서버현황",
+							icon: ""
+						}
+					]
+				},
+				{
+					href: "",
+					title: "검침",
+					icon: "fa fa-code",
+					child: [
+						{
+							href: "/MBoard",
+							title: "검침현황",
+							icon: ""
+						},
+						{
+							href: "/lookup",
+							title: "검침조회",
+							icon: ""
+						},
+						{
+							href: "/info",
+							title: "검침정보",
+							icon: ""
+						},
+						{
+							href: "/regular",
+							title: "월검침",
+							icon: ""
+						}
+					]
+				},
+				{
+					href: "",
+					title: "장애",
+					icon: "fa fa-cogs",
+					child: [
+						{
+							href: "/FBoard",
+							title: "장애현황",
+							icon: ""
+						},
+						{
+							href: "/code",
+							title: "상태코드관리",
+							icon: ""
+						},
+						{
+							href: "/status",
+							title: "네트워크상태",
+							icon: ""
+						},
+						{
+							href: "/reading",
+							title: "미검침정보",
+							icon: ""
+						}
+					]
+				},
+				{
+					href: "",
+					title: "고객지원",
+					icon: "fa fa-palette",
+					child: [
+						{
+							href: "/ask",
+							title: "문의게시판",
+							icon: ""
+						},
+						{
+							href: "/qna",
+							title: "QnA",
+							icon: ""
+						}
+					]
+				}
+			]
 		};
 	}
 };
