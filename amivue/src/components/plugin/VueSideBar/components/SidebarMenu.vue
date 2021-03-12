@@ -101,6 +101,7 @@ export default {
 	},
 	data() {
 		return {
+			isMouseEnter: false,
 			isCollapsed: this.collapsed,
 			mobileItem: null,
 			mobileItemPos: 0,
@@ -115,7 +116,7 @@ export default {
 	},
 	computed: {
 		sidebarWidth() {
-			return this.isCollapsed ? this.widthCollapsed : this.width;
+			return this.isCollapsed && !this.isMouseEnter ? this.widthCollapsed : this.width;
 		},
 		sidebarClass() {
 			return [
@@ -165,9 +166,11 @@ export default {
 	},
 	methods: {
 		onMouseLeave() {
+			this.isMouseEnter = false;
 			this.unsetMobileItem(false, 300);
 		},
 		onMouseEnter() {
+			this.isMouseEnter = true;
 			if (this.isCollapsed) {
 				if (this.mobileItemTimeout) clearTimeout(this.mobileItemTimeout);
 			}
