@@ -5,8 +5,10 @@
 </template>
 
 <script>
-// Menu css
+// Main css
 import "@/assets/css/contents.css";
+// theme css
+import "@/assets/css/contents_wh.css";
 export default {};
 </script>
 
