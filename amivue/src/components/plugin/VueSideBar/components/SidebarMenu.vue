@@ -1,5 +1,5 @@
 <template>
-	<div class="v-sidebar-menu" :class="sidebarClass" :style="[{ 'max-width': sidebarWidth }]" @mouseleave="onMouseLeave" @mouseenter="onMouseEnter">
+	<div class="v-sidebar-menu" :class="sidebarClass" :style="[{ 'max-width': onMouseSidebarWidth }]" @mouseleave="onMouseLeave" @mouseenter="onMouseEnter">
 		<slot name="header" />
 		<div class="vsm--scroll-wrapper" :style="isCollapsed && [rtl ? { 'margin-left': '-17px' } : { 'margin-right': '-17px' }]">
 			<div class="vsm--list" :style="isCollapsed && { width: widthCollapsed }">
@@ -115,8 +115,11 @@ export default {
 		};
 	},
 	computed: {
-		sidebarWidth() {
+		onMouseSidebarWidth() {
 			return this.isCollapsed && !this.isMouseEnter ? this.widthCollapsed : this.width;
+		},
+		sidebarWidth() {
+			return this.isCollapsed ? this.widthCollapsed : this.width;
 		},
 		sidebarClass() {
 			return [
