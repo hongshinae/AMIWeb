@@ -6,6 +6,7 @@
 	<div v-else-if="!isItemHidden" class="vsm--item" :class="[{ 'vsm--item_open': show }]" @mouseover="mouseOverEvent" @mouseout="mouseOutEvent">
 		<sidebar-menu-link :item="item" :class="itemLinkClass" :attributes="item.attributes" @click.native="clickEvent">
 			<sidebar-menu-icon v-if="item.icon && !isMobileItem" :icon="item.icon" />
+			<sidebar-menu-b-icon v-if="item.bicon && !isMobileItem" :icon="item.bicon" />
 			<transition name="fade-animation" :appear="isMobileItem">
 				<template v-if="(isCollapsed && !isFirstLevel) || !isCollapsed || isMobileItem">
 					<span class="vsm--title">{{ item.title }}</span>
@@ -51,6 +52,7 @@
 import pathToRegexp from "path-to-regexp";
 import SidebarMenuLink from "./SidebarMenuLink.vue";
 import SidebarMenuIcon from "./SidebarMenuIcon.vue";
+import SidebarMenuBIcon from "./SidebarMenuBIcon.vue";
 import SidebarMenuBadge from "./SidebarMenuBadge.vue";
 
 export default {
@@ -58,6 +60,7 @@ export default {
 	components: {
 		SidebarMenuLink,
 		SidebarMenuIcon,
+		SidebarMenuBIcon,
 		SidebarMenuBadge
 	},
 	props: {

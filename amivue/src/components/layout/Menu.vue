@@ -74,12 +74,12 @@ export default {
 				{
 					href: "",
 					title: "설비",
-					icon: "fa fa-download",
+					bicon: "exclamation-circle-fill",
 					child: [
 						{
 							href: "/estate",
 							title: "단지관리",
-							icon: ""
+							bicon: "battery-full"
 						},
 						{
 							href: "/building",
