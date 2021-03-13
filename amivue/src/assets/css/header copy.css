@@ -1,14 +1,10 @@
+@charset "utf-8";
 .main .navWrap {
 	height: 52px;
 	padding: 2px;
 	box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.2);
 	background-color: #07132b;
 	padding: 0px 25px;
-}
-.theme_white .main .navWrap {
-	height: 60px;
-	box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.05);
-	background-color: #ffffff;
 }
 .main .navbar a.sidebar-toggle {
 	width: 20px;
@@ -19,9 +15,6 @@
 	cursor: pointer;
 	margin-top: 4px;
 }
-.theme_white .main .navbar a.sidebar-toggle {
-	margin-top: 0px;
-}
 ul.infowrap {
 	height: 52px;
 }
@@ -30,30 +23,18 @@ ul.infowrap li {
 	height: 52px;
 	line-height: 39px;
 }
-.theme_white ul.infowrap li {
-	height: 60px;
-}
 .infowrap a {
 	color: #d3d3d3;
 	font-size: 14px;
 }
-.theme_white .infowrap a {
-	color: #36383a;
-}
 .infowrap a:hover {
 	color: #ffffff;
-}
-.theme_white .infowrap a:hover {
-	color: #3b82ec;
 }
 nav.navbar > a.navbar-brand {
 	width: 152px;
 	height: 22px;
 	display: block;
 	background: url(../images/logo.png) no-repeat;
-}
-.theme_white nav.navbar > a.navbar-brand {
-	background: url(../images/logo_wh.png) no-repeat;
 }
 .main .menu {
 	width: 20px;
@@ -62,42 +43,22 @@ nav.navbar > a.navbar-brand {
 	background: url(../images/img.png) -152px -56px no-repeat;
 	border: 0;
 }
-.theme_white .main .menu {
-	background: url(../images/img_wh.png) -149px -73px no-repeat;
-}
 .infowrap .aram i,
 .infowrap .error i {
 	width: 20px;
 	height: 20px;
 	margin-top: 9px;
 }
-.theme_white .infowrap .aram i,
-.theme_white .infowrap .error i {
-	width: 27px;
-	height: 27px;
-	margin-top: 4px;
-}
 .infowrap .aram a,
 .infowrap .error a {
 	padding: 0.5rem 0;
-}
-.theme_white .infowrap .aram a,
-.theme_white .infowrap .error a {
-	padding: 1.1rem 0;
 }
 .infowrap .aram i {
 	background: url(../images/img.png) -379px -2px no-repeat;
 	display: inline-block;
 }
-.theme_white .infowrap .aram i {
-	background: url(../images/img_wh.png) -367px -13px no-repeat;
-	display: inline-block;
-}
 .infowrap .aram.on i {
 	background: url(../images/img.png) -410px -2px no-repeat;
-}
-.theme_white .infowrap .aram.on i {
-	background: url(../images/img_wh.png) -410px -2px no-repeat;
 }
 .infowrap .error {
 	margin-right: 4px;
@@ -106,16 +67,6 @@ nav.navbar > a.navbar-brand {
 	background: url(../images/img.png) -441px -2px no-repeat;
 	display: inline-block;
 }
-.theme_white .infowrap .error i {
-	background: url(../images/img_wh.png) -438px -13px no-repeat;
-	display: inline-block;
-}
 .infowrap .error.on i {
 	background: url(../images/img.png) -460px -2px no-repeat;
-}
-.theme_white .infowrap .error.on i {
-	background: url(../images/img_wh.png) -460px -2px no-repeat;
-}
-.theme_white .shadow {
-	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
