@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+		<title></title>
+		<link rel="shortcut icon" type="image/x-icon" href="../resources/images/favicon.ico" />
+		<link rel="stylesheet" href="../resources/css/reset.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/common.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/header.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/menu.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/contents.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/vue.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet" />
+
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="wrapper theme_white">
+			<nav id="sidebar" class="sidebar">
+				<a class="logoWrap" href="index.html"></a>
+				<ul class="sidebarNav">
+					<li class="on">
+						<a class="facilities" href="#documentation"><i></i><span>설비</span></a>
+						<ul class="subNav">
+							<li><a href="estate.html">단지 관리</a></li>
+							<li><a href="building.html">동 관리</a></li>
+							<li class="on"><a href="equip.html">장비 관리</a></li>
+							<li><a href="mapping.html">매핑 관리</a></li>
+							<li><a href="network.html">네트워크 현황</a></li>
+							<li><a href="nms.html">NMS ( SNMP )</a></li>
+							<li><a href="server.html">서버 현황</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="read"><i></i><span>검침</span></a>
+						<ul class="subNav">
+							<li><a href="MBoard.html">검침 현황</a></li>
+							<li><a href="lookup.html">검침 조회</a></li>
+							<li><a href="info.html">검침 정보</a></li>
+							<li><a href="reading.html">월 검침</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="charge"><i></i><span>요금</span></a>
+						<ul class="subNav">
+							<li><a href="">요금</a></li>
+							<li><a href="">검침 고지서</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="error"><i></i><span>장애</span></a>
+						<ul class="subNav">
+							<li><a href="">장애 현황</a></li>
+							<li><a href="">장애/상태코드</a></li>
+							<li><a href="">네트워크 상태</a></li>
+							<li><a href="">미 검침 정보</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="analysis"><i></i><span>분석</span></a>
+						<ul class="subNav">
+							<li><a href="">사용량 통계</a></li>
+							<li><a href="">최대 수요</a></li>
+							<li><a href="">장애 발생 빈도</a></li>
+							<li><a href="">보고서</a></li>
+							<li><a href="">신뢰성 분석</a></li>
+							<li><a href="">적시 검침윫 분석</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="customer"><i></i><span>고객 지원</span></a>
+						<ul class="subNav">
+							<li><a href="ask.html">문의 게시판</a></li>
+							<li><a href="qna.html">qa</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="set"><i></i><span>설정</span></a>
+						<ul class="subNav">
+							<li><a href="">사용자 관리</a></li>
+							<li><a href="">설정 관리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<div class="main">
+				<div class="navWrap shadow">
+					<div class="row">
+						<nav class="navbar navbar-light bg-faded navbar-expand">
+							<a class="sidebar-toggle">
+								<button type="button" class="btn menu btn-secondary collapsed"></button>
+							</a>
+						</nav>
+						<ul class="nav infowrap ml-auto">
+							<li class="nav-item error">
+								<a href="#" target="_self" class="nav-link"><i></i></a>
+							</li>
+							<li class="nav-item aram">
+								<a href="#" target="_self" class="nav-link"><i></i></a>
+							</li>
+							<li class="nav-item user">
+								<a href="#" target="_self" class="nav-link disabled">삼성 아파트 홍신애</a>
+							</li>
+							<li class="nav-item uerName">
+								<a href="#" target="_self" class="nav-link">관리자</a>
+							</li>
+							<li class="nav-item logout">
+								<a href="#" target="_self" class="nav-link">로그아웃</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="main-bg content">
+					<div class="main-location-wrap">
+						<h1>장비 관리</h1>
+						<div class="main-location">
+							<div class="home-img">
+								<svg
+									viewBox="0 0 16 16"
+									width="1.2em"
+									height="1.2em"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="currentColor"
+									class="bi-house mx-auto b-icon bi"
+								>
+									<g>
+										<path
+											fill-rule="evenodd"
+											d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+										></path>
+										<path
+											fill-rule="evenodd"
+											d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+										></path>
+									</g>
+								</svg>
+							</div>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#" target="_self" class="">홈</a></li>
+								<li class="breadcrumb-item"><a href="#" target="_self" class="">설비</a></li>
+								<li class="breadcrumb-item active"><span aria-current="location">장비 관리</span></li>
+							</ol>
+						</div>
+					</div>
+					<div class="tab-wrap">
+						<div class="tabs">
+							<div class="">
+								<ul role="tablist" class="nav nav-tabs">
+									<li class="nav-item">
+										<a href="equip.html" target="_self" class="nav-link tab-button active">DCU 관리</a>
+									</li>
+									<li class="nav-item">
+										<a href="equip-meter.html" target="_self" class="nav-link tab-button">METER 관리</a>
+									</li>
+									<li class="nav-item">
+										<a href="equip-gas.html" target="_self" class="nav-link tab-button">가스,수도,온수,난방 관리</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-content">
+								<div class="tab-pane active">
+									<div class="search-wrap1">
+										<div class="wbox">
+											<div class="search-img">
+												<svg
+													viewbox="0 0 16 16"
+													width="1.2em"
+													height="1.2em"
+													xmlns="http://www.w3.org/2000/svg"
+													class="bi-search mx-auto b-icon bi"
+												>
+													<g data-v-41be6633="">
+														<path
+															d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+														></path>
+													</g>
+												</svg>
+											</div>
+											<div class="search">
+												<!--검색영역-->
+												<form>
+													<div class="row">
+														<div class="col-lg-4">
+															<div class="form-group row">
+																<label class="d-block col-lg-4">지역</label>
+																<div class="col-lg-8">
+																	<select class="form-control">
+																		<option value="서울">서울</option>
+																		<option value="경기">경기</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-4">
+															<div id="" role="group" class="form-group row">
+																<label id="" for="input-3" class="d-block col-lg-4">단지 명</label>
+																<div class="col-lg-8">
+																	<input id="input-1" type="text" placeholder="삼성 아파트" class="form-control" />
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-4">
+															<div id="" role="group" class="form-group row">
+																<label id="" for="input-3" class="d-block col-lg-4">DCU ID</label>
+																<div class="col-lg-8">
+																	<input id="input-1" type="text" placeholder="삼성 아파트" class="form-control" />
+																</div>
+															</div>
+														</div>
+													</div>
+												</form>
+												<!--//검색영역-->
+											</div>
+											<div class="btn-wrap ml-auto">
+												<button type="button" class="btn btn-primary btn-block">검 색</button>
+											</div>
+										</div>
+									</div>
+									<div class="btn-wrap">
+										<div role="group" class="btn-group">
+											<button type="button" class="btn btn-primary">
+												<svg
+													viewBox="0 0 16 16"
+													width="1em"
+													height="1em"
+													focusable="false"
+													role="img"
+													aria-label="pencil fill"
+													xmlns="http://www.w3.org/2000/svg"
+													fill="currentColor"
+													class="bi-pencil-fill mx-auto b-icon bi"
+													data-v-41be6633=""
+												>
+													<g data-v-41be6633="">
+														<path
+															d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
+														></path>
+													</g>
+												</svg>
+												DCU 신규 등록
+											</button>
+										</div>
+										<div role="group" class="btn-group">
+											<button type="button" class="btn btn-light btn-excel">
+												<?xml version="1.0" ?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'
+												><svg
+													enable-background="new 0 0 10 10"
+													height="10px"
+													id="Layer_1"
+													version="1.1"
+													viewBox="0 0 30 30"
+													width="10px"
+													xml:space="preserve"
+													xmlns="http://www.w3.org/2000/svg"
+													xmlns:xlink="http://www.w3.org/1999/xlink"
+												>
+													<g>
+														<polyline
+															clip-rule="evenodd"
+															fill="#08743B"
+															fill-rule="evenodd"
+															points="30,28.652 0,28.652 0,0 30,0 30,28.652  "
+														/>
+														<polyline
+															fill="#FFFFFF"
+															points="23.211,21.771 18.186,21.771 14.756,16.922 11.154,21.771 6.11,21.771 12.371,13.895 7.313,7.007    12.413,7.007 14.781,10.752 17.302,7.007 22.488,7.007 17.189,13.895 23.211,21.771  "
+														/>
+													</g>
+												</svg>
+												엑셀 다운로드
+											</button>
+										</div>
+									</div>
+									<div class="table-wrap">
+										<table class="table bgtable b-table table-striped table-hover">
+											<thead role="rowgroup" class="">
+												<tr role="row" class="">
+													<th class=""><div>지역​</div></th>
+													<th class=""><div>단지명​</div></th>
+													<th class=""><div>설치동명​</div></th>
+													<th class=""><div>DCU ID​</div></th>
+													<th class=""><div>IP</div></th>
+													<th class=""><div>LTE장비 IP​</div></th>
+													<th class=""><div>Firmware​​</div></th>
+													<th class=""><div>Modem​​</div></th>
+													<th class=""><div>Meter</div></th>
+													<th class=""><div>비고</div></th>
+												</tr>
+											</thead>
+											<tbody role="rowgroup">
+												<tr role="row" class="">
+													<td class="">서울</td>
+													<td class="">서울아파트​</td>
+													<td class="">101동​</td>
+													<td class="">NS09_0101A​</td>
+													<td class="">20.101.235.100</td>
+													<td class="">20.101.235.254</td>
+													<td class="">2.3​</td>
+													<td class="">55​</td>
+													<td class="">110</td>
+													<td class=""><button class="btn btn-primary">상세정보</button></td>
+												</tr>
+												<tr role="row" class="">
+													<td class="">서울</td>
+													<td class="">서울아파트​</td>
+													<td class="">101동​</td>
+													<td class="">NS09_0101A​</td>
+													<td class="">20.101.235.100</td>
+													<td class="">20.101.235.254</td>
+													<td class="">2.3​</td>
+													<td class="">55​</td>
+													<td class="">110</td>
+													<td class=""><button class="btn btn-primary">상세정보</button></td>
+												</tr>
+												<tr role="row" class="">
+													<td class="">서울</td>
+													<td class="">서울아파트​</td>
+													<td class="">101동​</td>
+													<td class="">NS09_0101A​</td>
+													<td class="">20.101.235.100</td>
+													<td class="">20.101.235.254</td>
+													<td class="">2.3​</td>
+													<td class="">55​</td>
+													<td class="">110</td>
+													<td class=""><button class="btn btn-primary">상세정보</button></td>
+												</tr>
+												<tr role="row" class="">
+													<td class="">서울</td>
+													<td class="">서울아파트​</td>
+													<td class="">101동​</td>
+													<td class="">NS09_0101A​</td>
+													<td class="">20.101.235.100</td>
+													<td class="">20.101.235.254</td>
+													<td class="">2.3​</td>
+													<td class="">55​</td>
+													<td class="">110</td>
+													<td class=""><button class="btn btn-primary">상세정보</button></td>
+												</tr>
+												<tr role="row" class="">
+													<td class="">서울</td>
+													<td class="">서울아파트​</td>
+													<td class="">101동​</td>
+													<td class="">NS09_0101A​</td>
+													<td class="">20.101.235.100</td>
+													<td class="">20.101.235.254</td>
+													<td class="">2.3​</td>
+													<td class="">55​</td>
+													<td class="">110</td>
+													<td class=""><button class="btn btn-primary">상세정보</button></td>
+												</tr>
+												<tr role="row" class="">
+													<td class="">서울</td>
+													<td class="">서울아파트​</td>
+													<td class="">101동​</td>
+													<td class="">NS09_0101A​</td>
+													<td class="">20.101.235.100</td>
+													<td class="">20.101.235.254</td>
+													<td class="">2.3​</td>
+													<td class="">55​</td>
+													<td class="">110</td>
+													<td class=""><button class="btn btn-primary">상세정보</button></td>
+												</tr>
+												<tr role="row" class="">
+													<td class="">서울</td>
+													<td class="">서울아파트​</td>
+													<td class="">101동​</td>
+													<td class="">NS09_0101A​</td>
+													<td class="">20.101.235.100</td>
+													<td class="">20.101.235.254</td>
+													<td class="">2.3​</td>
+													<td class="">55​</td>
+													<td class="">110</td>
+													<td class=""><button class="btn btn-primary">상세정보</button></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="pa-wrap">
+										<nav aria-label="Pagination">
+											<ul class="pagination b-pagination">
+												<li class="page-item disabled">
+													<span class="page-link">«</span>
+												</li>
+												<li class="page-item disabled">
+													<span class="page-link">‹</span>
+												</li>
+												<li class="page-item">
+													<a href="" class="page-link nuxt-link-active" target="_self">1</a>
+												</li>
+												<li class="page-item">
+													<a href="" class="page-link" target="_self">2</a>
+												</li>
+												<li class="page-item">
+													<a href="" class="page-link" target="_self">3</a>
+												</li>
+												<li class="page-item bv-d-xs-down-none">
+													<a href="" class="page-link" target="_self">4</a>
+												</li>
+												<li class="page-item disabled bv-d-xs-down-none"><span class="page-link">…</span></li>
+												<li class="page-item disabled">
+													<span class="page-link">›</span>
+												</li>
+												<li aclass="page-item disabled">
+													<span class="page-link">»</span>
+												</li>
+											</ul>
+										</nav>
+									</div>
+									<div class="map-wrap">
+										<div class="map">
+											<iframe
+												src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.442877125704!2d127.1048765274144!3d37.3964194786602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5809134e293f%3A0x88afd0f7bd09e638!2z7YyQ6rWQ7Jet!5e0!3m2!1sko!2skr!4v1615713261342!5m2!1sko!2skr"
+												width="100%"
+												height="300"
+												style="border:0;"
+												allowfullscreen=""
+												loading="lazy"
+											></iframe>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../resources/js/vue.js"></script>
+		<script src="../resources/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	</body>
+</html>

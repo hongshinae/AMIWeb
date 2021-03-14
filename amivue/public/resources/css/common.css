@@ -24,9 +24,7 @@ body {
 	height: 100%;
 	font-family: "Nanum Gothic", sans-serif !important;
 }
-.row {
-	margin: 0 !important;
-}
+
 .row:after {
 	clear: inherit !important;
 }

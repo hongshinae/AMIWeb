@@ -1,3 +1,4 @@
+@charset "utf-8";
 .main .navWrap {
 	height: 52px;
 	padding: 2px;
@@ -13,9 +14,6 @@
 .main .navbar a.sidebar-toggle {
 	width: 20px;
 	height: 20px;
-	display: block;
-	float: left;
-	overflow: hidden;
 	cursor: pointer;
 	margin-top: 4px;
 }
@@ -26,9 +24,9 @@ ul.infowrap {
 	height: 52px;
 }
 ul.infowrap li {
-	float: left;
 	height: 52px;
 	line-height: 39px;
+	float: left;
 }
 .theme_white ul.infowrap li {
 	height: 60px;

@@ -8,9 +8,9 @@
 		<link rel="shortcut icon" type="image/x-icon" href="../resources/images/favicon.ico" />
 		<link rel="stylesheet" href="../resources/css/reset.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="../resources/css/common.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="../resources/css/header_wh.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="../resources/css/menu_wh.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="../resources/css/contents_wh.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/header.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/menu.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../resources/css/contents.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="../resources/css/vue.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet" />
@@ -22,7 +22,7 @@
 	</head>
 
 	<body>
-		<div class="wrapper">
+		<div class="wrapper theme_white">
 			<nav id="sidebar" class="sidebar">
 				<a class="logoWrap" href="index.html"></a>
 				<ul class="sidebarNav">
@@ -94,15 +94,8 @@
 				<div class="navWrap shadow">
 					<div class="row">
 						<nav class="navbar navbar-light bg-faded navbar-expand">
-							<!--<a href="#" target="_self" class="navbar-brand"></a>-->
 							<a class="sidebar-toggle">
-								<button
-									type="button"
-									class="btn menu btn-secondary collapsed"
-									aria-expanded="false"
-									aria-controls="sidebar-1"
-									style="overflow-anchor: none;"
-								></button>
+								<button type="button" class="btn menu btn-secondary collapsed"></button>
 							</a>
 						</nav>
 						<ul class="nav infowrap ml-auto">
@@ -113,7 +106,7 @@
 								<a href="#" target="_self" class="nav-link"><i></i></a>
 							</li>
 							<li class="nav-item user">
-								<a href="#" target="_self" tabindex="-1" aria-disabled="true" class="nav-link disabled">삼성 아파트 홍신애</a>
+								<a href="#" target="_self" class="nav-link disabled">삼성 아파트 홍신애</a>
 							</li>
 							<li class="nav-item uerName">
 								<a href="#" target="_self" class="nav-link">관리자</a>
@@ -125,23 +118,19 @@
 					</div>
 				</div>
 				<div class="main-bg content">
-					<div class="main-location-wrap clearfix">
+					<div class="main-location-wrap">
 						<h1>동 관리</h1>
 						<div class="main-location">
 							<div class="home-img">
 								<svg
-									data-v-41be6633=""
 									viewBox="0 0 16 16"
 									width="1.2em"
 									height="1.2em"
-									focusable="false"
-									role="img"
-									aria-label="house"
 									xmlns="http://www.w3.org/2000/svg"
 									fill="currentColor"
 									class="bi-house mx-auto b-icon bi"
 								>
-									<g data-v-41be6633="">
+									<g>
 										<path
 											fill-rule="evenodd"
 											d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
@@ -160,21 +149,10 @@
 							</ol>
 						</div>
 					</div>
-					<div class="search-wrap clearfix">
-						<div class="wbox whbg">
+					<div class="search-wrap1">
+						<div class="wbox">
 							<div class="search-img">
-								<svg
-									viewbox="0 0 16 16"
-									width="1.2em"
-									height="1.2em"
-									focusable="false"
-									role="img"
-									aria-label="search"
-									xmlns="http://www.w3.org/2000/svg"
-									fill="currentColor"
-									class="bi-search mx-auto b-icon bi"
-									data-v-41be6633=""
-								>
+								<svg viewBox="0 0 16 16" width="1.2em" height="1.2em" xmlns="http://www.w3.org/2000/svg" class="bi-search mx-auto b-icon bi">
 									<g data-v-41be6633="">
 										<path
 											d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
@@ -187,13 +165,13 @@
 								<form>
 									<div class="row">
 										<div class="col-lg-4">
-											<div id="" role="group" class="form-group row">
-												<label id="" for="input-2" class="d-block col-lg-4">지역​</label>
+											<div class="form-group row">
+												<label class="d-block col-lg-4">지역</label>
 												<div class="col-lg-8">
-													<select id="s" class="form-control"
-														><option value="서울">서울</option
-														><option value="경기">경기</option></select
-													><!----><!----><!---->
+													<select class="form-control">
+														<option value="서울">서울</option>
+														<option value="경기">경기</option>
+													</select>
 												</div>
 											</div>
 										</div>
@@ -201,8 +179,7 @@
 											<div id="" role="group" class="form-group row">
 												<label id="" for="input-3" class="d-block col-lg-4">단지 명</label>
 												<div class="col-lg-8">
-													<input id="input-1" type="text" placeholder="전기" class="form-control" />
-													<!----><!--<small tabindex="-1" id="input-group-1__BV_description_" class="form-text text-muted"></small>-->
+													<input id="input-1" type="text" placeholder="삼성 아파트" class="form-control" />
 												</div>
 											</div>
 										</div>
@@ -215,157 +192,143 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="btn-wrap clearfix">
-								<div role="group" class="btn-group">
-									<button type="button" class="btn btn-primary">
-										<svg
-											viewBox="0 0 16 16"
-											width="1em"
-											height="1em"
-											focusable="false"
-											role="img"
-											aria-label="pencil fill"
-											xmlns="http://www.w3.org/2000/svg"
-											fill="currentColor"
-											class="bi-pencil-fill mx-auto b-icon bi"
-											data-v-41be6633=""
-										>
-											<g data-v-41be6633="">
-												<path
-													d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
-												></path>
-											</g>
-										</svg>
-										신규 동 등록
-									</button>
-								</div>
-								<div role="group" class="btn-group">
-									<button type="button" class="btn btn-light btn-excel">
-										<?xml version="1.0" ?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'
-										><svg
-											enable-background="new 0 0 10 10"
-											height="10px"
-											id="Layer_1"
-											version="1.1"
-											viewBox="0 0 30 30"
-											width="10px"
-											xml:space="preserve"
-											xmlns="http://www.w3.org/2000/svg"
-											xmlns:xlink="http://www.w3.org/1999/xlink"
-										>
-											<g>
-												<polyline
-													clip-rule="evenodd"
-													fill="#08743B"
-													fill-rule="evenodd"
-													points="30,28.652 0,28.652 0,0 30,0 30,28.652  "
-												/>
-												<polyline
-													fill="#FFFFFF"
-													points="23.211,21.771 18.186,21.771 14.756,16.922 11.154,21.771 6.11,21.771 12.371,13.895 7.313,7.007    12.413,7.007 14.781,10.752 17.302,7.007 22.488,7.007 17.189,13.895 23.211,21.771  "
-												/>
-											</g>
-										</svg>
-										엑셀 다운로드
-									</button>
-								</div>
-							</div>
-							<div class="table-wrap">
-								<table class="table bgtable b-table table-striped table-hover" id="">
-									<!----><!---->
-									<thead role="rowgroup" class="">
-										<!---->
-										<tr role="row" class="">
-											<th class="center-block"><div>지역</div></th>
-											<th class=""><div>단지(아파트,상가)명​</div></th>
-											<th class=""><div>동​</div></th>
-											<th class=""><div>DCU ID​​</div></th>
-											<th class=""><div>데이터 연동​</div></th>
-											<th class=""><div>상세정보</div></th>
-											<th class=""><div></div></th>
-											<th class="center-block"><div></div></th>
-										</tr>
-									</thead>
-									<tbody role="rowgroup">
-										<!---->
-										<tr role="row" class="">
-											<td class="">서울</td>
-											<td class="">서울아파트​</td>
-											<td class="">101</td>
-											<td class="">DCU_1​</td>
-											<td class=""><서울시></td>
-											<td class="">1234</td>
-											<td class="">5종</td>
-											<td class=""><button class="btn btn-primary">상세정보</button></td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">SE01</td>
-											<td class="">서울아파트​</td>
-											<td class="">1011​</td>
-											<td class="">서울</td>
-											<td class="">서울시</td>
-											<td class="">1234</td>
-											<td class="">5종</td>
-											<td class="">
-												<button id="testBtn" class="btn btn-primary">상세정보</button>
-											</td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">SE01</td>
-											<td class="">서울아파트​</td>
-											<td class="">1011​</td>
-											<td class="">서울</td>
-											<td class="">서울시</td>
-											<td class="">1234</td>
-											<td class="">5종</td>
-											<td class="">
-												<button id="testBtn" class="btn btn-primary btn-group-xs">상세정보</button>
-											</td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">SE01</td>
-											<td class="">서울아파트​</td>
-											<td class="">1011​</td>
-											<td class="">서울</td>
-											<td class="">서울시</td>
-											<td class="">1234</td>
-											<td class="">5종</td>
-											<td class="">
-												<button id="testBtn" class="btn btn-primary">상세정보</button>
-											</td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">SE01</td>
-											<td class="">서울아파트​</td>
-											<td class="">1011​</td>
-											<td class="">서울</td>
-											<td class="">서울시</td>
-											<td class="">1234</td>
-											<td class="">5종</td>
-											<td class="">
-												<button id="testBtn" class="btn btn-primary">상세정보</button>
-											</td>
-										</tr>
-										<tr role="row" class="">
-											<td class="">SE01</td>
-											<td class="">서울아파트​</td>
-											<td class="">1011​</td>
-											<td class="">서울</td>
-											<td class="">서울시</td>
-											<td class="">1234</td>
-											<td class="">5종</td>
-											<td class="">
-												<button id="testBtn" class="btn btn-primary">상세정보</button>
-											</td>
-										</tr>
-										<!----><!---->
-									</tbody>
-									<!---->
-								</table>
-							</div>
+					<div class="btn-wrap">
+						<div role="group" class="btn-group">
+							<button type="button" class="btn btn-primary">
+								<svg
+									viewBox="0 0 16 16"
+									width="1em"
+									height="1em"
+									focusable="false"
+									role="img"
+									aria-label="pencil fill"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="currentColor"
+									class="bi-pencil-fill mx-auto b-icon bi"
+									data-v-41be6633=""
+								>
+									<g data-v-41be6633="">
+										<path
+											d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
+										></path>
+									</g>
+								</svg>
+								신규 등록
+							</button>
 						</div>
+						<div role="group" class="btn-group">
+							<button type="button" class="btn btn-light btn-excel">
+								<?xml version="1.0" ?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'
+								><svg
+									enable-background="new 0 0 10 10"
+									height="10px"
+									id="Layer_1"
+									version="1.1"
+									viewBox="0 0 30 30"
+									width="10px"
+									xml:space="preserve"
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+								>
+									<g>
+										<polyline clip-rule="evenodd" fill="#08743B" fill-rule="evenodd" points="30,28.652 0,28.652 0,0 30,0 30,28.652  " />
+										<polyline
+											fill="#FFFFFF"
+											points="23.211,21.771 18.186,21.771 14.756,16.922 11.154,21.771 6.11,21.771 12.371,13.895 7.313,7.007    12.413,7.007 14.781,10.752 17.302,7.007 22.488,7.007 17.189,13.895 23.211,21.771  "
+										/>
+									</g>
+								</svg>
+								엑셀 다운로드
+							</button>
+						</div>
+					</div>
+					<div class="table-wrap">
+						<table class="table bgtable b-table table-striped table-hover">
+							<thead role="rowgroup" class="">
+								<tr role="row" class="">
+									<th class=""><div>SI_ID​</div></th>
+									<th class=""><div>단지(아파트,상가)명​</div></th>
+									<th class=""><div>세대수​</div></th>
+									<th class=""><div>지역​</div></th>
+									<th class=""><div>주소​</div></th>
+									<th class=""><div>설치 장비수</div></th>
+									<th class=""><div>검침타입​</div></th>
+									<th class=""><div>​</div></th>
+								</tr>
+							</thead>
+							<tbody role="rowgroup">
+								<tr role="row" class="">
+									<td class="">SE01</td>
+									<td class="">서울아파트​</td>
+									<td class="">1011​</td>
+									<td class="">서울</td>
+									<td class="">서울시</td>
+									<td class="">1234</td>
+									<td class="">5종</td>
+									<td class=""><button class="btn btn-primary">상세정보</button></td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">SE01</td>
+									<td class="">서울아파트​</td>
+									<td class="">1011​</td>
+									<td class="">서울</td>
+									<td class="">서울시</td>
+									<td class="">1234</td>
+									<td class="">5종</td>
+									<td class="">
+										<button id="testBtn" class="btn btn-primary">상세정보</button>
+									</td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">SE01</td>
+									<td class="">서울아파트​</td>
+									<td class="">1011​</td>
+									<td class="">서울</td>
+									<td class="">서울시</td>
+									<td class="">1234</td>
+									<td class="">5종</td>
+									<td class="">
+										<button id="testBtn" class="btn btn-primary btn-group-xs">상세정보</button>
+									</td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">SE01</td>
+									<td class="">서울아파트​</td>
+									<td class="">1011​</td>
+									<td class="">서울</td>
+									<td class="">서울시</td>
+									<td class="">1234</td>
+									<td class="">5종</td>
+									<td class="">
+										<button id="testBtn" class="btn btn-primary">상세정보</button>
+									</td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">SE01</td>
+									<td class="">서울아파트​</td>
+									<td class="">1011​</td>
+									<td class="">서울</td>
+									<td class="">서울시</td>
+									<td class="">1234</td>
+									<td class="">5종</td>
+									<td class="">
+										<button id="testBtn" class="btn btn-primary">상세정보</button>
+									</td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">SE01</td>
+									<td class="">서울아파트​</td>
+									<td class="">1011​</td>
+									<td class="">서울</td>
+									<td class="">서울시</td>
+									<td class="">1234</td>
+									<td class="">5종</td>
+									<td class="">
+										<button id="testBtn" class="btn btn-primary">상세정보</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 					<div class="pa-wrap">
 						<nav aria-label="Pagination">
@@ -376,7 +339,6 @@
 								<li class="page-item disabled">
 									<span class="page-link">‹</span>
 								</li>
-								<!----><!---->
 								<li class="page-item">
 									<a href="" class="page-link nuxt-link-active" target="_self">1</a>
 								</li>
@@ -390,7 +352,6 @@
 									<a href="" class="page-link" target="_self">4</a>
 								</li>
 								<li class="page-item disabled bv-d-xs-down-none"><span class="page-link">…</span></li>
-								<!---->
 								<li class="page-item disabled">
 									<span class="page-link">›</span>
 								</li>
@@ -402,188 +363,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Modal-->
-		<div class="modal-dialog modal-lg hidden">
-			<span></span>
-			<div id="" class="modal-content">
-				<header id="" class="modal-header">
-					<h5 id="" class="modal-title">단지 상세 관리</h5>
-					<button type="button" aria-label="Close" class="close">×</button>
-				</header>
-				<div id="" class="modal-body">
-					<form>
-						<div class="row">
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">SI_ID</label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="SI_ID" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">단지 명</label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">세대 수</label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">주소</label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="input-2" class="d-block col-lg-4">지역​</label>
-									<div class="col-lg-8">
-										<select id="s" class="form-control"
-											><option value="서울">서울</option
-											><option value="경기">경기</option></select
-										>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">연락처</label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">담당자 1 </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">담당자 1 연락처 </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">담당자 2 </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">담당자 2 연락처 </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">설치 DCU수​ </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">설치 모뎀수​ </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">설치 Meter수​​ </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">가스 Meter수​​ </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">수도 Meter수​​​ </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">동 호수​ </label>
-									<div class="col-lg-8">
-										<div class="row">
-											<div class="col-lg-3">101동</div>
-											<div class="col-lg-3"><button class="btn btn-primarl">동 검색</button></div>
-											<div class="col-lg-3">902호</div>
-											<div class="col-lg-3"><button class="btn btn-primarl">호 검색</button></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">기타​​ </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">기타​​ </label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div id="" role="group" class="form-group row">
-									<label id="" for="" class="d-block col-lg-4">검침 타입</label>
-									<div class="col-lg-8">
-										<input id="" type="text" placeholder="" class="form-control" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div></div>
-					</form>
-					<!--//검색영역-->
-					<button type="button" class="btn mt-3 btn-outline-danger btn-block">Close Me</button>
-					<button type="button" class="btn mt-2 btn-outline-warning btn-block">Toggle Me</button>
-				</div>
-				<!---->
-			</div>
-			<span></span>
 		</div>
 		<script src="../resources/js/vue.js"></script>
 		<script src="../resources/js/bootstrap.min.js"></script>
