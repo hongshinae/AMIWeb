@@ -7,7 +7,33 @@
 rect.highcharts-legend-box {
 	fill: none;
 }
-/*dashbord content*/
+.m-b-20 {
+	margin-bottom: 20px;
+}
+.linkage {
+	width: 7px;
+	height: 7px;
+	border-radius: 4px;
+	background: #4bbf73;
+	display: block;
+	margin: auto;
+}
+.unlinkage {
+	width: 7px;
+	height: 7px;
+	border-radius: 4px;
+	background: #d9534f;
+	display: block;
+	margin: auto;
+}
+.small {
+	font-size: 1rem;
+}
+table input[type="checkbox"] {
+	height: 16px;
+	vertical-align: middle;
+	line-height: 16px;
+}
 .content {
 	padding: 15px;
 	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
@@ -21,7 +47,7 @@ rect.highcharts-legend-box {
 }
 .main-bg.content > div {
 	padding: 0 8px;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 }
 .main-bg.content .row {
 	margin-right: -15px;
@@ -38,8 +64,16 @@ rect.highcharts-legend-box {
 }
 
 .main-bg.content h5 {
+	height: 30px;
+	line-height: 30px;
+	vertical-align: bottom;
 	font-size: 1.2rem;
-	margin: 0 0 10px 0;
+	margin: 10px 0 15px 0;
+}
+.tltle {
+}
+.tltle .btn-group {
+	float: right;
 }
 .wbox {
 	position: relative;
@@ -184,22 +218,21 @@ select {
 	width: 50px;
 	margin-right: 10px;
 	float: left;
-	padding-top: 5px;
 	position: absolute;
-	top: 10px;
-	left: 15px;
+	top: 24px;
+	left: 25px;
 }
 .search-wrap1 .search,
 .search-wrap2 .search {
 	position: absolute;
 	top: 13px;
-	left: 66px;
-	right: 100px;
+	left: 95px;
+	right: 108px;
 	bottom: 0;
 }
 .search-wrap1 .btn-wrap,
 .search-wrap2 .btn-wrap {
-	right: 15px;
+	right: 19px;
 	bottom: 15px;
 	width: 70px;
 	position: absolute;
@@ -210,8 +243,8 @@ select {
 	height: 100%;
 }
 .search-wrap1 .search-img svg {
-	margin-top: 7px;
-	margin-left: 14px;
+	margin-top: 0px;
+	margin-left: 8px;
 }
 .search-wrap2 .search-img {
 	background: #ecf2f6;
@@ -229,8 +262,9 @@ select {
 }
 
 .btn-wrap {
-	height: 34px;
-	margin-bottom: 15px;
+	height: 31px;
+	line-height: 31px;
+	margin-bottom: 15px !important;
 }
 .btn-wrap .btn-group:first-child {
 	float: left;
@@ -240,6 +274,9 @@ select {
 }
 table {
 	font-size: 0.8rem !important;
+}
+table .error td {
+	color: #d9534f !important;
 }
 .table-wrap,
 .pa-wrap,
@@ -258,6 +295,7 @@ table {
 .theme_white table thead tr th div {
 	font-size: 1.2rem !important;
 	color: #6c757d;
+	text-align: center;
 }
 .theme_white table > tbody > tr > td {
 	line-height: 24px;
@@ -266,6 +304,11 @@ table {
 }
 .bgtable {
 	background: #ffffff;
+	margin-bottom: 0 !important;
+	border-bottom: 1px solid #dee6ed !important;
+}
+.basic-table {
+	border-bottom: 1px solid #dee6ed !important;
 }
 .bgtable > thead > tr > th {
 	height: 35px;
@@ -286,9 +329,10 @@ table {
 	height: 8px;
 	line-height: 8px;
 }
-
-.pa-wrap {
+table input.form-control {
+	padding: 0px 5px !important;
 }
+
 .one-row .form-group.row {
 	height: 34px;
 	margin-bottom: 5px;

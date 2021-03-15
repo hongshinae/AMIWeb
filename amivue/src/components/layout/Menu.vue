@@ -170,7 +170,7 @@ export default {
 				{
 					href: "",
 					title: "고객지원",
-					icon: "fa fa-palette",
+					bicon: "gear-fill",
 					child: [
 						{
 							href: "/ask",
