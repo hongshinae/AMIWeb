@@ -1,5 +1,5 @@
 <template>
-	<div class="main-bg content">
+	<div class="main-bg">
 		<div class="main-location-wrap clearfix">
 			<h1>매핑 정보</h1>
 			<div class="main-location">
@@ -377,8 +377,5 @@ export default {
 		};
 	}
 };
-
-// Header css
-import "@/assets/css/contents_wh.css";
 </script>
 <style lang="scss"></style>
