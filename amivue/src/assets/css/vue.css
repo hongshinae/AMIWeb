@@ -1,0 +1,78 @@
+@charset "utf-8";
+.navbar {
+	margin-bottom: 0 !important;
+}
+nav.navbar.navbar-light.bg-faded.navbar-expand {
+	width: 220px;
+	height: 52px;
+	float: left;
+}
+ul.nav.infowrap.ml-auto {
+	height: 52px;
+	float: right;
+}
+.navbar-brand {
+	padding: 0 !important;
+	margin-right: 1rem;
+	font-size: 1.25rem;
+	line-height: inherit;
+	white-space: nowrap;
+}
+.navbar {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+}
+.nav > li > a:focus,
+.nav > li > a:hover {
+	text-decoration: none;
+	background-color: inherit !important;
+}
+/* for MS계열 브라우저 */
+@keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+
+/* for Chrome, Safari */
+@-webkit-keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+.timeWrap {
+	height: 30px;
+	margin: 0px 0 15px 0;
+	width: 100%;
+}
+.timeWrap .date {
+	float: left;
+}
+.timeWrap .time {
+	float: right;
+	font-size: 1.8em;
+	font-family: alarm_clock;
+}
+.blink {
+	animation: blink 1s step-end infinite;
+	-webkit-animation: blink 1s step-end infinite;
+}
+.btn-excel svg {
+	margin-right: 4px;
+	vertical-align: middle;
+}
+.modal-dialog {
+	position: absolute !important;
+	top: 300px;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+}

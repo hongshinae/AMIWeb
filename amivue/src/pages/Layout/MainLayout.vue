@@ -53,7 +53,7 @@ export default {
 </script>
 <style>
 .main {
-	padding-left: 239px;
+	padding-left: 260px;
 	transition: 0.3s ease !important;
 }
 .main.collapsed {

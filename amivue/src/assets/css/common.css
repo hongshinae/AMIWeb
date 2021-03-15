@@ -24,9 +24,7 @@ body {
 	height: 100%;
 	font-family: "Nanum Gothic", sans-serif !important;
 }
-.row {
-	margin: 0 !important;
-}
+
 .row:after {
 	clear: inherit !important;
 }
@@ -51,7 +49,7 @@ body {
 }
 /*color*/
 .btn {
-	font-size: 0.8rem !important;
+	font-size: 1.2rem !important;
 }
 .btn-primary {
 	background: #3b82ec !important;

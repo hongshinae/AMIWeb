@@ -51,7 +51,7 @@ export default {
 	},
 	data() {
 		return {
-			width: "239px",
+			width: "260px",
 			widthCollapsed: "50px",
 			footHideToggle: false,
 			collapsed: true,
