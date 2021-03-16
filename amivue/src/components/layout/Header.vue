@@ -10,7 +10,7 @@
 				<b-nav-item class="error"><i></i></b-nav-item>
 				<b-nav-item class="aram"><i></i></b-nav-item>
 				<b-nav-item class="user" disabled>씨앤유</b-nav-item>
-				<b-nav-item class="uerName">관리자</b-nav-item>
+				<b-nav-item class="uerName">{{ $t("header.message") }}</b-nav-item>
 				<b-nav-item class="logout" href="#" @click.prevent="logout()">로그아웃</b-nav-item>
 			</b-nav>
 		</b-row>
