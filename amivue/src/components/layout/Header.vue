@@ -2,7 +2,6 @@
 	<div class="navWrap">
 		<b-row>
 			<b-navbar variant="faded">
-				<!-- <b-navbar-brand href="#"></b-navbar-brand> -->
 				<a class="sidebar-toggle">
 					<b-button v-b-toggle.sidebar-1 class="menu"></b-button>
 				</a>

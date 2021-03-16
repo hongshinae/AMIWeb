@@ -11,25 +11,10 @@
 			<h1>단지 관리</h1>
 			<div class="main-location">
 				<div class="home-img">
-					<svg
-						viewBox="0 0 16 16"
-						width="1.2em"
-						height="1.2em"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="currentColor"
-						class="bi-house mx-auto b-icon bi"
-					>
-						<g>
-							<path
-								fill-rule="evenodd"
-								d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-							></path>
-							<path
-								fill-rule="evenodd"
-								d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-							></path>
-						</g>
-					</svg>
+					<icon-base viewBox="0 0 16 16" width="1.2em" height="1.2em" icon-color="" icon-name="search" cls="bi-house mx-auto b-icon bi">
+						<icon-home-up />
+						<icon-home-down />
+					</icon-base>
 				</div>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#" target="_self" class="">홈</a></li>
@@ -41,13 +26,9 @@
 		<div class="search-wrap1">
 			<div class="wbox">
 				<div class="search-img">
-					<svg viewBox="0 0 16 16" width="1.2em" height="1.2em" xmlns="http://www.w3.org/2000/svg" class="bi-search mx-auto b-icon bi">
-						<g data-v-41be6633="">
-							<path
-								d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-							></path>
-						</g>
-					</svg>
+					<icon-base viewBox="0 0 16 16" width="1.2em" height="1.2em" icon-color="" icon-name="search" cls="bi-search mx-auto b-icon bi">
+						<icon-search />
+					</icon-base>
 				</div>
 				<div class="search">
 					<!--검색영역-->
@@ -84,24 +65,9 @@
 		<div class="btn-wrap">
 			<div role="group" class="btn-group">
 				<button type="button" class="btn btn-primary">
-					<svg
-						viewBox="0 0 16 16"
-						width="1em"
-						height="1em"
-						focusable="false"
-						role="img"
-						aria-label="pencil fill"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="currentColor"
-						class="bi-pencil-fill mx-auto b-icon bi"
-						data-v-41be6633=""
-					>
-						<g data-v-41be6633="">
-							<path
-								d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
-							></path>
-						</g>
-					</svg>
+					<icon-base viewBox="0 0 16 16" width="1em" height="1em" icon-color="" icon-name="pencil" cls="bi-pencil-fill mx-auto b-icon bi">
+						<icon-pencil />
+					</icon-base>
 					신규 단지 등록
 				</button>
 			</div>
@@ -247,7 +213,14 @@
 <script>
 import Vue from "vue";
 import IconSearch from "@/components/icons/IconSearch";
+import IconHomeUp from "@/components/icons/IconHomeUp";
+import IconHomeDown from "@/components/icons/IconHomeDown";
+import IconPencil from "@/components/icons/IconPencil";
+
 Vue.component("icon-search", IconSearch);
+Vue.component("icon-home-up", IconHomeUp);
+Vue.component("icon-home-down", IconHomeDown);
+Vue.component("icon-pencil", IconPencil);
 
 export default {
 	components: {},
