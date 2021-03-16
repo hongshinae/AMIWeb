@@ -34,7 +34,24 @@ const routes = [
 				path: "equipment",
 				name: "Equipment",
 				component: () => import("@/pages/Menu/Device/Equipment"),
-				meta: { theme: "theme_white" }
+				meta: { theme: "theme_white" },
+				children: [
+					{
+						path: "dcu",
+						name: "EquipmentDcu",
+						component: () => import("@/pages/Menu/Device/Equipment/Dcu")
+					},
+					{
+						path: "meter",
+						name: "EquipmentMeter",
+						component: () => import("@/pages/Menu/Device/Equipment/Meter")
+					},
+					{
+						path: "etc",
+						name: "EquipmentEtc",
+						component: () => import("@/pages/Menu/Device/Equipment/Etc")
+					}
+				]
 			},
 			{
 				path: "mapping",
