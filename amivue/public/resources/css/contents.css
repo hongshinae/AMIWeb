@@ -29,11 +29,7 @@ rect.highcharts-legend-box {
 .small {
 	font-size: 1rem;
 }
-table input[type="checkbox"] {
-	height: 16px;
-	vertical-align: middle;
-	line-height: 16px;
-}
+
 .content {
 	padding: 15px 40px;
 	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
@@ -193,9 +189,9 @@ select {
 	font-size: 12px;
 }
 .tab-button.active {
-	background: #287fff;
-	border: 1px solid #3b82ec;
-	color: #ffffff;
+	background: #287fff !important;
+	border: 1px solid #3b82ec !important;
+	color: #ffffff !important;
 }
 .tab-button:hover {
 	background: #ecf2f6;
@@ -281,12 +277,7 @@ select {
 .btn-wrap .btn-group:last-child {
 	float: right;
 }
-table {
-	font-size: 0.8rem !important;
-}
-table .error td {
-	color: #d9534f !important;
-}
+
 .table-wrap,
 .pa-wrap,
 .map-wrap {
@@ -294,52 +285,6 @@ table .error td {
 }
 .map-wrap {
 	min-height: 100px;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-	background-color: #f4f7f9 !important;
-}
-.theme_white table thead tr th,
-.theme_white table tbody tr td,
-.theme_white table thead tr th div {
-	font-size: 12px !important;
-	color: #6c757d;
-	text-align: center;
-}
-.theme_white table > tbody > tr > td {
-	line-height: 24px;
-	border-top: 1px solid #dee6ed !important;
-	vertical-align: middle;
-}
-.bgtable {
-	background: #ffffff;
-	margin-bottom: 0 !important;
-	border-bottom: 1px solid #dee6ed !important;
-}
-.basic-table {
-	border-bottom: 1px solid #dee6ed !important;
-}
-.bgtable > thead > tr > th {
-	height: 35px;
-	line-height: 35px !important;
-	border-top: 1px solid #3b82ec !important;
-	border-bottom: 3px solid #dee6ed !important;
-	font-weight: bold;
-}
-.basic-table > thead > tr > th {
-	background: #ffffff;
-	height: 10px;
-	line-height: 10px;
-	border-top: 1px solid #dee6ed !important;
-	border-bottom: 2px solid #dee6ed !important;
-	font-weight: bold;
-}
-.basic-table > tbody > tr > td {
-	height: 8px;
-	line-height: 8px;
-}
-table input.form-control {
-	padding: 0px 5px !important;
 }
 
 .one-row .form-group.row {
@@ -457,6 +402,7 @@ table input.form-control {
 .serveInfo {
 	min-height: 95px;
 	padding: 6px 20px;
+	margin-top: 10px;
 }
 .serveInfo li {
 	padding: 0 2%;
@@ -471,6 +417,7 @@ table input.form-control {
 .serveInfo h6 {
 	color: #202c51;
 	font-size: 0.9em;
+	margin-top: 10px;
 }
 .serveInfo span {
 	font-size: 1.4em;
@@ -481,20 +428,6 @@ table input.form-control {
 	margin-top: 9px;
 }
 
-.tableContainer .table > thead > tr > th {
-	border-bottom: 1px solid #1a2c40 !important;
-}
-.tableContainer .table > tbody > tr > td {
-	border-top: 1px solid #1a2c40 !important;
-}
-.tableContainer .tableWarp {
-	position: relative;
-	width: 95%;
-	padding: 0px 0 10px;
-	margin: 0 auto;
-	height: 271px;
-	overflow-y: auto;
-}
 .progress-bar {
 	background-image: linear-gradient(to bottom, #1fdede 0, #23bada 100%) !important;
 }
@@ -505,12 +438,16 @@ table input.form-control {
 /*서버현황*/
 .regist-info {
 	padding: 10px;
-	background: #f0f;
 }
 .regist-info li {
+	float: left;
+	margin: 2%;
+	width: 46%;
 }
 .regist-info .serve-box {
-	background: #f0f;
+	background: #384e85;
+	padding: 13px;
+	border-radius: 5px;
 }
 /*SVGwrap*/
 .svg-Warp {
