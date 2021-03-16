@@ -120,9 +120,7 @@
 		height: 50px;
 		cursor: pointer;
 		border: none;
-		position: absolute;
-		right: -90px;
-		width: 90px;
+		width: 100%;
 		&:after {
 			content: "\f337";
 			font-family: "Font Awesome 5 Free";
