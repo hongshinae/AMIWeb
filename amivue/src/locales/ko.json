@@ -1,6 +1,38 @@
 {
 	"header": {
-		"message": "안뇽 i18n !!"
+		"logout": "안뇽 i18n !!"
+	},
+	"menu": {
+		"logo": "CNU GLOBAL",
+		"device": {
+			"title": "설비",
+			"estate": "검침",
+			"building": "동관리",
+			"equipment": "장비관리",
+			"mapping": "매핑관리",
+			"network": "네트워크현황",
+			"nms": "NMS",
+			"server": "서버현황"
+		},
+		"metering": {
+			"title": "설비",
+			"MBoard": "검침현황",
+			"lookup": "검침조회",
+			"info": "검침정보",
+			"regular": "월검침"
+		},
+		"failure": {
+			"title": "장애",
+			"FBoard": "장애현황",
+			"code": "상태코드관리",
+			"status": "네트워크상태",
+			"reading": "미검침정보"
+		},
+		"support": {
+			"title": "고객지원",
+			"ask": "문의게시판",
+			"qna": "QnA"
+		}
 	},
 	"dashboard": {
 		"message": "테스트"

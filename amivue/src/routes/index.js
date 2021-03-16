@@ -165,7 +165,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-	if (store.state.loginStore.accessToken && !store.state.loginStore.accessToken) {
+	if (store.state.loginStore.refreshToken && !store.state.loginStore.accessToken) {
 		// await refreshToken();	// 나중에 수정해야함
 	}
 

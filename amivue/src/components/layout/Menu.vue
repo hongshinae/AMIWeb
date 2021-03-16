@@ -29,7 +29,7 @@ export default {
 	},
 	methods: {
 		onToggleCollapse(collapsed) {
-			console.log(collapsed);
+			// console.log(collapsed);
 			this.collapsed = collapsed;
 			this.$emit("toggle-collapse", this.collapsed);
 		},
@@ -73,113 +73,113 @@ export default {
 				},
 				{
 					href: "",
-					title: "설비",
+					title: this.$t("menu.device.title"),
 					bicon: "exclamation-circle-fill",
 					child: [
 						{
 							href: "/estate",
-							title: "단지관리",
+							title: this.$t("menu.device.estate"),
 							bicon: "battery-full"
 						},
 						{
 							href: "/building",
-							title: "동관리",
+							title: this.$t("menu.device.building"),
 							icon: ""
 						},
 						{
 							href: "/equipment",
-							title: "장비관리",
+							title: this.$t("menu.device.equipment"),
 							icon: ""
 						},
 						{
 							href: "/mapping",
-							title: "매핑관리",
+							title: this.$t("menu.device.mapping"),
 							icon: ""
 						},
 						{
 							href: "/network",
-							title: "네트워크현황",
+							title: this.$t("menu.device.network"),
 							icon: ""
 						},
 						{
 							href: "/nms",
-							title: "NMS",
+							title: this.$t("menu.device.nms"),
 							icon: ""
 						},
 						{
 							href: "/server",
-							title: "서버현황",
+							title: this.$t("menu.device.server"),
 							icon: ""
 						}
 					]
 				},
 				{
 					href: "",
-					title: "검침",
+					title: this.$t("menu.metering.title"),
 					icon: "fa fa-code",
 					child: [
 						{
 							href: "/MBoard",
-							title: "검침현황",
+							title: this.$t("menu.metering.MBoard"),
 							icon: ""
 						},
 						{
 							href: "/lookup",
-							title: "검침조회",
+							title: this.$t("menu.metering.lookup"),
 							icon: ""
 						},
 						{
 							href: "/info",
-							title: "검침정보",
+							title: this.$t("menu.metering.info"),
 							icon: ""
 						},
 						{
 							href: "/regular",
-							title: "월검침",
+							title: this.$t("menu.metering.regular"),
 							icon: ""
 						}
 					]
 				},
 				{
 					href: "",
-					title: "장애",
+					title: this.$t("menu.failure.title"),
 					icon: "fa fa-cogs",
 					child: [
 						{
 							href: "/FBoard",
-							title: "장애현황",
+							title: this.$t("menu.failure.FBoard"),
 							icon: ""
 						},
 						{
 							href: "/code",
-							title: "상태코드관리",
+							title: this.$t("menu.failure.code"),
 							icon: ""
 						},
 						{
 							href: "/status",
-							title: "네트워크상태",
+							title: this.$t("menu.failure.status"),
 							icon: ""
 						},
 						{
 							href: "/reading",
-							title: "미검침정보",
+							title: this.$t("menu.failure.reading"),
 							icon: ""
 						}
 					]
 				},
 				{
 					href: "",
-					title: "고객지원",
+					title: this.$t("menu.support.title"),
 					bicon: "gear-fill",
 					child: [
 						{
 							href: "/ask",
-							title: "문의게시판",
+							title: this.$t("menu.support.ask"),
 							icon: ""
 						},
 						{
 							href: "/qna",
-							title: "QnA",
+							title: this.$t("menu.support.qna"),
 							icon: ""
 						}
 					]

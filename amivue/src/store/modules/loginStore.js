@@ -25,6 +25,7 @@ const actions = {
 	async LOGIN({ commit /*, dispatch*/ }, { userid, password }) {
 		await Login.login({ userid, password })
 			.then(({ data }) => {
+				// dispatch("userStore/USER", data.response.user);
 				commit("LOGIN", data.response);
 			})
 			.catch(error => {
