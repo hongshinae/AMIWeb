@@ -35,18 +35,22 @@ table input[type="checkbox"] {
 	line-height: 16px;
 }
 .content {
-	padding: 15px;
+	padding: 15px 40px;
 	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
 	color: #fff;
+	min-height: 910px;
 }
 .main-bg.content {
-	min-height: 910px;
 	background: #ecf2f6 !important;
-	padding: 15px 30px;
-	color: #495057;
+	color: #495057 !important;
 }
 .main-bg.content > div {
 	padding: 0 8px;
+	margin-bottom: 30px;
+}
+.main-location-wrap {
+	height: 40px;
+	margin-top: 22px;
 	margin-bottom: 30px;
 }
 .main-bg.content .row {
@@ -82,14 +86,6 @@ table input[type="checkbox"] {
 	border-radius: 4px;
 	box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 5%);
 }
-.wbox:after {
-	clear: both;
-	display: block;
-	content: "";
-	height: 0;
-	overflow: hidden;
-	visibility: hidden;
-}
 .box {
 	width: 100%;
 	min-height: 100px;
@@ -101,6 +97,15 @@ table input[type="checkbox"] {
 	background-image: linear-gradient(to top, #0a1428, #192640);
 	border-radius: 4px;
 }
+.wbox:after,
+.box:after {
+	clear: both;
+	display: block;
+	content: "";
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
 .box h5 {
 	margin-top: 5px;
 	height: 30px;
@@ -110,6 +115,10 @@ table input[type="checkbox"] {
 	font-family: "NanumSquare", sans-serif !important;
 }
 .box h5 b {
+	display: block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 	float: right;
 }
 .fontC {
@@ -492,4 +501,18 @@ table input.form-control {
 .progress {
 	background-image: linear-gradient(to bottom, #07132b 0, #07132b 100%) !important;
 	height: 5px !important;
+}
+/*서버현황*/
+.regist-info {
+	padding: 10px;
+	background: #f0f;
+}
+.regist-info li {
+}
+.regist-info .serve-box {
+	background: #f0f;
+}
+/*SVGwrap*/
+.svg-Warp {
+	padding: 20px 30px;
 }
