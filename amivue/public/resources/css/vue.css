@@ -69,10 +69,3 @@ ul.nav.infowrap.ml-auto {
 	margin-right: 4px;
 	vertical-align: middle;
 }
-.modal-dialog {
-	position: absolute !important;
-	top: 300px;
-	left: 50%;
-	right: 50%;
-	transform: translate(-50%, -50%);
-}
