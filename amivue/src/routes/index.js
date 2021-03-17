@@ -165,11 +165,11 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-	if (store.state.loginStore.refreshToken && !store.state.loginStore.accessToken) {
+	if (store.state.userStore && store.state.userStore.token.refreshToken && !store.state.userStore.token.accessToken) {
 		// await refreshToken();	// 나중에 수정해야함
 	}
 
-	if (to.matched.some(record => record.meta.unauthorized) || store.state.loginStore.accessToken) {
+	if (to.matched.some(record => record.meta.unauthorized) || (store.state.userStore && store.state.userStore.token.accessToken)) {
 		return next();
 	}
 

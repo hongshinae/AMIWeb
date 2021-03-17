@@ -3,8 +3,8 @@
 		<div class="loginWrap">
 			<div class="logo"></div>
 			<div class="lnputWrap">
-				<form action="/dashboard" @submit.prevent="login(userId, password)">
-					<b-input v-model="userId" placeholder="id"></b-input>
+				<form action="/dashboard" @submit.prevent="actionLogin({ userid, password })">
+					<b-input v-model="userid" placeholder="id"></b-input>
 					<b-input type="password" v-model="password" placeholder="password"></b-input>
 					<b-button type="submit" block variant="primary">로그인</b-button>
 					<div class="error">{{ msg }}</div>
@@ -23,16 +23,20 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
 	name: "Login",
 	data() {
 		return {
 			msg: "",
-			userId: "",
+			userid: "",
 			password: ""
 		};
 	},
 	methods: {
+		...mapActions({
+			actionLogin: "LOGIN"
+		}),
 		login(userid, password) {
 			this.$store
 				.dispatch("LOGIN", { userid, password })

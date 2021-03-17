@@ -8,14 +8,6 @@
 		},
 		"sourceMap": true
 	},
-	"pluginOptions": {
-		"i18n": {
-			"locale": "ko_KR",
-			"fallbackLocale": "ko",
-			"localeDir": "locales",
-			"enableInSFC": false
-		}
-	},
 	"include": [
 		"src/**/*"
 	],

@@ -1,100 +1,90 @@
+import Login from "@/service/login";
+import router from "@/routes";
+
 const state = {
-	userid: null,
-	email: null,
-	info: null,
-	level: null,
-	name: null,
-	password: null,
-	phone: null,
-	regdate: null
+	user: {
+		userid: void 0,
+		name: null,
+		email: null,
+		gseq: null,
+		gname: null,
+		phone: null,
+		position: null,
+		level: null,
+		regDate: null,
+		updateDate: null
+	},
+	token: {
+		accessToken: null,
+		refreshToken: null
+	}
 };
 
 const getters = {
-	getUser: state => {
-		state.userid, state.email, state.info, state.level, state.name, state.password, state.phone, state.regdate;
+	getUser: state => state.user,
+	getUserId: state => state.user.userid,
+	getUserIdCount: (state, getters) => {
+		return getters.getUserId.length;
 	},
-	getUserId: state => state.userid,
-	getEmail: state => state.email,
-	getInfo: state => state.info,
-	getLevel: state => state.level,
-	getName: state => state.name,
-	getPassword: state => state.password,
-	getPhone: state => state.phone,
-	getRegdate: state => state.regdate
+	getName: state => state.user.name,
+	getEmail: state => state.user.email,
+	getGseq: state => state.user.gseq,
+	getGname: state => state.user.gname,
+	getPhone: state => state.user.phone,
+	getPosition: state => state.user.position,
+	getLevel: state => state.user.level,
+	getRegDate: state => state.user.regDate,
+	getUpdateDate: state => state.user.updateDate,
+	getAccessToken: state => state.user.accessToken,
+	getRefreshToken: state => state.user.refreshToken
 };
 
 const mutations = {
-	USER(state, userid, email, info, level, name, password, phone, regdate) {
-		state.userid = userid;
-		state.email = email;
-		state.info = info;
-		state.level = level;
-		state.name = name;
-		state.password = password;
-		state.phone = phone;
-		state.regdate = regdate;
+	USER(state, { userid, name, email, gseq, gname, phone, position, level, regDate, updateDate }) {
+		state.user.userid = userid;
+		state.user.name = name;
+		state.user.email = email;
+		state.user.gseq = gseq;
+		state.user.gname = gname;
+		state.user.phone = phone;
+		state.user.position = position;
+		state.user.level = level;
+		state.user.regDate = regDate;
+		state.user.updateDate = updateDate;
 	},
-	USERID(state, userid) {
-		state.userid = userid;
+	LOGIN(state, { token, refreshToken }) {
+		state.token.accessToken = token;
+		state.token.refreshToken = refreshToken;
 	},
-	EMAIL(state, email) {
-		state.email = email;
-	},
-	INFO(state, info) {
-		state.info = info;
-	},
-	LEVEL(state, level) {
-		state.level = level;
-	},
-	NAME(state, name) {
-		state.name = name;
-	},
-	PASSWORD(state, password) {
-		state.password = password;
-	},
-	PHONE(state, phone) {
-		state.phone = phone;
-	},
-	REGDATE(state, regdate) {
-		state.regdate = regdate;
+	LOGOUT(state) {
+		state.token.accessToken = null;
+		state.token.refreshToken = null;
 	}
 };
 
 const actions = {
-	USER({ commit }) {
-		commit("USER");
+	USER({ commit }, user) {
+		commit("USER", user);
 	},
-	USERID({ commit }) {
-		commit("USERID");
+	async LOGIN({ commit /* dispatch */ }, { userid, password }) {
+		await Login.login({ userid, password })
+			.then(({ data }) => {
+				commit("USER", data.response.user);
+				commit("LOGIN", data.response);
+				router.push("/dashboard");
+			})
+			.catch(error => {
+				throw error;
+			});
 	},
-	EMAIL({ commit }) {
-		commit("EMAIL");
-	},
-	INFO({ commit }) {
-		commit("INFO");
-	},
-	LEVEL({ commit }) {
-		commit("LEVEL");
-	},
-	NAME({ commit }) {
-		commit("NAME");
-	},
-	PASSWORD({ commit }) {
-		commit("PASSWORD");
-	},
-	PHONE({ commit }) {
-		commit("PHONE");
-	},
-	REGDATE({ commit }) {
-		commit("REGDATE");
+	LOGOUT({ commit }) {
+		commit("LOGOUT");
 	}
 };
 
 export default {
 	strict: process.env.NODE_ENV !== "production",
-	state: {
-		...state
-	},
+	state,
 	getters,
 	mutations,
 	actions
