@@ -9,7 +9,7 @@
 	max-width: 900px !important;
 }
 header.modal-header {
-	background: #3b82ec;
+	background: #287fff;
 	color: #ffffff;
 }
 .modal-dialog .close {
@@ -48,8 +48,10 @@ header.modal-header {
 	float: left;
 }
 .modal-thr-box {
+	height: 32px;
 	width: 800px;
 	float: left;
+	margin-bottom: 10px;
 }
 .label-wrap {
 	width: 120px;
@@ -68,6 +70,10 @@ header.modal-header {
 	height: 34px;
 	float: left;
 }
+.input-wrap label,
+.input-wrap button {
+	margin-right: 10px;
+}
 .modal-thr-box .input-wrap {
 	width: 500px;
 }
@@ -79,7 +85,14 @@ header.modal-header {
 	line-height: 29px;
 	background: #f3f3f3;
 	float: left;
-	padding: 0px 20px;
+	padding: 0px 10px;
 	border-radius: 4px;
 	min-width: 535px;
+	border: 1px solid #eaeaea;
+}
+ul.modal-ul {
+	width: 400px;
+	height: 32px;
+	padding-left: 10px;
+	float: left;
 }

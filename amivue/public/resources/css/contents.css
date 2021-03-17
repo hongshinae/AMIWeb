@@ -108,7 +108,7 @@ rect.highcharts-legend-box {
 	line-height: 30px;
 	border-bottom: 1px solid #6979a9;
 	padding: 0 15px 5px 15px;
-	font-family: "NanumSquare", sans-serif !important;
+	font-family: "Nanum Gothic", sans-serif !important;
 }
 .box h5 b {
 	display: block;
@@ -307,15 +307,15 @@ select {
 
 /*닐씨*/
 .double.row .col-lg-6:first-child {
-	padding-left: 0 !important;
+	padding-left: -15px !important;
 	padding-right: 7px !important;
 }
 .double.row .col-lg-6:last-child {
 	padding-left: 8px !important;
-	padding-right: 0px !important;
+	padding-right: -15px !important;
 }
 .double h4 {
-	padding: 0 0 0 15px;
+	padding: 10px 0 0 15px;
 	font-size: 14px;
 	margin-bottom: 0px;
 }
@@ -450,11 +450,19 @@ select {
 	width: 46%;
 }
 .regist-info .serve-box {
-	background: #384e85;
+	height: 71px;
+	border: solid 1px #1ee2df;
+	background-image: linear-gradient(to top, #75cee2, #23b9da, #1ee4df);
 	padding: 13px;
 	border-radius: 5px;
+	color: #202c51;
+}
+.serve-box b {
+	float: right;
+	display: block;
+	font-size: 14px;
 }
 /*SVGwrap*/
 .svg-Warp {
-	padding: 20px 30px;
+	padding: 20px 40px;
 }

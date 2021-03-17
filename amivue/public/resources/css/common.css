@@ -3,7 +3,7 @@
 @import url("contents_wh.css");
 @import url("table.css");
 @import url("table_wh.css");
-@import url("modal_wh.scss");
+@import url("modal_wh.css");
 
 @font-face {
 	font-family: alarm_clock;
@@ -21,7 +21,6 @@ html {
 }
 body {
 	height: 100%;
-	font-family: "Nanum Gothic", sans-serif !important;
 }
 
 .row:after {
