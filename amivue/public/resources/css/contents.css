@@ -177,6 +177,9 @@ select {
 	line-height: 34px;
 	font-size: 12px !important;
 	font-weight: normal !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .tab-button {
 	border: 1px solid #287fff !important;
@@ -255,10 +258,11 @@ select {
 	background: #ecf2f6;
 	border-radius: 30px;
 	height: 50px;
-	padding: 5px;
+	padding: 4px 5px 5px 17px;
 }
 .search-wrap2 .search-img svg {
-	margin: 10px 3px 0 11px;
+	color: #287fff;
+	margin: 14px 0px 0 0px;
 }
 @media (max-width: 1200px) {
 	.search-wrap2 .search-img svg {
@@ -281,7 +285,8 @@ select {
 .table-wrap,
 .pa-wrap,
 .map-wrap {
-	min-height: 100px;
+	margin-top: 10px;
+	min-height: 65px;
 }
 .map-wrap {
 	min-height: 100px;
