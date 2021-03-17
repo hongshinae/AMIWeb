@@ -23,29 +23,31 @@ import Logo from "@/components/Logo";
 Vue.use(VueSideBar);
 export default {
 	name: "App",
+	props: {
+		collapsed: {
+			type: Boolean,
+			default: false
+		}
+	},
 	mounted() {
 		this.onResize();
 		window.addEventListener("resize", this.onResize);
 	},
 	methods: {
 		onToggleCollapse(collapsed) {
-			// console.log(collapsed);
-			this.collapsed = collapsed;
-			this.$emit("toggle-collapse", this.collapsed);
+			this.isCollapsed = collapsed;
+			this.$emit("toggle-collapse", this.isCollapsed);
 		},
 		onItemClick(/*event, item, node*/) {
 			console.log("onItemClick");
-			// console.log(event)
-			// console.log(item)
-			// console.log(node)
 		},
 		onResize() {
 			if (window.innerWidth <= 767) {
 				this.isOnMobile = true;
-				this.collapsed = true;
+				this.isCollapsed = true;
 			} else {
 				this.isOnMobile = false;
-				this.collapsed = false;
+				this.isCollapsed = false;
 			}
 		}
 	},
@@ -54,7 +56,7 @@ export default {
 			width: "260px",
 			widthCollapsed: "50px",
 			footHideToggle: false,
-			collapsed: true,
+			isCollapsed: true,
 			themes: [
 				{
 					name: "Default theme",

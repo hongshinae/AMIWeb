@@ -3,7 +3,7 @@
 		<b-row>
 			<b-navbar variant="faded">
 				<a class="sidebar-toggle">
-					<b-button v-b-toggle.sidebar-1 class="menu"></b-button>
+					<b-button class="menu" @click="toggleMenu"></b-button>
 				</a>
 			</b-navbar>
 			<b-nav class="infowrap ml-auto">
@@ -28,6 +28,9 @@ export default {
 		...mapGetters({ apartName: "getGname", userName: "getName" })
 	},
 	methods: {
+		toggleMenu() {
+			this.$emit("toggle-collapse");
+		},
 		logout() {
 			this.$store
 				.dispatch("LOGOUT")

@@ -1,8 +1,8 @@
 <template>
 	<div id="app" class="wrapper status-board" :class="theme">
-		<Menu @toggle-collapse="onToggleCollapse" />
+		<Menu :collapsed="collapsed" @toggle-collapse="onToggleCollapse" />
 		<div class="main" :class="collapsedClass">
-			<Header />
+			<Header @toggle-collapse="onToggleCollapse" />
 			<Dashboard-Content />
 		</div>
 	</div>
@@ -42,12 +42,12 @@ export default {
 			this.theme = this.$route.meta.theme;
 		},
 		onToggleCollapse(collapsed) {
-			// console.log(collapsed);
-			this.collapsed = collapsed;
+			if (!collapsed) {
+				this.collapsed = !this.collapsed;
+			} else {
+				this.collapsed = collapsed;
+			}
 		}
-		// collapsedClass() {
-		// 	return [this.collapsed ? "collapsed" : ""];
-		// }
 	}
 };
 </script>
