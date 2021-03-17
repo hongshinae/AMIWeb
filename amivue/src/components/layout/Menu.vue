@@ -55,7 +55,7 @@ export default {
 		return {
 			width: "260px",
 			widthCollapsed: "50px",
-			footHideToggle: false,
+			footHideToggle: true,
 			isCollapsed: true,
 			themes: [
 				{
