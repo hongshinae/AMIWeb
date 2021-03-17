@@ -1,12 +1,12 @@
 {
 	"header": {
-		"logout": "안뇽 i18n !!"
+		"logout": "로그아웃"
 	},
 	"menu": {
 		"logo": "CNU GLOBAL",
 		"device": {
 			"title": "설비",
-			"estate": "검침",
+			"estate": "단지관리",
 			"building": "동관리",
 			"equipment": "장비관리",
 			"mapping": "매핑관리",
@@ -36,5 +36,9 @@
 	},
 	"dashboard": {
 		"message": "테스트"
+	},
+	"estate": {
+		"add": "신규 단지 등록",
+		"excelDownload": "엑셀 다운로드"
 	}
 }
