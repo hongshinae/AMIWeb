@@ -21,11 +21,7 @@ $dropdown-bg: #212738;
 				box-shadow: 3px 0px 0px 0px $primary-color inset;
 				& .vsm--icon {
 					color: $icon-active-color;
-					background-color: $icon-active-bg;
 				}
-			}
-			& .vsm--icon {
-				background-color: $icon-bg;
 			}
 		}
 		&_hover,
@@ -47,7 +43,6 @@ $dropdown-bg: #212738;
 		.vsm--link_level-1:hover {
 			.vsm--icon {
 				color: $mobile-icon-color;
-				background-color: $mobile-icon-bg;
 			}
 		}
 	}
@@ -80,7 +75,6 @@ $dropdown-bg: #212738;
 					background-color: $item-open-bg;
 					& .vsm--icon {
 						color: $icon-open-color;
-						background-color: $icon-open-bg;
 					}
 				}
 			}

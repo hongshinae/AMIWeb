@@ -7,6 +7,8 @@
 <script>
 // Main css
 import "@/assets/css/contents.css";
+import "@/assets/css/modal_wh.css";
+import "@/assets/css/table.css";
 export default {};
 </script>
 

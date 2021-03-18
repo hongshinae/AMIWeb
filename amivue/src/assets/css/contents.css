@@ -29,24 +29,24 @@ rect.highcharts-legend-box {
 .small {
 	font-size: 1rem;
 }
-table input[type="checkbox"] {
-	height: 16px;
-	vertical-align: middle;
-	line-height: 16px;
-}
+
 .content {
-	padding: 15px;
+	padding: 15px 40px;
 	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
 	color: #fff;
+	min-height: 910px;
 }
 .main-bg.content {
-	min-height: 910px;
 	background: #ecf2f6 !important;
-	padding: 15px 30px;
-	color: #495057;
+	color: #495057 !important;
 }
 .main-bg.content > div {
 	padding: 0 8px;
+	margin-bottom: 30px;
+}
+.main-location-wrap {
+	height: 40px;
+	margin-top: 22px;
 	margin-bottom: 30px;
 }
 .main-bg.content .row {
@@ -82,14 +82,6 @@ table input[type="checkbox"] {
 	border-radius: 4px;
 	box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 5%);
 }
-.wbox:after {
-	clear: both;
-	display: block;
-	content: "";
-	height: 0;
-	overflow: hidden;
-	visibility: hidden;
-}
 .box {
 	width: 100%;
 	min-height: 100px;
@@ -101,15 +93,28 @@ table input[type="checkbox"] {
 	background-image: linear-gradient(to top, #0a1428, #192640);
 	border-radius: 4px;
 }
+.wbox:after,
+.box:after {
+	clear: both;
+	display: block;
+	content: "";
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
 .box h5 {
 	margin-top: 5px;
 	height: 30px;
 	line-height: 30px;
 	border-bottom: 1px solid #6979a9;
 	padding: 0 15px 5px 15px;
-	font-family: "NanumSquare", sans-serif !important;
+	font-family: "Nanum Gothic", sans-serif !important;
 }
 .box h5 b {
+	display: block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 	float: right;
 }
 .fontC {
@@ -172,6 +177,9 @@ select {
 	line-height: 34px;
 	font-size: 12px !important;
 	font-weight: normal !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .tab-button {
 	border: 1px solid #287fff !important;
@@ -184,9 +192,9 @@ select {
 	font-size: 12px;
 }
 .tab-button.active {
-	background: #287fff;
-	border: 1px solid #3b82ec;
-	color: #ffffff;
+	background: #287fff !important;
+	border: 1px solid #3b82ec !important;
+	color: #ffffff !important;
 }
 .tab-button:hover {
 	background: #ecf2f6;
@@ -250,10 +258,11 @@ select {
 	background: #ecf2f6;
 	border-radius: 30px;
 	height: 50px;
-	padding: 5px;
+	padding: 4px 5px 5px 17px;
 }
 .search-wrap2 .search-img svg {
-	margin: 10px 3px 0 11px;
+	color: #287fff;
+	margin: 14px 0px 0 0px;
 }
 @media (max-width: 1200px) {
 	.search-wrap2 .search-img svg {
@@ -272,65 +281,15 @@ select {
 .btn-wrap .btn-group:last-child {
 	float: right;
 }
-table {
-	font-size: 0.8rem !important;
-}
-table .error td {
-	color: #d9534f !important;
-}
+
 .table-wrap,
 .pa-wrap,
 .map-wrap {
-	min-height: 100px;
+	margin-top: 10px;
+	min-height: 65px;
 }
 .map-wrap {
 	min-height: 100px;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-	background-color: #f4f7f9 !important;
-}
-.theme_white table thead tr th,
-.theme_white table tbody tr td,
-.theme_white table thead tr th div {
-	font-size: 12px !important;
-	color: #6c757d;
-	text-align: center;
-}
-.theme_white table > tbody > tr > td {
-	line-height: 24px;
-	border-top: 1px solid #dee6ed !important;
-	vertical-align: middle;
-}
-.bgtable {
-	background: #ffffff;
-	margin-bottom: 0 !important;
-	border-bottom: 1px solid #dee6ed !important;
-}
-.basic-table {
-	border-bottom: 1px solid #dee6ed !important;
-}
-.bgtable > thead > tr > th {
-	height: 35px;
-	line-height: 35px !important;
-	border-top: 1px solid #3b82ec !important;
-	border-bottom: 3px solid #dee6ed !important;
-	font-weight: bold;
-}
-.basic-table > thead > tr > th {
-	background: #ffffff;
-	height: 10px;
-	line-height: 10px;
-	border-top: 1px solid #dee6ed !important;
-	border-bottom: 2px solid #dee6ed !important;
-	font-weight: bold;
-}
-.basic-table > tbody > tr > td {
-	height: 8px;
-	line-height: 8px;
-}
-table input.form-control {
-	padding: 0px 5px !important;
 }
 
 .one-row .form-group.row {
@@ -348,15 +307,15 @@ table input.form-control {
 
 /*닐씨*/
 .double.row .col-lg-6:first-child {
-	padding-left: 0 !important;
+	padding-left: -15px !important;
 	padding-right: 7px !important;
 }
 .double.row .col-lg-6:last-child {
 	padding-left: 8px !important;
-	padding-right: 0px !important;
+	padding-right: -15px !important;
 }
 .double h4 {
-	padding: 0 0 0 15px;
+	padding: 10px 0 0 15px;
 	font-size: 14px;
 	margin-bottom: 0px;
 }
@@ -448,6 +407,7 @@ table input.form-control {
 .serveInfo {
 	min-height: 95px;
 	padding: 6px 20px;
+	margin-top: 10px;
 }
 .serveInfo li {
 	padding: 0 2%;
@@ -462,6 +422,7 @@ table input.form-control {
 .serveInfo h6 {
 	color: #202c51;
 	font-size: 0.9em;
+	margin-top: 10px;
 }
 .serveInfo span {
 	font-size: 1.4em;
@@ -472,24 +433,36 @@ table input.form-control {
 	margin-top: 9px;
 }
 
-.tableContainer .table > thead > tr > th {
-	border-bottom: 1px solid #1a2c40 !important;
-}
-.tableContainer .table > tbody > tr > td {
-	border-top: 1px solid #1a2c40 !important;
-}
-.tableContainer .tableWarp {
-	position: relative;
-	width: 95%;
-	padding: 0px 0 10px;
-	margin: 0 auto;
-	height: 271px;
-	overflow-y: auto;
-}
 .progress-bar {
 	background-image: linear-gradient(to bottom, #1fdede 0, #23bada 100%) !important;
 }
 .progress {
 	background-image: linear-gradient(to bottom, #07132b 0, #07132b 100%) !important;
 	height: 5px !important;
+}
+/*서버현황*/
+.regist-info {
+	padding: 10px;
+}
+.regist-info li {
+	float: left;
+	margin: 2%;
+	width: 46%;
+}
+.regist-info .serve-box {
+	height: 71px;
+	border: solid 1px #1ee2df;
+	background-image: linear-gradient(to top, #75cee2, #23b9da, #1ee4df);
+	padding: 13px;
+	border-radius: 5px;
+	color: #202c51;
+}
+.serve-box b {
+	float: right;
+	display: block;
+	font-size: 14px;
+}
+/*SVGwrap*/
+.svg-Warp {
+	padding: 20px 40px;
 }

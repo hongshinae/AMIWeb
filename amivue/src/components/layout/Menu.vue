@@ -81,7 +81,13 @@ export default {
 						{
 							href: "/estate",
 							title: this.$t("menu.device.estate"),
-							bicon: ""
+							bicon: "",
+							badge: {
+								text: "n",
+								class: "vsm--badge_new"
+								// attributes: {}
+								// element: 'span'
+							}
 						},
 						{
 							href: "/building",
@@ -91,7 +97,11 @@ export default {
 						{
 							href: "/equipment",
 							title: this.$t("menu.device.equipment"),
-							icon: ""
+							icon: "",
+							badge: {
+								text: "12",
+								class: "vsm--badge_default"
+							}
 						},
 						{
 							href: "/mapping",

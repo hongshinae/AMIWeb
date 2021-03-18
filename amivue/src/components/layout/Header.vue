@@ -20,6 +20,7 @@
 <script>
 // Header css
 import "@/assets/css/header.css";
+import "@/assets/css/header_wh.css";
 import { mapGetters } from "vuex";
 
 export default {
