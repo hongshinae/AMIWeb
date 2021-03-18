@@ -76,12 +76,12 @@ export default {
 				{
 					href: "",
 					title: this.$t("menu.device.title"),
-					bicon: "exclamation-circle-fill",
+					bicon: "building",
 					child: [
 						{
 							href: "/estate",
 							title: this.$t("menu.device.estate"),
-							bicon: "battery-full"
+							bicon: ""
 						},
 						{
 							href: "/building",
@@ -118,7 +118,7 @@ export default {
 				{
 					href: "",
 					title: this.$t("menu.metering.title"),
-					icon: "fa fa-code",
+					bicon: "calendar2-event",
 					child: [
 						{
 							href: "/MBoard",
@@ -145,7 +145,7 @@ export default {
 				{
 					href: "",
 					title: this.$t("menu.failure.title"),
-					icon: "fa fa-cogs",
+					bicon: "exclamation-triangle",
 					child: [
 						{
 							href: "/FBoard",
@@ -172,7 +172,7 @@ export default {
 				{
 					href: "",
 					title: this.$t("menu.support.title"),
-					bicon: "gear-fill",
+					bicon: "person-fill",
 					child: [
 						{
 							href: "/ask",

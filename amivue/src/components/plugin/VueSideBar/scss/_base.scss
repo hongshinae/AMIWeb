@@ -1,6 +1,7 @@
 .v-sidebar-menu {
 	* {
 		box-sizing: border-box;
+		font-size: 12px;
 	}
 
 	position: fixed;
@@ -76,13 +77,21 @@
 
 	.vsm--arrow {
 		width: 30px;
+		margin-top: -5px;
 		text-align: center;
 		font-style: normal;
 		font-weight: 900;
 		transition: 0.3s transform ease;
 		&:after {
-			content: "\f105";
-			font-family: "Font Awesome 5 Free";
+			content: " ";
+			border: solid;
+			border-width: 0 0.1rem 0.1rem 0;
+			display: inline-block;
+			padding: 2px;
+			transform: rotate(45deg);
+			position: absolute;
+
+			transition: all 0.2s ease-out;
 		}
 		&_open {
 			transform: rotate(90deg);
