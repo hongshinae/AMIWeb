@@ -32,22 +32,22 @@ header.modal-header {
 .modal-content-wrap {
 	padding: 20px 35px;
 }
-.modal-first-box {
+.modal-1st-box {
 	width: 370px;
 	margin-right: 60px;
 	float: left;
 }
-.modal-first-box .form-group,
-.modal-sec-box .form-group {
+.modal-1st-box .form-group,
+.modal-2nd-box .form-group {
 	height: 40px;
 	width: 370px;
 	display: block;
 }
-.modal-sec-box {
+.modal-2nd-box {
 	width: 370px;
 	float: left;
 }
-.modal-thr-box {
+.modal-3rd-box {
 	height: 32px;
 	width: 800px;
 	float: left;
@@ -58,11 +58,11 @@ header.modal-header {
 	height: 34px;
 	float: left;
 }
-.modal-thr-box ul li {
+.modal-3rd-box ul li {
 	float: left;
 	margin-right: 20px;
 }
-.modal-thr-box ul li input[type="checkbox"] {
+.modal-3rd-box ul li input[type="checkbox"] {
 	margin-right: 5px;
 }
 .input-wrap {
@@ -74,10 +74,10 @@ header.modal-header {
 .input-wrap button {
 	margin-right: 10px;
 }
-.modal-thr-box .input-wrap {
+.modal-3rd-box .input-wrap {
 	width: 500px;
 }
-.modal-thr-box button {
+.modal-3rd-box button {
 	float: right;
 }
 .bg {
@@ -90,9 +90,48 @@ header.modal-header {
 	min-width: 535px;
 	border: 1px solid #eaeaea;
 }
+.bg li {
+	float: left;
+}
 ul.modal-ul {
 	width: 400px;
 	height: 32px;
 	padding-left: 10px;
 	float: left;
+}
+.modal-equip {
+	width: 1360px !important;
+	top: 478px !important;
+	max-width: 1360px !important;
+}
+.modal-equip .left li {
+	float: left;
+}
+.modal-equip .left li:first-child {
+	width: 860px;
+	background: #ff0;
+}
+.modal-equip .left li:last-child {
+	width: 400px;
+	background: rgb(0, 255, 76);
+}
+.modal-equip .modal-1st-box {
+	background: #f0f;
+	height: 450px;
+}
+.modal-equip .modal-2nd-box {
+	margin-right: 60px;
+	height: 450px;
+	background: #f0f;
+}
+.modal-equip .modal-3rd-box {
+	width: 800px;
+	margin-right: 60px;
+	height: 233px;
+	background: #f0f;
+}
+.modal-equip .modal-4th-box {
+	background: #000;
+	width: 400px;
+	height: 690px;
 }
