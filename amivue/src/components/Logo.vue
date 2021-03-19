@@ -10,8 +10,4 @@ export default {
 };
 </script>
 
-<style>
-.collapsed .logoWrap {
-	width: 30px;
-}
-</style>
+<style></style>

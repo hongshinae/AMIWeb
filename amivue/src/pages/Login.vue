@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapMutations } from "vuex";
 export default {
 	name: "Login",
 	data() {
@@ -33,7 +33,11 @@ export default {
 			password: ""
 		};
 	},
+	mounted() {
+		this.initState();
+	},
 	methods: {
+		...mapMutations({ initState: "RESET_STATE" }),
 		...mapActions({
 			actionLogin: "LOGIN"
 		}),

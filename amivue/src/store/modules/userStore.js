@@ -1,9 +1,24 @@
 import Login from "@/service/login";
 import router from "@/routes";
 
+const initialState = {
+	user: {
+		userid: null,
+		name: null,
+		email: null,
+		gseq: null,
+		gname: null,
+		phone: null,
+		position: null,
+		level: null,
+		regDate: null,
+		updateDate: null
+	}
+};
+
 const state = {
 	user: {
-		userid: void 0,
+		userid: null,
 		name: null,
 		email: null,
 		gseq: null,
@@ -40,6 +55,11 @@ const getters = {
 };
 
 const mutations = {
+	RESET_STATE(state) {
+		for (let prop in initialState) {
+			state[prop] = initialState[prop];
+		}
+	},
 	USER(state, { userid, name, email, gseq, gname, phone, position, level, regDate, updateDate }) {
 		state.user.userid = userid;
 		state.user.name = name;
@@ -71,7 +91,7 @@ const actions = {
 			.then(({ data }) => {
 				commit("USER", data.response.user);
 				commit("LOGIN", data.response);
-				router.push("/dashboard");
+				router.push("/estate");
 			})
 			.catch(error => {
 				throw error;
@@ -79,6 +99,7 @@ const actions = {
 	},
 	LOGOUT({ commit }) {
 		commit("LOGOUT");
+		commit("RESET_STATE");
 	}
 };
 
