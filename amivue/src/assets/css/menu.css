@@ -143,9 +143,7 @@ ul.subNav li.on a {
 .sidebarNav .on .set i {
 	background: url(../images/img.png) -51px -279px no-repeat;
 }
-.on span {
-	color: #1ee4df;
-}
+
 .nav-tabs {
 	border-bottom: 0 none !important;
 }
@@ -182,50 +180,4 @@ ul.subNav li.on a {
 .theme_white ul.subNav li.on a {
 	color: #ffffff !important;
 	font-weight: bold;
-}
-
-.theme_white .sidebarNav .facilities i {
-	background: url(../images/img_wh.png) -19px -7px no-repeat;
-}
-.theme_white .sidebarNav .read i {
-	background: url(../images/img_wh.png) -19px -55px no-repeat;
-}
-.theme_white .sidebarNav .charge i {
-	background: url(../images/img_wh.png) -19px -105px no-repeat;
-}
-.theme_white .sidebarNav .error i {
-	background: url(../images/img_wh.png) -19px -152px no-repeat;
-}
-.theme_white .sidebarNav .analysis i {
-	background: url(../images/img_wh.png) -19px -202px no-repeat;
-}
-.theme_white .sidebarNav .customer i {
-	background: url(../images/img_wh.png) -19px -248px no-repeat;
-}
-.theme_white .sidebarNav .set i {
-	background: url(../images/img_wh.png) -19px -295px no-repeat;
-}
-.theme_white .sidebarNav .on .facilities i {
-	background: url(../images/img_wh.png) -70px -7px no-repeat;
-}
-.theme_white .sidebarNav .on .read i {
-	background: url(../images/img_wh.png) -70px -55px no-repeat;
-}
-.theme_white .sidebarNav .on .charge i {
-	background: url(../images/img_wh.png) -70px -105px no-repeat;
-}
-.theme_white .sidebarNav .on .error i {
-	background: url(../images/img_wh.png) -70px -152px no-repeat;
-}
-.theme_white .sidebarNav .on .analysis i {
-	background: url(../images/img_wh.png) -70px -202px no-repeat;
-}
-.theme_white .sidebarNav .on .customer i {
-	background: url(../images/img_wh.png) -70px -248px no-repeat;
-}
-.theme_white .sidebarNav .on .set i {
-	background: url(../images/img_wh.png) -70px -295px no-repeat;
-}
-.theme_white .on span {
-	color: #ffffff;
 }

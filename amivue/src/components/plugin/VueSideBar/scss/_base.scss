@@ -1,7 +1,7 @@
 .v-sidebar-menu {
 	* {
 		box-sizing: border-box;
-		font-size: 12px;
+		font-size: 13px;
 	}
 
 	position: fixed;
@@ -23,7 +23,10 @@
 	}
 
 	.vsm--dropdown > .vsm--list {
-		padding: 5px;
+		padding: 10px 0;
+	}
+	.vsm--dropdown > .vsm--list .vsm--title {
+		padding-left: 34px;
 	}
 
 	.vsm--item {
@@ -207,5 +210,15 @@
 		margin: 0 !important;
 		background-color: transparent !important;
 		line-height: $icon-height !important;
+	}
+
+	.vsm--badge {
+		margin-right: 12px;
+	}
+	.vsm--badge_new {
+		background: $badge_new-bg;
+		padding: 0 6px;
+		font-weight: bold;
+		border-radius: 10px;
 	}
 }

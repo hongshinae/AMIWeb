@@ -83,7 +83,7 @@ export default {
 							title: this.$t("menu.device.estate"),
 							bicon: "",
 							badge: {
-								text: "n",
+								text: "N",
 								class: "vsm--badge_new"
 								// attributes: {}
 								// element: 'span'

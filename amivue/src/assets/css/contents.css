@@ -29,6 +29,11 @@ rect.highcharts-legend-box {
 .small {
 	font-size: 1rem;
 }
+button svg {
+	width: 12px;
+	height: 15px;
+	margin-right: 5px;
+}
 
 .content {
 	padding: 15px 40px;
@@ -140,15 +145,13 @@ rect.highcharts-legend-box {
 	vertical-align: bottom;
 	font-weight: bold;
 }
-.home-img {
-	width: 12px;
-	height: 19px;
-	margin-top: 9px;
-	float: left;
-}
+
 .breadcrumb {
 	float: left;
 	background-color: inherit !important;
+}
+.breadcrumb-item svg {
+	margin-right: 5px;
 }
 .breadcrumb-item a {
 	color: #777777 !important;

@@ -93,7 +93,7 @@ $dropdown-bg: #212738;
 	}
 	.vsm--badge_default {
 		color: $item-color;
-		background-color: transparent;
+		background-color: lighten($base-bg, 10%);
 	}
 	.vsm--toggle-btn {
 		color: $item-color;
