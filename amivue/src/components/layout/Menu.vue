@@ -79,7 +79,7 @@ export default {
 					bicon: "building",
 					child: [
 						{
-							href: "/estate",
+							href: "/device/estate",
 							title: this.$t("menu.device.estate"),
 							bicon: "",
 							badge: {

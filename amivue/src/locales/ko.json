@@ -3,6 +3,7 @@
 		"logout": "로그아웃"
 	},
 	"menu": {
+		"title": "홈",
 		"logo": "CNU GLOBAL",
 		"device": {
 			"title": "설비",

@@ -72,6 +72,7 @@ Vue.component("icon-pencil", IconPencil);
 
 export default {
 	components: { ContentHeader, ContentSearch, ContentTable },
+
 	data: () => {
 		return {};
 	},
