@@ -57,6 +57,10 @@ const getters = {
 const mutations = {
 	RESET_STATE(state) {
 		for (let prop in initialState) {
+			if (!state) {
+				state = {};
+			}
+
 			state[prop] = initialState[prop];
 		}
 	},
