@@ -57,25 +57,10 @@ nav.navbar > a.navbar-brand {
 .infowrap .aram a,
 .infowrap .error a {
 	padding: 0.5rem 0;
+	color: #656565;
+	margin-right: 10px;
 }
-
-.infowrap .aram i {
-	background: url(../images/img.png) -379px -2px no-repeat;
-	display: inline-block;
-}
-
-.infowrap .aram.on i {
-	background: url(../images/img.png) -410px -2px no-repeat;
-}
-
-.infowrap .error {
-	margin-right: 4px;
-}
-.infowrap .error i {
-	background: url(../images/img.png) -441px -2px no-repeat;
-	display: inline-block;
-}
-
-.infowrap .error.on i {
-	background: url(../images/img.png) -460px -2px no-repeat;
+.infowrap .aram.on a,
+.infowrap .error.on a {
+	color: #ff0000;
 }

@@ -7,8 +7,8 @@
 				</a>
 			</b-navbar>
 			<b-nav class="infowrap ml-auto">
-				<b-nav-item class="error"><i></i></b-nav-item>
-				<b-nav-item class="aram"><i></i></b-nav-item>
+				<b-nav-item class="error"><b-icon icon="question-diamond"></b-icon></b-nav-item>
+				<b-nav-item class="aram"><b-icon icon="bell"></b-icon></b-nav-item>
 				<b-nav-item class="user" disabled>{{ apartName ? apartName : "아파트 없음" }}</b-nav-item>
 				<b-nav-item class="uerName">{{ userName }}</b-nav-item>
 				<b-nav-item class="logout" href="#" @click.prevent="logout()">{{ $t("header.logout") }}</b-nav-item>
