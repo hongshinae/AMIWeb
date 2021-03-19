@@ -4,11 +4,11 @@
 			<h1>동 관리</h1>
 			<div class="main-location">
 				<b-breadcrumb>
-					<b-breadcrumb-item href="#home">
+					<b-breadcrumb-item to="/dashboard">
 						<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
 						홈
 					</b-breadcrumb-item>
-					<b-breadcrumb-item href="#foo">설비</b-breadcrumb-item>
+					<b-breadcrumb-item>설비</b-breadcrumb-item>
 					<b-breadcrumb-item active>동 관리</b-breadcrumb-item>
 				</b-breadcrumb>
 			</div>
@@ -56,17 +56,55 @@
 		</div>
 		<div class="btn-wrap">
 			<div role="group" class="btn-group">
-				<b-button variant="primary"><b-icon icon="pencil-fill"></b-icon>신규등록</b-button>
+				<b-button variant="primary" v-b-modal.modal-1><b-icon icon="pencil-fill"></b-icon>신규등록</b-button>
 			</div>
 			<div role="group" class="btn-group">
-				<button type="button" class="btn btn-light btn-excel">
-					엑셀 다운로드
-				</button>
+				<button type="button" class="btn btn-light btn-excel"><!--svg icon-->엑셀 다운로드</button>
 			</div>
 		</div>
 		<div class="table-wrap"></div>
 		<div class="pa-wrap">
 			<b-pagination v-model="currentPage" :total-rows="rows" size="sm"></b-pagination>
 		</div>
+		<b-modal id="modal-1" title="동 등록">
+			<!---->
+			<div class="modal-content-wrap">
+				<form>
+					<div class="modal-1st-box">
+						<div class="form-group">
+							<label class="d-block label-wrap">지역 선택</label>
+							<div class="input-wrap">
+								<select class="form-control">
+									<option value="서울">서울</option>
+									<option value="경기">경기</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="d-block label-wrap">단지 선택</label>
+							<div class="input-wrap">
+								<select class="form-control">
+									<option value="서울">서울</option>
+									<option value="경기">경기</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="d-block label-wrap">등록 동명</label>
+							<div class="input-wrap">
+								<input type="text" placeholder="101동" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="d-block label-wrap">DCU ID</label>
+							<div class="input-wrap">
+								<input type="text" placeholder="" class="form-control" />
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!---->
+		</b-modal>
 	</div>
 </template>
