@@ -15,7 +15,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+	created() {
+		let n = this.$route.matched.length;
+		let paths = this.$route.matched[n - 1].path.split("/");
+
+		paths.forEach((path, index) => {
+			path = "menu." + (path != "" ? path + "." : "") + "title";
+			paths[index] = path;
+		});
+	}
+};
 </script>
 
 <style></style>

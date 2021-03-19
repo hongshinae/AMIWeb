@@ -19,10 +19,26 @@ const routes = [
 			},
 			// 설비
 			{
+				path: "device",
+				name: "Device",
+				component: () => import("@/pages/Menu/Device/Estate"),
+				children: [
+					{
+						path: "estate",
+						name: "DeviceEstate",
+						component: () => import("@/pages/Menu/Device/Estate"),
+						meta: { theme: "theme_white" },
+						props: true
+					}
+				],
+				props: true
+			},
+			{
 				path: "estate",
 				name: "Estate",
 				component: () => import("@/pages/Menu/Device/Estate"),
-				meta: { theme: "theme_white" }
+				meta: { theme: "theme_white" },
+				props: true
 			},
 			{
 				path: "building",
@@ -169,7 +185,7 @@ router.beforeEach(async (to, from, next) => {
 		// await refreshToken();	// 나중에 수정해야함
 	}
 
-	if (to.matched.some(record => record.meta.unauthorized) || (store.state.userStore && store.state.userStore.token.accessToken)) {
+	if (to.matched.some(record => record.meta.unauthorized) || (store.state && store.state.userStore && store.state.userStore.token.accessToken)) {
 		return next();
 	}
 
