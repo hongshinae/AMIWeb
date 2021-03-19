@@ -2,17 +2,14 @@
 	<div class="main-location-wrap">
 		<h1>단지 관리</h1>
 		<div class="main-location">
-			<div class="home-img">
-				<icon-base viewBox="0 0 16 16" width="1.2em" height="1.2em" icon-color="" icon-name="search" cls="bi-house mx-auto b-icon bi">
-					<icon-home-up />
-					<icon-home-down />
-				</icon-base>
-			</div>
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="#" target="_self" class="">홈</a></li>
-				<li class="breadcrumb-item"><a href="#" target="_self" class="">설비</a></li>
-				<li class="breadcrumb-item active"><span aria-current="location">단지 관리</span></li>
-			</ol>
+			<b-breadcrumb>
+				<b-breadcrumb-item href="#home">
+					<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
+					홈
+				</b-breadcrumb-item>
+				<b-breadcrumb-item href="#foo">설비</b-breadcrumb-item>
+				<b-breadcrumb-item active>동 관리</b-breadcrumb-item>
+			</b-breadcrumb>
 		</div>
 	</div>
 </template>
