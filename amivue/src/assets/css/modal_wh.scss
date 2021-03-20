@@ -1,4 +1,5 @@
 .modal-dialog {
+	//전체모달스타일
 	header.modal-header {
 		background: #287fff;
 		color: #ffffff;
@@ -96,6 +97,7 @@
 		float: left;
 	}
 }
+
 .modal-equip {
 	.left li {
 		float: left;
@@ -137,6 +139,7 @@
 		height: 400px;
 		position: relative;
 		svg {
+			width: 90%;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -151,8 +154,52 @@
 			right: 0;
 			bottom: 0;
 			.row {
-				margin: 0 auto;
-				width: 240px;
+				margin: 0px auto 7px auto !important;
+				width: 320px;
+				height: 34px;
+			}
+		}
+	}
+}
+
+#meter-modal-1 {
+	.svg-wrap {
+		width: 760px;
+		height: 400px;
+		position: relative;
+		svg {
+			width: 368px;
+			position: absolute;
+			top: 16px;
+			left: 10px;
+			right: 0;
+			bottom: 0;
+		}
+		.svg-input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			li {
+				width: 347px;
+				float: left;
+				.meter-value {
+					font-size: 45px;
+					color: #fff;
+					text-align: center;
+					margin-top: 72px;
+					margin-bottom: 74px;
+					font-family: "alarm_clock";
+				}
+			}
+			li:first-child {
+				width: 270px;
+				margin-left: 59px;
+				margin-right: 81px;
+			}
+			li:last-child {
+				margin-top: 35px;
 			}
 		}
 	}
