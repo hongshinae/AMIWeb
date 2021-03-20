@@ -27,7 +27,7 @@ rect.highcharts-legend-box {
 	margin: auto;
 }
 .small {
-	font-size: 1rem;
+	font-size: 0.8rem !important;
 }
 button svg {
 	width: 12px;
