@@ -1,0 +1,66 @@
+@charset "utf-8";
+.main .navWrap {
+	height: 52px;
+	padding: 2px;
+	box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.2);
+	background-color: #07132b;
+	padding: 0px 25px;
+}
+
+.main .navbar a.sidebar-toggle {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-top: 4px;
+}
+
+ul.infowrap {
+	height: 52px;
+}
+ul.infowrap li {
+	height: 52px;
+	line-height: 39px;
+	float: left;
+}
+
+.infowrap a {
+	color: #d3d3d3;
+	font-size: 14px;
+}
+
+.infowrap a:hover {
+	color: #ffffff;
+}
+
+nav.navbar > a.navbar-brand {
+	width: 152px;
+	height: 22px;
+	display: block;
+	background: url(../images/logo.png) no-repeat;
+}
+
+.main .menu {
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url(../images/img.png) -152px -56px no-repeat;
+	border: 0;
+}
+
+.infowrap .aram i,
+.infowrap .error i {
+	width: 20px;
+	height: 20px;
+	margin-top: 9px;
+}
+
+.infowrap .aram a,
+.infowrap .error a {
+	padding: 0.5rem 0;
+	color: #656565;
+	margin-right: 10px;
+}
+.infowrap .aram.on a,
+.infowrap .error.on a {
+	color: #ff0000;
+}

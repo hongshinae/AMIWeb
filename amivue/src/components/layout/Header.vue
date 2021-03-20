@@ -19,8 +19,8 @@
 
 <script>
 // Header css
-import "@/assets/css/header.css";
-import "@/assets/css/header_wh.css";
+import "@/assets/css/header.scss";
+import "@/assets/css/header_wh.scss";
 import { mapGetters } from "vuex";
 
 export default {
