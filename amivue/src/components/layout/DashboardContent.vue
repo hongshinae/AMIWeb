@@ -6,9 +6,9 @@
 
 <script>
 // Main css
-import "@/assets/css/contents.scss";
-import "@/assets/css/modal_wh.scss";
-import "@/assets/css/table.scss";
+import "@/assets/scss/contents.scss";
+import "@/assets/scss/modal_wh.scss";
+import "@/assets/scss/table.scss";
 export default {};
 </script>
 

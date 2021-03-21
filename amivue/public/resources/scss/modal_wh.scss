@@ -1,0 +1,84 @@
+.modal-dialog {
+	position: absolute !important;
+	top: 300px;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+	width: 906px !important;
+	max-width: 900px !important;
+}
+header.modal-header {
+	background: #3b82ec;
+	color: #ffffff;
+}
+.modal-dialog .close {
+	color: #fff;
+	text-shadow: 0 1px 0 #0d0b5a;
+	opacity: 1;
+}
+.modal-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0.3rem;
+	outline: 0;
+}
+.modal-content-wrap {
+	padding: 20px 35px;
+}
+.modal-first-box {
+	width: 370px;
+	margin-right: 60px;
+	float: left;
+}
+.modal-first-box .form-group,
+.modal-sec-box .form-group {
+	height: 40px;
+	width: 370px;
+	display: block;
+}
+.modal-sec-box {
+	width: 370px;
+	float: left;
+}
+.modal-thr-box {
+	width: 800px;
+	float: left;
+}
+.label-wrap {
+	width: 120px;
+	height: 34px;
+	float: left;
+}
+.modal-thr-box ul li {
+	float: left;
+	margin-right: 20px;
+}
+.modal-thr-box ul li input[type="checkbox"] {
+	margin-right: 5px;
+}
+.input-wrap {
+	width: 250px;
+	height: 34px;
+	float: left;
+}
+.modal-thr-box .input-wrap {
+	width: 500px;
+}
+.modal-thr-box button {
+	float: right;
+}
+.bg {
+	height: 29px;
+	line-height: 29px;
+	background: #f3f3f3;
+	float: left;
+	padding: 0px 20px;
+	border-radius: 4px;
+	min-width: 535px;
+}

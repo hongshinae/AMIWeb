@@ -4,7 +4,7 @@
 import "es6-promise/auto";
 
 // Main css
-import "@/assets/css/common.scss";
+import "@/assets/scss/common.scss";
 import "@/assets/css/reset.css";
 
 // Main scss
