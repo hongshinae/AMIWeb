@@ -3,8 +3,8 @@
 		<h1>단지 관리</h1>
 		<div class="main-location">
 			<b-breadcrumb>
-				<b-breadcrumb-item to="/dashboard">
-					<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
+				<b-breadcrumb-item href="" v-for="(path, i) in paths" :key="i">
+					{{ $t(path) }}
 					홈
 				</b-breadcrumb-item>
 				<b-breadcrumb-item>설비</b-breadcrumb-item>
@@ -19,11 +19,22 @@ export default {
 	created() {
 		let n = this.$route.matched.length;
 		let paths = this.$route.matched[n - 1].path.split("/");
+		let pathName = "menu";
 
 		paths.forEach((path, index) => {
-			path = "menu." + (path != "" ? path + "." : "") + "title";
+			pathName += "." + path;
+			console.log(pathName);
+			path = pathName + index != paths.length ? "title" : "";
 			paths[index] = path;
 		});
+
+		this.paths = paths;
+		console.log(this.paths);
+	},
+	data() {
+		return {
+			paths: null
+		};
 	}
 };
 </script>
