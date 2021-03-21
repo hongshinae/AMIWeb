@@ -14,29 +14,30 @@ html {
 }
 body {
 	height: 100%;
+	a {
+		color: #ffffff;
+	}
+	.row:after {
+		clear: inherit !important;
+	}
+	.hide {
+		display: none;
+	}
+	.wrapper {
+		align-items: stretch;
+		display: flex;
+		width: 100%;
+	}
+	.clearfix {
+		*zoom: 1;
+	}
+	.clearfix:before,
+	.clearfix:after {
+		display: block;
+		line-height: 0;
+	}
 }
-.row:after {
-	clear: inherit !important;
-}
-.hide {
-	display: none;
-}
-.wrapper {
-	align-items: stretch;
-	display: flex;
-	width: 100%;
-}
-.clearfix {
-	*zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-	display: block;
-	line-height: 0;
-}
-.clearfix:after {
-	clear: both;
-}
+
 /*color*/
 .btn {
 	font-size: 12px !important;
@@ -64,6 +65,48 @@ body {
 .r-color {
 	color: #d9534f !important;
 }
+.fontC {
+	color: #00ff90;
+	text-shadow: rgba(255, 255, 255, 0.7) 0px 0px 5px;
+}
+.m-b-20 {
+	margin-bottom: 20px;
+}
+.linkage {
+	width: 7px;
+	height: 7px;
+	border-radius: 4px;
+	background: #4bbf73;
+	display: block;
+	margin: auto;
+}
+.unlinkage {
+	width: 7px;
+	height: 7px;
+	border-radius: 4px;
+	background: #d9534f;
+	display: block;
+	margin: auto;
+}
+.small {
+	font-size: 0.8rem !important;
+}
+label,
+input,
+select {
+	height: 34px;
+	line-height: 34px;
+	font-size: 12px !important;
+	font-weight: normal !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+button svg {
+	width: 12px;
+	height: 15px;
+	margin-right: 5px;
+}
 /*layout*/
 .b-sidebar-outer {
 	float: left !important;
@@ -74,10 +117,7 @@ body {
 	height: inherit !important;
 	background: #050e21;
 }
-.b-sidebar {
-	width: 263px !important;
-	position: relative !important;
-}
+
 .main {
 	display: flex;
 	width: 100%;

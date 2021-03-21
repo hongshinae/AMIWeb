@@ -1,15 +1,15 @@
-//대시보드 현황판 bg
-//대시보드 현황판 폰트컬러
-//메인 bg
-//메인 폰트컬러
-//블루 bg
-//레드 bg
-//그린 bg
-//화이트 bg
-$color-bg: #ecf2f6;
-$color-dashboard-bg: #162238;
-$color-font: #ecf2f6;
-$color-dashboard-bg: #162238;
+$color-rd: #d9534f; //레드
+$color-gn: #00ff90; //그린
+$color-gn: #1ee2df; //좌측 네비게이션 온 그린
+$color-wh: #162238;
+$color-bl: #287fff; //블루
+$color-bk: #162238; //대시보드 현황판 bg
+$color-w: #162238; //대시보드 현황판 폰트컬러
+$color-gy: #ecf2f6; //메인 bg 그레이
+$color-main-gy: #6c757d; //메인 폰트 그레이
+
+$color-ny: #07132b; //헤더 네이비
+$color-gr: #d3d3d3; //헤더 a 글씨
 
 body {
 	font-size: 12px;

@@ -1,40 +1,5 @@
 @charset "utf-8";
 
-.highcharts-background {
-	background: none !important;
-	fill: none !important;
-}
-rect.highcharts-legend-box {
-	fill: none;
-}
-.m-b-20 {
-	margin-bottom: 20px;
-}
-.linkage {
-	width: 7px;
-	height: 7px;
-	border-radius: 4px;
-	background: #4bbf73;
-	display: block;
-	margin: auto;
-}
-.unlinkage {
-	width: 7px;
-	height: 7px;
-	border-radius: 4px;
-	background: #d9534f;
-	display: block;
-	margin: auto;
-}
-.small {
-	font-size: 0.8rem !important;
-}
-button svg {
-	width: 12px;
-	height: 15px;
-	margin-right: 5px;
-}
-
 .content {
 	padding: 15px 40px;
 	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
@@ -50,10 +15,23 @@ button svg {
 	margin-bottom: 30px;
 }
 .main-location-wrap {
-	height: 40px;
+	width: 100%;
+	position: relative;
+	display: block;
 	margin-top: 22px;
+	height: 40px;
+	padding: 0 8px;
 	margin-bottom: 30px;
+	h1 {
+		font-size: 24px;
+		float: left;
+		margin: 16px 0 0 0;
+		height: 24px;
+		vertical-align: bottom;
+		font-weight: bold;
+	}
 }
+
 .main-bg.content .row {
 	margin-right: -15px;
 	margin-left: -15px;
@@ -99,6 +77,26 @@ button svg {
 	border: solid 1px #6979a9;
 	background-image: linear-gradient(to top, #0a1428, #192640);
 	border-radius: 4px;
+	.chartWarp {
+		overflow: hidden;
+		padding: 10px;
+		width: 100%;
+	}
+	h5 {
+		margin-top: 5px;
+		height: 30px;
+		line-height: 30px;
+		border-bottom: 1px solid #6979a9;
+		padding: 0 15px 5px 15px;
+		font-family: "Nanum Gothic", sans-serif !important;
+		b {
+			display: block;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			float: right;
+		}
+	}
 }
 .wbox:after,
 .box:after {
@@ -109,83 +107,31 @@ button svg {
 	overflow: hidden;
 	visibility: hidden;
 }
-.box h5 {
-	margin-top: 5px;
-	height: 30px;
-	line-height: 30px;
-	border-bottom: 1px solid #6979a9;
-	padding: 0 15px 5px 15px;
-	font-family: "Nanum Gothic", sans-serif !important;
-}
-.box h5 b {
-	display: block;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	float: right;
-}
-.fontC {
-	color: #00ff90;
-	text-shadow: rgba(255, 255, 255, 0.7) 0px 0px 5px;
-}
-.box .chartWarp {
-	overflow: hidden;
-	padding: 10px;
-	width: 100%;
-}
-.main-bg .main-location-wrap {
-	width: 100%;
-	position: relative;
-	display: block;
-	margin-top: 22px;
-}
-.main-location-wrap h1 {
-	font-size: 24px;
-	float: left;
-	margin: 16px 0 0 0;
-	height: 24px;
-	vertical-align: bottom;
-	font-weight: bold;
-}
 
-.breadcrumb-item svg {
-	margin-right: 5px;
-}
-.breadcrumb {
-	float: left;
-	background-color: inherit !important;
-}
-.breadcrumb-item a {
-	color: #777777 !important;
-}
-.breadcrumb-item a:hover {
-	text-decoration: none;
-	color: #3b82ec;
-}
 .main-location {
 	float: right;
 	height: 24px;
 	font-size: 12px;
 	margin-top: 10px;
+	.breadcrumb {
+		float: left;
+		background-color: inherit !important;
+	}
+	.breadcrumb-item {
+		svg {
+			margin-right: 5px;
+		}
+		a {
+			color: #777777 !important;
+		}
+		a:hover {
+			text-decoration: none;
+			color: #3b82ec;
+		}
+	}
 }
-ul.nav.nav-tabs {
-	height: 32px;
-	margin-bottom: 20px;
-}
-.nav-tabs > li {
-	margin-right: 10px;
-}
-label,
-input,
-select {
-	height: 34px;
-	line-height: 34px;
-	font-size: 12px !important;
-	font-weight: normal !important;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
+
+//tap
 .nav-tabs .nav-link {
 	border: 1px solid #287fff !important;
 	height: 32px;
@@ -202,6 +148,15 @@ select {
 	border: 1px solid #3b82ec !important;
 	color: #ffffff !important;
 }
+.nav-tabs {
+	border-bottom: 0 !important;
+	margin-bottom: 20px !important;
+}
+.nav-tabs li.nav-item {
+	margin-right: 11px;
+}
+
+//search
 .tab-content .search-wrap1,
 .tab-content .search-wrap2 {
 	margin-bottom: 30px;
@@ -270,15 +225,16 @@ select {
 }
 
 .btn-wrap {
+	//버튼 그룹
 	height: 31px;
 	line-height: 31px;
 	margin-bottom: 15px !important;
-}
-.btn-wrap .btn-group:first-child {
-	float: left;
-}
-.btn-wrap .btn-group:last-child {
-	float: right;
+	.btn-group:first-child {
+		float: left;
+	}
+	.btn-group:last-child {
+		float: right;
+	}
 }
 
 .table-wrap,
@@ -290,11 +246,11 @@ select {
 .map-wrap {
 	min-height: 100px;
 }
-
 .one-row .form-group.row {
 	height: 34px;
 	margin-bottom: 5px;
 }
+
 /*검침률*/
 .inspection li {
 	width: 42%;
@@ -464,4 +420,12 @@ select {
 /*SVGwrap*/
 .svg-Warp {
 	padding: 20px 40px;
+}
+//하이차트
+.highcharts-background {
+	background: none !important;
+	fill: none !important;
+}
+rect.highcharts-legend-box {
+	fill: none;
 }
