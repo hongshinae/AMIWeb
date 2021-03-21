@@ -35,7 +35,7 @@ axios.interceptors.response.use(
 		// Response Error
 		const errorAPI = error.config;
 
-		if (error.response.data.status === 401 && errorAPI.retry === undefined) {
+		if (error && error.response.data.status === 401 && errorAPI.retry === undefined) {
 			errorAPI.retry = true;
 			// 	console.log("토큰이 이상한 오류일 경우");
 			// 	await Login.refreshToken();
