@@ -1056,57 +1056,95 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">DCU IP / PORT</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="20.200.11.11 / 1234" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">Trap 수신서버 / 동작유무</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="20.200.20.1 / true" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">T-Mask</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="0x0000000" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">Master mod. A</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="00:00:AC:5E:8C:01:99:7C" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">Master mod. B</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="00:00:AC:5E:8C:01:99:7C" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">Master mod. C</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="00:00:AC:5E:8C:01:99:7C" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 									</div>
 									<div class="modal-2nd-box">
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">DCU 동작시간</label>
+												<label class="d-block">간선망</label>
+											</b-col>
+											<b-col lg="7">
+												<b-form-select v-model="selected" class="form-control">
+													<b-form-select-option>LTE</b-form-select-option>
+													<b-form-select-option>경기도</b-form-select-option>
+												</b-form-select>
+											</b-col>
+										</b-row>
+										<b-row class="form-group">
+											<b-col lg="5">
+												<label class="d-block">인입망</label>
+											</b-col>
+											<b-col lg="7">
+												<b-form-select v-model="selected" class="form-control">
+													<b-form-select-option>HS-PLC</b-form-select-option>
+													<b-form-select-option>경기도</b-form-select-option>
+												</b-form-select>
+											</b-col>
+										</b-row>
+										<b-row class="form-group">
+											<b-col lg="5">
+												<label class="d-block">DCU 종류</label>
+											</b-col>
+											<b-col lg="7">
+												<b-form-input v-model="text" placeholder="DCU A type" class="form-control"></b-form-input>
+											</b-col>
+										</b-row>
+										<b-row class="form-group">
+											<b-col lg="5">
+												<label class="d-block">Meter count</label>
+											</b-col>
+											<b-col lg="7">
+												<b-form-input v-model="text" placeholder="110" class="form-control"></b-form-input>
+											</b-col>
+										</b-row>
+										<b-row class="form-group">
+											<b-col lg="5">
+												<label class="d-block">검침 Agent</label>
 											</b-col>
 											<b-col lg="7">
 												<b-form-input v-model="text" placeholder="2020-12-01 15:00:00" class="form-control"></b-form-input>
@@ -1114,66 +1152,34 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">DCU 고유번호</label>
+												<label class="d-block">SNMP (RO)</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="cnu111" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="kepsnmpro" class="form-control" disabled></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">DCU 모델번호</label>
+												<label class="d-block">SNMP (RW)</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="a12d125" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="kepsnmpro" class="form-control" disabled></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">FEP IP / PORT</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="20.200.11.11 / 1234" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
+												<label class="d-block">DCU 현재시간</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
-										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
-											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
-										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
-											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
-										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
-											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
-										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">MAC 번호</label>
-											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="2021-01-29 12:11:26" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">

@@ -90,8 +90,7 @@ const routes = [
 			{
 				path: "server",
 				name: "Server",
-				component: () => import("@/pages/Menu/Device/Server"),
-				meta: { theme: "theme_white" }
+				component: () => import("@/pages/Menu/Device/Server")
 			},
 			// 검침
 			{
