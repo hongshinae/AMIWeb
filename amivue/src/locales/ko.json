@@ -38,8 +38,18 @@
 	"dashboard": {
 		"message": "테스트"
 	},
+	"component": {
+		"search": "검색"
+	},
 	"estate": {
+		"area": "지역",
+		"estateName": "단지명",
 		"add": "신규 단지 등록",
 		"excelDownload": "엑셀 다운로드"
+	},
+	"msg": {
+		"session": {
+			"expired": "세션이 만료되었습니다."
+		}
 	}
 }

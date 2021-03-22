@@ -1,5 +1,7 @@
 import Axios from "axios";
-import store from "@/store";
+import Store from "@/store";
+import router from "@/routes";
+import i18n from "@/locales";
 
 const axios = Axios.create({
 	baseURL: "/api",
@@ -11,8 +13,8 @@ axios.interceptors.request.use(
 	async function(config) {
 		// 요청 성공 직전 호출됩니다.
 		// axios 설정값을 넣습니다. (사용자 정의 설정도 추가 가능)
-		config.headers.TOKEN = store.state.userStore.accessToken;
-		config.headers.REFRESH_TOKEN = store.state.userStore.refreshToken;
+		config.headers["x-token"] = Store.state.userStore.token.accessToken;
+		config.headers.REFRESH_TOKEN = Store.state.userStore.token.refreshToken;
 		config.headers["Access-Control-Allow-Origin"] = "*";
 		config.headers["Access-Control-Allow-Headers"] = "*";
 		// config.headers["Content-Type"] = "application/json; charset = utf-8";
@@ -40,6 +42,14 @@ axios.interceptors.response.use(
 			// 	console.log("토큰이 이상한 오류일 경우");
 			// 	await Login.refreshToken();
 			// return await Axios(errorAPI);
+			alert(i18n.t("msg.session.expired"));
+			Store.dispatch("LOGOUT")
+				.then(() => {
+					router.push("/login");
+				})
+				.catch(({ response }) => {
+					alert(response.data.response.error_message);
+				});
 		}
 
 		return Promise.reject(error);

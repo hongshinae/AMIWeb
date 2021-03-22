@@ -2,9 +2,7 @@
 	<div class="search-wrap1">
 		<div class="wbox">
 			<div class="search-img">
-				<icon-base viewBox="0 0 16 16" width="1.2em" height="1.2em" icon-color="" icon-name="search" cls="bi-search mx-auto b-icon bi">
-					<icon-search />
-				</icon-base>
+				<b-icon icon="search" variant="primary"></b-icon>
 			</div>
 			<div class="search">
 				<!--검색영역-->
@@ -12,14 +10,18 @@
 				<!--//검색영역-->
 			</div>
 			<div class="btn-wrap ml-auto">
-				<button type="button" class="btn btn-primary btn-block">검 색</button>
+				<button type="button" class="btn btn-primary btn-block" @click="search()">{{ $t("component.search") }}</button>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-export default {};
+export default {
+	methods: {
+		search() {}
+	}
+};
 </script>
 
 <style></style>

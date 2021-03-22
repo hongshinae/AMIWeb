@@ -13,7 +13,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import GlobalDirectives from "@/globalDirectives";
 import MainLayout from "@/mainLayout";
-import i18n from "./locales";
+import i18n from "@/locales";
 import IconBase from "@/components/IconBase.vue";
 
 // Make BootstrapVue available throughout your project

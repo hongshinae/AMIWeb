@@ -122,10 +122,6 @@ const routes = [
 				name: "QnA",
 				component: () => import("@/pages/Menu/Support/QnA"),
 				meta: { theme: "theme_white" }
-			},
-			{
-				path: "*",
-				redirect: "*/1"
 			}
 		]
 	},
@@ -139,6 +135,10 @@ const routes = [
 		name: "Login",
 		component: () => import("@/pages/Login"),
 		meta: { unauthorized: true }
+	},
+	{
+		path: "/*",
+		redirect: "/*/1"
 	}
 ];
 

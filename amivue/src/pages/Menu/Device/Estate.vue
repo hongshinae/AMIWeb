@@ -9,36 +9,41 @@
 		</b-modal>
 		<content-header :paths="paths" :pageName="pageName" />
 		<content-search>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="form-group row">
-						<label class="d-block col-lg-4">지역</label>
-						<div class="col-lg-8">
-							<select class="form-control">
-								<option value="서울">서울</option>
-								<option value="경기">경기</option>
-							</select>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div id="" role="group" class="form-group row">
-						<label id="" for="input-3" class="d-block col-lg-4">단지 명</label>
-						<div class="col-lg-8">
-							<input id="input-1" type="text" placeholder="삼성 아파트" class="form-control" />
-						</div>
-					</div>
-				</div>
-			</div>
+			<b-row>
+				<b-col cols="4" lg="4">
+					<b-row class="form-group">
+						<b-col lg="4">
+							<label class="d-block">{{ $t("estate.area") }}</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-select v-model="selected" class="form-control">
+								<b-form-select-option v-for="(path, i) in estateList" :key="i" :value="path.regionSeq" default>
+									{{ path.regionName }}
+								</b-form-select-option>
+							</b-form-select>
+						</b-col>
+					</b-row>
+				</b-col>
+				<b-col cols="4" lg="4">
+					<b-row class="form-group">
+						<b-col lg="4">
+							<label class="d-block">{{ $t("estate.estateName") }}</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-input placeholder="그랑시아 아파트" class="form-control"></b-form-input>
+						</b-col>
+					</b-row>
+				</b-col>
+			</b-row>
 		</content-search>
 		<content-table>
 			<template v-slot:header-left-icon>
 				<icon-pencil />
 			</template>
-			<template v-slot:header-left-name>
+			<template #header-left-name>
 				{{ $t("estate.add") }}
 			</template>
-			<template v-slot:header-right-icon>
+			<template #header-right-icon>
 				<polyline clip-rule="evenodd" fill="#08743B" fill-rule="evenodd" points="30,28.652 0,28.652 0,0 30,0 30,28.652  " />
 				<polyline
 					fill="#FFFFFF"
@@ -53,6 +58,7 @@
 </template>
 <script>
 import Vue from "vue";
+import Estate from "@/service/estate";
 import ContentHeader from "@/components/content/ContentHeader";
 import ContentSearch from "@/components/content/ContentSearch";
 import ContentTable from "@/components/content/ContentTable";
@@ -71,13 +77,38 @@ Vue.component("icon-home-down", IconHomeDown);
 Vue.component("icon-pencil", IconPencil);
 
 export default {
+	props: { pageNumber: { default: 1 } },
 	components: { ContentHeader, ContentSearch, ContentTable },
+	created() {
+		Estate.region()
+			.then(({ data }) => {
+				this.estateList = data.response;
+				this.selected = data.response[0].regionSeq;
+			})
+			.catch(error => {
+				console.log(error);
+				throw error;
+			});
+	},
 	data() {
 		return {
 			pageName: this.$t("menu.device.estate"),
-			paths: [{ name: this.$t("menu.title"), bicon: "house" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.estate") }]
+			paths: [{ name: this.$t("menu.title"), bicon: "house" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.estate") }],
+			selected: null,
+			estateList: Array
 		};
 	},
-	methods: {}
+	methods: {
+		searchItem() {
+			Estate.estateList()
+				.then(({ data }) => {
+					console.log(data);
+				})
+				.catch(error => {
+					console.log(error);
+					throw error;
+				});
+		}
+	}
 };
 </script>

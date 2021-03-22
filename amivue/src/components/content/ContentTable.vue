@@ -82,9 +82,7 @@
 
 <script>
 export default {
-	created() {
-		console.log("ContentTable");
-	}
+	created() {}
 };
 </script>
 
