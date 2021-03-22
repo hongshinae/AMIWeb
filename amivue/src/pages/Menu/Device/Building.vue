@@ -1,18 +1,6 @@
 <template>
 	<div class="main-bg content">
-		<div class="main-location-wrap">
-			<h1>동 관리</h1>
-			<div class="main-location">
-				<b-breadcrumb>
-					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
-						홈
-					</b-breadcrumb-item>
-					<b-breadcrumb-item>설비</b-breadcrumb-item>
-					<b-breadcrumb-item active>동 관리</b-breadcrumb-item>
-				</b-breadcrumb>
-			</div>
-		</div>
+		<content-header :pageName="pageName" :paths="paths" />
 		<div class="search-wrap1">
 			<div class="wbox">
 				<div class="search-img">
@@ -170,3 +158,19 @@
 		</b-modal>
 	</div>
 </template>
+<script>
+import Vue from "vue";
+import ContentHeader from "@/components/content/ContentHeader";
+
+Vue.component(ContentHeader);
+
+export default {
+	components: { ContentHeader },
+	data() {
+		return {
+			pageName: this.$t("menu.device.building"),
+			paths: [{ name: this.$t("menu.title"), bicon: "house" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.building") }]
+		};
+	}
+};
+</script>

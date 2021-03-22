@@ -19,21 +19,6 @@ const routes = [
 			},
 			// 설비
 			{
-				path: "device",
-				name: "Device",
-				component: () => import("@/pages/Menu/Device/Estate"),
-				children: [
-					{
-						path: "estate",
-						name: "DeviceEstate",
-						component: () => import("@/pages/Menu/Device/Estate"),
-						meta: { theme: "theme_white" },
-						props: true
-					}
-				],
-				props: true
-			},
-			{
 				path: "estate",
 				name: "Estate",
 				component: () => import("@/pages/Menu/Device/Estate"),

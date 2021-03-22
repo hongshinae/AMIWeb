@@ -1,14 +1,12 @@
 <template>
 	<div class="main-location-wrap">
-		<h1>단지 관리</h1>
+		<h1>{{ pageName }}</h1>
 		<div class="main-location">
 			<b-breadcrumb>
 				<b-breadcrumb-item href="" v-for="(path, i) in paths" :key="i">
-					{{ $t(path) }}
-					홈
+					<b-icon :icon="path.bicon" scale="1.25" shift-v="1.25" aria-hidden="true" v-if="path.bicon" />
+					{{ path.name }}
 				</b-breadcrumb-item>
-				<b-breadcrumb-item>설비</b-breadcrumb-item>
-				<b-breadcrumb-item active>동 관리</b-breadcrumb-item>
 			</b-breadcrumb>
 		</div>
 	</div>
@@ -16,25 +14,19 @@
 
 <script>
 export default {
-	created() {
-		let n = this.$route.matched.length;
-		let paths = this.$route.matched[n - 1].path.split("/");
-		let pathName = "menu";
-
-		paths.forEach((path, index) => {
-			pathName += "." + path;
-			console.log(pathName);
-			path = pathName + index != paths.length ? "title" : "";
-			paths[index] = path;
-		});
-
-		this.paths = paths;
-		console.log(this.paths);
+	props: {
+		pageName: {
+			type: String,
+			required: true
+		},
+		paths: {
+			type: Array,
+			required: true
+		}
 	},
+	created() {},
 	data() {
-		return {
-			paths: null
-		};
+		return {};
 	}
 };
 </script>

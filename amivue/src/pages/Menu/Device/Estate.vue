@@ -7,7 +7,7 @@
 			<p class="my-2">First Modal</p>
 			<b-button v-b-modal.modal-multi-2>Open Second Modal</b-button>
 		</b-modal>
-		<content-header />
+		<content-header :paths="paths" :pageName="pageName" />
 		<content-search>
 			<div class="row">
 				<div class="col-lg-4">
@@ -72,9 +72,11 @@ Vue.component("icon-pencil", IconPencil);
 
 export default {
 	components: { ContentHeader, ContentSearch, ContentTable },
-
-	data: () => {
-		return {};
+	data() {
+		return {
+			pageName: this.$t("menu.device.estate"),
+			paths: [{ name: this.$t("menu.title"), bicon: "house" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.estate") }]
+		};
 	},
 	methods: {}
 };
