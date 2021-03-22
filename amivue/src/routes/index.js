@@ -19,40 +19,23 @@ const routes = [
 			},
 			// 설비
 			{
-				path: "estate",
+				path: "estate/:pageNumber",
 				name: "Estate",
 				component: () => import("@/pages/Menu/Device/Estate"),
 				meta: { theme: "theme_white" },
 				props: true
 			},
 			{
-				path: "building",
+				path: "building/:pageNumber",
 				name: "Building",
 				component: () => import("@/pages/Menu/Device/Building"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "equipment",
+				path: "equipment/:pageNumber",
 				name: "Equipment",
 				component: () => import("@/pages/Menu/Device/Equipment"),
-				meta: { theme: "theme_white" },
-				children: [
-					{
-						path: "dcu",
-						name: "EquipmentDcu",
-						component: () => import("@/pages/Menu/Device/Equipment/Dcu")
-					},
-					{
-						path: "meter",
-						name: "EquipmentMeter",
-						component: () => import("@/pages/Menu/Device/Equipment/Meter")
-					},
-					{
-						path: "etc",
-						name: "EquipmentEtc",
-						component: () => import("@/pages/Menu/Device/Equipment/Etc")
-					}
-				]
+				meta: { theme: "theme_white" }
 			},
 			{
 				path: "mapping",
@@ -79,66 +62,70 @@ const routes = [
 			},
 			// 검침
 			{
-				path: "mBoard",
+				path: "mBoard/:pageNumber",
 				name: "MBoard",
 				component: () => import("@/pages/Menu/Metering/MBoard"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "lookup",
+				path: "lookup/:pageNumber",
 				name: "Lookup",
 				component: () => import("@/pages/Menu/Metering/Lookup"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "info",
+				path: "info/:pageNumber",
 				name: "Info",
 				component: () => import("@/pages/Menu/Metering/Info"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "regular",
+				path: "regular/:pageNumber",
 				name: "Regular",
 				component: () => import("@/pages/Menu/Metering/Regular"),
 				meta: { theme: "theme_white" }
 			},
 			// 장애
 			{
-				path: "fBoard",
+				path: "fBoard/:pageNumber",
 				name: "FBoard",
 				component: () => import("@/pages/Menu/Failure/FBoard"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "code",
+				path: "code/:pageNumber",
 				name: "Code",
 				component: () => import("@/pages/Menu/Failure/Code"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "status",
+				path: "status/:pageNumber",
 				name: "Status",
 				component: () => import("@/pages/Menu/Failure/Status"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "reading",
+				path: "reading/:pageNumber",
 				name: "Reading",
 				component: () => import("@/pages/Menu/Failure/Reading"),
 				meta: { theme: "theme_white" }
 			},
 			// 고객 지원
 			{
-				path: "ask",
+				path: "ask/:pageNumber",
 				name: "Ask",
 				component: () => import("@/pages/Menu/Support/Ask"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "qna",
+				path: "qna/:pageNumber",
 				name: "QnA",
 				component: () => import("@/pages/Menu/Support/QnA"),
 				meta: { theme: "theme_white" }
+			},
+			{
+				path: "*",
+				redirect: "*/1"
 			}
 		]
 	},

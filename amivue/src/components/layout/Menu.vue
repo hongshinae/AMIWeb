@@ -81,6 +81,7 @@ export default {
 						{
 							href: "/estate",
 							title: this.$t("menu.device.estate"),
+							alias: "/estate/:pageNumber",
 							bicon: "",
 							badge: {
 								text: "N",
@@ -92,11 +93,13 @@ export default {
 						{
 							href: "/building",
 							title: this.$t("menu.device.building"),
+							alias: "/building/:pageNumber",
 							icon: ""
 						},
 						{
 							href: "/equipment",
 							title: this.$t("menu.device.equipment"),
+							alias: "/equipment/:pageNumber",
 							icon: "",
 							badge: {
 								text: "12",
