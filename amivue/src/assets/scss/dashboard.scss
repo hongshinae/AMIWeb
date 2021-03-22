@@ -1,47 +1,53 @@
 /*검침률*/
-.inspection li {
-	width: 42%;
-	float: left;
-}
-.inspection li:last-child {
-	float: right;
+.inspection {
+	li {
+		width: 42%;
+		float: left;
+		&:last-child {
+			float: right;
+		}
+	}
 }
 
 /*닐씨*/
-.double.row .col-lg-6:first-child {
-	padding-left: -15px !important;
-	padding-right: 7px !important;
+.double {
+	&.row {
+		.col-lg-6 {
+			&:first-child {
+				padding-left: -15px !important;
+				padding-right: 7px !important;
+			}
+			&:last-child {
+				padding-left: 8px !important;
+				padding-right: -15px !important;
+			}
+		}
+	}
+	h4 {
+		padding: 10px 0 0 15px;
+		font-size: 14px;
+		margin-bottom: 0px;
+	}
 }
-.double.row .col-lg-6:last-child {
-	padding-left: 8px !important;
-	padding-right: -15px !important;
+.todayWeather {
+	height: 110px;
+	.good {
+		width: 100px;
+		height: 100px;
+		float: right;
+		background: url(../images/img.png) -262px -271px no-repeat;
+		margin-right: 10px;
+	}
 }
-.double h4 {
-	padding: 10px 0 0 15px;
-	font-size: 14px;
-	margin-bottom: 0px;
-}
-.todayWeather .good {
-	width: 100px;
-	height: 100px;
-	float: right;
-	background: url(../images/img.png) -262px -271px no-repeat;
-	margin-right: 10px;
-}
-.detaeWeather .good {
-	width: 100px;
-	height: 100px;
-	float: right;
-	background: url(../images/img.png) -262px -372px no-repeat;
-	margin-right: 10px;
-}
-.todayWeather,
 .detaeWeather {
-	height: 130px;
-}
-.todayWeather,
-.detaeWeather {
-	height: 130px;
+	height: 110px;
+	.good {
+		width: 100px;
+		height: 100px;
+		float: right;
+		background: url(../images/img.png) -262px -372px no-repeat;
+		margin-right: 10px;
+	}
 }
 
 @media (max-width: 991px) {
@@ -58,83 +64,82 @@
 	height: 30px;
 	margin: 0px 0 15px 0;
 	width: 100%;
-}
-.presentMenu ul {
-	height: 30px;
-	line-height: 30px;
-	font-size: 0.9em;
-	box-shadow: 0px 1px 1px 0 rgb(255 255 255 / 20%), inset 0px 1px 1px 0 rgb(44 54 91 / 50%);
-	background-color: #111c31;
-	display: block;
-	float: right;
-}
-.presentMenu ul li {
-	cursor: default;
-	margin: 0 10px 0 10px;
-	float: right;
-	color: #2e4664;
-}
-.presentMenu ul li.on {
-	color: #00ff90;
+	ul {
+		height: 30px;
+		line-height: 30px;
+		font-size: 0.9em;
+		box-shadow: 0px 1px 1px 0 rgb(255 255 255 / 20%), inset 0px 1px 1px 0 rgb(44 54 91 / 50%);
+		background-color: #111c31;
+		display: block;
+		float: right;
+		li {
+			cursor: default;
+			margin: 0 10px 0 10px;
+			float: right;
+			color: #2e4664;
+			&.on {
+				color: #00ff90;
+			}
+		}
+	}
 }
 
 /*서버운영정보*/
 .dutyCycle {
 	padding: 2px 20px;
-}
-.dutyCycle.cpu {
-	margin-top: 25px;
-}
-.dutyCycle h4 {
-	width: 100%;
-	height: 13px;
-	font-size: 0.9em;
-	color: #94a0b4;
-	margin: 0px 0px 3px 0px;
-}
-.dutyCycle h4 span {
-	min-width: 30px;
-	height: 12px;
-	display: inline-block;
-}
-.dutyCycle h4 progress {
-	display: block !important;
-}
-.dutyCycle h4 .title {
-	float: left;
-}
-.dutyCycle h4 .deta {
-	float: right;
+	&.cpu {
+		margin-top: 25px;
+	}
+	h4 {
+		width: 100%;
+		height: 13px;
+		font-size: 0.9em;
+		color: #94a0b4;
+		margin: 0px 0px 3px 0px;
+		span {
+			min-width: 30px;
+			height: 12px;
+			display: inline-block;
+		}
+		progress {
+			display: block !important;
+		}
+		.title {
+			float: left;
+		}
+		.deta {
+			float: right;
+		}
+	}
 }
 .serveInfo {
 	min-height: 95px;
 	padding: 6px 20px;
 	margin-top: 10px;
+	li {
+		padding: 0 2%;
+		height: 78px;
+		border-radius: 4px;
+		float: left;
+		width: 23%;
+		border: solid 1px #1ee2df;
+		background-image: linear-gradient(to top, #75cee2, #23b9da, #1ee4df);
+		margin: 0 1%;
+	}
+	h6 {
+		color: #202c51;
+		font-size: 0.9em;
+		margin-top: 10px;
+	}
+	span {
+		font-size: 1.4em;
+		float: right;
+		font-weight: bold;
+		color: #202c51;
+		font-family: none;
+		margin-top: 9px;
+	}
 }
-.serveInfo li {
-	padding: 0 2%;
-	height: 78px;
-	border-radius: 4px;
-	float: left;
-	width: 23%;
-	border: solid 1px #1ee2df;
-	background-image: linear-gradient(to top, #75cee2, #23b9da, #1ee4df);
-	margin: 0 1%;
-}
-.serveInfo h6 {
-	color: #202c51;
-	font-size: 0.9em;
-	margin-top: 10px;
-}
-.serveInfo span {
-	font-size: 1.4em;
-	float: right;
-	font-weight: bold;
-	color: #202c51;
-	font-family: none;
-	margin-top: 9px;
-}
-
 .progress-bar {
 	background-image: linear-gradient(to bottom, #1fdede 0, #23bada 100%) !important;
 }
@@ -142,6 +147,7 @@
 	background-image: linear-gradient(to bottom, #07132b 0, #07132b 100%) !important;
 	height: 5px !important;
 }
+
 /*서버현황*/
 .regist-info {
 	padding: 10px;
