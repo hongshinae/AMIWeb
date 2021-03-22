@@ -98,6 +98,33 @@
 									<td class="">정상</td>
 									<td class="">1.0</td>
 								</tr>
+								<tr role="row" class="">
+									<td class=""><b-form-checkbox></b-form-checkbox></td>
+									<td class=""><span class="linkage"></span></td>
+									<td class="">101동</td>
+									<td class="">NS09_0101A</td>
+									<td class="">29140192159</td>
+									<td class="">정상</td>
+									<td class="">1.0</td>
+								</tr>
+								<tr role="row" class="">
+									<td class=""><b-form-checkbox></b-form-checkbox></td>
+									<td class=""><span class="linkage"></span></td>
+									<td class="">101동</td>
+									<td class="">NS09_0101A</td>
+									<td class="">29140192159</td>
+									<td class="">정상</td>
+									<td class="">1.0</td>
+								</tr>
+								<tr role="row" class="">
+									<td class=""><b-form-checkbox></b-form-checkbox></td>
+									<td class=""><span class="linkage"></span></td>
+									<td class="">101동</td>
+									<td class="">NS09_0101A</td>
+									<td class="">29140192159</td>
+									<td class="">정상</td>
+									<td class="">1.0</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -130,13 +157,37 @@
 									<td class=""></td>
 									<td class="">정상</td>
 								</tr>
+								<tr role="row" class="">
+									<td class="">00:00:AC:5E:8C:A0:38:63</td>
+									<td class="">2</td>
+									<td class=""></td>
+									<td class="">정상</td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">00:00:AC:5E:8C:A0:38:63</td>
+									<td class="">2</td>
+									<td class=""></td>
+									<td class="">정상</td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">00:00:AC:5E:8C:A0:38:63</td>
+									<td class="">2</td>
+									<td class=""></td>
+									<td class="">정상</td>
+								</tr>
+								<tr role="row" class="">
+									<td class="">00:00:AC:5E:8C:A0:38:63</td>
+									<td class="">2</td>
+									<td class=""></td>
+									<td class="">정상</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</b-col>
 		</b-row>
-		<div class="btn-Wrap">
+		<div class="btn-wrap">
 			<div role="group" class="btn-group">
 				<button type="button" class="btn btn-light">SNMP read/write</button>
 				<button type="button" class="btn btn-light">trap</button>
