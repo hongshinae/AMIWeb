@@ -113,7 +113,7 @@
 		</div>
 		<b-modal id="modal-1" title="동 등록">
 			<!---->
-			<div class="modal-content-wrap">
+			<div class="modal-content-wrap modal-building">
 				<form>
 					<b-row align-h="center">
 						<div class="modal-4th-box">
@@ -144,27 +144,10 @@
 							<div class="form-group">
 								<label class="d-block label-wrap">DCU ID</label>
 								<div class="input-wrap">
-									<b-form-input v-model="text" placeholder="4521542" class="form-control"></b-form-input
-									><b-button variant="primary" class="btn btn-light">동 선택</b-button>
-								</div>
-								<!--
-								<div class="input-wrap">
 									<ul>
 										<li><b-form-input v-model="text" placeholder="4521542" class="form-control"></b-form-input></li>
 										<li><b-button class="btn" variant="outline-primary">연동확인</b-button></li>
 									</ul>
-								</div>
-								-->
-							</div>
-							<div class="form-group">
-								<div class="col-lg-4"><label class="d-block">계량기 시각</label></div>
-								<div class="col-lg-8">
-									<div class="row">
-										<div class="col-lg-7">
-											<input type="text" placeholder="2019-05-09 11:11:00" class="form-control form-control" id="__BVID__298" />
-										</div>
-										<div class="col-lg-5"><button type="button" class="btn btn btn-outline-primary">시각설정</button></div>
-									</div>
 								</div>
 							</div>
 						</div>

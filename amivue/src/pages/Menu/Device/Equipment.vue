@@ -537,8 +537,8 @@
 								</b-col>
 								<b-col lg="8">
 									<b-row>
-										<b-col lg="7"><b-form-input v-model="text" placeholder="10일" class="form-control"></b-form-input></b-col>
-										<b-col lg="5"><b-button class="btn" variant="outline-primary">검침일</b-button></b-col>
+										<b-col><b-form-input v-model="text" placeholder="10일" class="form-control"></b-form-input></b-col>
+										<b-col><b-button class="btn" variant="outline-primary">검침일</b-button></b-col>
 									</b-row>
 								</b-col>
 							</b-row>
@@ -548,10 +548,8 @@
 								</b-col>
 								<b-col lg="8">
 									<b-row>
-										<b-col lg="7"
-											><b-form-input v-model="text" placeholder="2019-05-09 11:11:00" class="form-control"></b-form-input
-										></b-col>
-										<b-col lg="5"><b-button class="btn" variant="outline-primary">시각설정</b-button></b-col>
+										<b-col><b-form-input v-model="text" placeholder="2019-05-09 11:11:00" class="form-control"></b-form-input></b-col>
+										<b-col><b-button class="btn" variant="outline-primary">시각설정</b-button></b-col>
 									</b-row>
 								</b-col>
 							</b-row>
@@ -561,8 +559,8 @@
 								</b-col>
 								<b-col lg="8">
 									<b-row>
-										<b-col lg="7"><b-form-input v-model="text" placeholder="15" class="form-control"></b-form-input></b-col>
-										<b-col lg="5"><b-button class="btn" variant="outline-primary">LP 주기</b-button></b-col>
+										<b-col><b-form-input v-model="text" placeholder="15" class="form-control"></b-form-input></b-col>
+										<b-col><b-button class="btn" variant="outline-primary">LP 주기</b-button></b-col>
 									</b-row>
 								</b-col>
 							</b-row>
@@ -704,7 +702,7 @@
 						<li>
 							<b-row class="form-group">
 								<b-col lg="4">
-									<label class="d-block">DCU ID</label>
+									<label class="d-block">Gateway ID</label>
 								</b-col>
 								<b-col lg="8">
 									<b-form-input v-model="text" placeholder="NS09_0101A" class="form-control"></b-form-input>
@@ -716,8 +714,8 @@
 								</b-col>
 								<b-col lg="8">
 									<b-row>
-										<b-col lg="7"><b-form-input v-model="text" placeholder="10일" class="form-control"></b-form-input></b-col>
-										<b-col lg="5"><b-button class="btn" variant="outline-primary">검침일</b-button></b-col>
+										<b-col><b-form-input v-model="text" placeholder="10일" class="form-control"></b-form-input></b-col>
+										<b-col><b-button class="btn" variant="outline-primary">검침일</b-button></b-col>
 									</b-row>
 								</b-col>
 							</b-row>
@@ -727,10 +725,8 @@
 								</b-col>
 								<b-col lg="8">
 									<b-row>
-										<b-col lg="7"
-											><b-form-input v-model="text" placeholder="2019-05-09 11:11:00" class="form-control"></b-form-input
-										></b-col>
-										<b-col lg="5"><b-button class="btn" variant="outline-primary">시각설정</b-button></b-col>
+										<b-col><b-form-input v-model="text" placeholder="2019-05-09 11:11:00" class="form-control"></b-form-input></b-col>
+										<b-col><b-button class="btn" variant="outline-primary">시각설정</b-button></b-col>
 									</b-row>
 								</b-col>
 							</b-row>
@@ -740,25 +736,17 @@
 								</b-col>
 								<b-col lg="8">
 									<b-row>
-										<b-col lg="7"><b-form-input v-model="text" placeholder="15" class="form-control"></b-form-input></b-col>
-										<b-col lg="5"><b-button class="btn" variant="outline-primary">LP 주기</b-button></b-col>
+										<b-col><b-form-input v-model="text" placeholder="15" class="form-control"></b-form-input></b-col>
+										<b-col><b-button class="btn" variant="outline-primary">LP 주기</b-button></b-col>
 									</b-row>
 								</b-col>
 							</b-row>
 							<b-row class="form-group">
 								<b-col lg="4">
-									<label class="d-block">SNMP (R0)</label>
+									<label class="d-block">계량기 타입</label>
 								</b-col>
 								<b-col lg="8">
-									<b-form-input v-model="text" placeholder="kepsnmpro" class="form-control"></b-form-input>
-								</b-col>
-							</b-row>
-							<b-row class="form-group">
-								<b-col lg="4">
-									<label class="d-block">SNMP (RW)</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-input v-model="text" placeholder="kepsnmpro" class="form-control"></b-form-input>
+									<b-form-input v-model="text" placeholder="가스 계량기" class="form-control"></b-form-input>
 								</b-col>
 							</b-row>
 						</li>
@@ -1013,7 +1001,7 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 				</div>
 			</div>
 		</b-modal>
-		<b-modal id="modal-xl" size="xl" class="modal-equip" title="서울 아파트">
+		<b-modal id="modal-xl" size="xl" title="서울 아파트">
 			<!---->
 			<div class="modal-content-wrap modal-equip">
 				<form>
