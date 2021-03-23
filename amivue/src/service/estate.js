@@ -9,7 +9,7 @@ export default {
 	},
 	estateList() {
 		return Send({
-			url: "/search/region",
+			url: "/device/estate/list",
 			method: "get"
 		});
 	}
