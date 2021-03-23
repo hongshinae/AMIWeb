@@ -5,7 +5,7 @@
 		</icon-base> -->
 		<add-estate></add-estate>
 		<content-header :paths="paths" :pageName="pageName" />
-		<content-search @search-item="searchItem">
+		<content-search :isLazySearch="true" @update:searchItem="searchItems">
 			<b-row>
 				<b-col cols="4" lg="4">
 					<b-row class="form-group">
@@ -13,7 +13,7 @@
 							<label class="d-block">{{ $t("estate.area") }}</label>
 						</b-col>
 						<b-col lg="8">
-							<b-select v-model="selected" class="form-control" value-field="regionSeq" text-field="regionName" :options="regionList">
+							<b-select v-model="regionSelected" class="form-control" value-field="regionSeq" text-field="regionName" :options="regionList">
 								<!-- <b-form-select-option v-for="(path, i) in estateList" :key="i" :value="path.regionSeq" default>
 									{{ path.regionName }}
 								</b-form-select-option> -->
@@ -27,7 +27,7 @@
 							<label class="d-block">{{ $t("estate.estateName") }}</label>
 						</b-col>
 						<b-col lg="8">
-							<b-form-input placeholder="그랑시아 아파트" class="form-control"></b-form-input>
+							<b-form-input id="filterInput" v-model="filter" type="search" placeholder="ex) 그랑시아 아파트" class="form-control"></b-form-input>
 						</b-col>
 					</b-row>
 				</b-col>
@@ -56,12 +56,18 @@
 				<b-select v-model="pageSelected" :options="pageList" />
 			</template>
 			<template #table-main>
-				<b-table :striped="true" :busy="isBusy" :items="estateList" :fields="estateFields">
+				<b-table :striped="true" :busy.sync="isBusy" :items="searchItems" :fields="estateFields" show-empty>
 					<template #table-busy>
 						<div class="text-center text-danger my-2">
 							<b-spinner class="align-middle"></b-spinner>
 							<strong>Loading...</strong>
 						</div>
+					</template>
+					<template #empty="scope">
+						<h4>{{ "msg.search.emptyText" || scope.emptyText }}</h4>
+					</template>
+					<template #emptyfiltered="scope">
+						<h4>{{ "msg.search.emptyFilteredText" || scope.emptyFilteredText }}</h4>
 					</template>
 				</b-table>
 			</template>
@@ -103,63 +109,63 @@ export default {
 			});
 	},
 	mounted() {
-		this.isBusy = true;
-		Estate.estateList()
-			.then(({ data }) => {
-				this.isBusy = false;
-				this.estateList = data.response;
-				console.log(this.estateList);
-			})
-			.catch(error => {
-				this.isBusy = false;
-				console.log(error);
-			});
+		// Estate.estateList()
+		// 	.then(({ data }) => {
+		// 		this.isBusy = false;
+		// 		this.estateList = data.response;
+		// 		console.log(this.estateList);
+		// 	})
+		// 	.catch(error => {
+		// 		this.isBusy = false;
+		// 		console.log(error);
+		// 	});
 	},
 	data() {
 		return {
 			isBusy: false,
 			pageName: this.$t("menu.device.estate"),
 			paths: [{ name: this.$t("menu.title"), bicon: "house" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.estate") }],
-			selected: 0,
-			pageSelected: 15,
-			pageList: [
-				{ text: 10, value: 10 },
-				{ text: 15, value: 15 },
-				{ text: 20, value: 20 },
-				{ text: 30, value: 30 },
-				{ text: 50, value: 50 }
-			],
+			totalRows: 0,
+			currentPage: 1,
+			regionSelected: 0,
 			regionList: null,
+			pageSelected: 15,
+			pageList: [10, 15, 20, 30, 50],
 			estateList: null,
 			estateFields: [
 				{
-					key: "estateSeq",
-					label: "SI_ID",
-					class: "si_id_test"
+					key: "estateId",
+					label: this.$t("estate.table.estateId"),
+					sortable: true,
+					sortDirection: "desc"
 				},
 				{
 					key: "estateName",
-					label: "단지(아파트,상가)명"
+					label: this.$t("estate.table.estateName"),
+					sortable: true
 				},
 				{
 					key: "houseCount",
-					label: "세대수"
+					label: this.$t("estate.table.houseCount"),
+					sortable: true
 				},
 				{
 					key: "regionName",
-					label: "지역"
+					label: this.$t("estate.table.regionName"),
+					sortable: true
 				},
 				{
 					key: "address",
-					label: "주소"
+					label: this.$t("estate.table.address")
 				},
 				{
-					key: "buildCount",
-					label: "설치 장비수"
+					key: "deviceCount",
+					label: this.$t("estate.table.deviceCount"),
+					sortable: true
 				},
 				{
-					key: "checkCount",
-					label: "검침타입"
+					key: "meteringTypeCount",
+					label: this.$t("estate.table.meteringTypeCount")
 				},
 				{
 					key: "",
@@ -170,15 +176,23 @@ export default {
 		};
 	},
 	methods: {
-		searchItem() {
-			Estate.estateList()
-				.then(({ data }) => {
-					console.log(data);
-				})
-				.catch(error => {
-					console.log(error);
-					throw error;
-				});
+		async searchItems() {
+			this.isBusy = true;
+
+			try {
+				const response = await Estate.estateList();
+				this.isBusy = false;
+				const result = response.data.response;
+				this.totalRows = result.length;
+
+				return result;
+			} catch (error) {
+				this.isBusy = false;
+				const result = [];
+				this.totalRows = result.length;
+
+				return result;
+			}
 		}
 	}
 };

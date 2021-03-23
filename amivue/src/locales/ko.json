@@ -45,9 +45,22 @@
 		"area": "지역",
 		"estateName": "단지명",
 		"add": "신규 단지 등록",
-		"excelDownload": "엑셀 다운로드"
+		"excelDownload": "엑셀 다운로드",
+		"table": {
+			"estateId": "SI_ID",
+			"estateName": "단지명",
+			"houseCount": "세대수",
+			"regionName": "지역",
+			"address": "주소",
+			"deviceCount": "설치 장비수",
+			"meteringTypeCount": "검침타입"
+		}
 	},
 	"msg": {
+		"search": {
+			"emptyText": "검색된 데이터가 없습니다.",
+			"emptyFilteredText": "필터된 데이터가 없습니다."
+		},
 		"session": {
 			"expired": "세션이 만료되었습니다."
 		}

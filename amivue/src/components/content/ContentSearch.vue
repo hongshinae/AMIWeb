@@ -9,7 +9,7 @@
 				<slot />
 				<!--//검색영역-->
 			</div>
-			<div class="btn-wrap ml-auto">
+			<div class="btn-wrap ml-auto" v-if="isLazySearch">
 				<button type="button" class="btn btn-primary btn-block" @click="search()">{{ $t("component.search") }}</button>
 			</div>
 		</div>
@@ -18,8 +18,12 @@
 
 <script>
 export default {
+	props: { isLazySearch: { type: Boolean, default: false } },
+	mounted() {},
 	methods: {
-		search() {}
+		search() {
+			this.$emit("update:searchItem");
+		}
 	}
 };
 </script>
