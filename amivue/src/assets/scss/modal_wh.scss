@@ -62,6 +62,16 @@
 	.modal-3rd-box button {
 		float: right;
 	}
+	.col-lg-8 .col:first-child {
+		// 왼쪽 label의 값이 정해지지 않았을때
+		padding-right: 0;
+	}
+	.col-lg-8 .col:last-child {
+		// 왼쪽 label의 값이 정해지지 않았을때
+		button {
+			width: 100%;
+		}
+	}
 }
 
 #addEstate > .modal-dialog {
@@ -122,6 +132,28 @@
 			li {
 				margin-right: 12px;
 				float: left;
+			}
+		}
+	}
+}
+
+.modal-building {
+	//모달빌딩 버튼 한개
+	.input-wrap {
+		ul {
+			li {
+				&:first-child {
+					float: left;
+					width: 165px;
+					margin-right: 10px;
+				}
+				&:last-child {
+					float: right;
+					width: 74px;
+					button {
+						margin-right: 0 !important;
+					}
+				}
 			}
 		}
 	}

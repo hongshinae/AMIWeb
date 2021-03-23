@@ -53,7 +53,11 @@
 					</icon-base>
 					{{ $t("estate.excelDownload") }}
 				</button>
-				<b-select v-model="pageSelected" :options="pageList" />
+				<b-dropdown right split text="pageList" class="btn-light">
+					<b-dropdown-item>Item 1</b-dropdown-item>
+					<b-dropdown-item>Item 2</b-dropdown-item>
+				</b-dropdown>
+				<!--<b-select v-model="pageSelected" :options="pageList" />버튼 그룹 안에서는 셀렉트 사용 안됨-->
 			</template>
 			<template #table-main>
 				<b-table :striped="true" :busy.sync="isBusy" :items="searchItems" :fields="estateFields" show-empty>

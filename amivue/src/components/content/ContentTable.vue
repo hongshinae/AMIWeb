@@ -8,8 +8,10 @@
 				<slot name="table-header-right" />
 			</div>
 		</div>
-		<div class="table-wrap">
-			<slot name="table-main" />
+		<div class="table-wrap ">
+			<div class="bgtable">
+				<slot name="table-main" />
+			</div>
 		</div>
 		<div class="pa-wrap">
 			<nav aria-label="Pagination">
