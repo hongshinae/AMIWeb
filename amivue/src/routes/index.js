@@ -65,8 +65,7 @@ const routes = [
 			{
 				path: "mBoard/:pageNumber",
 				name: "MBoard",
-				component: () => import("@/pages/Menu/Metering/MBoard"),
-				meta: { theme: "theme_white" }
+				component: () => import("@/pages/Menu/Metering/MBoard")
 			},
 			{
 				path: "lookup/:pageNumber",
@@ -90,8 +89,7 @@ const routes = [
 			{
 				path: "fBoard/:pageNumber",
 				name: "FBoard",
-				component: () => import("@/pages/Menu/Failure/FBoard"),
-				meta: { theme: "theme_white" }
+				component: () => import("@/pages/Menu/Failure/FBoard")
 			},
 			{
 				path: "code/:pageNumber",
