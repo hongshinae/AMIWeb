@@ -56,7 +56,14 @@
 				<b-select v-model="pageSelected" :options="pageList" />
 			</template>
 			<template #table-main>
-				<b-table :striped="true" :items="estateList" :fields="estateFields"> </b-table>
+				<b-table :striped="true" :busy="isBusy" :items="estateList" :fields="estateFields">
+					<template #table-busy>
+						<div class="text-center text-danger my-2">
+							<b-spinner class="align-middle"></b-spinner>
+							<strong>Loading...</strong>
+						</div>
+					</template>
+				</b-table>
 			</template>
 		</content-table>
 	</div>
@@ -96,17 +103,21 @@ export default {
 			});
 	},
 	mounted() {
+		this.isBusy = true;
 		Estate.estateList()
 			.then(({ data }) => {
+				this.isBusy = false;
 				this.estateList = data.response;
 				console.log(this.estateList);
 			})
 			.catch(error => {
+				this.isBusy = false;
 				console.log(error);
 			});
 	},
 	data() {
 		return {
+			isBusy: false,
 			pageName: this.$t("menu.device.estate"),
 			paths: [{ name: this.$t("menu.title"), bicon: "house" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.estate") }],
 			selected: 0,
@@ -173,7 +184,10 @@ export default {
 };
 </script>
 <style>
-b-table[aria-busy="true"] {
+table.b-table[aria-busy="true"] {
 	opacity: 0.6;
+}
+table.b-table .flip-list-move {
+	transition: transform 1s;
 }
 </style>
