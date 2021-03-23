@@ -47,23 +47,6 @@
 		height: 34px;
 		float: left;
 	}
-	/*
-	.modal-3rd-box ul li {
-		float: left;
-		margin-right: 20px;
-	}
-	.modal-3rd-box ul li input[type="checkbox"] {
-		margin-right: 5px;
-	}
-	.input-wrap ul li:first-child {
-		float: left;
-	}
-	.input-wrap ul li:last-child {
-		float: right;
-		button {
-			margin-right: 0;
-		}
-	}*/
 	.input-wrap {
 		width: 250px;
 		height: 34px;
@@ -93,6 +76,10 @@
 		float: left;
 		width: 385px;
 		height: 320px;
+		.input-wrap button:last-child {
+			margin-right: 0px;
+			float: right;
+		}
 	}
 	.modal-3rd-box {
 		height: 32px;

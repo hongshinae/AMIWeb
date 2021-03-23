@@ -7,31 +7,31 @@
 		"logo": "CNU GLOBAL",
 		"device": {
 			"title": "설비",
-			"estate": "단지관리",
-			"building": "동관리",
-			"equipment": "장비관리",
-			"mapping": "매핑관리",
-			"network": "네트워크현황",
-			"nms": "NMS",
-			"server": "서버현황"
+			"estate": "단지 관리",
+			"building": "동 관리",
+			"equipment": "장비 관리",
+			"mapping": "매핑 관리",
+			"network": "네트워크 현황",
+			"nms": "NMS (SNMP)",
+			"server": "서버 현황"
 		},
 		"metering": {
-			"title": "설비",
-			"MBoard": "검침현황",
-			"lookup": "검침조회",
-			"info": "검침정보",
-			"regular": "월검침"
+			"title": "검침",
+			"MBoard": "검침 현황",
+			"lookup": "검침 조회",
+			"info": "검침 정보",
+			"regular": "월 검침"
 		},
 		"failure": {
 			"title": "장애",
-			"FBoard": "장애현황",
-			"code": "상태코드관리",
-			"status": "네트워크상태",
-			"reading": "미검침정보"
+			"FBoard": "장애 현황",
+			"code": "상태 코드 관리",
+			"status": "네트워크 상태",
+			"reading": "미 검침 정보"
 		},
 		"support": {
-			"title": "고객지원",
-			"ask": "문의게시판",
+			"title": "고객 지원",
+			"ask": "문의 게시판",
 			"qna": "QnA"
 		}
 	},
