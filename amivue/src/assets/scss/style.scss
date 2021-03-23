@@ -7,7 +7,7 @@ $color-bk: #162238; //대시보드 현황판 bg
 $color-w: #162238; //대시보드 현황판 폰트컬러
 $color-gy: #ecf2f6; //메인 bg 그레이
 $color-main-gy: #6c757d; //메인 폰트 그레이
-
+$color-dasg-gy: lighten($color-main-gy, 3%); //대시보드;lightendarken
 $color-ny: #07132b; //헤더 네이비
 $color-gr: #d3d3d3; //헤더 a 글씨
 

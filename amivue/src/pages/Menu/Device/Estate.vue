@@ -110,8 +110,8 @@
 							<div class="form-group">
 								<label class="d-block label-wrap">동 호수</label>
 								<div class="input-wrap">
-									<label class="checkbox-lable">1006 동</label><b-button variant="primary" class="btn btn-light">동 선택</b-button>
-									<label class="checkbox-lable">104 호</label><b-button variant="primary" class="btn btn-light">호 선택</b-button>
+									<label>1006 동</label><b-button variant="primary" class="btn btn-light">동 선택</b-button> <label>104 호</label
+									><b-button variant="primary" class="btn btn-light">호 선택</b-button>
 								</div>
 							</div>
 							<div class="form-group">
