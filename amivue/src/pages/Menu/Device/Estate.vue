@@ -124,7 +124,11 @@ export default {
 		return {
 			isBusy: false,
 			pageName: this.$t("menu.device.estate"),
-			paths: [{ name: this.$t("menu.title"), bicon: "house" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.estate") }],
+			paths: [
+				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
+				{ name: this.$t("menu.device.title") },
+				{ name: this.$t("menu.device.estate") }
+			],
 			totalRows: 0,
 			currentPage: 1,
 			regionSelected: 0,
@@ -137,22 +141,25 @@ export default {
 					key: "estateId",
 					label: this.$t("estate.table.estateId"),
 					sortable: true,
-					sortDirection: "desc"
+					sortDirection: "asc"
 				},
 				{
 					key: "estateName",
 					label: this.$t("estate.table.estateName"),
-					sortable: true
+					sortable: true,
+					sortDirection: "asc"
 				},
 				{
 					key: "houseCount",
 					label: this.$t("estate.table.houseCount"),
-					sortable: true
+					sortable: true,
+					sortDirection: "desc"
 				},
 				{
 					key: "regionName",
 					label: this.$t("estate.table.regionName"),
-					sortable: true
+					sortable: true,
+					sortDirection: "asc"
 				},
 				{
 					key: "address",
@@ -161,7 +168,8 @@ export default {
 				{
 					key: "deviceCount",
 					label: this.$t("estate.table.deviceCount"),
-					sortable: true
+					sortable: true,
+					sortDirection: "desc"
 				},
 				{
 					key: "meteringTypeCount",

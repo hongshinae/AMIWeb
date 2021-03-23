@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import MainLayout from "@/pages/Layout/MainLayout";
 import store from "@/store";
+import locale from "@/locales";
 
 Vue.use(VueRouter);
 
@@ -158,9 +159,15 @@ router.beforeEach(async (to, from, next) => {
 
 	if (to.matched.some(record => record.meta.unauthorized) || (store.state && store.state.userStore && store.state.userStore.token.accessToken)) {
 		return next();
+	} else if (to.redirectedFrom == "/") {
+		if (store.state.userStore.token.accessToken) {
+			return next("/dashboard");
+		} else {
+			return next("/login");
+		}
 	}
 
-	alert("로그인 해주세요");
+	alert(locale.t("msg.session.login"));
 	return next("/login");
 });
 

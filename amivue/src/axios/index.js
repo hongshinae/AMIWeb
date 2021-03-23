@@ -1,7 +1,7 @@
 import Axios from "axios";
 import Store from "@/store";
 import router from "@/routes";
-import i18n from "@/locales";
+import locale from "@/locales";
 
 const axios = Axios.create({
 	baseURL: "/api",
@@ -42,7 +42,7 @@ axios.interceptors.response.use(
 			// 	console.log("토큰이 이상한 오류일 경우");
 			// 	await Login.refreshToken();
 			// return await Axios(errorAPI);
-			alert(i18n.t("msg.session.expired"));
+			alert(locale.t("msg.session.expired"));
 			Store.dispatch("LOGOUT")
 				.then(() => {
 					router.push("/login");

@@ -47,7 +47,7 @@
 		"add": "신규 단지 등록",
 		"excelDownload": "엑셀 다운로드",
 		"table": {
-			"estateId": "SI_ID",
+			"estateId": "단지ID",
 			"estateName": "단지명",
 			"houseCount": "세대수",
 			"regionName": "지역",
@@ -62,6 +62,7 @@
 			"emptyFilteredText": "필터된 데이터가 없습니다."
 		},
 		"session": {
+			"login": "로그인 후 다시 시동해주세요.",
 			"expired": "세션이 만료되었습니다."
 		}
 	}
