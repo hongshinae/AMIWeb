@@ -70,17 +70,25 @@ $color-bg: #ecf2f6;
 		width: 362px;
 		height: 53px;
 		background: url("../assets/images/logo_login.png") 0 0 no-repeat;
-		margin: 10px auto 23px auto;
+		margin: 10px auto 50px auto;
 	}
 	.lnputWrap {
 		input {
 			margin-bottom: 10px;
+			height: 45px;
+			font-size: 14px !important;
+		}
+		select,
+		button {
+			height: 45px;
+			font-size: 14px !important;
 		}
 	}
 	ul {
 		width: 500px;
 		height: 30px;
 		margin-top: 20px;
+		margin-bottom: 60px;
 		li {
 			float: left;
 		}
@@ -91,6 +99,8 @@ $color-bg: #ecf2f6;
 	.copyright {
 		margin: 20px;
 		text-align: center;
+		font-weight: 600;
+		color: #b9b9b9;
 	}
 	.error {
 		color: red;
