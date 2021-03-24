@@ -91,17 +91,19 @@ table {
 	table {
 		border-top: 1px solid $color-ny !important;
 		tr th {
-			border-top: 1px solid $color-ny !important;
-			border-bottom: 1px solid $color-ny !important;
+			border-top: 1px solid #232f4b !important;
+			background: #172137;
+			border-bottom: 1px solid #232f4b !important;
+			font-weight: normal;
 			height: 24px;
 			padding: 0.5rem;
-			color: $color-dasg-gy !important;
+			color: #ffffff !important;
 		}
 		tr td {
-			border-top: 1px solid $color-ny !important;
+			border-top: 1px solid #1f2c48 !important;
 			height: 18px;
 			padding: 0.5rem;
-			color: $color-dasg-gy !important;
+			color: #737d85 !important;
 		}
 	}
 }

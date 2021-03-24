@@ -30,7 +30,7 @@
 	}
 }
 .todayWeather {
-	height: 110px;
+	height: 135x;
 	.good {
 		width: 100px;
 		height: 100px;
@@ -40,7 +40,7 @@
 	}
 }
 .detaeWeather {
-	height: 110px;
+	height: 135px;
 	.good {
 		width: 100px;
 		height: 100px;
@@ -56,6 +56,28 @@
 	}
 	.double.row .col-lg-6:last-child {
 		padding-left: 0px !important;
+	}
+}
+
+/*전기*/
+.high-map-wrap {
+	position: relative;
+	height: 100%;
+	.high-map {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.high-table {
+		position: absolute;
+		bottom: -30px;
+		width: 350px;
+		height: 155px;
+		margin: 114px 14px 0 33px;
+		padding: 21px 87px 23px 77px;
+		background-color: #0d182d;
 	}
 }
 

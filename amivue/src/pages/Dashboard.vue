@@ -62,7 +62,30 @@
 					</div>
 				</div>
 			</b-col>
-			<b-col cols="4">1 </b-col>
+			<b-col cols="4">
+				<div class="high-map-wrap">
+					<div class="high-map"></div>
+					<div class="high-table">
+						<ul>
+							<li>
+								<span>설비</span>
+								<span>설치 수</span>
+								<span>장애 수</span>
+							</li>
+							<li>
+								<span>DCU</span>
+								<span>2081</span>
+								<span>40</span>
+							</li>
+							<li>
+								<span>Meter</span>
+								<span>2081</span>
+								<span>40</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</b-col>
 			<b-col lg="4">
 				<div class="presentMenu">
 					<ul>
