@@ -67,7 +67,7 @@ body {
 	font-style: normal;
 }
 .r-color {
-	color: #d9534f !important;
+	color: $color-rd !important;
 }
 .fontC {
 	color: #00ff90;
@@ -88,7 +88,7 @@ body {
 	width: 7px;
 	height: 7px;
 	border-radius: 4px;
-	background: #d9534f;
+	background: $color-rd;
 	display: block;
 	margin: auto;
 }

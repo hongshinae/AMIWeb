@@ -75,7 +75,7 @@
 							<li>
 								<span>DCU</span>
 								<span>2081</span>
-								<span>40</span>
+								<span class="r-color">40</span>
 							</li>
 							<li>
 								<span>Meter</span>

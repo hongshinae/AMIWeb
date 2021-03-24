@@ -1,3 +1,5 @@
+@import "style";
+
 /*검침률*/
 .inspection {
 	li {
@@ -59,7 +61,7 @@
 	}
 }
 
-/*전기*/
+/*하이차트*/
 .high-map-wrap {
 	position: relative;
 	height: 100%;
@@ -72,12 +74,25 @@
 	}
 	.high-table {
 		position: absolute;
-		bottom: -30px;
-		width: 350px;
+		bottom: 46px;
+		width: 258px;
 		height: 155px;
-		margin: 114px 14px 0 33px;
-		padding: 21px 87px 23px 77px;
-		background-color: #0d182d;
+		background: linear-gradient(70deg, rgba(13, 24, 25, 0.08), #0f1e35, rgba(13, 24, 25, 0.08));
+		box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 11%);
+		ul li {
+			text-align: center;
+			height: 43px;
+			span {
+				width: 80px;
+				height: 43px;
+				line-height: 43px;
+				text-align: center;
+				display: inline-block;
+			}
+		}
+		ul li:first-child {
+			border-bottom: 1px solid #1a2a42;
+		}
 	}
 }
 
