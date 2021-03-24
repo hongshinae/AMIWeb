@@ -47,7 +47,7 @@
 				<b-button variant="primary" v-b-modal.modal-1><b-icon icon="pencil-fill"></b-icon>신규등록</b-button>
 			</div>
 			<div role="group" class="btn-group">
-				<b-button variant="outline-secondary"><!--svg icon-->엑셀 다운로드</b-button>
+				<b-button class="btn-light btn-excel"><!--svg icon-->엑셀 다운로드</b-button>
 			</div>
 		</div>
 		<div class="table-wrap">
