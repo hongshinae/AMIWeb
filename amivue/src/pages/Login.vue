@@ -92,15 +92,15 @@ $color-bg: #ecf2f6;
 		margin: 20px;
 		text-align: center;
 	}
-}
-.error {
-	color: red;
-	background: rgb(255 0 0 / 8%);
-	margin-top: 10px;
-	height: 34px;
-	line-height: 34px;
-	text-align: center;
-	border-radius: 4px;
-	border: 1px solid #ffafaf;
+	.error {
+		color: red;
+		background: rgb(255 0 0 / 8%);
+		margin-top: 10px;
+		height: 34px;
+		line-height: 34px;
+		text-align: center;
+		border-radius: 4px;
+		border: 1px solid #ffafaf;
+	}
 }
 </style>
