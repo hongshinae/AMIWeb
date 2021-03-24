@@ -98,7 +98,6 @@ const actions = {
 					resolve(data.response);
 				})
 				.catch(({ response }) => {
-					console.log(response);
 					reject(response);
 				});
 		});

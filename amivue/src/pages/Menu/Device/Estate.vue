@@ -27,7 +27,7 @@
 							<label class="d-block">{{ $t("estate.estateName") }}</label>
 						</b-col>
 						<b-col lg="8">
-							<b-form-input id="filterInput" v-model="filter" type="search" placeholder="ex) 그랑시아 아파트" class="form-control"></b-form-input>
+							<b-form-input id="filterInput" type="search" placeholder="ex) 그랑시아 아파트" class="form-control"></b-form-input>
 						</b-col>
 					</b-row>
 				</b-col>
@@ -53,9 +53,8 @@
 					</icon-base>
 					{{ $t("estate.excelDownload") }}
 				</button>
-				<b-dropdown right split text="pageList" class="btn-light">
-					<b-dropdown-item>Item 1</b-dropdown-item>
-					<b-dropdown-item>Item 2</b-dropdown-item>
+				<b-dropdown right :text="pageSelected" class="btn-light">
+					<b-dropdown-item v-for="(value, index) in pages" :key="index">{{ value }}</b-dropdown-item>
 				</b-dropdown>
 				<!--<b-select v-model="pageSelected" :options="pageList" />버튼 그룹 안에서는 셀렉트 사용 안됨-->
 			</template>
@@ -138,7 +137,7 @@ export default {
 			regionSelected: 0,
 			regionList: null,
 			pageSelected: 15,
-			pageList: [10, 15, 20, 30, 50],
+			pages: [10, 15, 20, 30, 50],
 			estateList: null,
 			estateFields: [
 				{
@@ -193,17 +192,17 @@ export default {
 
 			try {
 				const response = await Estate.estateList();
-				this.isBusy = false;
 				const result = response.data.response;
 				this.totalRows = result.length;
 
 				return result;
 			} catch (error) {
-				this.isBusy = false;
 				const result = [];
 				this.totalRows = result.length;
 
 				return result;
+			} finally {
+				this.isBusy = false;
 			}
 		}
 	}
