@@ -38,9 +38,7 @@ export default {
 			this.isCollapsed = collapsed;
 			this.$emit("toggle-collapse", this.isCollapsed);
 		},
-		onItemClick(/*event, item, node*/) {
-			console.log("onItemClick");
-		},
+		onItemClick(/*event, item, node*/) {},
 		onResize() {
 			if (window.innerWidth <= 767) {
 				this.isOnMobile = true;

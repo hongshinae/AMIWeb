@@ -1,11 +1,8 @@
 <template>
 	<div class="main-bg">
-		<!-- <icon-base viewBox="0 0 16 16" width="1.2em" height="1.2em" icon-color="" icon-name="search" cls="bi-search mx-auto b-icon bi">
-			<icon-search />
-		</icon-base> -->
 		<add-estate></add-estate>
 		<content-header :paths="paths" :pageName="pageName" />
-		<content-search :isLazySearch="true" @update:searchItem="searchItems">
+		<content-search :isLazySearch="true" @update:searchItem="searchEstateList">
 			<b-row>
 				<b-col cols="4" lg="4">
 					<b-row class="form-group">
@@ -13,10 +10,14 @@
 							<label class="d-block">{{ $t("estate.area") }}</label>
 						</b-col>
 						<b-col lg="8">
-							<b-select v-model="regionSelected" class="form-control" value-field="regionSeq" text-field="regionName" :options="regionList">
-								<!-- <b-form-select-option v-for="(path, i) in estateList" :key="i" :value="path.regionSeq" default>
-									{{ path.regionName }}
-								</b-form-select-option> -->
+							<b-select
+								v-model="regionSelected"
+								class="form-control"
+								value-field="regionSeq"
+								text-field="regionName"
+								:options="regionList"
+								@change="changeRegion"
+							>
 							</b-select>
 						</b-col>
 					</b-row>
@@ -27,7 +28,8 @@
 							<label class="d-block">{{ $t("estate.estateName") }}</label>
 						</b-col>
 						<b-col lg="8">
-							<b-form-input id="filterInput" type="search" placeholder="ex) 그랑시아 아파트" class="form-control"></b-form-input>
+							<b-form-input id="filterInput" type="search" placeholder="ex) 그랑시아 아파트" class="form-control" list="estates" />
+							<b-form-datalist id="estates" :options="estates" />
 						</b-col>
 					</b-row>
 				</b-col>
@@ -54,12 +56,12 @@
 					{{ $t("estate.excelDownload") }}
 				</button>
 				<b-dropdown right :text="pageSelected" class="btn-light">
-					<b-dropdown-item v-for="(value, index) in pages" :key="index">{{ value }}</b-dropdown-item>
+					<b-dropdown-item v-for="(value, index) in pages" :key="index" @click="changePageCount">{{ value }}</b-dropdown-item>
 				</b-dropdown>
 				<!--<b-select v-model="pageSelected" :options="pageList" />버튼 그룹 안에서는 셀렉트 사용 안됨-->
 			</template>
 			<template #table-main>
-				<b-table :striped="true" :busy.sync="isBusy" :items="searchItems" :fields="estateFields" show-empty>
+				<b-table :striped="true" :busy.sync="isBusy" :items="searchEstateList" :fields="estateFields" show-empty>
 					<template #table-busy>
 						<div class="text-center text-danger my-2">
 							<b-spinner class="align-middle"></b-spinner>
@@ -67,10 +69,10 @@
 						</div>
 					</template>
 					<template #empty="scope">
-						<h4>{{ "msg.search.emptyText" || scope.emptyText }}</h4>
+						<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
 					</template>
 					<template #emptyfiltered="scope">
-						<h4>{{ "msg.search.emptyFilteredText" || scope.emptyFilteredText }}</h4>
+						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
 				</b-table>
 			</template>
@@ -106,23 +108,16 @@ export default {
 		Estate.region()
 			.then(({ data }) => {
 				this.regionList = data.response;
+
+				if (this.regionList.length > 0) {
+					this.searchEstates(this.regionList[0].regionSeq);
+				}
 			})
 			.catch(error => {
 				console.log(error);
 			});
 	},
-	mounted() {
-		// Estate.estateList()
-		// 	.then(({ data }) => {
-		// 		this.isBusy = false;
-		// 		this.estateList = data.response;
-		// 		console.log(this.estateList);
-		// 	})
-		// 	.catch(error => {
-		// 		this.isBusy = false;
-		// 		console.log(error);
-		// 	});
-	},
+	mounted() {},
 	data() {
 		return {
 			isBusy: false,
@@ -136,8 +131,9 @@ export default {
 			currentPage: 1,
 			regionSelected: 0,
 			regionList: null,
-			pageSelected: 15,
-			pages: [10, 15, 20, 30, 50],
+			pageSelected: "15",
+			pages: ["10", "15", "20", "30", "50"],
+			estates: [],
 			estateList: null,
 			estateFields: [
 				{
@@ -187,7 +183,19 @@ export default {
 		};
 	},
 	methods: {
-		async searchItems() {
+		changeRegion(value) {
+			this.searchEstates(value);
+		},
+		changePageCount(event) {
+			this.pageSelected = event.target.text;
+		},
+		async searchEstates(value) {
+			const response = await Estate.estate({ regionSeq: value });
+			const estates = response.data.response;
+			const result = estates.map(estate => estate.estateName);
+			this.estates = result;
+		},
+		async searchEstateList() {
 			this.isBusy = true;
 
 			try {
