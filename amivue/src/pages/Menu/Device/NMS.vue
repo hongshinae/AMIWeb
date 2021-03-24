@@ -61,9 +61,9 @@
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>DCU <i class="p-Color">4</i> </span>
 						<div role="group" class="btn-group">
-							<b-button variant="btn btn-light">Reboot</b-button>
-							<b-button variant="btn btn-light">재스킨</b-button>
-							<b-button variant="btn btn-light">DCU펌웨어 업그레이드</b-button>
+							<b-button class="btn-light">Reboot</b-button>
+							<b-button class="btn-light">재스킨</b-button>
+							<b-button class="btn-light">DCU펌웨어 업그레이드</b-button>
 						</div>
 					</h5>
 					<div class="table-wrap">
@@ -136,8 +136,8 @@
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>Modem <i class="p-Color">4</i> Meter <i class="p-Color">8</i> </span>
 						<div role="group" class="btn-group">
-							<b-button variant="btn btn-light">모뎀리셋</b-button>
-							<b-button variant="btn btn-light">모뎀펌웨어 업그레이드</b-button>
+							<b-button class="btn-light">모뎀리셋</b-button>
+							<b-button class="btn-light">모뎀펌웨어 업그레이드</b-button>
 						</div>
 					</h5>
 					<div class="table-wrap">
@@ -189,15 +189,14 @@
 		</b-row>
 		<div class="btn-wrap">
 			<div role="group" class="btn-group">
-				<button type="button" class="btn btn-light">SNMP read/write</button>
-				<button type="button" class="btn btn-light">trap</button>
-				<button type="button" class="btn btn-light">상태리스트</button>
-				<button type="button" class="btn btn-light">SNMP read/write</button>
-				<button type="button" class="btn btn-light">SNMP / FEP 통신 동작 확인</button>
-				<button type="button" class="btn btn-light">시간 동기화</button>
+				<b-button class="btn-light">SNMP read/write</b-button>
+				<b-button class="btn-light">trap</b-button>
+				<b-button class="btn-light">상태리스트</b-button>
+				<b-button class="btn-light">SNMP / FEP 통신 동작 확인</b-button>
+				<b-button class="btn-light">시간 동기화</b-button>
 			</div>
 			<div role="group" class="btn-group">
-				<button type="button" class="btn btn-light">펌웨어 이미지 관리</button>
+				<b-button class="btn-light">펌웨어 이미지 관리</b-button>
 			</div>
 		</div>
 	</div>
