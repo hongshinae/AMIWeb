@@ -72,7 +72,7 @@
 							<b-button variant="primary" v-b-modal.dcu-modal-1><b-icon icon="pencil-fill"></b-icon>DCU 신규등록</b-button>
 						</div>
 						<div role="group" class="btn-group">
-							<b-button variant="outline-secondary"><!--svg icon-->엑셀 다운로드</b-button>
+							<b-button class="btn-light btn-excel"><!--svg icon-->엑셀 다운로드</b-button>
 						</div>
 					</div>
 					<div class="table-wrap">
@@ -1246,43 +1246,49 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 								</li>
 								<li>
 									<div class="modal-4th-box">
+										<div class="info-box"></div>
 										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">DCU 동작시간</label>
+											<b-col>
+												<label class="d-block">OS 버전</label>
 											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="2020-12-01 15:00:00" class="form-control"></b-form-input>
+											<b-col>
+												<b-form-input v-model="text" placeholder="Linux 10.0" class="form-control"></b-form-input>
+											</b-col>
+											<b-col>
+												<label class="d-block">펌웨어 버전</label>
+											</b-col>
+											<b-col>
+												<b-form-input v-model="text" placeholder="FW 2.3" class="form-control"></b-form-input>
+											</b-col>
+										</b-row>
+										<b-row class="form-group">
+											<b-col>
+												<label class="d-block">하드웨어 버전</label>
+											</b-col>
+											<b-col>
+												<b-form-input v-model="text" placeholder="HW 20" class="form-control"></b-form-input>
+											</b-col>
+											<b-col>
+												<label class="d-block">SNMP 암호화</label>
+											</b-col>
+											<b-col>
+												<b-form-input v-model="text" placeholder="false" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
 										<b-row class="form-group">
 											<b-col lg="5">
-												<label class="d-block">DCU 동작시간</label>
+												<label class="d-block">위치 정보</label>
 											</b-col>
 											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="2020-12-01 15:00:00" class="form-control"></b-form-input>
+												<b-form-input v-model="text" placeholder="위도 :0, 경도 : 0" class="form-control"></b-form-input>
 											</b-col>
 										</b-row>
-										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">DCU 동작시간</label>
-											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="2020-12-01 15:00:00" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
-										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">DCU 동작시간</label>
-											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="2020-12-01 15:00:00" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
+
 										<div class="map">
 											<iframe
 												src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.442877125704!2d127.1048765274144!3d37.3964194786602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5809134e293f%3A0x88afd0f7bd09e638!2z7YyQ6rWQ7Jet!5e0!3m2!1sko!2skr!4v1615713261342!5m2!1sko!2skr"
 												width="100%"
-												height="300"
+												height="252"
 												style="border:0;"
 												allowfullscreen=""
 												loading="lazy"

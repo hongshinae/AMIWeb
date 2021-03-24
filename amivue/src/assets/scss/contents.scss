@@ -5,12 +5,12 @@
 
 .content {
 	padding: 15px 40px;
-	background: url(../images/bg.png) 0 0 no-repeat #0f1d34;
+	background: url(../images/bg.png) 0 0 no-repeat $color-bk;
 	color: #fff;
 	min-height: 917px;
 }
 .main-bg.content {
-	background: #ecf2f6 !important;
+	background: $color-gy !important;
 	color: #495057 !important;
 }
 .main-bg.content > div {
@@ -37,11 +37,11 @@
 	height: 30px;
 	line-height: 30px;
 	vertical-align: bottom;
-	font-size: 13px;
+	font-size: 14px;
 	margin: 10px 0 15px 0;
 	svg {
-		margin-right: 7px;
-		color: #007fff;
+		margin-right: 10px;
+		color: $color-bl;
 	}
 	.btn-group {
 		float: right;
@@ -98,19 +98,19 @@
 
 //tap
 .nav-tabs .nav-link {
-	border: 1px solid #287fff !important;
+	border: 1px solid $color-bl !important;
 	height: 32px;
 	padding: 0 20px !important;
 	line-height: 31px !important;
-	background: #ecf2f6;
+	background: $color-gy;
 	border-radius: 15px !important;
-	color: #287fff;
+	color: $color-bl;
 	font-size: 12px;
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-	background: #287fff !important;
-	border: 1px solid #3b82ec !important;
+	background: $color-bl !important;
+	border: 1px solid $color-bl !important;
 	color: #ffffff !important;
 }
 .nav-tabs {
