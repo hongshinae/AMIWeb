@@ -7,7 +7,7 @@
 					<b-input v-model="userid" placeholder="id"></b-input>
 					<b-input type="password" v-model="password" placeholder="password"></b-input>
 					<b-button type="submit" block variant="primary">로그인</b-button>
-					<div class="error">{{ msg }}</div>
+					<div class="error" v-if="msg">{{ msg }}</div>
 				</form>
 			</div>
 			<ul>
