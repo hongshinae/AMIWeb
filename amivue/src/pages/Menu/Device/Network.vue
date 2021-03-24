@@ -82,7 +82,7 @@
 				<span class="small">2021-01-20 12:15 기준</span>
 			</div>
 			<div role="group" class="btn-group">
-				<b-button variant="outline-secondary"><!--svg icon-->엑셀 다운로드</b-button>
+				<b-button class="btn-light btn-excel"><!--svg icon-->엑셀 다운로드</b-button>
 			</div>
 		</div>
 		<div class="table-wrap">
