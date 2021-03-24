@@ -59,6 +59,13 @@ body {
 	border: 1px solid $color-bl !important;
 	color: $color-bl !important;
 }
+.btn-secondary {
+	color: #212529 !important;
+	background: #ffffff !important;
+}
+.btn-light > .btn-secondary {
+	border: 0 !important;
+}
 .b-Color {
 	color: #495057 !important;
 }

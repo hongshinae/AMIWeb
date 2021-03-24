@@ -3,7 +3,7 @@
 		<b-row>
 			<b-navbar variant="faded">
 				<a class="sidebar-toggle">
-					<b-button class="menu" @click="toggleMenu"></b-button>
+					<b-button class="menu" @click="toggleMenu" variant="none"></b-button>
 				</a>
 			</b-navbar>
 			<b-nav class="infowrap ml-auto">
