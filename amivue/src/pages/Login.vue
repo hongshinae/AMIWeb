@@ -3,7 +3,7 @@
 		<div class="loginWrap">
 			<div class="logo"></div>
 			<div class="lnputWrap">
-				<form action="/dashboard" @submit.prevent="actionLogin({ userid, password })">
+				<form action="/dashboard" @submit.prevent="login({ userid, password })">
 					<b-input v-model="userid" placeholder="id"></b-input>
 					<b-input type="password" v-model="password" placeholder="password"></b-input>
 					<b-button type="submit" block variant="primary">로그인</b-button>
@@ -38,16 +38,14 @@ export default {
 	},
 	methods: {
 		...mapMutations({ initState: "RESET_STATE" }),
-		...mapActions({
-			actionLogin: "LOGIN"
-		}),
-		login(userid, password) {
-			this.$store
-				.dispatch("LOGIN", { userid, password })
-				.then(() => {
+		...mapActions({ loginAction: "LOGIN" }),
+		login({ userid, password }) {
+			this.msg = "";
+			this.loginAction({ userid, password })
+				.then((/* response */) => {
 					this.$router.push("/dashboard");
 				})
-				.catch(({ response }) => {
+				.catch(response => {
 					this.msg = response.data.response.error_message;
 				});
 		}

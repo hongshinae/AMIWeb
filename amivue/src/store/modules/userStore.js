@@ -1,5 +1,4 @@
 import Login from "@/service/login";
-import router from "@/routes";
 
 const initialState = {
 	user: {
@@ -90,16 +89,19 @@ const actions = {
 	USER({ commit }, user) {
 		commit("USER", user);
 	},
-	async LOGIN({ commit /* dispatch */ }, { userid, password }) {
-		await Login.login({ userid, password })
-			.then(({ data }) => {
-				commit("USER", data.response.user);
-				commit("LOGIN", data.response);
-				router.push("/estate");
-			})
-			.catch(error => {
-				throw error;
-			});
+	LOGIN({ commit /* dispatch */ }, { userid, password }) {
+		return new Promise((resolve, reject) => {
+			Login.login({ userid, password })
+				.then(({ data }) => {
+					commit("USER", data.response.user);
+					commit("LOGIN", data.response);
+					resolve(data.response);
+				})
+				.catch(({ response }) => {
+					console.log(response);
+					reject(response);
+				});
+		});
 	},
 	LOGOUT({ commit }) {
 		commit("LOGOUT");
