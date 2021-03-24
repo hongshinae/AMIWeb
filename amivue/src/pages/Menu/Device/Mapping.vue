@@ -107,9 +107,9 @@
 						<b-button variant="primary" v-b-modal.modal-1.mapping-modal-1><b-icon icon="pencil-fill"></b-icon>신규등록</b-button>
 					</div>
 					<div role="group" class="btn-group">
-						<b-button variant="outline-secondary"><!--svg icon-->엑셀 다운로드</b-button>
-						<b-button variant="outline-secondary">전체 연동 확인</b-button>
-						<b-button variant="outline-secondary">저장</b-button>
+						<b-button class="btn-light btn-excel"><!--svg icon-->엑셀 다운로드</b-button>
+						<b-button class="btn-light">전체 연동 확인</b-button>
+						<b-button class="btn-light">저장</b-button>
 					</div>
 				</div>
 				<div class="table-wrap">
