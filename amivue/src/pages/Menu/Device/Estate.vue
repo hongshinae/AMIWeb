@@ -74,6 +74,12 @@
 					<template #emptyfiltered="scope">
 						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
+					<template #cell(remark)="row">
+						<b-button @click="info(row.item, row.index, $event.target)" class="btn btn-primary">
+							{{ $t("estate.details") }}
+						</b-button>
+						<!-- <b-button size="sm" @click="row.toggleDetails"> {{ row.detailsShowing ? "Hide" : "Show" }} Details </b-button> -->
+					</template>
 				</b-table>
 			</template>
 		</content-table>
@@ -175,9 +181,8 @@ export default {
 					label: this.$t("estate.table.meteringTypeCount")
 				},
 				{
-					key: "",
-					label: ""
-					// ,formatter: "methodName"
+					key: "remark",
+					label: this.$t("estate.table.remark")
 				}
 			]
 		};
