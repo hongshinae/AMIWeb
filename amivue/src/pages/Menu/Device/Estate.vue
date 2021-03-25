@@ -75,7 +75,7 @@
 						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
 					<template #cell(remark)="row">
-						<b-button @click="info(row.item, row.index, $event.target)" class="btn btn-primary">
+						<b-button @click="info(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
 							{{ $t("estate.details") }}
 						</b-button>
 						<!-- <b-button size="sm" @click="row.toggleDetails"> {{ row.detailsShowing ? "Hide" : "Show" }} Details </b-button> -->
