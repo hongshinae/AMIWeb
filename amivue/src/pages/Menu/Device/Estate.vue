@@ -32,18 +32,11 @@
 								id="filterEstate"
 								v-model="filterEstate"
 								type="search"
-								:placeholder="$t('estate.placeholder.estate')"
+								:placeholder="placeholder"
 								class="form-control"
 								list="estates"
 							/>
-							<b-form-datalist id="estates">
-								<template>
-									<option v-if="estates.length == 0">
-										{{ $t("msg.filter.estate").replace("{}", regionList[filterRegion] ? regionList[filterRegion].regionName : "unknown") }}
-									</option>
-									<option v-for="(option, index) in estates" :key="index">{{ option }}</option>
-								</template>
-							</b-form-datalist>
+							<b-form-datalist id="estates" autocomplete="off" :options="estates"> </b-form-datalist>
 						</b-col>
 					</b-row>
 				</b-col>
@@ -69,10 +62,9 @@
 					</icon-base>
 					{{ $t("estate.excelDownload") }}
 				</button>
-				<b-dropdown right :text="pageSelected" class="btn-light">
+				<b-dropdown right :text="perPage" class="btn-light">
 					<b-dropdown-item v-for="(value, index) in pages" :key="index" @click="changePageCount">{{ value }}</b-dropdown-item>
 				</b-dropdown>
-				<!--<b-select v-model="pageSelected" :options="pageList" />버튼 그룹 안에서는 셀렉트 사용 안됨-->
 			</template>
 			<template #table-main>
 				<b-table :striped="true" :busy.sync="isBusy" :items="searchEstateList" :fields="estateFields" show-empty>
@@ -95,6 +87,14 @@
 						<!-- <b-button size="sm" @click="row.toggleDetails"> {{ row.detailsShowing ? "Hide" : "Show" }} Details </b-button> -->
 					</template>
 				</b-table>
+			</template>
+			<template #table-footer-pagination>
+				<b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage">
+					<template #first-text><span class="text-success">«</span></template>
+					<template #prev-text><span class="text-danger">‹</span></template>
+					<template #next-text><span class="text-warning">›</span></template>
+					<template #last-text><span class="text-info">»</span></template>
+				</b-pagination>
 			</template>
 		</content-table>
 	</div>
@@ -138,6 +138,18 @@ export default {
 			});
 	},
 	mounted() {},
+	computed: {
+		placeholder: function() {
+			if (this.estates != 0) {
+				return this.$t("estate.placeholder.estate");
+			} else {
+				return this.$t("msg.filter.estate").replace(
+					"{}",
+					this.regionList[this.filterRegion] ? this.regionList[this.filterRegion].regionName : "unknown"
+				);
+			}
+		}
+	},
 	data() {
 		return {
 			isBusy: false,
@@ -152,7 +164,7 @@ export default {
 			regionList: [],
 			filterRegion: 0,
 			filterEstate: "",
-			pageSelected: "15",
+			perPage: "15",
 			pages: ["10", "15", "20", "30", "50"],
 			estates: [],
 			estateList: null,
@@ -207,7 +219,7 @@ export default {
 			this.searchEstates(value);
 		},
 		changePageCount(event) {
-			this.pageSelected = event.target.text;
+			this.perPage = event.target.text;
 		},
 		async searchEstates(value) {
 			const response = await Estate.estate({ regionSeq: value });
