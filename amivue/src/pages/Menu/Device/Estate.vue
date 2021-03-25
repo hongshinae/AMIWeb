@@ -7,11 +7,11 @@
 				<b-col cols="4" lg="4">
 					<b-row class="form-group">
 						<b-col lg="4">
-							<label class="d-block">{{ $t("estate.area") }}</label>
+							<label class="d-block">{{ $t("estate.region") }}</label>
 						</b-col>
 						<b-col lg="8">
 							<b-select
-								v-model="regionSelected"
+								v-model.number="filterRegion"
 								class="form-control"
 								value-field="regionSeq"
 								text-field="regionName"
@@ -28,8 +28,22 @@
 							<label class="d-block">{{ $t("estate.estateName") }}</label>
 						</b-col>
 						<b-col lg="8">
-							<b-form-input id="filterInput" type="search" placeholder="ex) 그랑시아 아파트" class="form-control" list="estates" />
-							<b-form-datalist id="estates" :options="estates" />
+							<b-form-input
+								id="filterEstate"
+								v-model="filterEstate"
+								type="search"
+								:placeholder="$t('estate.placeholder.estate')"
+								class="form-control"
+								list="estates"
+							/>
+							<b-form-datalist id="estates">
+								<template>
+									<option v-if="estates.length == 0">
+										{{ $t("msg.filter.estate").replace("{}", regionList[filterRegion] ? regionList[filterRegion].regionName : "unknown") }}
+									</option>
+									<option v-for="(option, index) in estates" :key="index">{{ option }}</option>
+								</template>
+							</b-form-datalist>
 						</b-col>
 					</b-row>
 				</b-col>
@@ -135,8 +149,9 @@ export default {
 			],
 			totalRows: 0,
 			currentPage: 1,
-			regionSelected: 0,
-			regionList: null,
+			regionList: [],
+			filterRegion: 0,
+			filterEstate: "",
 			pageSelected: "15",
 			pages: ["10", "15", "20", "30", "50"],
 			estates: [],
