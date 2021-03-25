@@ -64,15 +64,15 @@
 			<b-row>
 				<b-col lg="2">
 					<b-form-group>
-						<label class="d-block label-wrap">지역 선택</label>
+						<label class="d-block label-wrap">Sort</label>
 						<b-input-group>
 							<b-form-select v-model="selected" class="form-control">
-								<b-form-select-option>서울시</b-form-select-option>
-								<b-form-select-option>경기도</b-form-select-option>
+								<b-form-select-option>none</b-form-select-option>
+								<b-form-select-option>1</b-form-select-option>
 							</b-form-select>
 							<b-form-select v-model="selected" class="form-control">
-								<b-form-select-option>서울시</b-form-select-option>
-								<b-form-select-option>경기도</b-form-select-option>
+								<b-form-select-option>두번째 Sort</b-form-select-option>
+								<b-form-select-option>두번째 Sort2</b-form-select-option>
 							</b-form-select>
 						</b-input-group>
 					</b-form-group>
@@ -94,9 +94,32 @@
 						<b-input-group>
 							<b-form-input></b-form-input>
 							<b-input-group-append>
-								<b-button variant="none">삭제</b-button>
+								<b-button variant="light">삭제</b-button>
 							</b-input-group-append>
 						</b-input-group>
+					</b-form-group>
+				</b-col>
+				<b-col lg="2">
+					<b-form-group>
+						<label class="d-block label-wrap">페이지 수</label>
+						<div class="input-wrap">
+							<b-form-select v-model="selected" class="form-control">
+								<b-form-select-option>5</b-form-select-option>
+								<b-form-select-option>10</b-form-select-option>
+								<b-form-select-option>50</b-form-select-option>
+							</b-form-select>
+						</div>
+					</b-form-group>
+				</b-col>
+				<b-col lg="4">
+					<b-form-group>
+						<label class="d-block label-wrap">체크박스 라벨</label>
+						<div class="input-wrap">
+							<b-form-group>
+								<b-form-checkbox inline>체크 1</b-form-checkbox>
+								<b-form-checkbox inline>체크 2</b-form-checkbox>
+							</b-form-group>
+						</div>
 					</b-form-group>
 				</b-col>
 			</b-row>
