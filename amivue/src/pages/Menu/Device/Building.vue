@@ -78,62 +78,64 @@
 			</div>
 		</div>
 		<div class="table-wrap">
-			<table class="table bgtable b-table table-striped">
-				<thead>
-					<tr>
-						<th><div>SI_ID</div></th>
-						<th><div>단지(아파트,상가)명</div></th>
-						<th><div>세대수</div></th>
-						<th><div>지역</div></th>
-						<th><div>주소</div></th>
-						<th><div>설치 장비수</div></th>
-						<th><div>검침타입</div></th>
-						<th><div></div></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>SE01</td>
-						<td>경기도 성남시 이지더원 아파트</td>
-						<td>1011</td>
-						<td>서울</td>
-						<td>서울시</td>
-						<td>1234</td>
-						<td>5종</td>
-						<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
-					</tr>
-					<tr>
-						<td>SE01</td>
-						<td>경기도 성남시 이지더원 아파트</td>
-						<td>1011</td>
-						<td>서울</td>
-						<td>서울시</td>
-						<td>1234</td>
-						<td>5종</td>
-						<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
-					</tr>
-					<tr>
-						<td>SE01</td>
-						<td>경기도 성남시 이지더원 아파트</td>
-						<td>1011</td>
-						<td>서울</td>
-						<td>서울시</td>
-						<td>1234</td>
-						<td>5종</td>
-						<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
-					</tr>
-					<tr>
-						<td>SE01</td>
-						<td>경기도 성남시 이지더원 아파트</td>
-						<td>1011</td>
-						<td>서울</td>
-						<td>서울시</td>
-						<td>1234</td>
-						<td>5종</td>
-						<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
-					</tr>
-				</tbody>
-			</table>
+			<div class="bgtable">
+				<table class="table b-table table-striped">
+					<thead>
+						<tr>
+							<th><div>SI_ID</div></th>
+							<th><div>단지(아파트,상가)명</div></th>
+							<th><div>세대수</div></th>
+							<th><div>지역</div></th>
+							<th><div>주소</div></th>
+							<th><div>설치 장비수</div></th>
+							<th><div>검침타입</div></th>
+							<th><div></div></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>SE01</td>
+							<td>경기도 성남시 이지더원 아파트</td>
+							<td>1011</td>
+							<td>서울</td>
+							<td>서울시</td>
+							<td>1234</td>
+							<td>5종</td>
+							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+						</tr>
+						<tr>
+							<td>SE01</td>
+							<td>경기도 성남시 이지더원 아파트</td>
+							<td>1011</td>
+							<td>서울</td>
+							<td>서울시</td>
+							<td>1234</td>
+							<td>5종</td>
+							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+						</tr>
+						<tr>
+							<td>SE01</td>
+							<td>경기도 성남시 이지더원 아파트</td>
+							<td>1011</td>
+							<td>서울</td>
+							<td>서울시</td>
+							<td>1234</td>
+							<td>5종</td>
+							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+						</tr>
+						<tr>
+							<td>SE01</td>
+							<td>경기도 성남시 이지더원 아파트</td>
+							<td>1011</td>
+							<td>서울</td>
+							<td>서울시</td>
+							<td>1234</td>
+							<td>5종</td>
+							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<div class="pa-wrap">
 			<b-pagination v-model="currentPage" :total-rows="rows" size="sm"></b-pagination>
