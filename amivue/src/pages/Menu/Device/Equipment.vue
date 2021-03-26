@@ -4,7 +4,8 @@
 			<h1>장비 관리</h1>
 			<div class="tap-wrap">
 				<b-button pill variant="primary">DCU</b-button>
-				<b-button pill variant="outline-primary">METER</b-button>
+				<b-button pill variant="outline-primary" href="Equipment/Meter">METER</b-button
+				><!--링크-->
 				<b-button pill variant="outline-primary">가스, 수도, 온수, 난방</b-button>
 			</div>
 			<div class="main-location">
@@ -47,79 +48,6 @@
 									</b-col>
 									<b-col lg="8">
 										<b-form-input v-model="text" placeholder="그랑시아 아파트" class="form-control"></b-form-input>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col cols="4" xl="3">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">DCU ID</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="DCU ID" class="form-control"></b-form-input>
-									</b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-					</form>
-					<!--//검색영역-->
-				</div>
-				<div class="btn-wrap ml-auto">
-					<b-button block variant="primary">검색</b-button>
-				</div>
-			</div>
-		</div>
-		<div class="search-wrap2">
-			<div class="wbox">
-				<div class="search-img">
-					<b-icon icon="search" variant="primary"></b-icon>
-				</div>
-				<div class="search">
-					<!--검색영역-->
-					<form>
-						<b-row>
-							<b-col cols="4" xl="3">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">지역 이름</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected" class="form-control">
-											<b-form-select-option>서울시</b-form-select-option>
-											<b-form-select-option>경기도</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col cols="4" xl="3">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">단지 명</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="그랑시아 아파트" class="form-control"></b-form-input>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col cols="4" xl="3">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">DCU ID</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="DCU ID" class="form-control"></b-form-input>
-									</b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-						<b-row>
-							<b-col cols="4" xl="3">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">DCU ID</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="DCU ID" class="form-control"></b-form-input>
 									</b-col>
 								</b-row>
 							</b-col>
