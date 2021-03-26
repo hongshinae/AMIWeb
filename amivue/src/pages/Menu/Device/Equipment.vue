@@ -224,6 +224,7 @@
 			<b-pagination v-model="currentPage" :total-rows="rows" size="sm"></b-pagination>
 		</div>
 		<b-modal id="dcu-modal-1" title="DCU 등록">
+			<!--
 			<div class="svg-wrap">
 				<div class="svg">
 					<svg
@@ -469,9 +470,10 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 					</b-row>
 				</div>
 			</div>
+			-->
 		</b-modal>
 		<b-modal id="modal-xl" size="xl" title="서울 아파트">
-			<!---->
+			<!--
 			<div class="modal-content-wrap modal-equip">
 				<form>
 					<b-row align-h="center">
@@ -770,7 +772,7 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 					</b-row>
 				</form>
 			</div>
-			<!---->
+			-->
 		</b-modal>
 	</div>
 </template>
