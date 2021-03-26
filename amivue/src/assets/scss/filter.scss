@@ -37,7 +37,6 @@
 			}
 		}
 	}
-
 	.btn-wrap {
 		//버튼 그룹
 		height: 32px;
@@ -46,6 +45,16 @@
 		display: inline-block;
 		.btn-group {
 			margin: 0 10px 0 10px;
+		}
+	}
+}
+.btn-only-wrap {
+	.btn-wrap {
+		.btn-group:first-child {
+			float: left;
+		}
+		.btn-group:last-child {
+			float: right;
 		}
 	}
 }
