@@ -74,6 +74,9 @@
 					:fields="estateFields"
 					:current-page="currentPage"
 					:per-page="perPage"
+					:filter="filterEstate"
+					:filter-included-fields="filterTargetFields"
+					@filtered="onFiltered"
 					show-empty
 				>
 					<template #table-busy>
@@ -158,6 +161,13 @@ export default {
 					this.regionList[this.filterRegion] ? this.regionList[this.filterRegion].regionName : "unknown"
 				);
 			}
+		},
+		filterTargetFields: function() {
+			const filters = this.estateFields.filter(item => {
+				return item.hasFilter;
+			});
+			console.log(filters);
+			return filters.map(item => item.key);
 		}
 	},
 	data() {
@@ -183,13 +193,15 @@ export default {
 					key: "estateId",
 					label: this.$t("estate.table.estateId"),
 					sortable: true,
-					sortDirection: "asc"
+					sortDirection: "asc",
+					hasFilter: true
 				},
 				{
 					key: "estateName",
 					label: this.$t("estate.table.estateName"),
 					sortable: true,
-					sortDirection: "asc"
+					sortDirection: "asc",
+					hasFilter: true
 				},
 				{
 					key: "houseCount",
@@ -201,7 +213,8 @@ export default {
 					key: "regionName",
 					label: this.$t("estate.table.regionName"),
 					sortable: true,
-					sortDirection: "asc"
+					sortDirection: "asc",
+					hasFilter: true
 				},
 				{
 					key: "address",
