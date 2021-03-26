@@ -20,20 +20,20 @@ const routes = [
 			},
 			// 설비
 			{
-				path: "estate/:pageNumber",
+				path: "estate",
 				name: "Estate",
 				component: () => import("@/pages/Menu/Device/Estate"),
 				meta: { theme: "theme_white" },
-				props: true
+				props: route => ({ pageNumber: parseInt(route.params.pageNumber) })
 			},
 			{
-				path: "building/:pageNumber",
+				path: "building",
 				name: "Building",
 				component: () => import("@/pages/Menu/Device/Building"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "equipment/:pageNumber",
+				path: "equipment",
 				name: "Equipment",
 				component: () => import("@/pages/Menu/Device/Equipment"),
 				meta: { theme: "theme_white" }
@@ -63,61 +63,61 @@ const routes = [
 			},
 			// 검침
 			{
-				path: "mBoard/:pageNumber",
+				path: "mBoard",
 				name: "MBoard",
 				component: () => import("@/pages/Menu/Metering/MBoard")
 			},
 			{
-				path: "lookup/:pageNumber",
+				path: "lookup",
 				name: "Lookup",
 				component: () => import("@/pages/Menu/Metering/Lookup"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "info/:pageNumber",
+				path: "info",
 				name: "Info",
 				component: () => import("@/pages/Menu/Metering/Info"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "regular/:pageNumber",
+				path: "regular",
 				name: "Regular",
 				component: () => import("@/pages/Menu/Metering/Regular"),
 				meta: { theme: "theme_white" }
 			},
 			// 장애
 			{
-				path: "fBoard/:pageNumber",
+				path: "fBoard",
 				name: "FBoard",
 				component: () => import("@/pages/Menu/Failure/FBoard")
 			},
 			{
-				path: "code/:pageNumber",
+				path: "code",
 				name: "Code",
 				component: () => import("@/pages/Menu/Failure/Code"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "status/:pageNumber",
+				path: "status",
 				name: "Status",
 				component: () => import("@/pages/Menu/Failure/Status"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "reading/:pageNumber",
+				path: "reading",
 				name: "Reading",
 				component: () => import("@/pages/Menu/Failure/Reading"),
 				meta: { theme: "theme_white" }
 			},
 			// 고객 지원
 			{
-				path: "ask/:pageNumber",
+				path: "ask",
 				name: "Ask",
 				component: () => import("@/pages/Menu/Support/Ask"),
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "qna/:pageNumber",
+				path: "qna",
 				name: "QnA",
 				component: () => import("@/pages/Menu/Support/QnA"),
 				meta: { theme: "theme_white" }
@@ -134,10 +134,6 @@ const routes = [
 		name: "Login",
 		component: () => import("@/pages/Login"),
 		meta: { unauthorized: true }
-	},
-	{
-		path: "/*",
-		redirect: "/*/1"
 	}
 ];
 

@@ -67,7 +67,15 @@
 				</b-dropdown>
 			</template>
 			<template #table-main>
-				<b-table :striped="true" :busy.sync="isBusy" :items="searchEstateList" :fields="estateFields" show-empty>
+				<b-table
+					:striped="true"
+					:busy.sync="isBusy"
+					:items="estateList"
+					:fields="estateFields"
+					:current-page="currentPage"
+					:per-page="perPage"
+					show-empty
+				>
 					<template #table-busy>
 						<div class="text-center text-danger my-2">
 							<b-spinner class="align-middle"></b-spinner>
@@ -89,7 +97,7 @@
 				</b-table>
 			</template>
 			<template #table-footer-pagination>
-				<b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage">
+				<b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" :limit="10">
 					<template #first-text><span class="text-success">«</span></template>
 					<template #prev-text><span class="text-danger">‹</span></template>
 					<template #next-text><span class="text-warning">›</span></template>
@@ -122,7 +130,7 @@ Vue.component("icon-home-down", IconHomeDown);
 Vue.component("icon-pencil", IconPencil);
 
 export default {
-	props: { pageNumber: { default: 1 } },
+	props: { pageNumber: { type: Number, default: 1 } },
 	components: { AddEstate, ContentHeader, ContentSearch, ContentTable },
 	created() {
 		Estate.region()
@@ -137,7 +145,9 @@ export default {
 				console.log(error);
 			});
 	},
-	mounted() {},
+	mounted() {
+		this.searchEstateList();
+	},
 	computed: {
 		placeholder: function() {
 			if (this.estates != 0) {
@@ -159,7 +169,7 @@ export default {
 				{ name: this.$t("menu.device.title") },
 				{ name: this.$t("menu.device.estate") }
 			],
-			totalRows: 0,
+			totalRows: 1,
 			currentPage: 1,
 			regionList: [],
 			filterRegion: 0,
@@ -167,7 +177,7 @@ export default {
 			perPage: "15",
 			pages: ["10", "15", "20", "30", "50"],
 			estates: [],
-			estateList: null,
+			estateList: [],
 			estateFields: [
 				{
 					key: "estateId",
@@ -234,16 +244,19 @@ export default {
 				const response = await Estate.estateList();
 				const result = response.data.response;
 				this.totalRows = result.length;
-
-				return result;
+				this.estateList = result;
 			} catch (error) {
 				const result = [];
 				this.totalRows = result.length;
-
-				return result;
+				this.estateList = result;
 			} finally {
 				this.isBusy = false;
 			}
+		},
+		onFiltered(filteredItems) {
+			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
+			this.totalRows = filteredItems.length;
+			this.currentPage = 1;
 		}
 	}
 };
