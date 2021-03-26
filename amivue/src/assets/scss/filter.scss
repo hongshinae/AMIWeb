@@ -1,15 +1,50 @@
 @import "style";
 
-.filter-wrap {
-	height: 60px;
-	input[type="checkbox"] {
-		height: 34px;
-		line-height: 34px;
-		font-size: 12px !important;
-		font-weight: normal !important;
-		white-space: inherit;
-		overflow: inherit;
-		text-overflow: inherit;
-		opacity: 1;
+.btn-filter-wrap {
+	height: 32px;
+	.filter-wrap {
+		float: right;
+		height: 32px;
+		.form-group {
+			float: left;
+			margin-right: 10px;
+			legend {
+				width: auto;
+				display: inline;
+				float: left;
+				height: 32px;
+				line-height: 32px;
+			}
+			> div {
+				height: 32px;
+				line-height: 32px;
+				display: inline;
+				float: left;
+			}
+			.custom-select {
+				padding: inherit;
+				font-weight: 600 !important;
+				width: unset;
+				height: inherit;
+				border: none;
+				display: block;
+				color: $color-bl;
+				margin: 0 10px 0 10px !important;
+				padding: 0 19px 0 0 !important;
+				background: url(../images/arrow.png) no-repeat;
+				background-position: right center;
+			}
+		}
+	}
+
+	.btn-wrap {
+		//버튼 그룹
+		height: 32px;
+		line-height: 32px;
+		margin-bottom: 15px !important;
+		display: inline-block;
+		.btn-group {
+			margin: 0 10px 0 10px;
+		}
 	}
 }

@@ -117,7 +117,7 @@
 			float: right;
 			color: #2e4664;
 			&.on {
-				color: #00ff90;
+				color: $color-gn;
 			}
 		}
 	}
@@ -162,7 +162,7 @@
 		border-radius: 4px;
 		float: left;
 		width: 23%;
-		border: solid 1px #1ee2df;
+		border: solid 1px $color-gn;
 		background-image: linear-gradient(to top, #75cee2, #23b9da, #1ee4df);
 		margin: 0 1%;
 	}
@@ -199,7 +199,7 @@
 }
 .regist-info .serve-box {
 	height: 71px;
-	border: solid 1px #1ee2df;
+	border: solid 1px $color-gn;
 	background-image: linear-gradient(to top, #75cee2, #23b9da, #1ee4df);
 	padding: 13px;
 	border-radius: 5px;

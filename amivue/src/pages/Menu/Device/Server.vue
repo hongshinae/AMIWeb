@@ -32,6 +32,4153 @@
 					</h5>
 					<div class="svg-Warp">
 						<!--svg가 들어가면 깨짐-->
+						<svg
+							version="1.1"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px"
+							y="0px"
+							viewBox="0 0 900 400"
+							style="enable-background:new 0 0 900 400;"
+							xml:space="preserve"
+						>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_1_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_1_2"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_10_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_11_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_12_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_13_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_14_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_15_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_16_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_17_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_18_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_19_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_2_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_2_2"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_20_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st4" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_21_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_22_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_23_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_24_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_25_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_26_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_27_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_28_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_29_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_3_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_3_3"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st5" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_30_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_31_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_32_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_33_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_34_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_35_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_36_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_37_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_38_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_39_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_4_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_4_3"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st6" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_40_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st4" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_41_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_42_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_43_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_44_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_45_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_46_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_47_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_48_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_49_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_5_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_5_2"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_50_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_51_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_52_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_53_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_54_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_55_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_56_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_57_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_58_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_59_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_6_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_6_3"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st6" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_60_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st4" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_61_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_62_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_63_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_64_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_65_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_66_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_67_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_68_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_69_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_7_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_7_2"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_70_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_71_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_72_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_73_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_74_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_75_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_76_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_77_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_78_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_79_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_8_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st3" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_8_3"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st6" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_9_"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st1" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<pattern
+								width="32.25"
+								height="32.25"
+								patternUnits="userSpaceOnUse"
+								id="SVGID_9_2"
+								viewBox="0 -32.25 32.25 32.25"
+								style="overflow:visible;"
+							>
+								<g>
+									<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+									<g>
+										<rect y="-32.25" class="st0" width="32.25" height="32.25" />
+										<g>
+											<rect y="-32.25" class="st2" width="32.25" height="32.25" />
+										</g>
+									</g>
+								</g>
+							</pattern>
+							<g id="Layer_2" class="st7">
+								<rect x="0.5" y="-0.5" class="st8" width="900" height="405" />
+							</g>
+							<g id="Layer_1">
+								<line class="st9" x1="98.46" y1="80.8" x2="425.46" y2="80.8" />
+								<polyline class="st9" points="771.96,79.3 886.96,79.3 886.96,395.3 473.96,395.3 473.96,298.3 	" />
+								<line class="st9" x1="443.96" y1="134.3" x2="443.96" y2="268.3" />
+								<polyline class="st9" points="480.96,110.3 598.96,110.3 598.96,276.3 727.96,276.3 	" />
+								<g>
+									<g>
+										<g>
+											<polygon class="st4" points="735.66,242.88 764.66,227.55 764.62,298.38 735.62,315.24 				" />
+										</g>
+										<g>
+											<polygon class="st10" points="707.39,228.08 736.39,211.23 764.66,227.55 735.66,244.4 				" />
+										</g>
+										<g>
+											<polygon class="st11" points="735.66,244.4 735.62,315.24 707.35,298.92 707.39,228.08 				" />
+											<g>
+												<polygon
+													class="st10"
+													points="710.8,232.03 709.09,231.04 709.06,297.93 733.91,312.28 733.91,310.14 710.77,296.78 					"
+												/>
+												<polygon class="st4" points="710.8,232.03 710.77,296.78 733.91,310.14 733.95,245.39 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<polygon class="st11" points="732.2,247.81 732.18,255.49 713.11,244.48 713.13,236.8 			" />
+										<g>
+											<g>
+												<g>
+													<polygon class="st12" points="717.74,241.72 718.43,241.32 718.4,246.26 717.71,246.66 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="716.53,241.02 717.22,240.62 718.43,241.32 717.74,241.72 						" />
+												</g>
+												<polygon class="st13" points="717.74,241.72 717.71,246.66 716.51,245.96 716.53,241.02 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="720.2,243.14 720.89,242.74 720.87,247.68 720.18,248.08 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="719,242.45 719.69,242.05 720.89,242.74 720.2,243.14 						" />
+												</g>
+												<polygon class="st13" points="720.2,243.14 720.18,248.08 718.97,247.38 719,242.45 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="722.67,244.57 723.36,244.17 723.33,249.1 722.64,249.5 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="721.46,243.87 722.15,243.47 723.36,244.17 722.67,244.57 						" />
+												</g>
+												<polygon class="st13" points="722.67,244.57 722.64,249.5 721.44,248.81 721.46,243.87 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="725.13,245.99 725.82,245.59 725.8,250.53 725.11,250.93 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="723.93,245.29 724.61,244.89 725.82,245.59 725.13,245.99 						" />
+												</g>
+												<polygon class="st13" points="725.13,245.99 725.11,250.93 723.9,250.23 723.93,245.29 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="727.6,247.41 728.29,247.01 728.26,251.95 727.57,252.35 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="726.39,246.72 727.08,246.32 728.29,247.01 727.6,247.41 						" />
+												</g>
+												<polygon class="st13" points="727.6,247.41 727.57,252.35 726.36,251.65 726.39,246.72 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="730.06,248.84 730.75,248.44 730.73,253.37 730.04,253.77 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="728.85,248.14 729.54,247.74 730.75,248.44 730.06,248.84 						" />
+												</g>
+												<polygon class="st13" points="730.06,248.84 730.04,253.77 728.83,253.08 728.85,248.14 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="715.28,240.3 715.96,239.9 715.94,244.84 715.25,245.24 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="714.07,239.6 714.76,239.2 715.96,239.9 715.28,240.3 						" />
+												</g>
+												<polygon class="st13" points="715.28,240.3 715.25,245.24 714.04,244.54 714.07,239.6 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<polygon class="st11" points="732.2,258.02 732.18,265.7 713.11,254.69 713.13,247.01 			" />
+										<g>
+											<g>
+												<g>
+													<polygon class="st12" points="717.74,251.93 718.43,251.53 718.4,256.47 717.71,256.87 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="716.53,251.23 717.22,250.83 718.43,251.53 717.74,251.93 						" />
+												</g>
+												<polygon class="st13" points="717.74,251.93 717.71,256.87 716.51,256.17 716.53,251.23 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="720.2,253.35 720.89,252.95 720.87,257.89 720.18,258.29 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="719,252.66 719.69,252.26 720.89,252.95 720.2,253.35 						" />
+												</g>
+												<polygon class="st13" points="720.2,253.35 720.18,258.29 718.97,257.59 719,252.66 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="722.67,254.78 723.36,254.38 723.33,259.31 722.64,259.71 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="721.46,254.08 722.15,253.68 723.36,254.38 722.67,254.78 						" />
+												</g>
+												<polygon class="st13" points="722.67,254.78 722.64,259.71 721.44,259.02 721.46,254.08 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="725.13,256.2 725.82,255.8 725.8,260.74 725.11,261.14 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="723.93,255.5 724.61,255.1 725.82,255.8 725.13,256.2 						" />
+												</g>
+												<polygon class="st13" points="725.13,256.2 725.11,261.14 723.9,260.44 723.93,255.5 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="727.6,257.62 728.29,257.22 728.26,262.16 727.57,262.56 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="726.39,256.93 727.08,256.53 728.29,257.22 727.6,257.62 						" />
+												</g>
+												<polygon class="st13" points="727.6,257.62 727.57,262.56 726.36,261.86 726.39,256.93 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="730.06,259.05 730.75,258.65 730.73,263.58 730.04,263.98 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="728.85,258.35 729.54,257.95 730.75,258.65 730.06,259.05 						" />
+												</g>
+												<polygon class="st13" points="730.06,259.05 730.04,263.98 728.83,263.29 728.85,258.35 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="715.28,250.51 715.96,250.11 715.94,255.05 715.25,255.45 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="714.07,249.81 714.76,249.41 715.96,250.11 715.28,250.51 						" />
+												</g>
+												<polygon class="st13" points="715.28,250.51 715.25,255.45 714.04,254.75 714.07,249.81 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<polygon class="st11" points="732.2,268.23 732.18,275.91 713.11,264.9 713.13,257.22 			" />
+										<g>
+											<g>
+												<g>
+													<polygon class="st12" points="717.74,262.14 718.43,261.74 718.4,266.68 717.71,267.08 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="716.53,261.44 717.22,261.04 718.43,261.74 717.74,262.14 						" />
+												</g>
+												<polygon class="st13" points="717.74,262.14 717.71,267.08 716.51,266.38 716.53,261.44 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="720.2,263.56 720.89,263.16 720.87,268.1 720.18,268.5 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="719,262.87 719.69,262.47 720.89,263.16 720.2,263.56 						" />
+												</g>
+												<polygon class="st13" points="720.2,263.56 720.18,268.5 718.97,267.8 719,262.87 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="722.67,264.99 723.36,264.59 723.33,269.52 722.64,269.92 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="721.46,264.29 722.15,263.89 723.36,264.59 722.67,264.99 						" />
+												</g>
+												<polygon class="st13" points="722.67,264.99 722.64,269.92 721.44,269.23 721.46,264.29 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="725.13,266.41 725.82,266.01 725.8,270.95 725.11,271.35 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="723.93,265.71 724.61,265.31 725.82,266.01 725.13,266.41 						" />
+												</g>
+												<polygon class="st13" points="725.13,266.41 725.11,271.35 723.9,270.65 723.93,265.71 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="727.6,267.83 728.29,267.43 728.26,272.37 727.57,272.77 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="726.39,267.14 727.08,266.74 728.29,267.43 727.6,267.83 						" />
+												</g>
+												<polygon class="st13" points="727.6,267.83 727.57,272.77 726.36,272.07 726.39,267.14 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="730.06,269.26 730.75,268.86 730.73,273.79 730.04,274.19 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="728.85,268.56 729.54,268.16 730.75,268.86 730.06,269.26 						" />
+												</g>
+												<polygon class="st13" points="730.06,269.26 730.04,274.19 728.83,273.5 728.85,268.56 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="715.28,260.72 715.96,260.32 715.94,265.26 715.25,265.66 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="714.07,260.02 714.76,259.62 715.96,260.32 715.28,260.72 						" />
+												</g>
+												<polygon class="st13" points="715.28,260.72 715.25,265.66 714.04,264.96 714.07,260.02 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<polygon class="st11" points="732.2,278.44 732.18,286.12 713.11,275.11 713.13,267.43 			" />
+										<g>
+											<g>
+												<g>
+													<polygon class="st12" points="717.74,272.35 718.43,271.95 718.4,276.89 717.71,277.29 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="716.53,271.65 717.22,271.25 718.43,271.95 717.74,272.35 						" />
+												</g>
+												<polygon class="st13" points="717.74,272.35 717.71,277.29 716.51,276.59 716.53,271.65 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="720.2,273.77 720.89,273.37 720.87,278.31 720.18,278.71 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="719,273.08 719.69,272.68 720.89,273.37 720.2,273.77 						" />
+												</g>
+												<polygon class="st13" points="720.2,273.77 720.18,278.71 718.97,278.01 719,273.08 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="722.67,275.2 723.36,274.8 723.33,279.73 722.64,280.14 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="721.46,274.5 722.15,274.1 723.36,274.8 722.67,275.2 						" />
+												</g>
+												<polygon class="st13" points="722.67,275.2 722.64,280.14 721.44,279.44 721.46,274.5 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="725.13,276.62 725.82,276.22 725.8,281.16 725.11,281.56 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="723.93,275.92 724.61,275.52 725.82,276.22 725.13,276.62 						" />
+												</g>
+												<polygon class="st13" points="725.13,276.62 725.11,281.56 723.9,280.86 723.93,275.92 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="727.6,278.04 728.29,277.64 728.26,282.58 727.57,282.98 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="726.39,277.35 727.08,276.95 728.29,277.64 727.6,278.04 						" />
+												</g>
+												<polygon class="st13" points="727.6,278.04 727.57,282.98 726.36,282.28 726.39,277.35 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="730.06,279.47 730.75,279.07 730.73,284 730.04,284.4 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="728.85,278.77 729.54,278.37 730.75,279.07 730.06,279.47 						" />
+												</g>
+												<polygon class="st13" points="730.06,279.47 730.04,284.4 728.83,283.71 728.85,278.77 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="715.28,270.93 715.96,270.53 715.94,275.47 715.25,275.87 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="714.07,270.23 714.76,269.83 715.96,270.53 715.28,270.93 						" />
+												</g>
+												<polygon class="st13" points="715.28,270.93 715.25,275.87 714.04,275.17 714.07,270.23 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<polygon class="st11" points="732.2,288.65 732.18,296.33 713.11,285.32 713.13,277.64 			" />
+										<g>
+											<g>
+												<g>
+													<polygon class="st12" points="717.74,282.56 718.43,282.16 718.4,287.1 717.71,287.5 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="716.53,281.86 717.22,281.46 718.43,282.16 717.74,282.56 						" />
+												</g>
+												<polygon class="st13" points="717.74,282.56 717.71,287.5 716.51,286.8 716.53,281.86 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="720.2,283.98 720.89,283.58 720.87,288.52 720.18,288.92 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="719,283.29 719.69,282.89 720.89,283.58 720.2,283.98 						" />
+												</g>
+												<polygon class="st13" points="720.2,283.98 720.18,288.92 718.97,288.22 719,283.29 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="722.67,285.41 723.36,285.01 723.33,289.94 722.64,290.35 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="721.46,284.71 722.15,284.31 723.36,285.01 722.67,285.41 						" />
+												</g>
+												<polygon class="st13" points="722.67,285.41 722.64,290.35 721.44,289.65 721.46,284.71 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="725.13,286.83 725.82,286.43 725.8,291.37 725.11,291.77 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="723.93,286.13 724.61,285.73 725.82,286.43 725.13,286.83 						" />
+												</g>
+												<polygon class="st13" points="725.13,286.83 725.11,291.77 723.9,291.07 723.93,286.13 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="727.6,288.25 728.29,287.85 728.26,292.79 727.57,293.19 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="726.39,287.56 727.08,287.16 728.29,287.85 727.6,288.25 						" />
+												</g>
+												<polygon class="st13" points="727.6,288.25 727.57,293.19 726.36,292.49 726.39,287.56 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="730.06,289.68 730.75,289.28 730.73,294.21 730.04,294.61 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="728.85,288.98 729.54,288.58 730.75,289.28 730.06,289.68 						" />
+												</g>
+												<polygon class="st13" points="730.06,289.68 730.04,294.61 728.83,293.92 728.85,288.98 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="715.28,281.14 715.96,280.74 715.94,285.68 715.25,286.08 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="714.07,280.44 714.76,280.04 715.96,280.74 715.28,281.14 						" />
+												</g>
+												<polygon class="st13" points="715.28,281.14 715.25,286.08 714.04,285.38 714.07,280.44 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<polygon class="st11" points="732.2,298.86 732.18,306.54 713.11,295.53 713.13,287.85 			" />
+										<g>
+											<g>
+												<g>
+													<polygon class="st12" points="717.74,292.77 718.43,292.37 718.4,297.31 717.71,297.71 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="716.53,292.07 717.22,291.67 718.43,292.37 717.74,292.77 						" />
+												</g>
+												<polygon class="st13" points="717.74,292.77 717.71,297.71 716.51,297.01 716.53,292.07 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="720.2,294.19 720.89,293.79 720.87,298.73 720.18,299.13 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="719,293.5 719.69,293.1 720.89,293.79 720.2,294.19 						" />
+												</g>
+												<polygon class="st13" points="720.2,294.19 720.18,299.13 718.97,298.43 719,293.5 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="722.67,295.62 723.36,295.22 723.33,300.15 722.64,300.56 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="721.46,294.92 722.15,294.52 723.36,295.22 722.67,295.62 						" />
+												</g>
+												<polygon class="st13" points="722.67,295.62 722.64,300.56 721.44,299.86 721.46,294.92 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="725.13,297.04 725.82,296.64 725.8,301.58 725.11,301.98 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="723.93,296.34 724.61,295.94 725.82,296.64 725.13,297.04 						" />
+												</g>
+												<polygon class="st13" points="725.13,297.04 725.11,301.98 723.9,301.28 723.93,296.34 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="727.6,298.46 728.29,298.06 728.26,303 727.57,303.4 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="726.39,297.77 727.08,297.37 728.29,298.06 727.6,298.46 						" />
+												</g>
+												<polygon class="st13" points="727.6,298.46 727.57,303.4 726.36,302.7 726.39,297.77 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="730.06,299.89 730.75,299.49 730.73,304.42 730.04,304.82 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="728.85,299.19 729.54,298.79 730.75,299.49 730.06,299.89 						" />
+												</g>
+												<polygon class="st13" points="730.06,299.89 730.04,304.82 728.83,304.13 728.85,299.19 					" />
+											</g>
+											<g>
+												<g>
+													<polygon class="st12" points="715.28,291.35 715.96,290.95 715.94,295.89 715.25,296.29 						" />
+												</g>
+												<g>
+													<polygon class="st6" points="714.07,290.65 714.76,290.25 715.96,290.95 715.28,291.35 						" />
+												</g>
+												<polygon class="st13" points="715.28,291.35 715.25,296.29 714.04,295.59 714.07,290.65 					" />
+											</g>
+										</g>
+									</g>
+									<path
+										class="st10"
+										d="M757.86,296.81c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,296.81z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,295.81c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,295.81z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,294.81c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,294.81z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,293.82c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,293.82z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,291.82c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,291.82z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,292.82c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,292.82z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,287.73c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,287.73z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,286.73c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,286.73z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,285.73c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,285.73z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,284.74c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,284.74z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,282.74c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,282.74z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,283.74c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,283.74z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,278.65c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,278.65z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,277.65c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,277.65z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,276.65c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,276.65z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,275.65c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,275.65z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,273.66c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,273.66z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,274.66c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,274.66z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,269.56c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,269.56z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,268.57c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,268.57z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,267.57c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,267.57z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,266.57c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,266.57z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,264.58c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,264.58z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,265.58c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,265.58z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,260.48c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,260.48z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,259.49c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,259.49z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,258.49c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,258.49z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,257.49c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,257.49z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,255.5c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,255.5z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,256.49c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,256.49z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,251.4c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,251.4z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,250.4c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,250.4z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,249.41c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,249.41z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,248.41c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,248.41z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,246.42c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,246.42z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,247.41c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,247.41z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,242.32c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,242.32z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,241.32c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,241.32z"
+									/>
+									<path
+										class="st10"
+										d="M757.86,240.33c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.86,240.33z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,239.33c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,239.33z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,237.33c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,237.33z"
+									/>
+									<path
+										class="st10"
+										d="M757.85,238.33c-0.1,0.06-0.19,0.2-0.19,0.32c0,0.12,0.08,0.17,0.19,0.11l4.53-2.61
+			c0.1-0.06,0.19-0.2,0.19-0.32c0-0.12-0.08-0.17-0.19-0.11L757.85,238.33z"
+									/>
+									<g>
+										<g>
+											<g>
+												<g>
+													<g>
+														<g>
+															<g>
+																<g>
+																	<g>
+																		<g>
+																			<polygon
+																				class="st4"
+																				points="732.92,245.99 735.66,244.4 735.62,315.24 732.88,316.83 												"
+																			/>
+																		</g>
+																		<g>
+																			<polygon
+																				class="st4"
+																				points="704.65,229.67 707.39,228.08 735.66,244.4 732.92,245.99 												"
+																			/>
+																		</g>
+																		<path
+																			class="st11"
+																			d="M704.66,229.68l-0.04,70.83l28.26,16.31l0.04-70.83L704.66,229.68z M729.61,308.11l-22.07-12.74
+												l0.02-62.11L729.65,246L729.61,308.11z"
+																		/>
+																	</g>
+																</g>
+																<polygon class="st14" points="707.57,233.25 707.54,298.05 729.61,310.79 729.64,245.99 									" />
+															</g>
+														</g>
+													</g>
+												</g>
+											</g>
+										</g>
+										<g>
+											<polygon class="st14" points="712.74,301.05 729.62,291.63 729.62,289.42 710.48,299.75 				" />
+											<polygon class="st14" points="707.54,298.05 707.98,298.3 729.62,286.97 729.62,281.4 707.54,292.9 				" />
+											<polygon class="st14" points="729.63,266.42 707.55,275.24 707.55,277.44 729.63,268.62 				" />
+											<polygon class="st14" points="729.64,258.39 707.55,267.21 707.55,272.79 729.63,263.97 				" />
+											<polygon class="st14" points="726.99,244.47 707.56,252.23 707.56,254.43 729.25,245.77 				" />
+											<polygon class="st14" points="718.78,239.72 707.56,244.2 707.56,249.78 724.49,243.02 				" />
+										</g>
+									</g>
+									<g>
+										<g>
+											<g class="st15">
+												<g>
+													<path
+														class="st2"
+														d="M732.25,280.96l-1.24,0.71c-0.09,0.05-0.17,0.06-0.22,0.02l-0.72-0.42l0,0.58c0,0.29,0.11,0.5,0.28,0.6
+							l-1.04-0.6c-0.17-0.1-0.27-0.31-0.27-0.6l-0.01-4.91c0-0.6,0.42-1.33,0.94-1.62l1.24-0.72l1.04,0.6l-1.24,0.72
+							c-0.52,0.3-0.94,1.03-0.94,1.63l0.01,4.07l1.15-0.66L732.25,280.96z"
+													/>
+												</g>
+											</g>
+										</g>
+										<g>
+											<path
+												class="st1"
+												d="M732.23,274.61l0,0.72l-1.24,0.72c-0.17,0.1-0.31,0.34-0.31,0.54l0.01,4.92c0,0.2,0.14,0.28,0.31,0.18
+					l1.24-0.72l0,0.72l-1.24,0.72c-0.52,0.3-0.94,0.06-0.94-0.54l-0.01-4.92c0-0.6,0.42-1.32,0.94-1.62L732.23,274.61z"
+											/>
+										</g>
+									</g>
+								</g>
+								<g>
+									<g>
+										<g>
+											<g>
+												<path
+													class="st11"
+													d="M773.85,114.48l-0.02,11.3c0,0.98-0.64,1.95-1.92,2.69l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0
+						l-28.96-16.72c-1.31-0.75-1.96-1.74-1.96-2.73l0.02-11.3c0,0.99,30.92,19.45,30.92,19.45c2.6,1.5,6.79,1.5,9.37,0
+						C743.15,133.89,773.84,115.46,773.85,114.48z"
+												/>
+												<path
+													class="st10"
+													d="M731.22,135.14l-23.98-13.85c-0.62-0.36-1.39,0.09-1.39,0.81v3.74c0,0.66,0.35,1.28,0.93,1.61
+						l23.98,13.85c0.62,0.36,1.39-0.09,1.39-0.81v-3.74C732.15,136.08,731.8,135.47,731.22,135.14z"
+												/>
+												<g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_80_"
+																xlink:href="#SVGID_1_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1121.983)"
+															></pattern>
+															<path
+																class="st16"
+																d="M744.58,136.1c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C745.13,136.06,744.89,135.92,744.58,136.1z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_81_"
+																xlink:href="#SVGID_2_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1122.8492)"
+															></pattern>
+															<path
+																class="st17"
+																d="M744.89,140.16l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C744.64,140.94,744.89,140.51,744.89,140.16z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_82_"
+																xlink:href="#SVGID_3_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1121.7242)"
+															></pattern>
+															<path
+																class="st18"
+																d="M768.27,122.33c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C768.82,122.3,768.57,122.16,768.27,122.33z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_83_"
+																xlink:href="#SVGID_4_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1122.8815)"
+															></pattern>
+															<path
+																class="st19"
+																d="M768.57,126.39l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C768.33,127.17,768.57,126.74,768.57,126.39z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_84_"
+																xlink:href="#SVGID_5_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1120.8307)"
+															></pattern>
+															<path
+																class="st20"
+																d="M764.88,124.3c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C765.44,124.26,765.19,124.12,764.88,124.3z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_85_"
+																xlink:href="#SVGID_6_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1121.9879)"
+															></pattern>
+															<path
+																class="st21"
+																d="M765.19,128.36l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C764.94,129.14,765.19,128.71,765.19,128.36z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_86_"
+																xlink:href="#SVGID_7_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1119.9366)"
+															></pattern>
+															<path
+																class="st22"
+																d="M761.5,126.27c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32s0.55-0.6,0.55-0.95
+									l-0.01-3.88C762.05,126.23,761.8,126.09,761.5,126.27z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_87_"
+																xlink:href="#SVGID_8_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1121.0939)"
+															></pattern>
+															<path
+																class="st23"
+																d="M761.81,130.33l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C761.56,131.1,761.81,130.68,761.81,130.33z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_88_"
+																xlink:href="#SVGID_9_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1119.0431)"
+															></pattern>
+															<path
+																class="st24"
+																d="M758.12,128.23c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C758.67,128.2,758.42,128.06,758.12,128.23z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_89_"
+																xlink:href="#SVGID_10_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1120.2003)"
+															></pattern>
+															<path
+																class="st25"
+																d="M758.42,132.29l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C758.18,133.07,758.42,132.64,758.42,132.29z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_90_"
+																xlink:href="#SVGID_11_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1118.149)"
+															></pattern>
+															<path
+																class="st26"
+																d="M754.73,130.2c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C755.29,130.16,755.04,130.02,754.73,130.2z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_91_"
+																xlink:href="#SVGID_12_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1119.3063)"
+															></pattern>
+															<path
+																class="st27"
+																d="M755.04,134.26l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C754.79,135.04,755.04,134.61,755.04,134.26z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_92_"
+																xlink:href="#SVGID_13_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1117.2555)"
+															></pattern>
+															<path
+																class="st28"
+																d="M751.35,132.16c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									s0.55-0.6,0.55-0.95l-0.01-3.88C751.9,132.13,751.65,131.99,751.35,132.16z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_93_"
+																xlink:href="#SVGID_14_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1118.4127)"
+															></pattern>
+															<path
+																class="st29"
+																d="M751.65,136.23l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C751.41,137,751.66,136.58,751.65,136.23z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_94_"
+																xlink:href="#SVGID_15_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1116.3615)"
+															></pattern>
+															<path
+																class="st30"
+																d="M747.97,134.13c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C748.52,134.1,748.27,133.96,747.97,134.13z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_95_"
+																xlink:href="#SVGID_16_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1117.5187)"
+															></pattern>
+															<path
+																class="st31"
+																d="M748.27,138.19l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C748.03,138.97,748.27,138.54,748.27,138.19z"
+															/>
+														</g>
+													</g>
+												</g>
+												<path
+													class="st10"
+													d="M771.89,111.75c2.6,1.5,2.61,3.93,0.03,5.43l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0l-28.96-16.72
+						c-2.6-1.5-2.61-3.93-0.03-5.43l28.77-16.72c2.58-1.5,6.77-1.5,9.37,0L771.89,111.75z"
+												/>
+												<g>
+													<path
+														class="st11"
+														d="M760.64,113.26c1.15,0.66,1.15,1.74,0.01,2.4l-20.15,11.71c-1.14,0.66-3,0.66-4.14,0l-20.28-11.71
+							c-1.15-0.66-1.15-1.74-0.01-2.4l20.15-11.71c1.14-0.66,3-0.66,4.14,0L760.64,113.26z"
+													/>
+												</g>
+												<g>
+													<g>
+														<pattern
+															id="SVGID_96_"
+															xlink:href="#SVGID_17_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 492.5233)"
+														></pattern>
+														<path
+															class="st32"
+															d="M708.8,124.45c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77C707.77,124.39,708.23,124.13,708.8,124.45z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_97_"
+															xlink:href="#SVGID_18_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 492.5233)"
+														></pattern>
+														<path
+															class="st33"
+															d="M712.11,126.37c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77C711.08,126.3,711.54,126.04,712.11,126.37z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_98_"
+															xlink:href="#SVGID_19_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 492.5233)"
+														></pattern>
+														<path
+															class="st34"
+															d="M715.42,128.28c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77C714.39,128.21,714.85,127.95,715.42,128.28z"
+														/>
+													</g>
+												</g>
+											</g>
+										</g>
+										<polygon class="st6" points="729.16,135.98 721.48,131.55 721.48,134.46 729.16,138.89 			" />
+									</g>
+									<g>
+										<g>
+											<pattern
+												id="SVGID_99_"
+												xlink:href="#SVGID_20_"
+												patternTransform="matrix(0.0503 0 0 -0.0503 -14980.8145 535.5484)"
+											></pattern>
+											<path
+												class="st35"
+												d="M772.12,101.2l-0.02,10.75c0,0.93-0.61,1.86-1.83,2.56l-27.37,15.91c-2.45,1.43-6.44,1.43-8.91,0
+					l-27.55-15.91c-1.24-0.72-1.86-1.66-1.86-2.6l0.02-10.75c0,0.94,0.62,1.88,1.86,2.59L734,119.67c2.47,1.43,6.46,1.43,8.91,0
+					l27.37-15.91C771.51,103.05,772.12,102.13,772.12,101.2z"
+											/>
+											<g>
+												<path
+													class="st11"
+													d="M773.85,96.75l-0.02,11.3c0,0.98-0.64,1.95-1.92,2.69l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0
+						l-28.96-16.72c-1.31-0.75-1.96-1.74-1.96-2.73l0.02-11.3c0,0.99,30.92,19.45,30.92,19.45c2.6,1.5,6.79,1.5,9.37,0
+						C743.15,116.17,773.84,97.73,773.85,96.75z"
+												/>
+												<path
+													class="st10"
+													d="M731.22,117.41l-23.98-13.85c-0.62-0.36-1.39,0.09-1.39,0.81v3.74c0,0.66,0.35,1.28,0.93,1.61
+						l23.98,13.85c0.62,0.36,1.39-0.09,1.39-0.81v-3.74C732.15,118.36,731.8,117.74,731.22,117.41z"
+												/>
+												<g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_100_"
+																xlink:href="#SVGID_21_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1130.0406)"
+															></pattern>
+															<path
+																class="st36"
+																d="M744.58,118.37c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C745.13,118.34,744.89,118.2,744.58,118.37z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_101_"
+																xlink:href="#SVGID_22_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1130.9064)"
+															></pattern>
+															<path
+																class="st37"
+																d="M744.89,122.43l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C744.64,123.21,744.89,122.78,744.89,122.43z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_102_"
+																xlink:href="#SVGID_23_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1129.7819)"
+															></pattern>
+															<path
+																class="st38"
+																d="M768.27,104.61c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C768.82,104.57,768.57,104.43,768.27,104.61z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_103_"
+																xlink:href="#SVGID_24_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1130.9391)"
+															></pattern>
+															<path
+																class="st39"
+																d="M768.57,108.67l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C768.33,109.44,768.57,109.02,768.57,108.67z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_104_"
+																xlink:href="#SVGID_25_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1128.8878)"
+															></pattern>
+															<path
+																class="st40"
+																d="M764.88,106.57c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C765.44,106.54,765.19,106.4,764.88,106.57z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_105_"
+																xlink:href="#SVGID_26_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1130.045)"
+															></pattern>
+															<path
+																class="st41"
+																d="M765.19,110.63l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C764.94,111.41,765.19,110.98,765.19,110.63z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_106_"
+																xlink:href="#SVGID_27_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1127.9938)"
+															></pattern>
+															<path
+																class="st42"
+																d="M761.5,108.54c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C762.05,108.51,761.8,108.36,761.5,108.54z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_107_"
+																xlink:href="#SVGID_28_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1129.1515)"
+															></pattern>
+															<path
+																class="st43"
+																d="M761.81,112.6l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C761.56,113.38,761.81,112.95,761.81,112.6z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_108_"
+																xlink:href="#SVGID_29_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1127.1002)"
+															></pattern>
+															<path
+																class="st44"
+																d="M758.12,110.51c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C758.67,110.47,758.42,110.33,758.12,110.51z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_109_"
+																xlink:href="#SVGID_30_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1128.2574)"
+															></pattern>
+															<path
+																class="st45"
+																d="M758.42,114.57l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C758.18,115.34,758.42,114.92,758.42,114.57z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_110_"
+																xlink:href="#SVGID_31_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1126.2062)"
+															></pattern>
+															<path
+																class="st46"
+																d="M754.73,112.47c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C755.29,112.44,755.04,112.3,754.73,112.47z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_111_"
+																xlink:href="#SVGID_32_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1127.3634)"
+															></pattern>
+															<path
+																class="st47"
+																d="M755.04,116.53l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C754.79,117.31,755.04,116.88,755.04,116.53z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_112_"
+																xlink:href="#SVGID_33_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1125.3126)"
+															></pattern>
+															<path
+																class="st48"
+																d="M751.35,114.44c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C751.9,114.4,751.65,114.26,751.35,114.44z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_113_"
+																xlink:href="#SVGID_34_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1126.4698)"
+															></pattern>
+															<path
+																class="st49"
+																d="M751.65,118.5l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C751.41,119.28,751.66,118.85,751.65,118.5z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_114_"
+																xlink:href="#SVGID_35_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1124.4186)"
+															></pattern>
+															<path
+																class="st50"
+																d="M747.97,116.41c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C748.52,116.37,748.27,116.23,747.97,116.41z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_115_"
+																xlink:href="#SVGID_36_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1125.5758)"
+															></pattern>
+															<path
+																class="st51"
+																d="M748.27,120.47l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C748.03,121.24,748.27,120.82,748.27,120.47z"
+															/>
+														</g>
+													</g>
+												</g>
+												<path
+													class="st10"
+													d="M771.89,94.02c2.6,1.5,2.61,3.93,0.03,5.43l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0l-28.96-16.72
+						c-2.6-1.5-2.61-3.93-0.03-5.43l28.77-16.72c2.58-1.5,6.77-1.5,9.37,0L771.89,94.02z"
+												/>
+												<g>
+													<path
+														class="st11"
+														d="M760.64,95.53c1.15,0.66,1.15,1.74,0.01,2.4l-20.15,11.71c-1.14,0.66-3,0.66-4.14,0l-20.28-11.71
+							c-1.15-0.66-1.15-1.74-0.01-2.4l20.15-11.71c1.14-0.66,3-0.66,4.14,0L760.64,95.53z"
+													/>
+												</g>
+												<g>
+													<g>
+														<pattern
+															id="SVGID_116_"
+															xlink:href="#SVGID_37_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 500.581)"
+														></pattern>
+														<path
+															class="st52"
+															d="M708.8,106.73c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77C707.77,106.66,708.23,106.4,708.8,106.73z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_117_"
+															xlink:href="#SVGID_38_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 500.581)"
+														></pattern>
+														<path
+															class="st53"
+															d="M712.11,108.64c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77S711.54,108.31,712.11,108.64z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_118_"
+															xlink:href="#SVGID_39_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 500.581)"
+														></pattern>
+														<path
+															class="st54"
+															d="M715.42,110.55c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77C714.39,110.48,714.85,110.22,715.42,110.55z"
+														/>
+													</g>
+												</g>
+											</g>
+										</g>
+										<polygon class="st6" points="729.16,118.26 721.48,113.83 721.48,116.73 729.16,121.16 			" />
+									</g>
+									<g>
+										<g>
+											<pattern
+												id="SVGID_119_"
+												xlink:href="#SVGID_40_"
+												patternTransform="matrix(0.0503 0 0 -0.0503 -14980.8145 543.6055)"
+											></pattern>
+											<path
+												class="st55"
+												d="M772.12,83.47l-0.02,10.75c0,0.93-0.61,1.86-1.83,2.56l-27.37,15.91c-2.45,1.43-6.44,1.43-8.91,0
+					l-27.55-15.91c-1.24-0.72-1.86-1.66-1.86-2.6l0.02-10.75c0,0.94,0.62,1.88,1.86,2.59L734,101.94c2.47,1.43,6.46,1.43,8.91,0
+					l27.37-15.91C771.51,85.33,772.12,84.4,772.12,83.47z"
+											/>
+											<g>
+												<path
+													class="st11"
+													d="M773.85,79.03l-0.02,11.3c0,0.98-0.64,1.95-1.92,2.69l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0
+						l-28.96-16.72c-1.31-0.75-1.96-1.74-1.96-2.73l0.02-11.3c0,0.99,30.92,19.45,30.92,19.45c2.6,1.5,6.79,1.5,9.37,0
+						C743.15,98.44,773.84,80,773.85,79.03z"
+												/>
+												<path
+													class="st10"
+													d="M731.22,99.68l-23.98-13.85c-0.62-0.36-1.39,0.09-1.39,0.81v3.74c0,0.66,0.35,1.28,0.93,1.61l23.98,13.85
+						c0.62,0.36,1.39-0.09,1.39-0.81v-3.74C732.15,100.63,731.8,100.02,731.22,99.68z"
+												/>
+												<g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_120_"
+																xlink:href="#SVGID_41_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1138.0978)"
+															></pattern>
+															<path
+																class="st56"
+																d="M744.58,100.65c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									s0.55-0.6,0.55-0.95l-0.01-3.88C745.13,100.61,744.89,100.47,744.58,100.65z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_121_"
+																xlink:href="#SVGID_42_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1138.964)"
+															></pattern>
+															<path
+																class="st57"
+																d="M744.89,104.71l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C744.64,105.48,744.89,105.06,744.89,104.71z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_122_"
+																xlink:href="#SVGID_43_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1137.839)"
+															></pattern>
+															<path
+																class="st58"
+																d="M768.27,86.88c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C768.82,86.85,768.57,86.71,768.27,86.88z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_123_"
+																xlink:href="#SVGID_44_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1138.9962)"
+															></pattern>
+															<path
+																class="st59"
+																d="M768.57,90.94l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C768.33,91.72,768.57,91.29,768.57,90.94z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_124_"
+																xlink:href="#SVGID_45_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1136.9449)"
+															></pattern>
+															<path
+																class="st60"
+																d="M764.88,88.85c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C765.44,88.81,765.19,88.67,764.88,88.85z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_125_"
+																xlink:href="#SVGID_46_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1138.1022)"
+															></pattern>
+															<path
+																class="st61"
+																d="M765.19,92.91l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C764.94,93.69,765.19,93.26,765.19,92.91z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_126_"
+																xlink:href="#SVGID_47_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1136.0514)"
+															></pattern>
+															<path
+																class="st62"
+																d="M761.5,90.81c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C762.05,90.78,761.8,90.64,761.5,90.81z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_127_"
+																xlink:href="#SVGID_48_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1137.2086)"
+															></pattern>
+															<path
+																class="st63"
+																d="M761.81,94.88l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C761.56,95.65,761.81,95.23,761.81,94.88z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_128_"
+																xlink:href="#SVGID_49_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1135.1573)"
+															></pattern>
+															<path
+																class="st64"
+																d="M758.12,92.78c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C758.67,92.75,758.42,92.6,758.12,92.78z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_129_"
+																xlink:href="#SVGID_50_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1136.3146)"
+															></pattern>
+															<path
+																class="st65"
+																d="M758.42,96.84l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C758.18,97.62,758.42,97.19,758.42,96.84z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_130_"
+																xlink:href="#SVGID_51_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1134.2638)"
+															></pattern>
+															<path
+																class="st66"
+																d="M754.73,94.75c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C755.29,94.71,755.04,94.57,754.73,94.75z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_131_"
+																xlink:href="#SVGID_52_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1135.421)"
+															></pattern>
+															<path
+																class="st67"
+																d="M755.04,98.81l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C754.79,99.58,755.04,99.16,755.04,98.81z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_132_"
+																xlink:href="#SVGID_53_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1133.3698)"
+															></pattern>
+															<path
+																class="st68"
+																d="M751.35,96.71c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C751.9,96.68,751.65,96.54,751.35,96.71z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_133_"
+																xlink:href="#SVGID_54_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1134.527)"
+															></pattern>
+															<path
+																class="st69"
+																d="M751.65,100.77l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C751.41,101.55,751.66,101.12,751.65,100.77z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_134_"
+																xlink:href="#SVGID_55_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1132.4762)"
+															></pattern>
+															<path
+																class="st70"
+																d="M747.97,98.68c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C748.52,98.64,748.27,98.5,747.97,98.68z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_135_"
+																xlink:href="#SVGID_56_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1133.6334)"
+															></pattern>
+															<path
+																class="st71"
+																d="M748.27,102.74l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C748.03,103.52,748.27,103.09,748.27,102.74z"
+															/>
+														</g>
+													</g>
+												</g>
+												<path
+													class="st10"
+													d="M771.89,76.3c2.6,1.5,2.61,3.93,0.03,5.43l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0l-28.96-16.72
+						c-2.6-1.5-2.61-3.93-0.03-5.43l28.77-16.72c2.58-1.5,6.77-1.5,9.37,0L771.89,76.3z"
+												/>
+												<g>
+													<path
+														class="st11"
+														d="M760.64,77.81c1.15,0.66,1.15,1.74,0.01,2.4L740.5,91.92c-1.14,0.66-3,0.66-4.14,0l-20.28-11.71
+							c-1.15-0.66-1.15-1.74-0.01-2.4l20.15-11.71c1.14-0.66,3-0.66,4.14,0L760.64,77.81z"
+													/>
+												</g>
+												<g>
+													<g>
+														<pattern
+															id="SVGID_136_"
+															xlink:href="#SVGID_57_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 508.6381)"
+														></pattern>
+														<path
+															class="st72"
+															d="M708.8,89c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59c-0.57-0.33-1.03-1.12-1.02-1.77
+								C707.77,88.94,708.23,88.67,708.8,89z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_137_"
+															xlink:href="#SVGID_58_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 508.6381)"
+														></pattern>
+														<path
+															class="st73"
+															d="M712.11,90.91c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77S711.54,90.59,712.11,90.91z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_138_"
+															xlink:href="#SVGID_59_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 508.6381)"
+														></pattern>
+														<path
+															class="st74"
+															d="M715.42,92.82c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77S714.85,92.5,715.42,92.82z"
+														/>
+													</g>
+												</g>
+											</g>
+										</g>
+										<polygon class="st6" points="729.16,100.53 721.48,96.1 721.48,99.01 729.16,103.44 			" />
+									</g>
+									<g>
+										<g>
+											<pattern
+												id="SVGID_139_"
+												xlink:href="#SVGID_60_"
+												patternTransform="matrix(0.0503 0 0 -0.0503 -14980.8145 551.6627)"
+											></pattern>
+											<path
+												class="st75"
+												d="M772.12,65.75l-0.02,10.75c0,0.93-0.61,1.86-1.83,2.56l-27.37,15.91c-2.45,1.43-6.44,1.43-8.91,0
+					l-27.55-15.91c-1.24-0.72-1.86-1.66-1.86-2.6l0.02-10.75c0,0.94,0.62,1.88,1.86,2.59L734,84.22c2.47,1.43,6.46,1.43,8.91,0
+					l27.37-15.91C771.51,67.6,772.12,66.67,772.12,65.75z"
+											/>
+											<g>
+												<path
+													class="st11"
+													d="M773.85,61.3l-0.02,11.3c0,0.98-0.64,1.95-1.92,2.69l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0L704.79,75.3
+						c-1.31-0.75-1.96-1.74-1.96-2.73l0.02-11.3c0,0.99,30.92,19.45,30.92,19.45c2.6,1.5,6.79,1.5,9.37,0
+						C743.15,80.72,773.84,62.28,773.85,61.3z"
+												/>
+												<path
+													class="st10"
+													d="M731.22,81.96l-23.98-13.85c-0.62-0.36-1.39,0.09-1.39,0.81v3.74c0,0.66,0.35,1.28,0.93,1.61l23.98,13.85
+						c0.62,0.36,1.39-0.09,1.39-0.81v-3.74C732.15,82.9,731.8,82.29,731.22,81.96z"
+												/>
+												<g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_140_"
+																xlink:href="#SVGID_61_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1146.1549)"
+															></pattern>
+															<path
+																class="st76"
+																d="M744.58,82.92c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C745.13,82.89,744.89,82.74,744.58,82.92z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_141_"
+																xlink:href="#SVGID_62_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3896 1147.0211)"
+															></pattern>
+															<path
+																class="st77"
+																d="M744.89,86.98l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C744.64,87.76,744.89,87.33,744.89,86.98z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_142_"
+																xlink:href="#SVGID_63_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1145.8961)"
+															></pattern>
+															<path
+																class="st78"
+																d="M768.27,69.15c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C768.82,69.12,768.57,68.98,768.27,69.15z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_143_"
+																xlink:href="#SVGID_64_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15968.3555 1147.0533)"
+															></pattern>
+															<path
+																class="st79"
+																d="M768.57,73.22l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C768.33,73.99,768.57,73.57,768.57,73.22z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_144_"
+																xlink:href="#SVGID_65_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1145.0026)"
+															></pattern>
+															<path
+																class="st80"
+																d="M764.88,71.12c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C765.44,71.09,765.19,70.95,764.88,71.12z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_145_"
+																xlink:href="#SVGID_66_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15969.8936 1146.1598)"
+															></pattern>
+															<path
+																class="st81"
+																d="M765.19,75.18l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C764.94,75.96,765.19,75.53,765.19,75.18z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_146_"
+																xlink:href="#SVGID_67_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1144.1085)"
+															></pattern>
+															<path
+																class="st82"
+																d="M761.5,73.09c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32s0.55-0.6,0.55-0.95
+									l-0.01-3.88C762.05,73.05,761.8,72.91,761.5,73.09z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_147_"
+																xlink:href="#SVGID_68_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15971.4316 1145.2657)"
+															></pattern>
+															<path
+																class="st83"
+																d="M761.81,77.15l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C761.56,77.93,761.81,77.5,761.81,77.15z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_148_"
+																xlink:href="#SVGID_69_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1143.215)"
+															></pattern>
+															<path
+																class="st84"
+																d="M758.12,75.05c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C758.67,75.02,758.42,74.88,758.12,75.05z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_149_"
+																xlink:href="#SVGID_70_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15972.9697 1144.3722)"
+															></pattern>
+															<path
+																class="st85"
+																d="M758.42,79.12l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C758.18,79.89,758.42,79.47,758.42,79.12z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_150_"
+																xlink:href="#SVGID_71_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1142.3209)"
+															></pattern>
+															<path
+																class="st86"
+																d="M754.73,77.02c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C755.29,76.99,755.04,76.84,754.73,77.02z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_151_"
+																xlink:href="#SVGID_72_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15974.5078 1143.4781)"
+															></pattern>
+															<path
+																class="st87"
+																d="M755.04,81.08l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C754.79,81.86,755.04,81.43,755.04,81.08z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_152_"
+																xlink:href="#SVGID_73_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1141.4269)"
+															></pattern>
+															<path
+																class="st88"
+																d="M751.35,78.99c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C751.9,78.95,751.65,78.81,751.35,78.99z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_153_"
+																xlink:href="#SVGID_74_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15976.0449 1142.5841)"
+															></pattern>
+															<path
+																class="st89"
+																d="M751.65,83.05l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C751.41,83.82,751.66,83.4,751.65,83.05z"
+															/>
+														</g>
+													</g>
+													<g>
+														<g>
+															<pattern
+																id="SVGID_154_"
+																xlink:href="#SVGID_75_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1140.5333)"
+															></pattern>
+															<path
+																class="st90"
+																d="M747.97,80.95c-0.3,0.18-0.55,0.6-0.55,0.95l0.01,3.88c0,0.35,0.25,0.49,0.55,0.32
+									c0.3-0.18,0.55-0.6,0.55-0.95l-0.01-3.88C748.52,80.92,748.27,80.78,747.97,80.95z"
+															/>
+														</g>
+														<g>
+															<pattern
+																id="SVGID_155_"
+																xlink:href="#SVGID_76_"
+																patternTransform="matrix(-0.0119 0 0 -0.0119 -15977.583 1141.6906)"
+															></pattern>
+															<path
+																class="st91"
+																d="M748.27,85.01l-0.01-3.88c0-0.1-0.02-0.19-0.06-0.25c0.19-0.01,0.32,0.14,0.32,0.39l0.01,3.88
+									c0,0.35-0.25,0.78-0.55,0.95c-0.21,0.12-0.4,0.09-0.49-0.06c0.07,0,0.15-0.03,0.23-0.08
+									C748.03,85.79,748.27,85.36,748.27,85.01z"
+															/>
+														</g>
+													</g>
+												</g>
+												<path
+													class="st10"
+													d="M771.89,58.57c2.6,1.5,2.61,3.93,0.03,5.43l-28.77,16.72c-2.58,1.5-6.77,1.5-9.37,0L704.82,64
+						c-2.6-1.5-2.61-3.93-0.03-5.43l28.77-16.72c2.58-1.5,6.77-1.5,9.37,0L771.89,58.57z"
+												/>
+												<g>
+													<path
+														class="st11"
+														d="M760.64,60.08c1.15,0.66,1.15,1.74,0.01,2.4L740.5,74.19c-1.14,0.66-3,0.66-4.14,0l-20.28-11.71
+							c-1.15-0.66-1.15-1.74-0.01-2.4l20.15-11.71c1.14-0.66,3-0.66,4.14,0L760.64,60.08z"
+													/>
+												</g>
+												<g>
+													<g>
+														<pattern
+															id="SVGID_156_"
+															xlink:href="#SVGID_77_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 516.6952)"
+														></pattern>
+														<path
+															class="st92"
+															d="M708.8,71.28c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77C707.77,71.21,708.23,70.95,708.8,71.28z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_157_"
+															xlink:href="#SVGID_78_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 516.6952)"
+														></pattern>
+														<path
+															class="st93"
+															d="M712.11,73.19c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77C711.08,73.12,711.54,72.86,712.11,73.19z"
+														/>
+													</g>
+													<g>
+														<pattern
+															id="SVGID_158_"
+															xlink:href="#SVGID_79_"
+															patternTransform="matrix(0.0528 0 0 -0.0528 -14943.6416 516.6952)"
+														></pattern>
+														<path
+															class="st94"
+															d="M715.42,75.1c0.57,0.33,1.03,1.12,1.02,1.77c0,0.65-0.46,0.92-1.03,0.59
+								c-0.57-0.33-1.03-1.12-1.02-1.77S714.85,74.77,715.42,75.1z"
+														/>
+													</g>
+												</g>
+											</g>
+										</g>
+										<polygon class="st6" points="729.16,82.81 721.48,78.37 721.48,81.28 729.16,85.71 			" />
+									</g>
+								</g>
+								<g>
+									<g>
+										<g class="st15">
+											<g>
+												<pattern
+													id="SVGID_159_"
+													xlink:href="#SVGID_1_2"
+													patternTransform="matrix(0.2009 0 0 -0.2009 -12689.0869 -1774.7731)"
+												></pattern>
+												<path
+													class="st95"
+													d="M144.15,137.47c-0.02,5.13-1.82,8.74-4.74,10.44l-13.53,7.86c2.92-1.7,4.73-5.3,4.75-10.44
+						c0.03-9.7-6.38-21.39-14.6-27.32c0.03-10.32-7.23-22.9-16.21-28.08c-3.59-2.08-6.91-2.66-9.61-1.94
+						c-4.09-10.73-11.88-20.87-20.83-26.04c-6.66-3.84-12.7-4.2-17.06-1.67l13.53-7.86c4.36-2.53,10.39-2.18,17.06,1.67
+						c8.95,5.17,16.74,15.31,20.83,26.04c2.7-0.71,6.02-0.14,9.61,1.94c8.98,5.19,16.24,17.76,16.21,28.08
+						C137.77,116.09,144.18,127.78,144.15,137.47z"
+												/>
+												<pattern
+													id="SVGID_160_"
+													xlink:href="#SVGID_2_2"
+													patternTransform="matrix(0.2009 0 0 -0.2009 -12689.0869 -1774.7731)"
+												></pattern>
+												<path
+													class="st96"
+													d="M58.9,66.27l-13.53,7.86c-4.12-1.84-7.82-1.81-10.6-0.2l13.53-7.86C51.08,64.46,54.78,64.43,58.9,66.27z"
+												/>
+											</g>
+											<g>
+												<pattern
+													id="SVGID_161_"
+													xlink:href="#SVGID_3_3"
+													patternTransform="matrix(0.2009 0 0 -0.2009 -12689.0869 -1774.7731)"
+												></pattern>
+												<path
+													class="st97"
+													d="M69.37,61.95c8.95,5.17,16.74,15.31,20.83,26.04c2.7-0.71,6.02-0.13,9.61,1.94
+						c8.98,5.19,16.24,17.76,16.21,28.08c8.23,5.94,14.63,17.63,14.6,27.32c-0.03,10.32-7.33,14.49-16.32,9.3l-67.02-38.7
+						c-9.8-5.66-17.71-19.37-17.68-30.63c0.03-10.46,6.92-15.13,15.77-11.18C46.1,60.04,56.58,54.57,69.37,61.95z"
+												/>
+											</g>
+										</g>
+									</g>
+									<g>
+										<g>
+											<g>
+												<g>
+													<g>
+														<g>
+															<g>
+																<path
+																	class="st6"
+																	d="M76.43,160.49l-36.84-21.27c-0.48-0.28-0.92-0.3-1.22-0.12l25.7-14.94c0.3-0.18,0.74-0.16,1.22,0.12
+										l36.84,21.27c0.4,0.23,0.76,0.6,1.05,1.04l-25.7,14.94C77.19,161.09,76.82,160.72,76.43,160.49z"
+																/>
+																<path
+																	class="st6"
+																	d="M103.8,155.34c0,0.53-0.19,0.92-0.5,1.09l-25.7,14.94c0.3-0.17,0.5-0.56,0.5-1.1l0.02-6.82
+										c0-0.63-0.26-1.34-0.65-1.93l25.7-14.94c0.4,0.59,0.65,1.29,0.65,1.93L103.8,155.34z"
+																/>
+															</g>
+															<path
+																class="st13"
+																d="M39.58,139.22c-0.95-0.55-1.72-0.11-1.72,0.98l-0.02,6.83c0,1.08,0.76,2.41,1.71,2.96l36.84,21.27
+									c0.95,0.55,1.72,0.1,1.72-0.98l0.02-6.83c0-1.09-0.76-2.41-1.71-2.96L39.58,139.22z"
+															/>
+														</g>
+													</g>
+												</g>
+											</g>
+											<g>
+												<pattern
+													id="SVGID_162_"
+													xlink:href="#SVGID_4_3"
+													patternTransform="matrix(-0.8911 0 0 -0.8911 -29795.041 -12448.3047)"
+												></pattern>
+												<polygon class="st98" points="58.2,154.27 75.12,164.05 75.12,166.77 58.2,156.98 					" />
+											</g>
+											<g>
+												<g>
+													<pattern
+														id="SVGID_163_"
+														xlink:href="#SVGID_5_2"
+														patternTransform="matrix(0.7941 0 0 0.7941 11933.2783 -3309.7166)"
+													></pattern>
+													<path
+														class="st99"
+														d="M41.59,144.15c-0.66-0.38-1.19-0.07-1.19,0.67c0,0.29,0.08,0.61,0.21,0.91
+							c0.21,0.47,0.57,0.91,0.97,1.14c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C42.77,145.44,42.24,144.52,41.59,144.15 M45.24,146.26c-0.66-0.38-1.18-0.07-1.18,0.67c0,0.29,0.08,0.61,0.21,0.9
+							c0.21,0.47,0.56,0.9,0.97,1.13c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C46.42,147.55,45.89,146.63,45.24,146.26 M48.89,148.36c-0.66-0.38-1.18-0.07-1.18,0.67c0,0.29,0.08,0.61,0.21,0.9
+							c0.21,0.47,0.56,0.9,0.97,1.13c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C50.07,149.66,49.54,148.74,48.89,148.36"
+													/>
+												</g>
+											</g>
+										</g>
+										<g>
+											<g>
+												<g>
+													<path
+														class="st12"
+														d="M77.87,149.63l22.89-13.17v8.75L79.1,157.68c-0.69,0.4-1.54,0.4-2.23,0L41.7,137.23l-0.11-8.68
+							L77.87,149.63z"
+													/>
+													<g>
+														<g>
+															<g>
+																<path
+																	class="st6"
+																	d="M76.43,144.14l-36.84-21.27c-0.48-0.28-0.92-0.3-1.22-0.12l25.7-14.94c0.3-0.18,0.74-0.16,1.22,0.12
+										l36.84,21.27c0.4,0.23,0.76,0.6,1.05,1.04l-25.7,14.94C77.19,144.74,76.82,144.37,76.43,144.14z"
+																/>
+																<path
+																	class="st6"
+																	d="M103.8,138.99c0,0.53-0.19,0.92-0.5,1.09l-25.7,14.94c0.3-0.17,0.5-0.56,0.5-1.1l0.02-6.82
+										c0-0.63-0.26-1.34-0.65-1.93l25.7-14.94c0.4,0.59,0.65,1.29,0.65,1.93L103.8,138.99z"
+																/>
+															</g>
+															<path
+																class="st13"
+																d="M39.58,122.87c-0.95-0.55-1.72-0.11-1.72,0.98l-0.02,6.83c0,1.08,0.76,2.41,1.71,2.96l36.84,21.27
+									c0.95,0.55,1.72,0.1,1.72-0.98l0.02-6.83c0-1.09-0.76-2.41-1.71-2.96L39.58,122.87z"
+															/>
+														</g>
+													</g>
+												</g>
+											</g>
+											<g>
+												<pattern
+													id="SVGID_164_"
+													xlink:href="#SVGID_6_3"
+													patternTransform="matrix(-0.8911 0 0 -0.8911 -29795.041 -12441.8008)"
+												></pattern>
+												<polygon class="st100" points="58.2,137.92 75.12,147.69 75.12,150.42 58.2,140.63 					" />
+											</g>
+											<g>
+												<g>
+													<pattern
+														id="SVGID_165_"
+														xlink:href="#SVGID_7_2"
+														patternTransform="matrix(0.7941 0 0 0.7941 11933.2783 -3315.5125)"
+													></pattern>
+													<path
+														class="st101"
+														d="M41.59,127.8c-0.66-0.38-1.19-0.07-1.19,0.67c0,0.29,0.08,0.61,0.21,0.91
+							c0.21,0.47,0.57,0.91,0.97,1.14c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C42.77,129.09,42.24,128.17,41.59,127.8 M45.24,129.9c-0.66-0.38-1.18-0.07-1.18,0.67c0,0.29,0.08,0.61,0.21,0.9
+							c0.21,0.47,0.56,0.9,0.97,1.13c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C46.42,131.2,45.89,130.28,45.24,129.9 M48.89,132.01c-0.66-0.38-1.18-0.07-1.18,0.67c0,0.29,0.08,0.61,0.21,0.9
+							c0.21,0.47,0.56,0.9,0.97,1.14c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C50.07,133.3,49.54,132.38,48.89,132.01"
+													/>
+												</g>
+											</g>
+										</g>
+										<g>
+											<g>
+												<g>
+													<path
+														class="st12"
+														d="M77.87,133.27l22.89-13.17v8.75L79.1,141.33c-0.69,0.4-1.54,0.4-2.23,0L41.7,120.87l-0.11-8.68
+							L77.87,133.27z"
+													/>
+													<g>
+														<g>
+															<g>
+																<path
+																	class="st6"
+																	d="M76.43,127.78l-36.84-21.27c-0.48-0.28-0.92-0.3-1.22-0.12l25.7-14.94c0.3-0.18,0.74-0.16,1.22,0.12
+										l36.84,21.27c0.4,0.23,0.76,0.6,1.05,1.04l-25.7,14.94C77.19,128.39,76.82,128.01,76.43,127.78z"
+																/>
+																<path
+																	class="st6"
+																	d="M103.8,122.64c0,0.53-0.19,0.92-0.5,1.09l-25.7,14.94c0.3-0.17,0.5-0.56,0.5-1.1l0.02-6.82
+										c0-0.63-0.26-1.34-0.65-1.93l25.7-14.94c0.4,0.59,0.65,1.29,0.65,1.93L103.8,122.64z"
+																/>
+															</g>
+															<path
+																class="st13"
+																d="M39.58,106.51c-0.95-0.55-1.72-0.11-1.72,0.98l-0.02,6.83c0,1.08,0.76,2.41,1.71,2.96l36.84,21.27
+									c0.95,0.55,1.72,0.1,1.72-0.98l0.02-6.83c0-1.09-0.76-2.41-1.71-2.96L39.58,106.51z"
+															/>
+														</g>
+													</g>
+												</g>
+											</g>
+											<g>
+												<pattern
+													id="SVGID_166_"
+													xlink:href="#SVGID_8_3"
+													patternTransform="matrix(-0.8911 0 0 -0.8911 -29795.041 -12435.2969)"
+												></pattern>
+												<polygon class="st102" points="58.2,121.56 75.12,131.34 75.12,134.07 58.2,124.27 					" />
+											</g>
+											<g>
+												<g>
+													<pattern
+														id="SVGID_167_"
+														xlink:href="#SVGID_9_2"
+														patternTransform="matrix(0.7941 0 0 0.7941 11933.2783 -3321.3083)"
+													></pattern>
+													<path
+														class="st103"
+														d="M41.59,111.44c-0.66-0.38-1.19-0.07-1.19,0.67c0,0.29,0.08,0.61,0.21,0.91
+							c0.21,0.47,0.57,0.91,0.97,1.14c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C42.77,112.74,42.24,111.82,41.59,111.44 M45.24,113.55c-0.66-0.38-1.18-0.07-1.18,0.67c0,0.29,0.08,0.61,0.21,0.9
+							c0.21,0.47,0.56,0.9,0.97,1.13c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C46.42,114.84,45.89,113.93,45.24,113.55 M48.89,115.66c-0.66-0.38-1.18-0.07-1.18,0.67c0,0.29,0.08,0.61,0.21,0.9
+							c0.21,0.47,0.56,0.9,0.97,1.14c0.4,0.23,0.75,0.21,0.97-0.02c0.14-0.14,0.22-0.37,0.22-0.66
+							C50.07,116.95,49.54,116.03,48.89,115.66"
+													/>
+												</g>
+											</g>
+										</g>
+									</g>
+								</g>
+								<g>
+									<g>
+										<g>
+											<polygon class="st13" points="473.74,234.91 472.01,233.9 472.01,297.86 473.74,298.86 				" />
+										</g>
+										<g>
+											<polygon class="st12" points="473.74,298.86 475.47,297.86 475.29,234.01 473.74,234.91 				" />
+										</g>
+									</g>
+									<g>
+										<g class="st15">
+											<g>
+												<polygon class="st12" points="487.13,302.15 487.12,304.63 447.41,327.71 447.42,325.23 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="447.42,325.23 447.41,327.71 423.66,313.99 423.67,311.51 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="487.13,302.15 447.42,325.23 423.67,311.51 463.38,288.44 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<g class="st15">
+											<g>
+												<polygon class="st13" points="463.71,277.76 461.99,276.76 462.02,287.67 463.75,288.67 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="463.68,265.3 461.95,264.3 461.98,275.21 463.71,276.21 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="463.64,252.84 461.92,251.84 461.95,262.75 463.67,263.75 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="463.75,288.67 462.02,287.67 425.02,309.18 426.74,310.18 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="463.61,240.38 461.88,239.38 461.91,250.29 463.64,251.29 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="463.71,276.21 461.98,275.21 424.98,296.72 426.71,297.72 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="463.57,227.92 461.85,226.92 461.88,237.83 463.6,238.83 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="463.67,263.75 461.95,262.75 424.94,284.26 426.67,285.26 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="463.64,251.29 461.91,250.29 424.91,271.8 426.63,272.81 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="463.6,238.83 461.88,237.83 424.87,259.34 426.6,260.35 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="464.92,225.59 463.19,224.59 423.49,247.66 425.21,248.66 					" />
+											</g>
+											<g>
+												<path
+													class="st12"
+													d="M465.1,289.44l-39.71,23.08l-0.18-63.85l39.71-23.08L465.1,289.44z M426.63,272.81l37-21.51l-0.03-10.91
+						l-37,21.51L426.63,272.81 M426.74,310.18l37-21.51l-0.03-10.91l-37,21.51L426.74,310.18 M426.67,285.26l37-21.51l-0.03-10.91
+						l-37,21.51L426.67,285.26 M426.6,260.35l37-21.51l-0.03-10.91l-37,21.51L426.6,260.35 M426.71,297.72l37-21.51l-0.03-10.91
+						l-37,21.51L426.71,297.72"
+												/>
+											</g>
+											<g>
+												<polygon class="st13" points="425.21,248.66 423.49,247.66 423.67,311.51 425.39,312.52 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<g>
+											<g class="st15">
+												<g>
+													<polygon class="st6" points="479.05,293.11 431.25,320.89 407.5,307.17 455.3,279.39 						" />
+												</g>
+											</g>
+										</g>
+										<g>
+											<polygon class="st13" points="431.25,320.89 431.24,323.37 407.49,309.65 407.5,307.17 				" />
+										</g>
+										<polygon class="st12" points="479.05,293.11 479.04,295.59 431.24,323.37 431.25,320.89 			" />
+									</g>
+									<g>
+										<g>
+											<g class="st15">
+												<g>
+													<path
+														class="st10"
+														d="M459.16,298.1l-21.53-12.43c-0.14-0.08-0.27-0.09-0.37-0.04l-26.04,15.13c0.1-0.05,0.23-0.04,0.38,0.04
+							l21.52,12.43c0.17,0.1,0.32,0.28,0.41,0.48l26.04-15.13C459.47,298.39,459.33,298.2,459.16,298.1z"
+													/>
+													<path
+														class="st11"
+														d="M433.62,318.33c0,0.16-0.06,0.28-0.15,0.33l26.04-15.13c0.09-0.05,0.15-0.17,0.15-0.33l0.01-4.19
+							c0-0.13-0.05-0.28-0.11-0.42l-26.04,15.13c0.07,0.14,0.11,0.29,0.11,0.42L433.62,318.33z"
+													/>
+												</g>
+												<g>
+													<path
+														class="st4"
+														d="M433.12,313.24c0.29,0.17,0.52,0.57,0.52,0.9l-0.01,4.19c0,0.34-0.24,0.47-0.53,0.3l-21.52-12.43
+							c-0.29-0.17-0.52-0.57-0.52-0.9l0.01-4.19c0-0.33,0.24-0.47,0.53-0.3L433.12,313.24z"
+													/>
+												</g>
+											</g>
+										</g>
+										<g>
+											<g>
+												<polygon class="st10" points="432.86,313.98 432.84,317.57 411.85,305.45 411.85,301.86 					" />
+											</g>
+										</g>
+										<g>
+											<polygon class="st6" points="429.09,313 429.09,314.23 416.77,307.11 416.77,305.89 				" />
+										</g>
+										<g>
+											<polygon class="st4" points="415.86,306.27 415.85,307.17 412.37,305.15 412.37,304.25 				" />
+										</g>
+										<g>
+											<path
+												class="st6"
+												d="M431.24,313.66c0.57,0.33,1.03,1.13,1.03,1.78c0,0.66-0.47,0.92-1.04,0.59c-0.58-0.33-1.04-1.13-1.03-1.79
+					C430.2,313.6,430.66,313.33,431.24,313.66z"
+											/>
+										</g>
+										<g>
+											<polygon class="st4" points="415.86,304.79 415.86,305.69 412.37,303.67 412.37,302.77 				" />
+										</g>
+									</g>
+									<g>
+										<g>
+											<g class="st15">
+												<g>
+													<polygon class="st6" points="479.05,267.98 439.34,291.05 415.59,277.34 455.3,254.26 						" />
+												</g>
+											</g>
+										</g>
+										<g>
+											<polygon class="st13" points="439.34,291.05 439.34,293.53 415.58,279.82 415.59,277.34 				" />
+										</g>
+										<polygon class="st12" points="479.05,267.98 479.04,270.46 439.34,293.53 439.34,291.05 			" />
+									</g>
+									<g>
+										<g>
+											<g class="st15">
+												<g>
+													<path
+														class="st10"
+														d="M466.32,268.26l-21.53-12.43c-0.14-0.08-0.27-0.09-0.37-0.04l-26.04,15.13c0.1-0.05,0.23-0.04,0.38,0.04
+							l21.52,12.43c0.17,0.1,0.32,0.28,0.41,0.48l26.04-15.13C466.64,268.54,466.49,268.36,466.32,268.26z"
+													/>
+													<path
+														class="st11"
+														d="M440.79,288.49c0,0.16-0.06,0.28-0.15,0.33l26.04-15.13c0.09-0.05,0.15-0.17,0.15-0.33l0.01-4.19
+							c0-0.13-0.05-0.28-0.11-0.42l-26.04,15.13c0.07,0.14,0.11,0.29,0.11,0.42L440.79,288.49z"
+													/>
+												</g>
+												<g>
+													<path
+														class="st4"
+														d="M440.28,283.4c0.29,0.17,0.52,0.57,0.52,0.9l-0.01,4.19c0,0.34-0.24,0.47-0.53,0.3l-21.52-12.43
+							c-0.29-0.17-0.52-0.57-0.52-0.9l0.01-4.19c0-0.33,0.24-0.47,0.53-0.3L440.28,283.4z"
+													/>
+												</g>
+											</g>
+										</g>
+										<g>
+											<g>
+												<polygon class="st10" points="440.03,284.14 440.01,287.73 419.02,275.61 419.02,272.02 					" />
+											</g>
+										</g>
+										<g>
+											<polygon class="st6" points="436.26,283.16 436.26,284.38 423.94,277.27 423.94,276.05 				" />
+										</g>
+										<g>
+											<polygon class="st4" points="423.02,276.42 423.02,277.32 419.54,275.31 419.54,274.41 				" />
+										</g>
+										<g>
+											<path
+												class="st6"
+												d="M438.41,283.82c0.57,0.33,1.03,1.13,1.03,1.78c0,0.66-0.47,0.92-1.04,0.59c-0.58-0.33-1.04-1.13-1.03-1.79
+					C437.37,283.75,437.83,283.49,438.41,283.82z"
+											/>
+										</g>
+										<g>
+											<polygon class="st4" points="423.03,274.94 423.03,275.84 419.54,273.83 419.54,272.93 				" />
+										</g>
+									</g>
+									<g>
+										<g class="st15">
+											<g>
+												<polygon class="st13" points="485.74,290.47 484.01,289.47 484.05,300.38 485.77,301.38 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="485.7,278.01 483.98,277.01 484.01,287.92 485.74,288.92 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="485.67,265.55 483.94,264.55 483.98,275.46 485.7,276.46 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="485.77,301.38 484.05,300.38 447.04,321.89 448.77,322.89 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="485.63,253.09 483.91,252.09 483.94,263 485.67,264 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="485.74,288.92 484.01,287.92 447.01,309.43 448.73,310.43 					" />
+											</g>
+											<g>
+												<polygon class="st13" points="485.6,240.63 483.87,239.63 483.9,250.54 485.63,251.54 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="485.7,276.46 483.98,275.46 446.97,296.97 448.7,297.97 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="485.67,264 483.94,263 446.94,284.51 448.66,285.52 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="485.63,251.54 483.9,250.54 446.9,272.05 448.63,273.06 					" />
+											</g>
+											<g>
+												<polygon class="st6" points="486.95,238.3 485.22,237.3 445.51,260.37 447.24,261.37 					" />
+											</g>
+											<g>
+												<path
+													class="st12"
+													d="M486.96,235.83l-39.71,23.06l0.18,66.35l39.71-23.08L486.96,235.83z M485.6,240.63l0.04,10.91l-37,21.52
+						l-0.04-10.91L485.6,240.63z M485.64,253.1l0.02,10.91l-37,21.49l-0.02-10.89L485.64,253.1z M485.66,265.55l0.04,10.91
+						l-37,21.52l-0.04-10.91L485.66,265.55z M448.7,299.52l37-21.52l0.02,10.91l-37,21.52L448.7,299.52z M448.77,322.91l-0.02-10.91
+						l37-21.52l0.02,10.91L448.77,322.91z"
+												/>
+											</g>
+											<g>
+												<polygon class="st13" points="447.24,261.37 445.51,260.37 445.69,324.22 447.42,325.23 					" />
+											</g>
+										</g>
+									</g>
+									<g>
+										<g>
+											<g class="st15">
+												<g>
+													<polygon class="st6" points="486.95,235.82 447.25,258.9 423.49,245.18 463.2,222.11 						" />
+												</g>
+											</g>
+										</g>
+										<g>
+											<g>
+												<polygon class="st13" points="481.2,234.73 477.66,235.1 474.61,233.35 475.25,231.29 					" />
+											</g>
+											<g>
+												<polygon
+													class="st12"
+													points="481.2,234.73 478.14,236.51 472.18,233.07 475.25,231.29 474.61,233.35 477.66,235.1 					"
+												/>
+											</g>
+											<g>
+												<polygon class="st13" points="469.58,228.02 466.04,228.4 462.99,226.64 463.63,224.59 					" />
+											</g>
+											<g>
+												<polygon
+													class="st12"
+													points="469.58,228.02 466.52,229.8 460.57,226.37 463.63,224.59 462.99,226.64 466.04,228.4 					"
+												/>
+											</g>
+										</g>
+										<g>
+											<polygon class="st13" points="447.25,258.9 447.24,261.37 423.49,247.66 423.49,245.18 				" />
+										</g>
+									</g>
+								</g>
+								<g>
+									<g>
+										<g>
+											<g>
+												<g>
+													<g class="st15">
+														<g>
+															<polygon class="st4" points="440.36,80.84 479.75,58.37 479.71,123.43 440.32,146.32 								" />
+														</g>
+														<g>
+															<polygon class="st11" points="440.36,80.84 440.32,146.32 409.76,128.68 409.81,63.62 								" />
+														</g>
+													</g>
+													<g>
+														<polygon class="st10" points="438.21,106.91 438.2,112.01 411.89,96.82 411.9,91.72 							" />
+														<polygon class="st10" points="411.86,106.36 438.17,121.55 438.16,126.66 411.85,111.47 							" />
+														<polygon class="st10" points="411.86,121.76 438.17,136.94 438.16,142.81 411.85,127.62 							" />
+														<polygon class="st11" points="412.98,126.97 412.99,123.71 437.04,137.6 437.03,140.86 							" />
+														<polygon class="st10" points="411.88,99.04 438.19,114.23 438.17,119.33 411.87,104.14 							" />
+														<polygon
+															class="st3"
+															points="430.94,118.77 432.31,120.3 436.6,122.78 436.6,123.61 432.31,121.13 430.93,121.08 
+								419.08,114.23 417.71,112.7 413.42,110.22 413.42,109.4 417.71,111.88 419.08,111.93 							"
+														/>
+														<polygon
+															class="st3"
+															points="430.94,118.77 432.31,120.3 436.6,122.78 436.6,123.61 432.31,121.13 430.93,121.08 
+								419.08,114.23 417.71,112.7 413.42,110.22 413.42,109.4 417.71,111.88 419.08,111.93 							"
+														/>
+														<polygon
+															class="st3"
+															points="430.96,111.45 432.33,112.99 436.62,115.47 436.62,116.29 432.33,113.81 430.95,113.76 
+								419.1,106.92 417.73,105.38 413.44,102.9 413.44,102.08 417.73,104.56 419.1,104.61 							"
+														/>
+														<polygon
+															class="st3"
+															points="430.98,104.13 432.35,105.67 436.64,108.15 436.64,108.97 432.35,106.49 430.97,106.44 
+								419.12,99.6 417.75,98.06 413.45,95.58 413.46,94.76 417.75,97.24 419.12,97.29 							"
+														/>
+														<g>
+															<polygon class="st10" points="411.93,79.4 438.24,94.58 438.22,104.4 411.91,89.21 								" />
+															<polygon class="st10" points="438.28,82.08 438.25,91.9 411.94,76.71 411.97,66.89 								" />
+														</g>
+														<g>
+															<g>
+																<polygon class="st11" points="429.79,91.07 429.78,94.08 427.16,92.56 427.17,89.55 									" />
+															</g>
+															<g>
+																<polygon class="st11" points="429.81,82.66 429.8,85.66 427.18,84.15 427.19,81.14 									" />
+															</g>
+															<polygon class="st11" points="415.4,82.76 415.39,85.77 412.77,84.26 412.78,81.25 								" />
+															<polygon class="st11" points="415.39,86.85 415.38,89.86 412.76,88.35 412.77,85.34 								" />
+															<polygon class="st11" points="418.99,88.93 418.98,91.94 416.36,90.42 416.37,87.42 								" />
+															<polygon class="st11" points="419,84.84 418.99,87.85 416.37,86.33 416.38,83.32 								" />
+															<polygon class="st11" points="422.58,91 422.57,94.01 419.96,92.5 419.96,89.49 								" />
+															<polygon class="st11" points="422.59,86.91 422.59,89.92 419.97,88.41 419.98,85.4 								" />
+															<polygon class="st11" points="426.18,93.08 426.17,96.09 423.55,94.58 423.56,91.57 								" />
+															<polygon class="st11" points="426.19,88.99 426.18,92 423.56,90.49 423.57,87.48 								" />
+															<polygon class="st11" points="429.78,95.16 429.77,98.17 427.15,96.65 427.16,93.64 								" />
+															<polygon class="st11" points="422.61,78.5 422.61,81.51 419.99,80 420,76.99 								" />
+															<polygon class="st11" points="433.38,97.23 433.37,100.24 430.75,98.73 430.76,95.72 								" />
+															<path
+																class="st3"
+																d="M435.85,99.16c0.49,0.28,0.88,0.96,0.88,1.52c0,0.56-0.4,0.78-0.88,0.5c-0.49-0.28-0.88-0.96-0.88-1.52
+									C434.97,99.1,435.36,98.88,435.85,99.16z"
+															/>
+															<polygon class="st11" points="422.63,74.41 422.62,77.42 420,75.9 420.01,72.9 								" />
+															<polygon class="st11" points="433.39,93.14 433.38,96.15 430.76,94.64 430.77,91.63 								" />
+															<polygon class="st11" points="433.41,84.73 433.4,87.74 430.78,86.23 430.79,83.22 								" />
+															<polygon class="st11" points="429.82,78.56 429.81,81.57 427.19,80.06 427.2,77.05 								" />
+															<polygon class="st11" points="433.42,80.64 433.41,83.65 430.79,82.14 430.8,79.13 								" />
+															<g>
+																<polygon class="st11" points="415.43,70.25 415.42,73.26 412.8,71.75 412.81,68.74 									" />
+															</g>
+															<g>
+																<polygon class="st11" points="415.42,74.35 415.41,77.36 412.79,75.84 412.8,72.83 									" />
+															</g>
+															<g>
+																<polygon class="st11" points="419.03,72.33 419.02,75.34 416.4,73.83 416.41,70.82 									" />
+															</g>
+															<g>
+																<polygon class="st11" points="419.02,76.42 419.01,79.43 416.39,77.92 416.4,74.91 									" />
+															</g>
+															<g>
+																<polygon class="st11" points="426.21,80.58 426.2,83.59 423.58,82.07 423.59,79.07 									" />
+															</g>
+															<g>
+																<polygon class="st11" points="426.22,76.48 426.21,79.49 423.6,77.98 423.6,74.97 									" />
+															</g>
+															<g>
+																<path
+																	class="st3"
+																	d="M435.9,82.56c0.49,0.28,0.88,0.96,0.88,1.52c0,0.56-0.4,0.78-0.88,0.5c-0.49-0.28-0.88-0.96-0.88-1.52
+										C435.01,82.5,435.41,82.28,435.9,82.56z"
+																/>
+															</g>
+															<g>
+																<path
+																	class="st3"
+																	d="M435.88,86.65c0.49,0.28,0.88,0.96,0.88,1.52c0,0.56-0.4,0.78-0.88,0.5
+										c-0.49-0.28-0.88-0.96-0.88-1.52C435,86.59,435.4,86.37,435.88,86.65z"
+																/>
+															</g>
+															<g>
+																<path
+																	class="st3"
+																	d="M435.86,95.06c0.49,0.28,0.88,0.96,0.88,1.53c0,0.56-0.4,0.78-0.88,0.5
+										c-0.49-0.28-0.88-0.97-0.88-1.52C434.98,95.01,435.38,94.78,435.86,95.06z"
+																/>
+															</g>
+														</g>
+													</g>
+													<g>
+														<path
+															class="st11"
+															d="M475.84,120.15l-13.56,7.83c-0.4,0.23-0.72,0.79-0.72,1.25c0,0.46,0.33,0.64,0.73,0.41l13.56-7.83
+								c0.4-0.23,0.72-0.79,0.72-1.25C476.57,120.1,476.25,119.92,475.84,120.15z"
+														/>
+														<path
+															class="st11"
+															d="M462.27,117.84l13.56-7.83c0.4-0.23,0.72-0.79,0.72-1.25c0-0.46-0.33-0.65-0.73-0.41l-13.56,7.83
+								c-0.4,0.23-0.72,0.79-0.72,1.25C461.54,117.89,461.86,118.07,462.27,117.84z"
+														/>
+														<path
+															class="st11"
+															d="M462.27,113.9l13.56-7.83c0.4-0.23,0.72-0.79,0.72-1.25c0-0.46-0.33-0.65-0.73-0.41l-13.56,7.83
+								c-0.4,0.23-0.72,0.79-0.72,1.25C461.54,113.95,461.86,114.13,462.27,113.9z"
+														/>
+														<path
+															class="st11"
+															d="M462.27,109.97l13.56-7.83c0.4-0.23,0.72-0.79,0.72-1.25c0-0.46-0.33-0.65-0.73-0.41l-13.56,7.83
+								c-0.4,0.23-0.72,0.79-0.72,1.25C461.54,110.02,461.86,110.2,462.27,109.97z"
+														/>
+														<path
+															class="st11"
+															d="M462.27,121.77l13.56-7.83c0.4-0.23,0.72-0.79,0.72-1.25c0-0.46-0.33-0.65-0.73-0.41l-13.56,7.83
+								c-0.4,0.23-0.72,0.79-0.72,1.25C461.55,121.82,461.87,122,462.27,121.77z"
+														/>
+														<path
+															class="st11"
+															d="M462.28,125.71l13.56-7.83c0.4-0.23,0.72-0.79,0.72-1.25c0-0.46-0.33-0.65-0.73-0.41l-13.56,7.83
+								c-0.4,0.23-0.72,0.79-0.72,1.25C461.56,125.75,461.88,125.94,462.28,125.71z"
+														/>
+													</g>
+												</g>
+												<polygon class="st10" points="411.88,113.67 438.19,128.86 438.17,133.97 411.87,118.78 					" />
+												<polygon
+													class="st3"
+													points="430.94,126.09 432.31,127.62 436.6,130.1 436.6,130.93 432.31,128.45 430.93,128.4 419.08,121.55 
+						417.71,120.02 413.42,117.54 413.42,116.72 417.71,119.2 419.08,119.25 					"
+												/>
+											</g>
+										</g>
+									</g>
+									<g>
+										<polygon class="st10" points="409.81,63.62 449.2,40.72 479.75,58.37 440.36,81.26 			" />
+									</g>
+								</g>
+								<text transform="matrix(1 8.657158e-03 -8.657158e-03 1 39.4067 193.999)" class="st104 st105 st106">
+									외부 연결망
+								</text>
+								<text transform="matrix(1.0253 8.876597e-03 -8.657182e-03 1 417.4952 25.1729)" class="st104 st105 st107">
+									메인 서버
+								</text>
+								<text transform="matrix(1.0253 8.876597e-03 -8.657182e-03 1 362.3166 346.1476)" class="st104 st105 st107">
+									MySQL
+								</text>
+								<text transform="matrix(1.0253 8.876597e-03 -8.657182e-03 1 705.6869 346.1477)" class="st104 st105 st107">
+									Mongo DB
+								</text>
+								<text transform="matrix(1.0253 8.876597e-03 -8.657182e-03 1 708.6516 25.1729)" class="st104 st105 st107">
+									WAS 서버
+								</text>
+							</g>
+						</svg>
 					</div>
 				</div>
 			</b-col>
@@ -169,3 +4316,334 @@
 		</b-row>
 	</div>
 </template>
+<style type="text/css">
+.st0 {
+	fill: none;
+}
+.st1 {
+	fill: #798ffe;
+}
+.st2 {
+	fill: #b7c5fd;
+}
+.st3 {
+	fill: #aabafd;
+}
+.st4 {
+	fill: #1b2a4f;
+}
+.st5 {
+	fill: #d9ddf6;
+}
+.st6 {
+	fill: #6bb5fb;
+}
+.st7 {
+	display: none;
+}
+.st8 {
+	display: inline;
+}
+.st9 {
+	fill: none;
+	stroke: #9b9b9b;
+	stroke-width: 3;
+	stroke-miterlimit: 10;
+}
+.st10 {
+	fill: #384e85;
+}
+.st11 {
+	fill: #2e4277;
+}
+.st12 {
+	fill: #3955d1;
+}
+.st13 {
+	fill: #4466fb;
+}
+.st14 {
+	opacity: 0.3;
+	fill: #4466fb;
+	enable-background: new;
+}
+.st15 {
+	enable-background: new;
+}
+.st16 {
+	fill: url(#SVGID_80_);
+}
+.st17 {
+	fill: url(#SVGID_81_);
+}
+.st18 {
+	fill: url(#SVGID_82_);
+}
+.st19 {
+	fill: url(#SVGID_83_);
+}
+.st20 {
+	fill: url(#SVGID_84_);
+}
+.st21 {
+	fill: url(#SVGID_85_);
+}
+.st22 {
+	fill: url(#SVGID_86_);
+}
+.st23 {
+	fill: url(#SVGID_87_);
+}
+.st24 {
+	fill: url(#SVGID_88_);
+}
+.st25 {
+	fill: url(#SVGID_89_);
+}
+.st26 {
+	fill: url(#SVGID_90_);
+}
+.st27 {
+	fill: url(#SVGID_91_);
+}
+.st28 {
+	fill: url(#SVGID_92_);
+}
+.st29 {
+	fill: url(#SVGID_93_);
+}
+.st30 {
+	fill: url(#SVGID_94_);
+}
+.st31 {
+	fill: url(#SVGID_95_);
+}
+.st32 {
+	fill: url(#SVGID_96_);
+}
+.st33 {
+	fill: url(#SVGID_97_);
+}
+.st34 {
+	fill: url(#SVGID_98_);
+}
+.st35 {
+	fill: url(#SVGID_99_);
+}
+.st36 {
+	fill: url(#SVGID_100_);
+}
+.st37 {
+	fill: url(#SVGID_101_);
+}
+.st38 {
+	fill: url(#SVGID_102_);
+}
+.st39 {
+	fill: url(#SVGID_103_);
+}
+.st40 {
+	fill: url(#SVGID_104_);
+}
+.st41 {
+	fill: url(#SVGID_105_);
+}
+.st42 {
+	fill: url(#SVGID_106_);
+}
+.st43 {
+	fill: url(#SVGID_107_);
+}
+.st44 {
+	fill: url(#SVGID_108_);
+}
+.st45 {
+	fill: url(#SVGID_109_);
+}
+.st46 {
+	fill: url(#SVGID_110_);
+}
+.st47 {
+	fill: url(#SVGID_111_);
+}
+.st48 {
+	fill: url(#SVGID_112_);
+}
+.st49 {
+	fill: url(#SVGID_113_);
+}
+.st50 {
+	fill: url(#SVGID_114_);
+}
+.st51 {
+	fill: url(#SVGID_115_);
+}
+.st52 {
+	fill: url(#SVGID_116_);
+}
+.st53 {
+	fill: url(#SVGID_117_);
+}
+.st54 {
+	fill: url(#SVGID_118_);
+}
+.st55 {
+	fill: url(#SVGID_119_);
+}
+.st56 {
+	fill: url(#SVGID_120_);
+}
+.st57 {
+	fill: url(#SVGID_121_);
+}
+.st58 {
+	fill: url(#SVGID_122_);
+}
+.st59 {
+	fill: url(#SVGID_123_);
+}
+.st60 {
+	fill: url(#SVGID_124_);
+}
+.st61 {
+	fill: url(#SVGID_125_);
+}
+.st62 {
+	fill: url(#SVGID_126_);
+}
+.st63 {
+	fill: url(#SVGID_127_);
+}
+.st64 {
+	fill: url(#SVGID_128_);
+}
+.st65 {
+	fill: url(#SVGID_129_);
+}
+.st66 {
+	fill: url(#SVGID_130_);
+}
+.st67 {
+	fill: url(#SVGID_131_);
+}
+.st68 {
+	fill: url(#SVGID_132_);
+}
+.st69 {
+	fill: url(#SVGID_133_);
+}
+.st70 {
+	fill: url(#SVGID_134_);
+}
+.st71 {
+	fill: url(#SVGID_135_);
+}
+.st72 {
+	fill: url(#SVGID_136_);
+}
+.st73 {
+	fill: url(#SVGID_137_);
+}
+.st74 {
+	fill: url(#SVGID_138_);
+}
+.st75 {
+	fill: url(#SVGID_139_);
+}
+.st76 {
+	fill: url(#SVGID_140_);
+}
+.st77 {
+	fill: url(#SVGID_141_);
+}
+.st78 {
+	fill: url(#SVGID_142_);
+}
+.st79 {
+	fill: url(#SVGID_143_);
+}
+.st80 {
+	fill: url(#SVGID_144_);
+}
+.st81 {
+	fill: url(#SVGID_145_);
+}
+.st82 {
+	fill: url(#SVGID_146_);
+}
+.st83 {
+	fill: url(#SVGID_147_);
+}
+.st84 {
+	fill: url(#SVGID_148_);
+}
+.st85 {
+	fill: url(#SVGID_149_);
+}
+.st86 {
+	fill: url(#SVGID_150_);
+}
+.st87 {
+	fill: url(#SVGID_151_);
+}
+.st88 {
+	fill: url(#SVGID_152_);
+}
+.st89 {
+	fill: url(#SVGID_153_);
+}
+.st90 {
+	fill: url(#SVGID_154_);
+}
+.st91 {
+	fill: url(#SVGID_155_);
+}
+.st92 {
+	fill: url(#SVGID_156_);
+}
+.st93 {
+	fill: url(#SVGID_157_);
+}
+.st94 {
+	fill: url(#SVGID_158_);
+}
+.st95 {
+	fill: url(#SVGID_159_);
+}
+.st96 {
+	fill: url(#SVGID_160_);
+}
+.st97 {
+	fill: url(#SVGID_161_);
+}
+.st98 {
+	fill: url(#SVGID_162_);
+}
+.st99 {
+	fill: url(#SVGID_163_);
+}
+.st100 {
+	fill: url(#SVGID_164_);
+}
+.st101 {
+	fill: url(#SVGID_165_);
+}
+.st102 {
+	fill: url(#SVGID_166_);
+}
+.st103 {
+	fill: url(#SVGID_167_);
+}
+.st104 {
+	fill: #ffffff;
+}
+.st105 {
+	font-family: "NanumSquareR";
+}
+.st106 {
+	font-size: 14px;
+}
+.st107 {
+	font-size: 13.6539px;
+}
+</style>

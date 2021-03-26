@@ -12,7 +12,7 @@
 }
 .main-bg.content {
 	background: $color-gy !important;
-	color: #495057 !important;
+	color: $color-main-gy !important;
 }
 .main-bg.content > div {
 	padding: 0 8px;
@@ -95,44 +95,6 @@
 	height: 0;
 	overflow: hidden;
 	visibility: hidden;
-}
-
-//tap
-.nav-tabs .nav-link {
-	border: 1px solid $color-bl !important;
-	height: 32px;
-	padding: 0 20px !important;
-	line-height: 31px !important;
-	background: $color-gy;
-	border-radius: 15px !important;
-	color: $color-bl;
-	font-size: 12px;
-}
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-item.show .nav-link {
-	background: $color-bl !important;
-	border: 1px solid $color-bl !important;
-	color: #ffffff !important;
-}
-.nav-tabs {
-	border-bottom: 0 !important;
-	margin-bottom: 20px !important;
-}
-.nav-tabs li.nav-item {
-	margin-right: 11px;
-}
-
-.btn-wrap {
-	//버튼 그룹
-	height: 31px;
-	line-height: 31px;
-	margin-bottom: 15px !important;
-	.btn-group:first-child {
-		float: left;
-	}
-	.btn-group:last-child {
-		float: right;
-	}
 }
 
 .table-wrap,

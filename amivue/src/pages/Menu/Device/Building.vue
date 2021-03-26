@@ -10,7 +10,7 @@
 					<!--검색영역-->
 					<form>
 						<b-row>
-							<b-col cols="4" lg="4">
+							<b-col cols="4" xl="3">
 								<b-row class="form-group">
 									<b-col lg="4">
 										<label class="d-block">지역 이름</label>
@@ -23,17 +23,7 @@
 									</b-col>
 								</b-row>
 							</b-col>
-							<b-col cols="4" lg="4">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">단지 명</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="그랑시아 아파트" class="form-control"></b-form-input>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col cols="4" lg="4">
+							<b-col cols="4" xl="3">
 								<b-row class="form-group">
 									<b-col lg="4">
 										<label class="d-block">단지 명</label>
@@ -48,81 +38,44 @@
 					<!--//검색영역-->
 				</div>
 				<div class="btn-wrap ml-auto">
-					<b-button variant="primary btn-block">검색</b-button>
+					<b-button block variant="primary">검색</b-button>
 				</div>
 			</div>
 		</div>
-		<div class="btn-wrap">
-			<div role="group" class="btn-group">
-				<b-button variant="primary" v-b-modal.modal-1><b-icon icon="pencil-fill"></b-icon>신규등록</b-button>
+		<div class="btn-filter-wrap">
+			<div class="btn-wrap">
+				<b-button v-b-modal.modal-1 variant="light"><b-icon icon="pencil-fill"></b-icon>신규 동 등록</b-button>
+				<b-button-group>
+					<b-button variant="light btn-excel">엑셀 다운로드</b-button>
+				</b-button-group>
 			</div>
-			<div role="group" class="btn-group">
-				<b-button class="btn-light btn-excel"><!--svg icon-->엑셀 다운로드</b-button>
+			<div class="filter-wrap">
+				<b-form-group id="" label="지역">
+					<b-form-select v-model="selected">
+						<b-form-select-option>서울</b-form-select-option>
+						<b-form-select-option>경기</b-form-select-option>
+					</b-form-select>
+				</b-form-group>
+				<b-form-group id="" label="단지">
+					<b-form-select v-model="selected" class="form-control">
+						<b-form-select-option>1단지</b-form-select-option>
+						<b-form-select-option>2단지</b-form-select-option>
+					</b-form-select>
+				</b-form-group>
+				<b-form-group id="" label="동">
+					<b-form-select v-model="selected" class="form-control">
+						<b-form-select-option>101동</b-form-select-option>
+						<b-form-select-option>102동</b-form-select-option>
+					</b-form-select>
+				</b-form-group>
+				<b-form-group id="">
+					<b-form-select v-model="selected" class="form-control">
+						<b-form-select-option>5개씩 보기</b-form-select-option>
+						<b-form-select-option>10개씩 보기</b-form-select-option>
+						<b-form-select-option>50개씩 보기</b-form-select-option>
+					</b-form-select>
+				</b-form-group>
 			</div>
-		</div>
-		<div class="filter-wrap">
-			<b-row>
-				<b-col lg="2">
-					<b-form-group>
-						<label class="d-block label-wrap">Sort</label>
-						<b-input-group>
-							<b-form-select v-model="selected" class="form-control">
-								<b-form-select-option>none</b-form-select-option>
-								<b-form-select-option>1</b-form-select-option>
-							</b-form-select>
-							<b-form-select v-model="selected" class="form-control">
-								<b-form-select-option>두번째 Sort</b-form-select-option>
-								<b-form-select-option>두번째 Sort2</b-form-select-option>
-							</b-form-select>
-						</b-input-group>
-					</b-form-group>
-				</b-col>
-				<b-col lg="2">
-					<b-form-group>
-						<label class="d-block label-wrap">단지 선택</label>
-						<div class="input-wrap">
-							<b-form-select v-model="selected" class="form-control">
-								<b-form-select-option>서울시</b-form-select-option>
-								<b-form-select-option>경기도</b-form-select-option>
-							</b-form-select>
-						</div>
-					</b-form-group>
-				</b-col>
-				<b-col lg="2">
-					<b-form-group>
-						<label class="d-block label-wrap">단지 선택</label>
-						<b-input-group>
-							<b-form-input></b-form-input>
-							<b-input-group-append>
-								<b-button variant="light">삭제</b-button>
-							</b-input-group-append>
-						</b-input-group>
-					</b-form-group>
-				</b-col>
-				<b-col lg="2">
-					<b-form-group>
-						<label class="d-block label-wrap">페이지 수</label>
-						<div class="input-wrap">
-							<b-form-select v-model="selected" class="form-control">
-								<b-form-select-option>5</b-form-select-option>
-								<b-form-select-option>10</b-form-select-option>
-								<b-form-select-option>50</b-form-select-option>
-							</b-form-select>
-						</div>
-					</b-form-group>
-				</b-col>
-				<b-col lg="4">
-					<b-form-group>
-						<label class="d-block label-wrap">체크박스 라벨</label>
-						<div class="input-wrap">
-							<b-form-group>
-								<b-form-checkbox inline>체크 1</b-form-checkbox>
-								<b-form-checkbox inline>체크 2</b-form-checkbox>
-							</b-form-group>
-						</div>
-					</b-form-group>
-				</b-col>
-			</b-row>
 		</div>
 		<div class="table-wrap">
 			<table class="table bgtable b-table table-striped">
@@ -191,6 +144,8 @@
 				<form>
 					<b-row align-h="center">
 						<div class="modal-4th-box">
+							동 등록
+							<!--
 							<b-form-group>
 								<label class="d-block label-wrap">지역 선택</label>
 								<div class="input-wrap">
@@ -224,6 +179,7 @@
 									</ul>
 								</div>
 							</b-form-group>
+							-->
 						</div>
 					</b-row>
 				</form>

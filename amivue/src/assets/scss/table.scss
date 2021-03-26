@@ -91,84 +91,19 @@ table {
 	table {
 		border-top: 1px solid $color-ny !important;
 		tr th {
-			border-top: 1px solid #232f4b !important;
+			border-top: 1px solid $color-ny-table !important;
 			background: #172137;
-			border-bottom: 1px solid #232f4b !important;
+			border-bottom: 1px solid $color-ny-table !important;
 			font-weight: normal;
 			height: 24px;
 			padding: 0.5rem;
 			color: #ffffff !important;
 		}
 		tr td {
-			border-top: 1px solid #1f2c48 !important;
+			border-top: 1px solid $color-ny-table !important;
 			height: 18px;
 			padding: 0.5rem;
 			color: #737d85 !important;
 		}
 	}
 }
-
-//화이트 테이블
-/*
-.table-striped tbody tr:nth-of-type(odd) {
-	background-color: #f4f7f9 !important;
-}
-.theme_white table thead tr th,
-.theme_white table tbody tr td,
-.theme_white table thead tr th div {
-	color: #6c757d;
-	text-align: center;
-}
-.theme_white table tbody tr td.br {
-	border-right: 1px solid #dee6ed !important;
-}
-.theme_white table > tbody > tr > td {
-	line-height: 24px;
-	border-top: 1px solid #dee6ed !important;
-	vertical-align: middle;
-}
-.bgtable {
-	background: #ffffff;
-	margin-bottom: 0 !important;
-	border-bottom: 1px solid #dee6ed !important;
-}
-.basic-table {
-	border-bottom: 1px solid #dee6ed !important;
-}
-.bgtable > thead > tr > th {
-	height: 35px;
-	line-height: 35px !important;
-	border-top: 1px solid #3b82ec !important;
-	border-bottom: 3px solid #dee6ed !important;
-	font-weight: bold;
-}
-.basic-table > thead > tr > th {
-	background: #ffffff;
-	height: 10px;
-	line-height: 10px;
-	border-top: 1px solid #dee6ed !important;
-	border-bottom: 2px solid #dee6ed !important;
-	font-weight: bold;
-}
-.basic-table > tbody > tr > td {
-	height: 8px;
-	line-height: 8px;
-}
-table input.form-control {
-	padding: 0px 5px !important;
-}
-.tableContainer .table > thead > tr > th {
-	border-bottom: 1px solid #1a2c40 !important;
-}
-.tableContainer .table > tbody > tr > td {
-	border-top: 1px solid #1a2c40 !important;
-}
-.tableContainer .tableWarp {
-	position: relative;
-	width: 95%;
-	padding: 0px 0 10px;
-	margin: 0 auto;
-	height: 271px;
-	overflow-y: auto;
-}
-*/
