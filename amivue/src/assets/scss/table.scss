@@ -41,44 +41,48 @@ table {
 //대시보드 테이블
 
 .bgtable {
-	background: #fff;
-	color: $color-main-gy !important;
-	text-align: center;
-	border-bottom: 1px solid $color-gr;
-	tr th {
-		border-top: 1px solid $color-bl !important;
-		border-bottom: 3px solid $color-gr !important;
-		height: 24px;
-		padding: 0.9rem;
-	}
-	tr td {
-		vertical-align: middle;
-	}
-	tr td.br {
-		border-right: 1px solid $color-gr;
+	table {
+		background: #fff;
+		color: $color-main-gy !important;
+		text-align: center;
+		border-bottom: 1px solid $color-gr;
+		tr th {
+			border-top: 1px solid $color-bl !important;
+			border-bottom: 3px solid $color-gr !important;
+			height: 24px;
+			padding: 0.9rem;
+		}
+		tr td {
+			vertical-align: middle;
+		}
+		tr td.br {
+			border-right: 1px solid $color-gr;
+		}
 	}
 }
 
 //화이트 전체 테이블
 .basic-table {
-	background: #fff;
-	color: $color-main-gy !important;
-	text-align: center;
-	border-bottom: 1px solid $color-gr;
-	tr th {
-		border-bottom: 2px solid $color-gr !important;
-		height: 24px;
-		padding: 0.5rem;
-	}
-	tr td {
-		padding: 0.5rem;
-		height: 24px;
-		line-height: 24px;
-		vertical-align: middle;
-	}
-	.custom-control-input {
-		position: inherit;
-		opacity: inherit;
+	table {
+		background: #fff;
+		color: $color-main-gy !important;
+		text-align: center;
+		border-bottom: 1px solid $color-gr;
+		tr th {
+			border-bottom: 2px solid $color-gr !important;
+			height: 24px;
+			padding: 0.5rem;
+		}
+		tr td {
+			padding: 0.5rem;
+			height: 24px;
+			line-height: 24px;
+			vertical-align: middle;
+		}
+		.custom-control-input {
+			position: inherit;
+			opacity: inherit;
+		}
 	}
 }
 
