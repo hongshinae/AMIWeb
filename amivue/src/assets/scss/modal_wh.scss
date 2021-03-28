@@ -27,6 +27,21 @@
 		border-radius: 0.3rem;
 		outline: 0;
 	}
+	.form-group {
+		//모달 전체 .form-group, label, div제어
+		width: 100%;
+		height: 34px;
+		margin-bottom: 5px !important;
+		label,
+		legend {
+			width: 120px;
+			float: left;
+		}
+		> div {
+			width: 200px;
+			float: left;
+		}
+	}
 	.modal-1st-box {
 		width: 370px;
 		margin-right: 60px;
@@ -52,10 +67,11 @@
 		height: 34px;
 		float: left;
 	}
+	/*
 	.input-wrap label,
 	.input-wrap button {
 		margin-right: 10px;
-	}
+	}*/
 	.modal-3rd-box .input-wrap {
 		width: 500px;
 	}

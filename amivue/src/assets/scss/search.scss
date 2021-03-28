@@ -93,6 +93,30 @@
 	}
 	.search-wrap2 .search,
 	.search-wrap1 .search {
-		left: 15px;
+		left: inherit !important;
+		top: inherit !important;
+		right: inherit !important;
+		bottom: inherit !important;
+		position: inherit !important;
+	}
+	.search-wrap1,
+	.search-wrap2 {
+		height: inherit !important;
+		.wbox {
+			height: inherit !important;
+			.col-lg-4 {
+				width: 50% !important;
+				background: #f0f;
+				max-width: 50% !important;
+				flex: 50%;
+			}
+		}
+		.btn-wrap {
+			left: inherit !important;
+			top: inherit !important;
+			right: inherit !important;
+			bottom: inherit !important;
+			position: inherit !important;
+		}
 	}
 }

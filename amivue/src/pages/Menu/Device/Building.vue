@@ -44,7 +44,7 @@
 		</div>
 		<div class="btn-filter-wrap">
 			<div class="btn-wrap">
-				<b-button v-b-modal.modal-1 variant="light"><b-icon icon="pencil-fill"></b-icon>신규 동 등록</b-button>
+				<b-button v-b-modal.modal-building variant="light"><b-icon icon="pencil-fill"></b-icon>신규 동 등록</b-button>
 				<b-button-group>
 					<b-button variant="light btn-excel">엑셀 다운로드</b-button>
 				</b-button-group>
@@ -140,48 +140,38 @@
 		<div class="pa-wrap">
 			<b-pagination v-model="currentPage" :total-rows="rows" size="sm"></b-pagination>
 		</div>
-		<b-modal id="modal-1" title="동 등록">
+		<b-modal id="modal-building" title="동 등록">
 			<!---->
-			<div class="modal-content-wrap modal-building">
+			<div class="modal-content-wrap">
 				<form>
 					<b-row align-h="center">
-						<div class="modal-4th-box">
-							동 등록
-							<!--
-							<b-form-group>
-								<label class="d-block label-wrap">지역 선택</label>
-								<div class="input-wrap">
-									<b-form-select v-model="selected" class="form-control">
-										<b-form-select-option>서울시</b-form-select-option>
-										<b-form-select-option>경기도</b-form-select-option>
-									</b-form-select>
-								</div>
+						<div class="modal-box">
+							<b-form-group label="지역 선택" label-for="input1">
+								<b-form-select v-model="selected">
+									<b-form-select-option>서울시</b-form-select-option>
+									<b-form-select-option>경기도</b-form-select-option>
+								</b-form-select>
 							</b-form-group>
-							<b-form-group>
-								<label class="d-block label-wrap">단지 선택</label>
-								<div class="input-wrap">
-									<b-form-select v-model="selected" class="form-control">
-										<b-form-select-option>서울시</b-form-select-option>
-										<b-form-select-option>경기도</b-form-select-option>
-									</b-form-select>
-								</div>
+
+							<b-form-group label="단지 선택" label-for="">
+								<b-form-select v-model="selected">
+									<b-form-select-option>서울시</b-form-select-option>
+									<b-form-select-option>경기도</b-form-select-option>
+								</b-form-select>
 							</b-form-group>
-							<b-form-group>
-								<label class="d-block label-wrap">등록 동명</label>
-								<div class="input-wrap">
-									<b-form-input v-model="text" placeholder="404동" class="form-control"></b-form-input>
-								</div>
+
+							<b-form-group label="등록 동명" label-for="">
+								<b-form-input id="" placeholder="404동"></b-form-input>
 							</b-form-group>
-							<b-form-group>
-								<label class="d-block label-wrap">DCU ID</label>
-								<div class="input-wrap">
-									<ul>
-										<li><b-form-input v-model="text" placeholder="4521542" class="form-control"></b-form-input></li>
-										<li><b-button class="btn" variant="outline-primary">연동확인</b-button></li>
-									</ul>
-								</div>
+
+							<b-form-group label="DCU ID" label-for="">
+								<b-input-group>
+									<b-form-input v-model="text" placeholder="4521542" class="form-control"></b-form-input>
+									<b-input-group-append>
+										<b-button variant="light">연동 확인</b-button>
+									</b-input-group-append>
+								</b-input-group>
 							</b-form-group>
-							-->
 						</div>
 					</b-row>
 				</form>
