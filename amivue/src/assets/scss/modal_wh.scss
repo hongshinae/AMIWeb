@@ -209,6 +209,19 @@
 			margin-bottom: 7px;
 			background: $color-gy;
 			border-radius: 4px;
+			.top {
+				width: 100%;
+				height: 40px;
+				background: $color-bl;
+				border-bottom: 1px solid #f0f;
+				color: #ffffff;
+			}
+			.middle {
+				height: 40px;
+			}
+			.bottom {
+				height: 60px;
+			}
 		}
 		.double-input {
 			.form-group {
