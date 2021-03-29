@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<b-row>
-			<b-col cols="4">
+			<b-col xl="4" lg="6" md="12" sm="12">
 				<div class="timeWrap">
 					<div class="date">{{ Date.now() | moment("YYYY.M.D") }}</div>
 					<dashboard-timer></dashboard-timer>
@@ -62,7 +62,7 @@
 					</div>
 				</div>
 			</b-col>
-			<b-col cols="4">
+			<b-col xl="4" lg="6" md="12" sm="12">
 				<div class="high-map-wrap">
 					<div class="high-map"></div>
 					<div class="high-table">
@@ -86,7 +86,7 @@
 					</div>
 				</div>
 			</b-col>
-			<b-col lg="4">
+			<b-col xl="4" lg="12" md="12" sm="12">
 				<div class="presentMenu">
 					<ul>
 						<li>난방</li>
