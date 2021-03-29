@@ -1,7 +1,7 @@
 <template>
 	<div class="main-bg content">
-		<add-dcu></add-dcu>
-		<detail-info></detail-info>
+		<add-equipmenet-dcu></add-equipmenet-dcu>
+		<detail-equipmenet-dcu></detail-equipmenet-dcu>
 		<div class="main-location-wrap">
 			<h1>장비 관리</h1>
 			<div class="tap-wrap">
@@ -74,7 +74,7 @@
 		</div>
 		<div class="btn-filter-wrap">
 			<div class="btn-wrap">
-				<b-button v-b-modal.addDcu variant="light"><b-icon icon="pencil-fill"></b-icon>DCU 신규 등록</b-button>
+				<b-button v-b-modal.addEquipmenetDcu variant="light"><b-icon icon="pencil-fill"></b-icon>DCU 신규 등록</b-button>
 				<b-button-group>
 					<b-button variant="light btn-excel">엑셀 다운로드</b-button>
 					<b-button variant="light">전체 연동하기</b-button>
@@ -132,7 +132,7 @@
 							<td>2.3</td>
 							<td>55</td>
 							<td>110</td>
-							<td><b-button variant="outline-primary" size="sm" v-b-modal.detailInfo>상세정보</b-button></td>
+							<td><b-button variant="outline-primary" size="sm" v-b-modal.modal-xl.detailEquipmenetDcu>상세정보</b-button></td>
 						</tr>
 						<tr>
 							<td>서울</td>
@@ -144,7 +144,7 @@
 							<td>2.3</td>
 							<td>55</td>
 							<td>110</td>
-							<td><b-button variant="outline-primary" size="sm" v-b-modal.modal-xl>상세정보</b-button></td>
+							<td><b-button variant="outline-primary" size="sm" v-b-modal.modal-xl.detailEquipmenetDcu>상세정보</b-button></td>
 						</tr>
 					</tbody>
 				</table>
@@ -157,13 +157,13 @@
 </template>
 <script>
 import Vue from "vue";
-import AddDcu from "@/components/modal/addDcu";
-import DetailInfo from "@/components/modal/detailInfo";
+import AddEquipmenetDcu from "@/components/modal/addEquipmenetDcu";
+import DetailEquipmenetDcu from "@/components/modal/detailEquipmenetDcu";
 
-Vue.component(DetailInfo);
-Vue.component(AddDcu);
+Vue.component(DetailEquipmenetDcu);
+Vue.component(AddEquipmenetDcu);
 
 export default {
-	components: { AddDcu, DetailInfo }
+	components: { AddEquipmenetDcu, DetailEquipmenetDcu }
 };
 </script>

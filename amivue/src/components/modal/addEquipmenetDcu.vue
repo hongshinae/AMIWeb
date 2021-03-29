@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="addDcu" title="DCU 등록">
+	<b-modal id="addEquipmenetDcu" title="DCU 등록">
 		<div class="svg-wrap">
 			<div class="svg">
 				<svg

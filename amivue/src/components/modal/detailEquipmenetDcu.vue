@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="detailInfo" size="xl" title="서울 아파트">
+	<b-modal id="detailEquipmenetDcu" size="xl" title="서울 아파트">
 		<div class="modal-content-wrap modal-equip">
 			<form>
 				<b-row align-h="center">
