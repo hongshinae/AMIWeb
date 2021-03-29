@@ -44,8 +44,13 @@
 	"estate": {
 		"region": "지역",
 		"estateName": "단지명",
-		"add": "신규 단지 등록",
-		"excelDownload": "엑셀 다운로드",
+		"button": {
+			"add": "신규 단지 등록",
+			"excelDownload": "엑셀 다운로드",
+			"allInterlink": "전체 연동하기",
+			"save": "저장"
+		},
+		"filter": {},
 		"table": {
 			"estateId": "단지ID",
 			"estateName": "단지명",

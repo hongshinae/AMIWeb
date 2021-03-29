@@ -22,7 +22,7 @@
 					<!--검색영역-->
 					<form>
 						<b-row>
-							<b-col cols="4" xl="3">
+							<b-col xl="3" md="12" sm="12">
 								<b-row class="form-group">
 									<b-col lg="4">
 										<label class="d-block">지역 이름</label>
@@ -35,7 +35,7 @@
 									</b-col>
 								</b-row>
 							</b-col>
-							<b-col cols="4" xl="3">
+							<b-col xl="3" md="12" sm="12">
 								<b-row class="form-group">
 									<b-col lg="4">
 										<label class="d-block">단지 명</label>
@@ -48,7 +48,7 @@
 									</b-col>
 								</b-row>
 							</b-col>
-							<b-col cols="4" xl="3">
+							<b-col xl="3" md="12" sm="12">
 								<b-row class="form-group">
 									<b-col lg="4">
 										<label class="d-block">검침 타입</label>
@@ -63,7 +63,7 @@
 							</b-col>
 						</b-row>
 						<b-row>
-							<b-col cols="4" xl="3">
+							<b-col xl="3" md="12" sm="12">
 								<b-row class="form-group">
 									<b-col lg="4">
 										<label class="d-block">DCU ID 또는 Gateway</label>
