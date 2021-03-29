@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<b-row>
-			<b-col lg="8">
+			<b-col lg="12" xl="8">
 				<div class="box">
 					<h5>
 						<span>최대 수요</span>
@@ -4182,7 +4182,7 @@
 					</div>
 				</div>
 			</b-col>
-			<b-col lg="4">
+			<b-col lg="12" xl="4">
 				<div class="presentMenu">
 					<ul>
 						<li>난방</li>
