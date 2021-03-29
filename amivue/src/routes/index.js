@@ -23,8 +23,8 @@ const routes = [
 				path: "estate",
 				name: "Estate",
 				component: () => import("@/pages/Menu/Device/Estate"),
-				meta: { theme: "theme_white" },
-				props: route => ({ pageNumber: parseInt(route.params.pageNumber) })
+				meta: { theme: "theme_white" }
+				// props: route => ({ pageNumber: parseInt(route.params.pageNumber) })
 			},
 			{
 				path: "building",

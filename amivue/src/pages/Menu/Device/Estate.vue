@@ -1,8 +1,8 @@
 <template>
 	<div class="main-bg">
-		<add-estate></add-estate>
+		<add-estate id="addEstate"></add-estate>
 		<content-header :paths="paths" :pageName="pageName" />
-		<content-search :isLazySearch="true" @update:searchItem="searchEstateList">
+		<!-- <content-search :isLazySearch="true" @update:searchItem="searchEstateList">
 			<b-row>
 				<b-col xl="3" md="12" sm="12">
 					<b-row class="form-group">
@@ -41,62 +41,10 @@
 					</b-row>
 				</b-col>
 			</b-row>
-		</content-search>
-		<content-table>
-			<template #table-header-left>
-				<button type="button" class="btn btn-primary" v-b-modal.addEstate>
-					<icon-base viewBox="0 0 16 16" width="1em" height="1em" icon-color="" icon-name="pencil" cls="bi-pencil-fill mx-auto b-icon bi">
-						<icon-pencil />
-					</icon-base>
-					{{ $t("estate.add") }}
-				</button>
-			</template>
-			<template v-slot:table-header-right>
-				<b-dropdown right :text="perPage" class="btn-light">
-					<b-dropdown-item v-for="(value, index) in pages" :key="index" @click="changePageCount">{{ value }}</b-dropdown-item>
-				</b-dropdown>
-			</template>
-			<template #table-main>
-				<b-table
-					:striped="true"
-					:busy.sync="isBusy"
-					:items="estateList"
-					:fields="estateFields"
-					:current-page="currentPage"
-					:per-page="perPage"
-					:filter="filterEstate"
-					:filter-included-fields="filterTargetFields"
-					@filtered="onFiltered"
-					show-empty
-				>
-					<template #table-busy>
-						<div class="text-center text-danger my-2">
-							<b-spinner class="align-middle"></b-spinner>
-							<strong>Loading...</strong>
-						</div>
-					</template>
-					<template #empty="scope">
-						<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
-					</template>
-					<template #emptyfiltered="scope">
-						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
-					</template>
-					<template #cell(remark)="row">
-						<b-button @click="info(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
-							{{ $t("estate.details") }}
-						</b-button>
-						<!-- <b-button size="sm" @click="row.toggleDetails"> {{ row.detailsShowing ? "Hide" : "Show" }} Details </b-button> -->
-					</template>
-				</b-table>
-			</template>
-			<template #table-footer-pagination>
-				<b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" :limit="10">
-					<template #first-text><span class="text-success">«</span></template>
-					<template #prev-text><span class="text-danger">‹</span></template>
-					<template #next-text><span class="text-warning">›</span></template>
-					<template #last-text><span class="text-info">»</span></template>
-				</b-pagination>
-			</template>
+		</content-search> -->
+		<content-table :busy="isBusy" :items="estateList" :fields="estateFields" :perpage="true">
+			<template #table-header-left> </template>
+			<template v-slot:table-header-right> </template>
 		</content-table>
 	</div>
 </template>
@@ -105,7 +53,7 @@ import Vue from "vue";
 import Estate from "@/service/estate";
 import AddEstate from "@/components/modal/addEstate";
 import ContentHeader from "@/components/content/ContentHeader";
-import ContentSearch from "@/components/content/ContentSearch";
+// import ContentSearch from "@/components/content/ContentSearch";
 import ContentTable from "@/components/content/ContentTable";
 
 import IconSearch from "@/components/icons/IconSearch";
@@ -115,7 +63,7 @@ import IconPencil from "@/components/icons/IconPencil";
 
 Vue.component(AddEstate);
 Vue.component(ContentHeader);
-Vue.component(ContentSearch);
+// Vue.component(ContentSearch);
 Vue.component(ContentTable);
 Vue.component("icon-search", IconSearch);
 Vue.component("icon-home-up", IconHomeUp);
@@ -123,8 +71,7 @@ Vue.component("icon-home-down", IconHomeDown);
 Vue.component("icon-pencil", IconPencil);
 
 export default {
-	props: { pageNumber: { type: Number, default: 1 } },
-	components: { AddEstate, ContentHeader, ContentSearch, ContentTable },
+	components: { AddEstate, ContentHeader, /* ContentSearch ,*/ ContentTable },
 	created() {
 		Estate.region()
 			.then(({ data }) => {
@@ -151,13 +98,6 @@ export default {
 					this.regionList[this.filterRegion] ? this.regionList[this.filterRegion].regionName : "unknown"
 				);
 			}
-		},
-		filterTargetFields: function() {
-			const filters = this.estateFields.filter(item => {
-				return item.hasFilter;
-			});
-			console.log(filters);
-			return filters.map(item => item.key);
 		}
 	},
 	data() {
@@ -169,14 +109,6 @@ export default {
 				{ name: this.$t("menu.device.title") },
 				{ name: this.$t("menu.device.estate") }
 			],
-			totalRows: 1,
-			currentPage: 1,
-			regionList: [],
-			filterRegion: 0,
-			filterEstate: "",
-			perPage: "15",
-			pages: ["10", "15", "20", "30", "50"],
-			estates: [],
 			estateList: [],
 			estateFields: [
 				{
@@ -195,9 +127,7 @@ export default {
 				},
 				{
 					key: "houseCount",
-					label: this.$t("estate.table.houseCount"),
-					sortable: true,
-					sortDirection: "desc"
+					label: this.$t("estate.table.houseCount")
 				},
 				{
 					key: "regionName",
@@ -212,9 +142,7 @@ export default {
 				},
 				{
 					key: "deviceCount",
-					label: this.$t("estate.table.deviceCount"),
-					sortable: true,
-					sortDirection: "desc"
+					label: this.$t("estate.table.deviceCount")
 				},
 				{
 					key: "meteringTypeCount",
@@ -224,15 +152,13 @@ export default {
 					key: "remark",
 					label: this.$t("estate.table.remark")
 				}
-			]
+			],
+			estates: []
 		};
 	},
 	methods: {
 		changeRegion(value) {
 			this.searchEstates(value);
-		},
-		changePageCount(event) {
-			this.perPage = event.target.text;
 		},
 		async searchEstates(value) {
 			const response = await Estate.estate({ regionSeq: value });
@@ -255,20 +181,8 @@ export default {
 			} finally {
 				this.isBusy = false;
 			}
-		},
-		onFiltered(filteredItems) {
-			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
-			this.totalRows = filteredItems.length;
-			this.currentPage = 1;
 		}
 	}
 };
 </script>
-<style>
-table.b-table[aria-busy="true"] {
-	opacity: 0.6;
-}
-table.b-table .flip-list-move {
-	transition: transform 1s;
-}
-</style>
+<style></style>

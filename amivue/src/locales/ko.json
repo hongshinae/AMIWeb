@@ -42,15 +42,21 @@
 		"search": "검색"
 	},
 	"estate": {
-		"region": "지역",
-		"estateName": "단지명",
 		"button": {
 			"add": "신규 단지 등록",
 			"excelDownload": "엑셀 다운로드",
 			"allInterlink": "전체 연동하기",
 			"save": "저장"
 		},
-		"filter": {},
+		"filter": {
+			"region": "지역",
+			"estateName": "단지명",
+			"page10": "10개씩 보기",
+			"page15": "15개씩 보기",
+			"page20": "20개씩 보기",
+			"page30": "30개씩 보기",
+			"page50": "50개씩 보기"
+		},
 		"table": {
 			"estateId": "단지ID",
 			"estateName": "단지명",
@@ -77,6 +83,7 @@
 		"session": {
 			"login": "로그인 후 다시 시도해주세요.",
 			"expired": "세션이 만료되었습니다."
-		}
+		},
+		"loading": "Loading..."
 	}
 }
