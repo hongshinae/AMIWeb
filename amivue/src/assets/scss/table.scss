@@ -111,3 +111,14 @@ table {
 		}
 	}
 }
+.mboard-table {
+	width: 95%;
+	height: 350px;
+	.linkage,
+	.unlinkage,
+	.normal {
+		margin: 0 10px;
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
