@@ -159,7 +159,7 @@
 					</h5>
 					<div class="tableWarp">
 						<div class="tableContainer">
-							<table class="tableContent table">
+							<table class="table">
 								<thead>
 									<tr>
 										<th>지역</th>
