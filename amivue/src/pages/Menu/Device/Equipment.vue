@@ -520,7 +520,7 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 								<li>
 									<div class="modal-4th-box">
 										<div class="info-box"></div>
-										<b-row>
+										<b-row class="double-input">
 											<b-col cols="6">
 												<b-form-group label="OS 버전" label-for="" c->
 													<b-form-input id="" placeholder="Linux 10.0"></b-form-input>
@@ -532,29 +532,22 @@ Ili/A8ur8Xj3/z78LxakVFoH93F8HOfjLwEGAAhWXlQCRb6CAAAAAElFTkSuQmCC"
 												</b-form-group>
 											</b-col>
 										</b-row>
+										<b-row class="double-input">
+											<b-col cols="6">
+												<b-form-group label="하드웨어 버전" label-for="" c->
+													<b-form-input id="" placeholder="HW 20"></b-form-input>
+												</b-form-group>
+											</b-col>
+											<b-col cols="6">
+												<b-form-group label="SNMP 암호화" label-for="">
+													<b-form-input id="" placeholder="false"></b-form-input>
+												</b-form-group>
+											</b-col>
+										</b-row>
 
-										<b-row class="form-group">
-											<b-col>
-												<label class="d-block">하드웨어 버전</label>
-											</b-col>
-											<b-col>
-												<b-form-input v-model="text" placeholder="HW 20" class="form-control"></b-form-input>
-											</b-col>
-											<b-col>
-												<label class="d-block">SNMP 암호화</label>
-											</b-col>
-											<b-col>
-												<b-form-input v-model="text" placeholder="false" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
-										<b-row class="form-group">
-											<b-col lg="5">
-												<label class="d-block">위치 정보</label>
-											</b-col>
-											<b-col lg="7">
-												<b-form-input v-model="text" placeholder="위도 :0, 경도 : 0" class="form-control"></b-form-input>
-											</b-col>
-										</b-row>
+										<b-form-group label="위치 정보" label-for="">
+											<b-form-input id="" placeholder="위도 :0, 경도 : 0"></b-form-input>
+										</b-form-group>
 
 										<div class="map">
 											<iframe

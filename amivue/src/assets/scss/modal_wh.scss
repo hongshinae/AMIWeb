@@ -211,9 +211,19 @@
 			background: $color-gy;
 			border-radius: 4px;
 		}
-	}
-	.form-group {
-		margin-bottom: 5px !important;
+		.double-input {
+			.form-group {
+				width: inherit !important;
+				//더블버튼 .form-group, label, div제어
+				label,
+				legend {
+					width: 75px;
+				}
+				div {
+					width: 85px;
+				}
+			}
+		}
 	}
 }
 
@@ -233,10 +243,14 @@
 		}
 		.svg-input {
 			position: absolute;
-			top: 47px;
-			left: 0;
-			right: 0;
+			top: 45px;
+			left: 78px;
+			width: 307px;
+			right: 46px;
 			bottom: 0;
+			.form-group > div {
+				width: 186px;
+			}
 			.row {
 				margin: 0px auto 7px auto !important;
 				width: 320px;
