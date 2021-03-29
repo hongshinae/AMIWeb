@@ -114,3 +114,9 @@
 .svg-Warp {
 	padding: 20px 40px;
 }
+
+@media (max-width: 996px) {
+	.col-sm-12:first-child .wbox {
+		margin-bottom: 30px;
+	}
+}
