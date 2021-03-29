@@ -76,6 +76,9 @@
 						<b-form-select-option>50개씩 보기</b-form-select-option>
 					</b-form-select>
 				</b-form-group>
+				<b-form-group label="등록 동명" label-for="">
+					<b-form-input id="" placeholder="404동"></b-form-input>
+				</b-form-group>
 			</div>
 		</div>
 		<div class="table-wrap">
