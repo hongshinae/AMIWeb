@@ -1,5 +1,5 @@
 <template>
-	<div class="about">
-		<h1>This is an about page</h1>
+	<div>
+		<h1>/pages/Menu/Device/Equipment/Meter.vue 입니다.</h1>
 	</div>
 </template>
