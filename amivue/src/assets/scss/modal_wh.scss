@@ -153,23 +153,22 @@
 	}
 }
 
-.modal-building {
-	//모달빌딩 버튼 한개
-	.input-wrap {
-		ul {
-			li {
-				&:first-child {
-					float: left;
-					width: 165px;
-					margin-right: 10px;
-				}
-				&:last-child {
-					float: right;
-					width: 74px;
-					button {
-						margin-right: 0 !important;
-					}
-				}
+#modal-building {
+	.modal-box {
+		width: 80%;
+		.form-group {
+			//모달 전체 .form-group, label, div제어
+			width: 100%;
+			height: 34px;
+			margin-bottom: 5px !important;
+			label,
+			legend {
+				width: 150px;
+				float: left;
+			}
+			> div {
+				width: 245px;
+				float: left;
 			}
 		}
 	}

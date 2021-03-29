@@ -4,7 +4,7 @@
 		<content-header :paths="paths" :pageName="pageName" />
 		<content-search :isLazySearch="true" @update:searchItem="searchEstateList">
 			<b-row>
-				<b-col cols="4" lg="4">
+				<b-col xl="3" md="12" sm="12">
 					<b-row class="form-group">
 						<b-col lg="4">
 							<label class="d-block">{{ $t("estate.region") }}</label>
@@ -22,7 +22,7 @@
 						</b-col>
 					</b-row>
 				</b-col>
-				<b-col cols="4" lg="4">
+				<b-col xl="3" md="12" sm="12">
 					<b-row class="form-group">
 						<b-col lg="4">
 							<label class="d-block">{{ $t("estate.estateName") }}</label>

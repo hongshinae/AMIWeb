@@ -105,18 +105,29 @@
 		.wbox {
 			height: inherit !important;
 			.col-lg-4 {
-				width: 50% !important;
-				background: #f0f;
-				max-width: 50% !important;
-				flex: 50%;
+				width: 30% !important;
+				max-width: 30% !important;
+				flex: 30%;
+			}
+			.col-lg-8 {
+				width: 70% !important;
+				max-width: 70% !important;
+				flex: 70%;
 			}
 		}
 		.btn-wrap {
+			margin-top: 10px;
+			width: 100%;
 			left: inherit !important;
 			top: inherit !important;
 			right: inherit !important;
 			bottom: inherit !important;
 			position: inherit !important;
+			button {
+				background: #ffffff !important;
+				border: 1px solid #ced4da !important;
+				color: #212529;
+			}
 		}
 	}
 }

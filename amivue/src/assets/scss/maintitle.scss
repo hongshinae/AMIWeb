@@ -5,7 +5,6 @@
 	position: relative;
 	display: block;
 	margin: 22px 0 15px 0 !important;
-	height: 60px;
 	padding: 0 8px;
 	margin-bottom: 50px;
 	h1 {
@@ -16,7 +15,7 @@
 		margin-right: 20px;
 		vertical-align: bottom;
 		font-weight: 600;
-		color: #212738;
+		color: #fff;
 	}
 	.tap-wrap {
 		display: inline-block;
@@ -26,6 +25,18 @@
 		}
 	}
 }
+.main-location-wrap::after {
+	clear: both;
+	display: block;
+	content: "";
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+.theme_white .main-location-wrap h1 {
+	color: #212738;
+}
+
 .main-location {
 	float: right;
 	height: 24px;
