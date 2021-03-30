@@ -150,13 +150,43 @@
 											<li><span>DCU 동작상태</span><b>정상</b></li>
 											<li><span>커버 개폐상태</span><b>close</b></li>
 										</ul>
-										<div class="middle"></div>
+										<div class="middle">
+											<ul>
+												<li>
+													<div class="info-box-name"><span>설비온도</span></div>
+													<div class="info-box-svgwrap">
+														<div class="temperature">
+															<img src="@/assets/svg/temperature.svg" />
+														</div>
+													</div>
+													<div class="info-box-data"><b>34.4</b><span>˚c</span></div>
+												</li>
+												<li>
+													<div class="info-box-name"><span>CPU</span></div>
+													<div class="info-box-svgwrap">
+														<div class="monitor">
+															<img src="@/assets/svg/monitor.svg" />
+														</div>
+													</div>
+													<div class="info-box-data"><b>99</b><span>%</span></div>
+												</li>
+												<li>
+													<div class="info-box-name"><span>MEMORY</span></div>
+													<div class="info-box-svgwrap">
+														<div class="memory">
+															<img src="@/assets/svg/memory.svg" />
+														</div>
+													</div>
+													<div class="info-box-data"><b>15</b><span>%</span></div>
+												</li>
+											</ul>
+										</div>
 										<ul class="bottom">
 											<li>
 												<b-row>
 													<b-col>
 														<div>BPS UP</div>
-														<div>Bit / SEC</div>
+														<div class="small">Bit / SEC</div>
 													</b-col>
 													<b-col>
 														<b>154</b>
@@ -164,7 +194,18 @@
 													</b-col>
 												</b-row>
 											</li>
-											<li><span>커버 개폐상태</span><b>close</b></li>
+											<li>
+												<b-row>
+													<b-col>
+														<div>BPS UP</div>
+														<div class="small">Bit / SEC</div>
+													</b-col>
+													<b-col>
+														<b>154</b>
+														<span>BPS</span>
+													</b-col>
+												</b-row>
+											</li>
 										</ul>
 									</div>
 									<b-row class="double-input">
@@ -219,5 +260,42 @@
 <script>
 export default {};
 </script>
-
-<style></style>
+<style scoped lang="scss">
+.temperature {
+	.st0 {
+		display: none;
+	}
+	.st1 {
+		display: inline;
+	}
+	.st2 {
+		fill: #0096e6;
+	}
+	.st3 {
+		fill: #d0e8f9;
+	}
+}
+.monitor {
+	.st0 {
+		fill: #0096e6;
+	}
+	.st1 {
+		fill: #d0e8f9;
+	}
+	.st2 {
+		display: none;
+	}
+	.st3 {
+		display: inline;
+		fill: #0096e6;
+	}
+}
+.memory {
+	.st0 {
+		fill: #0096e6;
+	}
+	.st1 {
+		fill: #d0e8f9;
+	}
+}
+</style>

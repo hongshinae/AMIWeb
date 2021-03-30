@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:#0096E6;}
+	.st3{fill:#D0E8F9;}
+</style>
+<g class="st0">
+	<g class="st1">
+		<g>
+			<path class="st2" d="M2,4v34.7h48V4H2z M48,36.7H4V6h44V36.7z"/>
+		</g>
+		<g>
+			<rect x="4" y="6" class="st3" width="44" height="30.7"/>
+		</g>
+	</g>
+	<g class="st1">
+		<g>
+			<path class="st2" d="M37.1,46l-1.8-7.3l-0.5-2H17.2l-0.5,2L14.9,46l-0.5,2h23.3L37.1,46z M16.9,46l1.8-7.3h14.5l1.8,7.3H16.9z"/>
+		</g>
+	</g>
+	<g class="st1">
+		<g>
+			<rect x="12.2" y="46" class="st2" width="27.6" height="2"/>
+		</g>
+	</g>
+</g>
+<g id="thermometer">
+	<path class="st2" d="M32.6,31.4V11.6C32.6,7.9,29.6,5,26,5s-6.6,2.9-6.6,6.6v19.8c-3.6,3.6-3.5,9.4,0.1,13s9.4,3.5,13-0.1
+		C36.1,40.7,36.1,35,32.6,31.4z M26,44.4c-3.6,0-6.6-3-6.5-6.6c0-1.9,0.8-3.6,2.2-4.9c0.3-0.2,0.4-0.6,0.4-1V11.6
+		c0-2.2,1.8-3.9,3.9-3.9s3.9,1.8,3.9,3.9c-0.7,0-1.3,0.6-1.3,1.3c0,0.7,0.6,1.3,1.3,1.3v1.3c-0.7,0-1.3,0.6-1.3,1.3s0.6,1.3,1.3,1.3
+		v1.3c-0.7,0-1.3,0.6-1.3,1.3s0.6,1.3,1.3,1.3V32c0,0.4,0.2,0.7,0.4,1c2.7,2.4,2.9,6.6,0.5,9.3C29.6,43.6,27.9,44.4,26,44.4z"/>
+	<path class="st2" d="M27.3,34.1V11.6c0-0.7-0.6-1.3-1.3-1.3c-0.7,0-1.3,0.6-1.3,1.3v22.5c-2.1,0.7-3.1,3-2.4,5s3,3.1,5,2.4
+		s3.1-3,2.4-5C29.3,35.4,28.4,34.5,27.3,34.1z M26,39.1c-0.7,0-1.3-0.6-1.3-1.3s0.6-1.3,1.3-1.3c0.7,0,1.3,0.6,1.3,1.3
+		S26.7,39.1,26,39.1z"/>
+</g>
+</svg>

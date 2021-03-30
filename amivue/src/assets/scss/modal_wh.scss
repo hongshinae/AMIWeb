@@ -205,22 +205,103 @@
 		height: 635px;
 		.info-box {
 			width: 100%;
-			height: 271px;
-			margin-bottom: 7px;
-			background: $color-gy;
+			height: 260px;
+			margin-bottom: 21px;
+			background: #f5f5f5;
 			border-radius: 4px;
 			.top {
 				width: 100%;
 				height: 40px;
-				background: $color-bl;
-				border-bottom: 1px solid #f0f;
+				background: #287fff;
+				border-bottom: 1px solid #c9c9ca;
 				color: #ffffff;
+				border-radius: 4px 4px 0 0;
+				li {
+					float: left;
+					width: 50%;
+					padding: 10px 15px;
+					border-radius: 4px 4px 0 0;
+					b {
+						margin-left: 15px;
+					}
+				}
 			}
 			.middle {
-				height: 40px;
+				height: 150px;
+				ul {
+					height: 100px;
+					margin: 10px auto;
+					padding: 10px 25px;
+					li {
+						width: 33.3%;
+						float: left;
+						height: 100px;
+						.info-box-name {
+							height: 19px;
+							text-align: center;
+							span {
+								background: #ededed;
+								border-radius: 6px;
+								padding: 2px 10px;
+							}
+						}
+						.info-box-svgwrap {
+							height: 53px;
+							.temperature {
+								width: 40px;
+								margin: 15px auto 0 auto;
+							}
+							.monitor {
+								width: 40px;
+								margin: 15px auto 0 auto;
+							}
+							.memory {
+								width: 40px;
+								margin: 15px auto 0 auto;
+							}
+						}
+						.info-box-data {
+							height: 30px;
+							text-align: center;
+							b {
+								color: lightcoral;
+								font-size: 20px;
+								height: 30px;
+								line-height: 30px;
+							}
+							span {
+								height: 30px;
+								line-height: 30px;
+								padding: 0 0 0 10px;
+							}
+						}
+					}
+				}
 			}
 			.bottom {
 				height: 60px;
+				border-top: 1px solid #e9e9e9;
+				li {
+					width: 50%;
+					float: left;
+					padding: 10px 15px;
+					.row .col:last-child {
+						height: 32px;
+						line-height: 32px;
+						span {
+							margin-left: 10px;
+						}
+					}
+					.small {
+						font-size: 10px !important;
+					}
+					b {
+						font-size: 20px;
+					}
+				}
+				li:first-child {
+					border-right: 1px solid #e9e9e9;
+				}
 			}
 		}
 		.double-input {
@@ -239,7 +320,7 @@
 	}
 }
 
-#dcu-modal-1 {
+#addEquipmenetDcu {
 	.svg-wrap {
 		width: 100%;
 		height: 400px;
