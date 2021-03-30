@@ -43,8 +43,11 @@
 		line-height: 32px;
 		margin-bottom: 15px !important;
 		display: inline-block;
+		> button:first-child {
+			margin-right: 10px;
+		}
 		.btn-group {
-			margin: 0 10px 0 10px;
+			margin: 0 10px 0 0px;
 		}
 	}
 }

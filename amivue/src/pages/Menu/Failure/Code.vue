@@ -25,7 +25,7 @@
 							<b-col xl="3" md="12" sm="12">
 								<b-row class="form-group">
 									<b-col lg="4">
-										<label class="d-block">지역 이름</label>
+										<label class="d-block">지역 코드</label>
 									</b-col>
 									<b-col lg="8">
 										<b-form-select v-model="selected" class="form-control">
@@ -51,7 +51,7 @@
 							<b-col xl="3" md="12" sm="12">
 								<b-row class="form-group">
 									<b-col lg="4">
-										<label class="d-block">검침 타입</label>
+										<label class="d-block">DCU ID</label>
 									</b-col>
 									<b-col lg="8">
 										<b-form-select v-model="selected" class="form-control">
@@ -66,10 +66,39 @@
 							<b-col xl="3" md="12" sm="12">
 								<b-row class="form-group">
 									<b-col lg="4">
-										<label class="d-block">DCU ID 또는 Gateway</label>
+										<label class="d-block">Meter ID</label>
 									</b-col>
 									<b-col lg="8">
 										<b-form-input v-model="text" placeholder="DCU ID 또는 Gateway" class="form-control"></b-form-input>
+									</b-col>
+								</b-row>
+							</b-col>
+							<b-col xl="3" md="12" sm="12">
+								<b-row class="form-group">
+									<b-col lg="4">
+										<label class="d-block">상태 코드</label>
+									</b-col>
+									<b-col lg="8">
+										<b-form-select v-model="selected" class="form-control">
+											<b-form-select-option>정전</b-form-select-option>
+											<b-form-select-option>복전</b-form-select-option>
+										</b-form-select>
+									</b-col>
+								</b-row>
+							</b-col>
+							<b-col xl="6" md="12" sm="12">
+								<b-row class="form-group">
+									<b-col lg="2">
+										<label class="d-block">기간</label>
+									</b-col>
+									<b-col lg="4">
+										<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+									</b-col>
+									<b-col lg="1">
+										~
+									</b-col>
+									<b-col lg="4">
+										<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
 									</b-col>
 								</b-row>
 							</b-col>
@@ -87,7 +116,6 @@
 				<b-button-group>
 					<b-button variant="light btn-excel">엑셀 다운로드</b-button>
 				</b-button-group>
-				<span class="small">2021-01-20 12:15 기준</span>
 			</div>
 			<div class="filter-wrap">
 				<b-form-group id="" label="지역">
@@ -100,13 +128,6 @@
 					<b-form-select v-model="selected" class="form-control">
 						<b-form-select-option>1단지</b-form-select-option>
 						<b-form-select-option>2단지</b-form-select-option>
-					</b-form-select>
-				</b-form-group>
-				<b-form-group id="" label="DCU ID">
-					<b-form-select v-model="selected">
-						<b-form-select-option>NS09_011A</b-form-select-option>
-						<b-form-select-option>NS09_01124A</b-form-select-option>
-						<b-form-select-option>NS09_01511A</b-form-select-option>
 					</b-form-select>
 				</b-form-group>
 				<b-form-group id="">
@@ -123,71 +144,46 @@
 				<table class="table b-table table-striped">
 					<thead>
 						<tr>
+							<th><div>발생 시각</div></th>
 							<th><div>지역</div></th>
-							<th><div>단지명</div></th>
+							<th><div>단지 명</div></th>
 							<th><div>DCU ID</div></th>
-							<th><div>IP</div></th>
-							<th><div>Ping 평균</div></th>
-							<th><div>Ping 최소</div></th>
-							<th><div>Ping 최대</div></th>
+							<th><div>Meter ID</div></th>
 							<th><div>상태</div></th>
-							<th><div>DCU 통신</div></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td rowspan="2">서울</td>
-							<td rowspan="2">서울 아파트</td>
-							<td class="br" rowspan="2">NS09_010A</td>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td class="br"><span class="linkage"></span></td>
-							<td rowspan="2"><span class="linkage"></span></td>
+							<td>2019-05-01 13:56:49</td>
+							<td>서울</td>
+							<td>서울 아파트</td>
+							<td>NS09_0101A</td>
+							<td>2941092159</td>
+							<td>정전</td>
 						</tr>
 						<tr>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td><span class="linkage"></span></td>
+							<td>2019-05-01 13:56:49</td>
+							<td>서울</td>
+							<td>서울 아파트</td>
+							<td>NS09_0101A</td>
+							<td>2941092159</td>
+							<td>복전</td>
 						</tr>
 						<tr>
-							<td rowspan="2">서울</td>
-							<td rowspan="2">서울 아파트</td>
-							<td class="br" rowspan="2">NS09_010A</td>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td class="br"><span class="linkage"></span></td>
-							<td rowspan="2"><span class="linkage"></span></td>
+							<td>2019-05-01 13:56:49</td>
+							<td>서울</td>
+							<td>서울 아파트</td>
+							<td>NS09_0101A</td>
+							<td>2941092159</td>
+							<td>정전</td>
 						</tr>
 						<tr>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td><span class="linkage"></span></td>
-						</tr>
-						<tr>
-							<td rowspan="2">서울</td>
-							<td rowspan="2">서울 아파트</td>
-							<td class="br" rowspan="2">NS09_010A</td>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td class="br"><span class="linkage"></span></td>
-							<td rowspan="2"><span class="linkage"></span></td>
-						</tr>
-						<tr>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td><span class="linkage"></span></td>
+							<td>2019-05-01 13:56:49</td>
+							<td>서울</td>
+							<td>서울 아파트</td>
+							<td>NS09_0101A</td>
+							<td>2941092159</td>
+							<td>정전</td>
 						</tr>
 					</tbody>
 				</table>
