@@ -145,7 +145,28 @@
 							</li>
 							<li>
 								<div class="modal-4th-box">
-									<div class="info-box"></div>
+									<div class="info-box">
+										<ul class="top">
+											<li><span>DCU 동작상태</span><b>정상</b></li>
+											<li><span>커버 개폐상태</span><b>close</b></li>
+										</ul>
+										<div class="middle"></div>
+										<ul class="bottom">
+											<li>
+												<b-row>
+													<b-col>
+														<div>BPS UP</div>
+														<div>Bit / SEC</div>
+													</b-col>
+													<b-col>
+														<b>154</b>
+														<span>BPS</span>
+													</b-col>
+												</b-row>
+											</li>
+											<li><span>커버 개폐상태</span><b>close</b></li>
+										</ul>
+									</div>
 									<b-row class="double-input">
 										<b-col cols="6">
 											<b-form-group label="OS 버전" label-for="" c->
