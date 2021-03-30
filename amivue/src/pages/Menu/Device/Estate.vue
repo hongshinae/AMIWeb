@@ -1,77 +1,40 @@
 <template>
 	<div class="main-bg">
-		<add-estate id="addEstate"></add-estate>
+		<add-estate></add-estate>
 		<content-header :paths="paths" :pageName="pageName" />
-		<!-- <content-search :isLazySearch="true" @update:searchItem="searchEstateList">
-			<b-row>
-				<b-col xl="3" md="12" sm="12">
-					<b-row class="form-group">
-						<b-col lg="4">
-							<label class="d-block">{{ $t("estate.region") }}</label>
-						</b-col>
-						<b-col lg="8">
-							<b-select
-								v-model.number="filterRegion"
-								class="form-control"
-								value-field="regionSeq"
-								text-field="regionName"
-								:options="regionList"
-								@change="changeRegion"
-							>
-							</b-select>
-						</b-col>
-					</b-row>
-				</b-col>
-				<b-col xl="3" md="12" sm="12">
-					<b-row class="form-group">
-						<b-col lg="4">
-							<label class="d-block">{{ $t("estate.estateName") }}</label>
-						</b-col>
-						<b-col lg="8">
-							<b-form-input
-								id="filterEstate"
-								v-model="filterEstate"
-								type="search"
-								:placeholder="placeholder"
-								class="form-control"
-								list="estates"
+		<content-table :busy="isBusy" :items="estateFilterList" :fields="estateFields" :perpage="true" :filter="filterList" @update:selected="callbackEvent">
+			<template #table-header-left>
+				<b-button v-b-modal="'addEstate'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}</b-button>
+				<b-button-group>
+					<b-button variant="light btn-excel">
+						<icon-base viewBox="0 0 30 30" width="10px" height="10px" icon-name="excel" cls="bi-pencil-fill mx-auto b-icon bi">
+							<polyline clip-rule="evenodd" fill="#08743B" fill-rule="evenodd" points="30,28.652 0,28.652 0,0 30,0 30,28.652  " />
+							<polyline
+								fill="#FFFFFF"
+								points="23.211,21.771 18.186,21.771 14.756,16.922 11.154,21.771 6.11,21.771 12.371,13.895 7.313,7.007    12.413,7.007 14.781,10.752 17.302,7.007 22.488,7.007 17.189,13.895 23.211,21.771  "
 							/>
-							<b-form-datalist id="estates" autocomplete="off" :options="estates"> </b-form-datalist>
-						</b-col>
-					</b-row>
-				</b-col>
-			</b-row>
-		</content-search> -->
-		<content-table :busy="isBusy" :items="estateList" :fields="estateFields" :perpage="true">
-			<template #table-header-left> </template>
+						</icon-base>
+						{{ $t("estate.button.excelDownload") }}
+					</b-button>
+					<b-button variant="light">{{ $t("estate.button.allInterlink") }}</b-button>
+				</b-button-group>
+				<b-button variant="light">{{ $t("estate.button.save") }}</b-button>
+			</template>
 			<template v-slot:table-header-right> </template>
+			<template #table-cell-remark>
+				{{ $t("estate.details") }}
+			</template>
 		</content-table>
 	</div>
 </template>
 <script>
-import Vue from "vue";
 import Estate from "@/service/estate";
 import AddEstate from "@/components/modal/addEstate";
 import ContentHeader from "@/components/content/ContentHeader";
-// import ContentSearch from "@/components/content/ContentSearch";
 import ContentTable from "@/components/content/ContentTable";
 
-import IconSearch from "@/components/icons/IconSearch";
-import IconHomeUp from "@/components/icons/IconHomeUp";
-import IconHomeDown from "@/components/icons/IconHomeDown";
-import IconPencil from "@/components/icons/IconPencil";
-
-Vue.component(AddEstate);
-Vue.component(ContentHeader);
-// Vue.component(ContentSearch);
-Vue.component(ContentTable);
-Vue.component("icon-search", IconSearch);
-Vue.component("icon-home-up", IconHomeUp);
-Vue.component("icon-home-down", IconHomeDown);
-Vue.component("icon-pencil", IconPencil);
-
 export default {
-	components: { AddEstate, ContentHeader, /* ContentSearch ,*/ ContentTable },
+	components: { AddEstate, ContentHeader, ContentTable },
 	created() {
 		Estate.region()
 			.then(({ data }) => {
@@ -93,11 +56,37 @@ export default {
 			if (this.estates != 0) {
 				return this.$t("estate.placeholder.estate");
 			} else {
-				return this.$t("msg.filter.estate").replace(
+				return this.$t("msg.filter.estateEmpty").replace(
 					"{}",
 					this.regionList[this.filterRegion] ? this.regionList[this.filterRegion].regionName : "unknown"
 				);
 			}
+		},
+		estateFilterList: function() {
+			return this.estateList;
+		},
+		filterList: function() {
+			return [
+				{
+					label: this.$t("estate.filter.region"),
+					type: Array,
+					options: this.regionList,
+					textField: "regionName",
+					valueField: "regionSeq",
+					eventName: "region",
+					filterFieldKey: "regionName"
+				},
+				{
+					label: this.$t("estate.filter.estateName"),
+					type: String,
+					text: this.filterText,
+					options: this.estates,
+					textField: "estateName",
+					valueField: "estateSeq",
+					eventName: "estate",
+					placeholder: this.placeholder
+				}
+			];
 		}
 	},
 	data() {
@@ -109,14 +98,14 @@ export default {
 				{ name: this.$t("menu.device.title") },
 				{ name: this.$t("menu.device.estate") }
 			],
+			regionList: [],
 			estateList: [],
 			estateFields: [
 				{
 					key: "estateId",
 					label: this.$t("estate.table.estateId"),
 					sortable: true,
-					sortDirection: "asc",
-					hasFilter: true
+					sortDirection: "asc"
 				},
 				{
 					key: "estateName",
@@ -133,8 +122,7 @@ export default {
 					key: "regionName",
 					label: this.$t("estate.table.regionName"),
 					sortable: true,
-					sortDirection: "asc",
-					hasFilter: true
+					sortDirection: "asc"
 				},
 				{
 					key: "address",
@@ -153,18 +141,19 @@ export default {
 					label: this.$t("estate.table.remark")
 				}
 			],
-			estates: []
+			estates: [],
+			filterText: "",
+			filterRegion: ""
 		};
 	},
 	methods: {
-		changeRegion(value) {
-			this.searchEstates(value);
-		},
 		async searchEstates(value) {
 			const response = await Estate.estate({ regionSeq: value });
 			const estates = response.data.response;
 			const result = estates.map(estate => estate.estateName);
 			this.estates = result;
+			this.filterText = "";
+			this.filterRegion = value;
 		},
 		async searchEstateList() {
 			this.isBusy = true;
@@ -180,6 +169,13 @@ export default {
 				this.estateList = result;
 			} finally {
 				this.isBusy = false;
+			}
+		},
+		callbackEvent({ eventName, value }) {
+			if (eventName == "region") {
+				this.searchEstates(value);
+			} else if (eventName == "estate") {
+				this.filterText = value;
 			}
 		}
 	}

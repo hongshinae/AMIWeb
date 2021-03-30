@@ -10,9 +10,9 @@
 				</b-form-group>
 
 				<b-form-group label="지역 선택" label-for="input1">
-					<b-form-select v-model="selected">
-						<b-form-select-option>서울시</b-form-select-option>
-						<b-form-select-option>경기도</b-form-select-option>
+					<b-form-select>
+						<b-form-select-option value="0">서울시</b-form-select-option>
+						<b-form-select-option value="1">경기도</b-form-select-option>
 					</b-form-select>
 				</b-form-group>
 

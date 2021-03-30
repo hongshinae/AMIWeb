@@ -35,6 +35,15 @@
 			"qna": "QnA"
 		}
 	},
+	"common": {
+		"filter": {
+			"page10": "10개씩 보기",
+			"page15": "15개씩 보기",
+			"page20": "20개씩 보기",
+			"page30": "30개씩 보기",
+			"page50": "50개씩 보기"
+		}
+	},
 	"dashboard": {
 		"message": "테스트"
 	},
@@ -50,12 +59,7 @@
 		},
 		"filter": {
 			"region": "지역",
-			"estateName": "단지명",
-			"page10": "10개씩 보기",
-			"page15": "15개씩 보기",
-			"page20": "20개씩 보기",
-			"page30": "30개씩 보기",
-			"page50": "50개씩 보기"
+			"estateName": "단지명"
 		},
 		"table": {
 			"estateId": "단지ID",
@@ -78,7 +82,7 @@
 			"emptyFilteredText": "필터결과가 없습니다."
 		},
 		"filter": {
-			"estate": "'{}' 지역에 등록된 단지가 없습니다."
+			"estateEmpty": "'{}' 지역에 등록된 단지가 없습니다."
 		},
 		"session": {
 			"login": "로그인 후 다시 시도해주세요.",
