@@ -365,7 +365,7 @@
 	}
 }
 
-#meter-modal-1 {
+#detailEquipmenetMeter {
 	.svg-wrap {
 		width: 760px;
 		height: 400px;
@@ -384,25 +384,24 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			li {
-				width: 347px;
-				float: left;
-				.meter-value {
-					font-size: 45px;
-					color: #fff;
-					text-align: center;
-					margin-top: 72px;
-					margin-bottom: 74px;
-					font-family: "alarm_clock";
+			ul {
+				margin: 24px auto;
+				li {
+					float: left;
 				}
-			}
-			li:first-child {
-				width: 270px;
-				margin-left: 59px;
-				margin-right: 81px;
-			}
-			li:last-child {
-				margin-top: 35px;
+				li:first-child {
+					width: 300px;
+					margin-left: 46px;
+					margin-right: 71px;
+					.meter-value {
+						font-size: 28px;
+						margin-top: 61px;
+						text-align: center;
+						color: #fff;
+						margin-bottom: 55px;
+						font-family: "alarm_clock";
+					}
+				}
 			}
 		}
 	}

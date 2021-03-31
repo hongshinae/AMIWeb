@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="detailEquipmenetMeter" title="서울 서울아파트 101동 101호">
+	<b-modal id="detailEquipmenetMeter" title="서울 서울아파트 101동 101호" size="lg">
 		<div class="svg-wrap">
 			<div class="svg">
 				<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -88,89 +88,50 @@
 				<ul>
 					<li>
 						<div class="meter-value">451245</div>
-						<b-row class="form-group">
-							<b-col lg="5">
-								<label class="d-block">Meter ID</label>
-							</b-col>
-							<b-col lg="7">
-								<b-form-input v-model="text" placeholder="0619001031" class="form-control"></b-form-input>
-							</b-col>
-						</b-row>
-						<b-row class="form-group">
-							<b-col lg="5">
-								<label class="d-block">Modem MAC</label>
-							</b-col>
-							<b-col lg="7">
-								<b-form-input v-model="text" placeholder="00:00:AC:5E:A0;39:04" class="form-control"></b-form-input>
-							</b-col>
-						</b-row>
-						<b-row class="form-group">
-							<b-col lg="5">
-								<label class="d-block">Device Name</label>
-							</b-col>
-							<b-col lg="7">
-								<b-form-input v-model="text" placeholder="WZT 161201a 21" class="form-control"></b-form-input>
-							</b-col>
-						</b-row>
+						<b-form-group label="Meter ID" label-for="">
+							<b-form-input id="" placeholder="Meter ID"></b-form-input>
+						</b-form-group>
+						<b-form-group label="Modem MAC" label-for="">
+							<b-form-input id="" placeholder="00:00:AC:5E:A0;39:04"></b-form-input>
+						</b-form-group>
+						<b-form-group label="Device Name" label-for="">
+							<b-form-input id="" placeholder="WZT 161201a 21"></b-form-input>
+						</b-form-group>
 					</li>
 					<li>
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">DCU ID</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-input v-model="text" placeholder="NS09_0101A" class="form-control"></b-form-input>
-							</b-col>
-						</b-row>
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">검침일</label>
-							</b-col>
-							<b-col lg="8">
-								<b-row>
-									<b-col><b-form-input v-model="text" placeholder="10일" class="form-control"></b-form-input></b-col>
-									<b-col><b-button class="btn" variant="outline-primary">검침일</b-button></b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">계량기 시각</label>
-							</b-col>
-							<b-col lg="8">
-								<b-row>
-									<b-col><b-form-input v-model="text" placeholder="2019-05-09 11:11:00" class="form-control"></b-form-input></b-col>
-									<b-col><b-button class="btn" variant="outline-primary">시각설정</b-button></b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">LP 주기</label>
-							</b-col>
-							<b-col lg="8">
-								<b-row>
-									<b-col><b-form-input v-model="text" placeholder="15" class="form-control"></b-form-input></b-col>
-									<b-col><b-button class="btn" variant="outline-primary">LP 주기</b-button></b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">SNMP (R0)</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-input v-model="text" placeholder="kepsnmpro" class="form-control"></b-form-input>
-							</b-col>
-						</b-row>
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">SNMP (RW)</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-input v-model="text" placeholder="kepsnmpro" class="form-control"></b-form-input>
-							</b-col>
-						</b-row>
+						<b-form-group label="Gateway ID" label-for="">
+							<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
+						</b-form-group>
+						<b-form-group label="검침일" label-for="">
+							<b-input-group>
+								<b-form-input v-model="text" placeholder="10"></b-form-input>
+								<b-input-group-append>
+									<b-button variant="light">검침일</b-button>
+								</b-input-group-append>
+							</b-input-group>
+						</b-form-group>
+						<b-form-group label="계량기 시각" label-for="">
+							<b-input-group>
+								<b-form-input v-model="text" placeholder="2019-05-09 11:11:00" disabled></b-form-input>
+								<b-input-group-append>
+									<b-button variant="light">시각설정</b-button>
+								</b-input-group-append>
+							</b-input-group>
+						</b-form-group>
+						<b-form-group label="LP 주기" label-for="">
+							<b-input-group>
+								<b-form-input v-model="text" placeholder="15"></b-form-input>
+								<b-input-group-append>
+									<b-button variant="light">LP 주기</b-button>
+								</b-input-group-append>
+							</b-input-group>
+						</b-form-group>
+						<b-form-group label="SNMP (RO)" label-for="">
+							<b-form-input id="" placeholder="kepsnmpro" disabled></b-form-input>
+						</b-form-group>
+						<b-form-group label="SNMP (RW)" label-for="">
+							<b-form-input id="" placeholder="kepsnmpro" disabled></b-form-input>
+						</b-form-group>
 					</li>
 				</ul>
 			</div>
