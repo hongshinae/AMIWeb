@@ -194,7 +194,7 @@
 								<li>
 									<b-row>
 										<b-col>
-											<div>BPS UP</div>
+											<div>BPS DOWN</div>
 											<div class="small">Bit / SEC</div>
 										</b-col>
 										<b-col>

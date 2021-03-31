@@ -110,9 +110,18 @@
 .map-wrap {
 	min-height: 100px;
 }
-.one-row .form-group.row {
+.one-row .form-group {
 	height: 34px;
-	margin-bottom: 5px;
+	margin-bottom: 5px !important;
+	legend,
+	label {
+		width: 40%;
+		float: left;
+	}
+	> div {
+		width: 60%;
+		float: left;
+	}
 }
 /*SVGwrap*/
 .svg-Warp {
@@ -122,5 +131,35 @@
 @media (max-width: 996px) {
 	.col-sm-12:first-child .wbox {
 		margin-bottom: 30px;
+	}
+}
+
+/**/
+.dcu-list-wrap {
+	.dcu-modem {
+		.wbox {
+			height: 70px;
+			position: relative;
+			background: #293042;
+			p {
+				font-size: 20px;
+				text-align: center;
+				margin-top: 5px;
+				font-weight: 600;
+				color: #fff;
+			}
+			.stats-wrap {
+				position: absolute;
+				top: 12px;
+				right: 12px;
+				.linkage {
+					margin-bottom: 8px;
+				}
+			}
+		}
+		.dcu-name {
+			margin-top: 10px;
+			text-align: center;
+		}
 	}
 }

@@ -223,7 +223,7 @@
 				.top {
 					width: 100%;
 					height: 40px;
-					background: #287fff;
+					background: $color-bl;
 					border-bottom: 1px solid #c9c9ca;
 					color: #ffffff;
 					border-radius: 4px 4px 0 0;
@@ -238,7 +238,7 @@
 					}
 				}
 				.middle {
-					height: 150px;
+					height: 155px;
 					ul {
 						height: 100px;
 						margin: 10px auto;
@@ -275,7 +275,7 @@
 								height: 30px;
 								text-align: center;
 								b {
-									color: lightcoral;
+									color: $color-rd;
 									font-size: 20px;
 									height: 30px;
 									line-height: 30px;
@@ -284,6 +284,7 @@
 									height: 30px;
 									line-height: 30px;
 									padding: 0 0 0 10px;
+									color: $color-dasg-gy;
 								}
 							}
 						}
@@ -305,9 +306,11 @@
 						}
 						.small {
 							font-size: 10px !important;
+							color: $color-dasg-gy;
 						}
 						b {
 							font-size: 20px;
+							color: $color-bl;
 						}
 					}
 					li:first-child {
@@ -365,7 +368,8 @@
 	}
 }
 
-#detailEquipmenetMeter {
+#detailEquipmenetMeter,
+#detailEquipmenetEtc {
 	.svg-wrap {
 		width: 760px;
 		height: 400px;
@@ -391,14 +395,17 @@
 				}
 				li:first-child {
 					width: 300px;
-					margin-left: 46px;
-					margin-right: 71px;
+					margin-left: 59px;
+					margin-right: 57px;
+					.form-group > div {
+						width: 150px;
+					}
 					.meter-value {
-						font-size: 28px;
-						margin-top: 61px;
+						font-size: 45px;
+						margin-top: 49px;
 						text-align: center;
 						color: #fff;
-						margin-bottom: 55px;
+						margin-bottom: 70px;
 						font-family: "alarm_clock";
 					}
 				}
