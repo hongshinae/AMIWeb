@@ -67,5 +67,13 @@
 				</div>
 			</div>
 		</div>
+		<div class="dcu-list-wrap">
+			<b-row>
+				<b-col class="dcu-modem" xl="1" lg="2" sm="3">
+					<div class="box"></div>
+					<p class="dcu-name">DCU 1</p>
+				</b-col>
+			</b-row>
+		</div>
 	</div>
 </template>

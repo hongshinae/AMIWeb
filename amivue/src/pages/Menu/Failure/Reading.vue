@@ -127,71 +127,39 @@
 				<table class="table b-table table-striped">
 					<thead>
 						<tr>
-							<th><div>지역</div></th>
+							<th><div>SI_ID</div></th>
 							<th><div>단지명</div></th>
+							<th><div>동</div></th>
+							<th><div>호</div></th>
+							<th><div>Meter ID</div></th>
+							<th><div>최근 수집시간 OR 미 검침 시간</div></th>
 							<th><div>DCU ID</div></th>
-							<th><div>IP</div></th>
-							<th><div>Ping 평균</div></th>
-							<th><div>Ping 최소</div></th>
-							<th><div>Ping 최대</div></th>
+							<th><div>MAC</div></th>
 							<th><div>상태</div></th>
-							<th><div>DCU 통신</div></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td rowspan="2">서울</td>
-							<td rowspan="2">서울 아파트</td>
-							<td class="br" rowspan="2">NS09_010A</td>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td class="br"><span class="linkage"></span></td>
-							<td rowspan="2"><span class="linkage"></span></td>
+							<td>SE01</td>
+							<td>서울 아파트</td>
+							<td>201동</td>
+							<td>101호</td>
+							<td>061900010031</td>
+							<td>2020-12-04 11:00:00</td>
+							<td>DCU 1</td>
+							<td>00:00:00:00:00</td>
+							<td><b-badge variant="primary">정상</b-badge></td>
 						</tr>
 						<tr>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td><span class="linkage"></span></td>
-						</tr>
-						<tr>
-							<td rowspan="2">서울</td>
-							<td rowspan="2">서울 아파트</td>
-							<td class="br" rowspan="2">NS09_010A</td>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td class="br"><span class="linkage"></span></td>
-							<td rowspan="2"><span class="linkage"></span></td>
-						</tr>
-						<tr>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td><span class="linkage"></span></td>
-						</tr>
-						<tr>
-							<td rowspan="2">서울</td>
-							<td rowspan="2">서울 아파트</td>
-							<td class="br" rowspan="2">NS09_010A</td>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td class="br"><span class="linkage"></span></td>
-							<td rowspan="2"><span class="linkage"></span></td>
-						</tr>
-						<tr>
-							<td>20.101.235.254</td>
-							<td>10ms</td>
-							<td>2ms</td>
-							<td>15ms</td>
-							<td><span class="linkage"></span></td>
+							<td>SE01</td>
+							<td>서울 아파트</td>
+							<td>201동</td>
+							<td>101호</td>
+							<td>061900010031</td>
+							<td>2020-12-04 11:00:00</td>
+							<td>DCU 1</td>
+							<td>00:00:00:00:00</td>
+							<td><b-badge variant="danger">점검필요</b-badge></td>
 						</tr>
 					</tbody>
 				</table>
