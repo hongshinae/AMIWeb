@@ -105,7 +105,7 @@
 							<td>서울시</td>
 							<td>1234</td>
 							<td>5종</td>
-							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+							<td><b-button variant="outline-primary" size="sm">상세정보</b-button></td>
 						</tr>
 						<tr>
 							<td>SE01</td>
@@ -115,7 +115,7 @@
 							<td>서울시</td>
 							<td>1234</td>
 							<td>5종</td>
-							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+							<td><b-button variant="outline-primary" size="sm">상세정보</b-button></td>
 						</tr>
 						<tr>
 							<td>SE01</td>
@@ -125,7 +125,7 @@
 							<td>서울시</td>
 							<td>1234</td>
 							<td>5종</td>
-							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+							<td><b-button variant="outline-primary" size="sm">상세정보</b-button></td>
 						</tr>
 						<tr>
 							<td>SE01</td>
@@ -135,7 +135,7 @@
 							<td>서울시</td>
 							<td>1234</td>
 							<td>5종</td>
-							<td><b-button class="btn" variant="outline-primary" size="sm">상세정보</b-button></td>
+							<td><b-button variant="outline-primary" size="sm">상세정보</b-button></td>
 						</tr>
 					</tbody>
 				</table>
