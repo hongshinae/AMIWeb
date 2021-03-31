@@ -1,5 +1,6 @@
 <template>
 	<div class="main-bg content">
+		<dcu-modem-1></dcu-modem-1>
 		<div class="main-location-wrap">
 			<h1>네트워크 상태</h1>
 			<div class="main-location">
@@ -69,11 +70,48 @@
 		</div>
 		<div class="dcu-list-wrap">
 			<b-row>
-				<b-col class="dcu-modem" xl="1" lg="2" sm="3">
-					<div class="box"></div>
-					<p class="dcu-name">DCU 1</p>
+				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
+					<div class="wbox">
+						<div class="stats-wrap">
+							<span class="linkage"></span>
+							<span class="unlinkage"></span>
+						</div>
+						<p>DCU</p>
+						<b-button v-b-modal.dcuModem1 variant="light"></b-button>
+					</div>
+					<p class="dcu-name">DCU ID 1</p>
+				</b-col>
+				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
+					<div class="wbox">
+						<div class="stats-wrap">
+							<span class="linkage"></span>
+							<span class="linkage"></span>
+						</div>
+						<p>DCU</p>
+					</div>
+					<p class="dcu-name">>DCU ID 2</p>
+				</b-col>
+				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
+					<div class="wbox">
+						<div class="stats-wrap">
+							<span class="linkage"></span>
+							<span class="unlinkage"></span>
+						</div>
+						<p>DCU</p>
+					</div>
+					<p class="dcu-name">>DCU ID 2</p>
 				</b-col>
 			</b-row>
 		</div>
 	</div>
 </template>
+<script>
+import Vue from "vue";
+import DcuModem1 from "@/components/modal/dcuModem1";
+
+Vue.component(DcuModem1);
+
+export default {
+	components: { DcuModem1 }
+};
+</script>
