@@ -8,12 +8,13 @@
 			</b-navbar>
 			<b-nav class="infowrap ml-auto">
 				<b-nav-item class="error"><b-icon icon="question-diamond"></b-icon></b-nav-item>
-				<b-nav-item class="aram"><b-icon icon="bell"></b-icon></b-nav-item>
+				<b-nav-item class="aram on"><b-icon icon="bell" id="tooltip-button-interactive"></b-icon></b-nav-item>
 				<b-nav-item class="user" disabled>{{ apartName ? apartName : "아파트 없음" }}</b-nav-item>
 				<b-nav-item class="uerName"><b-icon icon="person"></b-icon>{{ userName }}</b-nav-item>
 				<b-nav-item class="logout" href="#" @click.prevent="logout()">{{ $t("header.logout") }}</b-nav-item>
 			</b-nav>
 		</b-row>
+		<b-tooltip target="tooltip-button-interactive"> 삼성 아파트에 전기검침이 있습니다 </b-tooltip>
 	</div>
 </template>
 
