@@ -74,7 +74,8 @@
 		"placeholder": {
 			"estate": "ex) 그랑시아 아파트"
 		},
-		"details": "상세정보"
+		"details": "상세정보",
+		"excelFileName": "단지 관리.xlsx"
 	},
 	"msg": {
 		"search": {
