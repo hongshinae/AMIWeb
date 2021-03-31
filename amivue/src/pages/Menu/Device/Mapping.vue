@@ -17,47 +17,27 @@
 			<b-row>
 				<b-col col lg="12" xl="4">
 					<div class="wbox m-b-20">
-						<form class="one-row">
-							<b-row class="form-group">
-								<b-col lg="4">
-									<label class="d-block">검침 타입</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-select v-model="selected" class="form-control">
-										<b-form-select-option>전기</b-form-select-option>
-										<b-form-select-option>수도</b-form-select-option>
-									</b-form-select>
-								</b-col>
-							</b-row>
-							<b-row class="form-group">
-								<b-col lg="4">
-									<label class="d-block">지역 코드</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-select v-model="selected" class="form-control">
-										<b-form-select-option>서울시</b-form-select-option>
-										<b-form-select-option>경기도</b-form-select-option>
-									</b-form-select>
-								</b-col>
-							</b-row>
-							<b-row class="form-group">
-								<b-col lg="4">
-									<label class="d-block">단지 명</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-select v-model="selected" class="form-control">
-										<b-form-select-option>서울 아파트</b-form-select-option>
-										<b-form-select-option>판교 아파트</b-form-select-option>
-									</b-form-select>
-								</b-col>
-							</b-row>
-							<b-row class="form-group">
-								<b-col lg="4"> </b-col>
-								<b-col lg="8">
-									<b-button variant="primary btn-block">검색</b-button>
-								</b-col>
-							</b-row>
-						</form>
+						<div class="one-row">
+							<b-form-group label="검침 타입" label-for="">
+								<b-form-select v-model="selected">
+									<b-form-select-option>전기</b-form-select-option>
+									<b-form-select-option>수도</b-form-select-option>
+								</b-form-select>
+							</b-form-group>
+							<b-form-group label="지역 코드" label-for="">
+								<b-form-select v-model="selected">
+									<b-form-select-option>서울시</b-form-select-option>
+									<b-form-select-option>경기도</b-form-select-option>
+								</b-form-select>
+							</b-form-group>
+							<b-form-group label="단지 명" label-for="">
+								<b-form-select v-model="selected">
+									<b-form-select-option>1단지</b-form-select-option>
+									<b-form-select-option>2단지</b-form-select-option>
+								</b-form-select>
+							</b-form-group>
+							<b-button block variant="light">검색</b-button>
+						</div>
 					</div>
 					<div class="wbox">
 						<h5 class="tltle">
@@ -65,37 +45,39 @@
 							<span>서울아파트 : <i class="p-Color">1007</i> 세대 검침일 : <i class="p-Color">1</i>일</span>
 						</h5>
 						<div class="table-wrap">
-							<table class="table b-table basic-table" id="">
-								<thead role="rowgroup" class="">
-									<tr role="row" class="">
-										<th class=""><div>번호</div></th>
-										<th class=""><div>이력날짜</div></th>
-										<th class=""><div>변경수</div></th>
-									</tr>
-								</thead>
-								<tbody role="rowgroup">
-									<tr role="row" class="">
-										<td class="">1</td>
-										<td class="">2020-12-12 17:21:28</td>
-										<td class="">2</td>
-									</tr>
-									<tr role="row" class="">
-										<td class="">1</td>
-										<td class="">2020-12-12 17:21:28</td>
-										<td class="">2</td>
-									</tr>
-									<tr role="row" class="">
-										<td class="">1</td>
-										<td class="">2020-12-12 17:21:28</td>
-										<td class="">2</td>
-									</tr>
-									<tr role="row" class="">
-										<td class="">1</td>
-										<td class="">2020-12-12 17:21:28</td>
-										<td class="">2</td>
-									</tr>
-								</tbody>
-							</table>
+							<div class="basic-table">
+								<table class="table b-table " id="">
+									<thead role="rowgroup" class="">
+										<tr role="row" class="">
+											<th class=""><div>번호</div></th>
+											<th class=""><div>이력날짜</div></th>
+											<th class=""><div>변경수</div></th>
+										</tr>
+									</thead>
+									<tbody role="rowgroup">
+										<tr role="row" class="">
+											<td class="">1</td>
+											<td class="">2020-12-12 17:21:28</td>
+											<td class="">2</td>
+										</tr>
+										<tr role="row" class="">
+											<td class="">1</td>
+											<td class="">2020-12-12 17:21:28</td>
+											<td class="">2</td>
+										</tr>
+										<tr role="row" class="">
+											<td class="">1</td>
+											<td class="">2020-12-12 17:21:28</td>
+											<td class="">2</td>
+										</tr>
+										<tr role="row" class="">
+											<td class="">1</td>
+											<td class="">2020-12-12 17:21:28</td>
+											<td class="">2</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 						<div class="pa-wrap">
 							<b-pagination v-model="currentPage" :total-rows="rows" size="sm"></b-pagination>
