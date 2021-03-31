@@ -35,6 +35,17 @@
 				background: url(../images/arrow.png) no-repeat;
 				background-position: right center;
 			}
+			[type="search"] {
+				width: 90% !important;
+				outline-offset: -2px;
+				-webkit-appearance: none;
+				height: 26px !important;
+				line-height: 26px !important;
+				padding: 0.1rem 0.2rem !important;
+				border-radius: 0 !important;
+				margin-top: 4px;
+				margin-left: 4px;
+			}
 		}
 	}
 	.btn-wrap {
