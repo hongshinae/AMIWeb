@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="addEstate" title="단지 상세 관리" ok-only no-stacking>
+	<b-modal id="addEstate" title="단지 상세 관리">
 		<div class="center">
 			<div class="modal-1st-box">
 				<b-form-group label="단지 ID" label-for="">
