@@ -1,6 +1,7 @@
 <template>
 	<div class="main-location-wrap">
 		<h1>{{ pageName }}</h1>
+		<slot />
 		<div class="main-location">
 			<b-breadcrumb>
 				<b-breadcrumb-item :to="path.link" v-for="(path, i) in paths" :key="i" :active="isActive(path)">
