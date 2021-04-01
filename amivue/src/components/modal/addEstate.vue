@@ -65,20 +65,16 @@
 					<b-row>
 						<b-col col="6">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="1006동"></b-form-input>
-								<b-input-group-append>
-									<b-button variant="light">동 선택</b-button>
-								</b-input-group-append>
+								<b-form-input v-model="text" placeholder="1006동" id="tooltip-button-building"></b-form-input>
 							</b-input-group>
 						</b-col>
+						<b-tooltip target="tooltip-button-building"> 동 관리 페이지에서 등록 가능합니다. </b-tooltip>
 						<b-col col="6">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="902호"></b-form-input>
-								<b-input-group-append>
-									<b-button variant="light">호 선택</b-button>
-								</b-input-group-append>
+								<b-form-input v-model="text" placeholder="902호" id="tooltip-button-number"></b-form-input>
 							</b-input-group>
 						</b-col>
+						<b-tooltip target="tooltip-button-number"> 매핑 관리 페이지에서 등록 가능합니다.</b-tooltip>
 					</b-row>
 				</b-form-group>
 			</div>
@@ -97,11 +93,21 @@
 				<b-form-group label="검침일">
 					<b-input-group>
 						<ul class="bg">
-							<li>전기 <i class="p-Color">15</i>일</li>
-							<li>가스 <i class="p-Color">1</i>일</li>
-							<li>수도 <i class="p-Color">4</i>일</li>
-							<li>온수 <i class="p-Color">1</i>일</li>
-							<li>난방 <i class="p-Color">5</i>일</li>
+							<li>
+								<b-form-group label="전기" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+							</li>
+							<li>
+								<b-form-group label="가스" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+							</li>
+							<li>
+								<b-form-group label="수도" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+							</li>
+							<li>
+								<b-form-group label="온수" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+							</li>
+							<li>
+								<b-form-group label="난방" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+							</li>
 						</ul>
 						<b-input-group-append>
 							<b-button variant="light">단지 검침일 일괄 변경</b-button>

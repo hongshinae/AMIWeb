@@ -148,14 +148,19 @@
 		}
 		.bg {
 			width: 526px;
-			border-radius: 4px;
-			padding: 0 10px;
 			height: 32px;
 			line-height: 32px;
-			background: #f1f1f1;
 			li {
 				float: left;
 				margin-right: 10px;
+				width: 90px;
+				legend {
+					width: 30px;
+				}
+				.form-group > div {
+					width: 60px;
+					padding: 0;
+				}
 			}
 		}
 	}
