@@ -114,6 +114,15 @@
 		float: left;
 		width: 385px;
 		height: 350px;
+		.tooltip-button-number,
+		.tooltip-button-building {
+			height: 32px;
+			line-height: 32px;
+			background: #e9ecef;
+			border: 1px solid #ced4da;
+			border-radius: 4px;
+			padding-left: 9px;
+		}
 		.form-group > div {
 			width: 265px;
 		}

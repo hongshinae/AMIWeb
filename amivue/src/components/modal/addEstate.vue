@@ -64,15 +64,11 @@
 				<b-form-group label="동 호수" label-for="">
 					<b-row>
 						<b-col col="6">
-							<b-input-group>
-								<b-form-input v-model="text" placeholder="1006동" id="tooltip-button-building"></b-form-input>
-							</b-input-group>
+							<div id="tooltip-button-building" class="tooltip-button-building">1006동</div>
 						</b-col>
 						<b-tooltip target="tooltip-button-building"> 동 관리 페이지에서 등록 가능합니다. </b-tooltip>
 						<b-col col="6">
-							<b-input-group>
-								<b-form-input v-model="text" placeholder="902호" id="tooltip-button-number"></b-form-input>
-							</b-input-group>
+							<div id="tooltip-button-number" class="tooltip-button-number">1902호</div>
 						</b-col>
 						<b-tooltip target="tooltip-button-number"> 매핑 관리 페이지에서 등록 가능합니다.</b-tooltip>
 					</b-row>
