@@ -1,39 +1,28 @@
 <template>
 	<div class="main-bg content">
-		<div class="main-location-wrap">
-			<h1>매핑 정보</h1>
-			<div class="main-location">
-				<b-breadcrumb>
-					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
-						홈
-					</b-breadcrumb-item>
-					<b-breadcrumb-item>설비</b-breadcrumb-item>
-					<b-breadcrumb-item active>매핑 정보</b-breadcrumb-item>
-				</b-breadcrumb>
-			</div>
-		</div>
+		<add-mapping></add-mapping>
+		<content-header :paths="paths" :pageName="pageName" />
 		<div class="">
 			<b-row>
 				<b-col col lg="12" xl="4">
 					<div class="wbox m-b-20">
 						<div class="one-row">
 							<b-form-group label="검침 타입" label-for="">
-								<b-form-select v-model="selected">
-									<b-form-select-option>전기</b-form-select-option>
-									<b-form-select-option>수도</b-form-select-option>
+								<b-form-select v-model="meteringType" class="form-control">
+									<b-form-select-option value="1">전기</b-form-select-option>
+									<b-form-select-option value="12">수도</b-form-select-option>
 								</b-form-select>
 							</b-form-group>
 							<b-form-group label="지역 코드" label-for="">
-								<b-form-select v-model="selected">
-									<b-form-select-option>서울시</b-form-select-option>
-									<b-form-select-option>경기도</b-form-select-option>
+								<b-form-select v-model="regionCode" class="form-control">
+									<b-form-select-option value="1">서울시</b-form-select-option>
+									<b-form-select-option value="22">경기도</b-form-select-option>
 								</b-form-select>
 							</b-form-group>
 							<b-form-group label="단지 명" label-for="">
-								<b-form-select v-model="selected">
-									<b-form-select-option>1단지</b-form-select-option>
-									<b-form-select-option>2단지</b-form-select-option>
+								<b-form-select v-model="estateCode" class="form-control">
+									<b-form-select-option value="1">서울 아파트</b-form-select-option>
+									<b-form-select-option value="12">판교 아파트</b-form-select-option>
 								</b-form-select>
 							</b-form-group>
 							<b-button block variant="light">검색</b-button>
@@ -79,324 +68,155 @@
 								</table>
 							</div>
 						</div>
-						<div class="pa-wrap">
-							<b-pagination v-model="currentPage" :total-rows="rows" size="sm"></b-pagination>
-						</div>
 					</div>
 				</b-col>
 				<b-col col lg="12" xl="8">
-					<div class="btn-filter-wrap">
-						<div class="btn-wrap">
-							<b-button v-b-modal.mapping-modal-1 variant="light"><b-icon icon="pencil-fill"></b-icon>신규 등록</b-button>
-							<b-button-group>
-								<b-button variant="light btn-excel">엑셀 다운로드</b-button>
-								<b-button variant="light">전체 연동하기</b-button>
-							</b-button-group>
-							<b-button variant="light">저장</b-button>
-						</div>
-						<div class="filter-wrap">
-							<b-form-group id="" label="동">
-								<b-form-select v-model="selected">
-									<b-form-select-option>101동</b-form-select-option>
-									<b-form-select-option>102동</b-form-select-option>
-								</b-form-select>
-							</b-form-group>
-							<b-form-group id="" label="호">
-								<b-form-select v-model="selected" class="form-control">
-									<b-form-select-option>101호</b-form-select-option>
-									<b-form-select-option>102호</b-form-select-option>
-								</b-form-select>
-							</b-form-group>
-							<b-form-group id="">
-								<b-form-select v-model="selected" class="form-control">
-									<b-form-select-option>5개씩 보기</b-form-select-option>
-									<b-form-select-option>10개씩 보기</b-form-select-option>
-									<b-form-select-option>50개씩 보기</b-form-select-option>
-								</b-form-select>
-							</b-form-group>
-						</div>
-					</div>
-					<div class="table-wrap">
-						<div class="bgtable">
-							<table class="table b-table table-striped" id="">
-								<!----><!---->
-								<thead role="rowgroup" class="">
-									<!---->
-									<tr role="row" class="">
-										<th class=""><div>동</div></th>
-										<th class=""><div>호수</div></th>
-										<th class=""><div>METER ID</div></th>
-										<th class=""><div>검침일</div></th>
-										<th class=""><div>MAC ADDR</div></th>
-										<th class=""><div>DCU ID</div></th>
-										<th class=""><div>연동확인</div></th>
-									</tr>
-								</thead>
-								<tbody role="rowgroup">
-									<!---->
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<tr role="row" class="error">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="unlinkage"></span></td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><input id="input-1" type="text" placeholder="106동" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="101호" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="29140192159" class="form-control" /></td>
-										<td class=""><input id="input-1" type="text" placeholder="1일" class="form-control" /></td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">NS09_0101A</td>
-										<td class=""><span class="linkage"></span></td>
-									</tr>
-									<!----><!---->
-								</tbody>
-								<!---->
-							</table>
-						</div>
-					</div>
+					<content-table
+						:busy="isBusy"
+						:items="mappingFilterList"
+						:fields="mappingFields"
+						:perpage="true"
+						:filter="filterList"
+						@update:selected="callbackEvent"
+						:excelFileName="$t('estate.excelFileName')"
+						:excelSheetName="$t('menu.device.estate')"
+					>
+						<template #table-header-left-head>
+							<b-button v-b-modal="'addEstate'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}</b-button>
+						</template>
+						<template v-slot:table-header-right> </template>
+						<template #table-cell-remark>
+							{{ $t("estate.details") }}
+						</template>
+					</content-table>
 				</b-col>
 			</b-row>
 		</div>
-		<b-modal id="mapping-modal-1" title="매핑정보 신규 등록">
-			<!---->
-			<div class="modal-content-wrap">
-				<form>
-					<b-row align-h="center">
-						<div class="modal-4th-box">
-							<div class="m-b-20">
-								<form class="one-row">
-									<b-row class="form-group">
-										<b-col lg="4">
-											<label class="d-block">검침 타입</label>
-										</b-col>
-										<b-col lg="8">
-											<b-form-select v-model="selected" class="form-control">
-												<b-form-select-option>전기</b-form-select-option>
-												<b-form-select-option>수도</b-form-select-option>
-											</b-form-select>
-										</b-col>
-									</b-row>
-									<b-row class="form-group">
-										<b-col lg="4">
-											<label class="d-block">지역 코드</label>
-										</b-col>
-										<b-col lg="8">
-											<b-form-select v-model="selected" class="form-control">
-												<b-form-select-option>서울시</b-form-select-option>
-												<b-form-select-option>경기도</b-form-select-option>
-											</b-form-select>
-										</b-col>
-									</b-row>
-									<b-row class="form-group">
-										<b-col lg="4">
-											<label class="d-block">단지 명</label>
-										</b-col>
-										<b-col lg="8">
-											<b-form-select v-model="selected" class="form-control">
-												<b-form-select-option>서울 아파트</b-form-select-option>
-												<b-form-select-option>판교 아파트</b-form-select-option>
-											</b-form-select>
-										</b-col>
-									</b-row>
-									<b-row class="form-group">
-										<b-col lg="4"> </b-col>
-										<b-col lg="8">
-											<b-button variant="primary btn-block">검색</b-button>
-										</b-col>
-									</b-row>
-								</form>
-							</div>
-							<div>
-								<div class="table-wrap">
-									<table class="table b-table basic-table" id="">
-										<thead role="rowgroup" class="">
-											<tr role="row" class="">
-												<th class=""><div>동</div></th>
-												<th class=""><div>호수</div></th>
-												<th class=""><div>Meter ID</div></th>
-												<th class=""><div>검침일</div></th>
-											</tr>
-										</thead>
-										<tbody role="rowgroup">
-											<tr role="row" class="">
-												<td class="">
-													<b-form-input v-model="text" placeholder="1006동" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="2020-12-12 17:21:28" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="1542541" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="15일" class="form-control"></b-form-input>
-												</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">
-													<b-form-input v-model="text" placeholder="1006동" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="2020-12-12 17:21:28" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="1542541" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="15일" class="form-control"></b-form-input>
-												</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">
-													<b-form-input v-model="text" placeholder="1006동" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="2020-12-12 17:21:28" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="1542541" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="15일" class="form-control"></b-form-input>
-												</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">
-													<b-form-input v-model="text" placeholder="1006동" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="2020-12-12 17:21:28" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="1542541" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="15일" class="form-control"></b-form-input>
-												</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">
-													<b-form-input v-model="text" placeholder="1006동" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="2020-12-12 17:21:28" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="1542541" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="15일" class="form-control"></b-form-input>
-												</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">
-													<b-form-input v-model="text" placeholder="1006동" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="2020-12-12 17:21:28" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="1542541" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="15일" class="form-control"></b-form-input>
-												</td>
-											</tr>
-											<tr role="row" class="">
-												<td class="">
-													<b-form-input v-model="text" placeholder="1006동" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="2020-12-12 17:21:28" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="1542541" class="form-control"></b-form-input>
-												</td>
-												<td class="">
-													<b-form-input v-model="text" placeholder="15일" class="form-control"></b-form-input>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<div class="pa-wrap">
-									<b-pagination v-model="currentPage" :total-rows="rows" size="sm"></b-pagination>
-								</div>
-							</div>
-						</div>
-					</b-row>
-				</form>
-			</div>
-			<!---->
-		</b-modal>
 	</div>
 </template>
-<script></script>
+<script>
+import Mapping from "@/service/mapping";
+import AddMapping from "@/components/modal/addMapping";
+import ContentHeader from "@/components/content/ContentHeader";
+import ContentTable from "@/components/content/ContentTable";
+
+export default {
+	components: { AddMapping, ContentHeader, ContentTable },
+	created() {
+		Mapping.region()
+			.then(({ data }) => {
+				this.regionList = data.response;
+
+				// if (this.regionList.length > 0) {
+				// 	this.searchEstates(this.regionList[0].regionSeq);
+				// }
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	},
+	mounted() {},
+	computed: {
+		mappingFilterList() {
+			return [
+				{
+					dcuId: "test",
+					meterId: "test2",
+					dtime: "test3",
+					demand: "test4",
+					etime: "test5",
+					acc: "test6",
+					demanda: "test7",
+					etimea: "test8",
+					acca: "test10"
+				}
+			];
+		},
+		filterList: function() {
+			return [
+				{
+					label: this.$t("estate.filter.region"),
+					type: Array,
+					options: this.regionList,
+					textField: "regionName",
+					valueField: "regionSeq",
+					eventName: "region",
+					filterFieldKey: "regionName"
+				},
+				{
+					label: this.$t("estate.filter.estateName"),
+					type: String,
+					text: this.filterText,
+					options: this.estates,
+					textField: "estateName",
+					valueField: "estateSeq",
+					eventName: "estate",
+					placeholder: this.placeholder
+				}
+			];
+		}
+	},
+	data() {
+		return {
+			isBusy: false,
+			pageName: this.$t("menu.device.mapping"),
+			paths: [
+				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
+				{ name: this.$t("menu.device.title") },
+				{ name: this.$t("menu.device.mapping") }
+			],
+			meteringType: "1",
+			regionCode: "1",
+			estateCode: "1",
+			mappingFields: [
+				{
+					key: "dcuId",
+					label: this.$t("lookup.table.dcuId")
+				},
+				{
+					key: "meterId",
+					label: this.$t("lookup.table.meterId")
+				},
+				{
+					key: "dtime",
+					label: this.$t("lookup.table.dtime")
+				},
+				{
+					key: "demand",
+					label: this.$t("lookup.table.demand")
+				},
+				{
+					key: "etime",
+					label: this.$t("lookup.table.etime")
+				},
+				{
+					key: "acc",
+					label: this.$t("lookup.table.acc")
+				},
+				{
+					key: "demanda",
+					label: this.$t("lookup.table.demanda")
+				},
+				{
+					key: "etimea",
+					label: this.$t("lookup.table.etimea")
+				},
+				{
+					key: "acca",
+					label: this.$t("lookup.table.acca")
+				}
+			]
+		};
+	},
+	methods: {
+		callbackEvent({ eventName, value }) {
+			if (eventName == "region") {
+				this.searchEstates(value);
+			} else if (eventName == "estate") {
+				this.filterText = value;
+			}
+		}
+	}
+};
+</script>
 <style lang="scss"></style>
