@@ -38,7 +38,17 @@ body {
 		line-height: 0;
 	}
 }
-
+.clear:before,
+.clear:after {
+	content: "";
+	display: table;
+}
+.clear:after {
+	clear: both;
+}
+.clear {
+	*zoom: 1;
+}
 /*color*/
 .btn {
 	font-size: 12px !important;

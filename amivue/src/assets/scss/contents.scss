@@ -175,5 +175,42 @@
 		line-height: 70px;
 		text-align: left;
 		border-bottom: 1px solid #d6d6d6;
+		ul {
+			.icon-bg {
+				width: 50px;
+				height: 44px;
+				float: left;
+				margin: 10px;
+				span {
+					background: #ecf2f6;
+					color: #287fff;
+					border-radius: 20px;
+					font-size: 23px;
+					line-height: 24px;
+					text-align: center;
+					width: 40px;
+					height: 40px;
+					padding-top: 7px;
+					display: inline-block;
+				}
+			}
+			.title {
+				width: fit-content;
+				height: 100px;
+				float: left;
+				font-size: 18px;
+				font-weight: 600;
+				height: 44px;
+				margin: 10px;
+			}
+		}
+	}
+	.collapse {
+		padding: 0.375rem 0.75rem;
+		.icon-bg {
+			width: 50px;
+			height: 60px;
+			float: left;
+		}
 	}
 }
