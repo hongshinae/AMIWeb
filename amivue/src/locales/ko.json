@@ -77,6 +77,30 @@
 		"details": "상세정보",
 		"excelFileName": "단지 관리.xlsx"
 	},
+	"mapping": {
+		"table": {
+			"building": "동",
+			"house": "호수",
+			"meterId": "계량기 ID",
+			"meteringDate": "검침일",
+			"macAddr": "MAC ADDR",
+			"dcuId": "DCU ID",
+			"check": "연동 확인"
+		}
+	},
+	"lookup": {
+		"table": {
+			"dcuId": "DCU ID",
+			"meterId": "METER ID",
+			"dtime": "계시시각",
+			"demand": "유효수요",
+			"etime": "발생시각",
+			"acc": "누적유효",
+			"demanda": "유효수요(A)",
+			"etimea": "발생시각",
+			"acca": "누적유효(A)"
+		}
+	},
 	"msg": {
 		"search": {
 			"emptyText": "검색결과가 없습니다.",
