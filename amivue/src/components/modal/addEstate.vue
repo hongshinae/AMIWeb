@@ -1,112 +1,125 @@
 <template>
-	<b-modal id="addEstate" title="단지 상세 관리">
+	<b-modal id="addEstate" :title="$t('estate.modal.add')" @show="showAddEstate" @hidden="hiddenAddEstate" @ok="submitAddEstate">
+		<template #modal-header="{ close }">
+			여긴 제목
+			<b-button size="sm" variant="outline-danger" @click="close()">
+				Close Modal
+			</b-button>
+		</template>
+		<template #modal-footer="{ ok, cancel }">
+			<b-button size="sm" variant="success" @click="ok()">
+				OK
+			</b-button>
+			<b-button size="sm" variant="danger" @click="cancel()">
+				Cancel
+			</b-button>
+			<!-- Button with custom close trigger value -->
+		</template>
 		<div class="center">
 			<div class="modal-1st-box">
-				<b-form-group label="단지 ID" label-for="">
-					<b-form-input id="" placeholder="단지 ID"></b-form-input>
+				<b-form-group :label="$t('estate.modal.estateId')">
+					<b-form-input :placeholder="$t('estate.modal.estateId')" required />
 				</b-form-group>
-				<b-form-group label="세대 수" label-for="">
-					<b-form-input id="" placeholder="세대 수"></b-form-input>
+				<b-form-group :label="$t('estate.modal.houseCount')">
+					<b-form-input :placeholder="$t('estate.modal.houseCount')" required />
 				</b-form-group>
-				<b-form-group label="지역 선택" label-for="input1">
-					<b-form-select>
-						<b-form-select-option>서울시</b-form-select-option>
-						<b-form-select-option>경기도</b-form-select-option>
-					</b-form-select>
+				<b-form-group :label="$t('estate.modal.regionSelect')">
+					<b-form-select :value="selectedRegion" :options="regionList" text-field="regionName" value-field="regionSeq" required />
 				</b-form-group>
-				<b-form-group label="담당자1" label-for="">
-					<b-form-input id="" placeholder="담당자1"></b-form-input>
+				<b-form-group :label="$t('estate.modal.person1')">
+					<b-form-input :placeholder="$t('estate.modal.person1')" />
 				</b-form-group>
-				<b-form-group label="담당자2" label-for="">
-					<b-form-input id="" placeholder="담당자2"></b-form-input>
+				<b-form-group :label="$t('estate.modal.person2')">
+					<b-form-input :placeholder="$t('estate.modal.person2')" />
 				</b-form-group>
-				<b-form-group label="설치 DCU 수" label-for="">
-					<b-form-input id="" placeholder="설치 DCU 수"></b-form-input>
+				<b-form-group :label="$t('estate.modal.dcuCount')">
+					<b-form-input :placeholder="$t('estate.modal.dcuCount')" />
 				</b-form-group>
-				<b-form-group label="설치 Meter 수" label-for="">
-					<b-form-input id="" placeholder="설치 Meter 수"></b-form-input>
+				<b-form-group :label="$t('estate.modal.meterCount')">
+					<b-form-input :placeholder="$t('estate.modal.meterCount')" />
 				</b-form-group>
-				<b-form-group label="수도 Meter 수" label-for="">
-					<b-form-input id="" placeholder="수도 Meter 수"></b-form-input>
-				</b-form-group>
-				<b-form-group label="기타" label-for="">
-					<b-form-input id="" placeholder="기타"></b-form-input>
+				<b-form-group :label="$t('estate.modal.waterCount')">
+					<b-form-input :placeholder="$t('estate.modal.waterCount')" />
 				</b-form-group>
 			</div>
 			<div class="modal-2nd-box">
-				<b-form-group label="단지 명" label-for="">
-					<b-form-select>
-						<b-form-select-option>1단지</b-form-select-option>
-						<b-form-select-option>2단지</b-form-select-option>
-					</b-form-select>
+				<b-form-group :label="$t('estate.modal.estateName')">
+					<b-form-input :placeholder="$t('estate.modal.estateName')" required />
 				</b-form-group>
-				<b-form-group label="주소" label-for="">
-					<b-form-input id="" placeholder="경기도 성남시 분당구 삼평동 1006동 210호"></b-form-input>
+				<b-form-group :label="$t('estate.modal.address')">
+					<b-form-input :placeholder="$t('estate.modal.addressEx')" required />
 				</b-form-group>
-				<b-form-group label="연락처" label-for="">
-					<b-form-input id="" placeholder="010.1211.1111"></b-form-input>
+				<b-form-group :label="$t('estate.modal.tel')">
+					<b-form-input :placeholder="$t('estate.modal.telEx')" />
 				</b-form-group>
-				<b-form-group label="담당자1 연락처" label-for="">
-					<b-form-input id="" placeholder="담당자1 연락처"></b-form-input>
+				<b-form-group :label="$t('estate.modal.person1Tel')">
+					<b-form-input :placeholder="$t('estate.modal.person1Tel')" />
 				</b-form-group>
-				<b-form-group label="담당자2 연락처" label-for="">
-					<b-form-input id="" placeholder="담당자2 연락처"></b-form-input>
+				<b-form-group :label="$t('estate.modal.person2Tel')">
+					<b-form-input :placeholder="$t('estate.modal.person2Tel')" />
 				</b-form-group>
-				<b-form-group label="설치 모뎀 수" label-for="">
-					<b-form-input id="" placeholder="설치 모뎀 수"></b-form-input>
+				<b-form-group :label="$t('estate.modal.modemCount')">
+					<b-form-input :placeholder="$t('estate.modal.modemCount')" />
 				</b-form-group>
-				<b-form-group label="가스 Meter 수" label-for="">
-					<b-form-input id="" placeholder="가스 Meter 수"></b-form-input>
+				<b-form-group :label="$t('estate.modal.gasCount')">
+					<b-form-input :placeholder="$t('estate.modal.buildingHouseCount')" />
 				</b-form-group>
-				<b-form-group label="기타" label-for="">
-					<b-form-input id="" placeholder="기타"></b-form-input>
-				</b-form-group>
-				<b-form-group label="동 호수" label-for="">
+				<b-form-group :label="$t('estate.modal.buildingHouseCount')">
 					<b-row>
-						<b-col col="6">
-							<div id="tooltip-button-building" class="tooltip-button-building">1006동</div>
+						<b-col cols="6">
+							<div id="tooltip-button-building" class="tooltip-button-building">0</div>
 						</b-col>
-						<b-tooltip target="tooltip-button-building"> 동 관리 페이지에서 등록 가능합니다. </b-tooltip>
-						<b-col col="6">
-							<div id="tooltip-button-number" class="tooltip-button-number">1902호</div>
+						<b-tooltip target="tooltip-button-building"> {{ $t("estate.modal.buildingTooltip") }} </b-tooltip>
+						<b-col cols="6">
+							<div id="tooltip-button-number" class="tooltip-button-number">0</div>
 						</b-col>
-						<b-tooltip target="tooltip-button-number"> 매핑 관리 페이지에서 등록 가능합니다.</b-tooltip>
+						<b-tooltip target="tooltip-button-number"> {{ $t("estate.modal.houseTooltip") }} </b-tooltip>
 					</b-row>
 				</b-form-group>
 			</div>
 			<div class="modal-3rd-box">
-				<b-form-group label="검침 타입">
+				<b-form-group :label="$t('estate.modal.meteringType')">
 					<b-form-checkbox-group>
-						<b-form-checkbox value="전기">전기</b-form-checkbox>
-						<b-form-checkbox value="가스">가스</b-form-checkbox>
-						<b-form-checkbox value="수도">수도</b-form-checkbox>
-						<b-form-checkbox value="온수">온수</b-form-checkbox>
-						<b-form-checkbox value="난방">난방</b-form-checkbox>
+						<b-form-checkbox value="1">{{ $t("estate.modal.powerType") }} </b-form-checkbox>
+						<b-form-checkbox value="2">{{ $t("estate.modal.gasType") }} </b-form-checkbox>
+						<b-form-checkbox value="3">{{ $t("estate.modal.waterType") }} </b-form-checkbox>
+						<b-form-checkbox value="4">{{ $t("estate.modal.hotType") }} </b-form-checkbox>
+						<b-form-checkbox value="5">{{ $t("estate.modal.heatingType") }} </b-form-checkbox>
 					</b-form-checkbox-group>
 				</b-form-group>
 			</div>
 			<div class="modal-4th-box">
-				<b-form-group label="검침일">
+				<b-form-group :label="$t('estate.modal.metering')">
 					<b-input-group>
 						<ul class="bg">
 							<li>
-								<b-form-group label="전기" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+								<b-form-group :label="$t('estate.modal.powerDay')">
+									<b-form-input :placeholder="$t('estate.modal.meteringDefault')" />
+								</b-form-group>
 							</li>
 							<li>
-								<b-form-group label="가스" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+								<b-form-group :label="$t('estate.modal.gasDay')">
+									<b-form-input :placeholder="$t('estate.modal.meteringDefault')" />
+								</b-form-group>
 							</li>
 							<li>
-								<b-form-group label="수도" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+								<b-form-group :label="$t('estate.modal.waterDay')">
+									<b-form-input :placeholder="$t('estate.modal.meteringDefault')" />
+								</b-form-group>
 							</li>
 							<li>
-								<b-form-group label="온수" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+								<b-form-group :label="$t('estate.modal.hotDay')">
+									<b-form-input :placeholder="$t('estate.modal.meteringDefault')" />
+								</b-form-group>
 							</li>
 							<li>
-								<b-form-group label="난방" label-for=""> <b-form-input id="" placeholder="1일"> </b-form-input> </b-form-group>
+								<b-form-group :label="$t('estate.modal.heatingDay')">
+									<b-form-input :placeholder="$t('estate.modal.meteringDefault')" />
+								</b-form-group>
 							</li>
 						</ul>
 						<b-input-group-append>
-							<b-button variant="light">단지 검침일 일괄 변경</b-button>
+							<b-button variant="light">{{ $t("estate.modal.changeDay") }}</b-button>
 						</b-input-group-append>
 					</b-input-group>
 				</b-form-group>
@@ -117,7 +130,27 @@
 </template>
 
 <script>
-export default {};
+export default {
+	props: { regionList: { type: Array } },
+	mounted() {},
+	data() {
+		return {
+			estateList: [],
+			selectedRegion: "1"
+		};
+	},
+	methods: {
+		showAddEstate() {
+			console.log("show");
+		},
+		hiddenAddEstate() {
+			console.log("hidden");
+		},
+		submitAddEstate() {
+			console.log("submit button");
+		}
+	}
+};
 </script>
 
 <style></style>
