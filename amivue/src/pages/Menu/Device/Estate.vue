@@ -13,7 +13,9 @@
 			:excelSheetName="$t('menu.device.estate')"
 		>
 			<template #table-header-left-head>
-				<b-button v-b-modal="'addEstate'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}</b-button>
+				<b-button v-b-modal="'addEstate'" variant="light" :disabled="regionList.length == 0">
+					<b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}
+				</b-button>
 			</template>
 			<template v-slot:table-header-right> </template>
 			<template #table-cell-remark>

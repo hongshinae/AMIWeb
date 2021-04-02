@@ -84,13 +84,13 @@
 			"houseCount": "세대 수",
 			"address": "주소",
 			"addressEx": "경기도 성남시 분당구 삼평동 1006동 210호",
-			"regionSelect": "지역 선택",
-			"tel": "연락처",
-			"telEx": "010.1234.5678",
-			"person1": "담당자1",
-			"person1Tel": "담당자1 연락처",
-			"person2": "담당자2",
-			"person2Tel": "담당자2 연락처",
+			"regionSeq": "지역 선택",
+			"telEstate": "연락처",
+			"telEstateEx": "010.1234.5678",
+			"manager1": "담당자1",
+			"manager1Tel": "담당자1 연락처",
+			"manager2": "담당자2",
+			"manager2Tel": "담당자2 연락처",
 			"dcuCount": "설치 DCU 수",
 			"modemCount": "설치 모뎀 수",
 			"meterCount": "설치 Meter 수",
@@ -112,7 +112,14 @@
 			"hotDay": "온수",
 			"heatingDay": "난방",
 			"changeDay": "단지 검침일 일괄 변경",
-			"meteringDefault": "1일"
+			"meteringDefault": "1일",
+			"validation": {
+				"estateId": "'단지 ID'는 필수입력 입니다.",
+				"houseCount": "'세대 수'는 필수입력 입니다.",
+				"regionSeq": "'지역'은 필수입력 입니다.",
+				"estateName": "'단지명'은 필수입력 입니다.",
+				"address": "'주소'는 필수입력 입니다."
+			}
 		}
 	},
 	"mapping": {
