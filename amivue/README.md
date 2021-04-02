@@ -114,5 +114,104 @@
   커밋할때는 반드시 이슈번호가(#xx) 존재해야하며 이슈번호가 최상단에 반드시 먼저 기록한뒤에 작성하도록 한다. 내용은 가급적 상세하게 작성되어야 하며 오류가 없는 코드만 커밋되어야만 한다. 그러나, 부득이하게 오류상태로 선커밋을 진행해야하는 경우 내용에다가 꼭 기재하여 개발자들간의 혼선을 빚지 않도록 유도해줘야한다. (결론은 선커밋이 승자다.)
   ![dev2](https://user-images.githubusercontent.com/20449373/108690765-12470b00-753e-11eb-808b-9d251d7f014e.gif)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 4. 개발정리
+### 이벤트 수식어 6가지 (div를 겹쳐놓고 이벤트 테스트 할때 가장 명확)
+- capture : 겹친div중 순서를 무시하고 이벤트를 최우선순위로 발동 capture가 2개 이상 있을 경우 원래 순서대로 서순정리됨
+``` html
+<div id="app">
+    <div id="div1" @click.capture="func1" style="background: red; padding: 10px;">
+        div1
+        <div id="div2" @click="func2" style="background: green; padding: 10px;">
+            div2
+            <div id="div3" @click="func3" style="background: blue; padding: 10px;">
+                div3
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            func1: function () {
+                alert('func1');
+            },
+            func2: function () {
+                alert('func2');
+            },
+            func3: function () {
+                alert('func3');
+            }
+        }
+    });
+</script>
+result : func1 -> func3 -> func2
+```
+
+- stop : 이벤트의 흐름이 있으면 그 구간에서 이벤트가 멈추게 된다.
+``` html
+<div id="app">
+    <div id="div1" @click="func1" style="background: red; padding: 10px;">
+        div1
+        <div id="div2" @click.stop.prevent="func2" style="background: green; padding: 10px;">
+            div2
+            <div id="div3" @click="func3" style="background: blue; padding: 10px;">
+                div3
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            func1: function () {
+                alert('func1');
+            },
+            func2: function () {
+                alert('func2');
+            },
+            func3: function () {
+                alert('func3');
+            }
+        }
+    });
+</script>
+result : func3 -> func2
+```
+
+- self : 오로지 자기 자신만 호출할 수있다.
+``` html
+<div id="app">
+    <div id="div1" @click="func1" style="background: red; padding: 10px;">
+        div1
+        <div id="div2" @click.self="func2" style="background: green; padding: 10px;">
+            div2
+            <div id="div3" @click="func3" style="background: blue; padding: 10px;">
+                div3
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            func1: function () {
+                alert('func1');
+            },
+            func2: function () {
+                alert('func2');
+            },
+            func3: function () {
+                alert('func3');
+            }
+        }
+    });
+</script>
+div2 클릭시 result : func2 -> func1
+div3 클릭시 result : func3 -> func1
+```
+
+- prevent : 해당 이벤트를 막는다.
+- once : 해당 이벤트를 한번만 발동시킨다.
