@@ -4,12 +4,7 @@
 			<ul>
 				<li><h4>단지 등록</h4></li>
 				<li>
-					<b-form-group label="" label-for="">
-						<b-form-input id="" placeholder="INPUT TEST"></b-form-input>
-					</b-form-group>
-				</li>
-				<li>
-					<b-button size="sm" variant="outline-danger" @click="close()">
+					<b-button size="sm" variant="outline-light" @click="close()">
 						X
 					</b-button>
 				</li>
@@ -19,11 +14,7 @@
 			<div class="btn-wrap">
 				<ul>
 					<li>
-						<b-button variant="light">SNMP read/write</b-button>
-						<b-button variant="light">trap</b-button>
-						<b-button variant="light">상태리스트</b-button>
-						<b-button variant="light">SNMP / FEP 통신 동작 확인</b-button>
-						<b-button variant="light">시간 동기화</b-button>
+						<!--modal footer left button wrap-->
 					</li>
 					<li>
 						<b-button variant="light" @click="ok()">정보 수정</b-button>

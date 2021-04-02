@@ -11,16 +11,36 @@
 			li {
 				float: left;
 				h4 {
-					font-size: 14px;
+					font-size: 16px;
 					height: 32px;
 					line-height: 32px;
 					width: fit-content;
 					margin-right: 10px;
+					font-weight: 600;
+					margin-left: 10px;
 				}
 				.form-group {
 					height: 32px;
 					input[type="text"] {
-						color: #fff;
+						order: 1px solid #2370e0;
+						background: #4289f1 !important;
+						color: #ffffff !important;
+						z-index: 1000;
+					}
+					input {
+						&::placeholder {
+							color: #ffffff;
+							opacity: 1; /* Firefox */
+						}
+						&:-ms-input-placeholder {
+							color: #ffffff; /* Internet Explorer 10-11 */
+						}
+						&::-ms-input-placeholder {
+							color: #ffffff !important; /* Microsoft Edge */
+						}
+						&::-webkit-input-placeholder {
+							color: #ffffff; /* Safari, Chrome */
+						}
 					}
 				}
 			}
@@ -106,11 +126,7 @@
 		height: 34px;
 		float: left;
 	}
-	/*
-	.input-wrap label,
-	.input-wrap button {
-		margin-right: 10px;
-	}*/
+
 	.modal-3rd-box .input-wrap {
 		width: 500px;
 	}
@@ -126,6 +142,11 @@
 		button {
 			width: 100%;
 		}
+	}
+	.btn-modal-header {
+		background: #ffc107;
+		color: #fff;
+		margin-right: 6px;
 	}
 }
 
