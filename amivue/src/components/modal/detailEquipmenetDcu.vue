@@ -1,5 +1,44 @@
 <template>
-	<b-modal id="detailEquipmenetDcu" size="xl" title="서울 아파트">
+	<b-modal id="detailEquipmenetDcu" size="xl">
+		<template #modal-header="{ close }">
+			<ul>
+				<li><h4>서울 서울 아파트 101동</h4></li>
+				<li>
+					<b-form-group label="DCU ID" label-for="">
+						<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
+					</b-form-group>
+				</li>
+				<li>
+					<b-button size="sm" variant="modal-header">
+						SNMP READ
+					</b-button>
+					<b-button size="sm" variant="outline-light" @click="close()">
+						X
+					</b-button>
+				</li>
+			</ul>
+		</template>
+		<template #modal-footer="{ ok, cancel }">
+			<div class="btn-wrap">
+				<ul>
+					<li>
+						<b-button variant="light">정보 설정</b-button>
+						<b-button variant="light">시간 설정</b-button>
+						<b-button variant="light">시간 오차 한계</b-button>
+						<b-button variant="light">시간 확인 주기</b-button>
+						<b-button variant="light">보안 항목</b-button>
+						<b-button variant="light">DCU 삭제</b-button>
+						<b-button variant="light">DCU Reboot</b-button>
+						<b-button variant="light">모뎀 재스킨</b-button>
+					</li>
+					<li>
+						<b-button variant="light" @click="ok()">정보 수정</b-button>
+						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
+					</li>
+				</ul>
+			</div>
+			<!-- Button with custom close trigger value -->
+		</template>
 		<div class="center">
 			<ul class="left">
 				<li>
