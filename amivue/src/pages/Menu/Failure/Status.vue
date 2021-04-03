@@ -6,7 +6,7 @@
 			<div class="main-location">
 				<b-breadcrumb>
 					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
+						<b-icon icon="house"></b-icon>
 						홈
 					</b-breadcrumb-item>
 					<b-breadcrumb-item>장애</b-breadcrumb-item>
@@ -14,7 +14,7 @@
 				</b-breadcrumb>
 			</div>
 		</div>
-		<div class="search-wrap1">
+		<div class="search-wrap">
 			<div class="wbox">
 				<div class="search-img">
 					<b-icon icon="search" variant="primary"></b-icon>
@@ -29,7 +29,7 @@
 										<label class="d-block">지역 이름</label>
 									</b-col>
 									<b-col lg="8">
-										<b-form-select v-model="selected" class="form-control">
+										<b-form-select v-model="selected">
 											<b-form-select-option>서울시</b-form-select-option>
 											<b-form-select-option>경기도</b-form-select-option>
 										</b-form-select>
@@ -42,7 +42,7 @@
 										<label class="d-block">단지 명</label>
 									</b-col>
 									<b-col lg="8">
-										<b-form-select v-model="selected" class="form-control">
+										<b-form-select v-model="selected">
 											<b-form-select-option>1단지</b-form-select-option>
 											<b-form-select-option>2단지</b-form-select-option>
 										</b-form-select>
@@ -55,7 +55,7 @@
 										<label class="d-block">DCU ID</label>
 									</b-col>
 									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="DCU ID" class="form-control"></b-form-input>
+										<b-form-input v-model="text" placeholder="DCU ID"></b-form-input>
 									</b-col>
 								</b-row>
 							</b-col>
