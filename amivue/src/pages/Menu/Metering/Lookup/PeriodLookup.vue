@@ -9,7 +9,7 @@
 								<label class="d-block">지역 이름</label>
 							</b-col>
 							<b-col lg="8">
-								<b-form-select v-model="selected" class="form-control">
+								<b-form-select v-model="selected">
 									<b-form-select-option>서울시</b-form-select-option>
 									<b-form-select-option>경기도</b-form-select-option>
 								</b-form-select>
@@ -22,7 +22,7 @@
 								<label class="d-block">단지 명</label>
 							</b-col>
 							<b-col lg="8">
-								<b-form-select v-model="selected" class="form-control">
+								<b-form-select v-model="selected">
 									<b-form-select-option>1단지</b-form-select-option>
 									<b-form-select-option>2단지</b-form-select-option>
 								</b-form-select>
@@ -35,7 +35,7 @@
 								<label class="d-block">동 명</label>
 							</b-col>
 							<b-col lg="8">
-								<b-form-select v-model="selected" class="form-control">
+								<b-form-select v-model="selected">
 									<b-form-select-option>1단지</b-form-select-option>
 									<b-form-select-option>2단지</b-form-select-option>
 								</b-form-select>
@@ -50,7 +50,7 @@
 								<label class="d-block">DCU ID</label>
 							</b-col>
 							<b-col lg="8">
-								<b-form-input v-model="text" placeholder="DCU ID" class="form-control"></b-form-input>
+								<b-form-input v-model="text" placeholder="DCU ID"></b-form-input>
 							</b-col>
 						</b-row>
 					</b-col>
@@ -60,7 +60,7 @@
 								<label class="d-block">METER ID</label>
 							</b-col>
 							<b-col lg="8">
-								<b-form-select v-model="selected" class="form-control">
+								<b-form-select v-model="selected">
 									<b-form-select-option>2919219225</b-form-select-option>
 									<b-form-select-option>2919219225</b-form-select-option>
 								</b-form-select>
@@ -75,7 +75,7 @@
 								<label class="d-block">조회 날짜</label>
 							</b-col>
 							<b-col lg="8">
-								<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+								<b-form-datepicker placeholder=""></b-form-datepicker>
 							</b-col>
 						</b-row>
 					</b-col>
@@ -85,13 +85,13 @@
 								<label class="d-block">기간</label>
 							</b-col>
 							<b-col lg="4">
-								<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+								<b-form-datepicker placeholder=""></b-form-datepicker>
 							</b-col>
 							<b-col lg="1">
 								~
 							</b-col>
 							<b-col lg="4">
-								<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+								<b-form-datepicker placeholder=""></b-form-datepicker>
 							</b-col>
 						</b-row>
 					</b-col>
