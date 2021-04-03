@@ -8,19 +8,19 @@
 					<div class="wbox m-b-20">
 						<div class="one-row">
 							<b-form-group label="검침 타입" label-for="">
-								<b-form-select v-model="meteringType" class="form-control">
+								<b-form-select v-model="meteringType">
 									<b-form-select-option value="1">전기</b-form-select-option>
 									<b-form-select-option value="12">수도</b-form-select-option>
 								</b-form-select>
 							</b-form-group>
 							<b-form-group label="지역 코드" label-for="">
-								<b-form-select v-model="regionCode" class="form-control">
+								<b-form-select v-model="regionCode">
 									<b-form-select-option value="1">서울시</b-form-select-option>
 									<b-form-select-option value="22">경기도</b-form-select-option>
 								</b-form-select>
 							</b-form-group>
 							<b-form-group label="단지 명" label-for="">
-								<b-form-select v-model="estateCode" class="form-control">
+								<b-form-select v-model="estateCode">
 									<b-form-select-option value="1">서울 아파트</b-form-select-option>
 									<b-form-select-option value="12">판교 아파트</b-form-select-option>
 								</b-form-select>
@@ -82,7 +82,7 @@
 						:excelSheetName="$t('menu.device.estate')"
 					>
 						<template #table-header-left-head>
-							<b-button v-b-modal="'addEstate'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}</b-button>
+							<b-button v-b-modal="'addMapping'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}</b-button>
 						</template>
 						<template v-slot:table-header-right> </template>
 						<template #table-cell-remark>
