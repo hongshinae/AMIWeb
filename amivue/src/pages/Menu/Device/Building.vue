@@ -2,7 +2,7 @@
 	<div class="main-bg content">
 		<add-building></add-building>
 		<content-header :pageName="pageName" :paths="paths" />
-		<div class="search-wrap1">
+		<div class="search-wrap">
 			<div class="wbox">
 				<div class="search-img">
 					<b-icon icon="search" variant="primary"></b-icon>
@@ -17,7 +17,7 @@
 										<label class="d-block">지역 이름</label>
 									</b-col>
 									<b-col lg="8">
-										<b-form-select v-model="selected" class="form-control">
+										<b-form-select v-model="selected">
 											<b-form-select-option>서울시</b-form-select-option>
 											<b-form-select-option>경기도</b-form-select-option>
 										</b-form-select>
@@ -30,7 +30,7 @@
 										<label class="d-block">단지 명</label>
 									</b-col>
 									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="그랑시아 아파트" class="form-control"></b-form-input>
+										<b-form-input v-model="text" placeholder="그랑시아 아파트"></b-form-input>
 									</b-col>
 								</b-row>
 							</b-col>
@@ -47,7 +47,7 @@
 			<div class="btn-wrap">
 				<b-button v-b-modal.addBuilding variant="light"><b-icon icon="pencil-fill"></b-icon>신규 동 등록</b-button>
 				<b-button-group>
-					<b-button variant="light btn-excel">엑셀 다운로드</b-button>
+					<b-button variant="light btn-excel"><img src="@/assets/svg/excel.svg" />엑셀 다운로드</b-button>
 				</b-button-group>
 			</div>
 			<div class="filter-wrap">
@@ -58,19 +58,19 @@
 					</b-form-select>
 				</b-form-group>
 				<b-form-group id="" label="단지">
-					<b-form-select v-model="selected" class="form-control">
+					<b-form-select v-model="selected">
 						<b-form-select-option>1단지</b-form-select-option>
 						<b-form-select-option>2단지</b-form-select-option>
 					</b-form-select>
 				</b-form-group>
 				<b-form-group id="" label="동">
-					<b-form-select v-model="selected" class="form-control">
+					<b-form-select v-model="selected">
 						<b-form-select-option>101동</b-form-select-option>
 						<b-form-select-option>102동</b-form-select-option>
 					</b-form-select>
 				</b-form-group>
 				<b-form-group id="">
-					<b-form-select v-model="selected" class="form-control">
+					<b-form-select v-model="selected">
 						<b-form-select-option>5개씩 보기</b-form-select-option>
 						<b-form-select-option>10개씩 보기</b-form-select-option>
 						<b-form-select-option>50개씩 보기</b-form-select-option>
