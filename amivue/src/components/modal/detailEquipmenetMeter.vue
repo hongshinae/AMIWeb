@@ -1,5 +1,34 @@
 <template>
-	<b-modal id="detailEquipmenetMeter" title="서울 서울아파트 101동 101호" size="lg">
+	<b-modal id="detailEquipmenetMeter" size="lg">
+		<template #modal-header="{ close }">
+			<ul>
+				<li><h4>서울 서울아파트 101동 101호</h4></li>
+				<li>
+					<b-form-group>
+						<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
+					</b-form-group>
+				</li>
+				<li>
+					<b-button size="sm" variant="outline-light" @click="close()">
+						X
+					</b-button>
+				</li>
+			</ul>
+		</template>
+		<template #modal-footer="{ cancel }">
+			<div class="btn-wrap">
+				<ul>
+					<li>
+						<b-button variant="light">Meter 삭제</b-button>
+					</li>
+					<li>
+						<b-button variant="light">정보 수정</b-button>
+						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
+					</li>
+				</ul>
+			</div>
+			<!-- Button with custom close trigger value -->
+		</template>
 		<div class="svg-wrap">
 			<div class="svg">
 				<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->

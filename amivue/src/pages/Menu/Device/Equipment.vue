@@ -10,7 +10,7 @@
 			<div class="main-location">
 				<b-breadcrumb>
 					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
+						<b-icon icon="house"></b-icon>
 						홈
 					</b-breadcrumb-item>
 					<b-breadcrumb-item>설비</b-breadcrumb-item>
@@ -56,7 +56,8 @@ export default {
 };
 </script>
 <style>
+/* 
 ul[role="tablist"] {
 	display: none;
-}
+} */
 </style>
