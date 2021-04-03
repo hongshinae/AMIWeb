@@ -1,12 +1,8 @@
 @import "style";
 
-.search-wrap1 {
+.search-wrap {
 	//한줄
-	height: 60px;
 	position: relative;
-	.wbox {
-		height: 60px;
-	}
 	.search-img {
 		background: $color-gy;
 		border-radius: 20px;
@@ -15,9 +11,6 @@
 		height: 40px;
 		margin-right: 10px;
 		float: left;
-		position: absolute;
-		top: 10px;
-		left: 25px;
 		svg {
 			margin-top: 0px;
 			margin-left: 2px;
@@ -25,11 +18,7 @@
 		}
 	}
 	.search {
-		position: absolute;
-		top: 13px;
-		left: 95px;
-		right: 108px;
-		bottom: 0;
+		padding-left: 65px;
 	}
 	.btn-wrap {
 		right: 19px;
@@ -40,67 +29,25 @@
 		margin-bottom: 0 !important;
 		top: 15px;
 	}
-}
-.search-wrap2 {
-	//두줄
-	position: relative;
-	.wbox {
-		height: 100px;
-	}
-	.btn-wrap {
-		button {
-			height: 100%;
-		}
-	}
-	.search-img {
-		width: 50px;
-		height: 50px;
-		margin-right: 10px;
-		float: left;
-		position: absolute;
-		top: 24px;
-		left: 25px;
-		background: $color-gy;
-		border-radius: 30px;
-		padding: 4px 5px 5px 17px;
-		svg {
-			color: $color-bl;
-			margin: 14px 0px 0 0px;
-		}
-	}
-	.search {
-		position: absolute;
-		top: 13px;
-		left: 95px;
-		right: 108px;
-		bottom: 0;
-	}
-	.btn-wrap {
-		right: 19px;
-		bottom: 15px;
-		width: 70px;
-		height: unset;
-		position: absolute;
-		margin-bottom: 0 !important;
-		top: 15px;
+	.b-form-datepicker label {
+		white-space: nowrap !important;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 
 @media (max-width: 1200px) {
-	.search-wrap2 .search-img,
-	.search-wrap1 .search-img {
+	.search-wrap .search-img {
 		display: none;
 	}
-	.search-wrap2 .search,
-	.search-wrap1 .search {
+	.search-wrap .search {
 		left: inherit !important;
 		top: inherit !important;
 		right: inherit !important;
 		bottom: inherit !important;
 		position: inherit !important;
 	}
-	.search-wrap1,
-	.search-wrap2 {
+	.search-wrap {
 		height: inherit !important;
 		.wbox {
 			height: inherit !important;

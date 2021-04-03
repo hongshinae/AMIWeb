@@ -5,7 +5,7 @@
 		<div class="main-location">
 			<b-breadcrumb>
 				<b-breadcrumb-item :to="path.link" v-for="(path, i) in paths" :key="i" :active="isActive(path)">
-					<b-icon :icon="path.bicon" scale="1.25" shift-v="1.25" aria-hidden="true" v-if="path.bicon" />
+					<b-icon :icon="path.bicon" v-if="path.bicon" />
 					{{ path.name }}
 				</b-breadcrumb-item>
 			</b-breadcrumb>

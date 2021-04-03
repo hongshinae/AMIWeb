@@ -4,7 +4,6 @@
 			type="search"
 			:value="value"
 			:placeholder="placeholder"
-			class="form-control"
 			list="filterList"
 			@update="$emit('update:selected', { eventName: eventName, value: $event })"
 			autocomplete="off"

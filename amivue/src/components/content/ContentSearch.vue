@@ -1,5 +1,5 @@
 <template>
-	<div class="search-wrap1">
+	<div class="search-wrap">
 		<div class="wbox">
 			<div class="search-img">
 				<b-icon icon="search" variant="primary"></b-icon>
@@ -9,8 +9,8 @@
 				<slot />
 				<!--//검색영역-->
 			</div>
-			<div class="btn-wrap ml-auto" v-if="isLazySearch">
-				<button type="button" class="btn btn-primary btn-block" @click="search()">{{ $t("component.search") }}</button>
+			<div class="btn-wrap ml-auto">
+				<b-button block variant="primary" @click="search()">{{ $t("component.search") }}</b-button>
 			</div>
 		</div>
 	</div>
