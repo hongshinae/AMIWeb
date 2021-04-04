@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="content">
 		<b-row>
 			<b-col xl="4" lg="6" md="12" sm="12">
 				<div class="timeWrap">
