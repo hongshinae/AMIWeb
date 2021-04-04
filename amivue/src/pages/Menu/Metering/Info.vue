@@ -108,9 +108,7 @@
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>Meter</span>
-						<div>
-							<small>금일 최종 수집시간 : 2020-12-09 19:00</small>
-						</div>
+						<small>금일 최종 수집시간 : 2020-12-09 19:00</small>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
