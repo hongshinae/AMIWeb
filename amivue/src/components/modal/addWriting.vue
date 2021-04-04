@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="addWriting">
+	<b-modal id="addWriting" size="lg">
 		<template #modal-header="{ close }">
 			<ul>
 				<li><h4>글쓰기</h4></li>
@@ -24,6 +24,44 @@
 		</template>
 		<div class="modal-content-wrap">
 			<div class="modal-box">
+				<b-row>
+					<b-col>
+						<b-form-group label="등록 동명" label-for="">
+							<b-form-input id="" placeholder="404동"></b-form-input>
+						</b-form-group>
+					</b-col>
+					<b-col>
+						<b-form-group label="지역 선택" label-for="input1">
+							<b-form-select v-model="selected">
+								<b-form-select-option>서울시</b-form-select-option>
+								<b-form-select-option>경기도</b-form-select-option>
+							</b-form-select>
+						</b-form-group>
+					</b-col>
+				</b-row>
+				<b-row>
+					<b-col>
+						<b-form-group label="등록 동명" label-for="">
+							<b-form-input id="" placeholder="404동"></b-form-input>
+						</b-form-group>
+					</b-col>
+					<b-col>
+						<b-form-group label="지역 선택" label-for="input1">
+							<b-form-select v-model="selected">
+								<b-form-select-option>서울시</b-form-select-option>
+								<b-form-select-option>경기도</b-form-select-option>
+							</b-form-select>
+						</b-form-group>
+					</b-col>
+				</b-row>
+				<b-row>
+					<b-col>
+						<b-form-group label="등록 동명" label-for="">
+							<b-form-textarea id="" v-model="text" placeholder="Enter something..." rows="3" max-rows="6"></b-form-textarea>
+						</b-form-group>
+					</b-col>
+				</b-row>
+
 				<b-form-group label="지역 선택" label-for="input1">
 					<b-form-select v-model="selected">
 						<b-form-select-option>서울시</b-form-select-option>
