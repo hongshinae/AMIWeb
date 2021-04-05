@@ -13,6 +13,13 @@
 				</b-breadcrumb>
 			</div>
 		</div>
+		<div class="btn-filter-wrap">
+			<div class="btn-wrap">
+				<b-button-group>
+					<b-button variant="light btn-excel"><img src="@/assets/svg/excel.svg" />엑셀 다운로드</b-button>
+				</b-button-group>
+			</div>
+		</div>
 		<div class="accordion-wrap">
 			<div class="wbox">
 				<b-button v-b-toggle:my-collapse variant="none">
@@ -21,7 +28,7 @@
 						<li class="title">정기검침 또는 월검침 확인 방법</li>
 					</ul>
 				</b-button>
-				<b-collapse id="my-collapse">
+				<b-collapse id="my-collapse" visible>
 					<ul>
 						<li class="icon-bg">A.</li>
 						<li>
@@ -40,11 +47,74 @@
 			</div>
 			<div class="wbox">
 				<b-button v-b-toggle:my-collapse1 variant="none">
-					<span class="when-open">Close</span><span class="when-closed">Open</span> My Collapse
+					<ul>
+						<li class="icon-bg"><span>Q</span></li>
+						<li class="title">이용 시 주의 사항</li>
+					</ul>
 				</b-button>
 				<b-collapse id="my-collapse1">
-					<!-- Content here -->
-					fff
+					<ul>
+						<li class="icon-bg">A.</li>
+						<li>
+							<div class="">
+								<p>검침 데이터 시간과 검침값을 항상 확인하여 검침을 진행합니다.</p>
+							</div>
+						</li>
+					</ul>
+				</b-collapse>
+			</div>
+			<div class="wbox">
+				<b-button v-b-toggle:my-collapse1 variant="none">
+					<ul>
+						<li class="icon-bg"><span>Q</span></li>
+						<li class="title">설비 장비 주의사항</li>
+					</ul>
+				</b-button>
+				<b-collapse id="my-collapse1">
+					<ul>
+						<li class="icon-bg">A.</li>
+						<li>
+							<div class="">
+								<p>설비 장비 ~</p>
+							</div>
+						</li>
+					</ul>
+				</b-collapse>
+			</div>
+			<div class="wbox">
+				<b-button v-b-toggle:my-collapse1 variant="none">
+					<ul>
+						<li class="icon-bg"><span>Q</span></li>
+						<li class="title">장애 발생 시</li>
+					</ul>
+				</b-button>
+				<b-collapse id="my-collapse1">
+					<ul>
+						<li class="icon-bg">A.</li>
+						<li>
+							<div class="">
+								<p>장애 발생 시 아래와 같이 조치 해주세요.</p>
+							</div>
+						</li>
+					</ul>
+				</b-collapse>
+			</div>
+			<div class="wbox">
+				<b-button v-b-toggle:my-collapse1 variant="none">
+					<ul>
+						<li class="icon-bg"><span>Q</span></li>
+						<li class="title">사용자 매뉴얼을 활용하세요.</li>
+					</ul>
+				</b-button>
+				<b-collapse id="my-collapse1">
+					<ul>
+						<li class="icon-bg">A.</li>
+						<li>
+							<div class="">
+								<p>상세한 내용은 사용자 매뉴얼에 있습니다. 다운받아 자유롭게 사용하세요.</p>
+							</div>
+						</li>
+					</ul>
 				</b-collapse>
 			</div>
 		</div>
