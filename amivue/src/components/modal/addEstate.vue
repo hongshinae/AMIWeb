@@ -12,6 +12,7 @@
 		@cancel="cancel"
 	>
 		<template #modal-header="{ close }">
+			<modal-confrim></modal-confrim>
 			<ul>
 				<li><h4>단지 등록</h4></li>
 				<li>
@@ -26,7 +27,7 @@
 				<ul>
 					<li></li>
 					<li>
-						<b-button variant="light" @click="ok()">저장</b-button>
+						<b-button variant="light" @click="ok()" v-b-modal.modalconfrim>저장</b-button>
 						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
 					</li>
 				</ul>
@@ -221,7 +222,9 @@
 </template>
 
 <script>
+import ModalConfrim from "./modalconfrim.vue";
 export default {
+	components: { ModalConfrim },
 	props: { regionList: { type: Array } },
 	mounted() {},
 	data() {
