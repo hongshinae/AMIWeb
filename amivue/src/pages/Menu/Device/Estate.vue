@@ -1,6 +1,6 @@
 <template>
 	<div class="main-bg">
-		<add-estate :regionList="regionList"> </add-estate>
+		<add-estate :regionList="regionList" @update:search-estate-list="searchEstateList"> </add-estate>
 		<content-header :paths="paths" :pageName="pageName" />
 		<content-table
 			:busy="isBusy"

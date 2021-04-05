@@ -11,6 +11,7 @@
 		@cancel="cancel"
 	>
 		<template #modal-header="{ close }">
+			<modal-alert id="addEstateAlert" ref="addEstateAlert"></modal-alert>
 			<ul>
 				<li><h4>단지 등록</h4></li>
 				<li>
@@ -25,7 +26,7 @@
 				<ul>
 					<li></li>
 					<li>
-						<b-button variant="light" @click="ok()" tabindex="21">저장</b-button>
+						<b-button variant="light" @click="ok()" tabindex="21" v-b-modal.modalAlert>저장</b-button>
 						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
 					</li>
 				</ul>
@@ -54,7 +55,7 @@
 						:label="$t('estate.modal.houseCount') + '(*)'"
 						label-for="houseCount"
 						:invalid-feedback="$t('estate.modal.validation.houseCount')"
-						:state="estateIdState"
+						:state="houseCountState"
 					>
 						<b-form-input
 							v-model.number="form.houseCount"
@@ -354,15 +355,22 @@ export default {
 		hiddenAddEstate() {},
 		async okAddEstate(event) {
 			event.preventDefault();
-
 			if (this.checkValidation()) {
 				await Estate.registration(this.form)
 					.then(({ data }) => {
-						console.log(data);
+						if (!data.response.result) {
+							throw Error("알수 없는 오류");
+						}
+
+						this.$emit("update:search-estate-list");
 						this.$bvModal.hide("addEstate");
 					})
-					.catch(error => {
-						console.log(error);
+					.catch(({ response }) => {
+						const code = response.data.response.error_code;
+						const message = response.data.response.error_message;
+						console.log(code, message);
+						this.$bvModal.show("addEstateAlert");
+						this.$refs.addEstateAlert.show();
 					});
 			}
 		},
