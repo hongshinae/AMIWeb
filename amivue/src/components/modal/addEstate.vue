@@ -26,7 +26,7 @@
 				<ul>
 					<li></li>
 					<li>
-						<b-button variant="light" @click="ok()">저장</b-button>
+						<b-button variant="light" @click="ok()" tabindex="21">저장</b-button>
 						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
 					</li>
 				</ul>
@@ -47,6 +47,7 @@
 							@input="estateIdState = null"
 							:placeholder="$t('estate.modal.estateId')"
 							autofocus
+							tabindex="1"
 							required
 						/>
 					</b-form-group>
@@ -57,12 +58,13 @@
 						:state="estateIdState"
 					>
 						<b-form-input
-							v-model="form.houseCount"
+							v-model.number="form.houseCount"
 							:state="houseCountState"
 							@input="houseCountState = null"
 							:placeholder="$t('estate.modal.houseCount')"
 							type="number"
 							min="0"
+							tabindex="3"
 							required
 						/>
 					</b-form-group>
@@ -79,6 +81,7 @@
 							:options="regionList"
 							text-field="regionName"
 							value-field="regionSeq"
+							tabindex="5"
 							required
 						>
 							<template #first>
@@ -87,19 +90,19 @@
 						</b-form-select>
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.manager1')">
-						<b-form-input v-model="form.manager1" :placeholder="$t('estate.modal.manager1')" />
+						<b-form-input v-model="form.manager1" :placeholder="$t('estate.modal.manager1')" tabindex="7" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.manager2')">
-						<b-form-input v-model="form.manager2" :placeholder="$t('estate.modal.manager2')" />
+						<b-form-input v-model="form.manager2" :placeholder="$t('estate.modal.manager2')" tabindex="9" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.dcuCount')">
-						<b-form-input v-model="form.dcuCount" :placeholder="$t('estate.modal.dcuCount')" type="number" min="0" />
+						<b-form-input v-model.number="form.dcuCount" :placeholder="$t('estate.modal.dcuCount')" type="number" min="0" tabindex="11" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.meterCount')">
-						<b-form-input v-model="form.meterCount" :placeholder="$t('estate.modal.meterCount')" type="number" min="0" />
+						<b-form-input v-model.number="form.meterCount" :placeholder="$t('estate.modal.meterCount')" type="number" min="0" tabindex="13" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.waterCount')">
-						<b-form-input v-model="form.waterCount" :placeholder="$t('estate.modal.waterCount')" type="number" min="0" />
+						<b-form-input v-model.number="form.waterCount" :placeholder="$t('estate.modal.waterCount')" type="number" min="0" tabindex="15" />
 					</b-form-group>
 				</div>
 				<div class="modal-2nd-box">
@@ -114,6 +117,7 @@
 							:state="estateNameState"
 							@input="estateNameState = null"
 							:placeholder="$t('estate.modal.estateName')"
+							tabindex="2"
 							required
 						/>
 					</b-form-group>
@@ -128,23 +132,24 @@
 							:state="addressState"
 							@input="addressState = null"
 							:placeholder="$t('estate.modal.addressEx')"
+							tabindex="4"
 							required
 						/>
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.telEstate')">
-						<b-form-input v-model="form.telEstate" :placeholder="$t('estate.modal.telEstateEx')" />
+						<b-form-input v-model="form.telEstate" v-mask="telEstate" :placeholder="$t('estate.modal.telEstateEx')" tabindex="6" />
 					</b-form-group>
-					<b-form-group :label="$t('estate.modal.manager1Tel')">
-						<b-form-input v-model="form.manager1Tel" :placeholder="$t('estate.modal.manager1Tel')" />
+					<b-form-group :label="$t('estate.modal.telManager1')">
+						<b-form-input v-model="form.telManager1" v-mask="telManager1" :placeholder="$t('estate.modal.telManager1')" tabindex="8" />
 					</b-form-group>
-					<b-form-group :label="$t('estate.modal.manager2Tel')">
-						<b-form-input v-model="form.manager2Tel" :placeholder="$t('estate.modal.manager2Tel')" />
+					<b-form-group :label="$t('estate.modal.telManager2')">
+						<b-form-input v-model="form.telManager2" v-mask="telManager2" :placeholder="$t('estate.modal.telManager2')" tabindex="10" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.modemCount')">
-						<b-form-input v-model="form.modemCount" :placeholder="$t('estate.modal.modemCount')" type="number" min="0" />
+						<b-form-input type="number" v-model.number="form.modemCount" :placeholder="$t('estate.modal.modemCount')" min="0" tabindex="12" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.gasCount')">
-						<b-form-input v-model="form.gasCount" :placeholder="$t('estate.modal.gasCount')" type="number" min="0" />
+						<b-form-input type="number" v-model.number="form.gasCount" :placeholder="$t('estate.modal.gasCount')" min="0" tabindex="14" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.buildingHouseCount')">
 						<b-row>
@@ -184,27 +189,57 @@
 							<ul class="bg">
 								<li>
 									<b-form-group :label="$t('estate.modal.powerDay')">
-										<b-form-input v-model="form.dayPower" :placeholder="$t('estate.modal.meteringDefault')" />
+										<b-form-input
+											type="number"
+											v-model.number="form.dayPower"
+											v-mask="mask"
+											:placeholder="$t('estate.modal.meteringDefault')"
+											tabindex="16"
+										/>
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.gasDay')">
-										<b-form-input v-model="form.dayGas" :placeholder="$t('estate.modal.meteringDefault')" />
+										<b-form-input
+											v-model="form.dayGas"
+											v-mask="mask"
+											:placeholder="$t('estate.modal.meteringDefault')"
+											type="number"
+											tabindex="17"
+										/>
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.waterDay')">
-										<b-form-input v-model="form.dayWater" :placeholder="$t('estate.modal.meteringDefault')" />
+										<b-form-input
+											type="number"
+											v-model.number="form.dayWater"
+											v-mask="mask"
+											:placeholder="$t('estate.modal.meteringDefault')"
+											tabindex="18"
+										/>
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.hotDay')">
-										<b-form-input v-model="form.dayHot" :placeholder="$t('estate.modal.meteringDefault')" />
+										<b-form-input
+											type="number"
+											v-model.number="form.dayHot"
+											v-mask="mask"
+											:placeholder="$t('estate.modal.meteringDefault')"
+											tabindex="19"
+										/>
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.heatingDay')">
-										<b-form-input v-model="form.dayHeating" :placeholder="$t('estate.modal.meteringDefault')" />
+										<b-form-input
+											type="number"
+											v-model.number="form.dayHeating"
+											v-mask="mask"
+											:placeholder="$t('estate.modal.meteringDefault')"
+											tabindex="20"
+										/>
 									</b-form-group>
 								</li>
 							</ul>
@@ -221,9 +256,16 @@
 </template>
 
 <script>
+import Estate from "@/service/estate";
+
 export default {
 	props: { regionList: { type: Array } },
 	mounted() {},
+	computed: {
+		isDayStateValid() {
+			return this.name ? true : false;
+		}
+	},
 	data() {
 		return {
 			estateList: [],
@@ -253,12 +295,16 @@ export default {
 				checkWater: "N", // 체크 수도
 				checkHot: "N", // 체크 온수
 				checkHeating: "N", // 체크 난방
-				dayPower: null, // 검침일 전기
-				dayGas: null, // 검침일 가스
-				dayWater: null, // 검침일 수도
-				dayHot: null, // 검침일 온수
-				dayHeating: null // 검침일 난방
-			}
+				dayPower: 1, // 검침일 전기
+				dayGas: 1, // 검침일 가스
+				dayWater: 1, // 검침일 수도
+				dayHot: 1, // 검침일 온수
+				dayHeating: 1 // 검침일 난방
+			},
+			telEstate: this.getPhoneMask,
+			telManager1: this.getPhoneMask,
+			telManager2: this.getPhoneMask,
+			mask: this.getDayMask
 		};
 	},
 	methods: {
@@ -298,11 +344,11 @@ export default {
 			this.form.checkWater = "N"; // 체크 수도
 			this.form.checkHot = "N"; // 체크 온수
 			this.form.checkHeating = "N"; // 체크 난방
-			this.form.dayPower = null; // 검침일 전기
-			this.form.dayGas = null; // 검침일 가스
-			this.form.dayWater = null; // 검침일 수도
-			this.form.dayHot = null; // 검침일 온수
-			this.form.dayHeating = null; // 검침일 난방
+			this.form.dayPower = 1; // 검침일 전기
+			this.form.dayGas = 1; // 검침일 가스
+			this.form.dayWater = 1; // 검침일 수도
+			this.form.dayHot = 1; // 검침일 온수
+			this.form.dayHeating = 1; // 검침일 난방
 		},
 		shownAddEstate() {},
 		hideAddEstate() {},
@@ -311,8 +357,13 @@ export default {
 			event.preventDefault();
 
 			if (this.checkValidation()) {
-				// console.log(this.$refs.addEstateForm);
-				// this.$refs.addEstateForm.submit();
+				Estate.registration(this.form)
+					.then(({ data }) => {
+						console.log(data);
+					})
+					.catch(error => {
+						console.log(error);
+					});
 			}
 		},
 		onSubmit(event) {
@@ -321,6 +372,37 @@ export default {
 		},
 		cancel(event) {
 			console.log(event);
+		},
+		getDayMask(value) {
+			if (value > 9) {
+				return [/[1-3]/, Math.floor(value / 10) == 3 ? /[0-1]/ : /[0-9]/];
+			} else {
+				return [/[1-9]/];
+			}
+		},
+		getPhoneMask(value) {
+			let regex = [/[0-9]/, /[0-9]/, /[0-9]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/];
+
+			if (value.startsWith("02")) {
+				console.log("02번호임");
+				if (value.length < 3) {
+					regex = [/[0]/, /[2]/];
+				} else if (value.length < 7) {
+					regex = [/[0]/, /[2]/, "-", /[0-9]/, /[0-9]/, /[0-9]/];
+				} else if (value.length < 12) {
+					regex = [/[0]/, /[2]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/];
+				} else {
+					regex = [/[0]/, /[2]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/];
+				}
+			} else if (value.length < 4) {
+				regex = [/[0-9]/, /[0-9]/, /[0-9]/];
+			} else if (value.length < 9) {
+				regex = [/[0-9]/, /[0-9]/, /[0-9]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/];
+			} else if (value.length < 13) {
+				regex = [/[0-9]/, /[0-9]/, /[0-9]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, "-", /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/];
+			}
+
+			return regex;
 		}
 	}
 };
