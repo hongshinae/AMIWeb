@@ -80,7 +80,22 @@
 				</b-row>
 			</form>
 		</content-search>
-		<div>그래프 넣는 영역</div>
+		<div class="chart">
+			<div class="wbox">
+				<h5 class="tltle">
+					<b-icon icon="arrow-return-right"></b-icon>
+					1시간 데이터
+				</h5>
+				<div class="chart-wrap">
+					<div class="blank-box">
+						<p><b-icon icon="tv"></b-icon>현재 1시간 데이터가 없습니다.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="blank-box">
+			<p><b-icon icon="tv"></b-icon>현재 1시간 데이터가 없습니다.</p>
+		</div>
 		<content-table
 			:busy="isBusy"
 			:items="lookupFilterList"
