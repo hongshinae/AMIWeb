@@ -26,68 +26,66 @@
 			<div class="modal-box">
 				<b-row>
 					<b-col>
-						<b-form-group label="등록 동명" label-for="">
-							<b-form-input id="" placeholder="404동"></b-form-input>
+						<b-form-group label="단지 ID" label-for="">
+							<b-form-input id="" placeholder="단지 ID"></b-form-input>
 						</b-form-group>
 					</b-col>
 					<b-col>
-						<b-form-group label="지역 선택" label-for="input1">
+						<b-form-group label="단지 명" label-for="">
 							<b-form-select v-model="selected">
-								<b-form-select-option>서울시</b-form-select-option>
-								<b-form-select-option>경기도</b-form-select-option>
+								<b-form-select-option>1단지</b-form-select-option>
+								<b-form-select-option>2단지</b-form-select-option>
 							</b-form-select>
 						</b-form-group>
 					</b-col>
 				</b-row>
 				<b-row>
 					<b-col>
-						<b-form-group label="등록 동명" label-for="">
-							<b-form-input id="" placeholder="404동"></b-form-input>
+						<b-form-group label="동명" label-for="">
+							<b-form-select v-model="selected">
+								<b-form-select-option>101동</b-form-select-option>
+								<b-form-select-option>102동</b-form-select-option>
+							</b-form-select>
 						</b-form-group>
 					</b-col>
 					<b-col>
-						<b-form-group label="지역 선택" label-for="input1">
+						<b-form-group label="문의 정보" label-for="">
 							<b-form-select v-model="selected">
-								<b-form-select-option>서울시</b-form-select-option>
-								<b-form-select-option>경기도</b-form-select-option>
+								<b-form-select-option>DCU</b-form-select-option>
+								<b-form-select-option>METER</b-form-select-option>
 							</b-form-select>
 						</b-form-group>
 					</b-col>
 				</b-row>
-				<b-row>
+				<b-row class="textarea-wrap">
 					<b-col>
-						<b-form-group label="등록 동명" label-for="">
-							<b-form-textarea id="" v-model="text" placeholder="Enter something..." rows="3" max-rows="6"></b-form-textarea>
+						<b-form-group label="내용" label-for="">
+							<b-form-textarea id="" v-model="text" placeholder="" rows="10" max-rows="15" size="sm"></b-form-textarea>
 						</b-form-group>
 					</b-col>
 				</b-row>
-
-				<b-form-group label="지역 선택" label-for="input1">
-					<b-form-select v-model="selected">
-						<b-form-select-option>서울시</b-form-select-option>
-						<b-form-select-option>경기도</b-form-select-option>
-					</b-form-select>
-				</b-form-group>
-
-				<b-form-group label="단지 선택" label-for="">
-					<b-form-select v-model="selected">
-						<b-form-select-option>서울시</b-form-select-option>
-						<b-form-select-option>경기도</b-form-select-option>
-					</b-form-select>
-				</b-form-group>
-
-				<b-form-group label="등록 동명" label-for="">
-					<b-form-input id="" placeholder="404동"></b-form-input>
-				</b-form-group>
-
-				<b-form-group label="DCU ID" label-for="">
-					<b-input-group>
-						<b-form-input v-model="text" placeholder="4521542"></b-form-input>
-						<b-input-group-append>
-							<b-button variant="light">연동 확인</b-button>
-						</b-input-group-append>
-					</b-input-group>
-				</b-form-group>
+				<b-row class="textarea-wrap">
+					<b-col>
+						<b-form-group label="원인" label-for="">
+							<b-form-textarea id="" v-model="text" placeholder="" rows="3" max-rows="6" size="sm"></b-form-textarea>
+						</b-form-group>
+					</b-col>
+				</b-row>
+				<b-row class="textarea-wrap">
+					<b-col>
+						<b-form-group label="댓글" label-for="">
+							<b-form-textarea id="" v-model="text" placeholder="" rows="3" max-rows="6" size="sm"></b-form-textarea>
+						</b-form-group>
+					</b-col>
+				</b-row>
+				<div class="one-row">
+					<b-form-group label="조치 상태" label-for="">
+						<b-form-select v-model="selected">
+							<b-form-select-option>처리 완료</b-form-select-option>
+							<b-form-select-option>미처리</b-form-select-option>
+						</b-form-select>
+					</b-form-group>
+				</div>
 			</div>
 		</div>
 		<!---->

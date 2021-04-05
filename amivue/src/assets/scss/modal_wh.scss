@@ -239,9 +239,9 @@
 	}
 }
 
-#modal-building {
+#addBuilding {
 	.modal-box {
-		width: 80%;
+		text-align: center;
 		.form-group {
 			//모달 전체 .form-group, label, div제어
 			width: 100%;
@@ -546,6 +546,33 @@
 			margin-bottom: 40px;
 			border: 1px solid #d3d3d3;
 			background: #f1f1f1;
+		}
+	}
+}
+
+#addWriting {
+	.modal-box {
+		text-align: center;
+		.textarea-wrap {
+			width: 100%;
+			margin-bottom: 5px;
+			.form-group {
+				height: inherit;
+			}
+			.form-group > div {
+				width: 597px;
+			}
+		}
+		.one-row .form-group > div {
+			width: 400px;
+			select {
+				width: 200px;
+				float: left;
+			}
+			button {
+				float: left;
+				margin-left: 10px;
+			}
 		}
 	}
 }
