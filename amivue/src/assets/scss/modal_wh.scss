@@ -158,6 +158,9 @@
 		margin: auto;
 		width: fit-content;
 		padding-left: 10px;
+		.form-group {
+			width: 100%;
+		}
 	}
 }
 
