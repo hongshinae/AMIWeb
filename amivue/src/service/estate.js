@@ -19,5 +19,12 @@ export default {
 			url: "/device/estate/list",
 			method: "get"
 		});
+	},
+	registration(params) {
+		return Send({
+			url: "/device/estate/registration",
+			method: "post",
+			data: params
+		});
 	}
 };
