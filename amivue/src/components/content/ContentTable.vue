@@ -102,6 +102,7 @@ export default {
 		perpage: { type: Boolean, default: true },
 		busy: Boolean,
 		items: Array,
+		totalRows: Number,
 		fields: Array,
 		filter: Array,
 		excelFileName: { type: String, default: "excel.xlsx" },
@@ -109,12 +110,7 @@ export default {
 		detailModalId: String
 	},
 	created() {},
-	mounted() {
-		this.totalRows = this.items.length;
-		// this.$root.$on("bv::modal::show", (bvEvent, modalId) => {
-		// 	console.log("Modal is about to be shown", bvEvent, modalId);
-		// });
-	},
+	mounted() {},
 	computed: {
 		filterTargetFields: function() {
 			const filters = this.fields.filter(item => {
@@ -141,7 +137,6 @@ export default {
 	},
 	data() {
 		return {
-			totalRows: 1,
 			currentPage: 1,
 			perPage: 15,
 			pages: [

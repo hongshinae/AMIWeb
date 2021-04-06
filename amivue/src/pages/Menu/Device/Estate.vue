@@ -6,6 +6,7 @@
 		<content-table
 			:busy="isBusy"
 			:items="estateFilterList"
+			:totalRows="totalRows"
 			:fields="estateFields"
 			:perpage="true"
 			:filter="filterList"
@@ -69,6 +70,9 @@ export default {
 			} else {
 				return this.estateList;
 			}
+		},
+		totalRows: function() {
+			return this.estateFilterList.length;
 		},
 		filterList: function() {
 			return [
@@ -167,11 +171,9 @@ export default {
 			try {
 				const response = await Estate.estateList();
 				const result = response.data.response;
-				this.totalRows = result.length;
 				this.estateList = result;
 			} catch (error) {
 				const result = [];
-				this.totalRows = result.length;
 				this.estateList = result;
 			} finally {
 				this.isBusy = false;
