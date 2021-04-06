@@ -89,19 +89,24 @@
 						</div>
 						<p>DCU</p>
 					</div>
-					<p class="dcu-name">>DCU ID 2</p>
+					<p class="dcu-name">DCU ID 2</p>
 				</b-col>
 				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
-					<div class="wbox">
-						<div class="stats-wrap">
-							<span class="linkage"></span>
-							<span class="unlinkage"></span>
+					<b-overlay id="overlay-background" show :variant="variant" :opacity="opacity" :blur="blur" rounded="sm">
+						<div class="wbox">
+							<div class="stats-wrap">
+								<span class="linkage"></span>
+								<span class="unlinkage"></span>
+							</div>
+							<p>DCU</p>
 						</div>
-						<p>DCU</p>
-					</div>
-					<p class="dcu-name">>DCU ID 2</p>
+					</b-overlay>
+					<p class="dcu-name">DCU ID 3</p>
 				</b-col>
 			</b-row>
+		</div>
+		<div class="overlay-wrap">
+			<b-overlay id="overlay-background" show :variant="variant" :opacity="opacity" :blur="blur" rounded="sm"> </b-overlay>
 		</div>
 	</div>
 </template>

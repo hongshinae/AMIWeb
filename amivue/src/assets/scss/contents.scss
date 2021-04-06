@@ -23,6 +23,7 @@
 	margin-left: -15px;
 }
 .blank-box {
+	height: 100px;
 	max-height: 400px;
 	text-align: center;
 }
@@ -67,12 +68,8 @@
 	}
 }
 
-.blank-box {
-	height: 100px;
-	line-height: 100px;
-}
-
-.wbox:after {
+.wbox:after,
+.blank-box:after {
 	clear: both;
 	display: block;
 	content: "";
@@ -115,7 +112,18 @@
 		margin-bottom: 30px;
 	}
 }
-
+.overlay-wrap {
+	height: 400px;
+	line-height: 400px;
+}
+.overlay-wrap:after {
+	clear: both;
+	display: block;
+	content: "";
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
 /**/
 .dcu-list-wrap {
 	.dcu-modem {
@@ -205,5 +213,11 @@
 	margin-bottom: 20px;
 	.chart-wrap {
 		position: relative;
+	}
+	.blank-box {
+		height: 100px;
+		span {
+			font-size: 40px;
+		}
 	}
 }
