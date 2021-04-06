@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="modalconfrim">
+	<b-modal id="confirm">
 		<template #modal-header="{ close }">
 			<ul>
 				<li><h4>팝업</h4></li>

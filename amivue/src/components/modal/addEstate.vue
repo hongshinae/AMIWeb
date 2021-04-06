@@ -9,9 +9,9 @@
 		@hidden="hiddenAddEstate"
 		@ok="okAddEstate"
 		@cancel="cancel"
+		no-close-on-backdrop
 	>
 		<template #modal-header="{ close }">
-			<modal-alert id="addEstateAlert" ref="addEstateAlert"></modal-alert>
 			<ul>
 				<li><h4>단지 등록</h4></li>
 				<li>
@@ -26,13 +26,14 @@
 				<ul>
 					<li></li>
 					<li>
-						<b-button variant="light" @click="ok()" tabindex="21" v-b-modal.modalAlert>저장</b-button>
+						<b-button variant="light" @click="ok()" tabindex="21">저장</b-button>
 						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
 					</li>
 				</ul>
 			</div>
 		</template>
 		<div class="center">
+			<modal-alert ref="addEstateAlert" :title="alertTitle" :message="alertMessage" />
 			<b-form ref="addEstateForm" @submit.prevent="onSubmit" @reset="showAddEstate">
 				<div class="modal-1st-box">
 					<b-form-group
@@ -268,6 +269,8 @@ export default {
 	},
 	data() {
 		return {
+			alertTitle: null,
+			alertMessage: null,
 			estateList: [],
 			estateIdState: null,
 			estateNameState: null,
@@ -368,19 +371,14 @@ export default {
 					.catch(({ response }) => {
 						const code = response.data.response.error_code;
 						const message = response.data.response.error_message;
-						console.log(code, message);
-						this.$bvModal.show("addEstateAlert");
-						this.$refs.addEstateAlert.show();
+						this.alertTitle = String(code);
+						this.alertMessage = message;
+						this.$bvModal.show("alert");
 					});
 			}
 		},
-		onSubmit(event) {
-			alert("submit");
-			console.log(event);
-		},
-		cancel(event) {
-			console.log(event);
-		},
+		onSubmit() {},
+		cancel() {},
 		getDayMask(value) {
 			if (value > 9) {
 				return [/[1-3]/, Math.floor(value / 10) == 3 ? /[0-1]/ : /[0-9]/];
