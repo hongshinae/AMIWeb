@@ -6,6 +6,10 @@
 		&_active {
 			color: $item-active-color;
 			background-color: $item-active-bg;
+			.vsm--title {
+				//네비게이션
+				color: #fff !important;
+			}
 		}
 		&_level-1 {
 			&.vsm--link_exact-active,
