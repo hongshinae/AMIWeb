@@ -42,6 +42,9 @@
 			"page20": "20개씩 보기",
 			"page30": "30개씩 보기",
 			"page50": "50개씩 보기"
+		},
+		"button": {
+			"excelDownload": "엑셀 다운로드"
 		}
 	},
 	"dashboard": {
@@ -53,7 +56,6 @@
 	"estate": {
 		"button": {
 			"add": "신규 단지 등록",
-			"excelDownload": "엑셀 다운로드",
 			"allInterlink": "전체 연동하기",
 			"save": "저장"
 		},
@@ -78,7 +80,7 @@
 		"excelFileName": "단지 관리.xlsx",
 		"modal": {
 			"add": "단지 등록",
-			"modify": "단지 수정",
+			"modify": "단지 상세",
 			"estateId": "단지 ID",
 			"estateName": "단지 명",
 			"houseCount": "세대 수",

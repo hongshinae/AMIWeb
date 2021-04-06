@@ -6,7 +6,7 @@
 				<b-button-group>
 					<b-button variant="light btn-excel" @click="excelDownload">
 						<img src="@/assets/svg/excel.svg" />
-						{{ $t("estate.button.excelDownload") }}
+						{{ $t("common.button.excelDownload") }}
 					</b-button>
 					<slot name="table-header-left-group" />
 				</b-button-group>
@@ -68,8 +68,8 @@
 					<template #emptyfiltered="scope">
 						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
-					<template #cell(remark)="row">
-						<b-button @click="info(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
+					<template #cell(_remark)="row">
+						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
 							<slot name="table-cell-remark" />
 						</b-button>
 					</template>
@@ -105,11 +105,15 @@ export default {
 		fields: Array,
 		filter: Array,
 		excelFileName: { type: String, default: "excel.xlsx" },
-		excelSheetName: { type: String, default: "sheet1" }
+		excelSheetName: { type: String, default: "sheet1" },
+		modifyModalId: String
 	},
 	created() {},
 	mounted() {
 		this.totalRows = this.items.length;
+		// this.$root.$on("bv::modal::show", (bvEvent, modalId) => {
+		// 	console.log("Modal is about to be shown", bvEvent, modalId);
+		// });
 	},
 	computed: {
 		filterTargetFields: function() {
@@ -159,10 +163,10 @@ export default {
 			this.totalRows = filteredItems.length;
 			this.currentPage = 1;
 		},
-		detail(item, index, event) {
+		_detail(item) {
 			console.log(item);
-			console.log(index);
-			console.log(event);
+			console.log(this.modifyModalId);
+			this.$bvModal.show(this.modifyModalId);
 		},
 		selectEvent(object) {
 			this.$emit("update:selected", object);
@@ -170,11 +174,6 @@ export default {
 		inputEvent(object) {
 			this.filterText = object.value;
 			this.$emit("update:selected", object);
-		},
-		info(item, index, target) {
-			console.log(item);
-			console.log(index);
-			console.log(target);
 		},
 		excelDownload() {
 			// 엑셀 워크시트로 json 내보내기

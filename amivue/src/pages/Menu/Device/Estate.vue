@@ -1,6 +1,7 @@
 <template>
 	<div class="main-bg">
 		<add-estate :regionList="regionList" @update:search-estate-list="searchEstateList"> </add-estate>
+		<modify-estate> </modify-estate>
 		<content-header :paths="paths" :pageName="pageName" />
 		<content-table
 			:busy="isBusy"
@@ -11,6 +12,7 @@
 			@update:selected="callbackEvent"
 			:excelFileName="$t('estate.excelFileName')"
 			:excelSheetName="$t('menu.device.estate')"
+			:modifyModalId="'modifyEstate'"
 		>
 			<template #table-header-left-head>
 				<b-button v-b-modal="'addEstate'" variant="light" :disabled="regionList.length == 0">
@@ -27,11 +29,12 @@
 <script>
 import Estate from "@/service/estate";
 import AddEstate from "@/components/modal/addEstate";
+import ModifyEstate from "@/components/modal/modifyEstate";
 import ContentHeader from "@/components/content/ContentHeader";
 import ContentTable from "@/components/content/ContentTable";
 
 export default {
-	components: { AddEstate, ContentHeader, ContentTable },
+	components: { AddEstate, ModifyEstate, ContentHeader, ContentTable },
 	created() {
 		Estate.region()
 			.then(({ data }) => {
@@ -138,7 +141,7 @@ export default {
 					label: this.$t("estate.table.meteringTypeCount")
 				},
 				{
-					key: "remark",
+					key: "_remark",
 					label: ""
 				}
 			],

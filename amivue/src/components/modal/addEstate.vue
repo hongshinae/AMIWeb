@@ -2,7 +2,6 @@
 	<b-modal
 		id="addEstate"
 		ref="addEstate"
-		:title="$t('estate.modal.add')"
 		@shown="shownAddEstate"
 		@show="showAddEstate"
 		@hide="hideAddEstate"
@@ -13,7 +12,9 @@
 	>
 		<template #modal-header="{ close }">
 			<ul>
-				<li><h4>단지 등록</h4></li>
+				<li>
+					<h4>{{ $t("estate.modal.add") }}</h4>
+				</li>
 				<li>
 					<b-button size="sm" variant="outline-light" @click="close()">
 						X
