@@ -86,15 +86,15 @@
 					<b-icon icon="arrow-return-right"></b-icon>
 					1시간 데이터
 				</h5>
-				<div class="chart-wrap">
-					<div class="blank-box">
-						<p><b-icon icon="tv"></b-icon>현재 1시간 데이터가 없습니다.</p>
-					</div>
+				<div class="blank-box">
+					<span><b-icon icon="tv"></b-icon></span>
+					<p>현재 1시간 데이터가 없습니다.</p>
 				</div>
 			</div>
 		</div>
 		<div class="blank-box">
-			<p><b-icon icon="tv"></b-icon>현재 1시간 데이터가 없습니다.</p>
+			<span><b-icon icon="tv"></b-icon></span>
+			<p>현재 1시간 데이터가 없습니다.</p>
 		</div>
 		<content-table
 			:busy="isBusy"
