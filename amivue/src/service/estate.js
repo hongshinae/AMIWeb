@@ -20,11 +20,18 @@ export default {
 			method: "get"
 		});
 	},
-	registration(params) {
+	registration(data) {
 		return Send({
 			url: "/device/estate/registration",
 			method: "post",
-			data: params
+			data: data
+		});
+	},
+	info(params) {
+		return Send({
+			url: "/device/estate/info",
+			method: "get",
+			params: params
 		});
 	}
 };

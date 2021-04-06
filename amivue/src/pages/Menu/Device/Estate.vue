@@ -1,7 +1,7 @@
 <template>
 	<div class="main-bg">
 		<add-estate :regionList="regionList" @update:search-estate-list="searchEstateList" />
-		<detail-estate :regionList="regionList" />
+		<detail-estate :regionList="regionList" :item="selectedItem" />
 		<content-header :paths="paths" :pageName="pageName" />
 		<content-table
 			:busy="isBusy"
@@ -10,6 +10,7 @@
 			:perpage="true"
 			:filter="filterList"
 			@update:selected="callbackEvent"
+			@handle:selectedItem="handleSelectedItem"
 			:excelFileName="$t('estate.excelFileName')"
 			:excelSheetName="$t('menu.device.estate')"
 			:detailModalId="'detailEstate'"
@@ -147,7 +148,8 @@ export default {
 			],
 			estates: [],
 			filterText: "",
-			filterRegion: ""
+			filterRegion: "",
+			selectedItem: null
 		};
 	},
 	methods: {
@@ -181,6 +183,10 @@ export default {
 			} else if (eventName == "estate") {
 				this.filterText = value;
 			}
+		},
+		handleSelectedItem(selectedItem) {
+			this.selectedItem = selectedItem;
+			this.$bvModal.show("detailEstate");
 		}
 	}
 };

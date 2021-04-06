@@ -103,9 +103,6 @@
 					<b-form-group :label="$t('estate.modal.meterCount')">
 						<b-form-input v-model.number="form.meterCount" :placeholder="$t('estate.modal.meterCount')" type="number" min="0" tabindex="13" />
 					</b-form-group>
-					<b-form-group :label="$t('estate.modal.waterCount')">
-						<b-form-input v-model.number="form.waterCount" :placeholder="$t('estate.modal.waterCount')" type="number" min="0" tabindex="15" />
-					</b-form-group>
 				</div>
 				<div class="modal-2nd-box">
 					<b-form-group
@@ -149,9 +146,6 @@
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.modemCount')">
 						<b-form-input type="number" v-model.number="form.modemCount" :placeholder="$t('estate.modal.modemCount')" min="0" tabindex="12" />
-					</b-form-group>
-					<b-form-group :label="$t('estate.modal.gasCount')">
-						<b-form-input type="number" v-model.number="form.gasCount" :placeholder="$t('estate.modal.gasCount')" min="0" tabindex="14" />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.buildingHouseCount')">
 						<b-row>

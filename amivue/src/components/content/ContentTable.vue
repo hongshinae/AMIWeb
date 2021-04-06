@@ -164,9 +164,7 @@ export default {
 			this.currentPage = 1;
 		},
 		_detail(item) {
-			console.log(item);
-			this.$bvModal.selectedItem = item;
-			this.$bvModal.show(this.detailModalId);
+			this.$emit("handle:selectedItem", item);
 		},
 		selectEvent(object) {
 			this.$emit("update:selected", object);
