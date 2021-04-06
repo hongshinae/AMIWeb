@@ -106,7 +106,7 @@ export default {
 		filter: Array,
 		excelFileName: { type: String, default: "excel.xlsx" },
 		excelSheetName: { type: String, default: "sheet1" },
-		modifyModalId: String
+		detailModalId: String
 	},
 	created() {},
 	mounted() {
@@ -165,8 +165,8 @@ export default {
 		},
 		_detail(item) {
 			console.log(item);
-			console.log(this.modifyModalId);
-			this.$bvModal.show(this.modifyModalId);
+			this.$bvModal.selectedItem = item;
+			this.$bvModal.show(this.detailModalId);
 		},
 		selectEvent(object) {
 			this.$emit("update:selected", object);

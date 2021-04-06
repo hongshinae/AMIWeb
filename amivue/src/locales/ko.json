@@ -80,7 +80,7 @@
 		"excelFileName": "단지 관리.xlsx",
 		"modal": {
 			"add": "단지 등록",
-			"modify": "단지 상세",
+			"detail": "단지 상세",
 			"estateId": "단지 ID",
 			"estateName": "단지 명",
 			"houseCount": "세대 수",

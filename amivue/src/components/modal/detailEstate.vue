@@ -1,18 +1,18 @@
 <template>
 	<b-modal
-		id="modifyEstate"
-		ref="modifyEstate"
-		@shown="shownModifyEstate"
-		@show="showModifyEstate"
-		@hide="hideModifyEstate"
-		@hidden="hiddenModifyEstate"
-		@ok="okModifyEstate"
+		id="detailEstate"
+		ref="detailEstate"
+		@shown="shownDetailEstate"
+		@show="showDetailEstate"
+		@hide="hideDetailEstate"
+		@hidden="hiddenDetailEstate"
+		@ok="okDetailEstate"
 		@cancel="cancel"
 	>
 		<template #modal-header="{ close }">
 			<ul>
 				<li>
-					<h4>{{ $t("estate.modal.modify") }}</h4>
+					<h4>{{ $t("estate.modal.detail") }}</h4>
 				</li>
 				<li>
 					<b-button size="sm" variant="outline-light" @click="close()">
@@ -33,8 +33,8 @@
 			</div>
 		</template>
 		<div class="center">
-			<modal-alert ref="modifyEstateAlert" :title="alertTitle" :message="alertMessage" />
-			<b-form ref="modifyEstateForm" @submit.prevent="onSubmit" @reset="showModifyEstate">
+			<modal-alert ref="DetailEstateAlert" :title="alertTitle" :message="alertMessage" />
+			<b-form ref="DetailEstateForm" @submit.prevent="onSubmit" @reset="showDetailEstate">
 				<div class="modal-1st-box">
 					<b-form-group
 						:label="$t('estate.modal.estateId') + '(*)'"
@@ -50,6 +50,7 @@
 							autofocus
 							tabindex="1"
 							required
+							readonly
 						/>
 					</b-form-group>
 					<b-form-group
@@ -260,7 +261,7 @@
 import Estate from "@/service/estate";
 
 export default {
-	props: { regionList: { type: Array } },
+	props: { regionList: { type: Array }, selectedItem: { type: Array } },
 	mounted() {},
 	computed: {
 		isDayStateValid() {
@@ -312,7 +313,7 @@ export default {
 	},
 	methods: {
 		checkValidation() {
-			let result = this.$refs.modifyEstateForm.checkValidity();
+			let result = this.$refs.DetailEstateForm.checkValidity();
 			result &= this.regionSeqState = this.form.regionSeq ? true : false;
 			result &= this.estateIdState = this.form.estateId ? true : false;
 			result &= this.estateNameState = this.form.estateName ? true : false;
@@ -321,7 +322,7 @@ export default {
 
 			return result;
 		},
-		showModifyEstate(/* event */) {
+		showDetailEstate(/* event */) {
 			this.estateIdState = null;
 			this.estateNameState = null;
 			this.houseCountState = null;
@@ -353,10 +354,10 @@ export default {
 			this.form.dayHot = 1; // 검침일 온수
 			this.form.dayHeating = 1; // 검침일 난방
 		},
-		shownModifyEstate() {},
-		hideModifyEstate() {},
-		hiddenModifyEstate() {},
-		async okModifyEstate(event) {
+		shownDetailEstate() {},
+		hideDetailEstate() {},
+		hiddenDetailEstate() {},
+		async okDetailEstate(event) {
 			event.preventDefault();
 			if (this.checkValidation()) {
 				await Estate.registration(this.form)
@@ -366,7 +367,7 @@ export default {
 						}
 
 						this.$emit("update:search-estate-list");
-						this.$bvModal.hide("modifyEstate");
+						this.$bvModal.hide("DetailEstate");
 					})
 					.catch(({ response }) => {
 						const code = response.data.response.error_code;
