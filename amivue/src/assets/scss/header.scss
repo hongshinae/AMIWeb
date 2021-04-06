@@ -48,18 +48,21 @@ nav.navbar > a.navbar-brand {
 	border: 0;
 }
 
-.infowrap .aram i,
-.infowrap .error i {
-	width: 20px;
-	height: 20px;
-	margin-top: 9px;
+.infowrap .aram,
+.infowrap .error {
+	position: relative;
+	.badge {
+		position: absolute;
+		top: 15px;
+		left: 10px;
+	}
 }
 
 .infowrap .aram a,
 .infowrap .error a {
 	padding: 0.5rem 0;
 	color: #656565;
-	margin-right: 10px;
+	margin-right: 14px;
 }
 .infowrap .aram.on a,
 .infowrap .error.on a {

@@ -1,5 +1,5 @@
 $base-bg: #293042;
-$item-color: #ffffff;
+$item-color: $item-color;
 $icon-bg: #bbc5d6;
 $icon-active-color: #fff;
 $icon-active-bg: $item-color;
@@ -14,6 +14,10 @@ $dropdown-bg: #212738;
 		&_active {
 			color: $item-active-color;
 			background-color: $item-active-bg;
+			.vsm--title {
+				//네비게이션
+				color: #fff !important;
+			}
 		}
 		&_level-1 {
 			&.vsm--link_exact-active,
