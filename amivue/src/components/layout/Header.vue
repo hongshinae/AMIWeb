@@ -7,8 +7,14 @@
 				</a>
 			</b-navbar>
 			<b-nav class="infowrap ml-auto">
-				<b-nav-item class="error"><b-icon icon="question-diamond"></b-icon></b-nav-item>
-				<b-nav-item class="aram on"><b-icon icon="bell" id="tooltip-button-interactive"></b-icon></b-nav-item>
+				<b-nav-item class="error">
+					<b-icon icon="question-diamond"></b-icon>
+					<!--<b-badge pill variant="danger">1</b-badge>-->
+				</b-nav-item>
+				<b-nav-item class="aram on">
+					<b-icon icon="bell" id="tooltip-button-interactive"></b-icon>
+					<b-badge pill variant="danger">2</b-badge>
+				</b-nav-item>
 				<b-nav-item class="user" disabled>{{ apartName ? apartName : "아파트 없음" }}</b-nav-item>
 				<b-nav-item class="uerName"><b-icon icon="person"></b-icon>{{ userName }}</b-nav-item>
 				<b-nav-item class="logout" href="#" @click.prevent="logout()">{{ $t("header.logout") }}</b-nav-item>
