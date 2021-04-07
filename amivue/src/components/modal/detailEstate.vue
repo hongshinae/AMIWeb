@@ -36,12 +36,8 @@
 			<modal-alert ref="DetailEstateAlert" :title="alertTitle" :message="alertMessage" />
 			<b-form ref="DetailEstateForm" @submit.prevent="onSubmit" @reset="showDetailEstate">
 				<div class="modal-1st-box">
-					<b-form-group
-						:label="$t('estate.modal.estateId') + '(*)'"
-						label-for="estateId"
-						:invalid-feedback="$t('estate.modal.validation.estateId')"
-						:state="estateIdState"
-					>
+					<b-form-group label-for="estateId" :invalid-feedback="$t('estate.modal.validation.estateId')" :state="estateIdState">
+						<template #label>{{ $t("estate.modal.estateId") }}<span>*</span></template>
 						<b-form-input
 							v-model="form.estateId"
 							:state="estateIdState"
@@ -53,12 +49,8 @@
 							readonly
 						/>
 					</b-form-group>
-					<b-form-group
-						:label="$t('estate.modal.houseCount') + '(*)'"
-						label-for="houseCount"
-						:invalid-feedback="$t('estate.modal.validation.houseCount')"
-						:state="houseCountState"
-					>
+					<b-form-group label-for="houseCount" :invalid-feedback="$t('estate.modal.validation.houseCount')" :state="houseCountState">
+						<template #label>{{ $t("estate.modal.houseCount") }}<span>*</span></template>
 						<b-form-input
 							v-model.number="form.houseCount"
 							:state="houseCountState"
@@ -71,12 +63,8 @@
 							readonly
 						/>
 					</b-form-group>
-					<b-form-group
-						:label="$t('estate.modal.regionSeq') + '(*)'"
-						label-for="regionSeq"
-						:invalid-feedback="$t('estate.modal.validation.regionSeq')"
-						:state="regionSeqState"
-					>
+					<b-form-group label-for="regionSeq" :invalid-feedback="$t('estate.modal.validation.regionSeq')" :state="regionSeqState">
+						<template #label>{{ $t("estate.modal.regionSeq") }}<span>*</span></template>
 						<b-form-select
 							v-model="form.regionSeq"
 							:state="regionSeqState"
@@ -114,12 +102,8 @@
 					</b-form-group>
 				</div>
 				<div class="modal-2nd-box">
-					<b-form-group
-						:label="$t('estate.modal.estateName') + '(*)'"
-						label-for="estateName"
-						:invalid-feedback="$t('estate.modal.validation.estateName')"
-						:state="estateNameState"
-					>
+					<b-form-group label-for="estateName" :invalid-feedback="$t('estate.modal.validation.estateName')" :state="estateNameState">
+						<template #label>{{ $t("estate.modal.estateName") }}<span>*</span></template>
 						<b-form-input
 							v-model="form.estateName"
 							:state="estateNameState"
@@ -130,12 +114,8 @@
 							readonly
 						/>
 					</b-form-group>
-					<b-form-group
-						:label="$t('estate.modal.address') + '(*)'"
-						label-for="address"
-						:invalid-feedback="$t('estate.modal.validation.address')"
-						:state="addressState"
-					>
+					<b-form-group label-for="address" :invalid-feedback="$t('estate.modal.validation.address')" :state="addressState">
+						<template #label>{{ $t("estate.modal.address") }}<span>*</span></template>
 						<b-form-input
 							v-model="form.address"
 							:state="addressState"
