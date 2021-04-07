@@ -51,7 +51,19 @@
 		"message": "테스트"
 	},
 	"component": {
-		"search": "검색"
+		"content": {
+			"region": "지역",
+			"estate": "단지",
+			"dcuId": "DCU ID",
+			"meterId": "Meter ID",
+			"status": "상태",
+			"period": "기간",
+			"search": "검색",
+			"meteringType": "검침타입",
+			"placeholder": {
+				"estate": "ex) 그랑시아 아파트"
+			}
+		}
 	},
 	"estate": {
 		"button": {
