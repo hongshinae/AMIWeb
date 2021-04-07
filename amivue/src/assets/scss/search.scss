@@ -1,17 +1,16 @@
 @import "style";
 
 .search-wrap {
-	//한줄
 	position: relative;
 	.search-img {
-		background: $color-gy;
+		background: #ecf2f6;
 		border-radius: 20px;
-		padding: 10px;
-		width: 40px;
-		height: 40px;
+		padding: 8px;
+		width: 34px;
+		height: 34px;
 		margin-right: 10px;
 		float: left;
-		svg {
+		s svg {
 			margin-top: 0px;
 			margin-left: 2px;
 			font-size: 14px;
@@ -19,6 +18,7 @@
 	}
 	.search {
 		padding-left: 65px;
+		padding-right: 110px;
 	}
 	.btn-wrap {
 		right: 19px;
@@ -41,11 +41,7 @@
 		display: none;
 	}
 	.search-wrap .search {
-		left: inherit !important;
-		top: inherit !important;
-		right: inherit !important;
-		bottom: inherit !important;
-		position: inherit !important;
+		padding: 0;
 	}
 	.search-wrap {
 		height: inherit !important;

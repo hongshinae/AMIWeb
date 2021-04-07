@@ -23,10 +23,10 @@
 					<b-row>
 						<b-col xl="3" md="4" sm="12">
 							<b-row>
-								<b-col lg="4">
+								<b-col xl="4" md="5">
 									<label class="d-block">지역 코드</label>
 								</b-col>
-								<b-col lg="8">
+								<b-col xl="6" md="7">
 									<b-form-select v-model="selected">
 										<b-form-select-option>서울시</b-form-select-option>
 										<b-form-select-option>경기도</b-form-select-option>
@@ -36,10 +36,10 @@
 						</b-col>
 						<b-col xl="3" md="4" sm="12">
 							<b-row>
-								<b-col lg="4">
+								<b-col xl="4" md="5">
 									<label class="d-block">단지 명</label>
 								</b-col>
-								<b-col lg="8">
+								<b-col xl="6" md="7">
 									<b-form-select v-model="selected">
 										<b-form-select-option>1단지</b-form-select-option>
 										<b-form-select-option>2단지</b-form-select-option>
@@ -49,10 +49,10 @@
 						</b-col>
 						<b-col xl="3" md="4" sm="12">
 							<b-row>
-								<b-col lg="4">
+								<b-col xl="4" md="5">
 									<label class="d-block">검침 타입</label>
 								</b-col>
-								<b-col lg="8">
+								<b-col xl="6" md="7">
 									<b-form-select v-model="selected">
 										<b-form-select-option>전기</b-form-select-option>
 										<b-form-select-option>난방</b-form-select-option>
@@ -60,14 +60,12 @@
 								</b-col>
 							</b-row>
 						</b-col>
-					</b-row>
-					<b-row>
 						<b-col xl="3" md="4" sm="12">
 							<b-row>
-								<b-col lg="4">
+								<b-col xl="4" md="5">
 									<label class="d-block">DCU ID 또는 Gateway</label>
 								</b-col>
-								<b-col lg="8">
+								<b-col xl="6" md="7">
 									<b-form-input v-model="text" placeholder="DCU ID 또는 Gateway"></b-form-input>
 								</b-col>
 							</b-row>
