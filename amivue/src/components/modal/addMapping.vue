@@ -28,7 +28,7 @@
 					<div class="modal-4th-box">
 						<div class="m-b-20">
 							<form class="one-row">
-								<b-row class="form-group">
+								<b-row>
 									<b-col lg="4">
 										<label class="d-block">검침 타입</label>
 									</b-col>
@@ -39,7 +39,7 @@
 										</b-form-select>
 									</b-col>
 								</b-row>
-								<b-row class="form-group">
+								<b-row>
 									<b-col lg="4">
 										<label class="d-block">지역 코드</label>
 									</b-col>
@@ -50,7 +50,7 @@
 										</b-form-select>
 									</b-col>
 								</b-row>
-								<b-row class="form-group">
+								<b-row>
 									<b-col lg="4">
 										<label class="d-block">단지 명</label>
 									</b-col>
@@ -61,7 +61,7 @@
 										</b-form-select>
 									</b-col>
 								</b-row>
-								<b-row class="form-group">
+								<b-row>
 									<b-col lg="4"> </b-col>
 									<b-col lg="8">
 										<b-button variant="primary btn-block">검색</b-button>
