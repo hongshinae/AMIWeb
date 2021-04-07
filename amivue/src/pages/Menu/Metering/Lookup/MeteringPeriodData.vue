@@ -1,84 +1,83 @@
 <template>
 	<div>
 		<content-search>
-			<form>
-				<b-row>
-					<b-col xl="3" md="12" sm="12">
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">지역 이름</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-select v-model="selected">
-									<b-form-select-option>서울시</b-form-select-option>
-									<b-form-select-option>경기도</b-form-select-option>
-								</b-form-select>
-							</b-col>
-						</b-row>
-					</b-col>
-					<b-col xl="3" md="12" sm="12">
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">단지 명</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-select v-model="selected">
-									<b-form-select-option>1단지</b-form-select-option>
-									<b-form-select-option>2단지</b-form-select-option>
-								</b-form-select>
-							</b-col>
-						</b-row>
-					</b-col>
-					<b-col xl="3" md="12" sm="12">
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">동 명</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-select v-model="selected">
-									<b-form-select-option>1단지</b-form-select-option>
-									<b-form-select-option>2단지</b-form-select-option>
-								</b-form-select>
-							</b-col>
-						</b-row>
-					</b-col>
-				</b-row>
-				<b-row>
-					<b-col xl="3" md="12" sm="12">
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">DCU ID</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-input v-model="text" placeholder="DCU ID"></b-form-input>
-							</b-col>
-						</b-row>
-					</b-col>
-					<b-col xl="3" md="12" sm="12">
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">METER ID</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-select v-model="selected">
-									<b-form-select-option>2919219225</b-form-select-option>
-									<b-form-select-option>2919219225</b-form-select-option>
-								</b-form-select>
-							</b-col>
-						</b-row>
-					</b-col>
-					<b-col xl="3" md="12" sm="12">
-						<b-row class="form-group">
-							<b-col lg="4">
-								<label class="d-block">조회 날짜</label>
-							</b-col>
-							<b-col lg="8">
-								<b-form-datepicker placeholder="조회 날짜"></b-form-datepicker>
-							</b-col>
-						</b-row>
-					</b-col>
-				</b-row>
-			</form>
+			<b-row>
+				<b-col xl="3" md="4" sm="12">
+					<b-row>
+						<b-col lg="4">
+							<label class="d-block">지역 이름</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-select v-model="selected">
+								<b-form-select-option>서울시</b-form-select-option>
+								<b-form-select-option>경기도</b-form-select-option>
+							</b-form-select>
+						</b-col>
+					</b-row>
+				</b-col>
+				<b-col xl="3" md="4" sm="12">
+					<b-row>
+						<b-col lg="4">
+							<label class="d-block">단지 명</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-select v-model="selected">
+								<b-form-select-option>1단지</b-form-select-option>
+								<b-form-select-option>2단지</b-form-select-option>
+							</b-form-select>
+						</b-col>
+					</b-row>
+				</b-col>
+				<b-col xl="3" md="4" sm="12">
+					<b-row>
+						<b-col lg="4">
+							<label class="d-block">동 명</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-select v-model="selected">
+								<b-form-select-option>1단지</b-form-select-option>
+								<b-form-select-option>2단지</b-form-select-option>
+							</b-form-select>
+						</b-col>
+					</b-row>
+				</b-col>
+			</b-row>
+			<b-row>
+				<b-col xl="3" md="4" sm="12">
+					<b-row>
+						<b-col lg="4">
+							<label class="d-block">DCU ID</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-input v-model="text" placeholder="DCU ID"></b-form-input>
+						</b-col>
+					</b-row>
+				</b-col>
+				<b-col xl="3" md="4" sm="12">
+					<b-row>
+						<b-col lg="4">
+							<label class="d-block">METER ID</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-select v-model="selected">
+								<b-form-select-option>2919219225</b-form-select-option>
+								<b-form-select-option>2919219225</b-form-select-option>
+							</b-form-select>
+						</b-col>
+					</b-row>
+				</b-col>
+				<b-col xl="3" md="4" sm="12">
+					<b-row>
+						<b-col lg="4">
+							<label class="d-block">조회 날짜</label>
+						</b-col>
+						<b-col lg="8">
+							<b-form-datepicker placeholder="조회날짜" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }">
+							</b-form-datepicker>
+						</b-col>
+					</b-row>
+				</b-col>
+			</b-row>
 		</content-search>
 		<div>그래프 넣는 영역</div>
 		<content-table
