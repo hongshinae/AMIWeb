@@ -20,90 +20,86 @@
 				</div>
 				<div class="search">
 					<!--검색영역-->
-					<form>
-						<b-row>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">지역 코드</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected">
-											<b-form-select-option>서울시</b-form-select-option>
-											<b-form-select-option>경기도</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">단지 명</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected">
-											<b-form-select-option>1단지</b-form-select-option>
-											<b-form-select-option>2단지</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">DCU ID</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected">
-											<b-form-select-option>전기</b-form-select-option>
-											<b-form-select-option>난방</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-						<b-row>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">Meter ID</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="DCU ID 또는 Gateway"></b-form-input>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">상태 코드</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected">
-											<b-form-select-option>정전</b-form-select-option>
-											<b-form-select-option>복전</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col xl="6" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="2">
-										<label class="d-block">기간</label>
-									</b-col>
-									<b-col lg="4">
-										<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
-									</b-col>
-									<b-col lg="1">
-										~
-									</b-col>
-									<b-col lg="4">
-										<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
-									</b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-					</form>
+					<b-row>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col xl="4" md="5">
+									<label class="d-block">지역 코드</label>
+								</b-col>
+								<b-col xl="6" md="7">
+									<b-form-select v-model="selected">
+										<b-form-select-option>서울시</b-form-select-option>
+										<b-form-select-option>경기도</b-form-select-option>
+									</b-form-select>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col xl="4" md="5">
+									<label class="d-block">단지 명</label>
+								</b-col>
+								<b-col xl="6" md="7">
+									<b-form-select v-model="selected">
+										<b-form-select-option>1단지</b-form-select-option>
+										<b-form-select-option>2단지</b-form-select-option>
+									</b-form-select>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col xl="4" md="5">
+									<label class="d-block">DCU ID</label>
+								</b-col>
+								<b-col xl="6" md="7">
+									<b-form-select v-model="selected">
+										<b-form-select-option>전기</b-form-select-option>
+										<b-form-select-option>난방</b-form-select-option>
+									</b-form-select>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col xl="4" md="5">
+									<label class="d-block">Meter ID</label>
+								</b-col>
+								<b-col xl="6" md="7">
+									<b-form-input v-model="text" placeholder="DCU ID 또는 Gateway"></b-form-input>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col xl="4" md="5">
+									<label class="d-block">상태 코드</label>
+								</b-col>
+								<b-col xl="6" md="7">
+									<b-form-select v-model="selected">
+										<b-form-select-option>정전</b-form-select-option>
+										<b-form-select-option>복전</b-form-select-option>
+									</b-form-select>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="6" md="12" sm="12" class="search-datepicker-wrap">
+							<b-row>
+								<b-col lg="2">
+									<label class="d-block">기간</label>
+								</b-col>
+								<b-col lg="4">
+									<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+								</b-col>
+								<b-col lg="1">
+									~
+								</b-col>
+								<b-col lg="4">
+									<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+								</b-col>
+							</b-row>
+						</b-col>
+					</b-row>
 					<!--//검색영역-->
 				</div>
 				<div class="btn-wrap ml-auto">
