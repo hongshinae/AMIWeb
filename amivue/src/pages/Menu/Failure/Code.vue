@@ -26,7 +26,7 @@
 								<b-col xl="4" md="5">
 									<label class="d-block">지역 코드</label>
 								</b-col>
-								<b-col xl="6" md="7">
+								<b-col xl="8" md="7">
 									<b-form-select v-model="selected">
 										<b-form-select-option>서울시</b-form-select-option>
 										<b-form-select-option>경기도</b-form-select-option>
@@ -39,7 +39,7 @@
 								<b-col xl="4" md="5">
 									<label class="d-block">단지 명</label>
 								</b-col>
-								<b-col xl="6" md="7">
+								<b-col xl="8" md="7">
 									<b-form-select v-model="selected">
 										<b-form-select-option>1단지</b-form-select-option>
 										<b-form-select-option>2단지</b-form-select-option>
@@ -60,6 +60,8 @@
 								</b-col>
 							</b-row>
 						</b-col>
+					</b-row>
+					<b-row>
 						<b-col xl="3" md="4" sm="12">
 							<b-row>
 								<b-col xl="4" md="5">
@@ -83,21 +85,21 @@
 								</b-col>
 							</b-row>
 						</b-col>
-					</b-row>
-					<b-row>
 						<b-col xl="6" md="12" sm="12" class="search-datepicker-wrap">
 							<b-row>
 								<b-col lg="2">
 									<label class="d-block">기간</label>
 								</b-col>
 								<b-col lg="4">
-									<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+									<b-form-datepicker placeholder="조회날짜" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }">
+									</b-form-datepicker>
 								</b-col>
 								<b-col lg="1">
 									~
 								</b-col>
 								<b-col lg="4">
-									<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
+									<b-form-datepicker placeholder="조회날짜" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }">
+									</b-form-datepicker>
 								</b-col>
 							</b-row>
 						</b-col>
