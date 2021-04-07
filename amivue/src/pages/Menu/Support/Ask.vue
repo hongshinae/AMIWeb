@@ -21,71 +21,70 @@
 				</div>
 				<div class="search">
 					<!--검색영역-->
-					<form>
-						<b-row>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">지역 이름</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected">
-											<b-form-select-option>서울시</b-form-select-option>
-											<b-form-select-option>경기도</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">단지 명</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected">
-											<b-form-select-option>1단지</b-form-select-option>
-											<b-form-select-option>2단지</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">조회 날짜</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-datepicker id="datepicker-placeholder" placeholder=""></b-form-datepicker>
-									</b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-						<b-row>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">사용자 ID</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-input v-model="text" placeholder="ID 입력해주세요."></b-form-input>
-									</b-col>
-								</b-row>
-							</b-col>
-							<b-col xl="3" md="12" sm="12">
-								<b-row class="form-group">
-									<b-col lg="4">
-										<label class="d-block">문의 종류</label>
-									</b-col>
-									<b-col lg="8">
-										<b-form-select v-model="selected">
-											<b-form-select-option>DCU</b-form-select-option>
-											<b-form-select-option>Meter</b-form-select-option>
-										</b-form-select>
-									</b-col>
-								</b-row>
-							</b-col>
-						</b-row>
-					</form>
+					<b-row>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col lg="4">
+									<label class="d-block">지역 이름</label>
+								</b-col>
+								<b-col lg="8">
+									<b-form-select v-model="selected">
+										<b-form-select-option>서울시</b-form-select-option>
+										<b-form-select-option>경기도</b-form-select-option>
+									</b-form-select>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col lg="4">
+									<label class="d-block">단지 명</label>
+								</b-col>
+								<b-col lg="8">
+									<b-form-select v-model="selected">
+										<b-form-select-option>1단지</b-form-select-option>
+										<b-form-select-option>2단지</b-form-select-option>
+									</b-form-select>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col lg="4">
+									<label class="d-block">조회 날짜</label>
+								</b-col>
+								<b-col lg="8">
+									<b-form-datepicker placeholder="조회날짜" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }">
+									</b-form-datepicker>
+								</b-col>
+							</b-row>
+						</b-col>
+					</b-row>
+					<b-row>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col lg="4">
+									<label class="d-block">사용자 ID</label>
+								</b-col>
+								<b-col lg="8">
+									<b-form-input v-model="text" placeholder="ID 입력해주세요."></b-form-input>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col xl="3" md="4" sm="12">
+							<b-row>
+								<b-col lg="4">
+									<label class="d-block">문의 종류</label>
+								</b-col>
+								<b-col lg="8">
+									<b-form-select v-model="selected">
+										<b-form-select-option>DCU</b-form-select-option>
+										<b-form-select-option>Meter</b-form-select-option>
+									</b-form-select>
+								</b-col>
+							</b-row>
+						</b-col>
+					</b-row>
 					<!--//검색영역-->
 				</div>
 				<div class="btn-wrap ml-auto">
