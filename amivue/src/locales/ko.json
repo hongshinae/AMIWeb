@@ -136,6 +136,15 @@
 			}
 		}
 	},
+	"building": {
+		"table": {
+			"estateName": "단지명",
+			"regionName": "지역",
+			"building": "동",
+			"dcuId": "DCU ID",
+			"dataLinkage": "데이터 연동"
+		}
+	},
 	"mapping": {
 		"table": {
 			"building": "동",

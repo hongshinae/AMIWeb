@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import Estate from "@/service/estate";
+import Search from "@/service/search";
 
 export default {
 	props: ["selected"],
 	mounted() {
-		Estate.region()
+		Search.region()
 			.then(({ data }) => {
 				this.regionList = data.response;
 			})

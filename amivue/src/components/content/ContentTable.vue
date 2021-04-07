@@ -68,6 +68,11 @@
 					<template #emptyfiltered="scope">
 						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
+					<template #cell(_linkage)="row">
+						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
+							<slot name="table-cell-remark" />
+						</b-button>
+					</template>
 					<template #cell(_remark)="row">
 						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
 							<slot name="table-cell-remark" />

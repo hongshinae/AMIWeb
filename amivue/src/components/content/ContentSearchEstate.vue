@@ -10,6 +10,7 @@
 				@input="$emit('input', $event)"
 				list="filterList"
 				autocomplete="off"
+				:disabled="options.length == 0"
 			/>
 			<b-form-datalist id="filterList" :options="options" />
 		</b-col>
@@ -17,7 +18,7 @@
 </template>
 
 <script>
-import Estate from "@/service/estate";
+import Search from "@/service/search";
 
 export default {
 	props: ["text", "region"],
@@ -36,7 +37,8 @@ export default {
 	},
 	methods: {
 		async searchEstates(value) {
-			const response = await Estate.estate({ regionSeq: value });
+			this.options = [];
+			const response = await Search.estate({ regionSeq: value });
 			const estates = response.data.response;
 			const result = estates.map(estate => estate.estateName);
 			this.options = result;

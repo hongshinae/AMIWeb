@@ -29,6 +29,7 @@
 	</div>
 </template>
 <script>
+import Search from "@/service/search";
 import Estate from "@/service/estate";
 import AddEstate from "@/components/modal/addEstate";
 import DetailEstate from "@/components/modal/detailEstate";
@@ -38,12 +39,12 @@ export default {
 	mixins: [ContentMixin],
 	components: { AddEstate, DetailEstate },
 	created() {
-		Estate.region()
+		Search.region()
 			.then(({ data }) => {
 				this.regionList = data.response;
 
 				if (this.regionList.length > 0) {
-					this.searchEstates(this.regionList[0].regionSeq);
+					this.searchEstates(0);
 				}
 			})
 			.catch(error => {
@@ -158,7 +159,7 @@ export default {
 	methods: {
 		async searchEstates(value) {
 			this.filterRegion = value;
-			const response = await Estate.estate({ regionSeq: value });
+			const response = await Search.estate({ regionSeq: value });
 			const estates = response.data.response;
 			const result = estates.map(estate => estate.estateName);
 			this.estates = result;

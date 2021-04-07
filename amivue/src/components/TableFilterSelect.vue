@@ -6,7 +6,11 @@
 			:text-field="text_field"
 			:value-field="value_field"
 			@input="$emit('update:selected', { eventName: eventName, value: $event })"
-		/>
+		>
+			<template #first>
+				<b-form-select-option value="0" selected>-- 전체 --</b-form-select-option>
+			</template>
+		</b-form-select>
 	</b-form-group>
 </template>
 
