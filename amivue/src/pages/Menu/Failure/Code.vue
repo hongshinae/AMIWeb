@@ -52,7 +52,7 @@
 								<b-col xl="4" md="5">
 									<label class="d-block">DCU ID</label>
 								</b-col>
-								<b-col xl="6" md="7">
+								<b-col xl="8" md="7">
 									<b-form-select v-model="selected">
 										<b-form-select-option>전기</b-form-select-option>
 										<b-form-select-option>난방</b-form-select-option>
@@ -65,7 +65,7 @@
 								<b-col xl="4" md="5">
 									<label class="d-block">Meter ID</label>
 								</b-col>
-								<b-col xl="6" md="7">
+								<b-col xl="8" md="7">
 									<b-form-input v-model="text" placeholder="DCU ID 또는 Gateway"></b-form-input>
 								</b-col>
 							</b-row>
@@ -75,7 +75,7 @@
 								<b-col xl="4" md="5">
 									<label class="d-block">상태 코드</label>
 								</b-col>
-								<b-col xl="6" md="7">
+								<b-col xl="8" md="7">
 									<b-form-select v-model="selected">
 										<b-form-select-option>정전</b-form-select-option>
 										<b-form-select-option>복전</b-form-select-option>
@@ -83,6 +83,8 @@
 								</b-col>
 							</b-row>
 						</b-col>
+					</b-row>
+					<b-row>
 						<b-col xl="6" md="12" sm="12" class="search-datepicker-wrap">
 							<b-row>
 								<b-col lg="2">
