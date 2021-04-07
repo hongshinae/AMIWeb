@@ -14,7 +14,7 @@ export default {
 			params: params
 		});
 	},
-	estateList() {
+	list() {
 		return Send({
 			url: "/device/estate/list",
 			method: "get"

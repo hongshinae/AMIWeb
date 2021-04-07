@@ -32,11 +32,11 @@
 import Estate from "@/service/estate";
 import AddEstate from "@/components/modal/addEstate";
 import DetailEstate from "@/components/modal/detailEstate";
-import ContentHeader from "@/components/content/ContentHeader";
-import ContentTable from "@/components/content/ContentTable";
+import ContentMixin from "@/components/content/mixin";
 
 export default {
-	components: { AddEstate, DetailEstate, ContentHeader, ContentTable },
+	mixins: [ContentMixin],
+	components: { AddEstate, DetailEstate },
 	created() {
 		Estate.region()
 			.then(({ data }) => {
@@ -100,7 +100,6 @@ export default {
 	},
 	data() {
 		return {
-			isBusy: false,
 			pageName: this.$t("menu.device.estate"),
 			paths: [
 				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
@@ -169,7 +168,7 @@ export default {
 			this.isBusy = true;
 
 			try {
-				const response = await Estate.estateList();
+				const response = await Estate.list();
 				const result = response.data.response;
 				this.estateList = result;
 			} catch (error) {

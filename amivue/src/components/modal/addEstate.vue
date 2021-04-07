@@ -37,12 +37,8 @@
 			<modal-alert ref="addEstateAlert" :title="alertTitle" :message="alertMessage" />
 			<b-form ref="addEstateForm" @submit.prevent="onSubmit" @reset="showAddEstate">
 				<div class="modal-1st-box">
-					<b-form-group
-						:label="$t('estate.modal.estateId') + '(*)'"
-						label-for="estateId"
-						:invalid-feedback="$t('estate.modal.validation.estateId')"
-						:state="estateIdState"
-					>
+					<b-form-group label-for="estateId" :invalid-feedback="$t('estate.modal.validation.estateId')" :state="estateIdState">
+						<template #label>{{ $t("estate.modal.estateId") }}<span>*</span></template>
 						<b-form-input
 							v-model="form.estateId"
 							:state="estateIdState"
@@ -53,12 +49,8 @@
 							required
 						/>
 					</b-form-group>
-					<b-form-group
-						:label="$t('estate.modal.houseCount') + '(*)'"
-						label-for="houseCount"
-						:invalid-feedback="$t('estate.modal.validation.houseCount')"
-						:state="houseCountState"
-					>
+					<b-form-group label-for="houseCount" :invalid-feedback="$t('estate.modal.validation.houseCount')" :state="houseCountState">
+						<template #label>{{ $t("estate.modal.houseCount") }}<span>*</span></template>
 						<b-form-input
 							v-model.number="form.houseCount"
 							:state="houseCountState"
@@ -76,6 +68,7 @@
 						:invalid-feedback="$t('estate.modal.validation.regionSeq')"
 						:state="regionSeqState"
 					>
+						<template #label>{{ $t("estate.modal.regionSeq") }}<span>*</span></template>
 						<b-form-select
 							v-model="form.regionSeq"
 							:state="regionSeqState"
@@ -105,12 +98,8 @@
 					</b-form-group>
 				</div>
 				<div class="modal-2nd-box">
-					<b-form-group
-						:label="$t('estate.modal.estateName') + '(*)'"
-						label-for="estateName"
-						:invalid-feedback="$t('estate.modal.validation.estateName')"
-						:state="estateNameState"
-					>
+					<b-form-group label-for="estateName" :invalid-feedback="$t('estate.modal.validation.estateName')" :state="estateNameState">
+						<template #label>{{ $t("estate.modal.estateName") }}<span>*</span></template>
 						<b-form-input
 							v-model="form.estateName"
 							:state="estateNameState"
@@ -120,12 +109,8 @@
 							required
 						/>
 					</b-form-group>
-					<b-form-group
-						:label="$t('estate.modal.address') + '(*)'"
-						label-for="address"
-						:invalid-feedback="$t('estate.modal.validation.address')"
-						:state="addressState"
-					>
+					<b-form-group label-for="address" :invalid-feedback="$t('estate.modal.validation.address')" :state="addressState">
+						<template #label>{{ $t("estate.modal.address") }}<span>*</span></template>
 						<b-form-input
 							v-model="form.address"
 							:state="addressState"
@@ -322,11 +307,11 @@ export default {
 			this.houseCountState = null;
 			this.addressState = null;
 			this.regionSeqState = null;
-			this.form.regionSeq = "1"; // 지역 SEQ
-			this.form.estateId = "asdf"; // 단지 ID
-			this.form.estateName = "aaaa"; // 단지명
-			this.form.houseCount = 1; // 세대수
-			this.form.address = "asdfbbbb"; // 주소
+			this.form.regionSeq = ""; // 지역 SEQ
+			this.form.estateId = ""; // 단지 ID
+			this.form.estateName = ""; // 단지명
+			this.form.houseCount = 0; // 세대수
+			this.form.address = ""; // 주소
 			this.form.telEstate = ""; // 단지전화번호
 			this.form.manager1 = ""; // 관리자1
 			this.form.telManager1 = ""; // 관리자1 연락처
