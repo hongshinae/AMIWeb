@@ -214,10 +214,25 @@
 	.chart-wrap {
 		position: relative;
 	}
-	.blank-box {
-		height: 100px;
-		span {
-			font-size: 40px;
+}
+
+.blank-box {
+	height: 250px;
+	padding-top: 60px;
+	span {
+		position: relative;
+		img {
+			width: 80px;
 		}
+		svg {
+			position: absolute;
+			top: 17px;
+			left: 27px;
+			color: #c4c4c4;
+		}
+	}
+	p {
+		margin-top: 10px;
+		color: #c4c4c4;
 	}
 }

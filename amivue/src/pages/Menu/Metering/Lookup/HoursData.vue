@@ -87,13 +87,25 @@
 					1시간 데이터
 				</h5>
 				<div class="blank-box">
-					<span><b-icon icon="tv"></b-icon></span>
+					<span>
+						<img src="@/assets/svg/monitor_empty.svg" />
+						<b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+					</span>
 					<p>현재 1시간 데이터가 없습니다.</p>
 				</div>
 			</div>
 		</div>
 		<div class="blank-box">
-			<span><b-icon icon="tv"></b-icon></span>
+			<span>
+				<img src="@/assets/svg/monitor_empty.svg" />
+				<b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+			</span>
+			<p>현재 1시간 데이터가 없습니다.</p>
+		</div>
+		<div class="blank-box">
+			<span>
+				<img src="@/assets/svg/monitor_empty.svg" />
+			</span>
 			<p>현재 1시간 데이터가 없습니다.</p>
 		</div>
 		<content-table
