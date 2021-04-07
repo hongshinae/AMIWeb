@@ -169,6 +169,17 @@
 	width: 860px;
 	max-width: 860px;
 	margin: 60px auto;
+	.form-group {
+		height: inherit;
+	}
+	.form-group:after {
+		clear: both;
+		display: block;
+		content: "";
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+	}
 	.modal-1st-box {
 		width: 385px;
 		margin-right: 30px;
@@ -202,9 +213,10 @@
 			width: 670px;
 			padding: 0px 10px;
 		}
-		.custom-control-inline {
+		.custom-checkbox {
 			width: 50px;
 			float: left;
+			margin-right: 20px;
 			input[type="checkbox"] {
 				opacity: 1;
 				height: 32px;

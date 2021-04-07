@@ -147,21 +147,11 @@
 				</div>
 				<div class="modal-3rd-box">
 					<b-form-group :label="$t('estate.modal.meteringType')">
-						<b-form-checkbox-group>
-							<b-form-checkbox v-model="form.checkPower" unchecked-value="N" value="Y">{{ $t("estate.modal.powerType") }} </b-form-checkbox>
-						</b-form-checkbox-group>
-						<b-form-checkbox-group>
-							<b-form-checkbox v-model="form.checkGas" unchecked-value="N" value="Y">{{ $t("estate.modal.gasType") }} </b-form-checkbox>
-						</b-form-checkbox-group>
-						<b-form-checkbox-group>
-							<b-form-checkbox v-model="form.checkWater" unchecked-value="N" value="Y">{{ $t("estate.modal.waterType") }} </b-form-checkbox>
-						</b-form-checkbox-group>
-						<b-form-checkbox-group>
-							<b-form-checkbox v-model="form.checkHot" unchecked-value="N" value="Y">{{ $t("estate.modal.hotType") }} </b-form-checkbox>
-						</b-form-checkbox-group>
-						<b-form-checkbox-group>
-							<b-form-checkbox v-model="form.checkHeating" unchecked-value="N" value="Y">{{ $t("estate.modal.heatingType") }} </b-form-checkbox>
-						</b-form-checkbox-group>
+						<b-form-checkbox v-model="form.checkPower" unchecked-value="N" value="Y">{{ $t("estate.modal.powerType") }} </b-form-checkbox>
+						<b-form-checkbox v-model="form.checkGas" unchecked-value="N" value="Y">{{ $t("estate.modal.gasType") }} </b-form-checkbox>
+						<b-form-checkbox v-model="form.checkWater" unchecked-value="N" value="Y">{{ $t("estate.modal.waterType") }} </b-form-checkbox>
+						<b-form-checkbox v-model="form.checkHot" unchecked-value="N" value="Y">{{ $t("estate.modal.hotType") }} </b-form-checkbox>
+						<b-form-checkbox v-model="form.checkHeating" unchecked-value="N" value="Y">{{ $t("estate.modal.heatingType") }} </b-form-checkbox>
 					</b-form-group>
 				</div>
 				<div class="modal-4th-box">
