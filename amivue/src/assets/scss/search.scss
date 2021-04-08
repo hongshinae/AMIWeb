@@ -5,12 +5,12 @@
 	.search-img {
 		background: #ecf2f6;
 		border-radius: 20px;
-		padding: 8px;
+		padding: 8px 6px;
 		width: 34px;
 		height: 34px;
 		margin-right: 10px;
 		float: left;
-		s svg {
+		svg {
 			margin-top: 0px;
 			margin-left: 2px;
 			font-size: 14px;
@@ -18,7 +18,7 @@
 	}
 	.search {
 		padding-left: 65px;
-		padding-right: 110px;
+		padding-right: 85px;
 	}
 	.btn-wrap {
 		right: 19px;
@@ -28,6 +28,9 @@
 		position: absolute;
 		margin-bottom: 0 !important;
 		top: 15px;
+		button {
+			height: 100%;
+		}
 	}
 	.b-form-datepicker label {
 		white-space: nowrap !important;
