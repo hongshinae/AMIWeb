@@ -38,16 +38,7 @@
 				<div class="modal-1st-box">
 					<b-form-group label-for="estateId" :invalid-feedback="$t('estate.modal.validation.estateId')" :state="estateIdState">
 						<template #label>{{ $t("estate.modal.estateId") }}<span>*</span></template>
-						<b-form-input
-							v-model="form.estateId"
-							:state="estateIdState"
-							@input="estateIdState = null"
-							:placeholder="$t('estate.modal.estateId')"
-							autofocus
-							tabindex="1"
-							required
-							readonly
-						/>
+						<b-form-input v-model="form.estateId" :state="estateIdState" @input="estateIdState = null" autofocus tabindex="1" required readonly />
 					</b-form-group>
 					<b-form-group label-for="houseCount" :invalid-feedback="$t('estate.modal.validation.houseCount')" :state="houseCountState">
 						<template #label>{{ $t("estate.modal.houseCount") }}<span>*</span></template>
@@ -55,7 +46,6 @@
 							v-model.number="form.houseCount"
 							:state="houseCountState"
 							@input="houseCountState = null"
-							:placeholder="$t('estate.modal.houseCount')"
 							type="number"
 							min="0"
 							tabindex="3"
@@ -82,68 +72,38 @@
 						</b-form-select>
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.manager1')">
-						<b-form-input v-model="form.manager1" :placeholder="$t('estate.modal.manager1')" tabindex="7" readonly />
+						<b-form-input v-model="form.manager1" tabindex="7" readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.manager2')">
-						<b-form-input v-model="form.manager2" :placeholder="$t('estate.modal.manager2')" tabindex="9" readonly />
+						<b-form-input v-model="form.manager2" tabindex="9" readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.dcuCount')">
-						<b-form-input v-model.number="form.dcuCount" :placeholder="$t('estate.modal.dcuCount')" type="number" min="0" tabindex="11" readonly />
+						<b-form-input v-model.number="form.dcuCount" type="number" min="0" tabindex="11" readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.meterCount')">
-						<b-form-input
-							v-model.number="form.meterCount"
-							:placeholder="$t('estate.modal.meterCount')"
-							type="number"
-							min="0"
-							tabindex="13"
-							readonly
-						/>
+						<b-form-input v-model.number="form.meterCount" type="number" min="0" tabindex="13" readonly />
 					</b-form-group>
 				</div>
 				<div class="modal-2nd-box">
 					<b-form-group label-for="estateName" :invalid-feedback="$t('estate.modal.validation.estateName')" :state="estateNameState">
 						<template #label>{{ $t("estate.modal.estateName") }}<span>*</span></template>
-						<b-form-input
-							v-model="form.estateName"
-							:state="estateNameState"
-							@input="estateNameState = null"
-							:placeholder="$t('estate.modal.estateName')"
-							tabindex="2"
-							required
-							readonly
-						/>
+						<b-form-input v-model="form.estateName" :state="estateNameState" @input="estateNameState = null" tabindex="2" required readonly />
 					</b-form-group>
 					<b-form-group label-for="address" :invalid-feedback="$t('estate.modal.validation.address')" :state="addressState">
 						<template #label>{{ $t("estate.modal.address") }}<span>*</span></template>
-						<b-form-input
-							v-model="form.address"
-							:state="addressState"
-							@input="addressState = null"
-							:placeholder="$t('estate.modal.addressEx')"
-							tabindex="4"
-							required
-							readonly
-						/>
+						<b-form-input v-model="form.address" :state="addressState" @input="addressState = null" tabindex="4" required readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.telEstate')">
-						<b-form-input v-model="form.telEstate" v-mask="telEstate" :placeholder="$t('estate.modal.telEstateEx')" tabindex="6" readonly />
+						<b-form-input v-model="form.telEstate" v-mask="telEstate" tabindex="6" readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.telManager1')">
-						<b-form-input v-model="form.telManager1" v-mask="telManager1" :placeholder="$t('estate.modal.telManager1')" tabindex="8" readonly />
+						<b-form-input v-model="form.telManager1" v-mask="telManager1" tabindex="8" readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.telManager2')">
-						<b-form-input v-model="form.telManager2" v-mask="telManager2" :placeholder="$t('estate.modal.telManager2')" tabindex="10" readonly />
+						<b-form-input v-model="form.telManager2" v-mask="telManager2" tabindex="10" readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.modemCount')">
-						<b-form-input
-							type="number"
-							v-model.number="form.modemCount"
-							:placeholder="$t('estate.modal.modemCount')"
-							min="0"
-							tabindex="12"
-							readonly
-						/>
+						<b-form-input type="number" v-model.number="form.modemCount" min="0" tabindex="12" readonly />
 					</b-form-group>
 					<b-form-group :label="$t('estate.modal.buildingHouseCount')">
 						<b-row>
@@ -189,62 +149,27 @@
 							<ul class="bg">
 								<li>
 									<b-form-group :label="$t('estate.modal.powerDay')">
-										<b-form-input
-											type="number"
-											v-model.number="form.dayPower"
-											v-mask="mask"
-											:placeholder="$t('estate.modal.meteringDefault')"
-											tabindex="16"
-											readonly
-										/>
+										<b-form-input type="number" v-model.number="form.dayPower" v-mask="mask" tabindex="16" readonly />
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.gasDay')">
-										<b-form-input
-											v-model="form.dayGas"
-											v-mask="mask"
-											:placeholder="$t('estate.modal.meteringDefault')"
-											type="number"
-											tabindex="17"
-											readonly
-										/>
+										<b-form-input v-model="form.dayGas" v-mask="mask" type="number" tabindex="17" readonly />
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.waterDay')">
-										<b-form-input
-											type="number"
-											v-model.number="form.dayWater"
-											v-mask="mask"
-											:placeholder="$t('estate.modal.meteringDefault')"
-											tabindex="18"
-											readonly
-										/>
+										<b-form-input type="number" v-model.number="form.dayWater" v-mask="mask" tabindex="18" readonly />
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.hotDay')">
-										<b-form-input
-											type="number"
-											v-model.number="form.dayHot"
-											v-mask="mask"
-											:placeholder="$t('estate.modal.meteringDefault')"
-											tabindex="19"
-											readonly
-										/>
+										<b-form-input type="number" v-model.number="form.dayHot" v-mask="mask" tabindex="19" readonly />
 									</b-form-group>
 								</li>
 								<li>
 									<b-form-group :label="$t('estate.modal.heatingDay')">
-										<b-form-input
-											type="number"
-											v-model.number="form.dayHeating"
-											v-mask="mask"
-											:placeholder="$t('estate.modal.meteringDefault')"
-											tabindex="20"
-											readonly
-										/>
+										<b-form-input type="number" v-model.number="form.dayHeating" v-mask="mask" tabindex="20" readonly />
 									</b-form-group>
 								</li>
 							</ul>
@@ -331,11 +256,11 @@ export default {
 			this.houseCountState = null;
 			this.addressState = null;
 			this.regionSeqState = null;
-			this.form.regionSeq = "1"; // 지역 SEQ
-			this.form.estateId = "asdf"; // 단지 ID
-			this.form.estateName = "aaaa"; // 단지명
+			this.form.regionSeq = "0"; // 지역 SEQ
+			this.form.estateId = ""; // 단지 ID
+			this.form.estateName = ""; // 단지명
 			this.form.houseCount = 1; // 세대수
-			this.form.address = "asdfbbbb"; // 주소
+			this.form.address = ""; // 주소
 			this.form.telEstate = ""; // 단지전화번호
 			this.form.manager1 = ""; // 관리자1
 			this.form.telManager1 = ""; // 관리자1 연락처
