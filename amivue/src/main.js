@@ -14,7 +14,6 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import GlobalDirectives from "@/globalDirectives";
 import MainLayout from "@/mainLayout";
 import i18n from "@/locales";
-import IconBase from "@/components/IconBase.vue";
 import modalAlert from "@/components/modalAlert";
 import modalConfirm from "@/components/modalConfirm";
 
@@ -26,7 +25,6 @@ Vue.use(NavbarPlugin);
 Vue.use(GlobalDirectives);
 Vue.use(MainLayout);
 Vue.use(VueMoment);
-Vue.component("icon-base", IconBase);
 Vue.component("modal-alert", modalAlert);
 Vue.component("modal-confirm", modalConfirm);
 
