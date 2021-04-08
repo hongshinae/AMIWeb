@@ -44,7 +44,8 @@
 			"page50": "50개씩 보기"
 		},
 		"button": {
-			"excelDownload": "엑셀 다운로드"
+			"excelDownload": "엑셀 다운로드",
+			"details": "상세정보"
 		}
 	},
 	"dashboard": {
@@ -53,7 +54,7 @@
 	"component": {
 		"content": {
 			"region": "지역",
-			"estate": "단지",
+			"estate": "단지명",
 			"dcuId": "DCU ID",
 			"meterId": "Meter ID",
 			"status": "상태",
@@ -137,12 +138,29 @@
 		}
 	},
 	"building": {
+		"button": {
+			"add": "신규 동 등록",
+			"save": "등록",
+			"cancel": "취소"
+		},
 		"table": {
 			"estateName": "단지명",
 			"regionName": "지역",
-			"building": "동",
+			"buildingName": "동",
 			"dcuId": "DCU ID",
-			"dataLinkage": "데이터 연동"
+			"systemState": "데이터 연동"
+		},
+		"modal": {
+			"add": "동 등록",
+			"detail": "동 상세",
+			"selectRegion": "지역 선택",
+			"selectEstate": "단지 선택",
+			"buildingName": "등록 동명",
+			"dcuId": "DCU ID",
+			"selecting": "-- 선택하세요 --",
+			"loading": "불러오는중...",
+			"nothing": "없음",
+			"button": { "linkCheck": "연동 확인", "save": "등록", "cancel": "취소" }
 		}
 	},
 	"mapping": {

@@ -1,10 +1,11 @@
 import Send from "@/axios";
 
 export default {
-	list() {
+	list(params) {
 		return Send({
 			url: "/device/building/list",
-			method: "get"
+			method: "get",
+			params: params
 		});
 	},
 	registration(data) {

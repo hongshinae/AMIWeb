@@ -17,8 +17,8 @@
 				<b-form-group v-for="(item, index) in showFilterList" :key="index">
 					<content-table-filter-region
 						v-if="item == 'region'"
-						:selected="selectFilter.regionSelected"
 						v-model="selectFilter.regionSelected"
+						:selected="selectFilter.regionSelected"
 						@init-filter-text="filterText = ''"
 					/>
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filterText" />
@@ -56,14 +56,12 @@
 					<template #emptyfiltered="scope">
 						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
-					<template #cell(_linkage)="row">
-						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
-							<slot name="table-cell-remark" />
-						</b-button>
+					<template #cell(systemState)="row">
+						<span :class="{ linkage: row.item.systemState == 1, unlinkage: row.item.systemState != 1 }"></span>
 					</template>
 					<template #cell(_remark)="row">
 						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
-							<slot name="table-cell-remark" />
+							<slot name="table-cell-remark">{{ $t("common.button.details") }}</slot>
 						</b-button>
 					</template>
 				</b-table>

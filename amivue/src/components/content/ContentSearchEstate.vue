@@ -4,15 +4,18 @@
 			<label class="d-block">{{ $t("component.content.estate") }}</label>
 		</b-col>
 		<b-col lg="8">
-			<b-form-input
-				:value="text"
-				:placeholder="$t('component.content.placeholder.estate')"
+			<b-form-select
+				:value="value"
 				@input="$emit('input', $event)"
-				list="filterList"
-				autocomplete="off"
+				:options="options"
+				text-field="estateName"
+				value-field="estateSeq"
 				:disabled="options.length == 0"
-			/>
-			<b-form-datalist id="filterList" :options="options" />
+			>
+				<template #first>
+					<b-form-select-option value="0" selected>-- 전체 --</b-form-select-option>
+				</template>
+			</b-form-select>
 		</b-col>
 	</b-row>
 </template>
@@ -21,7 +24,10 @@
 import Search from "@/service/search";
 
 export default {
-	props: ["text", "region"],
+	props: {
+		selected: { default: "0" },
+		region: { default: "0" }
+	},
 	mounted() {
 		this.searchEstates(this.region);
 	},
@@ -30,8 +36,14 @@ export default {
 			this.searchEstates(value);
 		}
 	},
+	computed: {
+		value() {
+			return this.itemSelected ? this.itemSelected : this.selected;
+		}
+	},
 	data() {
 		return {
+			itemSelected: this.selected,
 			options: []
 		};
 	},

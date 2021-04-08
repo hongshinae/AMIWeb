@@ -20,9 +20,6 @@
 				</b-button>
 			</template>
 			<template v-slot:table-header-right> </template>
-			<template #table-cell-remark>
-				{{ $t("estate.details") }}
-			</template>
 		</content-table>
 	</div>
 </template>
@@ -97,7 +94,6 @@ export default {
 					label: ""
 				}
 			],
-			estates: [],
 			selectedItem: null
 		};
 	},

@@ -9,8 +9,8 @@
 				<form>
 					<b-row v-for="(items, index) in shows" :key="index">
 						<b-col xl="3" md="12" sm="12" v-for="item in items" :key="item">
-							<content-search-region v-if="item == 'region'" :selected="regionSelected" v-model="regionSelected" />
-							<content-search-estate v-if="item == 'estate'" v-model="estateText" :region="regionSelected" />
+							<content-search-region v-if="item == 'region'" v-model="regionSelected" :selected="regionSelected" />
+							<content-search-estate v-if="item == 'estate'" v-model="estateSelected" :region="regionSelected" />
 						</b-col>
 					</b-row>
 				</form>
@@ -29,7 +29,6 @@ import ContentSearchEstate from "./ContentSearchEstate";
 
 export default {
 	props: {
-		isLazySearch: { type: Boolean, default: false },
 		shows: {
 			type: Array,
 			default: () => {
@@ -40,18 +39,23 @@ export default {
 	components: { ContentSearchRegion, ContentSearchEstate },
 	created() {},
 	mounted() {},
-	computed: {},
+	computed: {
+		result() {
+			return {
+				regionSeq: this.regionSelected,
+				estateSeq: this.estateSelected
+			};
+		}
+	},
 	data() {
 		return {
 			regionSelected: "0",
-			estateText: null
+			estateSelected: "0"
 		};
 	},
 	methods: {
 		search() {
-			console.log(this.regionSelected);
-			console.log(this.estateText);
-			// this.$emit("update:searchItem");
+			this.$emit("handle:searchItem", this.result);
 		}
 	}
 };
