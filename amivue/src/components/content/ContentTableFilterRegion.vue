@@ -1,6 +1,13 @@
 <template>
 	<b-form-group :label="$t('component.content.region')">
-		<b-form-select :value="selected" @input="$emit('input', $event)" :options="regionList" text-field="regionName" value-field="regionSeq">
+		<b-form-select
+			text-field="regionName"
+			value-field="regionSeq"
+			:value="selected"
+			:options="regionList"
+			@input="$emit('input', $event)"
+			@change="$emit('init-filter-text')"
+		>
 			<template #first>
 				<b-form-select-option value="0" selected>-- 전체 --</b-form-select-option>
 			</template>

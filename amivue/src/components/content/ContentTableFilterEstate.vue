@@ -6,6 +6,9 @@
 
 <script>
 export default {
+	model: {
+		prop: "text"
+	},
 	props: ["text"]
 };
 </script>

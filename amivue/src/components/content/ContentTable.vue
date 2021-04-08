@@ -15,7 +15,12 @@
 			<div class="filter-wrap">
 				<slot name="table-header-right" />
 				<b-form-group v-for="(item, index) in showFilterList" :key="index">
-					<content-table-filter-region v-if="item == 'region'" :selected="selectFilter.regionSelected" v-model="selectFilter.regionSelected" />
+					<content-table-filter-region
+						v-if="item == 'region'"
+						:selected="selectFilter.regionSelected"
+						v-model="selectFilter.regionSelected"
+						@init-filter-text="filterText = ''"
+					/>
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filterText" />
 				</b-form-group>
 				<b-form-group v-if="isPerPage">
