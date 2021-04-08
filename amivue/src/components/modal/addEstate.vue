@@ -227,10 +227,19 @@
 </template>
 
 <script>
+import Search from "@/service/search";
 import Estate from "@/service/estate";
 
 export default {
-	props: { regionList: { type: Array } },
+	created() {
+		Search.region()
+			.then(({ data }) => {
+				this.regionList = data.response;
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	},
 	mounted() {},
 	computed: {
 		isDayStateValid() {
@@ -277,7 +286,8 @@ export default {
 			telEstate: this.getPhoneMask,
 			telManager1: this.getPhoneMask,
 			telManager2: this.getPhoneMask,
-			mask: this.getDayMask
+			mask: this.getDayMask,
+			regionList: []
 		};
 	},
 	methods: {
@@ -335,7 +345,7 @@ export default {
 							throw Error("알수 없는 오류");
 						}
 
-						this.$emit("update:search-estate-list");
+						this.$emit("handle:search-estate-list");
 						this.$bvModal.hide("addEstate");
 					})
 					.catch(({ response }) => {

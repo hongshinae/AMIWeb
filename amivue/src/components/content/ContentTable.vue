@@ -14,28 +14,11 @@
 			</div>
 			<div class="filter-wrap">
 				<slot name="table-header-right" />
-				<b-form-group v-for="(item, index) in filter" :key="index">
-					<table-filter-select
-						v-if="item.type === Array"
-						:selected="'0'"
-						:label="item.label"
-						:options="item.options"
-						:text_field="item.textField"
-						:value_field="item.valueField"
-						:eventName="item.eventName"
-						@update:selected="selectEvent"
-					/>
-					<table-filter-input
-						v-else-if="item.type === String"
-						:value="item.text"
-						:label="item.label"
-						:options="item.options"
-						:placeholder="item.placeholder"
-						:eventName="item.eventName"
-						@update:selected="inputEvent"
-					/>
+				<b-form-group v-for="(item, index) in showFilterList" :key="index">
+					<content-table-filter-region v-if="item == 'region'" :selected="selectFilter.regionSelected" v-model="selectFilter.regionSelected" />
+					<content-table-filter-estate v-if="item == 'estate'" v-model="filterText" />
 				</b-form-group>
-				<b-form-group v-if="perpage">
+				<b-form-group v-if="isPerPage">
 					<b-form-select v-model="perPage" :options="pages" />
 				</b-form-group>
 			</div>
@@ -44,8 +27,8 @@
 			<div class="bgtable">
 				<b-table
 					:striped="true"
-					:busy="busy"
-					:items="items"
+					:busy="isBusy"
+					:items="itemList"
 					:fields="fields"
 					:current-page="currentPage"
 					:per-page="perPage"
@@ -93,30 +76,46 @@
 </template>
 
 <script>
-import Vue from "vue";
-import TableFilterSelect from "@/components/TableFilterSelect";
-import TableFilterInput from "@/components/TableFilterInput";
+import ContentTableFilterRegion from "./ContentTableFilterRegion";
+import ContentTableFilterEstate from "./ContentTableFilterEstate";
 import XLSX from "xlsx";
 
-Vue.component(TableFilterSelect);
-Vue.component(TableFilterInput);
-
 export default {
-	components: { TableFilterSelect, TableFilterInput },
+	components: { ContentTableFilterRegion, ContentTableFilterEstate },
 	props: {
-		perpage: { type: Boolean, default: true },
-		busy: Boolean,
+		isPerPage: { type: Boolean, default: true },
+		isBusy: Boolean,
 		items: Array,
-		totalRows: Number,
 		fields: Array,
-		filter: Array,
+		itemsTotalCount: null,
 		excelFileName: { type: String, default: "excel.xlsx" },
 		excelSheetName: { type: String, default: "sheet1" },
-		detailModalId: String
+		showFilterList: {
+			type: Array,
+			default: () => {
+				return ["region", "estate"];
+			}
+		}
 	},
 	created() {},
 	mounted() {},
 	computed: {
+		totalRows() {
+			if (this.totalRow != null) {
+				return this.totalRow;
+			} else {
+				return this.itemList.length;
+			}
+		},
+		itemList() {
+			let items = this.items;
+
+			if (this.selectFilter.regionSelected != "0") {
+				items = items.filter(item => item.regionSeq == this.selectFilter.regionSelected);
+			}
+
+			return items;
+		},
 		filterTargetFields: function() {
 			const filters = this.fields.filter(item => {
 				return item.hasFilter;
@@ -151,32 +150,25 @@ export default {
 				{ value: 30, text: this.$t("common.filter.page30") },
 				{ value: 50, text: this.$t("common.filter.page50") }
 			],
-			filterText: ""
+			selectFilter: {
+				regionSelected: "0"
+			},
+			filterText: null,
+			totalRow: this.itemsTotalCount
 		};
 	},
 	methods: {
-		changePageCount(event) {
-			this.perPage = event.target.text;
-		},
 		onFiltered(filteredItems) {
 			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
-			this.totalRows = filteredItems.length;
+			this.totalRow = filteredItems.length;
 			this.currentPage = 1;
 		},
 		_detail(item) {
 			this.$emit("handle:selectedItem", item);
 		},
-		selectEvent(object) {
-			this.$emit("update:selected", object);
-		},
-		inputEvent(object) {
-			this.filterText = object.value;
-			this.$emit("update:selected", object);
-		},
 		excelDownload() {
 			// 엑셀 워크시트로 json 내보내기
 			// 배열만 가능
-			console.log(this.excelList);
 			var dataWS = XLSX.utils.json_to_sheet(this.excelList);
 			// 엑셀의 workbook을 만든다
 			// workbook은 엑셀파일에 지정된 이름이다.

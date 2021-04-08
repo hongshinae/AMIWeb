@@ -1,24 +1,22 @@
 <template>
 	<div class="main-bg">
-		<add-estate :regionList="regionList" @update:search-estate-list="searchEstateList" />
-		<detail-estate :regionList="regionList" :item="selectedItem" />
+		<add-estate @handle:search-estate-list="getEstateList" />
+		<detail-estate :item="selectedItem" />
 		<content-header :paths="paths" :pageName="pageName" />
 		<content-table
-			:busy="isBusy"
-			:items="estateFilterList"
-			:totalRows="totalRows"
+			:isBusy="isBusy"
+			:items="estateList"
 			:fields="estateFields"
-			:perpage="true"
-			:filter="filterList"
-			@update:selected="callbackEvent"
-			@handle:selectedItem="handleSelectedItem"
+			:isPerPage="true"
+			:showFilterList="showFilterList"
 			:excelFileName="$t('estate.excelFileName')"
 			:excelSheetName="$t('menu.device.estate')"
-			:detailModalId="'detailEstate'"
+			@handle:selectedItem="handleSelectedItem"
 		>
 			<template #table-header-left-head>
-				<b-button v-b-modal="'addEstate'" variant="light" :disabled="regionList.length == 0">
-					<b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}
+				<b-button v-b-modal="'addEstate'" variant="light">
+					<b-icon icon="pencil-fill"></b-icon>
+					{{ $t("estate.button.add") }}
 				</b-button>
 			</template>
 			<template v-slot:table-header-right> </template>
@@ -29,7 +27,6 @@
 	</div>
 </template>
 <script>
-import Search from "@/service/search";
 import Estate from "@/service/estate";
 import AddEstate from "@/components/modal/addEstate";
 import DetailEstate from "@/components/modal/detailEstate";
@@ -37,67 +34,18 @@ import ContentMixin from "@/components/content/mixin";
 
 export default {
 	mixins: [ContentMixin],
-	components: { AddEstate, DetailEstate },
-	created() {
-		Search.region()
-			.then(({ data }) => {
-				this.regionList = data.response;
-
-				if (this.regionList.length > 0) {
-					this.searchEstates(0);
-				}
-			})
-			.catch(error => {
-				console.log(error);
-			});
-	},
-	mounted() {
-		this.searchEstateList();
-	},
-	computed: {
-		placeholder: function() {
-			if (this.estates != 0) {
-				return this.$t("estate.placeholder.estate");
-			} else {
-				return this.$t("msg.filter.estateEmpty").replace(
-					"{}",
-					this.regionList[this.filterRegion] ? this.regionList[this.filterRegion].regionName : "unknown"
-				);
+	props: {
+		showFilterList: {
+			type: Array,
+			default: function() {
+				return ["region", "estate"];
 			}
-		},
-		estateFilterList: function() {
-			if (this.filterRegion != "0") {
-				return this.estateList.filter(region => region.regionSeq == this.filterRegion);
-			} else {
-				return this.estateList;
-			}
-		},
-		totalRows: function() {
-			return this.estateFilterList.length;
-		},
-		filterList: function() {
-			return [
-				{
-					label: this.$t("estate.filter.region"),
-					type: Array,
-					options: this.regionList,
-					textField: "regionName",
-					valueField: "regionSeq",
-					eventName: "region",
-					filterFieldKey: "regionName"
-				},
-				{
-					label: this.$t("estate.filter.estateName"),
-					type: String,
-					text: this.filterText,
-					options: this.estates,
-					textField: "estateName",
-					valueField: "estateSeq",
-					eventName: "estate",
-					placeholder: this.placeholder
-				}
-			];
 		}
+	},
+	components: { AddEstate, DetailEstate },
+	created() {},
+	mounted() {
+		this.getEstateList();
 	},
 	data() {
 		return {
@@ -107,7 +55,6 @@ export default {
 				{ name: this.$t("menu.device.title") },
 				{ name: this.$t("menu.device.estate") }
 			],
-			regionList: [],
 			estateList: [],
 			estateFields: [
 				{
@@ -151,21 +98,11 @@ export default {
 				}
 			],
 			estates: [],
-			filterText: "",
-			filterRegion: "",
 			selectedItem: null
 		};
 	},
 	methods: {
-		async searchEstates(value) {
-			this.filterRegion = value;
-			const response = await Search.estate({ regionSeq: value });
-			const estates = response.data.response;
-			const result = estates.map(estate => estate.estateName);
-			this.estates = result;
-			// this.filterText = "";	// reactive 미작동 오류..ㅠㅠ
-		},
-		async searchEstateList() {
+		async getEstateList() {
 			this.isBusy = true;
 
 			try {
@@ -177,13 +114,6 @@ export default {
 				this.estateList = result;
 			} finally {
 				this.isBusy = false;
-			}
-		},
-		callbackEvent({ eventName, value }) {
-			if (eventName == "region") {
-				this.searchEstates(value);
-			} else if (eventName == "estate") {
-				this.filterText = value;
 			}
 		},
 		handleSelectedItem(selectedItem) {
