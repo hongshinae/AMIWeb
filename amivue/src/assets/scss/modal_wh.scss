@@ -21,6 +21,7 @@
 				}
 				.form-group {
 					height: 32px;
+					width: 100%;
 					input[type="text"] {
 						order: 1px solid #2370e0;
 						background: #4289f1 !important;
@@ -150,6 +151,7 @@
 	.invalid-feedback {
 		margin-bottom: 0.25rem;
 		font-size: 90%;
+		text-align: left;
 	}
 }
 
@@ -252,7 +254,8 @@
 	}
 }
 
-#addBuilding {
+#addBuilding,
+#detailBuilding {
 	.modal-box {
 		text-align: center;
 		.form-group {
