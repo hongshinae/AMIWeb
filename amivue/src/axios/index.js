@@ -6,7 +6,7 @@ import locale from "@/locales";
 const axios = Axios.create({
 	baseURL: "/api",
 	// baseURL: "http://localhost:18099",
-	timeout: 3000
+	timeout: 10000
 });
 
 axios.interceptors.request.use(
@@ -42,14 +42,15 @@ axios.interceptors.response.use(
 			// 	console.log("토큰이 이상한 오류일 경우");
 			// 	await Login.refreshToken();
 			// return await Axios(errorAPI);
+			router.push("/login");
 			alert(locale.t("msg.session.expired"));
-			Store.dispatch("LOGOUT")
-				.then(() => {
-					router.push("/login");
-				})
-				.catch(({ response }) => {
-					alert(response.data.response.error_message);
-				});
+			// Store.dispatch("LOGOUT")
+			// 	.then(() => {
+			// 		router.push("/login");
+			// 	})
+			// 	.catch(({ response }) => {
+			// 		alert(response.data.response.error_message);
+			// 	});
 		}
 
 		return Promise.reject(error);

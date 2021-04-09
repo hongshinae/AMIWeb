@@ -1,7 +1,7 @@
 <template>
 	<div class="main-bg content">
-		<add-building></add-building>
-		<detail-building></detail-building>
+		<add-building @handle:searchItem="searchItemList"></add-building>
+		<detail-building :item="selectedItem"></detail-building>
 		<content-header :pageName="pageName" :paths="paths" />
 		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<content-table
@@ -42,7 +42,7 @@ export default {
 	},
 	components: { AddBuilding, DetailBuilding },
 	mounted() {
-		this.getBuildingList({ regionSeq: "0", estateSeq: "0" });
+		this.getBuildingList();
 	},
 	data() {
 		return {
@@ -86,9 +86,12 @@ export default {
 	},
 	methods: {
 		async getBuildingList(params) {
-			this.isBusy = true;
+			if (!params) {
+				params = { regionSeq: "0", estateSeq: "0" };
+			}
 
 			try {
+				this.isBusy = true;
 				const response = await Building.list(params);
 				const result = response.data.response;
 				this.buildingList = result;

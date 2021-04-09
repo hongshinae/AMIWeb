@@ -26,46 +26,65 @@
 		</template>
 		<div class="modal-content-wrap">
 			<div class="modal-box">
-				<b-form-group :label="$t('building.modal.selectRegion')" label-for="input1">
-					<b-form-select
-						v-model="regionSelected"
-						:options="regionList"
-						text-field="regionName"
-						value-field="regionSeq"
-						@change="searchEstates($event)"
-					>
-						<template #first>
-							<b-form-select-option :value="0" selected>{{ $t("building.modal.selecting") }}</b-form-select-option>
-						</template>
-					</b-form-select>
-				</b-form-group>
+				<form ref="addBuildingForm">
+					<b-form-group>
+						<template #label>{{ $t("building.modal.selectRegion") }}<span>*</span></template>
+						<b-form-select
+							v-model="form.regionSeq"
+							:options="regionList"
+							text-field="regionName"
+							value-field="regionSeq"
+							:state="regionSeqState"
+							@change="
+								regionSeqState = null;
+								searchEstates($event);
+							"
+						>
+							<template #first>
+								<b-form-select-option :value="0" selected>{{ $t("building.modal.selecting") }}</b-form-select-option>
+							</template>
+						</b-form-select>
+					</b-form-group>
 
-				<b-form-group :label="$t('building.modal.selectEstate')" label-for="">
-					<b-form-select
-						v-model="estateSelected"
-						:options="estateList"
-						text-field="estateName"
-						value-field="estateSeq"
-						:disabled="!estateList || estateList.length == 0"
-					>
-						<template #first>
-							<b-form-select-option :value="0" selected>{{ estateLoading }}</b-form-select-option>
-						</template>
-					</b-form-select>
-				</b-form-group>
+					<b-form-group>
+						<template #label>{{ $t("building.modal.selectEstate") }}<span>*</span></template>
+						<b-form-select
+							v-model="form.estateSeq"
+							:options="estateList"
+							text-field="estateName"
+							value-field="estateSeq"
+							:disabled="!estateList || estateList.length == 0"
+							:state="estateSeqState"
+							@change="estateSeqState = null"
+							required
+						>
+							<template #first>
+								<b-form-select-option :value="0" selected>{{ estateLoading }}</b-form-select-option>
+							</template>
+						</b-form-select>
+					</b-form-group>
 
-				<b-form-group :label="$t('building.modal.buildingName')" label-for="">
-					<b-form-input id="" placeholder="404동"></b-form-input>
-				</b-form-group>
-
-				<b-form-group :label="$t('building.modal.dcuId')" label-for="">
-					<b-input-group>
-						<b-form-input placeholder="4521542"></b-form-input>
-						<b-input-group-append>
-							<b-button variant="light">{{ $t("building.modal.button.linkCheck") }}</b-button>
-						</b-input-group-append>
-					</b-input-group>
-				</b-form-group>
+					<b-form-group label-for="buildingName" :state="buildingNameCheckState">
+						<template #label>{{ $t("building.modal.buildingName") }}<span>*</span></template>
+						<template #invalid-feedback>{{ duplicateMessage }}</template>
+						<b-input-group>
+							<b-form-input
+								id="buildingName"
+								placeholder="404동"
+								v-model="form.buildingName"
+								:state="buildingState"
+								@input="
+									buildingNameState = null;
+									buildingNameCheckState = null;
+								"
+								required
+							/>
+							<b-input-group-append>
+								<b-button variant="light" @click="buildingNameCheck">{{ $t("building.modal.button.nameCheck") }}</b-button>
+							</b-input-group-append>
+						</b-input-group>
+					</b-form-group>
+				</form>
 			</div>
 		</div>
 		<!---->
@@ -74,7 +93,7 @@
 
 <script>
 import Search from "@/service/search";
-// import Building from "@/service/building";
+import Building from "@/service/building";
 
 export default {
 	mounted() {
@@ -85,17 +104,16 @@ export default {
 			.catch(error => {
 				console.log(error);
 			});
-		this.searchEstates(this.regionSelected);
-	},
-	data() {
-		return {
-			regionSelected: 0,
-			estateSelected: 0,
-			regionList: [],
-			estateList: []
-		};
+		this.searchEstates(this.form.regionSeq);
 	},
 	computed: {
+		buildingState() {
+			if (this.buildingNameCheckState == null) {
+				return this.buildingNameState;
+			} else {
+				return this.buildingNameCheckState && this.buildingNameState;
+			}
+		},
 		estateLoading() {
 			if (this.estateList == null) {
 				return this.$t("building.modal.loading");
@@ -104,20 +122,58 @@ export default {
 			} else {
 				return this.$t("building.modal.selecting");
 			}
+		},
+		duplicateMessage() {
+			if (!this.duplicateErrorMessage) {
+				return this.$t("building.modal.validation.nameCheck");
+			} else {
+				return this.duplicateErrorMessage;
+			}
 		}
+	},
+	data() {
+		return {
+			regionSeqState: null,
+			estateSeqState: null,
+			buildingNameState: null,
+			buildingNameCheckState: null,
+			duplicateErrorMessage: null,
+			regionList: [],
+			estateList: [],
+			form: {
+				regionSeq: 0,
+				estateSeq: 0,
+				buildingName: null
+			}
+		};
 	},
 	methods: {
 		shown() {},
 		show() {
-			console.log(this.regionSelected);
-			this.regionSelected = 0;
+			this.estateList = [];
+			this.regionSeqState = null;
+			this.estateSeqState = null;
+			this.buildingNameState = null;
+			this.buildingNameCheckState = null;
+			this.form.regionSeq = 0;
+			this.form.estateSeq = 0;
+			this.form.buildingName = null;
 		},
 		hide() {},
 		hidden() {},
-		ok() {},
+		ok(event) {
+			this.handleSubmit(event);
+		},
 		cancel() {},
+		checkValidation() {
+			let result = this.$refs.addBuildingForm.checkValidity();
+			result &= this.regionSeqState = this.form.regionSeq && this.form.regionSeq != 0 ? true : false;
+			result &= this.estateSeqState = this.form.estateSeq && this.form.estateSeq != 0 ? true : false;
+			result &= this.buildingNameState = this.form.buildingName ? true : false;
+			return result;
+		},
 		async searchEstates(value) {
-			this.estateSelected = 0;
+			this.form.estateSeq = 0;
 
 			if (value == 0) {
 				this.estateList = [];
@@ -125,10 +181,44 @@ export default {
 			}
 
 			this.estateList = null;
-			const response = await Search.estate({ regionSeq: value });
-			const estates = response.data.response;
-			const result = estates.map(estate => estate.estateName);
-			this.estateList = result;
+
+			try {
+				const response = await Search.estate({ regionSeq: value });
+				const estates = response.data.response;
+				this.estateList = estates;
+			} catch (error) {
+				this.estateList = [];
+			}
+		},
+		async buildingNameCheck() {
+			if (this.checkValidation()) {
+				try {
+					const response = await Building.namecheck(this.form);
+					this.buildingNameCheckState = !response.data.response.result;
+				} catch (error) {
+					this.buildingNameCheckState = false;
+
+					if (error && error.status == 500) {
+						this.duplicateErrorMessage = "알 수 없는 오류";
+					}
+				}
+			}
+		},
+		async handleSubmit(event) {
+			if (!this.buildingNameCheckState) {
+				alert(this.$t("building.modal.validation.duplicateCheck"));
+				event.preventDefault();
+				return;
+			}
+
+			try {
+				await Building.registration(this.form);
+				this.$emit("handle:searchItem");
+			} catch (error) {
+				this.buildingNameCheckState = false;
+				this.duplicateErrorMessage = "알 수 없는 오류";
+				event.preventDefault();
+			}
 		}
 	}
 };
