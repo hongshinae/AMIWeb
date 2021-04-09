@@ -60,7 +60,7 @@
 
 					<b-form-group label-for="buildingName" :state="buildingNameCheckState">
 						<template #label>{{ $t("building.modal.buildingName") }}<span>*</span></template>
-						<template #invalid-feedback>{{ duplicateMessage }}</template>
+						<template #invalid-feedback>{{ buildingNameMessage }}</template>
 						<b-input-group>
 							<b-form-input
 								id="buildingName"
@@ -79,13 +79,21 @@
 						</b-input-group>
 					</b-form-group>
 
-					<b-form-group label-for="" :state="dcuIdCheckState">
+					<b-form-group label-for="" :state="isDcuIdCheckState">
 						<template #label>{{ $t("building.modal.dcuId") }}<span>*</span></template>
 						<template #invalid-feedback>{{ dcuStatusMessage }}</template>
 						<b-input-group>
-							<b-form-input v-model="form.dcuId" placeholder="0910233546" :state="dcuIdState" @input="dcuIdState = null"></b-form-input>
+							<b-form-input
+								v-model="form.dcuId"
+								placeholder="0910233546"
+								:state="isDcuIdState"
+								@input="
+									dcuIdState = null;
+									dcuStatus = null;
+								"
+							></b-form-input>
 							<b-input-group-append>
-								<b-button variant="light">{{ $t("building.modal.button.dcuCheck") }}</b-button>
+								<b-button variant="light" @click="dcuIdCheck">{{ $t("building.modal.button.dcuCheck") }}</b-button>
 							</b-input-group-append>
 						</b-input-group>
 					</b-form-group>
@@ -110,16 +118,8 @@ export default {
 			.catch(error => {
 				console.log(error);
 			});
-		this.searchEstates(this.form.regionSeq);
 	},
 	computed: {
-		buildingState() {
-			if (this.buildingNameCheckState == null) {
-				return this.buildingNameState;
-			} else {
-				return this.buildingNameCheckState && this.buildingNameState;
-			}
-		},
 		estateLoading() {
 			if (this.estateList == null) {
 				return this.$t("building.modal.loading");
@@ -129,12 +129,38 @@ export default {
 				return this.$t("building.modal.selecting");
 			}
 		},
-		duplicateMessage() {
+		buildingState() {
+			if (this.buildingNameCheckState == null) {
+				return this.buildingNameState;
+			} else if (this.buildingNameState == null) {
+				return this.buildingNameCheckState;
+			} else {
+				console.log(this.buildingNameCheckState, this.buildingNameState);
+				return this.buildingNameCheckState && this.buildingNameState;
+			}
+		},
+		buildingNameMessage() {
 			if (!this.duplicateErrorMessage) {
 				return this.$t("building.modal.validation.nameCheck");
 			} else {
 				return this.duplicateErrorMessage;
 			}
+		},
+		isDcuIdState() {
+			if (!this.isDcuIdCheckState) {
+				return false;
+			} else if (this.dcuStatus == "1") {
+				return true;
+			}
+
+			return this.dcuIdState;
+		},
+		isDcuIdCheckState() {
+			if (this.dcuStatus && this.dcuStatus != "1") {
+				return false;
+			}
+
+			return true;
 		},
 		dcuStatusMessage() {
 			if (this.dcuStatus == 0) {
@@ -155,23 +181,19 @@ export default {
 			buildingNameState: null,
 			buildingNameCheckState: null,
 			dcuIdState: null,
-			dcuIdCheckState: null,
 			regionList: [],
 			estateList: [],
-			dcuStatus: "1",
+			dcuStatus: null,
 			form: {
+				buildingSeq: null,
 				regionSeq: 0,
-				estateSeq: 0,
+				estateSeq: null,
 				buildingName: null,
 				dcuId: null
 			}
 		};
 	},
 	methods: {
-		shown() {
-			this.form = this.item;
-			this.searchEstates(this.item.regionSeq);
-		},
 		show() {
 			this.estateList = [];
 			this.regionSeqState = null;
@@ -179,10 +201,14 @@ export default {
 			this.buildingNameState = null;
 			this.buildingNameCheckState = null;
 			this.dcuIdState = null;
-			this.dcuIdCheckState = null;
-			// this.form.regionSeq = this.item.regionSeq;
-			// this.form.estateSeq = this.item.estateSeq;
-			// this.form.buildingName = this.item.buildingName;
+		},
+		shown() {
+			this.form.buildingSeq = this.item.buildingSeq;
+			this.form.regionSeq = this.item.regionSeq;
+			this.form.estateSeq = this.item.estateSeq;
+			this.form.buildingName = this.item.buildingName;
+			this.form.dcuId = this.item.dcuId;
+			this.searchEstates(this.item.regionSeq);
 		},
 		hide() {},
 		hidden() {},
@@ -194,7 +220,7 @@ export default {
 			let result = this.$refs.detailBuildingForm.checkValidity();
 			result &= this.regionSeqState = this.form.regionSeq && this.form.regionSeq != 0 ? true : false;
 			result &= this.estateSeqState = this.form.estateSeq && this.form.estateSeq != 0 ? true : false;
-			result &= this.buildingNameState = this.form.buildingName ? true : false;
+			this.buildingNameState = this.form.buildingName ? null : false;
 
 			return result;
 		},
@@ -223,9 +249,20 @@ export default {
 				}
 			}
 		},
+		async dcuIdCheck() {
+			this.dcuIdState = this.form.dcuId ? null : false;
+
+			if (this.dcuIdState != false) {
+				const response = await Building.dcucheck(this.form);
+				this.dcuStatus = response.data.response.statusCode;
+			}
+		},
 		handleSubmit(event) {
 			if (!this.buildingNameCheckState) {
-				alert("[" + this.$t("building.modal.button.nameCheck") + "] 먼저 해주세요");
+				alert(this.$t("building.modal.validation.duplicateNameCheck"));
+				event.preventDefault();
+			} else if (!this.isDcuIdCheckState) {
+				alert(this.$t("building.modal.validation.duplicateLinkCheck"));
 				event.preventDefault();
 			}
 		}

@@ -164,7 +164,8 @@
 			"validation": {
 				"nameCheck": "이미 등록된 동명이 있습니다.",
 				"dcuCheck": "이미 등록된 DCU가 있습니다.",
-				"duplicateCheck": "'등록 확인' 먼저 해주세요.",
+				"duplicateNameCheck": "'등록 확인' 먼저 해주세요.",
+				"duplicateLinkCheck": "'등록 확인' 먼저 해주세요.",
 				"dcuStatus": {
 					"ok": "정상",
 					"error": "DCU에 이상이 있습니다.",

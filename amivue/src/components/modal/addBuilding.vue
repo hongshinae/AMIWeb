@@ -169,7 +169,7 @@ export default {
 			let result = this.$refs.addBuildingForm.checkValidity();
 			result &= this.regionSeqState = this.form.regionSeq && this.form.regionSeq != 0 ? true : false;
 			result &= this.estateSeqState = this.form.estateSeq && this.form.estateSeq != 0 ? true : false;
-			result &= this.buildingNameState = this.form.buildingName ? true : false;
+			this.buildingNameState = this.form.buildingName ? null : false;
 			return result;
 		},
 		async searchEstates(value) {
