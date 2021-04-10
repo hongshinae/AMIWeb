@@ -1,6 +1,6 @@
 <template>
 	<div class="content">
-		<b-row>
+		<b-row class="row-wrap">
 			<b-col xl="4" lg="6" md="12" sm="12">
 				<div class="timeWrap">
 					<div class="date">{{ Date.now() | moment("YYYY.M.D") }}</div>

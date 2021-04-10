@@ -13,7 +13,7 @@
 				</b-breadcrumb>
 			</div>
 		</div>
-		<b-row>
+		<b-row class="row-wrap">
 			<b-col lg="12" xl="8">
 				<div class="box">
 					<h5>

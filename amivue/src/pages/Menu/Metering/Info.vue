@@ -52,7 +52,7 @@
 				</div>
 			</div>
 		</div>
-		<b-row>
+		<b-row class="row-wrap">
 			<b-col lg="6" sm="12">
 				<div class="wbox">
 					<h5 class="tltle">
