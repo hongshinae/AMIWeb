@@ -15,10 +15,12 @@
 .search-wrap,
 .btn-filter-wrap,
 .table-wrap,
+.pa-wrap,
 .btn-only-wrap,
 .dcu-list-wrap,
 .accordion-wrap,
-.row-wrap {
+.row-wrap,
+.box-wrap {
 	padding: 0 8px;
 	margin-bottom: 30px;
 }
@@ -26,10 +28,12 @@
 .search-wrap:after,
 .btn-filter-wrap:after,
 .table-wrap:after,
+.pa-wrap:after,
 .btn-only-wrap:after,
 .dcu-list-wrap:after,
 .accordion-wrap:after,
-.row-wrap:after {
+.row-wrap:after,
+.box-wrap:after {
 	clear: both;
 	display: block;
 	content: "";

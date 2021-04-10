@@ -1,0 +1,28 @@
+.dcu-list-wrap {
+	.dcu-modem {
+		.wbox {
+			height: 90px;
+			position: relative;
+			background: #293042;
+			p {
+				font-size: 20px;
+				text-align: center;
+				margin-top: 12px;
+				font-weight: 600;
+				color: #fff;
+			}
+			.stats-wrap {
+				position: absolute;
+				top: 12px;
+				right: 12px;
+				.linkage {
+					margin-bottom: 8px;
+				}
+			}
+		}
+		.dcu-name {
+			margin-top: 10px;
+			text-align: center;
+		}
+	}
+}
