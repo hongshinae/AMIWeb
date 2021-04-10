@@ -79,7 +79,7 @@
 				</b-col>
 			</b-row>
 		</content-search>
-		<div class="chart">
+		<div class="box-wrap">
 			<div class="wbox">
 				<h5 class="tltle">
 					<b-icon icon="arrow-return-right"></b-icon>
