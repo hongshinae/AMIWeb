@@ -23,9 +23,12 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapGetters } from "vuex";
+import { mapActions, mapMutations } from "vuex";
 export default {
 	name: "Login",
+	mounted() {
+		this.initUserState();
+	},
 	data() {
 		return {
 			msg: "",
@@ -33,38 +36,26 @@ export default {
 			password: ""
 		};
 	},
-	mounted() {
-		this.initUserState();
-	},
 	methods: {
 		...mapMutations({ initUserState: "USER_RESET", initSearchState: "SEARCH_RESET" }),
 		...mapActions({ loginAction: "LOGIN", regionsAction: "REGIONS", estatesAction: "ESTATES" }),
-		...mapGetters(["getRegions", "getEstates", "getEstateByRegion"]),
 		login({ userid, password }) {
 			this.msg = "로그인 중...";
 			this.loginAction({ userid, password })
 				.then(async () => {
 					try {
 						this.msg = "지역정보 가져오는중... (1/2)";
-						await this.regionsAction()
-							.then(() => {
-								//console.log(this.getRegions());
-							})
-							.catch(() => {
-								//console.log(response);
-							});
+						await this.regionsAction().catch(response => {
+							throw Error("지역정보 가져오는데 실패하였습니다.", response);
+						});
 						this.msg = "단지정보 가져오는중... (2/2)";
-						await this.estatesAction()
-							.then(() => {
-								//console.log(this.getEstates());
-								//console.log(this.getEstateByRegion(1));
-							})
-							.catch(() => {
-								//console.log(response);
-							});
+						await this.estatesAction().catch(response => {
+							throw Error("단지정보 가져오는데 실패하였습니다.", response);
+						});
 						this.msg = "성공";
 						this.$router.push("/dashboard");
 					} catch (error) {
+						console.log(error);
 						this.msg = "시스템 환경구성에 실패하였습니다. 관리자에게 문의해주세요.";
 					}
 				})

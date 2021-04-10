@@ -1,15 +1,15 @@
 import Search from "@/service/search";
 
 const state = {
-	regions: {},
-	estates: {}
+	regions: [],
+	estates: []
 };
 
 const getters = {
 	getRegions: state => state.regions,
 	getEstates: state => state.estates,
 	getEstateByRegion: state => regionSeq => {
-		return state.estate.find(estate => estate.regionSeq === regionSeq);
+		return state.estates.filter(estate => estate.regionSeq === regionSeq);
 	}
 };
 
@@ -21,8 +21,8 @@ const mutations = {
 		state.estates = estates;
 	},
 	SEARCH_RESET(state) {
-		state.regions = {};
-		state.estates = {};
+		state.regions = [];
+		state.estates = [];
 	}
 };
 

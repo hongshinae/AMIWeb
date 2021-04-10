@@ -5,7 +5,7 @@
 		</b-col>
 		<b-col lg="8">
 			<b-form-select
-				:value="value"
+				v-model="selected"
 				@input="$emit('input', $event)"
 				:options="options"
 				text-field="estateName"
@@ -13,7 +13,7 @@
 				:disabled="options.length == 0"
 			>
 				<template #first>
-					<b-form-select-option value="0" selected>-- 전체 --</b-form-select-option>
+					<b-form-select-option :value="0" selected>-- 전체 --</b-form-select-option>
 				</template>
 			</b-form-select>
 		</b-col>
@@ -21,40 +21,31 @@
 </template>
 
 <script>
-import Search from "@/service/search";
+import { mapGetters } from "vuex";
 
 export default {
 	props: {
-		selected: { default: "0" },
-		region: { default: "0" }
-	},
-	mounted() {
-		this.searchEstates(this.region);
+		region: { default: 0 }
 	},
 	watch: {
-		region: function(value) {
-			this.searchEstates(value);
+		region: function(/* value */) {
+			this.selected = 0;
 		}
 	},
 	computed: {
-		value() {
-			return this.itemSelected ? this.itemSelected : this.selected;
+		...mapGetters({ estateList: "getEstates", getEstate: "getEstateByRegion" }),
+		options() {
+			if (this.region == 0) {
+				return this.estateList;
+			} else {
+				return this.getEstate(this.region);
+			}
 		}
 	},
 	data() {
 		return {
-			itemSelected: this.selected,
-			options: []
+			selected: 0
 		};
-	},
-	methods: {
-		async searchEstates(value) {
-			this.options = [];
-			const response = await Search.estate({ regionSeq: value });
-			const estates = response.data.response;
-			const result = estates.map(estate => estate.estateName);
-			this.options = result;
-		}
 	}
 };
 </script>

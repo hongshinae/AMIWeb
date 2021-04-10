@@ -227,21 +227,12 @@
 </template>
 
 <script>
-import Search from "@/service/search";
+import { mapGetters } from "vuex";
 import Estate from "@/service/estate";
 
 export default {
-	created() {
-		Search.region()
-			.then(({ data }) => {
-				this.regionList = data.response;
-			})
-			.catch(error => {
-				console.log(error);
-			});
-	},
-	mounted() {},
 	computed: {
+		...mapGetters({ regionList: "getRegions" }),
 		isDayStateValid() {
 			return this.name ? true : false;
 		}
@@ -286,8 +277,7 @@ export default {
 			telEstate: this.getPhoneMask,
 			telManager1: this.getPhoneMask,
 			telManager2: this.getPhoneMask,
-			mask: this.getDayMask,
-			regionList: []
+			mask: this.getDayMask
 		};
 	},
 	methods: {

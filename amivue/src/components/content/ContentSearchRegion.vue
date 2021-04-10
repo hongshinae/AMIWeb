@@ -14,23 +14,12 @@
 </template>
 
 <script>
-import Search from "@/service/search";
+import { mapGetters } from "vuex";
 
 export default {
 	props: ["selected"],
-	mounted() {
-		Search.region()
-			.then(({ data }) => {
-				this.regionList = data.response;
-			})
-			.catch(error => {
-				console.log(error);
-			});
-	},
-	data() {
-		return {
-			regionList: []
-		};
+	computed: {
+		...mapGetters({ regionList: "getRegions" })
 	}
 };
 </script>
