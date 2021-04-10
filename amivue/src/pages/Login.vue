@@ -28,6 +28,7 @@ export default {
 	name: "Login",
 	mounted() {
 		this.initUserState();
+		this.initSearchState();
 	},
 	data() {
 		return {
@@ -60,7 +61,12 @@ export default {
 					}
 				})
 				.catch(response => {
-					this.msg = response.data.response.error_message;
+					try {
+						this.msg = response.data.response.error_message;
+					} catch (e) {
+						this.msg = "로그인 도중 오류가 발생하였습니다. 관리자에게 문의해주세요.";
+						throw Error(e);
+					}
 				});
 		}
 	}

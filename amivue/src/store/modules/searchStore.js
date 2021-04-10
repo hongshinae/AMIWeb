@@ -1,8 +1,8 @@
 import Search from "@/service/search";
 
 const state = {
-	regions: [],
-	estates: []
+	regions: [1],
+	estates: [1]
 };
 
 const getters = {
@@ -21,8 +21,12 @@ const mutations = {
 		state.estates = estates;
 	},
 	SEARCH_RESET(state) {
-		state.regions = [];
-		state.estates = [];
+		if (!state) {
+			state = {};
+		}
+
+		state.regions = [1];
+		state.estates = [1];
 	}
 };
 
@@ -55,7 +59,9 @@ const actions = {
 
 export default {
 	strict: process.env.NODE_ENV !== "production",
-	state,
+	state: {
+		...state
+	},
 	getters,
 	mutations,
 	actions

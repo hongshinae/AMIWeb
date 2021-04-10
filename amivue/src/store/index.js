@@ -9,7 +9,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
 	modules: { userStore, searchStore },
 	plugins: [
-		createPersistedState({ paths: ["userStore.token.refreshToken"], storage: window.localStorage, overwrite: true }),
+		// createPersistedState({ paths: ["userStore.token.refreshToken"], storage: window.localStorage, overwrite: true }),
 		createPersistedState({
 			paths: ["userStore.token.accessToken", "userStore.user", "searchStore.regions", "searchStore.estates"],
 			storage: window.sessionStorage,
