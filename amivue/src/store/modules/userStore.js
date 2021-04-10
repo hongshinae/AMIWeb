@@ -54,7 +54,7 @@ const getters = {
 };
 
 const mutations = {
-	RESET_STATE(state) {
+	USER_RESET(state) {
 		for (let prop in initialState) {
 			if (!state) {
 				state = {};
@@ -104,7 +104,7 @@ const actions = {
 	},
 	LOGOUT({ commit }) {
 		commit("LOGOUT");
-		commit("RESET_STATE");
+		commit("USER_RESET");
 	}
 };
 
