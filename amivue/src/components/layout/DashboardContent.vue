@@ -6,9 +6,13 @@
 
 <script>
 // Main css
-import "@/assets/scss/contents.scss";
+import "@/assets/scss/main_common.scss";
+import "@/assets/scss/main.scss";
+import "@/assets/scss/main_wh.scss";
+import "@/assets/scss/maintitle.scss"; //메인화면 타이틀, breadcrumb - ContentHeader.vue
+import "@/assets/scss/search.scss"; // - ContentSearch.vue
+import "@/assets/scss/filter.scss"; // - ContentTable.vue
 import "@/assets/scss/modal_wh.scss";
-import "@/assets/scss/table.scss";
 export default {};
 </script>
 
