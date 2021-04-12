@@ -242,7 +242,7 @@ export default {
 			}
 		},
 		async dcuIdCheck() {
-			if (this.form.dcuId == "") {
+			if (this.form.dcuId == "" || this.form.dcuId == null) {
 				this.states.dcuIdState = true;
 				this.dcuIdCheckStatus = "1";
 				return;
@@ -257,9 +257,11 @@ export default {
 			if (!this.states.buildingNameCheckState) {
 				alert(this.$t("building.modal.validation.duplicateNameCheck"));
 				event.preventDefault();
+				return;
 			} else if (!this.isDcuIdCheckState) {
 				alert(this.$t("building.modal.validation.duplicateLinkCheck"));
 				event.preventDefault();
+				return;
 			}
 
 			try {

@@ -1,7 +1,7 @@
 <template>
 	<div class="main-bg content">
 		<add-building @handle:searchItem="searchItemList"></add-building>
-		<detail-building :item="selectedItem"></detail-building>
+		<detail-building :item="selectedItem" @handle:searchItem="searchItemList"></detail-building>
 		<content-header :pageName="pageName" :paths="paths" />
 		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<content-table
