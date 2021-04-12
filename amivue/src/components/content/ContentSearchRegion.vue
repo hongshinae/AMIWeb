@@ -4,9 +4,9 @@
 			<label class="d-block">{{ $t("component.content.search.region") }}</label>
 		</b-col>
 		<b-col lg="8">
-			<b-form-select :value="selected" @input="$emit('input', $event)" :options="regionList" text-field="regionName" value-field="regionSeq">
+			<b-form-select :value="selected" @input="$emit('input', $event)" :options="regionList" text-field="regionName" value-field="regionSeq" required>
 				<template #first>
-					<b-form-select-option value="0" selected>-- 전체 --</b-form-select-option>
+					<b-form-select-option :value="null" selected disabled>-- 선택하세요 --</b-form-select-option>
 				</template>
 			</b-form-select>
 		</b-col>

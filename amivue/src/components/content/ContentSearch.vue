@@ -6,7 +6,7 @@
 			</div>
 			<div class="search">
 				<!--검색영역-->
-				<form>
+				<form ref="searchForm">
 					<b-row v-for="(items, index) in shows" :key="index">
 						<b-col xl="3" md="12" sm="12" v-for="item in items" :key="item">
 							<content-search-region v-if="item == 'region'" v-model="regionSelected" :selected="regionSelected" />
@@ -49,12 +49,19 @@ export default {
 	},
 	data() {
 		return {
-			regionSelected: "0",
-			estateSelected: "0"
+			regionSelected: null,
+			estateSelected: null
 		};
 	},
 	methods: {
 		search() {
+			const result = this.$refs.searchForm.checkValidity();
+
+			if (!result) {
+				this.$refs.searchForm.reportValidity();
+				return;
+			}
+
 			this.$emit("handle:searchItem", this.result);
 		}
 	}

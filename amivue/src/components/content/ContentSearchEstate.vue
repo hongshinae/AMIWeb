@@ -11,9 +11,10 @@
 				text-field="estateName"
 				value-field="estateSeq"
 				:disabled="options.length == 0"
+				required
 			>
 				<template #first>
-					<b-form-select-option :value="0" selected>-- 전체 --</b-form-select-option>
+					<b-form-select-option :value="null" selected disabled>-- 선택하세요 --</b-form-select-option>
 				</template>
 			</b-form-select>
 		</b-col>
@@ -29,7 +30,7 @@ export default {
 	},
 	watch: {
 		region: function(/* value */) {
-			this.selected = 0;
+			this.selected = null;
 		}
 	},
 	computed: {
@@ -44,7 +45,7 @@ export default {
 	},
 	data() {
 		return {
-			selected: 0
+			selected: null
 		};
 	}
 };
