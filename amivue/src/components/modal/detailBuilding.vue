@@ -146,14 +146,16 @@ export default {
 			}
 		},
 		isDcuIdState() {
-			if (this.isDcuIdCheckState === false) {
-				return false;
+			if (this.states.dcuIdState) {
+				return true;
 			}
 
-			return this.states.dcuIdState;
+			return this.isDcuIdCheckState;
 		},
 		isDcuIdCheckState() {
-			if (!this.dcuIdCheckStatus) {
+			if (this.form.dcuId == "" && this.dcuIdCheckStatus != null) {
+				return true;
+			} else if (!this.dcuIdCheckStatus) {
 				return null;
 			} else if (this.dcuIdCheckStatus != "1") {
 				return false;
@@ -240,9 +242,13 @@ export default {
 			}
 		},
 		async dcuIdCheck() {
-			this.states.dcuIdState = this.form.dcuId ? null : false;
+			if (this.form.dcuId == "") {
+				this.states.dcuIdState = true;
+				this.dcuIdCheckStatus = "1";
+				return;
+			}
 
-			if (this.states.dcuIdState != false) {
+			if (this.isDcuIdState != false) {
 				const response = await Building.dcucheck(this.form);
 				this.dcuIdCheckStatus = response.data.response.statusCode;
 			}
