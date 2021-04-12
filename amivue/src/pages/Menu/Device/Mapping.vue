@@ -169,39 +169,39 @@ export default {
 			mappingFields: [
 				{
 					key: "dcuId",
-					label: this.$t("lookup.table.dcuId")
+					label: this.$t("component.content.table.dcuId")
 				},
 				{
 					key: "meterId",
-					label: this.$t("lookup.table.meterId")
+					label: this.$t("component.content.table.meterId")
 				},
 				{
 					key: "dtime",
-					label: this.$t("lookup.table.dtime")
+					label: this.$t("component.content.table.dtime")
 				},
 				{
 					key: "demand",
-					label: this.$t("lookup.table.demand")
+					label: this.$t("component.content.table.demand")
 				},
 				{
 					key: "etime",
-					label: this.$t("lookup.table.etime")
+					label: this.$t("component.content.table.etime")
 				},
 				{
 					key: "acc",
-					label: this.$t("lookup.table.acc")
+					label: this.$t("component.content.table.acc")
 				},
 				{
 					key: "demanda",
-					label: this.$t("lookup.table.demanda")
+					label: this.$t("component.content.table.demanda")
 				},
 				{
 					key: "etimea",
-					label: this.$t("lookup.table.etimea")
+					label: this.$t("component.content.table.etimea")
 				},
 				{
 					key: "acca",
-					label: this.$t("lookup.table.acca")
+					label: this.$t("component.content.table.acca")
 				}
 			]
 		};

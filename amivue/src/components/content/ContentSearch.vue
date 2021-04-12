@@ -17,7 +17,7 @@
 				<!--//검색영역-->
 			</div>
 			<div class="btn-wrap ml-auto">
-				<b-button block variant="primary" @click="search()">{{ $t("component.content.search") }}</b-button>
+				<b-button block variant="primary" @click="search()">{{ $t("component.content.search.title") }}</b-button>
 			</div>
 		</div>
 	</div>

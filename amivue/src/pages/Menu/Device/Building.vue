@@ -56,25 +56,25 @@ export default {
 			buildingFields: [
 				{
 					key: "regionName",
-					label: this.$t("building.table.regionName"),
+					label: this.$t("component.content.table.regionName"),
 					sortable: true,
 					sortDirection: "asc"
 				},
 				{
 					key: "estateName",
-					label: this.$t("building.table.estateName")
+					label: this.$t("component.content.table.estateName")
 				},
 				{
 					key: "buildingName",
-					label: this.$t("building.table.buildingName")
+					label: this.$t("component.content.table.buildingName")
 				},
 				{
 					key: "dcuId",
-					label: this.$t("building.table.dcuId")
+					label: this.$t("component.content.table.dcuId")
 				},
 				{
 					key: "systemState",
-					label: this.$t("building.table.systemState")
+					label: this.$t("component.content.table.systemState")
 				},
 				{
 					key: "_remark",

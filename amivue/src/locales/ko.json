@@ -52,16 +52,54 @@
 	},
 	"component": {
 		"content": {
-			"region": "지역",
-			"estate": "단지명",
-			"dcuId": "DCU ID",
-			"meterId": "Meter ID",
-			"status": "상태",
-			"period": "기간",
-			"search": "검색",
-			"meteringType": "검침타입",
-			"placeholder": {
-				"estate": "ex) 그랑시아 아파트"
+			"search": {
+				"title": "검색",
+				"region": "지역",
+				"estate": "단지 명",
+				"building": "동 명",
+				"dcuId": "DCU ID",
+				"meterId": "METER ID",
+				"status": "상태",
+				"period": "기간",
+				"meteringType": "검침타입"
+			},
+			"filter": {
+				"region": "지역",
+				"estate": "단지명",
+				"dcuId": "DCU ID",
+				"meterId": "METER ID",
+				"placeholder": {
+					"estate": "ex) 그랑시아 아파트"
+				}
+			},
+			"table": {
+				"regionName": "지역",
+				"estateName": "단지명",
+				"buildingName": "동",
+				"dcuId": "DCU ID",
+				"ip": "IP",
+				"lteIp": "LTE 장비 IP",
+				"firmware": "Firmware",
+				"modem": "Modem",
+				"meter": "Meter",
+				"houseCount": "세대수",
+				"address": "주소",
+				"deviceCount": "설치 장비수",
+				"meteringTypeCount": "검침타입",
+				"remark": "비고",
+				"estateId": "단지ID",
+				"systemState": "데이터 연동",
+				"meterId": "계량기 ID",
+				"meteringDate": "검침일",
+				"macAddr": "MAC ADDR",
+				"dcuCheck": "연동 확인",
+				"dtime": "계시시각",
+				"demand": "유효수요",
+				"etime": "발생시각",
+				"acc": "누적유효",
+				"demanda": "유효수요(A)",
+				"etimea": "발생시각",
+				"acca": "누적유효(A)"
 			}
 		}
 	},
@@ -71,24 +109,6 @@
 			"allInterlink": "전체 연동하기",
 			"save": "저장"
 		},
-		"filter": {
-			"region": "지역",
-			"estateName": "단지명"
-		},
-		"table": {
-			"estateId": "단지ID",
-			"estateName": "단지명",
-			"houseCount": "세대수",
-			"regionName": "지역",
-			"address": "주소",
-			"deviceCount": "설치 장비수",
-			"meteringTypeCount": "검침타입",
-			"remark": "비고"
-		},
-		"placeholder": {
-			"estate": "ex) 그랑시아 아파트"
-		},
-		"details": "상세정보",
 		"excelFileName": "단지 관리.xlsx",
 		"modal": {
 			"add": "단지 등록",
@@ -142,13 +162,6 @@
 			"save": "등록",
 			"cancel": "취소"
 		},
-		"table": {
-			"estateName": "단지명",
-			"regionName": "지역",
-			"buildingName": "동",
-			"dcuId": "DCU ID",
-			"systemState": "데이터 연동"
-		},
 		"modal": {
 			"add": "동 등록",
 			"detail": "동 상세",
@@ -174,30 +187,16 @@
 			}
 		}
 	},
-	"mapping": {
-		"table": {
-			"building": "동",
-			"house": "호수",
-			"meterId": "계량기 ID",
-			"meteringDate": "검침일",
-			"macAddr": "MAC ADDR",
-			"dcuId": "DCU ID",
-			"dcuCheck": "연동 확인"
-		}
+	"equipment": {
+		"tab": {
+			"dcu": "DCU",
+			"meter": "METER",
+			"etc": "가스, 수도, 온수, 난방"
+		},
+		"modal": {}
 	},
-	"lookup": {
-		"table": {
-			"dcuId": "DCU ID",
-			"meterId": "METER ID",
-			"dtime": "계시시각",
-			"demand": "유효수요",
-			"etime": "발생시각",
-			"acc": "누적유효",
-			"demanda": "유효수요(A)",
-			"etimea": "발생시각",
-			"acca": "누적유효(A)"
-		}
-	},
+	"mapping": {},
+	"lookup": {},
 	"msg": {
 		"search": {
 			"emptyText": "검색결과가 없습니다.",

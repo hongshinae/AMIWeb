@@ -1,7 +1,7 @@
 <template>
 	<b-row>
 		<b-col lg="4">
-			<label class="d-block">{{ $t("component.content.region") }}</label>
+			<label class="d-block">{{ $t("component.content.search.region") }}</label>
 		</b-col>
 		<b-col lg="8">
 			<b-form-select :value="selected" @input="$emit('input', $event)" :options="regionList" text-field="regionName" value-field="regionSeq">

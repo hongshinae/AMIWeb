@@ -1,7 +1,7 @@
 <template>
 	<b-row>
 		<b-col lg="4">
-			<label class="d-block">{{ $t("component.content.estate") }}</label>
+			<label class="d-block">{{ $t("component.content.search.estate") }}</label>
 		</b-col>
 		<b-col lg="8">
 			<b-form-select

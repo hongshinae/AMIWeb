@@ -56,38 +56,38 @@ export default {
 			estateFields: [
 				{
 					key: "estateId",
-					label: this.$t("estate.table.estateId"),
+					label: this.$t("component.content.table.estateId"),
 					sortable: true,
 					sortDirection: "asc"
 				},
 				{
 					key: "estateName",
-					label: this.$t("estate.table.estateName"),
+					label: this.$t("component.content.table.estateName"),
 					sortable: true,
 					sortDirection: "asc",
 					hasFilter: true
 				},
 				{
 					key: "houseCount",
-					label: this.$t("estate.table.houseCount")
+					label: this.$t("component.content.table.houseCount")
 				},
 				{
 					key: "regionName",
-					label: this.$t("estate.table.regionName"),
+					label: this.$t("component.content.table.regionName"),
 					sortable: true,
 					sortDirection: "asc"
 				},
 				{
 					key: "address",
-					label: this.$t("estate.table.address")
+					label: this.$t("component.content.table.address")
 				},
 				{
 					key: "deviceCount",
-					label: this.$t("estate.table.deviceCount")
+					label: this.$t("component.content.table.deviceCount")
 				},
 				{
 					key: "meteringTypeCount",
-					label: this.$t("estate.table.meteringTypeCount")
+					label: this.$t("component.content.table.meteringTypeCount")
 				},
 				{
 					key: "_remark",

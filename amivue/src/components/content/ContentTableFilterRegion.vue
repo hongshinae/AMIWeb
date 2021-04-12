@@ -1,5 +1,5 @@
 <template>
-	<b-form-group :label="$t('component.content.region')">
+	<b-form-group :label="$t('component.content.filter.region')">
 		<b-form-select
 			text-field="regionName"
 			value-field="regionSeq"
