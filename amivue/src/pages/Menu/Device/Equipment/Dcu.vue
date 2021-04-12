@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<add-equipmenet-dcu></add-equipmenet-dcu>
-		<detail-equipmenet-dcu></detail-equipmenet-dcu>
+		<add-equipment-dcu></add-equipment-dcu>
+		<detail-equipment-dcu></detail-equipment-dcu>
 		<div class="search-wrap">
 			<div class="wbox">
 				<div class="search-img">
@@ -135,12 +135,10 @@
 	</div>
 </template>
 <script>
-import Vue from "vue";
-import AddEquipmenetDcu from "@/components/modal/addEquipmenetDcu";
-import DetailEquipmenetDcu from "@/components/modal/detailEquipmenetDcu";
-Vue.component(AddEquipmenetDcu);
-Vue.component(DetailEquipmenetDcu);
+import AddEquipmentDcu from "@/components/modal/addEquipmentDcu";
+import DetailEquipmentDcu from "@/components/modal/detailEquipmentDcu";
+
 export default {
-	components: { AddEquipmenetDcu, DetailEquipmenetDcu }
+	components: { AddEquipmentDcu, DetailEquipmentDcu }
 };
 </script>

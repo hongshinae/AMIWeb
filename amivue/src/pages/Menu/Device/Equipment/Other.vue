@@ -1,34 +1,26 @@
 <template>
-	<div class="main-bg content">
-		<add-building @handle:searchItem="searchItemList"></add-building>
-		<detail-building :item="selectedItem" @handle:searchItem="searchItemList"></detail-building>
-		<content-header :pageName="pageName" :paths="paths" />
+	<div>
+		<!-- <detail-equipment-other></detail-equipment-other> -->
 		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<content-table
 			:isBusy="isBusy"
-			:items="buildingList"
-			:fields="buildingFields"
+			:items="etcList"
+			:fields="etcFields"
 			:isPerPage="true"
 			:showFilterList="showFilterList"
 			:excelFileName="$t('estate.excelFileName')"
 			:excelSheetName="$t('menu.device.estate')"
 			@handle:selectedItem="handleSelectedItem"
 		>
-			<template #table-header-left-head>
-				<b-button v-b-modal="'addBuilding'" variant="light">
-					<b-icon icon="pencil-fill"></b-icon>
-					{{ $t("building.button.add") }}
-				</b-button>
-			</template>
+			<template #table-header-left-head> </template>
 			<template v-slot:table-header-right> </template>
 		</content-table>
 	</div>
 </template>
 <script>
-import Building from "@/service/building";
-import AddBuilding from "@/components/modal/addBuilding";
-import DetailBuilding from "@/components/modal/detailBuilding";
+import EquipmentOther from "@/service/equipment/other";
 import ContentMixin from "@/components/content/mixin";
+// import DetailEquipmentOther from "@/components/modal/detailEquipmentOther";
 
 export default {
 	mixins: [ContentMixin],
@@ -40,20 +32,13 @@ export default {
 			}
 		}
 	},
-	components: { AddBuilding, DetailBuilding },
-	mounted() {
-		// this.getBuildingList();
+	components: {
+		/* DetailEquipmentOther */
 	},
 	data() {
 		return {
-			pageName: this.$t("menu.device.building"),
-			paths: [
-				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
-				{ name: this.$t("menu.device.title") },
-				{ name: this.$t("menu.device.building") }
-			],
-			buildingList: [],
-			buildingFields: [
+			etcList: [],
+			etcFields: [
 				{
 					key: "regionName",
 					label: this.$t("component.content.table.regionName"),
@@ -74,7 +59,23 @@ export default {
 				},
 				{
 					key: "systemState",
-					label: this.$t("component.content.table.systemState")
+					label: this.$t("component.content.table.ip")
+				},
+				{
+					key: "systemState",
+					label: this.$t("component.content.table.ip")
+				},
+				{
+					key: "systemState",
+					label: this.$t("component.content.table.ip")
+				},
+				{
+					key: "systemState",
+					label: this.$t("component.content.table.ip")
+				},
+				{
+					key: "systemState",
+					label: this.$t("component.content.table.ip")
 				},
 				{
 					key: "_remark",
@@ -92,7 +93,7 @@ export default {
 
 			try {
 				this.isBusy = true;
-				const response = await Building.list(params);
+				const response = await EquipmentOther.list(params);
 				const result = response.data.response;
 				this.buildingList = result;
 			} catch (error) {

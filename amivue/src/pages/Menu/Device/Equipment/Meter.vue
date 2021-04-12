@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<detail-equipmenet-meter></detail-equipmenet-meter>
+		<detail-equipment-meter></detail-equipment-meter>
 		<div class="search-wrap">
 			<div class="wbox">
 				<div class="search-img">
@@ -168,10 +168,9 @@
 	</div>
 </template>
 <script>
-import Vue from "vue";
-import DetailEquipmenetMeter from "@/components/modal/detailEquipmenetMeter";
-Vue.component(DetailEquipmenetMeter);
+import DetailEquipmentMeter from "@/components/modal/detailEquipmentMeter";
+
 export default {
-	components: { DetailEquipmenetMeter }
+	components: { DetailEquipmentMeter }
 };
 </script>

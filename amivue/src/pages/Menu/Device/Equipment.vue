@@ -1,63 +1,63 @@
 <template>
 	<div class="main-bg content">
-		<div class="main-location-wrap">
-			<h1>장비 관리</h1>
+		<content-header :paths="paths" :pageName="pageName">
 			<div class="tap-wrap">
-				<b-button pill :variant="activeTab(0)" @click="tabIndex = 0">DCU</b-button>
-				<b-button pill :variant="activeTab(1)" @click="tabIndex = 1">METER</b-button>
-				<b-button pill :variant="activeTab(2)" @click="tabIndex = 2">가스, 수도, 온수, 난방</b-button>
+				<b-button pill :variant="activeTab(0)" @click="tabIndex = 0">{{ $t("equipment.tab.dcu") }}</b-button>
+				<b-button pill :variant="activeTab(1)" @click="tabIndex = 1">{{ $t("equipment.tab.meter") }}</b-button>
+				<b-button pill :variant="activeTab(2)" @click="tabIndex = 2">{{ $t("equipment.tab.other") }}</b-button>
 			</div>
-			<div class="main-location">
-				<b-breadcrumb>
-					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house"></b-icon>
-						홈
-					</b-breadcrumb-item>
-					<b-breadcrumb-item>설비</b-breadcrumb-item>
-					<b-breadcrumb-item active>장비 관리</b-breadcrumb-item>
-				</b-breadcrumb>
-			</div>
-		</div>
+		</content-header>
 		<b-tabs v-model="tabIndex" :no-nav-style="true">
-			<b-tab active>
-				<template #title style="display:none"> </template>
-				<equipment-dcu></equipment-dcu>
+			<b-tab>
+				<template #title> </template>
+				<equipment-other></equipment-other>
 			</b-tab>
 
 			<b-tab>
 				<template #title> </template>
-				<equipment-meter></equipment-meter>
+				<equipment-other></equipment-other>
 			</b-tab>
 
 			<b-tab>
 				<template #title> </template>
-				<equipment-etc></equipment-etc>
+				<equipment-other></equipment-other>
 			</b-tab>
 		</b-tabs>
 	</div>
 </template>
 <script>
-import EquipmentDcu from "./Equipment/Dcu.vue";
-import EquipmentMeter from "./Equipment/Meter.vue";
-import EquipmentEtc from "./Equipment/Etc.vue";
+import ContentHeader from "@/components/content/ContentHeader";
+import EquipmentOther from "./Equipment/Other";
 
 export default {
-	components: { EquipmentDcu, EquipmentMeter, EquipmentEtc },
+	props: {
+		initTabIndex: {
+			type: Number,
+			default: 2
+		}
+	},
+	components: { ContentHeader, EquipmentOther },
+	computed: {
+		activeTab() {
+			return currentTab => (this.tabIndex == currentTab ? "primary" : "outline-primary");
+		}
+	},
 	data() {
 		return {
-			tabIndex: 0
+			tabIndex: this.initTabIndex,
+			pageName: this.$t("menu.device.equipment"),
+			paths: [
+				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
+				{ name: this.$t("menu.device.title") },
+				{ name: this.$t("menu.device.equipment") }
+			]
 		};
 	},
-	methods: {
-		activeTab(tabIndex) {
-			return this.tabIndex == tabIndex ? "primary" : "outline-primary";
-		}
-	}
+	methods: {}
 };
 </script>
 <style>
-/* 
 ul[role="tablist"] {
 	display: none;
-} */
+}
 </style>
