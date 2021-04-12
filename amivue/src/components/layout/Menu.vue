@@ -110,11 +110,6 @@ export default {
 							icon: ""
 						},
 						{
-							href: "/network",
-							title: this.$t("menu.device.network"),
-							icon: ""
-						},
-						{
 							href: "/nms",
 							title: this.$t("menu.device.nms"),
 							icon: ""

@@ -11,7 +11,6 @@
 			"building": "동 관리",
 			"equipment": "장비 관리",
 			"mapping": "매핑 관리",
-			"network": "네트워크 현황",
 			"nms": "NMS (SNMP)",
 			"server": "서버 현황"
 		},
