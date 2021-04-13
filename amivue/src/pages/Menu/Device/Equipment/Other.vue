@@ -28,7 +28,7 @@ export default {
 		showFilterList: {
 			type: Array,
 			default: function() {
-				return ["region", "estate"];
+				return ["building", "gateway"];
 			}
 		}
 	},

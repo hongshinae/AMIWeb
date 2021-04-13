@@ -4,7 +4,7 @@
 			text-field="regionName"
 			value-field="regionSeq"
 			:value="selected"
-			:options="regionList"
+			:options="firmwareList"
 			@input="$emit('input', $event)"
 			@change="$emit('init-filter-text')"
 		>
@@ -16,13 +16,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
 export default {
-	props: ["selected"],
-	computed: {
-		...mapGetters({ regionList: "getRegions" })
-	}
+	props: ["selected", "firmwareList"]
 };
 </script>
 

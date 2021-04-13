@@ -59,6 +59,7 @@
 				"building": "동 명",
 				"dcuId": "DCU ID",
 				"meterId": "METER ID",
+				"firmware": "펌웨어버전",
 				"status": "상태",
 				"period": "기간",
 				"meteringType": "검침타입"
@@ -66,11 +67,19 @@
 			"filter": {
 				"region": "지역",
 				"estate": "단지명",
+				"building": "동명",
+				"gateway": "게이트웨이",
 				"dcuId": "DCU ID",
 				"meterId": "METER ID",
 				"placeholder": {
-					"estate": "ex) 그랑시아 아파트"
-				}
+					"estate": "ex) 그랑시아 아파트",
+					"region": "101동",
+					"gateway": "Gate_1",
+					"dcuId": "NS09_0101A",
+					"meterId": "0619010031"
+				},
+				"all": "--전체--",
+				"day": "일"
 			},
 			"table": {
 				"regionName": "지역",

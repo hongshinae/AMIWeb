@@ -17,11 +17,17 @@
 				<b-form-group v-for="(item, index) in showFilterList" :key="index">
 					<content-table-filter-region
 						v-if="item == 'region'"
-						v-model="selectFilter.regionSelected"
-						:selected="selectFilter.regionSelected"
-						@init-filter-text="filterText = ''"
+						v-model="filter.region"
+						:selected="filter.region"
+						@init-filter-text="filter.estate = ''"
+						debounce="100"
 					/>
-					<content-table-filter-estate v-if="item == 'estate'" v-model="filterText" />
+					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
+					<content-table-filter-building v-if="item == 'building'" v-model="filter.building" debounce="100" />
+					<content-table-filter-gateway v-if="item == 'gateway'" v-model="filter.gateway" debounce="100" />
+					<content-table-filter-firmware v-if="item == 'firmware'" v-model="filter.firmware" debounce="100" />
+					<content-table-filter-dcu-id v-if="item == 'dcuId'" v-model="filter.dcuId" debounce="100" />
+					<content-table-filter-meter-id v-if="item == 'meterId'" v-model="filter.meterId" debounce="100" />
 				</b-form-group>
 				<b-form-group v-if="isPerPage">
 					<b-form-select v-model="perPage" :options="pages" />
@@ -37,8 +43,8 @@
 					:fields="fields"
 					:current-page="currentPage"
 					:per-page="perPage"
-					:filter="filterText"
-					:filter-included-fields="filterTargetFields"
+					:filter="filter"
+					:filter-function="onFilter"
 					@filtered="onFiltered"
 					show-empty
 				>
@@ -81,10 +87,23 @@
 <script>
 import ContentTableFilterRegion from "./ContentTableFilterRegion";
 import ContentTableFilterEstate from "./ContentTableFilterEstate";
+import ContentTableFilterBuilding from "./ContentTableFilterBuilding";
+import ContentTableFilterGateway from "./ContentTableFilterGateway";
+import ContentTableFilterFirmware from "./ContentTableFilterFirmware";
+import ContentTableFilterMeterId from "./ContentTableFilterMeterId";
+import ContentTableFilterDcuId from "./ContentTableFilterDcuId";
 import XLSX from "xlsx";
 
 export default {
-	components: { ContentTableFilterRegion, ContentTableFilterEstate },
+	components: {
+		ContentTableFilterRegion,
+		ContentTableFilterEstate,
+		ContentTableFilterBuilding,
+		ContentTableFilterGateway,
+		ContentTableFilterFirmware,
+		ContentTableFilterDcuId,
+		ContentTableFilterMeterId
+	},
 	props: {
 		isPerPage: { type: Boolean, default: true },
 		isBusy: Boolean,
@@ -111,20 +130,7 @@ export default {
 			}
 		},
 		itemList() {
-			let items = this.items;
-
-			if (this.selectFilter.regionSelected != "0") {
-				items = items.filter(item => item.regionSeq == this.selectFilter.regionSelected);
-			}
-
-			return items;
-		},
-		filterTargetFields: function() {
-			const filters = this.fields.filter(item => {
-				return item.hasFilter;
-			});
-
-			return filters.map(item => item.key);
+			return this.items;
 		},
 		excelList: function() {
 			return this.items.map(item => {
@@ -140,6 +146,27 @@ export default {
 
 				return o;
 			});
+		},
+		useRegion() {
+			return this.showFilterList.find(row => row == "region") == undefined ? false : true;
+		},
+		useEstate() {
+			return this.showFilterList.find(row => row == "estate") == undefined ? false : true;
+		},
+		useBuilding() {
+			return this.showFilterList.find(row => row == "building") == undefined ? false : true;
+		},
+		useGateway() {
+			return this.showFilterList.find(row => row == "gateway") == undefined ? false : true;
+		},
+		useDcuId() {
+			return this.showFilterList.find(row => row == "dcuId") == undefined ? false : true;
+		},
+		useMeterId() {
+			return this.showFilterList.find(row => row == "meterId") == undefined ? false : true;
+		},
+		useFirmware() {
+			return this.showFilterList.find(row => row == "firmware") == undefined ? false : true;
 		}
 	},
 	data() {
@@ -153,10 +180,15 @@ export default {
 				{ value: 30, text: this.$t("common.filter.page30") },
 				{ value: 50, text: this.$t("common.filter.page50") }
 			],
-			selectFilter: {
-				regionSelected: "0"
+			filter: {
+				region: 0,
+				estate: "",
+				building: "",
+				gateway: "",
+				dcuId: "",
+				meterId: "",
+				firmware: 0
 			},
-			filterText: null,
 			totalRow: this.itemsTotalCount
 		};
 	},
@@ -181,6 +213,29 @@ export default {
 			XLSX.utils.book_append_sheet(wb, dataWS, this.excelSheetName);
 			// 엑셀 파일을 내보낸다.
 			XLSX.writeFile(wb, this.excelFileName);
+		},
+		onFilter(row, filter) {
+			let region = true;
+			let estate = true;
+			let building = true;
+			let dcuId = true;
+			let meterId = true;
+			let gateway = true;
+			let firmware = true;
+
+			if (this.useRegion) {
+				region = filter.region == 0 ? true : false;
+
+				if (!region) {
+					region = row.regionSeq == filter.region;
+				}
+			}
+
+			if (this.useEstate) {
+				estate = row.estateName.indexOf(filter.estate) != -1;
+			}
+
+			return region && estate && building && dcuId && meterId && gateway && firmware;
 		}
 	}
 };
