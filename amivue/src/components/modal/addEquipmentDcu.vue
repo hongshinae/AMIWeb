@@ -42,12 +42,17 @@
 				<b-form-group :label="$t('equipment.dcu.modal.dcuId')" label-for="">
 					<b-form-input :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
 				</b-form-group>
-				<b-form-group :label="$t('equipment.dcu.modal.dcuIp')" label-for="">
-					<vue-ip :on-change="onChangeDcuIp" theme="material"></vue-ip>
-					<!-- <b-form-input :placeholder="$t('common.placeholder.dcuIp')"></b-form-input> -->
+				<b-form-group :value="ip" :label="$t('equipment.dcu.modal.dcuIp')" label-for="" content-cols-sm="4">
+					<b-form-input type="number" placeholder="20" />
+					<b-form-input type="number" placeholder="101" />
+					<b-form-input type="number" placeholder="235" />
+					<b-form-input type="number" placeholder="100" />
 				</b-form-group>
-				<b-form-group :label="$t('equipment.dcu.modal.routerIp')" label-for="">
-					<b-form-input :placeholder="$t('common.placeholder.routerIp')"></b-form-input>
+				<b-form-group :label="$t('equipment.dcu.modal.routerIp')" label-for="" content-cols-sm="4">
+					<b-form-input type="number" placeholder="20" />
+					<b-form-input type="number" placeholder="101" />
+					<b-form-input type="number" placeholder="235" />
+					<b-form-input type="number" placeholder="254" />
 				</b-form-group>
 				<b-form-group :label="$t('equipment.dcu.modal.installLocation')" label-for="">
 					<b-form-input type="number" :min="-90" :max="90" :placeholder="$t('common.placeholder.latitude')"></b-form-input>
@@ -59,16 +64,14 @@
 </template>
 
 <script>
-import VueIp from "vue-ip";
-
 export default {
-	components: {
-		VueIp
+	components: {},
+	data() {
+		return {
+			ip: ""
+		};
 	},
 	methods: {
-		onChangeDcuIp(ip, port, valid) {
-			console.log(ip, port, valid);
-		},
 		show() {
 			// this.states.regionSeqState = null;
 			// this.states.estateSeqState = null;
