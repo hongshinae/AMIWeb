@@ -71,25 +71,26 @@
 		padding: 10px 0 0 15px;
 		font-size: 14px;
 		margin-bottom: 0px;
+		float: left;
 	}
 }
 .todayWeather {
-	height: 135x;
+	height: 110px;
 	.good {
-		width: 100px;
-		height: 100px;
+		width: 32px;
+		height: 32px;
 		float: right;
-		background: url(../images/img.png) -262px -271px no-repeat;
+		background: url(../svg/weather_cloud.svg) 0 0 no-repeat;
 		margin-right: 10px;
 	}
 }
 .detaeWeather {
-	height: 135px;
+	height: 110px;
 	.good {
-		width: 100px;
-		height: 100px;
+		width: 32px;
+		height: 32px;
 		float: right;
-		background: url(../images/img.png) -262px -372px no-repeat;
+		background: url(../svg/emo_tear.svg) 0 0 no-repeat;
 		margin-right: 10px;
 	}
 }
@@ -205,7 +206,8 @@
 		float: left;
 		width: 23%;
 		border: solid 1px $color-gn;
-		background-image: linear-gradient(to top, #75cee2, #23b9da, #1ee4df);
+		background: rgb(117, 206, 226);
+		background: linear-gradient(45deg, rgba(117, 206, 226, 1) 9%, rgba(19, 183, 216, 1) 44%, rgba(35, 255, 240, 1) 78%, rgba(30, 228, 223, 1) 100%);
 		margin: 0 1%;
 	}
 	h6 {

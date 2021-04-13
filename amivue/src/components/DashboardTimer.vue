@@ -51,8 +51,7 @@ export default {
 	}
 }
 .timeWrap {
-	height: 30px;
-	margin: 0px 0 15px 0;
+	height: 50px;
 	width: 100%;
 }
 .timeWrap .date {
@@ -60,7 +59,7 @@ export default {
 }
 .timeWrap .time {
 	float: right;
-	font-size: 1.8em;
+	font-size: 2.4em;
 	font-family: alarm_clock;
 }
 .blink {
