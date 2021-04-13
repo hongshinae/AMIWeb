@@ -1,6 +1,6 @@
 <template>
 	<b-form-group :label="$t('component.content.filter.meterId')">
-		<b-form-input :value="text" :placeholder="$t('component.content.filter.placeholder.meterId')" @input="$emit('input', $event)" autocomplete="off" />
+		<b-form-input :value="text" :placeholder="$t('common.placeholder.meterId')" @input="$emit('input', $event)" autocomplete="off" />
 	</b-form-group>
 </template>
 

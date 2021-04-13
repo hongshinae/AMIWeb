@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<!-- <add-equipment-dcu></add-equipment-dcu>
-		<detail-equipment-dcu></detail-equipment-dcu> -->
+		<add-equipment-dcu></add-equipment-dcu>
+		<!-- <detail-equipment-dcu></detail-equipment-dcu> -->
 		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<content-table
 			:isBusy="isBusy"
@@ -16,12 +16,6 @@
 			<template #table-header-left-head>
 				<b-button v-b-modal="'addEquipmentDcu'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("equipment.button.add") }}</b-button>
 			</template>
-			<template #table-header-left-group>
-				<b-button variant="light">{{ $t("equipment.button.allInterlink") }}</b-button>
-			</template>
-			<template #table-header-left-tail>
-				<b-button variant="light">{{ $t("equipment.button.save") }}</b-button>
-			</template>
 			<template v-slot:table-header-right> </template>
 		</content-table>
 	</div>
@@ -29,7 +23,7 @@
 <script>
 import EquipmentDcu from "@/service/equipment/dcu";
 import ContentMixin from "@/components/content/mixin";
-// import AddEquipmentDcu from "@/components/modal/addEquipmentDcu";
+import AddEquipmentDcu from "@/components/modal/addEquipmentDcu";
 // import DetailEquipmentDcu from "@/components/modal/detailEquipmentDcu";
 
 export default {
@@ -43,7 +37,7 @@ export default {
 		}
 	},
 	components: {
-		/* AddEquipmentDcu, DetailEquipmentDcu */
+		AddEquipmentDcu /*, DetailEquipmentDcu */
 	},
 	data() {
 		return {

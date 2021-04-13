@@ -1,6 +1,6 @@
 <template>
 	<b-form-group :label="$t('component.content.filter.building')">
-		<b-form-input :value="text" :placeholder="$t('component.content.filter.placeholder.region')" @input="$emit('input', $event)" autocomplete="off" />
+		<b-form-input :value="text" :placeholder="$t('common.placeholder.region')" @input="$emit('input', $event)" autocomplete="off" />
 	</b-form-group>
 </template>
 

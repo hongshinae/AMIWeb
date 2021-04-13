@@ -1,8 +1,20 @@
 <template>
-	<b-modal id="addEquipmenetDcu">
+	<b-modal
+		id="addEquipmentDcu"
+		ref="addEquipmentDcu"
+		@shown="shown"
+		@show="show"
+		@hide="hide"
+		@hidden="hidden"
+		@ok="ok"
+		@cancel="cancel"
+		no-close-on-backdrop
+	>
 		<template #modal-header="{ close }">
 			<ul>
-				<li><h4>DCU 등록</h4></li>
+				<li>
+					<h4>{{ $t("equipment.dcu.modal.add") }}</h4>
+				</li>
 				<li>
 					<b-button size="sm" variant="outline-light" @click="close()">
 						X
@@ -15,8 +27,8 @@
 				<ul>
 					<li><!-- Button with custom close trigger value --></li>
 					<li>
-						<b-button variant="light" @click="ok()">등록</b-button>
-						<b-button variant="light" @click="cancel()">취소</b-button>
+						<b-button variant="light" @click="ok()">{{ $t("building.modal.button.save") }}</b-button>
+						<b-button variant="light" @click="cancel()">{{ $t("building.modal.button.cancel") }}</b-button>
 					</li>
 				</ul>
 			</div>
@@ -27,20 +39,19 @@
 				<img src="@/assets/svg/DCU.svg" alt="" title="" />
 			</div>
 			<div class="svg-input">
-				<b-form-group label="DCU ID" label-for="">
-					<b-form-input id="" placeholder="DCU_ID_123"></b-form-input>
+				<b-form-group :label="$t('equipment.dcu.modal.dcuId')" label-for="">
+					<b-form-input :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
 				</b-form-group>
-				<b-form-group label="IP Address" label-for="">
-					<b-form-input id="" placeholder="20.101.235.100"></b-form-input>
+				<b-form-group :label="$t('equipment.dcu.modal.dcuIp')" label-for="">
+					<vue-ip :on-change="onChangeDcuIp" theme="material"></vue-ip>
+					<!-- <b-form-input :placeholder="$t('common.placeholder.dcuIp')"></b-form-input> -->
 				</b-form-group>
-				<b-form-group label="IP Router" label-for="">
-					<b-form-input id="" placeholder="20.1.1.235.254"></b-form-input>
+				<b-form-group :label="$t('equipment.dcu.modal.routerIp')" label-for="">
+					<b-form-input :placeholder="$t('common.placeholder.routerIp')"></b-form-input>
 				</b-form-group>
-				<b-form-group label="설치 일자" label-for="">
-					<b-form-input id="" placeholder="2020-12-29 13:45:00"></b-form-input>
-				</b-form-group>
-				<b-form-group label="설치 위치" label-for="">
-					<b-form-input id="" placeholder="위도 : 0,  경도 : 0"></b-form-input>
+				<b-form-group :label="$t('equipment.dcu.modal.installLocation')" label-for="">
+					<b-form-input type="number" :min="-90" :max="90" :placeholder="$t('common.placeholder.latitude')"></b-form-input>
+					<b-form-input type="number" :min="-180" :max="180" :placeholder="$t('common.placeholder.longitude')"></b-form-input>
 				</b-form-group>
 			</div>
 		</div>
@@ -48,7 +59,41 @@
 </template>
 
 <script>
-export default {};
+import VueIp from "vue-ip";
+
+export default {
+	components: {
+		VueIp
+	},
+	methods: {
+		onChangeDcuIp(ip, port, valid) {
+			console.log(ip, port, valid);
+		},
+		show() {
+			// this.states.regionSeqState = null;
+			// this.states.estateSeqState = null;
+			// this.states.buildingNameState = null;
+			// this.states.buildingNameCheckState = null;
+			// this.form.regionSeq = 0;
+			// this.form.estateSeq = 0;
+			// this.form.buildingName = null;
+		},
+		shown() {},
+		hide() {},
+		hidden() {},
+		ok(event) {
+			this.handleSubmit(event);
+		},
+		cancel() {},
+		checkValidation() {
+			// let result = this.$refs.addBuildingForm.checkValidity();
+			// this.states.regionSeqState = this.form.regionSeq && this.form.regionSeq != 0 ? true : false;
+			// this.states.estateSeqState = this.form.estateSeq && this.form.estateSeq != 0 ? true : false;
+			// this.states.buildingNameState = this.form.buildingName ? true : false;
+			// return result && this.states.regionSeqState && this.states.estateSeqState && this.states.buildingNameState;
+		}
+	}
+};
 </script>
 
 <style></style>

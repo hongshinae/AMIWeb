@@ -45,6 +45,18 @@
 		"button": {
 			"excelDownload": "엑셀 다운로드",
 			"details": "상세정보"
+		},
+		"placeholder": {
+			"estate": "ex) 그랑시아 아파트",
+			"region": "101동",
+			"gateway": "Gate_1",
+			"dcuId": "NS09_0101A",
+			"meterId": "0619010031",
+			"dcuIp": "20.101.235.100",
+			"routerIp": "20.101.235.254",
+			"installDate": "2020-12-29 13:45:00",
+			"latitude": "위도:0",
+			"longitude": "경도:0"
 		}
 	},
 	"dashboard": {
@@ -72,13 +84,6 @@
 				"dcuId": "DCU ID",
 				"meterId": "METER ID",
 				"firmware": "펌웨어버전",
-				"placeholder": {
-					"estate": "ex) 그랑시아 아파트",
-					"region": "101동",
-					"gateway": "Gate_1",
-					"dcuId": "NS09_0101A",
-					"meterId": "0619010031"
-				},
 				"all": "--전체--",
 				"day": "일"
 			},
@@ -209,9 +214,17 @@
 			"meter": "METER",
 			"other": "가스, 수도, 온수, 난방"
 		},
-		"modal": {},
 		"dcu": {
-			"excelFileName": "장비관리_DCU.xlsx"
+			"excelFileName": "장비관리_DCU.xlsx",
+			"modal": {
+				"add": "DCU 등록",
+				"detail": "DCU 상세",
+				"dcuId": "DCU ID",
+				"dcuIp": "IP Address",
+				"routerIp": "IP Router",
+				"installDate": "설치 일자",
+				"installLocation": "설치 위치"
+			}
 		},
 		"meter": {
 			"excelFileName": "장비관리_METER.xlsx"
