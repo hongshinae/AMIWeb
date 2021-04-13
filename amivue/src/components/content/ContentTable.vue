@@ -22,10 +22,16 @@
 						@init-filter-text="filter.estate = ''"
 						debounce="100"
 					/>
+					<content-table-filter-firmware
+						v-if="item == 'firmware'"
+						v-model="filter.firmware"
+						:selected="filter.firmware"
+						:firmwareList="firmwareList"
+						debounce="100"
+					/>
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
 					<content-table-filter-building v-if="item == 'building'" v-model="filter.building" debounce="100" />
 					<content-table-filter-gateway v-if="item == 'gateway'" v-model="filter.gateway" debounce="100" />
-					<content-table-filter-firmware v-if="item == 'firmware'" v-model="filter.firmware" debounce="100" />
 					<content-table-filter-dcu-id v-if="item == 'dcuId'" v-model="filter.dcuId" debounce="100" />
 					<content-table-filter-meter-id v-if="item == 'meterId'" v-model="filter.meterId" debounce="100" />
 				</b-form-group>
@@ -60,7 +66,7 @@
 						<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
 					</template>
 					<template #emptyfiltered="scope">
-						<h4>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
+						<h4>{{ $t("msg.search.emptyText") || scope.emptyFilteredText }}</h4>
 					</template>
 					<template #cell(systemState)="row">
 						<span :class="{ linkage: row.item.systemState == 1, unlinkage: row.item.systemState != 1 }"></span>
@@ -119,6 +125,11 @@ export default {
 			}
 		}
 	},
+	watch: {
+		items: function() {
+			this.initFilter();
+		}
+	},
 	created() {},
 	mounted() {},
 	computed: {
@@ -131,6 +142,10 @@ export default {
 		},
 		itemList() {
 			return this.items;
+		},
+		firmwareList() {
+			const firmwareList = this.items.map(item => item.firmwareVersion);
+			return firmwareList.filter((item, index, array) => array.indexOf(item) === index);
 		},
 		excelList: function() {
 			return this.items.map(item => {
@@ -193,6 +208,15 @@ export default {
 		};
 	},
 	methods: {
+		initFilter() {
+			this.filter.region = 0;
+			this.filter.estate = "";
+			this.filter.building = "";
+			this.filter.gateway = "";
+			this.filter.dcuId = "";
+			this.filter.meterId = "";
+			this.filter.firmware = 0;
+		},
 		onFiltered(filteredItems) {
 			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
 			this.totalRow = filteredItems.length;
@@ -233,6 +257,26 @@ export default {
 
 			if (this.useEstate) {
 				estate = row.estateName.indexOf(filter.estate) != -1;
+			}
+
+			if (this.useDcuId) {
+				dcuId = row.dcuId.toUpperCase().indexOf(filter.dcuId.toUpperCase()) != -1;
+			}
+
+			if (this.useMeterId) {
+				meterId = row.meterId.toUpperCase().indexOf(filter.meterId.toUpperCase()) != -1;
+			}
+
+			if (this.useGateway) {
+				gateway = row.meterId.toUpperCase().indexOf(filter.meterId.toUpperCase()) != -1;
+			}
+
+			if (this.useFirmware) {
+				firmware = filter.firmware == 0 ? true : false;
+
+				if (!firmware) {
+					firmware = row.firmwareVersion == filter.firmware;
+				}
 			}
 
 			return region && estate && building && dcuId && meterId && gateway && firmware;

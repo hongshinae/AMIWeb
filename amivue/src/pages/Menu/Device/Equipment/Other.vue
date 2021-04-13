@@ -4,8 +4,8 @@
 		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<content-table
 			:isBusy="isBusy"
-			:items="etcList"
-			:fields="etcFields"
+			:items="otherList"
+			:fields="otherFields"
 			:isPerPage="true"
 			:showFilterList="showFilterList"
 			:excelFileName="$t('estate.excelFileName')"
@@ -37,8 +37,8 @@ export default {
 	},
 	data() {
 		return {
-			etcList: [],
-			etcFields: [
+			otherList: [],
+			otherFields: [
 				{
 					key: "regionName",
 					label: this.$t("component.content.table.regionName"),
@@ -59,23 +59,23 @@ export default {
 				},
 				{
 					key: "systemState",
-					label: this.$t("component.content.table.ip")
+					label: this.$t("component.content.table.dcuIp")
 				},
 				{
 					key: "systemState",
-					label: this.$t("component.content.table.ip")
+					label: this.$t("component.content.table.dcuIp")
 				},
 				{
 					key: "systemState",
-					label: this.$t("component.content.table.ip")
+					label: this.$t("component.content.table.dcuIp")
 				},
 				{
 					key: "systemState",
-					label: this.$t("component.content.table.ip")
+					label: this.$t("component.content.table.dcuIp")
 				},
 				{
 					key: "systemState",
-					label: this.$t("component.content.table.ip")
+					label: this.$t("component.content.table.dcuIp")
 				},
 				{
 					key: "_remark",

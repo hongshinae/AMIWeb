@@ -10,7 +10,7 @@
 		<b-tabs v-model="tabIndex" :no-nav-style="true">
 			<b-tab>
 				<template #title> </template>
-				<equipment-other></equipment-other>
+				<equipment-dcu></equipment-dcu>
 			</b-tab>
 
 			<b-tab>
@@ -27,16 +27,17 @@
 </template>
 <script>
 import ContentHeader from "@/components/content/ContentHeader";
+import EquipmentDcu from "./Equipment/Dcu";
 import EquipmentOther from "./Equipment/Other";
 
 export default {
 	props: {
 		initTabIndex: {
 			type: Number,
-			default: 2
+			default: 0
 		}
 	},
-	components: { ContentHeader, EquipmentOther },
+	components: { ContentHeader, EquipmentDcu, EquipmentOther },
 	computed: {
 		activeTab() {
 			return currentTab => (this.tabIndex == currentTab ? "primary" : "outline-primary");

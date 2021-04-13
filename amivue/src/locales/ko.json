@@ -55,8 +55,8 @@
 			"search": {
 				"title": "검색",
 				"region": "지역",
-				"estate": "단지 명",
-				"building": "동 명",
+				"estate": "단지명",
+				"building": "동명",
 				"dcuId": "DCU ID",
 				"meterId": "METER ID",
 				"firmware": "펌웨어버전",
@@ -71,6 +71,7 @@
 				"gateway": "게이트웨이",
 				"dcuId": "DCU ID",
 				"meterId": "METER ID",
+				"firmware": "펌웨어버전",
 				"placeholder": {
 					"estate": "ex) 그랑시아 아파트",
 					"region": "101동",
@@ -86,11 +87,11 @@
 				"estateName": "단지명",
 				"buildingName": "동",
 				"dcuId": "DCU ID",
-				"ip": "IP",
-				"lteIp": "LTE 장비 IP",
-				"firmware": "Firmware",
-				"modem": "Modem",
-				"meter": "Meter",
+				"dcuIp": "DCU IP",
+				"fepIp": "LTE 장비 IP",
+				"firmwareVersion": "펌웨어버전",
+				"modemCount": "Modem",
+				"meterCount": "Meter",
 				"houseCount": "세대수",
 				"address": "주소",
 				"deviceCount": "설치 장비수",
@@ -194,15 +195,30 @@
 					"registered": "이미 등록된 DCU입니다."
 				}
 			}
-		}
+		},
+		"excelFileName": "동관리.xlsx"
 	},
 	"equipment": {
+		"button": {
+			"add": "DCU 신규 등록",
+			"allInterlink": "전체 연동하기",
+			"save": "저장"
+		},
 		"tab": {
 			"dcu": "DCU",
 			"meter": "METER",
 			"other": "가스, 수도, 온수, 난방"
 		},
-		"modal": {}
+		"modal": {},
+		"dcu": {
+			"excelFileName": "장비관리_DCU.xlsx"
+		},
+		"meter": {
+			"excelFileName": "장비관리_METER.xlsx"
+		},
+		"other": {
+			"excelFileName": "장비관리_OTHER.xlsx"
+		}
 	},
 	"mapping": {},
 	"lookup": {},
