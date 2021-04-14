@@ -39,20 +39,16 @@
 				<img src="@/assets/svg/DCU.svg" alt="" title="" />
 			</div>
 			<div class="svg-input">
+				{{ ip }}
 				<b-form-group :label="$t('equipment.dcu.modal.dcuId')" label-for="">
 					<b-form-input :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
 				</b-form-group>
-				<b-form-group :value="ip" :label="$t('equipment.dcu.modal.dcuIp')" label-for="" content-cols-sm="4">
-					<b-form-input type="number" placeholder="20" />
-					<b-form-input type="number" placeholder="101" />
-					<b-form-input type="number" placeholder="235" />
-					<b-form-input type="number" placeholder="100" />
-				</b-form-group>
+				<input-ip v-model="ip" :label="$t('equipment.dcu.modal.dcuIp')" />
 				<b-form-group :label="$t('equipment.dcu.modal.routerIp')" label-for="" content-cols-sm="4">
-					<b-form-input type="number" placeholder="20" />
-					<b-form-input type="number" placeholder="101" />
-					<b-form-input type="number" placeholder="235" />
-					<b-form-input type="number" placeholder="254" />
+					<b-form-input type="number" placeholder="20" @input.native="handleIpInput" />
+					<b-form-input type="number" placeholder="101" @input.native="handleIpInput" />
+					<b-form-input type="number" placeholder="235" @input.native="handleIpInput" />
+					<b-form-input type="number" placeholder="254" @input.native="handleIpInput" />
 				</b-form-group>
 				<b-form-group :label="$t('equipment.dcu.modal.installLocation')" label-for="">
 					<b-form-input type="number" :min="-90" :max="90" :placeholder="$t('common.placeholder.latitude')"></b-form-input>
@@ -64,11 +60,12 @@
 </template>
 
 <script>
+import InputIp from "@/components/InputIp";
 export default {
-	components: {},
+	components: { InputIp },
 	data() {
 		return {
-			ip: ""
+			ip: "222.555.444"
 		};
 	},
 	methods: {
