@@ -8,8 +8,8 @@
 			:fields="otherFields"
 			:isPerPage="true"
 			:showFilterList="showFilterList"
-			:excelFileName="$t('estate.excelFileName')"
-			:excelSheetName="$t('menu.device.estate')"
+			:excelFileName="$t('equipment.other.excelFileName')"
+			:excelSheetName="$t('equipment.tab.other')"
 			@handle:selectedItem="handleSelectedItem"
 		>
 			<template #table-header-left-head> </template>
@@ -54,28 +54,24 @@ export default {
 					label: this.$t("component.content.table.buildingName")
 				},
 				{
-					key: "dcuId",
-					label: this.$t("component.content.table.dcuId")
+					key: "houseName",
+					label: this.$t("component.content.table.houseName")
 				},
 				{
-					key: "systemState",
-					label: this.$t("component.content.table.dcuIp")
+					key: "gatewayId",
+					label: this.$t("component.content.table.gatewayId")
 				},
 				{
-					key: "systemState",
-					label: this.$t("component.content.table.dcuIp")
+					key: "meterId",
+					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "systemState",
-					label: this.$t("component.content.table.dcuIp")
+					key: "updateDate",
+					label: this.$t("component.content.table.updateDate")
 				},
 				{
-					key: "systemState",
-					label: this.$t("component.content.table.dcuIp")
-				},
-				{
-					key: "systemState",
-					label: this.$t("component.content.table.dcuIp")
+					key: "meterType",
+					label: this.$t("component.content.table.meterType")
 				},
 				{
 					key: "_remark",
@@ -95,17 +91,17 @@ export default {
 				this.isBusy = true;
 				const response = await EquipmentOther.list(params);
 				const result = response.data.response;
-				this.buildingList = result;
+				this.otherList = result;
 			} catch (error) {
 				const result = [];
-				this.buildingList = result;
+				this.otherList = result;
 			} finally {
 				this.isBusy = false;
 			}
 		},
 		handleSelectedItem(selectedItem) {
 			this.selectedItem = selectedItem;
-			this.$bvModal.show("detailBuilding");
+			this.$bvModal.show("detailEquipmentOther");
 		},
 		searchItemList: function(searchItem) {
 			this.getBuildingList(searchItem);

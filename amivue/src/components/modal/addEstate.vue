@@ -146,7 +146,7 @@
 					</b-form-group>
 				</div>
 				<div class="modal-3rd-box">
-					<b-form-group :label="$t('estate.modal.meteringType')">
+					<b-form-group :label="$t('estate.modal.readingType')">
 						<b-form-checkbox v-model="form.checkPower" unchecked-value="N" value="Y">{{ $t("estate.modal.powerType") }} </b-form-checkbox>
 						<b-form-checkbox v-model="form.checkGas" unchecked-value="N" value="Y">{{ $t("estate.modal.gasType") }} </b-form-checkbox>
 						<b-form-checkbox v-model="form.checkWater" unchecked-value="N" value="Y">{{ $t("estate.modal.waterType") }} </b-form-checkbox>

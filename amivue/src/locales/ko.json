@@ -54,7 +54,6 @@
 			"meterId": "0619010031",
 			"dcuIp": "20.101.235.100",
 			"routerIp": "20.101.235.254",
-			"installDate": "2020-12-29 13:45:00",
 			"latitude": "위도:0",
 			"longitude": "경도:0"
 		}
@@ -74,7 +73,7 @@
 				"firmware": "펌웨어버전",
 				"status": "상태",
 				"period": "기간",
-				"meteringType": "검침타입"
+				"readingType": "검침타입"
 			},
 			"filter": {
 				"region": "지역",
@@ -84,6 +83,7 @@
 				"dcuId": "DCU ID",
 				"meterId": "METER ID",
 				"firmware": "펌웨어버전",
+				"readingDay": "검침일",
 				"all": "--전체--",
 				"day": "일"
 			},
@@ -91,8 +91,10 @@
 				"regionName": "지역",
 				"estateName": "단지명",
 				"buildingName": "동",
+				"houseName": "호수",
 				"dcuId": "DCU ID",
 				"dcuIp": "DCU IP",
+				"mac": "MAC",
 				"fepIp": "LTE 장비 IP",
 				"firmwareVersion": "펌웨어버전",
 				"modemCount": "Modem",
@@ -100,13 +102,14 @@
 				"houseCount": "세대수",
 				"address": "주소",
 				"deviceCount": "설치 장비수",
-				"meteringTypeCount": "검침타입",
+				"readingTypeCount": "검침타입",
 				"remark": "비고",
 				"estateId": "단지ID",
 				"systemState": "데이터 연동",
 				"meterId": "계량기 ID",
-				"meteringDate": "검침일",
-				"macAddr": "MAC ADDR",
+				"gatewayId": "게이트웨이 ID",
+				"readingDay": "검침일",
+				"meterType": "검침타입",
 				"dcuCheck": "연동 확인",
 				"dtime": "계시시각",
 				"demand": "유효수요",
@@ -114,7 +117,8 @@
 				"acc": "누적유효",
 				"demanda": "유효수요(A)",
 				"etimea": "발생시각",
-				"acca": "누적유효(A)"
+				"acca": "누적유효(A)",
+				"updateDate": "변경일시"
 			}
 		}
 	},
@@ -148,7 +152,7 @@
 			"buildingHouseCount": "동 호수",
 			"buildingTooltip": "동 관리 페이지에서 등록 가능합니다.",
 			"houseTooltip": "매핑 관리 페이지에서 등록 가능합니다.",
-			"meteringType": "검침 타입",
+			"readingType": "검침 타입",
 			"powerType": "전기",
 			"gasType": "가스",
 			"waterType": "수도",
@@ -207,7 +211,10 @@
 		"button": {
 			"add": "DCU 신규 등록",
 			"allInterlink": "전체 연동하기",
-			"save": "저장"
+			"save": "저장",
+			"meterReadingDay": "검침일",
+			"meterTime": "시각설정",
+			"lpPeriod": "LP 주기"
 		},
 		"tab": {
 			"dcu": "DCU",
@@ -227,7 +234,16 @@
 			}
 		},
 		"meter": {
-			"excelFileName": "장비관리_METER.xlsx"
+			"excelFileName": "장비관리_METER.xlsx",
+			"modal": {
+				"meterId": "METER ID",
+				"mac": "Modem MAC",
+				"deviceName": "Device Name",
+				"dcuId": "DCU ID",
+				"meterReadingDay": "검침일",
+				"meterTime": "계량기 시각",
+				"lpPeriod": "LP 주기"
+			}
 		},
 		"other": {
 			"excelFileName": "장비관리_OTHER.xlsx"

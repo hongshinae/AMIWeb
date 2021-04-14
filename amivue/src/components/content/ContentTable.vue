@@ -29,6 +29,13 @@
 						:firmwareList="firmwareList"
 						debounce="100"
 					/>
+					<content-table-filter-reading-day
+						v-if="item == 'readingDay'"
+						v-model="filter.readingDay"
+						:selected="filter.readingDay"
+						:firmwareList="firmwareList"
+						debounce="100"
+					/>
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
 					<content-table-filter-building v-if="item == 'building'" v-model="filter.building" debounce="100" />
 					<content-table-filter-gateway v-if="item == 'gateway'" v-model="filter.gateway" debounce="100" />
@@ -98,6 +105,7 @@ import ContentTableFilterGateway from "./ContentTableFilterGateway";
 import ContentTableFilterFirmware from "./ContentTableFilterFirmware";
 import ContentTableFilterMeterId from "./ContentTableFilterMeterId";
 import ContentTableFilterDcuId from "./ContentTableFilterDcuId";
+import ContentTableFilterReadingDay from "./ContentTableFilterReadingDay";
 import XLSX from "xlsx";
 
 export default {
@@ -108,7 +116,8 @@ export default {
 		ContentTableFilterGateway,
 		ContentTableFilterFirmware,
 		ContentTableFilterDcuId,
-		ContentTableFilterMeterId
+		ContentTableFilterMeterId,
+		ContentTableFilterReadingDay
 	},
 	props: {
 		isPerPage: { type: Boolean, default: true },
@@ -147,6 +156,10 @@ export default {
 			const firmwareList = this.items.map(item => item.firmwareVersion);
 			return firmwareList.filter((item, index, array) => array.indexOf(item) === index);
 		},
+		readingDayList() {
+			const readingDayList = this.items.map(item => item.readingDay);
+			return readingDayList.filter((item, index, array) => array.indexOf(item) === index);
+		},
 		excelList: function() {
 			return this.items.map(item => {
 				let o = {};
@@ -182,6 +195,9 @@ export default {
 		},
 		useFirmware() {
 			return this.showFilterList.find(row => row == "firmware") == undefined ? false : true;
+		},
+		useReadingDay() {
+			return this.showFilterList.find(row => row == "readingDay") == undefined ? false : true;
 		}
 	},
 	data() {
@@ -202,7 +218,8 @@ export default {
 				gateway: "",
 				dcuId: "",
 				meterId: "",
-				firmware: 0
+				firmware: 0,
+				readingDay: 0
 			},
 			totalRow: this.itemsTotalCount
 		};
@@ -216,6 +233,7 @@ export default {
 			this.filter.dcuId = "";
 			this.filter.meterId = "";
 			this.filter.firmware = 0;
+			this.filter.readingDay = 0;
 		},
 		onFiltered(filteredItems) {
 			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
@@ -246,6 +264,7 @@ export default {
 			let meterId = true;
 			let gateway = true;
 			let firmware = true;
+			let readingDay = true;
 
 			if (this.useRegion) {
 				region = filter.region == 0 ? true : false;
@@ -279,7 +298,15 @@ export default {
 				}
 			}
 
-			return region && estate && building && dcuId && meterId && gateway && firmware;
+			if (this.useReadingDay) {
+				readingDay = filter.readingDay == 0 ? true : false;
+
+				if (!readingDay) {
+					readingDay = row.readingDay == filter.readingDay;
+				}
+			}
+
+			return region && estate && building && dcuId && meterId && gateway && firmware && readingDay;
 		}
 	}
 };

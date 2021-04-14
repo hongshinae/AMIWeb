@@ -12,40 +12,56 @@ export default {
 	props: ["label", "placeholder", "value"],
 	computed: {
 		ip1() {
-			let array = this.value.split(".");
+			if (this.value) {
+				let array = this.value.split(".");
 
-			if (array.length > 0) {
-				return array[0];
-			} else {
-				return "";
+				if (array.length > 0) {
+					return array[0];
+				} else {
+					return "";
+				}
 			}
+
+			return "";
 		},
 		ip2() {
-			let array = this.value.split(".");
+			if (this.value) {
+				let array = this.value.split(".");
 
-			if (array.length > 1) {
-				return array[1];
-			} else {
-				return "";
+				if (array.length > 1) {
+					return array[1];
+				} else {
+					return "";
+				}
 			}
+
+			return "";
 		},
 		ip3() {
-			let array = this.value.split(".");
+			if (this.value) {
+				let array = this.value.split(".");
 
-			if (array.length > 2) {
-				return array[2];
-			} else {
-				return "";
+				if (array.length > 2) {
+					return array[2];
+				} else {
+					return "";
+				}
 			}
+
+			return "";
 		},
 		ip4() {
-			let array = this.value.split(".");
+			if (this.value) {
+				let array = this.value.split(".");
 
-			if (array.length > 3) {
-				return array[3];
-			} else {
-				return "";
+				if (array.length > 3) {
+					return array[3];
+				} else {
+					return "";
+				}
 			}
+
+			return "";
 		}
 	},
 	methods: {
@@ -59,7 +75,7 @@ export default {
 					event.target.previousSibling.focus();
 				}
 			}
-			console.log(this.$refs.ip1);
+
 			const ip1 = this.$refs.ip1.vModelValue;
 			const ip2 = this.$refs.ip2.vModelValue;
 			const ip3 = this.$refs.ip3.vModelValue;

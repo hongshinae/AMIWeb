@@ -119,7 +119,7 @@
 					</b-form-group>
 				</div>
 				<div class="modal-3rd-box">
-					<b-form-group :label="$t('estate.modal.meteringType')">
+					<b-form-group :label="$t('estate.modal.readingType')">
 						<b-form-checkbox-group>
 							<b-form-checkbox v-model="form.checkPower" unchecked-value="N" value="Y">
 								{{ $t("estate.modal.powerType") }}

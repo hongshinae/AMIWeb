@@ -33,7 +33,7 @@
 										<label class="d-block">검침 타입</label>
 									</b-col>
 									<b-col lg="8">
-										<b-form-select v-model="meteringType">
+										<b-form-select v-model="readingType">
 											<b-form-select-option value="1">전기</b-form-select-option>
 											<b-form-select-option value="12">수도</b-form-select-option>
 										</b-form-select>
@@ -197,7 +197,7 @@
 export default {
 	data() {
 		return {
-			meteringType: "1",
+			readingType: "1",
 			regionCode: "1",
 			estateCode: "1",
 			text: "",

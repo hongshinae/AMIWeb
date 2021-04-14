@@ -39,20 +39,20 @@
 				<img src="@/assets/svg/DCU.svg" alt="" title="" />
 			</div>
 			<div class="svg-input">
-				{{ ip }}
 				<b-form-group :label="$t('equipment.dcu.modal.dcuId')" label-for="">
-					<b-form-input :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
+					<b-form-input v-model="form.dcuId" :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
 				</b-form-group>
-				<input-ip v-model="ip" :label="$t('equipment.dcu.modal.dcuIp')" />
-				<b-form-group :label="$t('equipment.dcu.modal.routerIp')" label-for="" content-cols-sm="4">
-					<b-form-input type="number" placeholder="20" @input.native="handleIpInput" />
-					<b-form-input type="number" placeholder="101" @input.native="handleIpInput" />
-					<b-form-input type="number" placeholder="235" @input.native="handleIpInput" />
-					<b-form-input type="number" placeholder="254" @input.native="handleIpInput" />
-				</b-form-group>
+				<input-ip v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuIp')" />
+				<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />
 				<b-form-group :label="$t('equipment.dcu.modal.installLocation')" label-for="">
-					<b-form-input type="number" :min="-90" :max="90" :placeholder="$t('common.placeholder.latitude')"></b-form-input>
-					<b-form-input type="number" :min="-180" :max="180" :placeholder="$t('common.placeholder.longitude')"></b-form-input>
+					<b-form-input type="number" v-model="form.latitude" :min="-90" :max="90" :placeholder="$t('common.placeholder.latitude')"></b-form-input>
+					<b-form-input
+						type="number"
+						v-model="form.longitude"
+						:min="-180"
+						:max="180"
+						:placeholder="$t('common.placeholder.longitude')"
+					></b-form-input>
 				</b-form-group>
 			</div>
 		</div>
@@ -65,7 +65,13 @@ export default {
 	components: { InputIp },
 	data() {
 		return {
-			ip: "222.555.444"
+			form: {
+				dcuId: "",
+				dcuIp: "",
+				routerIp: "",
+				latitude: 0,
+				longitude: 0
+			}
 		};
 	},
 	methods: {

@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="detailEquipmenetEtc" size="lg">
+	<b-modal id="detailEquipmentOther" size="lg">
 		<template #modal-header="{ close }">
 			<ul>
 				<li><h4>서울 서울아파트 101동 101호</h4></li>

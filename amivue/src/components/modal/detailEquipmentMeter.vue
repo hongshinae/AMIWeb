@@ -1,11 +1,13 @@
 <template>
-	<b-modal id="detailEquipmenetMeter" size="lg">
+	<b-modal id="detailEquipmentMeter" size="lg" @shown="shown" @show="show" @hide="hide" @hidden="hidden" @ok="ok" @cancel="cancel" no-close-on-backdrop>
 		<template #modal-header="{ close }">
 			<ul>
-				<li><h4>서울 서울아파트 101동 101호</h4></li>
+				<li>
+					<h4>{{ address }}</h4>
+				</li>
 				<li>
 					<b-form-group>
-						<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
+						<b-form-input :value="meterId" placeholder="계량기 ID" @keyup.native="onMeterId"></b-form-input>
 					</b-form-group>
 				</li>
 				<li>
@@ -19,11 +21,10 @@
 			<div class="btn-wrap">
 				<ul>
 					<li>
-						<b-button variant="light">Meter 삭제</b-button>
+						<b-button variant="light" @click="deleteMeter()">Meter 삭제</b-button>
 					</li>
 					<li>
-						<b-button variant="light">정보 수정</b-button>
-						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
+						<b-button variant="light" @click="cancel()">{{ $t("building.modal.button.cancel") }}</b-button>
 					</li>
 				</ul>
 			</div>
@@ -36,50 +37,44 @@
 			<div class="svg-input">
 				<ul>
 					<li>
-						<div class="meter-value">451245</div>
-						<b-form-group label="Meter ID" label-for="">
-							<b-form-input id="" placeholder="Meter ID"></b-form-input>
+						<div class="meter-value">{{ meter.meterId }}</div>
+						<b-form-group :label="$t('equipment.meter.modal.meterId')" label-for="">
+							<b-form-input v-model="meter.meterId" disabled></b-form-input>
 						</b-form-group>
-						<b-form-group label="Modem MAC" label-for="">
-							<b-form-input id="" placeholder="00:00:AC:5E:A0;39:04"></b-form-input>
+						<b-form-group :label="$t('equipment.meter.modal.mac')" label-for="">
+							<b-form-input v-model="meter.mac" disabled></b-form-input>
 						</b-form-group>
-						<b-form-group label="Device Name" label-for="">
-							<b-form-input id="" placeholder="WZT 161201a 21"></b-form-input>
+						<b-form-group :label="$t('equipment.meter.modal.deviceName')" label-for="">
+							<b-form-input v-model="meter.deviceName" disabled></b-form-input>
 						</b-form-group>
 					</li>
 					<li>
-						<b-form-group label="Gateway ID" label-for="">
-							<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
+						<b-form-group :label="$t('equipment.meter.modal.dcuId')" label-for="">
+							<b-form-input v-model="meter.dcuId" disabled></b-form-input>
 						</b-form-group>
-						<b-form-group label="검침일" label-for="">
+						<b-form-group :label="$t('equipment.meter.modal.meterReadingDay')" label-for="">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="10"></b-form-input>
+								<b-form-input v-model="meter.meterReadingDay" readonly></b-form-input>
 								<b-input-group-append>
-									<b-button variant="light">검침일</b-button>
+									<b-button variant="light">{{ $t("equipment.button.meterReadingDay") }}</b-button>
 								</b-input-group-append>
 							</b-input-group>
 						</b-form-group>
-						<b-form-group label="계량기 시각" label-for="">
+						<b-form-group :label="$t('equipment.meter.modal.meterTime')" label-for="">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="2019-05-09 11:11:00" disabled></b-form-input>
+								<b-form-input :value="$moment(meter.meterTime).format('YYYY-MM-DD HH:mm:ss')" readonly></b-form-input>
 								<b-input-group-append>
-									<b-button variant="light">시각설정</b-button>
+									<b-button variant="light">{{ $t("equipment.button.meterTime") }}</b-button>
 								</b-input-group-append>
 							</b-input-group>
 						</b-form-group>
-						<b-form-group label="LP 주기" label-for="">
+						<b-form-group :label="$t('equipment.meter.modal.lpPeriod')" label-for="">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="15"></b-form-input>
+								<b-form-input v-model="meter.lpPeriod" placeholder="15" readonly></b-form-input>
 								<b-input-group-append>
-									<b-button variant="light">LP 주기</b-button>
+									<b-button variant="light">{{ $t("equipment.button.lpPeriod") }}</b-button>
 								</b-input-group-append>
 							</b-input-group>
-						</b-form-group>
-						<b-form-group label="SNMP (RO)" label-for="">
-							<b-form-input id="" placeholder="kepsnmpro" disabled></b-form-input>
-						</b-form-group>
-						<b-form-group label="SNMP (RW)" label-for="">
-							<b-form-input id="" placeholder="kepsnmpro" disabled></b-form-input>
 						</b-form-group>
 					</li>
 				</ul>
@@ -89,7 +84,88 @@
 </template>
 
 <script>
-export default {};
+import EquipmentMeter from "@/service/equipment/meter";
+
+export default {
+	props: { meterId: { type: String } },
+	computed: {
+		address() {
+			return "서울 서울아파트 101동 101호";
+		}
+	},
+	data() {
+		return {
+			currentMeterId: this.meterId,
+			meter: {}
+		};
+	},
+	methods: {
+		show() {},
+		shown() {
+			this.getMeter(this.meterId);
+		},
+		hide() {},
+		hidden() {},
+		ok(event) {
+			this.handleSubmit(event);
+		},
+		cancel() {},
+		onMeterId(event) {
+			if (event.key == "Enter") {
+				if (this.currentMeterId != event.target.value) {
+					this.getMeter(event.target.value);
+				}
+			}
+		},
+		async getMeter(meterId) {
+			try {
+				const response = await EquipmentMeter.info({ meterId: meterId });
+				const result = response.data.response;
+				this.meter = result;
+				this.currentMeterId = meterId;
+			} catch (error) {
+				if (error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				alert("오류가 발생하였습니다.");
+			}
+		},
+		deleteMeter() {
+			this.$bvModal
+				.msgBoxConfirm("삭제 하시겠습니까?")
+				.then(async value => {
+					if (!value) {
+						return;
+					}
+
+					try {
+						const response = await EquipmentMeter.delete({ meterId: this.currentMeterId });
+						const result = response.data.response;
+
+						if (result.result) {
+							alert("삭제 되었습니다.");
+						} else {
+							alert("삭제 실패하였습니다.");
+						}
+					} catch (error) {
+						console.log(error.response);
+
+						if (error.response) {
+							alert(error.response.error_message);
+							return;
+						}
+
+						alert("오류가 발생하였습니다.");
+					}
+				})
+				.catch(error => {
+					console.log(error);
+				});
+		}
+	}
+};
 </script>
 
 <style></style>

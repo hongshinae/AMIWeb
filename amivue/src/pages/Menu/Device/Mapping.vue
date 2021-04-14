@@ -7,7 +7,7 @@
 				<div class="wbox m-b-20">
 					<div class="one-row">
 						<b-form-group label="검침 타입" label-for="">
-							<b-form-select v-model="meteringType">
+							<b-form-select v-model="readingType">
 								<b-form-select-option value="1">전기</b-form-select-option>
 								<b-form-select-option value="12">수도</b-form-select-option>
 							</b-form-select>
@@ -163,7 +163,7 @@ export default {
 				{ name: this.$t("menu.device.title") },
 				{ name: this.$t("menu.device.mapping") }
 			],
-			meteringType: "1",
+			readingType: "1",
 			regionCode: "1",
 			estateCode: "1",
 			mappingFields: [

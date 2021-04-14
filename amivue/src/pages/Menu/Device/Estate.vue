@@ -86,8 +86,8 @@ export default {
 					label: this.$t("component.content.table.deviceCount")
 				},
 				{
-					key: "meteringTypeCount",
-					label: this.$t("component.content.table.meteringTypeCount")
+					key: "readingTypeCount",
+					label: this.$t("component.content.table.readingTypeCount")
 				},
 				{
 					key: "_remark",

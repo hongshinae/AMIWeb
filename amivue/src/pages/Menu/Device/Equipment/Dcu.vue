@@ -10,7 +10,7 @@
 			:isPerPage="true"
 			:showFilterList="showFilterList"
 			:excelFileName="$t('equipment.dcu.excelFileName')"
-			:excelSheetName="$t('menu.device.estate')"
+			:excelSheetName="$t('equipment.tab.dcu')"
 			@handle:selectedItem="handleSelectedItem"
 		>
 			<template #table-header-left-head>

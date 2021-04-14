@@ -15,7 +15,7 @@
 
 			<b-tab>
 				<template #title> </template>
-				<equipment-other></equipment-other>
+				<equipment-meter></equipment-meter>
 			</b-tab>
 
 			<b-tab>
@@ -28,16 +28,17 @@
 <script>
 import ContentHeader from "@/components/content/ContentHeader";
 import EquipmentDcu from "./Equipment/Dcu";
+import EquipmentMeter from "./Equipment/Meter";
 import EquipmentOther from "./Equipment/Other";
 
 export default {
 	props: {
 		initTabIndex: {
 			type: Number,
-			default: 0
+			default: 1
 		}
 	},
-	components: { ContentHeader, EquipmentDcu, EquipmentOther },
+	components: { ContentHeader, EquipmentDcu, EquipmentMeter, EquipmentOther },
 	computed: {
 		activeTab() {
 			return currentTab => (this.tabIndex == currentTab ? "primary" : "outline-primary");
