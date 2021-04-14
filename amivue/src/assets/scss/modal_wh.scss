@@ -432,7 +432,7 @@
 	}
 }
 
-#addEquipmenetDcu {
+#addEquipmentDcu {
 	.svg-wrap {
 		width: 100%;
 		height: 400px;
@@ -461,12 +461,16 @@
 				width: 320px;
 				height: 34px;
 			}
+			input[type="number"] {
+				//
+				float: left;
+			}
 		}
 	}
 }
 
-#detailEquipmenetMeter,
-#detailEquipmenetEtc {
+#detailEquipmentMeter,
+#detailEquipmentEtc {
 	.svg-wrap {
 		width: 760px;
 		height: 400px;
