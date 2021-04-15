@@ -462,10 +462,26 @@
 			}
 			.input-ip-wrap {
 				input[type="number"] {
-					width: 24%;
+					width: 22%;
 					float: left;
-					margin-right: 1%;
 				}
+				span {
+					width: 4%;
+					float: left;
+					display: block;
+					height: 29px;
+					line-height: 29px;
+					text-align: center;
+				}
+			}
+		}
+		.install-Location {
+			.input-group {
+				width: 49% !important;
+				float: left;
+			}
+			.input-group:first-child {
+				margin-right: 2%;
 			}
 		}
 	}

@@ -54,8 +54,8 @@
 			"meterId": "0619010031",
 			"dcuIp": "20.101.235.100",
 			"routerIp": "20.101.235.254",
-			"latitude": "위도:0",
-			"longitude": "경도:0"
+			"latitude": "위도",
+			"longitude": "경도"
 		}
 	},
 	"dashboard": {

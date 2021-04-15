@@ -44,15 +44,25 @@
 				</b-form-group>
 				<input-ip v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuIp')" />
 				<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />
-				<b-form-group :label="$t('equipment.dcu.modal.installLocation')" label-for="">
-					<b-form-input type="number" v-model="form.latitude" :min="-90" :max="90" :placeholder="$t('common.placeholder.latitude')"></b-form-input>
-					<b-form-input
-						type="number"
-						v-model="form.longitude"
-						:min="-180"
-						:max="180"
-						:placeholder="$t('common.placeholder.longitude')"
-					></b-form-input>
+				<b-form-group :label="$t('equipment.dcu.modal.installLocation')" label-for="" class="install-Location">
+					<b-input-group :prepend="$t('common.placeholder.latitude')">
+						<b-form-input
+							type="number"
+							v-model="form.latitude"
+							:min="-90"
+							:max="90"
+							:placeholder="$t('common.placeholder.latitude')"
+						></b-form-input>
+					</b-input-group>
+					<b-input-group :prepend="$t('common.placeholder.longitude')">
+						<b-form-input
+							type="number"
+							v-model="form.longitude"
+							:min="-90"
+							:max="90"
+							:placeholder="$t('common.placeholder.longitude')"
+						></b-form-input>
+					</b-input-group>
 				</b-form-group>
 			</div>
 		</div>
