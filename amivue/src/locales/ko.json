@@ -212,6 +212,7 @@
 			"add": "DCU 신규 등록",
 			"allInterlink": "전체 연동하기",
 			"save": "저장",
+			"cancel": "닫기",
 			"meterReadingDay": "검침일",
 			"meterTime": "시각설정",
 			"lpPeriod": "LP 주기"
@@ -227,10 +228,51 @@
 				"add": "DCU 등록",
 				"detail": "DCU 상세",
 				"dcuId": "DCU ID",
-				"dcuIp": "IP Address",
-				"routerIp": "IP Router",
+				"dcuIp": "DCU IP",
+				"routerIp": "ROUTER IP",
 				"installDate": "설치 일자",
-				"installLocation": "설치 위치"
+				"installLocation": "설치 위치",
+
+				"itime": "DCU 동작시간",
+				"dcuModel": "DCU 모델번호",
+				"dcuMac": "MAC 번호",
+				"tMask": "T-Mask",
+				"macA": "Master mod. A",
+				"macB": "Master mod. B",
+				"macC": "Master mod. C",
+
+				"network1": "간선망",
+				"network2": "인입망",
+				"dcuType": "DCU 종류",
+				"meterCount": "Meter count",
+				"readingAgent": "검침 Agent",
+				"snmpRO": "SNMP(RO)",
+				"snmpRW": "SNMP(RW)",
+				"fepIp": "FEP IP",
+				"mac": "MAC 번호",
+				"osVersion": "OS 버전",
+				"firmwareVersion": "펌웨어버전",
+				"hardwareVersion": "하드웨어버전",
+				"snmpEncrypt": "SNMP 암호화",
+				"location": "위치정보",
+				"meterType": {
+					"": "현재 검침",
+					"": "LP",
+					"": "평균 전압전류",
+					"": "순시 전압전류",
+					"": "시간 확인주기",
+					"": "시간오차 한계"
+				},
+				"button": {
+					"informationSetting": "정보 설정",
+					"timeSetting": "시간 설정",
+					"time1": "시간 오차 한계",
+					"time2": "시간 확인 주기",
+					"security": "보안 항목",
+					"deleteDcu": "DCU 삭제",
+					"rebootDcu": "DCU Reboot",
+					"reskinModem": "모뎀 재스킨"
+				}
 			}
 		},
 		"meter": {

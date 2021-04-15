@@ -66,7 +66,6 @@ export default {
 	},
 	methods: {
 		handleIpInput(event) {
-			console.log(event, event.target.value, event.target.value.length);
 			if (event.target.value.length >= 3) {
 				if (event.target.nextSibling && event.target.nextSibling.focus) {
 					event.target.nextSibling.focus();

@@ -112,4 +112,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.install-Location {
+	.input-group {
+		margin-bottom: 5px;
+	}
+}
+</style>
