@@ -276,7 +276,7 @@
 	}
 }
 
-#detailEquipmenetDcu {
+#detailEquipmentDcu {
 	.center {
 		margin: auto;
 		width: fit-content;
@@ -477,11 +477,7 @@
 		}
 		.install-Location {
 			.input-group {
-				width: 49% !important;
-				float: left;
-			}
-			.input-group:first-child {
-				margin-right: 2%;
+				margin-bottom: 5px;
 			}
 		}
 	}
