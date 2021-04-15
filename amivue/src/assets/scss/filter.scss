@@ -47,6 +47,12 @@
 				margin-top: 4px;
 				margin-left: 4px;
 			}
+			[type="text"] {
+				border-top: 1px solid $color-gy;
+				border-left: 1px solid $color-gy;
+				border-right: 1px solid $color-gy;
+				background: transparent;
+			}
 		}
 	}
 	.btn-wrap {
