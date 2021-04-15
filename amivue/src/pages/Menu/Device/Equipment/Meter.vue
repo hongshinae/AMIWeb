@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<detail-equipment-meter :meterId="meterId" @handle:searchItem="searchItemList"></detail-equipment-meter>
+		<detail-equipment-meter :item="selectedItem" @handle:searchItem="searchItemList"></detail-equipment-meter>
 		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<content-table
 			:isBusy="isBusy"
@@ -31,6 +31,9 @@ export default {
 		}
 	},
 	components: { DetailEquipmentMeter },
+	mounted() {
+		this.getMeterList();
+	},
 	data() {
 		return {
 			meterList: [],
@@ -78,7 +81,7 @@ export default {
 					label: ""
 				}
 			],
-			meterId: null
+			selectedItem: null
 		};
 	},
 	methods: {
@@ -100,7 +103,7 @@ export default {
 			}
 		},
 		handleSelectedItem(selectedItem) {
-			this.meterId = selectedItem.meterId;
+			this.selectedItem = selectedItem;
 			this.$bvModal.show("detailEquipmentMeter");
 		},
 		searchItemList: function(searchItem) {
