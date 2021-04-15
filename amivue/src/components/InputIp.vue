@@ -89,17 +89,20 @@ export default {
 
 <style lang="scss">
 .input-ip-wrap {
+	position: relative;
 	input[type="number"] {
-		width: 22%;
+		width: 10%;
 		float: left;
+		margin-left: 4%;
+		position: relative;
 	}
-	span {
-		width: 4%;
-		float: left;
+	input[type="number"]::before {
+		content: "나와주세요.";
+		border: solid;
+		width: 100px;
+		height: 10px;
+		background: #f9f;
 		display: block;
-		height: 29px;
-		line-height: 29px;
-		text-align: center;
 	}
 }
 </style>
