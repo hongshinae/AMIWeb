@@ -1,11 +1,8 @@
 <template>
 	<b-form-group :label="label" label-for="" class="input-ip-wrap">
 		<b-form-input ref="ip1" :value="ip1" type="number" placeholder="20" @input.native="handleIpInput" />
-		<span>.</span>
 		<b-form-input ref="ip2" :value="ip2" type="number" placeholder="101" @input.native="handleIpInput" />
-		<span>.</span>
 		<b-form-input ref="ip3" :value="ip3" type="number" placeholder="235" @input.native="handleIpInput" />
-		<span>.</span>
 		<b-form-input ref="ip4" :value="ip4" type="number" placeholder="100" @input.native="handleIpInput" />
 	</b-form-group>
 </template>
@@ -69,6 +66,7 @@ export default {
 	},
 	methods: {
 		handleIpInput(event) {
+			console.log(event, event.target.value, event.target.value.length);
 			if (event.target.value.length >= 3) {
 				if (event.target.nextSibling && event.target.nextSibling.focus) {
 					event.target.nextSibling.focus();
@@ -90,4 +88,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.input-ip-wrap {
+	input[type="number"] {
+		width: 22%;
+		float: left;
+	}
+	span {
+		width: 4%;
+		float: left;
+		display: block;
+		height: 29px;
+		line-height: 29px;
+		text-align: center;
+	}
+}
+</style>
