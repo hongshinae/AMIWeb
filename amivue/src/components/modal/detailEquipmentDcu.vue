@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="detailEquipmenetDcu" size="xl">
+	<b-modal id="detailEquipmentDcu" size="xl">
 		<template #modal-header="{ close }">
 			<ul>
 				<li><h4>서울 서울 아파트 101동</h4></li>
@@ -76,15 +76,15 @@
 					</div>
 					<div class="modal-2nd-box">
 						<b-form-group label="간선망" label-for="">
-							<b-form-select v-model="selected">
-								<b-form-select-option>LTE</b-form-select-option>
-								<b-form-select-option>5G</b-form-select-option>
+							<b-form-select>
+								<b-form-select-option value="i1">LTE</b-form-select-option>
+								<b-form-select-option value="i1">5G</b-form-select-option>
 							</b-form-select>
 						</b-form-group>
 						<b-form-group label="인입망" label-for="">
-							<b-form-select v-model="selected">
-								<b-form-select-option>HS-PLC</b-form-select-option>
-								<b-form-select-option>HS-PLC2</b-form-select-option>
+							<b-form-select>
+								<b-form-select-option value="i1">HS-PLC</b-form-select-option>
+								<b-form-select-option value="i1">HS-PLC2</b-form-select-option>
 							</b-form-select>
 						</b-form-group>
 						<b-form-group label=">DCU 종류" label-for="">

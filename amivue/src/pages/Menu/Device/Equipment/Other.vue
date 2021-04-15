@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<detail-equipment-other></detail-equipment-other>
-		<content-search @handle:searchItem="searchItemList"> </content-search>
+		<detail-equipment-other :item="selectedItem" @handle:searchItem="searchItemList" />
+		<content-search @handle:searchItem="searchItemList" />
 		<content-table
 			:isBusy="isBusy"
 			:items="otherList"
@@ -11,10 +11,7 @@
 			:excelFileName="$t('equipment.other.excelFileName')"
 			:excelSheetName="$t('equipment.tab.other')"
 			@handle:selectedItem="handleSelectedItem"
-		>
-			<template #table-header-left-head> </template>
-			<template v-slot:table-header-right> </template>
-		</content-table>
+		/>
 	</div>
 </template>
 <script>

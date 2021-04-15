@@ -52,7 +52,7 @@
 						</b-form-group>
 						<b-form-group label="검침일" label-for="">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="10" disabled></b-form-input>
+								<b-form-input placeholder="10" disabled></b-form-input>
 								<b-input-group-append>
 									<b-button variant="light">검침일</b-button>
 								</b-input-group-append>
@@ -60,7 +60,7 @@
 						</b-form-group>
 						<b-form-group label="계량기 시각" label-for="">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="2019-05-09 11:11:00" disabled></b-form-input>
+								<b-form-input placeholder="2019-05-09 11:11:00" disabled></b-form-input>
 								<b-input-group-append>
 									<b-button variant="light">시각설정</b-button>
 								</b-input-group-append>
@@ -68,7 +68,7 @@
 						</b-form-group>
 						<b-form-group label="LP 주기" label-for="">
 							<b-input-group>
-								<b-form-input v-model="text" placeholder="15" disabled></b-form-input>
+								<b-form-input placeholder="15" disabled></b-form-input>
 								<b-input-group-append>
 									<b-button variant="light">LP 주기</b-button>
 								</b-input-group-append>

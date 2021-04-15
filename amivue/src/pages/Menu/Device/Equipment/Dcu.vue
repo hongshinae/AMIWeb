@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<add-equipment-dcu></add-equipment-dcu>
-		<!-- <detail-equipment-dcu></detail-equipment-dcu> -->
-		<content-search @handle:searchItem="searchItemList"> </content-search>
+		<add-equipment-dcu @handle:searchItem="searchItemList" />
+		<detail-equipment-dcu :item="selectedItem" @handle:searchItem="searchItemList" />
+		<content-search @handle:searchItem="searchItemList" />
 		<content-table
 			:isBusy="isBusy"
 			:items="dcuList"
@@ -16,7 +16,6 @@
 			<template #table-header-left-head>
 				<b-button v-b-modal="'addEquipmentDcu'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("equipment.button.add") }}</b-button>
 			</template>
-			<template v-slot:table-header-right> </template>
 		</content-table>
 	</div>
 </template>
@@ -24,7 +23,7 @@
 import EquipmentDcu from "@/service/equipment/dcu";
 import ContentMixin from "@/components/content/mixin";
 import AddEquipmentDcu from "@/components/modal/addEquipmentDcu";
-// import DetailEquipmentDcu from "@/components/modal/detailEquipmentDcu";
+import DetailEquipmentDcu from "@/components/modal/detailEquipmentDcu";
 
 export default {
 	mixins: [ContentMixin],
@@ -36,9 +35,7 @@ export default {
 			}
 		}
 	},
-	components: {
-		AddEquipmentDcu /*, DetailEquipmentDcu */
-	},
+	components: { AddEquipmentDcu, DetailEquipmentDcu },
 	mounted() {
 		this.getDcuList();
 	},

@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<detail-equipment-meter :item="selectedItem" @handle:searchItem="searchItemList"></detail-equipment-meter>
-		<content-search @handle:searchItem="searchItemList"> </content-search>
+		<detail-equipment-meter :item="selectedItem" @handle:searchItem="searchItemList" />
+		<content-search @handle:searchItem="searchItemList" />
 		<content-table
 			:isBusy="isBusy"
 			:items="meterList"
@@ -11,8 +11,7 @@
 			:excelFileName="$t('equipment.meter.excelFileName')"
 			:excelSheetName="$t('equipment.tab.meter')"
 			@handle:selectedItem="handleSelectedItem"
-		>
-		</content-table>
+		/>
 	</div>
 </template>
 <script>
