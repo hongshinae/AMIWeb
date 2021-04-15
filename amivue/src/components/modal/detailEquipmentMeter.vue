@@ -6,11 +6,6 @@
 					<h4>{{ address }}</h4>
 				</li>
 				<li>
-					<b-form-group>
-						<b-form-input :value="meterId" placeholder="계량기 ID" @keyup.native="onMeterId"></b-form-input>
-					</b-form-group>
-				</li>
-				<li>
 					<b-button size="sm" variant="outline-light" @click="close()">
 						X
 					</b-button>
@@ -37,7 +32,7 @@
 			<div class="svg-input">
 				<ul>
 					<li>
-						<div class="meter-value">{{ meter.meterId }}</div>
+						<div class="meter-value">1234567</div>
 						<b-form-group :label="$t('equipment.meter.modal.meterId')" label-for="">
 							<b-form-input v-model="meter.meterId" disabled></b-form-input>
 						</b-form-group>
@@ -87,7 +82,7 @@
 import EquipmentMeter from "@/service/equipment/meter";
 
 export default {
-	props: { meterId: { type: String } },
+	props: { item: { type: Object } },
 	computed: {
 		address() {
 			return "서울 서울아파트 101동 101호";
@@ -95,34 +90,24 @@ export default {
 	},
 	data() {
 		return {
-			currentMeterId: this.meterId,
 			meter: {}
 		};
 	},
 	methods: {
 		show() {},
 		shown() {
-			this.getMeter(this.meterId);
+			console.log(this.item);
+			this.getMeter({ estateSeq: this.item.estateSeq, meterId: this.item.meterId });
 		},
 		hide() {},
 		hidden() {},
-		ok(event) {
-			this.handleSubmit(event);
-		},
+		ok() {},
 		cancel() {},
-		onMeterId(event) {
-			if (event.key == "Enter") {
-				if (this.currentMeterId != event.target.value) {
-					this.getMeter(event.target.value);
-				}
-			}
-		},
-		async getMeter(meterId) {
+		async getMeter(params) {
 			try {
-				const response = await EquipmentMeter.info({ meterId: meterId });
+				const response = await EquipmentMeter.info(params);
 				const result = response.data.response;
 				this.meter = result;
-				this.currentMeterId = meterId;
 			} catch (error) {
 				if (error.response.data.response) {
 					alert(error.response.data.response.error_message);

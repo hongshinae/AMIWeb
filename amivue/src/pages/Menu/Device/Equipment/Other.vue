@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<!-- <detail-equipment-other></detail-equipment-other> -->
+		<detail-equipment-other></detail-equipment-other>
 		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<content-table
 			:isBusy="isBusy"
@@ -20,7 +20,7 @@
 <script>
 import EquipmentOther from "@/service/equipment/other";
 import ContentMixin from "@/components/content/mixin";
-// import DetailEquipmentOther from "@/components/modal/detailEquipmentOther";
+import DetailEquipmentOther from "@/components/modal/detailEquipmentOther";
 
 export default {
 	mixins: [ContentMixin],
@@ -33,7 +33,10 @@ export default {
 		}
 	},
 	components: {
-		/* DetailEquipmentOther */
+		DetailEquipmentOther
+	},
+	mounted() {
+		this.getOtherList();
 	},
 	data() {
 		return {
@@ -82,7 +85,7 @@ export default {
 		};
 	},
 	methods: {
-		async getBuildingList(params) {
+		async getOtherList(params) {
 			if (!params) {
 				params = { regionSeq: "0", estateSeq: "0" };
 			}
@@ -104,7 +107,7 @@ export default {
 			this.$bvModal.show("detailEquipmentOther");
 		},
 		searchItemList: function(searchItem) {
-			this.getBuildingList(searchItem);
+			this.getOtherList(searchItem);
 		}
 	}
 };

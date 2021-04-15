@@ -39,6 +39,9 @@ export default {
 	components: {
 		AddEquipmentDcu /*, DetailEquipmentDcu */
 	},
+	mounted() {
+		this.getDcuList();
+	},
 	data() {
 		return {
 			dcuList: [],
