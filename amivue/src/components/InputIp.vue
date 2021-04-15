@@ -1,5 +1,5 @@
 <template>
-	<b-form-group :label="label" label-for="" content-cols-sm="4">
+	<b-form-group :label="label" label-for="" class="input-ip-wrap">
 		<b-form-input ref="ip1" :value="ip1" type="number" placeholder="20" @input.native="handleIpInput" />
 		<b-form-input ref="ip2" :value="ip2" type="number" placeholder="101" @input.native="handleIpInput" />
 		<b-form-input ref="ip3" :value="ip3" type="number" placeholder="235" @input.native="handleIpInput" />

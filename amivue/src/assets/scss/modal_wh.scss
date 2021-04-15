@@ -449,21 +449,23 @@
 		.svg-input {
 			position: absolute;
 			top: 45px;
-			left: 78px;
-			width: 307px;
-			right: 46px;
+			left: 63px;
+			width: 348px;
 			bottom: 0;
 			.form-group > div {
-				width: 186px;
+				width: 225px;
 			}
 			.row {
 				margin: 0px auto 7px auto !important;
 				width: 320px;
 				height: 34px;
 			}
-			input[type="number"] {
-				//
-				float: left;
+			.input-ip-wrap {
+				input[type="number"] {
+					width: 24%;
+					float: left;
+					margin-right: 1%;
+				}
 			}
 		}
 	}
@@ -475,7 +477,7 @@
 		width: 760px;
 		height: 400px;
 		position: relative;
-		svg {
+		img {
 			width: 368px;
 			position: absolute;
 			top: 16px;
@@ -503,6 +505,7 @@
 					}
 					.meter-value {
 						font-size: 45px;
+						height: 67px;
 						margin-top: 49px;
 						text-align: center;
 						color: #fff;
