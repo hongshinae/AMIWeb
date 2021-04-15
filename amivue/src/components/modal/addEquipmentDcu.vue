@@ -44,26 +44,7 @@
 				</b-form-group>
 				<input-ip v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuIp')" />
 				<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />
-				<b-form-group :label="$t('equipment.dcu.modal.installLocation')" label-for="" class="install-Location">
-					<b-input-group :prepend="$t('common.placeholder.latitude')">
-						<b-form-input
-							type="number"
-							v-model="form.latitude"
-							:min="-90"
-							:max="90"
-							:placeholder="$t('common.placeholder.latitude')"
-						></b-form-input>
-					</b-input-group>
-					<b-input-group :prepend="$t('common.placeholder.longitude')">
-						<b-form-input
-							type="number"
-							v-model="form.longitude"
-							:min="-90"
-							:max="90"
-							:placeholder="$t('common.placeholder.longitude')"
-						></b-form-input>
-					</b-input-group>
-				</b-form-group>
+				<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="form.latitude" :longitude.sync="form.longitude" />
 			</div>
 		</div>
 	</b-modal>
@@ -71,16 +52,17 @@
 
 <script>
 import InputIp from "@/components/InputIp";
+import InputLocation from "@/components/InputLocation";
 export default {
-	components: { InputIp },
+	components: { InputIp, InputLocation },
 	data() {
 		return {
 			form: {
 				dcuId: "",
 				dcuIp: "",
 				routerIp: "",
-				latitude: 0,
-				longitude: 0
+				latitude: 3,
+				longitude: 3
 			}
 		};
 	},
@@ -107,15 +89,11 @@ export default {
 			// this.states.estateSeqState = this.form.estateSeq && this.form.estateSeq != 0 ? true : false;
 			// this.states.buildingNameState = this.form.buildingName ? true : false;
 			// return result && this.states.regionSeqState && this.states.estateSeqState && this.states.buildingNameState;
+		},
+		async handleSubmit(event) {
+			event.preventDefault();
+			console.log(this.form);
 		}
 	}
 };
 </script>
-
-<style lang="scss">
-.install-Location {
-	.input-group {
-		margin-bottom: 5px;
-	}
-}
-</style>

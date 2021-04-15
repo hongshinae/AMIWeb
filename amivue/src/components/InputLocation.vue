@@ -3,8 +3,8 @@
 		<b-input-group :prepend="$t('common.placeholder.latitude')">
 			<b-form-input
 				type="number"
-				:value="location.latitude"
-				@input="$emit('input', location)"
+				:value="latitude"
+				@input="$emit('update:latitude', Number($event))"
 				:min="-90"
 				:max="90"
 				:placeholder="$t('common.placeholder.latitude')"
@@ -13,8 +13,8 @@
 		<b-input-group :prepend="$t('common.placeholder.longitude')">
 			<b-form-input
 				type="number"
-				:value="location.longitude"
-				@input="$emit('input', location)"
+				:value="longitude"
+				@input="$emit('update:longitude', Number($event))"
 				:min="-90"
 				:max="90"
 				:placeholder="$t('common.placeholder.longitude')"
@@ -25,14 +25,9 @@
 
 <script>
 export default {
-	props: ["label", "placeholder", "value", "latitude", "longitude"],
+	props: { label: String, placeholder: String, latitude: { type: Number, requried: true }, longitude: { type: Number, requried: true } },
 	data() {
-		return {
-			location: {
-				latitude: null,
-				longitude: null
-			}
-		};
+		return {};
 	}
 };
 </script>
@@ -40,7 +35,11 @@ export default {
 <style lang="scss">
 .install-Location {
 	.input-group {
-		margin-bottom: 5px;
+		width: 49% !important;
+		float: left;
+	}
+	.input-group:first-child {
+		margin-right: 2%;
 	}
 }
 </style>

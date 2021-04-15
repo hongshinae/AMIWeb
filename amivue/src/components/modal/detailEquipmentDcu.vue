@@ -39,32 +39,16 @@
 			<ul class="left">
 				<li>
 					<div class="modal-1st-box">
-						<b-form-group label="DCU 동작시간" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="DCU 고유번호" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="DCU 모델번호" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="MAC 번호" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.itime')" />
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
 						<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
 						<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
-						<b-form-group label="T-Mask" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="Master mod. A" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="Master mod. B" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="Master mod. C" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.macA')" />
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.macB')" />
+						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.macC')" />
 					</div>
 					<div class="modal-2nd-box">
 						<b-form-group label="간선망" label-for="">
@@ -252,14 +236,7 @@
 							</b-col>
 						</b-row>
 
-						<b-form-group label="위치 정보" label-for="" class="install-Location">
-							<b-input-group :prepend="$t('common.placeholder.latitude')">
-								<b-form-input type="number" :min="-90" :max="90" :placeholder="$t('common.placeholder.latitude')"></b-form-input>
-							</b-input-group>
-							<b-input-group :prepend="$t('common.placeholder.longitude')">
-								<b-form-input type="number" :min="-90" :max="90" :placeholder="$t('common.placeholder.longitude')"></b-form-input>
-							</b-input-group>
-						</b-form-group>
+						<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="form.latitude" :longitude.sync="form.longitude" />
 
 						<div class="map">
 							<iframe
@@ -280,11 +257,13 @@
 
 <script>
 import InputIp from "@/components/InputIp";
+import InputLocation from "@/components/InputLocation";
+import InputNormal from "@/components/InputNormal";
 import EquipmentDcu from "@/service/equipment/dcu";
 
 export default {
 	props: { item: { type: Object } },
-	components: { InputIp },
+	components: { InputIp, InputLocation, InputNormal },
 	computed: {
 		address() {
 			return "서울 서울아파트 101동 101호";
@@ -292,20 +271,21 @@ export default {
 	},
 	data() {
 		return {
-			dcu: {}
+			dcu: {},
+			form: {}
 		};
 	},
 	methods: {
 		show() {},
 		shown() {
 			console.log(this.item);
-			this.getMeter({ dcuId: this.item.dcuId });
+			this.getDcu({ dcuId: this.item.dcuId });
 		},
 		hide() {},
 		hidden() {},
 		ok() {},
 		cancel() {},
-		async getMeter(params) {
+		async getDcu(params) {
 			try {
 				const response = await EquipmentDcu.info(params);
 				const result = response.data.response;
@@ -322,11 +302,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss">
-.install-Location {
-	.input-group {
-		margin-bottom: 5px;
-	}
-}
-</style>
