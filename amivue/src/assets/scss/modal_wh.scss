@@ -126,7 +126,6 @@
 		height: 34px;
 		float: left;
 	}
-
 	.modal-3rd-box .input-wrap {
 		width: 500px;
 	}
@@ -153,16 +152,9 @@
 		font-size: 90%;
 		text-align: left;
 	}
-}
-
-#addEstate {
-	.center {
-		margin: auto;
-		width: fit-content;
-		padding-left: 10px;
-		.form-group {
-			width: 100%;
-		}
+	label span {
+		color: $color-rd;
+		padding-left: 3px;
 	}
 }
 
@@ -171,83 +163,89 @@
 	width: 860px;
 	max-width: 860px;
 	margin: 60px auto;
-	.form-group {
-		height: inherit;
-	}
-	.form-group:after {
-		clear: both;
-		display: block;
-		content: "";
-		height: 0;
-		overflow: hidden;
-		visibility: hidden;
-	}
-	.modal-1st-box {
-		width: 385px;
-		margin-right: 30px;
-		.form-group > div {
-			width: 265px;
+	.center {
+		margin: auto;
+		width: fit-content;
+		padding-left: 10px;
+		.form-group {
+			width: 100%;
+			height: inherit;
 		}
-	}
-	.modal-2nd-box {
-		float: left;
-		width: 385px;
-		.tooltip-button-number,
-		.tooltip-button-building {
-			height: 32px;
-			line-height: 32px;
-			background: #e9ecef;
-			border: 1px solid #ced4da;
-			border-radius: 4px;
-			padding-left: 9px;
+		.form-group:after {
+			clear: both;
+			display: block;
+			content: "";
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
 		}
-		.form-group > div {
-			width: 265px;
-		}
-	}
-	.modal-3rd-box {
-		height: 32px;
-		float: left;
-		margin-top: 5px;
-		width: 800px;
-		margin-bottom: 10px;
-		.form-group > div {
-			width: 670px;
-			padding: 0px 10px;
-		}
-		.custom-checkbox {
-			width: 50px;
-			float: left;
-			margin-right: 20px;
-			input[type="checkbox"] {
-				opacity: 1;
-				height: 32px;
+		.modal-1st-box {
+			width: 385px;
+			margin-right: 30px;
+			.form-group > div {
+				width: 265px;
 			}
 		}
-	}
-	.modal-4th-box {
-		height: 32px;
-		float: left;
-		margin-top: 5px;
-		width: 800px;
-		margin-bottom: 10px;
-		.form-group > div {
-			width: 670px;
+		.modal-2nd-box {
+			float: left;
+			width: 385px;
+			.tooltip-button-number,
+			.tooltip-button-building {
+				height: 32px;
+				line-height: 32px;
+				background: #e9ecef;
+				border: 1px solid #ced4da;
+				border-radius: 4px;
+				padding-left: 9px;
+			}
+			.form-group > div {
+				width: 265px;
+			}
 		}
-		.bg {
-			width: 526px;
+		.modal-3rd-box {
 			height: 32px;
-			line-height: 32px;
-			li {
+			float: left;
+			margin-top: 5px;
+			width: 800px;
+			margin-bottom: 10px;
+			.form-group > div {
+				width: 670px;
+				padding: 0px 10px;
+			}
+			.custom-checkbox {
+				width: 50px;
 				float: left;
-				margin-right: 10px;
-				width: 90px;
-				legend {
-					width: 30px;
+				margin-right: 20px;
+				input[type="checkbox"] {
+					opacity: 1;
+					height: 32px;
 				}
-				.form-group > div {
-					width: 60px;
-					padding: 0;
+			}
+		}
+		.modal-4th-box {
+			height: 32px;
+			float: left;
+			margin-top: 5px;
+			width: 800px;
+			margin-bottom: 10px;
+			.form-group > div {
+				width: 670px;
+			}
+			.bg {
+				width: 526px;
+				height: 32px;
+				line-height: 32px;
+				li {
+					float: left;
+					margin-right: 10px;
+					width: 90px;
+					legend {
+						width: 30px;
+					}
+					.form-group > div {
+						width: 60px;
+						padding: 0;
+					}
 				}
 			}
 		}
