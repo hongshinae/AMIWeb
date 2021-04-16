@@ -1,44 +1,6 @@
 <template>
 	<div>
-		<div class="search-wrap">
-			<div class="wbox">
-				<div class="search-img">
-					<b-icon icon="search" variant="primary"></b-icon>
-				</div>
-				<div class="search">
-					<!--검색영역-->
-					<b-row>
-						<b-col xl="3" md="4" sm="12">
-							<b-row>
-								<b-col lg="4">
-									<label class="d-block">지역 이름</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-select v-model="selected">
-										<b-form-select-option>서울시</b-form-select-option>
-										<b-form-select-option>경기도</b-form-select-option>
-									</b-form-select>
-								</b-col>
-							</b-row>
-						</b-col>
-						<b-col xl="3" md="4" sm="12">
-							<b-row>
-								<b-col lg="4">
-									<label class="d-block">단지 명</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-input v-model="text" placeholder="그랑시아 아파트"></b-form-input>
-								</b-col>
-							</b-row>
-						</b-col>
-					</b-row>
-					<!--//검색영역-->
-				</div>
-				<div class="btn-wrap ml-auto">
-					<b-button block variant="primary">검색</b-button>
-				</div>
-			</div>
-		</div>
+		<content-search @handle:searchItem="searchItemList" />
 		<b-row class="row-wrap">
 			<b-col lg="6" sm="12">
 				<div class="wbox">
@@ -48,42 +10,11 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<table class="table" id="">
-								<thead>
-									<tr>
-										<th class=""><div>지역</div></th>
-										<th class=""><div>단지 명</div></th>
-										<th class=""><div>동 명</div></th>
-										<th class=""><div>DCU ID</div></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="">
-										<td class="">서울</td>
-										<td class="">아파트</td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-									</tr>
-									<tr class="">
-										<td class="">서울</td>
-										<td class="">아파트</td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-									</tr>
-									<tr class="">
-										<td class="">서울</td>
-										<td class="">아파트</td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-									</tr>
-									<tr class="">
-										<td class="">서울</td>
-										<td class="">아파트</td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-									</tr>
-								</tbody>
-							</table>
+							<b-table :items="dcuList" :fields="dcuFields" show-empty>
+								<template #empty="scope">
+									<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
+								</template>
+							</b-table>
 						</div>
 					</div>
 				</div>
@@ -97,44 +28,16 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<table class="table b-table" id="">
-								<thead class="">
-									<tr class="">
-										<th class=""><div>호</div></th>
-										<th class=""><div>Meter id</div></th>
-										<th class=""><div>Modem Mac address</div></th>
-										<th class=""><div>수집 주기</div></th>
-										<th class=""><div>검침수 (검침율)</div></th>
-										<th class=""><div>적시 수(적시율)</div></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="">
-										<td>101호</td>
-										<td>061900009424</td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">15분</td>
-										<td class="">96/96 <b-badge variant="primary">100%</b-badge></td>
-										<td class="">96/96 <b-badge variant="primary">100%</b-badge></td>
-									</tr>
-									<tr class="">
-										<td>101호</td>
-										<td>061900009424</td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">15분</td>
-										<td class="">96/96 <b-badge variant="primary">100%</b-badge></td>
-										<td class="">96/96 <b-badge variant="primary">100%</b-badge></td>
-									</tr>
-									<tr class="">
-										<td>101호</td>
-										<td>061900009424</td>
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">15분</td>
-										<td class="">96/96 <b-badge variant="primary">100%</b-badge></td>
-										<td class="">96/96 <b-badge variant="primary">100%</b-badge></td>
-									</tr>
-								</tbody>
-							</table>
+							<b-table :items="meterList" :fields="meterFields" show-empty>
+								<template #empty="scope">
+									<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
+								</template>
+								<template #cell(_remark)="row">
+									<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
+										<slot name="table-cell-remark">{{ $t("common.button.details") }}</slot>
+									</b-button>
+								</template>
+							</b-table>
 						</div>
 					</div>
 				</div>
@@ -158,7 +61,105 @@
 </template>
 
 <script>
-export default {};
+import Collection from "@/service/info/collection";
+import ContentMixin from "@/components/content/mixin";
+
+export default {
+	mixins: [ContentMixin],
+	props: {
+		showFilterList: {
+			type: Array,
+			default: function() {
+				return ["region", "estate"];
+			}
+		}
+	},
+	data() {
+		return {
+			dcuList: [],
+			dcuFields: [
+				{
+					key: "regionName",
+					label: this.$t("info.collection.table.region")
+				},
+				{
+					key: "estateName",
+					label: this.$t("info.collection.table.estate")
+				},
+				{
+					key: "buildingName",
+					label: this.$t("info.collection.table.building")
+				},
+				{
+					key: "dcuId",
+					label: this.$t("info.collection.table.dcuId")
+				}
+			],
+			meterList: [],
+			meterFields: [
+				{
+					key: "houseName",
+					label: this.$t("info.collection.table.houseName")
+				},
+				{
+					key: "meterId",
+					label: this.$t("info.collection.table.meterId")
+				},
+				{
+					key: "collectionPeriod",
+					label: this.$t("info.collection.table.collectionPeriod")
+				},
+				{
+					key: "readingCount",
+					label: this.$t("info.collection.table.readingCount")
+				},
+				{
+					key: "accCount",
+					label: this.$t("info.collection.table.accCount")
+				}
+			],
+			isDcuBusy: false,
+			isMeterBusy: false
+		};
+	},
+	methods: {
+		async getDcuList(params) {
+			if (!params) {
+				params = { regionSeq: "0", estateSeq: "0" };
+			}
+
+			try {
+				this.isDcuBusy = true;
+				const response = await Collection.dcu(params);
+				const result = response.data.response;
+				this.dcuList = result;
+			} catch (error) {
+				const result = [];
+				this.dcuList = result;
+			} finally {
+				this.isDcuBusy = false;
+			}
+		},
+		async getMeterList(estateSeq, dcuId) {
+			const params = { estateSeq: estateSeq, dcuId: dcuId };
+
+			try {
+				this.isMeterBusy = true;
+				const response = await Collection.meter(params);
+				const result = response.data.response;
+				this.meterList = result;
+			} catch (error) {
+				const result = [];
+				this.meterList = result;
+			} finally {
+				this.isMeterBusy = false;
+			}
+		},
+		searchItemList: function(searchItem) {
+			this.getDcuList(searchItem);
+		}
+	}
+};
 </script>
 
 <style></style>

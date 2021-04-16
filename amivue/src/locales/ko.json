@@ -118,7 +118,10 @@
 				"demanda": "유효수요(A)",
 				"etimea": "발생시각",
 				"acca": "누적유효(A)",
-				"updateDate": "변경일시"
+				"updateDate": "변경일시",
+				"recentlyReadingTime": "최근 검침시각",
+				"reading": "검침량",
+				"revese": "역방향"
 			}
 		}
 	},
@@ -307,6 +310,29 @@
 		"deviceInformation": "장비정보"
 	},
 	"lookup": {},
+	"info": {
+		"tab": {
+			"collection": "수집 정보",
+			"realtime": "실시간 검침"
+		},
+		"collection": {
+			"table": {
+				"region": "지역",
+				"estate": "단지 명",
+				"building": "동 명",
+				"dcuId": "DCU ID",
+				"houseName": "호",
+				"meterId": "Meter ID",
+				"collectionPeriod": "수집 주기",
+				"readingCount": "검침수(검침률)",
+				"accCount": "적시수(적시율)"
+			},
+			"excelFileName": "검침 정보_수집정보.xlsx"
+		},
+		"realtime": {
+			"excelFileName": "검침 정보_실시간 정보.xlsx"
+		}
+	},
 	"msg": {
 		"search": {
 			"emptyText": "검색결과가 없습니다.",

@@ -12,14 +12,9 @@
 				<collection-info></collection-info>
 			</b-tab>
 
-			<b-tab active>
+			<b-tab>
 				<template #title style="display:none"> </template>
 				<real-time-metering></real-time-metering>
-			</b-tab>
-
-			<b-tab>
-				<template #title> </template>
-				<period-lookup></period-lookup>
 			</b-tab>
 		</b-tabs>
 	</div>
@@ -31,10 +26,15 @@ import CollectionInfo from "./Info/CollectionInfo";
 import RealTimeMetering from "./Info/RealTimeMetering";
 
 export default {
+	props: {
+		tabIndex: {
+			type: Number,
+			default: 0
+		}
+	},
 	components: { ContentHeader, CollectionInfo, RealTimeMetering },
 	data() {
 		return {
-			tabIndex: 0,
 			pageName: this.$t("menu.metering.info"),
 			paths: [
 				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
