@@ -35,11 +35,11 @@ export default {
 <style lang="scss">
 .install-Location {
 	.input-group {
-		width: 49% !important;
+		width: 100% !important;
 		float: left;
 	}
 	.input-group:first-child {
-		margin-right: 2%;
+		margin-bottom: 10px;
 	}
 }
 </style>

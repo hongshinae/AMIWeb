@@ -1,8 +1,11 @@
 <template>
 	<b-form-group :label="label" label-for="" class="input-ip-wrap">
 		<b-form-input ref="ip1" :value="ip1" type="number" placeholder="20" @input.native="handleIpInput" />
+		.
 		<b-form-input ref="ip2" :value="ip2" type="number" placeholder="101" @input.native="handleIpInput" />
+		.
 		<b-form-input ref="ip3" :value="ip3" type="number" placeholder="235" @input.native="handleIpInput" />
+		.
 		<b-form-input ref="ip4" :value="ip4" type="number" placeholder="100" @input.native="handleIpInput" />
 	</b-form-group>
 </template>
@@ -89,20 +92,20 @@ export default {
 
 <style lang="scss">
 .input-ip-wrap {
-	position: relative;
-	input[type="number"] {
-		width: 10%;
-		float: left;
-		margin-left: 4%;
-		position: relative;
+	input {
+		width: 20%;
+		margin-right: 1%;
+		margin-left: 0.99%;
+		display: inline;
 	}
-	input[type="number"]::before {
-		content: "나와주세요.";
-		border: solid;
-		width: 100px;
-		height: 10px;
-		background: #f9f;
-		display: block;
+	input:first-child {
+		margin-left: 0;
+	}
+	input:last-child {
+		width: 21%;
+		margin-left: 0;
+		margin-right: 0;
+		float: right;
 	}
 }
 </style>
