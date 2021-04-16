@@ -296,6 +296,16 @@
 		}
 	},
 	"mapping": {},
+	"server": {
+		"used": "실시간 사용률",
+		"serverMap": "서버 설치 구성도",
+		"serverInformation": {
+			"title": "서버운용정보",
+			"osCpu": "OS CPU 사용률",
+			"osMemory": "OS CPU 사용률"
+		},
+		"deviceInformation": "장비정보"
+	},
 	"lookup": {},
 	"msg": {
 		"search": {

@@ -1,24 +1,12 @@
 <template>
 	<div class="content">
-		<div class="main-location-wrap">
-			<h1>서버 현황</h1>
-			<div class="main-location">
-				<b-breadcrumb>
-					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house"></b-icon>
-						홈
-					</b-breadcrumb-item>
-					<b-breadcrumb-item>설비</b-breadcrumb-item>
-					<b-breadcrumb-item active>서버 현황</b-breadcrumb-item>
-				</b-breadcrumb>
-			</div>
-		</div>
+		<content-header :paths="paths" :pageName="pageName" />
 		<b-row class="row-wrap">
 			<b-col lg="12" xl="8">
 				<div class="box">
 					<h5>
-						<span>최대 수요</span>
-						<b class="fontC">45.452kWh</b>
+						<span>{{ $t("server.used") }}</span>
+						<b class="fontC">{{ system.jvmUsed }}</b>
 					</h5>
 					<div class="chartWarp">
 						<div class="">
@@ -28,7 +16,7 @@
 				</div>
 				<div class="box">
 					<h5>
-						<span>서버 설치 구성도</span>
+						<span>{{ $t("server.serverMap") }}</span>
 					</h5>
 					<div class="svg-Warp">
 						<img src="@/assets/svg/server.svg" />
@@ -47,47 +35,61 @@
 				</div>
 				<div class="box">
 					<h5>
-						<span>서버운영정보</span>
+						<span>{{ $t("server.serverInformation.title") }}</span>
 						<b class="fontC">정상</b>
 					</h5>
 					<div class="dutyCycle cpu">
 						<h4>
-							<span class="title">OS CPU 사용률</span>
-							<span class="deta">0.000%</span>
+							<span class="title">{{ $t("server.serverInformation.osCpu") }}</span>
+							<span class="deta">{{ system.osCpu }}%</span>
 						</h4>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-								<span class="sr-only">60% Complete</span>
+							<div
+								class="progress-bar"
+								role="progressbar"
+								:aria-valuenow="system.osCpu"
+								aria-valuemin="0"
+								aria-valuemax="100"
+								:style="'width: ' + system.osCpu + '%;'"
+							>
+								<span class="sr-only">{{ system.osCpu }}% Complete</span>
 							</div>
 						</div>
 					</div>
 					<div class="dutyCycle">
 						<h4>
-							<span class="title">OS CPU 사용률</span>
-							<span class="deta">0.000%</span>
+							<span class="title">{{ $t("server.serverInformation.osMemory") }}</span>
+							<span class="deta">{{ system.osMemory }}%</span>
 						</h4>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-								<span class="sr-only">60% Complete</span>
+							<div
+								class="progress-bar"
+								role="progressbar"
+								:aria-valuenow="system.osMemory"
+								aria-valuemin="0"
+								aria-valuemax="100"
+								:style="'width: ' + system.osMemory + '%;'"
+							>
+								<span class="sr-only">{{ system.osMemory }}% Complete</span>
 							</div>
 						</div>
 					</div>
 					<ul class="serveInfo">
 						<li>
 							<h6>JVMUSED</h6>
-							<span>0.330</span>
+							<span>{{ system.jvmUsed }}</span>
 						</li>
 						<li>
 							<h6>JVMFREE</h6>
-							<span>1.243</span>
+							<span>{{ system.jvmFree }}</span>
 						</li>
 						<li>
 							<h6>JVMTOTAL</h6>
-							<span>1.573</span>
+							<span>{{ system.jvmTotal }}</span>
 						</li>
 						<li>
 							<h6>JVMMAX</h6>
-							<span>26.665</span>
+							<span>{{ system.jvmMax }}</span>
 						</li>
 					</ul>
 				</div>
@@ -129,7 +131,7 @@
 					<div class="serve-ex-ip">
 						<ol>
 							<li>서버 EXTERNAL IP</li>
-							<li>211.170.156.178</li>
+							<li>cass.cnuglobal.co.kr</li>
 						</ol>
 					</div>
 					<div class="svg-wrap">
@@ -140,3 +142,36 @@
 		</b-row>
 	</div>
 </template>
+<script>
+import Server from "@/service/server";
+import ContentMixin from "@/components/content/mixin";
+
+export default {
+	mixins: [ContentMixin],
+	mounted() {
+		this.getSystem();
+	},
+	data() {
+		return {
+			pageName: this.$t("menu.device.server"),
+			paths: [
+				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
+				{ name: this.$t("menu.device.title") },
+				{ name: this.$t("menu.device.server") }
+			],
+			system: {}
+		};
+	},
+	methods: {
+		async getSystem() {
+			try {
+				const response = await Server.system();
+				const result = response.data.response;
+				this.system = result;
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	}
+};
+</script>
