@@ -42,4 +42,13 @@ export default {
 		margin-bottom: 10px;
 	}
 }
+#detailEquipmentDcu .install-Location {
+	height: 70px;
+	legend {
+		width: 75px;
+	}
+	> div {
+		width: 275px;
+	}
+}
 </style>

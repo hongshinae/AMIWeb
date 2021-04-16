@@ -152,7 +152,8 @@
 		font-size: 90%;
 		text-align: left;
 	}
-	label span {
+	label span,
+	legend span {
 		color: $color-rd;
 		padding-left: 3px;
 	}
@@ -424,6 +425,10 @@
 					}
 				}
 			}
+		}
+		.map {
+			overflow: hidden;
+			height: 200px;
 		}
 	}
 }
