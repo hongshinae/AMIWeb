@@ -1,11 +1,11 @@
 <template>
 	<b-form-group :label="label" label-for="" class="input-ip-wrap">
 		<b-form-input ref="ip1" :value="ip1" type="number" placeholder="20" @input.native="handleIpInput" />
-		.
+		<span>.</span>
 		<b-form-input ref="ip2" :value="ip2" type="number" placeholder="101" @input.native="handleIpInput" />
-		.
+		<span>.</span>
 		<b-form-input ref="ip3" :value="ip3" type="number" placeholder="235" @input.native="handleIpInput" />
-		.
+		<span>.</span>
 		<b-form-input ref="ip4" :value="ip4" type="number" placeholder="100" @input.native="handleIpInput" />
 	</b-form-group>
 </template>
@@ -93,19 +93,15 @@ export default {
 <style lang="scss">
 .input-ip-wrap {
 	input {
-		width: 20%;
-		margin-right: 1%;
-		margin-left: 0.99%;
+		width: 22%;
 		display: inline;
 	}
-	input:first-child {
-		margin-left: 0;
-	}
-	input:last-child {
-		width: 21%;
-		margin-left: 0;
-		margin-right: 0;
-		float: right;
+	span {
+		width: 4%;
+		display: inline-block;
+		text-align: center;
+		height: 29px;
+		line-height: 29px;
 	}
 }
 </style>
