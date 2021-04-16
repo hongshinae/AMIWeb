@@ -251,6 +251,8 @@
 				"snmpRW": "SNMP(RW)",
 				"fepIp": "FEP IP",
 				"mac": "MAC 번호",
+				"dcuStatus": "DCU 동작상태",
+				"dcuCoverStatus": "커버 개폐상태",
 				"osVersion": "OS 버전",
 				"firmwareVersion": "펌웨어버전",
 				"hardwareVersion": "하드웨어버전",
