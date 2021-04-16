@@ -39,106 +39,95 @@
 			<ul class="left">
 				<li>
 					<div class="modal-1st-box">
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.itime')" />
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
 						<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
 						<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.macA')" />
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.macB')" />
-						<input-normal v-model="form.dcuId" :label="$t('equipment.dcu.modal.macC')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
 					</div>
 					<div class="modal-2nd-box">
-						<b-form-group label="간선망" label-for="">
-							<b-form-select>
-								<b-form-select-option value="i1">LTE</b-form-select-option>
-								<b-form-select-option value="i1">5G</b-form-select-option>
-							</b-form-select>
-						</b-form-group>
-						<b-form-group label="인입망" label-for="">
-							<b-form-select>
-								<b-form-select-option value="i1">HS-PLC</b-form-select-option>
-								<b-form-select-option value="i1">HS-PLC2</b-form-select-option>
-							</b-form-select>
-						</b-form-group>
-						<b-form-group label=">DCU 종류" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="Meter count" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="검침 Agent" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="SNMP (RO)" label-for="">
-							<b-form-input id="" disabled></b-form-input>
-						</b-form-group>
-						<b-form-group label="SNMP (RW)" label-for="">
-							<b-form-input id="" disabled></b-form-input>
-						</b-form-group>
-						<b-form-group label="FEP IP / PORT" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="DCU 현재시간" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
-						<b-form-group label="MAC 번호" label-for="">
-							<b-form-input id=""></b-form-input>
-						</b-form-group>
+						<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
+						<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterCount')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
+						<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
 					</div>
 					<div class="modal-3rd-box">
 						<div class="table-wrap">
 							<div class="basic-table">
-								<table class="table b-table" id="">
-									<thead role="rowgroup" class="">
-										<tr role="row" class="">
-											<th class=""><div>Meter Type</div></th>
-											<th class=""><div>현재 검침</div></th>
-											<th class=""><div>LP</div></th>
-											<th class=""><div>평균 전압전류</div></th>
-											<th class=""><div>순시 전압전류</div></th>
-											<th class=""><div>시간 확인주기</div></th>
-											<th class=""><div>시간오차 한계</div></th>
+								<b-table :striped="true" :items="meterTypeList"> </b-table>
+								<table class="table b-table">
+									<thead role="rowgroup">
+										<tr role="row">
+											<th>
+												<div>{{ $t("equipment.dcu.modal.meterType.title") }}</div>
+											</th>
+											<th>
+												<div>{{ $t("equipment.dcu.modal.meterType.period") }}</div>
+											</th>
+											<th>
+												<div>{{ $t("equipment.dcu.modal.meterType.lpPeriod") }}</div>
+											</th>
+											<th>
+												<div>{{ $t("equipment.dcu.modal.meterType.avgVoltagePeriod") }}</div>
+											</th>
+											<th>
+												<div>{{ $t("equipment.dcu.modal.meterType.instVoltagePeriod") }}</div>
+											</th>
+											<th>
+												<div>{{ $t("equipment.dcu.modal.meterType.timePeriod") }}</div>
+											</th>
+											<th>
+												<div>{{ $t("equipment.dcu.modal.meterType.timeErrorLimit") }}</div>
+											</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<th class="">S-Type</th>
-											<td class="">15분</td>
-											<td class="">15분</td>
-											<td class="">60분</td>
-											<td class="">60분</td>
-											<td class="">15분</td>
-											<td class="">1분</td>
+											<th>S-Type</th>
+											<td>{{ dcu.stypePeriod }}</td>
+											<td>{{ dcu.stypeLpPeriod }}</td>
+											<td>-</td>
+											<td>-</td>
+											<td>-</td>
+											<td>-</td>
 										</tr>
 										<tr>
-											<th class="">E-Type</th>
-											<td class="">15분</td>
-											<td class="">15분</td>
-											<td class="">60분</td>
-											<td class="">60분</td>
-											<td class="">15분</td>
-											<td class="">1분</td>
+											<th>E-Type</th>
+											<td>-</td>
+											<td>{{ dcu.etypeLpPeriod }}</td>
+											<td>-</td>
+											<td>-</td>
+											<td>{{ dcu.etypeTimePeriod }}</td>
+											<td>{{ dcu.etypeTimeErrorLimit }}</td>
 										</tr>
 										<tr>
-											<th class="">G-Type</th>
-											<td class="">15분</td>
-											<td class="">15분</td>
-											<td class="">60분</td>
-											<td class="">60분</td>
-											<td class="">15분</td>
-											<td class="">1분</td>
+											<th>G-Type</th>
+											<td>-</td>
+											<td>{{ dcu.gtypeLpPeriod }}</td>
+											<td>{{ dcu.gtypeAvgVoltagePeriod }}</td>
+											<td>{{ dcu.gtypeInstVoltagePeriod }}</td>
+											<td>{{ dcu.gtypeTimePeriod }}</td>
+											<td>{{ dcu.gtypeTimeErrorLimit }}</td>
 										</tr>
 										<tr>
-											<th class="">AE-Type</th>
-											<td class="">15분</td>
-											<td class="">15분</td>
-											<td class="">60분</td>
-											<td class="">60분</td>
-											<td class="">15분</td>
-											<td class="">1분</td>
+											<th>EA-Type</th>
+											<td>-</td>
+											<td>{{ dcu.eaTypeLpPeriod }}</td>
+											<td>{{ dcu.eaTypeAvgVoltagePeriod }}</td>
+											<td>{{ dcu.eaTypeInstVoltagePeriod }}</td>
+											<td>{{ dcu.eaTypeTimePeriod }}</td>
+											<td>{{ dcu.eaTypeTimeErrorLimit }}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -150,8 +139,14 @@
 					<div class="modal-4th-box">
 						<div class="info-box">
 							<ul class="top">
-								<li><span>DCU 동작상태</span><b>정상</b></li>
-								<li><span>커버 개폐상태</span><b>close</b></li>
+								<li>
+									<span>{{ $t("equipment.dcu.modal.dcuStatus") }}</span>
+									<b>{{ dcu.dcuStatus }}</b>
+								</li>
+								<li>
+									<span>{{ $t("equipment.dcu.modal.dcuCoverStatus") }}</span>
+									<b>{{ dcu.dcuCoverStatus }}</b>
+								</li>
 							</ul>
 							<div class="middle">
 								<ul>
@@ -236,7 +231,7 @@
 							</b-col>
 						</b-row>
 
-						<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="form.latitude" :longitude.sync="form.longitude" />
+						<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="dcu.latitude" :longitude.sync="dcu.longitude" />
 
 						<div class="map">
 							<iframe
@@ -259,26 +254,37 @@
 import InputIp from "@/components/InputIp";
 import InputLocation from "@/components/InputLocation";
 import InputNormal from "@/components/InputNormal";
+import InputSelect from "@/components/InputSelect";
 import EquipmentDcu from "@/service/equipment/dcu";
 
 export default {
 	props: { item: { type: Object } },
-	components: { InputIp, InputLocation, InputNormal },
+	components: { InputIp, InputLocation, InputNormal, InputSelect },
 	computed: {
 		address() {
 			return "서울 서울아파트 101동 101호";
+		},
+		meterTypeList() {
+			return [];
 		}
 	},
 	data() {
 		return {
 			dcu: {},
+			network1: [
+				{ text: "LTE", value: 1 },
+				{ text: "5G", value: 2 }
+			],
+			network2: [
+				{ text: "HS-PLC", value: 1 },
+				{ text: "HS-PLC2", value: 2 }
+			],
 			form: {}
 		};
 	},
 	methods: {
 		show() {},
 		shown() {
-			console.log(this.item);
 			this.getDcu({ dcuId: this.item.dcuId });
 		},
 		hide() {},

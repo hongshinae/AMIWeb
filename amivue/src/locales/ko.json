@@ -234,6 +234,7 @@
 				"installLocation": "설치 위치",
 
 				"itime": "DCU 동작시간",
+				"dtime": "DCU 현재시간",
 				"dcuModel": "DCU 모델번호",
 				"dcuMac": "MAC 번호",
 				"tMask": "T-Mask",
@@ -256,12 +257,13 @@
 				"snmpEncrypt": "SNMP 암호화",
 				"location": "위치정보",
 				"meterType": {
-					"": "현재 검침",
-					"": "LP",
-					"": "평균 전압전류",
-					"": "순시 전압전류",
-					"": "시간 확인주기",
-					"": "시간오차 한계"
+					"title": "Meter Type",
+					"period": "현재 검침",
+					"lpPeriod": "LP",
+					"avgVoltagePeriod": "평균 전압전류",
+					"instVoltagePeriod": "순시 전압전류",
+					"timePeriod": "시간 확인주기",
+					"timeErrorLimit": "시간오차 한계"
 				},
 				"button": {
 					"informationSetting": "정보 설정",
