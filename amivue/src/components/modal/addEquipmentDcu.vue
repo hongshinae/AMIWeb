@@ -51,8 +51,10 @@
 </template>
 
 <script>
+import EquipmentDcu from "@/service/equipment/dcu";
 import InputIp from "@/components/InputIp";
 import InputLocation from "@/components/InputLocation";
+
 export default {
 	components: { InputIp, InputLocation },
 	data() {
@@ -92,7 +94,19 @@ export default {
 		},
 		async handleSubmit(event) {
 			event.preventDefault();
-			console.log(this.form);
+
+			try {
+				let response = await EquipmentDcu.registration(this.form);
+				response = response.data.response;
+
+				if (!response.result) {
+					throw Error("저장에 실패하였습니다.");
+				}
+
+				this.$emit("handle:searchItem");
+			} catch (error) {
+				alert(error);
+			}
 		}
 	}
 };

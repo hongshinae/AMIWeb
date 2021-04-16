@@ -187,7 +187,7 @@
 											<div class="small">Bit / SEC</div>
 										</b-col>
 										<b-col>
-											<b>154</b>
+											<b>{{ dcu.sysUpBps }}</b>
 											<span>BPS</span>
 										</b-col>
 									</b-row>
@@ -199,7 +199,7 @@
 											<div class="small">Bit / SEC</div>
 										</b-col>
 										<b-col>
-											<b>154</b>
+											<b>{{ dcu.sysDownBps }}</b>
 											<span>BPS</span>
 										</b-col>
 									</b-row>

@@ -1,12 +1,12 @@
 <template>
 	<b-form-group :label="label" label-for="" class="input-ip-wrap">
-		<b-form-input ref="ip1" :value="ip1" type="number" placeholder="20" @input.native="handleIpInput" />
+		<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" />
 		<span>.</span>
-		<b-form-input ref="ip2" :value="ip2" type="number" placeholder="101" @input.native="handleIpInput" />
+		<b-form-input ref="ip2" :value="ip2" v-mask="'###'" placeholder="101" @input.native="handleIpInput" />
 		<span>.</span>
-		<b-form-input ref="ip3" :value="ip3" type="number" placeholder="235" @input.native="handleIpInput" />
+		<b-form-input ref="ip3" :value="ip3" v-mask="'###'" placeholder="235" @input.native="handleIpInput" />
 		<span>.</span>
-		<b-form-input ref="ip4" :value="ip4" type="number" placeholder="100" @input.native="handleIpInput" />
+		<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="100" @input.native="handleIpInput" />
 	</b-form-group>
 </template>
 
@@ -71,11 +71,13 @@ export default {
 		handleIpInput(event) {
 			if (event.target.value.length >= 3) {
 				if (event.target.nextSibling && event.target.nextSibling.focus) {
-					event.target.nextSibling.focus();
+					event.target.nextSibling.nextSibling.focus();
+					event.target.nextSibling.nextSibling.select();
 				}
-			} else if (event.data == null) {
+			} else if (event.target.value == "") {
 				if (event.target.previousSibling) {
-					event.target.previousSibling.focus();
+					event.target.previousSibling.previousSibling.focus();
+					event.target.previousSibling.previousSibling.select();
 				}
 			}
 
