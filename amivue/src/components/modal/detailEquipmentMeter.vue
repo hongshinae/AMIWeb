@@ -32,7 +32,7 @@
 			<div class="svg-input">
 				<ul>
 					<li>
-						<div class="meter-value">1234567</div>
+						<div class="meter-value">10000<span class="blink">.</span>00</div>
 						<b-form-group :label="$t('equipment.meter.modal.meterId')" label-for="">
 							<b-form-input v-model="meter.meterId" disabled></b-form-input>
 						</b-form-group>
@@ -153,4 +153,28 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+/* for MS계열 브라우저 */
+@keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+
+/* for Chrome, Safari */
+@-webkit-keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+.blink {
+	animation: blink 1s step-end infinite;
+	-webkit-animation: blink 1s step-end infinite;
+}
+</style>
