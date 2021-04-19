@@ -12,6 +12,7 @@
 		"src/**/*"
 	],
 	"exclude": [
+		"src/assets/js/Highcharts*",
 		"node_modules",
 		"dist"
 	]
