@@ -18,14 +18,18 @@
 		<template #modal-footer="{ cancel }">
 			<div class="btn-wrap">
 				<ul>
-					<li>
+					<li v-if="tabIndex == 0">
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.informationSetting") }}</b-button>
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.timeSetting") }}</b-button>
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.time1") }}</b-button>
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.time2") }}</b-button>
+					</li>
+					<li v-if="tabIndex == 1">
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.security") }}</b-button>
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.deleteDcu") }}</b-button>
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.rebootDcu") }}</b-button>
+					</li>
+					<li v-if="tabIndex == 2">
 						<b-button variant="light">{{ $t("equipment.dcu.modal.button.reskinModem") }}</b-button>
 					</li>
 					<li>
@@ -37,107 +41,112 @@
 		</template>
 		<ul class="left">
 			<li>
-				<b-tabs>
-					<b-tab title="First" active><p>I'm the first tab</p></b-tab>
+				<b-button pill variant="primary" @click="tabIndex = 0">{{ $t("equipment.tab.default") }}</b-button>
+				<b-button pill variant="outline-primary" @click="tabIndex = 1">{{ $t("equipment.tab.settings") }}</b-button>
+				<b-button pill variant="outline-primary" @click="tabIndex = 2">{{ $t("equipment.tab.security") }}</b-button>
+				<b-tabs v-model="tabIndex" :no-nav-style="true">
+					<b-tab title="First" active>
+						<template #title> </template>
+						<div class="modal-1st-box">
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
+							<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
+							<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
+						</div>
+						<div class="modal-2nd-box">
+							<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
+							<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterCount')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
+						</div>
+						<div class="modal-3rd-box">
+							<div class="table-wrap">
+								<div class="basic-table">
+									<b-table :striped="true" :items="meterTypeList"> </b-table>
+									<table class="table b-table">
+										<thead role="rowgroup">
+											<tr role="row">
+												<th>
+													<div>{{ $t("equipment.dcu.modal.meterType.title") }}</div>
+												</th>
+												<th>
+													<div>{{ $t("equipment.dcu.modal.meterType.period") }}</div>
+												</th>
+												<th>
+													<div>{{ $t("equipment.dcu.modal.meterType.lpPeriod") }}</div>
+												</th>
+												<th>
+													<div>{{ $t("equipment.dcu.modal.meterType.avgVoltagePeriod") }}</div>
+												</th>
+												<th>
+													<div>{{ $t("equipment.dcu.modal.meterType.instVoltagePeriod") }}</div>
+												</th>
+												<th>
+													<div>{{ $t("equipment.dcu.modal.meterType.timePeriod") }}</div>
+												</th>
+												<th>
+													<div>{{ $t("equipment.dcu.modal.meterType.timeErrorLimit") }}</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>S-Type</th>
+												<td>{{ dcu.stypePeriod }}</td>
+												<td>{{ dcu.stypeLpPeriod }}</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+											</tr>
+											<tr>
+												<th>E-Type</th>
+												<td>-</td>
+												<td>{{ dcu.etypeLpPeriod }}</td>
+												<td>-</td>
+												<td>-</td>
+												<td>{{ dcu.etypeTimePeriod }}</td>
+												<td>{{ dcu.etypeTimeErrorLimit }}</td>
+											</tr>
+											<tr>
+												<th>G-Type</th>
+												<td>-</td>
+												<td>{{ dcu.gtypeLpPeriod }}</td>
+												<td>{{ dcu.gtypeAvgVoltagePeriod }}</td>
+												<td>{{ dcu.gtypeInstVoltagePeriod }}</td>
+												<td>{{ dcu.gtypeTimePeriod }}</td>
+												<td>{{ dcu.gtypeTimeErrorLimit }}</td>
+											</tr>
+											<tr>
+												<th>EA-Type</th>
+												<td>-</td>
+												<td>{{ dcu.eaTypeLpPeriod }}</td>
+												<td>{{ dcu.eaTypeAvgVoltagePeriod }}</td>
+												<td>{{ dcu.eaTypeInstVoltagePeriod }}</td>
+												<td>{{ dcu.eaTypeTimePeriod }}</td>
+												<td>{{ dcu.eaTypeTimeErrorLimit }}</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</b-tab>
 					<b-tab title="Second"><p>I'm the second tab</p></b-tab>
 					<b-tab title="Disabled"><p>I'm a disabled tab!</p></b-tab>
 				</b-tabs>
-				<div class="modal-1st-box">
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
-					<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
-					<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
-				</div>
-				<div class="modal-2nd-box">
-					<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
-					<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterCount')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
-					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
-				</div>
-				<div class="modal-3rd-box">
-					<div class="table-wrap">
-						<div class="basic-table">
-							<b-table :striped="true" :items="meterTypeList"> </b-table>
-							<table class="table b-table">
-								<thead role="rowgroup">
-									<tr role="row">
-										<th>
-											<div>{{ $t("equipment.dcu.modal.meterType.title") }}</div>
-										</th>
-										<th>
-											<div>{{ $t("equipment.dcu.modal.meterType.period") }}</div>
-										</th>
-										<th>
-											<div>{{ $t("equipment.dcu.modal.meterType.lpPeriod") }}</div>
-										</th>
-										<th>
-											<div>{{ $t("equipment.dcu.modal.meterType.avgVoltagePeriod") }}</div>
-										</th>
-										<th>
-											<div>{{ $t("equipment.dcu.modal.meterType.instVoltagePeriod") }}</div>
-										</th>
-										<th>
-											<div>{{ $t("equipment.dcu.modal.meterType.timePeriod") }}</div>
-										</th>
-										<th>
-											<div>{{ $t("equipment.dcu.modal.meterType.timeErrorLimit") }}</div>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<th>S-Type</th>
-										<td>{{ dcu.stypePeriod }}</td>
-										<td>{{ dcu.stypeLpPeriod }}</td>
-										<td>-</td>
-										<td>-</td>
-										<td>-</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<th>E-Type</th>
-										<td>-</td>
-										<td>{{ dcu.etypeLpPeriod }}</td>
-										<td>-</td>
-										<td>-</td>
-										<td>{{ dcu.etypeTimePeriod }}</td>
-										<td>{{ dcu.etypeTimeErrorLimit }}</td>
-									</tr>
-									<tr>
-										<th>G-Type</th>
-										<td>-</td>
-										<td>{{ dcu.gtypeLpPeriod }}</td>
-										<td>{{ dcu.gtypeAvgVoltagePeriod }}</td>
-										<td>{{ dcu.gtypeInstVoltagePeriod }}</td>
-										<td>{{ dcu.gtypeTimePeriod }}</td>
-										<td>{{ dcu.gtypeTimeErrorLimit }}</td>
-									</tr>
-									<tr>
-										<th>EA-Type</th>
-										<td>-</td>
-										<td>{{ dcu.eaTypeLpPeriod }}</td>
-										<td>{{ dcu.eaTypeAvgVoltagePeriod }}</td>
-										<td>{{ dcu.eaTypeInstVoltagePeriod }}</td>
-										<td>{{ dcu.eaTypeTimePeriod }}</td>
-										<td>{{ dcu.eaTypeTimeErrorLimit }}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
 			</li>
 			<li>
 				<div class="modal-4th-box">
@@ -282,7 +291,8 @@ export default {
 				{ text: "HS-PLC", value: 1 },
 				{ text: "HS-PLC2", value: 2 }
 			],
-			form: {}
+			form: {},
+			tabIndex: 0
 		};
 	},
 	methods: {

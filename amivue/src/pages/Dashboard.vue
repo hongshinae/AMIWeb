@@ -6,17 +6,7 @@
 					<div class="date">{{ Date.now() | moment("YYYY.M.D") }}</div>
 					<dashboard-timer></dashboard-timer>
 				</div>
-				<div class="box power">
-					<h5>
-						<span>전국 전력 사용량</span>
-						<b class="fontC">45.452kWh</b>
-					</h5>
-					<div class="chartWarp">
-						<div class="">
-							<img src="@/assets/images/charhimg01.png" alt="" title="" />
-						</div>
-					</div>
-				</div>
+				<total-voltage />
 				<div class="box">
 					<h5>
 						<ul class="inspection">
@@ -245,14 +235,13 @@
 
 <script>
 import DashboardTimer from "@/components/DashboardTimer";
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+import TotalVoltage from "@/components/chart/TotalVoltage";
 
 export default {
 	name: "Home",
 	components: {
-		DashboardTimer
-		// HelloWorld
+		DashboardTimer,
+		TotalVoltage
 	},
 	data: function() {
 		return {

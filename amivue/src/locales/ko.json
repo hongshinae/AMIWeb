@@ -59,7 +59,30 @@
 		}
 	},
 	"dashboard": {
-		"message": "테스트"
+		"ea": "건",
+		"totalVoltage": "전국 전력 사용량",
+		"readingTrust": "검침 신뢰성",
+		"todayFault": "금일 장애",
+		"todayWeather": "금일 날씨",
+		"dataWeather": "데이터 날씨",
+		"serverInfo": "서버운영정보",
+		"cpuUsage": "OS CPU 사용률",
+		"memoryUsage": "OS Memory 사용률",
+		"jvmUsed": "JVMUSED",
+		"jvmFree": "JVMFREE",
+		"jvmTotal": "JVMTOTAL",
+		"jvmMax": "JVMMAX",
+		"registEquipment": "등록장비",
+		"equipmentCount": "장비수",
+		"equipmentMeter": "Meter",
+		"equipmentModem": "PLC모뎀",
+		"equipmentDcu": "DCU",
+		"regionUsed": "지역별 사용",
+		"region": "지역",
+		"used": "사용",
+		"usedQuater": "사용량 Quater",
+		"dataA": "데이터 A",
+		"dataAQuater": "데이터 A Quater"
 	},
 	"component": {
 		"content": {
@@ -223,7 +246,10 @@
 		"tab": {
 			"dcu": "DCU",
 			"meter": "METER",
-			"other": "가스, 수도, 온수, 난방"
+			"other": "가스, 수도, 온수, 난방",
+			"default": "기본 정보",
+			"settings": "설정 정보",
+			"security": "보안 정보"
 		},
 		"dcu": {
 			"excelFileName": "장비관리_DCU.xlsx",

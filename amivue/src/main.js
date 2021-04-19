@@ -14,8 +14,8 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import GlobalDirectives from "@/globalDirectives";
 import MainLayout from "@/mainLayout";
 import i18n from "@/locales";
-import modalAlert from "@/components/modalAlert";
-import modalConfirm from "@/components/modalConfirm";
+import ModalAlert from "@/components/ModalAlert";
+import ModalConfirm from "@/components/ModalConfirm";
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue);
@@ -25,8 +25,8 @@ Vue.use(NavbarPlugin);
 Vue.use(GlobalDirectives);
 Vue.use(MainLayout);
 Vue.use(VueMoment);
-Vue.component("modal-alert", modalAlert);
-Vue.component("modal-confirm", modalConfirm);
+Vue.component("modal-alert", ModalAlert);
+Vue.component("modal-confirm", ModalConfirm);
 
 new Vue({
 	router,
