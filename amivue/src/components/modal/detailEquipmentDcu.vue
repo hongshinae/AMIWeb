@@ -37,6 +37,11 @@
 		</template>
 		<ul class="left">
 			<li>
+				<b-tabs>
+					<b-tab title="First" active><p>I'm the first tab</p></b-tab>
+					<b-tab title="Second"><p>I'm the second tab</p></b-tab>
+					<b-tab title="Disabled"><p>I'm a disabled tab!</p></b-tab>
+				</b-tabs>
 				<div class="modal-1st-box">
 					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
 					<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
