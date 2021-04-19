@@ -20,6 +20,7 @@
 				:placeholder="$t('common.placeholder.longitude')"
 			/>
 		</b-input-group>
+		<b-button variant="light">확인</b-button>
 	</b-form-group>
 </template>
 
@@ -44,6 +45,7 @@ export default {
 }
 #detailEquipmentDcu .install-Location {
 	height: 70px;
+	margin-bottom: 15px !important;
 	legend {
 		width: 75px;
 	}

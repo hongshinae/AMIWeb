@@ -39,14 +39,48 @@
 			</div>
 			<!-- Button with custom close trigger value -->
 		</template>
-		<ul class="left">
-			<li>
-				<b-button pill variant="primary" @click="tabIndex = 0">{{ $t("equipment.tab.default") }}</b-button>
-				<b-button pill variant="outline-primary" @click="tabIndex = 1">{{ $t("equipment.tab.settings") }}</b-button>
-				<b-button pill variant="outline-primary" @click="tabIndex = 2">{{ $t("equipment.tab.security") }}</b-button>
+		<ul class="left-wrap">
+			<li class="left">
 				<b-tabs v-model="tabIndex" :no-nav-style="true">
-					<b-tab title="First" active>
+					<b-tab title="기본설정" active>
 						<template #title> </template>
+						<div class="modal-1st-box">
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
+							<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
+							<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.osVersion')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.firmwareVersion')" />
+						</div>
+						<div class="modal-2nd-box">
+							<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
+							<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
+							<b-form-group label="ROUTER IP" label-for="">
+								<b-input-group>
+									<b-form-input placeholder="10"></b-form-input>
+									<b-input-group-append>
+										<b-button variant="light">검침일</b-button>
+									</b-input-group-append>
+								</b-input-group>
+							</b-form-group>
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.hardwareVersion')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpEncrypt')" />
+						</div>
+					</b-tab>
+					<b-tab title="설정 정보">
 						<div class="modal-1st-box">
 							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
 							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
@@ -144,11 +178,35 @@
 							</div>
 						</div>
 					</b-tab>
-					<b-tab title="Second"><p>I'm the second tab</p></b-tab>
-					<b-tab title="Disabled"><p>I'm a disabled tab!</p></b-tab>
+					<b-tab title="보안 정보">
+						<div class="modal-1st-box">
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
+							<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
+							<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
+						</div>
+						<div class="modal-2nd-box">
+							<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
+							<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterCount')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
+							<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
+						</div>
+					</b-tab>
 				</b-tabs>
 			</li>
-			<li>
+			<li class="right">
 				<div class="modal-4th-box">
 					<div class="info-box">
 						<ul class="top">
@@ -219,31 +277,6 @@
 							</li>
 						</ul>
 					</div>
-					<b-row class="double-input">
-						<b-col cols="6">
-							<b-form-group label="OS 버전" label-for="" c->
-								<b-form-input id=""></b-form-input>
-							</b-form-group>
-						</b-col>
-						<b-col cols="6">
-							<b-form-group label="펌웨어 버전" label-for="">
-								<b-form-input id=""></b-form-input>
-							</b-form-group>
-						</b-col>
-					</b-row>
-					<b-row class="double-input">
-						<b-col cols="6">
-							<b-form-group label="하드웨어 버전" label-for="" c->
-								<b-form-input id=""></b-form-input>
-							</b-form-group>
-						</b-col>
-						<b-col cols="6">
-							<b-form-group label="SNMP 암호화" label-for="">
-								<b-form-input id=""></b-form-input>
-							</b-form-group>
-						</b-col>
-					</b-row>
-
 					<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="dcu.latitude" :longitude.sync="dcu.longitude" />
 
 					<div class="map">

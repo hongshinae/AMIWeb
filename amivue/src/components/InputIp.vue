@@ -1,12 +1,14 @@
 <template>
 	<b-form-group :label="label" label-for="" class="input-ip-wrap">
-		<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" />
+		<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" maxlength="2" />
 		<span>.</span>
-		<b-form-input ref="ip2" :value="ip2" v-mask="'###'" placeholder="101" @input.native="handleIpInput" />
+		<b-form-input ref="ip2" :value="ip2" v-mask="'###'" placeholder="101" @input.native="handleIpInput" maxlength="3" />
 		<span>.</span>
 		<b-form-input ref="ip3" :value="ip3" v-mask="'###'" placeholder="235" @input.native="handleIpInput" />
 		<span>.</span>
 		<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="100" @input.native="handleIpInput" />
+		<span>:</span>
+		<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="8080" @input.native="handleIpInput" />
 	</b-form-group>
 </template>
 
@@ -95,11 +97,18 @@ export default {
 <style lang="scss">
 .input-ip-wrap {
 	input {
-		width: 22%;
+		width: 17%;
 		display: inline;
+		padding: 0.375rem 0.5rem;
+	}
+	input:nth-child(1) {
+		width: 16%;
+	}
+	input:nth-child(9) {
+		width: 20%;
 	}
 	span {
-		width: 4%;
+		width: 3%;
 		display: inline-block;
 		text-align: center;
 		height: 29px;

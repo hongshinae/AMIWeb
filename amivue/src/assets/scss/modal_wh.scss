@@ -23,7 +23,7 @@
 					height: 32px;
 					width: 100%;
 					input[type="text"] {
-						order: 1px solid #2370e0;
+						border: 1px solid #2370e0;
 						background: #4289f1 !important;
 						color: #ffffff !important;
 						z-index: 1000;
@@ -160,6 +160,12 @@
 		color: $color-rd;
 		padding-left: 3px;
 	}
+	.tab-button-wrap {
+		display: none;
+	}
+	ul[role="tablist"] {
+		display: block;
+	}
 }
 
 #addEstate .modal-dialog,
@@ -282,16 +288,31 @@
 	.modal-body {
 		padding: 0;
 	}
-	.left li {
+	.left-wrap li {
 		float: left;
-		padding: 1rem;
 	}
-	.left li:first-child {
+	.left-wrap .left {
 		width: 763px;
+		padding: 2rem;
 	}
-	.left > li:last-child {
+	.left-wrap .right {
 		width: 375px;
 		border-left: 1px solid #ddd;
+		padding: 1rem;
+	}
+	.nav {
+		height: 32px;
+		border-bottom: 1px solid #dee2e6;
+		.nav-item a {
+			color: #333 !important;
+		}
+		.nav-link.active {
+			color: $color-bl !important;
+			border-bottom: 2px solid $color-bl !important;
+		}
+	}
+	.tab-content {
+		padding: 20px;
 	}
 	.modal-1st-box {
 		width: 320px;
@@ -300,12 +321,14 @@
 	.modal-2nd-box {
 		float: left;
 		width: 320px;
-		margin-right: 30px;
 	}
 	.modal-3rd-box {
 		width: 670px;
 		margin-right: 30px;
 		height: 232px;
+		.table-wrap {
+			padding: inherit;
+		}
 	}
 	.modal-4th-box {
 		width: 350px;
