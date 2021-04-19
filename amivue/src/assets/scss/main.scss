@@ -150,7 +150,6 @@
 /*메인대시보드하이차트*/
 .high-map-wrap {
 	position: relative;
-	height: 100%;
 	.high-map {
 		position: absolute;
 		top: 0;
@@ -160,7 +159,6 @@
 	}
 	.high-table {
 		position: absolute;
-		bottom: 46px;
 		width: 258px;
 		height: 155px;
 		background: linear-gradient(70deg, rgba(13, 24, 25, 0.08), #0f1e35, rgba(13, 24, 25, 0.08));
