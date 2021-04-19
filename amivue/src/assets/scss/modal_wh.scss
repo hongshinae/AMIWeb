@@ -500,11 +500,15 @@
 					float: left;
 				}
 				li:first-child {
-					width: 300px;
+					width: 268px;
 					margin-left: 59px;
-					margin-right: 57px;
+					margin-right: 85px;
+					.form-group label,
+					.form-group legend {
+						width: 93px;
+					}
 					.form-group > div {
-						width: 150px;
+						width: 175px;
 					}
 					.meter-value {
 						font-size: 45px;
@@ -518,6 +522,32 @@
 				}
 			}
 		}
+	}
+}
+#detailEquipmentOther .other {
+	ul li:first-child {
+		width: 260px;
+		.form-group {
+			padding: 0 10px;
+			> div {
+				width: 150px !important;
+			}
+		}
+	}
+	h4 {
+		margin-top: 49px;
+		height: 24px;
+		line-height: 24px;
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.meter-value {
+		margin-top: 7px !important;
+		margin-bottom: 22px !important;
+	}
+	.form-group {
+		margin-bottom: 0 !important;
 	}
 }
 
