@@ -82,7 +82,14 @@
 		"used": "사용",
 		"usedQuater": "사용량 Quater",
 		"dataA": "데이터 A",
-		"dataAQuater": "데이터 A Quater"
+		"dataAQuater": "데이터 A Quater",
+		"type": {
+			"meter": "전기",
+			"gas": "가스",
+			"water": "수도",
+			"hot": "온수",
+			"heat": "난방"
+		}
 	},
 	"component": {
 		"content": {
