@@ -36,21 +36,23 @@ export default {
 <style lang="scss">
 .install-Location {
 	.input-group {
-		width: 100% !important;
+		width: 170px !important;
 		float: left;
 	}
 	.input-group:first-child {
 		margin-bottom: 10px;
 	}
+	button {
+		width: 43px;
+		height: 68px;
+		margin-left: 10px;
+	}
 }
 #detailEquipmentDcu .install-Location {
 	height: 70px;
 	margin-bottom: 15px !important;
-	legend {
-		width: 75px;
-	}
 	> div {
-		width: 275px;
+		width: 224px;
 	}
 }
 </style>

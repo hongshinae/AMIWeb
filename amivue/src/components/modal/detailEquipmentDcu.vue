@@ -76,7 +76,7 @@
 								</b-form-group>
 							</div>
 						</b-tab>
-						<b-tab title="설정 정보">
+						<b-tab title="설정 정보" class="setting-info-wrap">
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" />
 							</div>
