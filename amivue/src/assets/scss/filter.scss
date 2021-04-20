@@ -52,6 +52,20 @@
 				border-left: 1px solid $color-gy;
 				border-right: 1px solid $color-gy;
 				background: transparent;
+				margin-left: 5px;
+				width: 130px;
+				font-weight: bold !important;
+				color: $color-bl;
+			}
+			input[type="text"]::placeholder {
+				color: $color-bl;
+				opacity: 1;
+			}
+			input[type="text"]:-ms-input-placeholder {
+				color: $color-bl;
+			}
+			input[type="text"]::-ms-input-placeholder {
+				color: $color-bl;
 			}
 		}
 	}
