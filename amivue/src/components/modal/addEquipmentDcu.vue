@@ -34,17 +34,19 @@
 			</div>
 			<!-- Button with custom close trigger value -->
 		</template>
-		<div class="svg-wrap">
-			<div class="svg">
-				<img src="@/assets/svg/DCU.svg" alt="" title="" />
-			</div>
-			<div class="svg-input">
-				<b-form-group :label="$t('equipment.dcu.modal.dcuId')" label-for="">
-					<b-form-input v-model="form.dcuId" :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
-				</b-form-group>
-				<input-ip v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuIp')" />
-				<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />
-				<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="form.latitude" :longitude.sync="form.longitude" />
+		<div class="modal-content-wrap">
+			<div class="svg-wrap">
+				<div class="svg">
+					<img src="@/assets/svg/DCU.svg" alt="" title="" />
+				</div>
+				<div class="svg-input">
+					<b-form-group :label="$t('equipment.dcu.modal.dcuId')" label-for="">
+						<b-form-input v-model="form.dcuId" :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
+					</b-form-group>
+					<input-ip v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuIp')" />
+					<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />
+					<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="form.latitude" :longitude.sync="form.longitude" />
+				</div>
 			</div>
 		</div>
 	</b-modal>

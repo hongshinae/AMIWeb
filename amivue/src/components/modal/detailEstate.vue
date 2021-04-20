@@ -33,168 +33,177 @@
 					</ul>
 				</div>
 			</template>
-			<div class="center">
-				<modal-alert ref="DetailEstateAlert" :title="alertTitle" :message="alertMessage" />
-				<b-form ref="DetailEstateForm" @submit.prevent="onSubmit" @reset="showDetailEstate">
-					<div class="modal-1st-box">
-						<b-form-group label-for="estateId" :invalid-feedback="$t('estate.modal.validation.estateId')" :state="estateIdState">
-							<template #label>{{ $t("estate.modal.estateId") }}<span>*</span></template>
-							<b-form-input
-								v-model="form.estateId"
-								:state="estateIdState"
-								@input="estateIdState = null"
-								autofocus
-								tabindex="1"
-								required
-								readonly
-							/>
-						</b-form-group>
-						<b-form-group label-for="houseCount" :invalid-feedback="$t('estate.modal.validation.houseCount')" :state="houseCountState">
-							<template #label>{{ $t("estate.modal.houseCount") }}<span>*</span></template>
-							<b-form-input
-								v-model.number="form.houseCount"
-								:state="houseCountState"
-								@input="houseCountState = null"
-								type="number"
-								min="0"
-								tabindex="3"
-								required
-								readonly
-							/>
-						</b-form-group>
-						<b-form-group label-for="regionSeq" :invalid-feedback="$t('estate.modal.validation.regionSeq')" :state="regionSeqState">
-							<template #label>{{ $t("estate.modal.regionSeq") }}<span>*</span></template>
-							<b-form-select
-								v-model="form.regionSeq"
-								:state="regionSeqState"
-								@input="regionSeqState = null"
-								:options="regionList"
-								text-field="regionName"
-								value-field="regionSeq"
-								tabindex="5"
-								required
-								disabled
-							>
-								<template #first>
-									<b-form-select-option value="">-- 선택해주세요 --</b-form-select-option>
-								</template>
-							</b-form-select>
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.manager1')">
-							<b-form-input v-model="form.manager1" tabindex="7" readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.manager2')">
-							<b-form-input v-model="form.manager2" tabindex="9" readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.dcuCount')">
-							<b-form-input v-model.number="form.dcuCount" type="number" min="0" tabindex="11" readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.meterCount')">
-							<b-form-input v-model.number="form.meterCount" type="number" min="0" tabindex="13" readonly />
-						</b-form-group>
-					</div>
-					<div class="modal-2nd-box">
-						<b-form-group label-for="estateName" :invalid-feedback="$t('estate.modal.validation.estateName')" :state="estateNameState">
-							<template #label>{{ $t("estate.modal.estateName") }}<span>*</span></template>
-							<b-form-input v-model="form.estateName" :state="estateNameState" @input="estateNameState = null" tabindex="2" required readonly />
-						</b-form-group>
-						<b-form-group label-for="address" :invalid-feedback="$t('estate.modal.validation.address')" :state="addressState">
-							<template #label>{{ $t("estate.modal.address") }}<span>*</span></template>
-							<b-form-input v-model="form.address" :state="addressState" @input="addressState = null" tabindex="4" required readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.telEstate')">
-							<b-form-input v-model="form.telEstate" v-mask="telEstate" tabindex="6" readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.telManager1')">
-							<b-form-input v-model="form.telManager1" v-mask="telManager1" tabindex="8" readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.telManager2')">
-							<b-form-input v-model="form.telManager2" v-mask="telManager2" tabindex="10" readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.modemCount')">
-							<b-form-input type="number" v-model.number="form.modemCount" min="0" tabindex="12" readonly />
-						</b-form-group>
-						<b-form-group :label="$t('estate.modal.buildingHouseCount')">
-							<b-row>
-								<b-col cols="6">
-									<div id="tooltip-button-building" class="tooltip-button-building">0</div>
-								</b-col>
-								<b-tooltip target="tooltip-button-building"> {{ $t("estate.modal.buildingTooltip") }} </b-tooltip>
-								<b-col cols="6">
-									<div id="tooltip-button-number" class="tooltip-button-number">0</div>
-								</b-col>
-								<b-tooltip target="tooltip-button-number"> {{ $t("estate.modal.houseTooltip") }} </b-tooltip>
-							</b-row>
-						</b-form-group>
-					</div>
-					<div class="modal-3rd-box">
-						<b-form-group :label="$t('estate.modal.readingType')">
-							<b-form-checkbox-group>
-								<b-form-checkbox v-model="form.checkPower" unchecked-value="N" value="Y">
-									{{ $t("estate.modal.powerType") }}
-								</b-form-checkbox>
-							</b-form-checkbox-group>
-							<b-form-checkbox-group>
-								<b-form-checkbox v-model="form.checkGas" unchecked-value="N" value="Y" disabled
-									>{{ $t("estate.modal.gasType") }}
-								</b-form-checkbox>
-							</b-form-checkbox-group>
-							<b-form-checkbox-group>
-								<b-form-checkbox v-model="form.checkWater" unchecked-value="N" value="Y" disabled>
-									{{ $t("estate.modal.waterType") }}
-								</b-form-checkbox>
-							</b-form-checkbox-group>
-							<b-form-checkbox-group>
-								<b-form-checkbox v-model="form.checkHot" unchecked-value="N" value="Y" disabled
-									>{{ $t("estate.modal.hotType") }}
-								</b-form-checkbox>
-							</b-form-checkbox-group>
-							<b-form-checkbox-group>
-								<b-form-checkbox v-model="form.checkHeating" unchecked-value="N" value="Y" disabled>
-									{{ $t("estate.modal.heatingType") }}
-								</b-form-checkbox>
-							</b-form-checkbox-group>
-						</b-form-group>
-					</div>
-					<div class="modal-4th-box">
-						<b-form-group :label="$t('estate.modal.metering')">
-							<b-input-group>
-								<ul class="bg">
-									<li>
-										<b-form-group :label="$t('estate.modal.powerDay')">
-											<b-form-input type="number" v-model.number="form.dayPower" v-mask="mask" tabindex="16" readonly />
-										</b-form-group>
-									</li>
-									<li>
-										<b-form-group :label="$t('estate.modal.gasDay')">
-											<b-form-input v-model="form.dayGas" v-mask="mask" type="number" tabindex="17" readonly />
-										</b-form-group>
-									</li>
-									<li>
-										<b-form-group :label="$t('estate.modal.waterDay')">
-											<b-form-input type="number" v-model.number="form.dayWater" v-mask="mask" tabindex="18" readonly />
-										</b-form-group>
-									</li>
-									<li>
-										<b-form-group :label="$t('estate.modal.hotDay')">
-											<b-form-input type="number" v-model.number="form.dayHot" v-mask="mask" tabindex="19" readonly />
-										</b-form-group>
-									</li>
-									<li>
-										<b-form-group :label="$t('estate.modal.heatingDay')">
-											<b-form-input type="number" v-model.number="form.dayHeating" v-mask="mask" tabindex="20" readonly />
-										</b-form-group>
-									</li>
-								</ul>
-								<b-input-group-append>
-									<b-button variant="light">{{ $t("estate.modal.changeDay") }}</b-button>
-								</b-input-group-append>
-							</b-input-group>
-						</b-form-group>
-					</div>
-				</b-form>
+			<div class="modal-content-wrap">
+				<div class="center">
+					<modal-alert ref="DetailEstateAlert" :title="alertTitle" :message="alertMessage" />
+					<b-form ref="DetailEstateForm" @submit.prevent="onSubmit" @reset="showDetailEstate">
+						<div class="modal-1st-box">
+							<b-form-group label-for="estateId" :invalid-feedback="$t('estate.modal.validation.estateId')" :state="estateIdState">
+								<template #label>{{ $t("estate.modal.estateId") }}<span>*</span></template>
+								<b-form-input
+									v-model="form.estateId"
+									:state="estateIdState"
+									@input="estateIdState = null"
+									autofocus
+									tabindex="1"
+									required
+									readonly
+								/>
+							</b-form-group>
+							<b-form-group label-for="houseCount" :invalid-feedback="$t('estate.modal.validation.houseCount')" :state="houseCountState">
+								<template #label>{{ $t("estate.modal.houseCount") }}<span>*</span></template>
+								<b-form-input
+									v-model.number="form.houseCount"
+									:state="houseCountState"
+									@input="houseCountState = null"
+									type="number"
+									min="0"
+									tabindex="3"
+									required
+									readonly
+								/>
+							</b-form-group>
+							<b-form-group label-for="regionSeq" :invalid-feedback="$t('estate.modal.validation.regionSeq')" :state="regionSeqState">
+								<template #label>{{ $t("estate.modal.regionSeq") }}<span>*</span></template>
+								<b-form-select
+									v-model="form.regionSeq"
+									:state="regionSeqState"
+									@input="regionSeqState = null"
+									:options="regionList"
+									text-field="regionName"
+									value-field="regionSeq"
+									tabindex="5"
+									required
+									disabled
+								>
+									<template #first>
+										<b-form-select-option value="">-- 선택해주세요 --</b-form-select-option>
+									</template>
+								</b-form-select>
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.manager1')">
+								<b-form-input v-model="form.manager1" tabindex="7" readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.manager2')">
+								<b-form-input v-model="form.manager2" tabindex="9" readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.dcuCount')">
+								<b-form-input v-model.number="form.dcuCount" type="number" min="0" tabindex="11" readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.meterCount')">
+								<b-form-input v-model.number="form.meterCount" type="number" min="0" tabindex="13" readonly />
+							</b-form-group>
+						</div>
+						<div class="modal-2nd-box">
+							<b-form-group label-for="estateName" :invalid-feedback="$t('estate.modal.validation.estateName')" :state="estateNameState">
+								<template #label>{{ $t("estate.modal.estateName") }}<span>*</span></template>
+								<b-form-input
+									v-model="form.estateName"
+									:state="estateNameState"
+									@input="estateNameState = null"
+									tabindex="2"
+									required
+									readonly
+								/>
+							</b-form-group>
+							<b-form-group label-for="address" :invalid-feedback="$t('estate.modal.validation.address')" :state="addressState">
+								<template #label>{{ $t("estate.modal.address") }}<span>*</span></template>
+								<b-form-input v-model="form.address" :state="addressState" @input="addressState = null" tabindex="4" required readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.telEstate')">
+								<b-form-input v-model="form.telEstate" v-mask="telEstate" tabindex="6" readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.telManager1')">
+								<b-form-input v-model="form.telManager1" v-mask="telManager1" tabindex="8" readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.telManager2')">
+								<b-form-input v-model="form.telManager2" v-mask="telManager2" tabindex="10" readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.modemCount')">
+								<b-form-input type="number" v-model.number="form.modemCount" min="0" tabindex="12" readonly />
+							</b-form-group>
+							<b-form-group :label="$t('estate.modal.buildingHouseCount')">
+								<b-row>
+									<b-col cols="6">
+										<div id="tooltip-button-building" class="tooltip-button-building">0</div>
+									</b-col>
+									<b-tooltip target="tooltip-button-building"> {{ $t("estate.modal.buildingTooltip") }} </b-tooltip>
+									<b-col cols="6">
+										<div id="tooltip-button-number" class="tooltip-button-number">0</div>
+									</b-col>
+									<b-tooltip target="tooltip-button-number"> {{ $t("estate.modal.houseTooltip") }} </b-tooltip>
+								</b-row>
+							</b-form-group>
+						</div>
+						<div class="modal-3rd-box">
+							<b-form-group :label="$t('estate.modal.readingType')">
+								<b-form-checkbox-group>
+									<b-form-checkbox v-model="form.checkPower" unchecked-value="N" value="Y">
+										{{ $t("estate.modal.powerType") }}
+									</b-form-checkbox>
+								</b-form-checkbox-group>
+								<b-form-checkbox-group>
+									<b-form-checkbox v-model="form.checkGas" unchecked-value="N" value="Y" disabled
+										>{{ $t("estate.modal.gasType") }}
+									</b-form-checkbox>
+								</b-form-checkbox-group>
+								<b-form-checkbox-group>
+									<b-form-checkbox v-model="form.checkWater" unchecked-value="N" value="Y" disabled>
+										{{ $t("estate.modal.waterType") }}
+									</b-form-checkbox>
+								</b-form-checkbox-group>
+								<b-form-checkbox-group>
+									<b-form-checkbox v-model="form.checkHot" unchecked-value="N" value="Y" disabled
+										>{{ $t("estate.modal.hotType") }}
+									</b-form-checkbox>
+								</b-form-checkbox-group>
+								<b-form-checkbox-group>
+									<b-form-checkbox v-model="form.checkHeating" unchecked-value="N" value="Y" disabled>
+										{{ $t("estate.modal.heatingType") }}
+									</b-form-checkbox>
+								</b-form-checkbox-group>
+							</b-form-group>
+						</div>
+						<div class="modal-4th-box">
+							<b-form-group :label="$t('estate.modal.metering')">
+								<b-input-group>
+									<ul class="bg">
+										<li>
+											<b-form-group :label="$t('estate.modal.powerDay')">
+												<b-form-input type="number" v-model.number="form.dayPower" v-mask="mask" tabindex="16" readonly />
+											</b-form-group>
+										</li>
+										<li>
+											<b-form-group :label="$t('estate.modal.gasDay')">
+												<b-form-input v-model="form.dayGas" v-mask="mask" type="number" tabindex="17" readonly />
+											</b-form-group>
+										</li>
+										<li>
+											<b-form-group :label="$t('estate.modal.waterDay')">
+												<b-form-input type="number" v-model.number="form.dayWater" v-mask="mask" tabindex="18" readonly />
+											</b-form-group>
+										</li>
+										<li>
+											<b-form-group :label="$t('estate.modal.hotDay')">
+												<b-form-input type="number" v-model.number="form.dayHot" v-mask="mask" tabindex="19" readonly />
+											</b-form-group>
+										</li>
+										<li>
+											<b-form-group :label="$t('estate.modal.heatingDay')">
+												<b-form-input type="number" v-model.number="form.dayHeating" v-mask="mask" tabindex="20" readonly />
+											</b-form-group>
+										</li>
+									</ul>
+									<b-input-group-append>
+										<b-button variant="light">{{ $t("estate.modal.changeDay") }}</b-button>
+									</b-input-group-append>
+								</b-input-group>
+							</b-form-group>
+						</div>
+					</b-form>
+				</div>
+				<!---->
 			</div>
-			<!---->
 		</b-overlay>
 	</b-modal>
 </template>
