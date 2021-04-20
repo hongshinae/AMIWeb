@@ -46,23 +46,26 @@
 						<b-tab title="기본설정" active>
 							<template #title> </template>
 							<div class="modal-1st-box">
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
-								<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
-								<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
+								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
+								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.osVersion')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.firmwareVersion')" />
 							</div>
 							<div class="modal-2nd-box">
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
+								<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
+								<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterType.title')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpEncrypt')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpFunctionState')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuStatus')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.hardwareVersion')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mibVersion')" />
 								<b-form-group label="ROUTER IP" label-for="">
 									<b-input-group>
 										<b-form-input placeholder="10"></b-form-input>
@@ -71,40 +74,16 @@
 										</b-input-group-append>
 									</b-input-group>
 								</b-form-group>
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.hardwareVersion')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpEncrypt')" />
 							</div>
 						</b-tab>
 						<b-tab title="설정 정보">
 							<div class="modal-1st-box">
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
-								<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
-								<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" />
 							</div>
 							<div class="modal-2nd-box">
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterCount')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuFepTimeout')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuFepTrap')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.cpuReset')" />
 							</div>
 							<div class="modal-3rd-box">
 								<div class="table-wrap">
@@ -181,29 +160,14 @@
 						</b-tab>
 						<b-tab title="보안 정보">
 							<div class="modal-1st-box">
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
-								<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
-								<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macA')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macB')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.macC')" />
-							</div>
-							<div class="modal-2nd-box">
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterCount')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.readingAgent')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.pnID')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.osPassword')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.acodeRO')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.acodeRW')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mac')" />
 							</div>
+							<div class="modal-2nd-box"></div>
 						</b-tab>
 					</b-tabs>
 				</li>
