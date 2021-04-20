@@ -23,8 +23,17 @@
 			<!-- Button with custom close trigger value -->
 		</template>
 		<div class="modal-content-wrap">
-			핑테스트? 재부팅... 포토샵 디자인 필요
-			<div class=""></div>
+			<div class="btn-wrap">
+				<ul>
+					<li><b-button variant="light">DCU 재부팅</b-button></li>
+				</ul>
+			</div>
+			<div class="test-wrap">
+				1121.2102.ss.ss25122ss d ssd d d4512<br />
+				1121.2ssss102..2512sss2 d d d d4512<br />
+				1121.2102.ss.25122 d sssd d d4512<br />
+				1121.21sss
+			</div>
 		</div>
 		<!---->
 	</b-modal>
