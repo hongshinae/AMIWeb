@@ -67,4 +67,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.power {
+	.highcharts-yaxis-grid .highcharts-grid-line {
+		stroke: #232f4b !important;
+	}
+	.highcharts-point {
+		stroke: none !important;
+	}
+	.highcharts-color-1 {
+		fill: #1ee2df !important;
+	}
+	.highcharts-color-0 {
+		fill: #feff85 !important;
+	}
+}
+</style>
