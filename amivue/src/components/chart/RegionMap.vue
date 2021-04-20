@@ -1,7 +1,7 @@
 <template>
 	<div class="highch">
 		<!-- <chart :constructor-type="'stockChart'" :options="chartOptions" /> -->
-		<high-chart :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" :callback="init" />
+		<high-chart :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" :callback="init" style="width:500px;height:800px" />
 	</div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
 		HighChart: Chart
 	},
 	created() {
-		console.log(this.chartOptions, this.data);
+		// console.log(this.chartOptions, this.data);
 	},
 	computed: {
 		chartOptions() {
@@ -33,7 +33,7 @@ export default {
 				},
 
 				title: {
-					text: "Korea"
+					text: "확산사업 운영 정보"
 				},
 
 				mapNavigation: {
@@ -94,8 +94,8 @@ export default {
 		};
 	},
 	methods: {
-		init(chart) {
-			console.log(chart);
+		init() {
+			// console.log(chart);
 		}
 	}
 };

@@ -9,7 +9,7 @@
 				<total-voltage />
 				<reading />
 				<today-fault />
-				<today-info />
+				<today-weather />
 			</b-col>
 			<b-col xl="4" lg="6" md="12" sm="12">
 				<region-map />
@@ -38,7 +38,7 @@ import DashboardTimer from "@/components/DashboardTimer";
 import TotalVoltage from "@/components/chart/TotalVoltage";
 import Reading from "@/components/chart/Reading";
 import TodayFault from "@/components/chart/TodayFault";
-import TodayInfo from "@/components/chart/TodayInfo";
+import TodayWeather from "@/components/chart/TodayWeather";
 import EquipmentState from "@/components/chart/EquipmentState";
 import ServerInfo from "@/components/chart/ServerInfo";
 import RegionUsage from "@/components/chart/RegionUsage";
@@ -52,7 +52,7 @@ export default {
 		TotalVoltage,
 		Reading,
 		TodayFault,
-		TodayInfo,
+		TodayWeather,
 		EquipmentState,
 		ServerInfo,
 		RegionUsage,

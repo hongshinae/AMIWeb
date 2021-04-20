@@ -2,18 +2,69 @@
 	<div class="box">
 		<h5>
 			금일 장애
-			<b class="fontC">5건</b>
+			<b class="fontC">{{ failureTodayCount }} 건</b>
 		</h5>
 		<div class="chartWarp">
 			<div class="">
-				<img src="@/assets/images/charhimg03.png" alt="" title="" />
+				<high-charts :options="chartOptions" />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-export default {};
+import Dashboard from "@/service/dashboard";
+import { Chart } from "highcharts-vue";
+let sse;
+
+export default {
+	components: {
+		HighCharts: Chart
+	},
+	mounted() {
+		sse = Dashboard.todayFault(5);
+		sse.onerror = function() {};
+		sse.onopen = function() {};
+		sse.onmessage = e => {
+			const data = JSON.parse(e.data).response;
+			this.today = data.arrayData;
+			this.failureTodayCount = data.failureTodayCount;
+		};
+	},
+	computed: {
+		chartOptions: {
+			cache: false,
+			get() {
+				return {
+					chart: {
+						type: this.chartName
+					},
+					title: "",
+					menu: false,
+					series: [
+						{
+							name: "오늘",
+							data: this.today.map(item => item.count)
+						}
+					]
+				};
+			}
+		}
+	},
+	data() {
+		return {
+			today: [],
+			failureTodayCount: 0,
+			chartName: "column"
+		};
+	},
+	beforeDestroy() {
+		if (sse) {
+			sse.close();
+			console.log("SSE Destroyed!!");
+		}
+	}
+};
 </script>
 
 <style></style>
