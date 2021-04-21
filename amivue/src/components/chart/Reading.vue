@@ -77,7 +77,7 @@ export default {
 	beforeDestroy() {
 		if (sse) {
 			sse.close();
-			console.log("SSE Destroyed!!");
+			console.log("Reading SSE Destroyed!!");
 		}
 	}
 };

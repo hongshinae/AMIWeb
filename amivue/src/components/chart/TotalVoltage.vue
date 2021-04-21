@@ -67,7 +67,7 @@ export default {
 	beforeDestroy() {
 		if (sse) {
 			sse.close();
-			console.log("SSE Destroyed!!");
+			console.log("TotalVoltage SSE Destroyed!!");
 		}
 	}
 };

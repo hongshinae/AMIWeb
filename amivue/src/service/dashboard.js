@@ -66,5 +66,18 @@ export default {
 			withCredentials: true,
 			heartbeatTimeout: 300000
 		});
+	},
+	serverInfo(sec) {
+		if (!sec) {
+			sec = 60;
+		}
+
+		const token = Store.state.userStore.token.accessToken;
+		return new EventSourcePolyfill("/api/dashboard/server/management/info?duration=" + sec, {
+			headers: { "x-token": token },
+			format: "json",
+			withCredentials: true,
+			heartbeatTimeout: 300000
+		});
 	}
 };

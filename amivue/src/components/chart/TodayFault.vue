@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Dashboard from "@/service/dashboard";
+// import Dashboard from "@/service/dashboard";
 import { Chart } from "highcharts-vue";
 let sse;
 
@@ -22,14 +22,14 @@ export default {
 		HighCharts: Chart
 	},
 	mounted() {
-		sse = Dashboard.todayFault(5);
-		sse.onerror = function() {};
-		sse.onopen = function() {};
-		sse.onmessage = e => {
-			const data = JSON.parse(e.data).response;
-			this.today = data.arrayData;
-			this.failureTodayCount = data.failureTodayCount;
-		};
+		// sse = Dashboard.todayFault(5);
+		// sse.onerror = function() {};
+		// sse.onopen = function() {};
+		// sse.onmessage = e => {
+		// 	const data = JSON.parse(e.data).response;
+		// 	this.today = data.arrayData;
+		// 	this.failureTodayCount = data.failureTodayCount;
+		// };
 	},
 	computed: {
 		chartOptions: {
@@ -61,7 +61,7 @@ export default {
 	beforeDestroy() {
 		if (sse) {
 			sse.close();
-			console.log("SSE Destroyed!!");
+			console.log("TodayFault SSE Destroyed!!");
 		}
 	}
 };

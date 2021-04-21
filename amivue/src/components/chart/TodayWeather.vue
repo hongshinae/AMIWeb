@@ -47,11 +47,11 @@ export default {
 	beforeDestroy() {
 		if (todaySse) {
 			todaySse.close();
-			console.log("todaySse Destroyed!!");
+			console.log("TodayWeather_todaySse Destroyed!!");
 		}
 		if (dataSse) {
 			dataSse.close();
-			console.log("dataSse Destroyed!!");
+			console.log("TodayWeather_dataSse Destroyed!!");
 		}
 	}
 };

@@ -4,9 +4,9 @@
 			<div class="logo"></div>
 			<div class="lnputWrap">
 				<form action="/dashboard" @submit.prevent="login({ userid, password })">
-					<b-input v-model="userid" placeholder="id"></b-input>
-					<b-input type="password" v-model="password" placeholder="password"></b-input>
-					<b-button type="submit" block variant="primary">로그인</b-button>
+					<b-input v-model="userid" placeholder="id" @input="msg = ''"></b-input>
+					<b-input type="password" v-model="password" placeholder="password" @input="msg = ''"></b-input>
+					<b-button type="submit" block variant="primary" :disabled="disabled">로그인</b-button>
 					<div class="error" v-if="msg">{{ msg }}</div>
 				</form>
 			</div>
@@ -34,7 +34,8 @@ export default {
 		return {
 			msg: "",
 			userid: "",
-			password: ""
+			password: "",
+			disabled: false
 		};
 	},
 	methods: {
@@ -42,6 +43,7 @@ export default {
 		...mapActions({ loginAction: "LOGIN", regionsAction: "REGIONS", estatesAction: "ESTATES" }),
 		login({ userid, password }) {
 			this.msg = "로그인 중...";
+			this.disabled = true;
 			this.loginAction({ userid, password })
 				.then(async () => {
 					try {
@@ -58,9 +60,13 @@ export default {
 					} catch (error) {
 						console.log(error);
 						this.msg = "시스템 환경구성에 실패하였습니다. 관리자에게 문의해주세요.";
+					} finally {
+						this.disabled = false;
 					}
 				})
 				.catch(response => {
+					this.disabled = false;
+
 					try {
 						this.msg = response.data.response.error_message;
 					} catch (e) {
