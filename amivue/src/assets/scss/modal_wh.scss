@@ -172,6 +172,13 @@
 	ul[role="tablist"] {
 		display: block;
 	}
+	.input-empty-box {
+		width: 100%;
+		height: 32px;
+	}
+	.input-empty-label legend {
+		color: #fff;
+	}
 }
 
 #addEstate .modal-dialog,
