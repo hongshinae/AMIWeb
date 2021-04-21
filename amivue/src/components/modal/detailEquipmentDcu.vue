@@ -6,6 +6,9 @@
 					<h4>{{ address }}</h4>
 				</li>
 				<li>
+					<h4><input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" /></h4>
+				</li>
+				<li>
 					<b-button size="sm" variant="modal-header" disabled>
 						SNMP READ
 					</b-button>
@@ -73,8 +76,8 @@
 						<b-tab :title="$t('equipment.tab.settings')" class="setting-info-wrap">
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" class="input-empty-label" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" class="input-empty-label" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.packetLength')" />
 							</div>
 							<div class="modal-2nd-box">
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuFepTimeout')" />

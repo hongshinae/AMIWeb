@@ -276,6 +276,7 @@
 				"dcuModel": "DCU 모델번호",
 				"dcuMac": "MAC 번호",
 				"tMask": "T-Mask",
+				"packetLength": "패킷 Length",
 				"macA": "Master mod. A",
 				"macB": "Master mod. B",
 				"macC": "Master mod. C",
