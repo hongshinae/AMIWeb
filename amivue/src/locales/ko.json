@@ -254,7 +254,7 @@
 			"dcu": "DCU",
 			"meter": "METER",
 			"other": "가스, 수도, 온수, 난방",
-			"default": "기본 정보",
+			"default": "기본 설정",
 			"settings": "설정 정보",
 			"security": "보안 정보"
 		},

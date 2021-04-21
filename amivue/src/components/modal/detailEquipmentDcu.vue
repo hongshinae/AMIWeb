@@ -43,7 +43,7 @@
 			<ul class="left-wrap">
 				<li class="left">
 					<b-tabs v-model="tabIndex" :no-nav-style="true">
-						<b-tab title="기본설정" active>
+						<b-tab :title="$t('equipment.tab.default')" active>
 							<template #title> </template>
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.sysSerial" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" />
@@ -70,7 +70,7 @@
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mibVersion')" />
 							</div>
 						</b-tab>
-						<b-tab title="설정 정보" class="setting-info-wrap">
+						<b-tab :title="$t('equipment.tab.settings')" class="setting-info-wrap">
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" class="input-empty-label" />
@@ -84,7 +84,6 @@
 							<div class="modal-3rd-box">
 								<div class="table-wrap">
 									<div class="basic-table">
-										<b-table :striped="true" :items="meterTypeList"> </b-table>
 										<table class="table b-table">
 											<thead role="rowgroup">
 												<tr role="row">
@@ -154,7 +153,7 @@
 								</div>
 							</div>
 						</b-tab>
-						<b-tab title="보안 정보">
+						<b-tab :title="$t('equipment.tab.security')">
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.pnID')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.osPassword')" />
