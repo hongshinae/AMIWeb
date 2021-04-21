@@ -265,6 +265,7 @@
 				"detail": "DCU 상세",
 				"dcuId": "DCU ID",
 				"dcuIp": "DCU IP",
+				"dcuPort": "DCU PORT",
 				"routerIp": "ROUTER IP",
 				"installDate": "설치 일자",
 				"installLocation": "설치 위치",

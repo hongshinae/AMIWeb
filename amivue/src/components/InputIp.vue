@@ -1,14 +1,19 @@
 <template>
 	<b-form-group :label="label" label-for="" class="input-ip-wrap">
-		<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" maxlength="2" />
-		<span>.</span>
-		<b-form-input ref="ip2" :value="ip2" v-mask="'###'" placeholder="101" @input.native="handleIpInput" maxlength="3" />
-		<span>.</span>
-		<b-form-input ref="ip3" :value="ip3" v-mask="'###'" placeholder="235" @input.native="handleIpInput" />
-		<span>.</span>
-		<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="100" @input.native="handleIpInput" />
-		<span>:</span>
-		<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="8080" @input.native="handleIpInput" />
+		<b-input-group>
+			<div class="input-text-style">
+				<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" maxlength="2" />
+				<span>.</span>
+				<b-form-input ref="ip2" :value="ip2" v-mask="'###'" placeholder="101" @input.native="handleIpInput" maxlength="3" />
+				<span>.</span>
+				<b-form-input ref="ip3" :value="ip3" v-mask="'###'" placeholder="23" @input.native="handleIpInput" maxlength="2" />
+				<span>.</span>
+				<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="10" @input.native="handleIpInput" maxlength="2" />
+			</div>
+			<b-input-group-append>
+				<b-button variant="light">수정</b-button>
+			</b-input-group-append>
+		</b-input-group>
 	</b-form-group>
 </template>
 
@@ -96,16 +101,21 @@ export default {
 
 <style lang="scss">
 .input-ip-wrap {
+	.input-text-style {
+		width: 182px;
+		border-radius: 4px 0px 0px 4px;
+		border: 1px solid #ced4da;
+		padding: 5px;
+		height: 32px;
+	}
 	input {
-		width: 17%;
+		width: 22%;
+		height: calc(1.5em + 0.2rem);
+		border-radius: 0;
+		background: #ddd;
 		display: inline;
 		padding: 0.375rem 0.5rem;
-	}
-	input:nth-child(1) {
-		width: 16%;
-	}
-	input:nth-child(9) {
-		width: 20%;
+		border: 0 none;
 	}
 	span {
 		width: 3%;
