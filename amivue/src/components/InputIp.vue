@@ -10,7 +10,7 @@
 				<span>.</span>
 				<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="10" @input.native="handleIpInput" maxlength="2" />
 			</div>
-			<b-input-group-append>
+			<b-input-group-append v-if="modify">
 				<b-button variant="light">수정</b-button>
 			</b-input-group-append>
 		</b-input-group>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-	props: ["label", "placeholder", "value"],
+	props: ["label", "placeholder", "value", "modify"],
 	computed: {
 		ip1() {
 			if (this.value) {

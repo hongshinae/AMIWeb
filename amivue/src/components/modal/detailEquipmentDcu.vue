@@ -46,8 +46,8 @@
 						<b-tab title="기본설정" active>
 							<template #title> </template>
 							<div class="modal-1st-box">
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuModel')" />
+								<input-normal v-model="dcu.sysSerial" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" />
+								<input-normal v-model="dcu.sysModel" :label="$t('equipment.dcu.modal.dcuModel')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
 								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
@@ -57,8 +57,8 @@
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.firmwareVersion')" />
 							</div>
 							<div class="modal-2nd-box">
-								<input-ip :label="$t('equipment.dcu.modal.dcuIp')" />
-								<input-ip :label="$t('equipment.dcu.modal.routerIp')" />
+								<input-ip :ip="dcu.dcuIp" :port="dcu.dcuPort" :modify="true" :label="$t('equipment.dcu.modal.dcuIp')" />
+								<input-ip :ip="dcu.dcuIp" :modify="true" :label="$t('equipment.dcu.modal.routerIp')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterType.title')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpEncrypt')" />
