@@ -343,7 +343,13 @@
 			"excelFileName": "장비관리_OTHER.xlsx"
 		}
 	},
-	"mapping": {},
+	"mapping": {
+		"button": {
+			"add": "신규 등록",
+			"save": "등록",
+			"cancel": "취소"
+		}
+	},
 	"server": {
 		"used": "실시간 사용률",
 		"serverMap": "서버 설치 구성도",

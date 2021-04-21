@@ -7,21 +7,18 @@
 				<div class="wbox m-b-20">
 					<div class="one-row">
 						<b-form-group label="검침 타입" label-for="">
-							<b-form-select v-model="readingType">
+							<b-form-select v-model="meterType" disabled>
 								<b-form-select-option value="1">전기</b-form-select-option>
-								<b-form-select-option value="12">수도</b-form-select-option>
 							</b-form-select>
 						</b-form-group>
 						<b-form-group label="지역 코드" label-for="">
-							<b-form-select v-model="regionCode">
-								<b-form-select-option value="1">서울시</b-form-select-option>
-								<b-form-select-option value="22">경기도</b-form-select-option>
-							</b-form-select>
+							<b-form-select v-model="region" :options="regionList" text-field="regionName" value-field="regionSeq" @input="updateEstate" />
 						</b-form-group>
 						<b-form-group label="단지 명" label-for="">
-							<b-form-select v-model="estateCode">
-								<b-form-select-option value="1">서울 아파트</b-form-select-option>
-								<b-form-select-option value="12">판교 아파트</b-form-select-option>
+							<b-form-select v-model="estate" :options="estateList" text-field="estateName" value-field="estateSeq">
+								<template #first>
+									<b-form-select-option :value="null" v-if="estateList.length == 0">-- 없음 --</b-form-select-option>
+								</template>
 							</b-form-select>
 						</b-form-group>
 						<b-button block variant="light">검색</b-button>
@@ -71,17 +68,16 @@
 			</b-col>
 			<b-col col lg="12" xl="8">
 				<content-table
-					:busy="isBusy"
-					:items="mappingFilterList"
+					:isBusy="isBusy"
+					:items="mappingList"
 					:fields="mappingFields"
-					:perpage="true"
-					:filter="filterList"
-					@update:selected="callbackEvent"
+					:isPerPage="true"
+					:showFilterList="showFilterList"
 					:excelFileName="$t('estate.excelFileName')"
 					:excelSheetName="$t('menu.device.estate')"
 				>
 					<template #table-header-left-head>
-						<b-button v-b-modal="'addMapping'" variant="light"><b-icon icon="pencil-fill"></b-icon>{{ $t("estate.button.add") }}</b-button>
+						<b-button v-b-modal="'addMapping'" variant="light"><b-icon icon="pencil-fill" />{{ $t("mapping.button.add") }}</b-button>
 					</template>
 					<template v-slot:table-header-right> </template>
 					<template #table-cell-remark>
@@ -93,65 +89,34 @@
 	</div>
 </template>
 <script>
-import Mapping from "@/service/mapping";
+// import Mapping from "@/service/mapping";
 import AddMapping from "@/components/modal/addMapping";
 import ContentHeader from "@/components/content/ContentHeader";
 import ContentTable from "@/components/content/ContentTable";
 
+import { mapGetters } from "vuex";
+
 export default {
 	components: { AddMapping, ContentHeader, ContentTable },
 	created() {
-		Mapping.region()
-			.then(({ data }) => {
-				this.regionList = data.response;
-
-				// if (this.regionList.length > 0) {
-				// 	this.searchEstates(this.regionList[0].regionSeq);
-				// }
-			})
-			.catch(error => {
-				console.log(error);
-			});
+		// Mapping.region()
+		// 	.then(({ data }) => {
+		// 		this.regionList = data.response;
+		// 		// if (this.regionList.length > 0) {
+		// 		// 	this.searchEstates(this.regionList[0].regionSeq);
+		// 		// }
+		// 	})
+		// 	.catch(error => {
+		// 		console.log(error);
+		// 	});
 	},
-	mounted() {},
+	mounted() {
+		console.log(this.region, this.estateList);
+	},
 	computed: {
-		mappingFilterList() {
-			return [
-				{
-					dcuId: "test",
-					meterId: "test2",
-					dtime: "test3",
-					demand: "test4",
-					etime: "test5",
-					acc: "test6",
-					demanda: "test7",
-					etimea: "test8",
-					acca: "test10"
-				}
-			];
-		},
-		filterList: function() {
-			return [
-				{
-					label: this.$t("estate.filter.region"),
-					type: Array,
-					options: this.regionList,
-					textField: "regionName",
-					valueField: "regionSeq",
-					eventName: "region",
-					filterFieldKey: "regionName"
-				},
-				{
-					label: this.$t("estate.filter.estateName"),
-					type: String,
-					text: this.filterText,
-					options: this.estates,
-					textField: "estateName",
-					valueField: "estateSeq",
-					eventName: "estate",
-					placeholder: this.placeholder
-				}
-			];
+		...mapGetters({ regionList: "getRegions", getEstate: "getEstateByRegion" }),
+		estateList() {
+			return this.getEstate(this.region);
 		}
 	},
 	data() {
@@ -163,9 +128,11 @@ export default {
 				{ name: this.$t("menu.device.title") },
 				{ name: this.$t("menu.device.mapping") }
 			],
-			readingType: "1",
-			regionCode: "1",
-			estateCode: "1",
+			meterType: "1",
+			region: 1,
+			estate: 1,
+			showFilterList: [],
+			mappingList: [],
 			mappingFields: [
 				{
 					key: "dcuId",
@@ -207,11 +174,11 @@ export default {
 		};
 	},
 	methods: {
-		callbackEvent({ eventName, value }) {
-			if (eventName == "region") {
-				this.searchEstates(value);
-			} else if (eventName == "estate") {
-				this.filterText = value;
+		updateEstate() {
+			this.estate = null;
+
+			if (this.estateList.length > 0) {
+				this.estate = this.estateList[0].estateSeq;
 			}
 		}
 	}
