@@ -329,6 +329,9 @@
 	}
 	.tab-content {
 		padding: 20px;
+		.tab-pane:nth-child(1) .modal-1st-box fieldset:nth-child(2) {
+			height: 75px;
+		}
 	}
 	.modal-1st-box {
 		width: 320px;

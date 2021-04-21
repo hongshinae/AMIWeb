@@ -51,7 +51,6 @@
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.sysSerial" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" />
 								<input-normal v-model="dcu.sysModel" :label="$t('equipment.dcu.modal.dcuModel')" />
-								<div class="input-empty-box"></div>
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
 								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
