@@ -90,7 +90,7 @@
 					<p class="dcu-name">DCU ID 2</p>
 				</b-col>
 				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
-					<b-overlay id="overlay-background" show :variant="variant" :opacity="opacity" :blur="blur" rounded="sm">
+					<b-overlay id="overlay-background" show variant="light" opacity="0.85" blur="2px" rounded="sm">
 						<div class="wbox">
 							<div class="stats-wrap">
 								<span class="linkage"></span>
@@ -104,7 +104,7 @@
 			</b-row>
 		</div>
 		<div class="overlay-wrap">
-			<b-overlay id="overlay-background" show :variant="variant" :opacity="opacity" :blur="blur" rounded="sm"> </b-overlay>
+			<b-overlay id="overlay-background" show variant="light" opacity="0.85" blur="2px" rounded="sm"></b-overlay>
 		</div>
 	</div>
 </template>
