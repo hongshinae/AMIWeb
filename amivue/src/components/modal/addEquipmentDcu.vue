@@ -47,9 +47,6 @@
 					<b-form-group v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuPort')">
 						<b-input-group>
 							<b-form-input placeholder="88080"></b-form-input>
-							<b-input-group-append>
-								<b-button variant="light">수정</b-button>
-							</b-input-group-append>
 						</b-input-group>
 					</b-form-group>
 					<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />

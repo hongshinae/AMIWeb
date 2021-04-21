@@ -48,6 +48,7 @@
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.sysSerial" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" />
 								<input-normal v-model="dcu.sysModel" :label="$t('equipment.dcu.modal.dcuModel')" />
+								<div class="input-empty-box"></div>
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
 								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
@@ -58,6 +59,7 @@
 							</div>
 							<div class="modal-2nd-box">
 								<input-ip :ip="dcu.dcuIp" :port="dcu.dcuPort" :modify="true" :label="$t('equipment.dcu.modal.dcuIp')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuPort')" />
 								<input-ip :ip="dcu.dcuIp" :modify="true" :label="$t('equipment.dcu.modal.routerIp')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterType.title')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
@@ -66,19 +68,13 @@
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuStatus')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.hardwareVersion')" />
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mibVersion')" />
-								<b-form-group label="ROUTER IP" label-for="">
-									<b-input-group>
-										<b-form-input placeholder="10"></b-form-input>
-										<b-input-group-append>
-											<b-button variant="light">검침일</b-button>
-										</b-input-group-append>
-									</b-input-group>
-								</b-form-group>
 							</div>
 						</b-tab>
 						<b-tab title="설정 정보" class="setting-info-wrap">
 							<div class="modal-1st-box">
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" class="input-empty-label" />
+								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" class="input-empty-label" />
 							</div>
 							<div class="modal-2nd-box">
 								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuFepTimeout')" />
