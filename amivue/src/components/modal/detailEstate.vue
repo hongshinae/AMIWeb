@@ -9,30 +9,30 @@
 		@ok="okDetailEstate"
 		@cancel="cancel"
 	>
-		<b-overlay id="overlay-background" show :variant="variant" :opacity="opacity" :blur="blur" rounded="sm">
-			<template #modal-header="{ close }">
+		<template #modal-header="{ close }">
+			<ul>
+				<li>
+					<h4>{{ $t("estate.modal.detail") }}</h4>
+				</li>
+				<li>
+					<b-button size="sm" variant="outline-light" @click="close()">
+						X
+					</b-button>
+				</li>
+			</ul>
+		</template>
+		<template #modal-footer="{ ok, cancel }">
+			<div class="btn-wrap">
 				<ul>
+					<li></li>
 					<li>
-						<h4>{{ $t("estate.modal.detail") }}</h4>
-					</li>
-					<li>
-						<b-button size="sm" variant="outline-light" @click="close()">
-							X
-						</b-button>
+						<b-button variant="light" @click="ok()" tabindex="21" disabled>저장</b-button>
+						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
 					</li>
 				</ul>
-			</template>
-			<template #modal-footer="{ ok, cancel }">
-				<div class="btn-wrap">
-					<ul>
-						<li></li>
-						<li>
-							<b-button variant="light" @click="ok()" tabindex="21" disabled>저장</b-button>
-							<b-button variant="light" @click="cancel()">돌아 가기</b-button>
-						</li>
-					</ul>
-				</div>
-			</template>
+			</div>
+		</template>
+		<b-overlay id="overlay-background" :show="isLoading" variant="light" opacity="0.85" blur="2px" rounded="sm">
 			<div class="modal-content-wrap">
 				<div class="center">
 					<modal-alert ref="DetailEstateAlert" :title="alertTitle" :message="alertMessage" />
@@ -259,7 +259,8 @@ export default {
 			telEstate: this.getPhoneMask,
 			telManager1: this.getPhoneMask,
 			telManager2: this.getPhoneMask,
-			mask: this.getDayMask
+			mask: this.getDayMask,
+			isLoading: true
 		};
 	},
 	methods: {
