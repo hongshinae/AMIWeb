@@ -102,7 +102,7 @@ export default {
 <style lang="scss">
 .input-ip-wrap {
 	.input-text-style {
-		width: 182px;
+		width: 156px;
 		border-radius: 4px 0px 0px 4px;
 		border: 1px solid #ced4da;
 		padding: 5px;
@@ -123,6 +123,11 @@ export default {
 		text-align: center;
 		height: 29px;
 		line-height: 29px;
+	}
+}
+#addEquipmentDcu .input-ip-wrap {
+	.input-text-style {
+		width: inherit;
 	}
 }
 </style>
