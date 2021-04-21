@@ -159,13 +159,15 @@
 	}
 	.high-table {
 		position: absolute;
+		top: -228px;
+		right: 0;
 		width: 258px;
-		height: 155px;
+		height: 130px;
 		background: linear-gradient(70deg, rgba(13, 24, 25, 0.08), #0f1e35, rgba(13, 24, 25, 0.08));
 		box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 11%);
 		ul li {
 			text-align: center;
-			height: 43px;
+			height: 40px;
 			span {
 				width: 80px;
 				height: 43px;

@@ -45,8 +45,8 @@ export default {
 
 				colorAxis: {
 					min: 0,
-					minColor: "#efecf3", //min컬러
-					maxColor: "#990041" //max컬러
+					minColor: "#1d2946", //min컬러
+					maxColor: "#1e44a0" //max컬러
 				},
 
 				series: [
@@ -55,8 +55,8 @@ export default {
 						name: "DCU Fault",
 						states: {
 							hover: {
-								color: "#FF00FF", // 마우스 오버 색상
-								borderColor: "white" // 테두리 색상
+								color: "#14FAB1", // 마우스 오버 색상
+								borderColor: "none" // 테두리 색상
 							}
 						},
 						dataLabels: {
@@ -101,4 +101,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.highcharts-title {
+	font-size: 14px !important;
+}
+.highcharts-point {
+	stroke: none;
+}
+</style>
