@@ -275,6 +275,7 @@ export default {
 			return result;
 		},
 		showDetailEstate(/* event */) {
+			this.isLoading = true;
 			this.estateIdState = null;
 			this.estateNameState = null;
 			this.houseCountState = null;
@@ -310,6 +311,7 @@ export default {
 			await Estate.info({ estateId: this.item.estateId })
 				.then(({ data }) => {
 					this.form = data.response;
+					this.isLoading = false;
 				})
 				.catch(({ response }) => {
 					const code = response.data.response.error_code;

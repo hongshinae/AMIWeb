@@ -40,6 +40,7 @@ export default {
 					chart: {
 						type: this.chartName
 					},
+					exporting: { enabled: false },
 					title: "",
 					menu: false,
 					series: [

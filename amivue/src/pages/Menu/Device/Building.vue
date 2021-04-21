@@ -69,7 +69,7 @@ export default {
 					label: this.$t("component.content.table.buildingName")
 				},
 				{
-					key: "dcuId",
+					key: "dcuMapp",
 					label: this.$t("component.content.table.dcuId")
 				},
 				{

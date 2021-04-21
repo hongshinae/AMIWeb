@@ -75,6 +75,9 @@
 					<template #emptyfiltered="scope">
 						<h4>{{ $t("msg.search.emptyText") || scope.emptyFilteredText }}</h4>
 					</template>
+					<template #cell(dcuMapp)="row">
+						{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}
+					</template>
 					<template #cell(systemState)="row">
 						<span :class="{ linkage: row.item.systemState == 1, unlinkage: row.item.systemState != 1 }"></span>
 					</template>
