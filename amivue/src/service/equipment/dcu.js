@@ -28,5 +28,47 @@ export default {
 			method: "get",
 			params: params
 		});
+	},
+	updateDcuIp(params) {
+		return Send({
+			url: "/device/equipment/dcu/update/dcuip",
+			method: "get",
+			params: params
+		});
+	},
+	updatePort(params) {
+		return Send({
+			url: "/device/equipment/dcu/update/port",
+			method: "get",
+			params: params
+		});
+	},
+	updateRouterIp(params) {
+		return Send({
+			url: "/device/equipment/dcu/update/routerip",
+			method: "get",
+			params: params
+		});
+	},
+	updateLocation(params) {
+		return Send({
+			url: "/device/equipment/dcu/update/location",
+			method: "get",
+			params: params
+		});
+	},
+	settingTime(params) {
+		return Send({
+			url: "/device/equipment/dcu/setting/time",
+			method: "get",
+			params: params
+		});
+	},
+	settingRescan(params) {
+		return Send({
+			url: "/device/equipment/dcu/setting/rescan",
+			method: "get",
+			params: params
+		});
 	}
 };
