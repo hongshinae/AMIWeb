@@ -101,11 +101,4 @@ export default {
 };
 </script>
 
-<style>
-.highcharts-title {
-	font-size: 14px !important;
-}
-.highcharts-point {
-	stroke: none;
-}
-</style>
+<style></style>
