@@ -3,7 +3,7 @@
 		<b-input-group>
 			<b-form-input :value="value" @input="$emit('input', $event)" :placeholder="placeholder" :disabled="disabled"></b-form-input>
 			<b-input-group-append v-if="modify">
-				<b-button variant="light">수정</b-button>
+				<b-button variant="light" @click="$emit('handle:modify', value)">수정</b-button>
 			</b-input-group-append>
 		</b-input-group>
 	</b-form-group>

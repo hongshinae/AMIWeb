@@ -36,7 +36,7 @@ export default {
 			params: params
 		});
 	},
-	updatePort(params) {
+	updateDcuPort(params) {
 		return Send({
 			url: "/device/equipment/dcu/update/port",
 			method: "get",

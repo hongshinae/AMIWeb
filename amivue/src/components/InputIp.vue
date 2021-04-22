@@ -1,5 +1,5 @@
 <template>
-	<b-form-group :label="label" label-for="" class="input-ip-wrap">
+	<b-form-group :label="label" label-for="" class="input-ip-wrap" :state="false" invalid-feedback="invalidFeedback">
 		<b-input-group>
 			<div class="input-text-style">
 				<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" maxlength="3" />
@@ -11,7 +11,7 @@
 				<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="10" @input.native="handleIpInput" maxlength="3" />
 			</div>
 			<b-input-group-append v-if="modify">
-				<b-button variant="light">수정</b-button>
+				<b-button variant="light" @click="handleModify">수정</b-button>
 			</b-input-group-append>
 		</b-input-group>
 	</b-form-group>
@@ -88,12 +88,28 @@ export default {
 				}
 			}
 
-			const ip1 = this.$refs.ip1.vModelValue;
-			const ip2 = this.$refs.ip2.vModelValue;
-			const ip3 = this.$refs.ip3.vModelValue;
-			const ip4 = this.$refs.ip4.vModelValue;
+			let ip1;
+			let ip2;
+			let ip3;
+			let ip4;
+			if (this.$refs.ip1) ip1 = this.$refs.ip1.vModelValue;
+			if (this.$refs.ip2) ip2 = this.$refs.ip2.vModelValue;
+			if (this.$refs.ip3) ip3 = this.$refs.ip3.vModelValue;
+			if (this.$refs.ip4) ip4 = this.$refs.ip4.vModelValue;
 			const ip = ip1 + "." + ip2 + "." + ip3 + "." + ip4;
 			this.$emit("input", ip);
+		},
+		handleModify() {
+			const ip1 = this.ip1;
+			const ip2 = this.ip2;
+			const ip3 = this.ip3;
+			const ip4 = this.ip4;
+
+			if (ip1 && ip2 && ip3 && ip4) {
+				this.$emit("handle:modify", ip1 + "." + ip2 + "." + ip3 + "." + ip4);
+			} else if (!ip1 && !ip2 && !ip3 && !ip4) {
+				this.$emit("handle:modify", "");
+			}
 		}
 	}
 };
