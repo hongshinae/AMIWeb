@@ -49,39 +49,39 @@
 						<b-tab :title="$t('equipment.tab.default')" active>
 							<template #title> </template>
 							<div class="modal-1st-box">
-								<input-normal v-model="dcu.sysSerial" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" />
-								<input-normal v-model="dcu.sysModel" :label="$t('equipment.dcu.modal.dcuModel')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuMac')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuType')" />
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network1" />
-								<input-select v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.network1')" :options="network2" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dtime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.osVersion')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.firmwareVersion')" />
+								<input-normal v-model="dcu.sysSerial" :label="$t('equipment.dcu.modal.dcuOriginalNumber')" :disabled="true" />
+								<input-normal v-model="dcu.sysModel" :label="$t('equipment.dcu.modal.dcuModel')" :disabled="true" />
+								<input-normal v-model="dcu.sysMac" :label="$t('equipment.dcu.modal.dcuMac')" :disabled="true" />
+								<input-normal v-model="dcu.sysDcuType" :label="$t('equipment.dcu.modal.dcuType')" :disabled="true" />
+								<input-normal v-model="dcu.sysWanCode" :label="$t('equipment.dcu.modal.sysWanCode')" :disabled="true" />
+								<input-normal v-model="dcu.sysCommCode" :label="$t('equipment.dcu.modal.sysCommCode')" :disabled="true" />
+								<input-normal v-model="dcu.dcuCurrentTime" :label="$t('equipment.dcu.modal.dtime')" :disabled="true" />
+								<input-normal v-model="dcu.sysOsVersion" :label="$t('equipment.dcu.modal.osVersion')" :disabled="true" />
+								<input-normal v-model="dcu.sysFirmWareVersion" :label="$t('equipment.dcu.modal.firmwareVersion')" :disabled="true" />
 							</div>
 							<div class="modal-2nd-box">
-								<input-ip :ip="dcu.dcuIp" :port="dcu.dcuPort" :modify="true" :label="$t('equipment.dcu.modal.dcuIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuPort')" />
-								<input-ip :ip="dcu.dcuIp" :modify="true" :label="$t('equipment.dcu.modal.routerIp')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.meterType.title')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.itime')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpEncrypt')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpFunctionState')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuStatus')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.hardwareVersion')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.mibVersion')" />
+								<input-ip :ip="dcu.dcuIp" :modify="true" :label="$t('equipment.dcu.modal.dcuIp')" />
+								<input-normal v-model="dcu.dcuPort" :label="$t('equipment.dcu.modal.dcuPort')" :modify="true" />
+								<input-ip :ip="dcu.routerIp" :modify="true" :label="$t('equipment.dcu.modal.routerIp')" />
+								<input-normal :label="$t('equipment.dcu.modal.meterCount')" :disabled="true" />
+								<input-normal v-model="dcu.sysUpTime" :label="$t('equipment.dcu.modal.upTime')" :disabled="true" />
+								<input-normal v-model="dcu.sysMibEncrypt" :label="$t('equipment.dcu.modal.snmpEncrypt')" :disabled="true" />
+								<input-normal v-model="dcu.sysSecurityStatus" :label="$t('equipment.dcu.modal.snmpSecurityStatus')" :disabled="true" />
+								<input-normal v-model="dcu.sysState" :label="$t('equipment.dcu.modal.dcuStatus')" :disabled="true" />
+								<input-normal v-model="dcu.sysHardWareVersion" :label="$t('equipment.dcu.modal.hardwareVersion')" :disabled="true" />
+								<input-normal v-model="dcu.sysMibVersion" :label="$t('equipment.dcu.modal.mibVersion')" :disabled="true" />
 							</div>
 						</b-tab>
 						<b-tab :title="$t('equipment.tab.settings')" class="setting-info-wrap">
 							<div class="modal-1st-box">
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.fepIpPort')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.tMask')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.packetLength')" />
+								<input-normal v-model="dcu.fepIp" :label="$t('equipment.dcu.modal.fepIpPort')" />
+								<input-normal v-model="dcu.tmask" :label="$t('equipment.dcu.modal.tMask')" />
+								<input-normal v-model="dcu.packetLength" :label="$t('equipment.dcu.modal.packetLength')" />
 							</div>
 							<div class="modal-2nd-box">
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuFepTimeout')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuFepTrap')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.cpuReset')" />
+								<input-normal v-model="dcu.timeOut" :label="$t('equipment.dcu.modal.dcuFepTimeout')" />
+								<input-normal v-model="dcu.trapInterval" :label="$t('equipment.dcu.modal.dcuFepTrap')" />
+								<input-normal v-model="dcu.sysReset" :label="$t('equipment.dcu.modal.cpuReset')" />
 							</div>
 							<div class="modal-3rd-box">
 								<div class="table-wrap">
@@ -157,12 +157,12 @@
 						</b-tab>
 						<b-tab :title="$t('equipment.tab.security')">
 							<div class="modal-1st-box">
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.pnID')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.osPassword')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.acodeRO')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.acodeRW')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRO')" />
-								<input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.snmpRW')" />
+								<input-normal v-model="dcu.pnid" :label="$t('equipment.dcu.modal.pnID')" :disabled="true" />
+								<input-normal :label="$t('equipment.dcu.modal.osPassword')" :disabled="true" />
+								<input-normal v-model="dcu.acodeReadOnly" :label="$t('equipment.dcu.modal.acodeRO')" :disabled="true" />
+								<input-normal v-model="dcu.acodeReadWrite" :label="$t('equipment.dcu.modal.acodeRW')" :disabled="true" />
+								<input-normal v-model="dcu.snmpReadOnly" :label="$t('equipment.dcu.modal.snmpRO')" :disabled="true" />
+								<input-normal v-model="dcu.snmpReadWrite" :label="$t('equipment.dcu.modal.snmpRW')" :disabled="true" />
 							</div>
 							<div class="modal-2nd-box"></div>
 						</b-tab>
@@ -174,23 +174,28 @@
 							<ul class="top">
 								<li>
 									<span>{{ $t("equipment.dcu.modal.dcuStatus") }}</span>
-									<b>{{ dcu.dcuStatus }}</b>
+									<b>{{ dcu.sysState }}</b>
 								</li>
 								<li>
 									<span>{{ $t("equipment.dcu.modal.dcuCoverStatus") }}</span>
-									<b>{{ dcu.dcuCoverStatus }}</b>
+									<b>{{ dcu.sysDcuCoverStatus }}</b>
 								</li>
 							</ul>
 							<div class="middle">
 								<ul>
 									<li>
-										<div class="info-box-name"><span>설비온도</span></div>
+										<div class="info-box-name">
+											<span>{{ $t("equipment.dcu.modal.equipmentTemperature") }}</span>
+										</div>
 										<div class="info-box-svgwrap">
 											<div class="temperature">
 												<img src="@/assets/svg/temperature.svg" />
 											</div>
 										</div>
-										<div class="info-box-data"><b>34.4</b><span>˚c</span></div>
+										<div class="info-box-data">
+											<b>{{ dcu.sysTempValue }}</b
+											><span>˚c</span>
+										</div>
 									</li>
 									<li>
 										<div class="info-box-name"><span>CPU</span></div>
@@ -199,7 +204,10 @@
 												<img src="@/assets/svg/monitor.svg" />
 											</div>
 										</div>
-										<div class="info-box-data"><b>99</b><span>%</span></div>
+										<div class="info-box-data">
+											<b>{{ dcu.sysCpuUsage }}</b
+											><span>%</span>
+										</div>
 									</li>
 									<li>
 										<div class="info-box-name"><span>MEMORY</span></div>
@@ -208,7 +216,10 @@
 												<img src="@/assets/svg/memory.svg" />
 											</div>
 										</div>
-										<div class="info-box-data"><b>15</b><span>%</span></div>
+										<div class="info-box-data">
+											<b>{{ dcu.sysMemoryUsage }}</b
+											><span>%</span>
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -262,12 +273,11 @@
 import InputIp from "@/components/InputIp";
 import InputLocation from "@/components/InputLocation";
 import InputNormal from "@/components/InputNormal";
-import InputSelect from "@/components/InputSelect";
 import EquipmentDcu from "@/service/equipment/dcu";
 
 export default {
 	props: { item: { type: Object } },
-	components: { InputIp, InputLocation, InputNormal, InputSelect },
+	components: { InputIp, InputLocation, InputNormal },
 	computed: {
 		address() {
 			return "서울 서울아파트 101동 101호";
@@ -279,14 +289,6 @@ export default {
 	data() {
 		return {
 			dcu: {},
-			network1: [
-				{ text: "LTE", value: 1 },
-				{ text: "5G", value: 2 }
-			],
-			network2: [
-				{ text: "HS-PLC", value: 1 },
-				{ text: "HS-PLC2", value: 2 }
-			],
 			form: {},
 			tabIndex: 0
 		};

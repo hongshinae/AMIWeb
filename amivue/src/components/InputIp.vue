@@ -2,13 +2,13 @@
 	<b-form-group :label="label" label-for="" class="input-ip-wrap">
 		<b-input-group>
 			<div class="input-text-style">
-				<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" maxlength="2" />
+				<b-form-input ref="ip1" :value="ip1" v-mask="'###'" placeholder="20" @input.native="handleIpInput" maxlength="3" />
 				<span>.</span>
 				<b-form-input ref="ip2" :value="ip2" v-mask="'###'" placeholder="101" @input.native="handleIpInput" maxlength="3" />
 				<span>.</span>
-				<b-form-input ref="ip3" :value="ip3" v-mask="'###'" placeholder="23" @input.native="handleIpInput" maxlength="2" />
+				<b-form-input ref="ip3" :value="ip3" v-mask="'###'" placeholder="23" @input.native="handleIpInput" maxlength="3" />
 				<span>.</span>
-				<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="10" @input.native="handleIpInput" maxlength="2" />
+				<b-form-input ref="ip4" :value="ip4" v-mask="'###'" placeholder="10" @input.native="handleIpInput" maxlength="3" />
 			</div>
 			<b-input-group-append v-if="modify">
 				<b-button variant="light">수정</b-button>

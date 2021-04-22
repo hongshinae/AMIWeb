@@ -270,7 +270,7 @@
 				"installDate": "설치 일자",
 				"installLocation": "설치 위치",
 
-				"itime": "DCU 동작시간",
+				"upTime": "DCU 동작시간",
 				"dtime": "DCU 현재시간",
 				"dcuOriginalNumber": "DCU 고유번호",
 				"dcuModel": "DCU 모델번호",
@@ -281,8 +281,8 @@
 				"macB": "Master mod. B",
 				"macC": "Master mod. C",
 
-				"network1": "간선망",
-				"network2": "인입망",
+				"sysWanCode": "간선망",
+				"sysCommCode": "인입망",
 				"dcuType": "DCU 종류",
 				"meterCount": "Meter count",
 				"readingAgent": "검침 Agent",
@@ -305,8 +305,9 @@
 				"firmwareVersion": "펌웨어버전",
 				"hardwareVersion": "하드웨어버전",
 				"snmpEncrypt": "SNMP 암호화",
-				"snmpFunctionState": "SNMP 기능 상태",
+				"snmpSecurityStatus": "SNMP 기능 상태",
 				"location": "위치정보",
+				"equipmentTemperature": "설비 온도",
 				"meterType": {
 					"title": "Meter Type",
 					"period": "현재 검침",
