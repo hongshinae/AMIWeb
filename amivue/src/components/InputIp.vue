@@ -112,13 +112,14 @@ export default {
 		width: 22%;
 		height: calc(1.5em + 0.2rem);
 		border-radius: 0;
-		background: #ddd;
+		background: #f1f1f1;
+		color: #000;
 		display: inline;
 		padding: 0.375rem 0.5rem;
 		border: 0 none;
 	}
 	span {
-		width: 3%;
+		width: 4%;
 		display: inline-block;
 		text-align: center;
 		height: 29px;
