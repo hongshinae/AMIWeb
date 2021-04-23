@@ -122,7 +122,7 @@
 .todayWeather,
 .detaeWeather {
 	height: 110px;
-	.good {
+	.pulsate-bck {
 		width: 32px;
 		height: 32px;
 		float: right;
@@ -131,10 +131,16 @@
 	}
 }
 
-.todayWeather .good {
-	background: url(../svg/weather_cloud.svg) 0 0 no-repeat;
+.todayWeather .codeSky1 {
+	background: url(../svg/weather_sun.svg) 0 0 no-repeat;
 }
-.detaeWeather .good {
+.detaeWeather .codeValue0 {
+	background: url(../svg/emo_smile2.svg) 0 0 no-repeat;
+}
+.detaeWeather .codeValue1 {
+	background: url(../svg/emo_stop.svg) 0 0 no-repeat;
+}
+.detaeWeather .codeValue2 {
 	background: url(../svg/emo_tear.svg) 0 0 no-repeat;
 }
 

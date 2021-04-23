@@ -22,7 +22,7 @@ export default {
 		HighCharts: Chart
 	},
 	mounted() {
-		sse = Dashboard.todayFault(5);
+		sse = Dashboard.todayFault(1);
 		sse.onerror = function() {};
 		sse.onopen = function() {};
 		sse.onmessage = e => {
@@ -59,8 +59,13 @@ export default {
 					credits: {
 						enabled: false
 					},
+					yAxis: {
+						title: null,
+						gridLineColor: "#232f4b"
+					},
 					title: "",
 					menu: false,
+					exporting: { enabled: false },
 					series: [
 						{
 							name: "오늘",

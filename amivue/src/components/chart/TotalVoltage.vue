@@ -22,7 +22,7 @@ export default {
 		HighCharts: Chart
 	},
 	mounted() {
-		sse = Dashboard.totalVoltage(5);
+		sse = Dashboard.totalVoltage(1);
 		sse.onerror = function() {};
 		sse.onopen = function() {};
 		sse.onmessage = e => {
@@ -59,6 +59,10 @@ export default {
 					},
 					credits: {
 						enabled: false
+					},
+					yAxis: {
+						title: null,
+						gridLineColor: "#232f4b"
 					},
 					exporting: { enabled: false },
 					title: "",

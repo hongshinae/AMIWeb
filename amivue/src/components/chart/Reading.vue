@@ -31,7 +31,7 @@ export default {
 		HighCharts: Chart
 	},
 	mounted() {
-		sse = Dashboard.readingRate(5);
+		sse = Dashboard.readingRate(1);
 		sse.onerror = function() {};
 		sse.onopen = function() {};
 		sse.onmessage = e => {
@@ -106,6 +106,9 @@ export default {
 						symbolWidth: 8,
 						symbolRadius: 4,
 						marginTop: 10,
+						align: "right",
+						verticalAlign: "top",
+						layout: "vertical",
 						itemStyle: {
 							fontSize: "0.9rem",
 							fontWeight: 100
@@ -123,7 +126,12 @@ export default {
 					credits: {
 						enabled: false
 					},
+					yAxis: {
+						title: null,
+						gridLineColor: "#232f4b"
+					},
 					title: "",
+					exporting: { enabled: false },
 					menu: false,
 					series: [
 						{
