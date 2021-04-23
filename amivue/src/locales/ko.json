@@ -337,13 +337,24 @@
 				"mac": "Modem MAC",
 				"deviceName": "Device Name",
 				"dcuId": "DCU ID",
+				"dcuIp": "DCU IP",
 				"meterReadingDay": "검침일",
 				"meterTime": "계량기 시각",
 				"lpPeriod": "LP 주기"
 			}
 		},
 		"other": {
-			"excelFileName": "장비관리_OTHER.xlsx"
+			"excelFileName": "장비관리_OTHER.xlsx",
+			"modal": {
+				"meterId": "METER ID",
+				"mac": "Modem MAC",
+				"deviceName": "Device Name",
+				"gatewayId": "Gateway ID",
+				"readingDay": "검침일",
+				"meterTime": "계량기 시각",
+				"lpPeriod": "LP 주기",
+				"readingType": "검침 타입"
+			}
 		}
 	},
 	"mapping": {

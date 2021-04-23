@@ -34,20 +34,32 @@
 					<div class="svg-input">
 						<ul>
 							<li>
-								<div class="meter-value">10000<span class="blink">.</span>00</div>
+								<div class="meter-value">{{ lpUp }}<span class="blink">.</span>{{ lpDown }}</div>
 								<input-normal v-model="meter.meterId" :label="$t('equipment.meter.modal.meterId')" :disabled="true" />
 								<input-normal v-model="meter.mac" :label="$t('equipment.meter.modal.mac')" :disabled="true" />
 								<input-normal v-model="meter.deviceName" :label="$t('equipment.meter.modal.deviceName')" :disabled="true" />
 							</li>
 							<li>
 								<input-normal v-model="meter.dcuId" :label="$t('equipment.meter.modal.dcuId')" :disabled="true" />
-								<input-normal v-model="meter.meterReadingDay" :label="$t('equipment.meter.modal.meterReadingDay')" button="검침일" />
+								<input-normal v-model="meter.dcuIp" :label="$t('equipment.meter.modal.dcuIp')" :disabled="true" />
+								<input-normal
+									v-model="meter.meterReadingDay"
+									:label="$t('equipment.meter.modal.meterReadingDay')"
+									button="검침일"
+									@handle:action="settingReadingDay"
+								/>
 								<input-normal
 									:value="$moment(meter.meterTime).format('YYYY-MM-DD HH:mm:ss')"
 									:label="$t('equipment.meter.modal.meterTime')"
 									button="시각설정"
+									@handle:action="settingTime"
 								/>
-								<input-normal v-model="meter.lpPeriod" :label="$t('equipment.meter.modal.lpPeriod')" button="수정" />
+								<input-normal
+									v-model="meter.lpPeriod"
+									:label="$t('equipment.meter.modal.lpPeriod')"
+									button="수정"
+									@handle:action="settingPeriod"
+								/>
 							</li>
 						</ul>
 					</div>
@@ -65,6 +77,20 @@ export default {
 	props: { item: { type: Object } },
 	components: { InputNormal },
 	computed: {
+		lpUp() {
+			if (this.meter && this.meter.lp) {
+				return String(this.meter.lp).split(".")[0];
+			} else {
+				return 0;
+			}
+		},
+		lpDown() {
+			if (this.meter && this.meter.lp) {
+				return String(Math.floor(this.meter.lp * 100) / 100).split(".")[1];
+			} else {
+				return 0;
+			}
+		},
 		address() {
 			return "서울 서울아파트 101동 101호";
 		}
@@ -138,9 +164,10 @@ export default {
 		async settingTime() {
 			try {
 				let params = {};
-				params.dcuId = this.dcu.dcuId;
-				params.dcuIp = this.dcu.dcuIp;
-				const response = await EquipmentMeter.settingReboot(params);
+				params.dcuId = this.meter.dcuId;
+				params.dcuIp = this.meter.dcuIp;
+				params.meterId = this.meter.meterId;
+				const response = await EquipmentMeter.settingTime(params);
 				const result = response.data.response.result;
 
 				if (!result) {
@@ -153,7 +180,53 @@ export default {
 				}
 
 				console.log(error);
-				alert("재부팅 설정도중 오류가 발생하였습니다.");
+				alert("시간 설정도중 오류가 발생하였습니다.");
+			}
+		},
+		async settingReadingDay(day) {
+			try {
+				let params = {};
+				params.dcuId = this.meter.dcuId;
+				params.dcuIp = this.meter.dcuIp;
+				params.meterId = this.meter.meterId;
+				params.day = day;
+				const response = await EquipmentMeter.settingReadingDay(params);
+				const result = response.data.response.result;
+
+				if (!result) {
+					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				}
+			} catch (error) {
+				if (error.response && error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				console.log(error);
+				alert("검침일 설정도중 오류가 발생하였습니다.");
+			}
+		},
+		async settingPeriod(period) {
+			try {
+				let params = {};
+				params.dcuId = this.meter.dcuId;
+				params.dcuIp = this.meter.dcuIp;
+				params.meterId = this.meter.meterId;
+				params.period = period;
+				const response = await EquipmentMeter.settingPeriod(params);
+				const result = response.data.response.result;
+
+				if (!result) {
+					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				}
+			} catch (error) {
+				if (error.response && error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				console.log(error);
+				alert("LP주기 설정도중 오류가 발생하였습니다.");
 			}
 		}
 	}

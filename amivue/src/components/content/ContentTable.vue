@@ -33,7 +33,7 @@
 						v-if="item == 'readingDay'"
 						v-model="filter.readingDay"
 						:selected="filter.readingDay"
-						:firmwareList="firmwareList"
+						:readingDayList="readingDayList"
 						debounce="100"
 					/>
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
@@ -290,7 +290,11 @@ export default {
 			}
 
 			if (this.useGateway) {
-				gateway = row.meterId.toUpperCase().indexOf(filter.meterId.toUpperCase()) != -1;
+				gateway = row.gatewayId.toUpperCase().indexOf(filter.gateway.toUpperCase()) != -1;
+			}
+
+			if (this.useBuilding) {
+				building = row.buildingName.toUpperCase().indexOf(filter.building.toUpperCase()) != -1;
 			}
 
 			if (this.useFirmware) {

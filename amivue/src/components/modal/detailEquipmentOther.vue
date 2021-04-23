@@ -1,5 +1,5 @@
 <template>
-	<b-modal id="detailEquipmentOther" size="lg">
+	<b-modal id="detailEquipmentOther" size="lg" @shown="shown" @show="show" @hide="hide" @hidden="hidden" @ok="ok" @cancel="cancel" no-close-on-backdrop>
 		<template #modal-header="{ close }">
 			<ul>
 				<li><h4>서울 서울아파트 101동 101호</h4></li>
@@ -19,7 +19,7 @@
 			<div class="btn-wrap">
 				<ul>
 					<li>
-						<b-button variant="light">Meter 삭제</b-button>
+						<b-button variant="light" style="display:none">검침기 삭제</b-button>
 					</li>
 					<li>
 						<b-button variant="light" @click="cancel()">돌아 가기</b-button>
@@ -28,123 +28,115 @@
 			</div>
 			<!-- Button with custom close trigger value -->
 		</template>
-		<div class="modal-content-wrap">
-			<div class="svg-wrap">
-				<div class="svg">
-					<img src="@/assets/svg/waterworks.svg" alt="" title="" />
-				</div>
-				<div class="svg-input other">
-					<ul>
-						<li>
-							<h4>수도</h4>
-							<div class="meter-value">10000<span class="blink">.</span></div>
-							<b-form-group label="Meter ID" label-for="">
-								<b-form-input id="" placeholder="Meter ID"></b-form-input>
-							</b-form-group>
-							<b-form-group label="Modem MAC" label-for="">
-								<b-form-input id="" placeholder="00:00:AC:5E:A0;39:04"></b-form-input>
-							</b-form-group>
-							<b-form-group label="Device Name" label-for="">
-								<b-form-input id="" placeholder="WZT 161201a 21"></b-form-input>
-							</b-form-group>
-						</li>
-						<li>
-							<b-form-group label="Gateway ID" label-for="">
-								<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
-							</b-form-group>
-							<b-form-group label="검침일" label-for="">
-								<b-input-group>
-									<b-form-input placeholder="10" disabled></b-form-input>
-									<b-input-group-append>
-										<b-button variant="light">검침일</b-button>
-									</b-input-group-append>
-								</b-input-group>
-							</b-form-group>
-							<b-form-group label="계량기 시각" label-for="">
-								<b-input-group>
-									<b-form-input placeholder="2019-05-09 11:11:00" disabled></b-form-input>
-									<b-input-group-append>
-										<b-button variant="light">시각설정</b-button>
-									</b-input-group-append>
-								</b-input-group>
-							</b-form-group>
-							<b-form-group label="LP 주기" label-for="">
-								<b-input-group>
-									<b-form-input placeholder="15" disabled></b-form-input>
-									<b-input-group-append>
-										<b-button variant="light">LP 주기</b-button>
-									</b-input-group-append>
-								</b-input-group>
-							</b-form-group>
-							<b-form-group label="계량기 타입" label-for="">
-								<b-form-input id="" placeholder="계량기 타입"></b-form-input>
-							</b-form-group>
-						</li>
-					</ul>
+		<b-overlay id="overlay-background" :show="isLoading" variant="light" opacity="0.85" blur="2px" rounded="sm">
+			<div class="modal-content-wrap">
+				<div class="svg-wrap">
+					<div class="svg">
+						<img src="@/assets/svg/waterworks.svg" alt="" title="" />
+					</div>
+					<div class="svg-input other">
+						<ul>
+							<li>
+								<h4>{{ readingType }}</h4>
+								<div class="meter-value">00000<span class="blink">.</span>00</div>
+								<input-normal v-model="other.meterId" :label="$t('equipment.other.modal.meterId')" :disabled="true" />
+								<input-normal v-model="other.mac" :label="$t('equipment.other.modal.mac')" :disabled="true" />
+								<input-normal v-model="other.deviceName" :label="$t('equipment.other.modal.deviceName')" :disabled="true" />
+							</li>
+							<li>
+								<input-normal v-model="other.gatewayId" :label="$t('equipment.other.modal.gatewayId')" :disabled="true" />
+								<input-normal v-model="other.otherReadingDay" :label="$t('equipment.other.modal.readingDay')" :disabled="true" />
+								<input-normal
+									:value="$moment(other.meterTime).format('YYYY-MM-DD HH:mm:ss')"
+									:label="$t('equipment.other.modal.meterTime')"
+									:disabled="true"
+								/>
+								<input-normal v-model="other.lpPeriod" :label="$t('equipment.other.modal.lpPeriod')" :disabled="true" />
+								<input-normal v-model="readingType" :label="$t('equipment.other.modal.readingType')" :disabled="true" />
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-		<!--<div class="modal-content-wrap">
-			<div class="svg-wrap">
-			<div class="svg">
-				<img src="@/assets/svg/meter.svg" alt="" title="" />
-			</div>
-			<div class="svg-input">
-				<ul>
-					<li>
-						<div class="meter-value">10000<span class="blink">.</span>00</div>
-						<b-form-group label="Meter ID" label-for="">
-							<b-form-input id="" placeholder="Meter ID"></b-form-input>
-						</b-form-group>
-						<b-form-group label="Modem MAC" label-for="">
-							<b-form-input id="" placeholder="00:00:AC:5E:A0;39:04"></b-form-input>
-						</b-form-group>
-						<b-form-group label="Device Name" label-for="">
-							<b-form-input id="" placeholder="WZT 161201a 21"></b-form-input>
-						</b-form-group>
-					</li>
-					<li>
-						<b-form-group label="Gateway ID" label-for="">
-							<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
-						</b-form-group>
-						<b-form-group label="검침일" label-for="">
-							<b-input-group>
-								<b-form-input placeholder="10" disabled></b-form-input>
-								<b-input-group-append>
-									<b-button variant="light">검침일</b-button>
-								</b-input-group-append>
-							</b-input-group>
-						</b-form-group>
-						<b-form-group label="계량기 시각" label-for="">
-							<b-input-group>
-								<b-form-input placeholder="2019-05-09 11:11:00" disabled></b-form-input>
-								<b-input-group-append>
-									<b-button variant="light">시각설정</b-button>
-								</b-input-group-append>
-							</b-input-group>
-						</b-form-group>
-						<b-form-group label="LP 주기" label-for="">
-							<b-input-group>
-								<b-form-input placeholder="15" disabled></b-form-input>
-								<b-input-group-append>
-									<b-button variant="light">LP 주기</b-button>
-								</b-input-group-append>
-							</b-input-group>
-						</b-form-group>
-						<b-form-group label="계량기 타입" label-for="">
-							<b-form-input id="" placeholder="계량기 타입"></b-form-input>
-						</b-form-group>
-					</li>
-				</ul>
-			</div>
-		</div>
-		</div>
-		-->
+		</b-overlay>
 	</b-modal>
 </template>
 
 <script>
-export default {};
+import EquipmentOther from "@/service/equipment/other";
+import InputNormal from "@/components/InputNormal";
+
+export default {
+	props: { item: { type: Object } },
+	components: { InputNormal },
+	computed: {
+		lpUp() {
+			if (this.meter && this.other.lp) {
+				return String(this.other.lp).split(".")[0];
+			} else {
+				return 0;
+			}
+		},
+		lpDown() {
+			if (this.meter && this.other.lp) {
+				return String(Math.floor(this.other.lp * 100) / 100).split(".")[1];
+			} else {
+				return 0;
+			}
+		},
+		address() {
+			return "서울 서울아파트 101동 101호";
+		},
+		readingType() {
+			if (this.other.readingType === 2) {
+				return "가스";
+			} else if (this.other.readingType === 3) {
+				return "수도";
+			} else if (this.other.readingType === 4) {
+				return "온수";
+			} else if (this.other.readingType === 5) {
+				return "난방";
+			}
+
+			return this.$t("common.unknown");
+		}
+	},
+	data() {
+		return {
+			other: {},
+			isLoading: true
+		};
+	},
+	methods: {
+		show() {
+			this.isLoading = true;
+		},
+		shown() {
+			this.getOther({ estateSeq: this.item.estateSeq, gatewayId: this.item.gatewayId, meterId: this.item.meterId });
+		},
+		hide() {},
+		hidden() {},
+		ok() {},
+		cancel() {},
+		async getOther(params) {
+			try {
+				const response = await EquipmentOther.info(params);
+				const result = response.data.response;
+				this.other = result;
+				this.isLoading = false;
+			} catch (error) {
+				this.isLoading = false;
+
+				if (error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				alert("오류가 발생하였습니다.");
+			}
+		}
+	}
+};
 </script>
 
 <style>

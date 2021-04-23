@@ -42,9 +42,9 @@ export default {
 			params: params
 		});
 	},
-	settingReadingPeriod(params) {
+	settingPeriod(params) {
 		return Send({
-			url: "/device/equipment/meter/setting/readingperiod",
+			url: "/device/equipment/meter/setting/period",
 			method: "get",
 			params: params
 		});
