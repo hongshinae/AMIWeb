@@ -4,11 +4,11 @@
 			<ul class="inspection">
 				<li>
 					<span>{{ $t("dashboard.timelyRate") }}</span>
-					<b class="fontC">{{ todayTimelyRate[0] }}%</b>
+					<b class="fontC">{{ timelyRate[0] }}%</b>
 				</li>
 				<li>
 					<span>{{ $t("dashboard.readingRate") }}</span>
-					<b class="fontC">{{ todayMeterReadingRate[0] }}%</b>
+					<b class="fontC">{{ readingRate[0] }}%</b>
 				</li>
 			</ul>
 		</h5>
@@ -35,10 +35,8 @@ export default {
 		sse.onopen = function() {};
 		sse.onmessage = e => {
 			const data = JSON.parse(e.data).response;
-			this.todayMeterReadingRate = [data.todayMeterReadingRate];
-			this.yesterdayMeterReadingRate = [data.yesterdayMeterReadingRate];
-			this.todayTimelyRate = [data.todayTimelyRate];
-			this.yesterdayTimelyRate = [data.yesterdayTimelyRate];
+			this.readingRate = [data.todayMeterReadingRate, data.yesterdayMeterReadingRate];
+			this.timelyRate = [data.todayTimelyRate, data.yesterdayTimelyRate];
 		};
 	},
 	computed: {
@@ -76,6 +74,12 @@ export default {
 					credits: {
 						enabled: false
 					},
+					xAxis: {
+						categories: ["오늘", "어제"],
+						title: {
+							text: null
+						}
+					},
 					yAxis: {
 						title: null,
 						gridLineColor: "#232f4b"
@@ -85,13 +89,13 @@ export default {
 					menu: false,
 					series: [
 						{
-							name: "오늘",
-							data: this.todayMeterReadingRate,
+							name: "적시율",
+							data: this.timelyRate,
 							color: "#1ee2df"
 						},
 						{
-							name: "어제",
-							data: this.yesterdayMeterReadingRate,
+							name: "검침률",
+							data: this.readingRate,
 							color: "#75cee2"
 						}
 					]
@@ -101,10 +105,8 @@ export default {
 	},
 	data() {
 		return {
-			todayMeterReadingRate: 0,
-			yesterdayMeterReadingRate: 0,
-			todayTimelyRate: 0,
-			yesterdayTimelyRate: 0,
+			timelyRate: [0],
+			readingRate: [0],
 			chartName: "bar"
 		};
 	},
