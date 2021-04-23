@@ -1,7 +1,7 @@
 <template>
 	<div class="box">
 		<h5>
-			금일 장애
+			상태 이상 정보
 			<b class="fontC">{{ failureTodayCount }} 건</b>
 		</h5>
 		<div class="chartWarp">
@@ -37,7 +37,7 @@ export default {
 			get() {
 				return {
 					chart: {
-						//금일 장애
+						//상태이상정보
 						type: this.chartName,
 						height: 150
 					},

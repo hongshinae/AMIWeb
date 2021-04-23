@@ -29,10 +29,11 @@ export default {
 		chartOptions() {
 			return {
 				chart: {
+					height: 800,
 					map: koreaMap,
 					events: {
 						load: function() {
-							this.mapZoom(0.6);
+							this.mapZoom(0.8);
 						}
 					}
 				},
@@ -50,10 +51,10 @@ export default {
 
 				colorAxis: {
 					min: 0,
-					minColor: "#1d2946", //min컬러
-					maxColor: "#1e44a0" //max컬러
+					minColor: "rgba(0,0,0,0)", //min컬러
+					maxColor: "rgba(220,53,69,1)" //max컬러
 				},
-
+				exporting: { enabled: false },
 				series: [
 					{
 						data: this.data,
@@ -108,6 +109,6 @@ export default {
 
 <style>
 .highcharts-title {
-	font-size: 14px;
+	font-size: 14px !important;
 }
 </style>
