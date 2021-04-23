@@ -16,6 +16,12 @@
 					<h4>{{ $t("estate.modal.add") }}</h4>
 				</li>
 				<li>
+					<b-button size="sm" variant="modal-header" @click="$bvToast.show('toast-ip-modify')">
+						test
+					</b-button>
+					<b-toast id="toast-ip-modify" title="수정" variant="primary">
+						ip가 수정 되었습니다.
+					</b-toast>
 					<b-button size="sm" variant="outline-light" @click="close()">
 						X
 					</b-button>
