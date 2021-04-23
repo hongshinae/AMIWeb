@@ -3,18 +3,19 @@
 		<h5>
 			<ul class="inspection">
 				<li>
-					<span>적시 검침률</span>
-					<b class="fontC">{{ todayTimelyRate }}%</b>
+					<span>{{ $t("dashboard.timelyRate") }}</span>
+					<b class="fontC">{{ todayTimelyRate[0] }}%</b>
 				</li>
 				<li>
-					<span>검침 신뢰성</span>
+					<span>{{ $t("dashboard.readingRate") }}</span>
 					<b class="fontC">{{ todayMeterReadingRate[0] }}%</b>
 				</li>
 			</ul>
 		</h5>
 		<div class="chartWarp">
 			<div class="">
-				<high-charts :options="chartOptions" />
+				<high-charts :options="timelyReadingChartOptions" />
+				<high-charts :options="readingChartOptions" />
 			</div>
 		</div>
 	</div>
@@ -35,19 +36,68 @@ export default {
 		sse.onopen = function() {};
 		sse.onmessage = e => {
 			const data = JSON.parse(e.data).response;
+			console.log(data);
 			this.todayMeterReadingRate = [data.todayMeterReadingRate];
 			this.yesterdayMeterReadingRate = [data.yesterdayMeterReadingRate];
-			this.todayTimelyRate = data.todayTimelyRate;
-			this.yesterdayTimelyRate = data.yesterdayTimelyRate;
+			this.todayTimelyRate = [data.todayTimelyRate];
+			this.yesterdayTimelyRate = [data.yesterdayTimelyRate];
 		};
 	},
 	computed: {
-		chartOptions: {
+		timelyReadingChartOptions: {
 			cache: false,
 			get() {
 				return {
 					chart: {
-						//적시 검침률
+						//적시율
+						type: this.chartName,
+						height: 150
+					},
+					legend: {
+						symbolHeight: 8,
+						symbolWidth: 8,
+						symbolRadius: 4,
+						marginTop: 10,
+						itemStyle: {
+							fontSize: "0.9rem",
+							fontWeight: 100
+						}
+					},
+					plotOptions: {
+						series: {
+							borderColor: "none",
+							dataLabels: {
+								align: "left",
+								enabled: true
+							}
+						}
+					},
+					credits: {
+						enabled: false
+					},
+					title: "",
+					menu: false,
+					series: [
+						{
+							name: "오늘",
+							data: this.todayTimelyRate,
+							color: "#1ee2df"
+						},
+						{
+							name: "어제",
+							data: this.yesterdayTimelyRate,
+							color: "#75cee2"
+						}
+					]
+				};
+			}
+		},
+		readingChartOptions: {
+			cache: false,
+			get() {
+				return {
+					chart: {
+						//검침률
 						type: this.chartName,
 						height: 150
 					},

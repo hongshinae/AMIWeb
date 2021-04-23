@@ -62,7 +62,8 @@
 	"dashboard": {
 		"ea": "건",
 		"totalVoltage": "전국 전력 사용량",
-		"readingTrust": "검침 신뢰성",
+		"timelyRate": "적시율",
+		"readingRate": "검침률",
 		"todayFault": "금일 장애",
 		"todayWeather": "금일 날씨",
 		"dataWeather": "데이터 날씨",
