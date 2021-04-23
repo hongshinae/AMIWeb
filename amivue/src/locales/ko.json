@@ -126,6 +126,7 @@
 				"houseName": "호수",
 				"dcuId": "DCU ID",
 				"dcuIp": "DCU IP",
+				"dcuStatus": "DCU 상태",
 				"mac": "MAC",
 				"fepIp": "LTE 장비 IP",
 				"firmwareVersion": "펌웨어버전",
@@ -137,7 +138,7 @@
 				"readingTypeCount": "검침타입",
 				"remark": "비고",
 				"estateId": "단지ID",
-				"systemState": "데이터 연동",
+				"sysState": "DCU 상태",
 				"meterId": "계량기 ID",
 				"gatewayId": "게이트웨이 ID",
 				"readingDay": "검침일",
@@ -364,6 +365,7 @@
 			"cancel": "취소"
 		}
 	},
+	"nms": {},
 	"server": {
 		"used": "실시간 사용률",
 		"serverMap": "서버 설치 구성도",

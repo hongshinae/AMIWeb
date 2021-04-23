@@ -78,9 +78,6 @@
 					<template #cell(dcuMapp)="row">
 						{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}
 					</template>
-					<template #cell(systemState)="row">
-						<span :class="{ linkage: row.item.systemState == 1, unlinkage: row.item.systemState != 1 }"></span>
-					</template>
 					<template #cell(_remark)="row">
 						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
 							<slot name="table-cell-remark">{{ $t("common.button.details") }}</slot>

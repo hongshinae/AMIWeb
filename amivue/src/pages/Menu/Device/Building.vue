@@ -73,10 +73,6 @@ export default {
 					label: this.$t("component.content.table.dcuId")
 				},
 				{
-					key: "systemState",
-					label: this.$t("component.content.table.systemState")
-				},
-				{
 					key: "_remark",
 					label: ""
 				}

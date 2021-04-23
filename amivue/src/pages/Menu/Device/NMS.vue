@@ -1,57 +1,7 @@
 <template>
 	<div class="main-bg content">
-		<div class="main-location-wrap">
-			<h1>NMS (SNMP)</h1>
-			<div class="main-location">
-				<b-breadcrumb>
-					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house"></b-icon>
-						홈
-					</b-breadcrumb-item>
-					<b-breadcrumb-item>설비</b-breadcrumb-item>
-					<b-breadcrumb-item active>NMS (SNMP)</b-breadcrumb-item>
-				</b-breadcrumb>
-			</div>
-		</div>
-		<div class="search-wrap">
-			<div class="wbox">
-				<div class="search-img">
-					<b-icon icon="search" variant="primary"></b-icon>
-				</div>
-				<div class="search">
-					<!--검색영역-->
-					<b-row>
-						<b-col xl="3" md="4" sm="12">
-							<b-row>
-								<b-col lg="4">
-									<label class="d-block">지역 이름</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-select v-model="selected">
-										<b-form-select-option>서울시</b-form-select-option>
-										<b-form-select-option>경기도</b-form-select-option>
-									</b-form-select>
-								</b-col>
-							</b-row>
-						</b-col>
-						<b-col xl="3" md="4" sm="12">
-							<b-row>
-								<b-col lg="4">
-									<label class="d-block">단지 명</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-input v-model="text" placeholder="그랑시아 아파트"></b-form-input>
-								</b-col>
-							</b-row>
-						</b-col>
-					</b-row>
-					<!--//검색영역-->
-				</div>
-				<div class="btn-wrap ml-auto">
-					<b-button block variant="primary">검색</b-button>
-				</div>
-			</div>
-		</div>
+		<content-header :pageName="pageName" :paths="paths" />
+		<content-search @handle:searchItem="searchItemList"> </content-search>
 		<b-row class="row-wrap">
 			<b-col lg="6" sm="12">
 				<div class="wbox">
@@ -60,72 +10,17 @@
 						<span>DCU <i class="p-Color">4</i> </span>
 						<div role="group" class="btn-group">
 							<b-button variant="light">Reboot</b-button>
-							<b-button variant="light">재스킨</b-button>
-							<b-button variant="light">DCU펌웨어 업그레이드</b-button>
+							<b-button variant="light">재스캔</b-button>
+							<b-button variant="light" disabled>DCU펌웨어 업그레이드</b-button>
 						</div>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<table class="table" id="">
-								<thead role="rowgroup" class="">
-									<tr role="row" class="">
-										<th class=""><div></div></th>
-										<th class=""><div></div></th>
-										<th class=""><div>동 명</div></th>
-										<th class=""><div>DCU ID</div></th>
-										<th class=""><div>IP</div></th>
-										<th class=""><div>상태 코드</div></th>
-										<th class=""><div>펌 웨어</div></th>
-									</tr>
-								</thead>
-								<tbody role="rowgroup">
-									<tr role="row" class="">
-										<td class=""><b-form-checkbox></b-form-checkbox></td>
-										<td class=""><span class="linkage"></span></td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-										<td class="">29140192159</td>
-										<td class="">정상</td>
-										<td class="">1.0</td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><b-form-checkbox></b-form-checkbox></td>
-										<td class=""><span class="linkage"></span></td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-										<td class="">29140192159</td>
-										<td class="">정상</td>
-										<td class="">1.0</td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><b-form-checkbox></b-form-checkbox></td>
-										<td class=""><span class="linkage"></span></td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-										<td class="">29140192159</td>
-										<td class="">정상</td>
-										<td class="">1.0</td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><b-form-checkbox></b-form-checkbox></td>
-										<td class=""><span class="linkage"></span></td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-										<td class="">29140192159</td>
-										<td class="">정상</td>
-										<td class="">1.0</td>
-									</tr>
-									<tr role="row" class="">
-										<td class=""><b-form-checkbox></b-form-checkbox></td>
-										<td class=""><span class="linkage"></span></td>
-										<td class="">101동</td>
-										<td class="">NS09_0101A</td>
-										<td class="">29140192159</td>
-										<td class="">정상</td>
-										<td class="">1.0</td>
-									</tr>
-								</tbody>
-							</table>
+							<b-table :items="dcuList" :fields="dcuFields">
+								<template #cell(sysState)="row">
+									{{ row.item.sysState == 1 ? "정상" : "비정상" }}
+								</template>
+							</b-table>
 						</div>
 					</div>
 				</div>
@@ -189,7 +84,7 @@
 				</div>
 			</b-col>
 		</b-row>
-		<div class="btn-only-wrap">
+		<div class="btn-only-wrap" style="display:none">
 			<div class="btn-wrap">
 				<div role="group" class="btn-group">
 					<b-button variant="light">SNMP read/write</b-button>
@@ -205,3 +100,62 @@
 		</div>
 	</div>
 </template>
+<script>
+import Nms from "@/service/nms";
+import ContentMixin from "@/components/content/mixin";
+
+export default {
+	mixins: [ContentMixin],
+	data() {
+		return {
+			pageName: this.$t("menu.device.nms"),
+			paths: [{ name: this.$t("menu.title"), bicon: "house", link: "/" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.nms") }],
+			dcuList: [],
+			dcuFields: [
+				{
+					key: "buildingName",
+					label: this.$t("component.content.table.buildingName")
+				},
+				{
+					key: "dcuId",
+					label: this.$t("component.content.table.dcuId")
+				},
+				{
+					key: "dcuIp",
+					label: this.$t("component.content.table.dcuId")
+				},
+				{
+					key: "sysState",
+					label: this.$t("component.content.table.sysState")
+				},
+				{
+					key: "firmwareVersion",
+					label: this.$t("component.content.table.firmwareVersion")
+				}
+			]
+		};
+	},
+	methods: {
+		async getNmsDcuList(params) {
+			if (!params) {
+				params = { regionSeq: "0", estateSeq: "0" };
+			}
+
+			try {
+				this.isBusy = true;
+				const response = await Nms.dcuList(params);
+				const result = response.data.response;
+				this.dcuList = result;
+			} catch (error) {
+				const result = [];
+				this.dcuList = result;
+			} finally {
+				this.isBusy = false;
+			}
+		},
+		searchItemList: function(searchItem) {
+			this.getNmsDcuList(searchItem);
+		}
+	}
+};
+</script>
