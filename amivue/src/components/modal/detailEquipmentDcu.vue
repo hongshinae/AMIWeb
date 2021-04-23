@@ -6,10 +6,10 @@
 					<h4>{{ address }}</h4>
 				</li>
 				<li>
-					<h4><input-normal v-model="dcu.dcuId" :label="$t('equipment.dcu.modal.dcuId')" /></h4>
+					<h4><b-form-input v-model="dcu.dcuId" disabled /></h4>
 				</li>
 				<li>
-					<b-button size="sm" variant="modal-header" disabled>
+					<b-button size="sm" variant="modal-header" disabled style="display:none">
 						SNMP READ
 					</b-button>
 					<b-button size="sm" variant="outline-light" @click="close()">
@@ -22,18 +22,15 @@
 			<div class="btn-wrap">
 				<ul>
 					<li v-if="tabIndex == 0">
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.informationSetting") }}</b-button>
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.timeSetting") }}</b-button>
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.time1") }}</b-button>
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.time2") }}</b-button>
+						<b-button variant="light">{{ $t("equipment.dcu.modal.button.resetTime") }}</b-button>
+						<b-button variant="light">{{ $t("equipment.dcu.modal.button.rebootDcu") }}</b-button>
+						<b-button variant="light">{{ $t("equipment.dcu.modal.button.modemRescan") }}</b-button>
 					</li>
 					<li v-if="tabIndex == 1">
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.security") }}</b-button>
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.deleteDcu") }}</b-button>
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.rebootDcu") }}</b-button>
+						<b-button variant="light">{{ $t("equipment.dcu.modal.button.settingInforamtion") }}</b-button>
 					</li>
 					<li v-if="tabIndex == 2">
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.reskinModem") }}</b-button>
+						<b-button variant="light">{{ $t("equipment.dcu.modal.button.settingSecurity") }}</b-button>
 					</li>
 					<li>
 						<b-button variant="light" @click="cancel()">{{ $t("equipment.button.cancel") }}</b-button>
@@ -136,7 +133,7 @@
 													<tr>
 														<th>E-Type</th>
 														<td>-</td>
-														<td><b-form-input v-model="dcu.etypelpPeriod" /></td>
+														<td><b-form-input v-model="dcu.etypeLpPeriod" /></td>
 														<td>-</td>
 														<td>-</td>
 														<td><b-form-input v-model="dcu.etypeTimePeriod" /></td>
@@ -145,7 +142,7 @@
 													<tr>
 														<th>G-Type</th>
 														<td>-</td>
-														<td><b-form-input v-model="dcu.gtypelpPeriod" /></td>
+														<td><b-form-input v-model="dcu.gtypeLpPeriod" /></td>
 														<td><b-form-input v-model="dcu.gtypeAvgVoltagePeriod" /></td>
 														<td><b-form-input v-model="dcu.gtypeInstVoltagePeriod" /></td>
 														<td><b-form-input v-model="dcu.gtypeTimePeriod" /></td>
@@ -158,7 +155,7 @@
 														<td><b-form-input v-model="dcu.eaTypeAvgVoltagePeriod" /></td>
 														<td><b-form-input v-model="dcu.eaTypeInstVoltagePeriod" /></td>
 														<td><b-form-input v-model="dcu.eaTypeTimePeriod" /></td>
-														<td><b-form-input v-model="dcu.eatypeTimeErrorLimit" /></td>
+														<td><b-form-input v-model="dcu.eaTypeTimeErrorLimit" /></td>
 													</tr>
 												</tbody>
 											</table>
@@ -168,12 +165,12 @@
 							</b-tab>
 							<b-tab :title="$t('equipment.tab.security')">
 								<div class="modal-1st-box">
-									<input-normal v-model="dcu.pnid" :label="$t('equipment.dcu.modal.pnID')" :disabled="true" />
-									<input-normal :label="$t('equipment.dcu.modal.osPassword')" :disabled="true" />
-									<input-normal v-model="dcu.acodeReadOnly" :label="$t('equipment.dcu.modal.acodeRO')" :disabled="true" />
-									<input-normal v-model="dcu.acodeReadWrite" :label="$t('equipment.dcu.modal.acodeRW')" :disabled="true" />
-									<input-normal v-model="dcu.snmpReadOnly" :label="$t('equipment.dcu.modal.snmpRO')" :disabled="true" />
-									<input-normal v-model="dcu.snmpReadWrite" :label="$t('equipment.dcu.modal.snmpRW')" :disabled="true" />
+									<input-normal v-model="dcu.pnid" :label="$t('equipment.dcu.modal.pnID')" />
+									<input-normal v-model="dcu.osPass" :label="$t('equipment.dcu.modal.osPassword')" />
+									<input-normal v-model="dcu.acodeReadOnly" :label="$t('equipment.dcu.modal.acodeRO')" />
+									<input-normal v-model="dcu.acodeReadWrite" :label="$t('equipment.dcu.modal.acodeRW')" />
+									<input-normal v-model="dcu.snmpReadOnly" :label="$t('equipment.dcu.modal.snmpRO')" />
+									<input-normal v-model="dcu.snmpReadWrite" :label="$t('equipment.dcu.modal.snmpRW')" />
 								</div>
 								<div class="modal-2nd-box"></div>
 							</b-tab>
@@ -185,11 +182,11 @@
 								<ul class="top">
 									<li>
 										<span>{{ $t("equipment.dcu.modal.dcuStatus") }}</span>
-										<b>{{ dcu.sysState }}</b>
+										<b>{{ dcuStatus }}</b>
 									</li>
 									<li>
 										<span>{{ $t("equipment.dcu.modal.dcuCoverStatus") }}</span>
-										<b>{{ dcu.sysDcuCoverStatus }}</b>
+										<b>{{ dcuCoverStatus }}</b>
 									</li>
 								</ul>
 								<div class="middle">
@@ -337,7 +334,6 @@ export default {
 			return this.$t("common.unknown");
 		},
 		dcuSecurityStatus() {
-			// 0 : 정상 , 1 : DCU 보안키 Not Found , 2 : 암호모듈 초기화 실패, 3 : 암호모듈 연동 실패 , 4 : 암호화 실패 , 5 : 복호화 실패 , 6 : 기타(정의되지 않는 오류)
 			if (this.dcu.sysSecurityStatus == "0") {
 				return "정상";
 			} else if (this.dcu.sysSecurityStatus == "1") {
@@ -361,6 +357,15 @@ export default {
 				return "이상";
 			} else if (this.dcu.sysState == "1") {
 				return "정상";
+			}
+
+			return this.$t("common.unknown");
+		},
+		dcuCoverStatus() {
+			if (this.dcu.sysState == "0") {
+				return "열림";
+			} else if (this.dcu.sysState == "1") {
+				return "닫힘";
 			}
 
 			return this.$t("common.unknown");
@@ -406,7 +411,7 @@ export default {
 				let params = {};
 				params.dcuId = this.dcu.dcuId;
 				params.dcuIp = dcuIp;
-				const response = await EquipmentDcu.updateDcuIp(params);
+				await EquipmentDcu.updateDcuIp(params);
 			} catch (error) {
 				if (error.response.data.response) {
 					alert(error.response.data.response.error_message);
@@ -422,7 +427,23 @@ export default {
 				let params = {};
 				params.dcuId = this.dcu.dcuId;
 				params.dcuPort = port;
-				const response = await EquipmentDcu.updateDcuPort(params);
+				await EquipmentDcu.updateDcuPort(params);
+			} catch (error) {
+				if (error.response && error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				console.log(error);
+				alert("DCU Port 설정도중 오류가 발생하였습니다.");
+			}
+		},
+		async modifyRouterIp(routerIp) {
+			try {
+				let params = {};
+				params.dcuId = this.dcu.dcuId;
+				params.routerIp = routerIp;
+				await EquipmentDcu.updateRouterIp(params);
 			} catch (error) {
 				if (error.response && error.response.data.response) {
 					alert(error.response.data.response.error_message);
@@ -433,12 +454,13 @@ export default {
 				alert("ROUTER IP 설정도중 오류가 발생하였습니다.");
 			}
 		},
-		async modifyRouterIp(routerIp) {
+		async modifyLocation(latitude, longitude) {
 			try {
 				let params = {};
 				params.dcuId = this.dcu.dcuId;
-				params.routerIp = routerIp;
-				const response = await EquipmentDcu.updateRouterIp(params);
+				params.latitude = latitude;
+				params.longitude = longitude;
+				await EquipmentDcu.updateLocation(params);
 			} catch (error) {
 				if (error.response && error.response.data.response) {
 					alert(error.response.data.response.error_message);
@@ -446,7 +468,7 @@ export default {
 				}
 
 				console.log(error);
-				alert("ROUTER IP 설정도중 오류가 발생하였습니다.");
+				alert("위치 설정도중 오류가 발생하였습니다.");
 			}
 		}
 	}

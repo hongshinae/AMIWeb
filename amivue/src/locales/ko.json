@@ -320,13 +320,12 @@
 				},
 				"button": {
 					"informationSetting": "정보 설정",
-					"timeSetting": "시간 설정",
-					"time1": "시간 오차 한계",
-					"time2": "시간 확인 주기",
-					"security": "보안 항목",
+					"resetTime": "시간 설정",
+					"modemRescan": "모뎀 재스캔",
+					"settingInforamtion": "정보 설정",
 					"deleteDcu": "DCU 삭제",
 					"rebootDcu": "DCU Reboot",
-					"reskinModem": "모뎀 재스킨"
+					"settingSecurity": "보안항목 설정"
 				}
 			}
 		},
