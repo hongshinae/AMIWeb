@@ -38,7 +38,27 @@ export default {
 			get() {
 				return {
 					chart: {
-						type: this.chartName
+						//전국 전력 사용량
+						type: this.chartName,
+						height: 150
+					},
+					legend: {
+						symbolHeight: 8,
+						symbolWidth: 8,
+						symbolRadius: 4,
+						marginTop: 10,
+						itemStyle: {
+							fontSize: "0.9rem",
+							fontWeight: 100
+						}
+					},
+					plotOptions: {
+						series: {
+							borderColor: "none"
+						}
+					},
+					credits: {
+						enabled: false
 					},
 					exporting: { enabled: false },
 					title: "",
@@ -46,11 +66,13 @@ export default {
 					series: [
 						{
 							name: "오늘",
-							data: this.todayData
+							data: this.todayData,
+							color: "#1ee2df"
 						},
 						{
 							name: "어제",
-							data: this.yesterdayData
+							data: this.yesterdayData,
+							color: "#75cee2"
 						}
 					]
 				};

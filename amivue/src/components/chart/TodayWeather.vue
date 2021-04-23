@@ -16,27 +16,28 @@
 </template>
 
 <script>
-import Dashboard from "@/service/dashboard";
+// import Dashboard from "@/service/dashboard";
 let todaySse;
 let dataSse;
 
 export default {
-	async mounted() {
-		todaySse = Dashboard.todayWeather(5);
-		todaySse.onerror = function() {};
-		todaySse.onopen = function() {};
-		todaySse.onmessage = e => {
-			const data = JSON.parse(e.data).response;
-			this.todayWeather = data;
-		};
-		dataSse = Dashboard.dataWeather(5);
-		dataSse.onerror = function() {};
-		dataSse.onopen = function() {};
-		dataSse.onmessage = e => {
-			const data = JSON.parse(e.data).response;
-			this.dataWeather = data;
-		};
-	},
+	// async mounted() {
+	// 	todaySse = Dashboard.todayWeather(5);
+	// 	todaySse.onerror = function() {};
+	// 	todaySse.onopen = function() {};
+	// 	todaySse.onmessage = e => {
+	// 		const data = JSON.parse(e.data).response;
+	// 		console.log(data);
+	// 		this.todayWeather = data;
+	// 	};
+	// 	dataSse = Dashboard.dataWeather(5);
+	// 	dataSse.onerror = function() {};
+	// 	dataSse.onopen = function() {};
+	// 	dataSse.onmessage = e => {
+	// 		const data = JSON.parse(e.data).response;
+	// 		this.dataWeather = data;
+	// 	};
+	// },
 	data() {
 		return {
 			todayWeather: null,

@@ -47,18 +47,44 @@ export default {
 			get() {
 				return {
 					chart: {
-						type: this.chartName
+						//적시 검침률
+						type: this.chartName,
+						height: 150
+					},
+					legend: {
+						symbolHeight: 8,
+						symbolWidth: 8,
+						symbolRadius: 4,
+						marginTop: 10,
+						itemStyle: {
+							fontSize: "0.9rem",
+							fontWeight: 100
+						}
+					},
+					plotOptions: {
+						series: {
+							borderColor: "none",
+							dataLabels: {
+								align: "left",
+								enabled: true
+							}
+						}
+					},
+					credits: {
+						enabled: false
 					},
 					title: "",
 					menu: false,
 					series: [
 						{
 							name: "오늘",
-							data: this.todayMeterReadingRate
+							data: this.todayMeterReadingRate,
+							color: "#1ee2df"
 						},
 						{
 							name: "어제",
-							data: this.yesterdayMeterReadingRate
+							data: this.yesterdayMeterReadingRate,
+							color: "#75cee2"
 						}
 					]
 				};
@@ -71,7 +97,7 @@ export default {
 			yesterdayMeterReadingRate: 0,
 			todayTimelyRate: 0,
 			yesterdayTimelyRate: 0,
-			chartName: "column"
+			chartName: "bar"
 		};
 	},
 	beforeDestroy() {

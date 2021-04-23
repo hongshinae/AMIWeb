@@ -29,7 +29,12 @@ export default {
 		chartOptions() {
 			return {
 				chart: {
-					map: koreaMap
+					map: koreaMap,
+					events: {
+						load: function() {
+							this.mapZoom(0.6);
+						}
+					}
 				},
 
 				title: {
@@ -101,4 +106,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.highcharts-title {
+	font-size: 14px;
+}
+</style>
