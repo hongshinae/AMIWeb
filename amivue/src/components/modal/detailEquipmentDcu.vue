@@ -22,18 +22,18 @@
 			<div class="btn-wrap">
 				<ul>
 					<li v-if="tabIndex == 0">
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.resetTime") }}</b-button>
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.rebootDcu") }}</b-button>
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.modemRescan") }}</b-button>
+						<b-button variant="light" :disabled="!isDcu" @click="settingDcuTime">{{ $t("equipment.dcu.modal.button.resetTime") }}</b-button>
+						<b-button variant="light" :disabled="!isDcu" @click="settingDcuReboot">{{ $t("equipment.dcu.modal.button.rebootDcu") }}</b-button>
+						<b-button variant="light" :disabled="!isDcu" @click="settingDcuRescan">{{ $t("equipment.dcu.modal.button.modemRescan") }}</b-button>
 					</li>
 					<li v-if="tabIndex == 1">
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.settingInforamtion") }}</b-button>
+						<b-button variant="light" :disabled="!isDcu">{{ $t("equipment.dcu.modal.button.settingInforamtion") }}</b-button>
 					</li>
 					<li v-if="tabIndex == 2">
-						<b-button variant="light">{{ $t("equipment.dcu.modal.button.settingSecurity") }}</b-button>
+						<b-button variant="light" :disabled="!isDcu">{{ $t("equipment.dcu.modal.button.settingSecurity") }}</b-button>
 					</li>
 					<li>
-						<b-button variant="light" @click="cancel()">{{ $t("equipment.button.cancel") }}</b-button>
+						<b-button variant="light" @click="cancel()" :disabled="isDcu">{{ $t("equipment.button.cancel") }}</b-button>
 					</li>
 				</ul>
 			</div>
@@ -62,7 +62,7 @@
 									<input-normal
 										v-model="dcu.dcuPort"
 										:label="$t('equipment.dcu.modal.dcuPort')"
-										:modify="true"
+										button="수정"
 										@handle:modify="modifyDcuPort"
 									/>
 									<input-ip
@@ -258,7 +258,12 @@
 									</li>
 								</ul>
 							</div>
-							<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="dcu.latitude" :longitude.sync="dcu.longitude" />
+							<input-location
+								:label="$t('equipment.dcu.modal.installLocation')"
+								:latitude.sync="dcu.latitude"
+								:longitude.sync="dcu.longitude"
+								@handle:modify="modifyLocation"
+							/>
 
 							<div class="map">
 								<iframe
@@ -288,6 +293,13 @@ export default {
 	props: { item: { type: Object } },
 	components: { InputIp, InputLocation, InputNormal },
 	computed: {
+		isDcu() {
+			if (this.dcu === {}) {
+				return false;
+			} else {
+				return true;
+			}
+		},
 		address() {
 			return "서울 서울아파트 101동 101호";
 		},
@@ -469,6 +481,69 @@ export default {
 
 				console.log(error);
 				alert("위치 설정도중 오류가 발생하였습니다.");
+			}
+		},
+		async settingDcuTime() {
+			try {
+				let params = {};
+				params.dcuId = this.dcu.dcuId;
+				params.dcuIp = this.dcu.dcuIp;
+				const response = await EquipmentDcu.settingTime(params);
+				const result = response.data.response.result;
+
+				if (!result) {
+					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				}
+			} catch (error) {
+				if (error.response && error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				console.log(error);
+				alert("위치 설정도중 오류가 발생하였습니다.");
+			}
+		},
+		async settingDcuReboot() {
+			try {
+				let params = {};
+				params.dcuId = this.dcu.dcuId;
+				params.dcuIp = this.dcu.dcuIp;
+				const response = await EquipmentDcu.settingReboot(params);
+				const result = response.data.response.result;
+
+				if (!result) {
+					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				}
+			} catch (error) {
+				if (error.response && error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				console.log(error);
+				alert("재부팅 설정도중 오류가 발생하였습니다.");
+			}
+		},
+		async settingDcuRescan() {
+			try {
+				let params = {};
+				params.dcuId = this.dcu.dcuId;
+				params.dcuIp = this.dcu.dcuIp;
+				const response = await EquipmentDcu.settingRescan(params);
+				const result = response.data.response.result;
+
+				if (!result) {
+					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				}
+			} catch (error) {
+				if (error.response && error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				console.log(error);
+				alert("재스캔 설정도중 오류가 발생하였습니다.");
 			}
 		}
 	}

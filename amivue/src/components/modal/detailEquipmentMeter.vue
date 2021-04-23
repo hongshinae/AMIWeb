@@ -25,66 +25,45 @@
 			</div>
 			<!-- Button with custom close trigger value -->
 		</template>
-		<div class="modal-content-wrap">
-			<div class="svg-wrap">
-				<div class="svg">
-					<img src="@/assets/svg/meter.svg" alt="" title="" />
-				</div>
-				<div class="svg-input">
-					<ul>
-						<li>
-							<div class="meter-value">10000<span class="blink">.</span>00</div>
-							<b-form-group :label="$t('equipment.meter.modal.meterId')" label-for="">
-								<b-form-input v-model="meter.meterId" disabled></b-form-input>
-							</b-form-group>
-							<b-form-group :label="$t('equipment.meter.modal.mac')" label-for="">
-								<b-form-input v-model="meter.mac" disabled></b-form-input>
-							</b-form-group>
-							<b-form-group :label="$t('equipment.meter.modal.deviceName')" label-for="">
-								<b-form-input v-model="meter.deviceName" disabled></b-form-input>
-							</b-form-group>
-						</li>
-						<li>
-							<b-form-group :label="$t('equipment.meter.modal.dcuId')" label-for="">
-								<b-form-input v-model="meter.dcuId" disabled></b-form-input>
-							</b-form-group>
-							<b-form-group :label="$t('equipment.meter.modal.meterReadingDay')" label-for="">
-								<b-input-group>
-									<b-form-input v-model="meter.meterReadingDay" readonly></b-form-input>
-									<b-input-group-append>
-										<b-button variant="light">{{ $t("equipment.button.meterReadingDay") }}</b-button>
-									</b-input-group-append>
-								</b-input-group>
-							</b-form-group>
-							<b-form-group :label="$t('equipment.meter.modal.meterTime')" label-for="">
-								<b-input-group>
-									<b-form-input :value="$moment(meter.meterTime).format('YYYY-MM-DD HH:mm:ss')" readonly></b-form-input>
-									<b-input-group-append>
-										<b-button variant="light">{{ $t("equipment.button.meterTime") }}</b-button>
-									</b-input-group-append>
-								</b-input-group>
-							</b-form-group>
-							<b-form-group :label="$t('equipment.meter.modal.lpPeriod')" label-for="">
-								<b-input-group>
-									<b-form-input v-model="meter.lpPeriod" placeholder="15" readonly></b-form-input>
-									<b-input-group-append>
-										<b-button variant="light">{{ $t("equipment.button.lpPeriod") }}</b-button>
-									</b-input-group-append>
-								</b-input-group>
-							</b-form-group>
-						</li>
-					</ul>
+		<b-overlay id="overlay-background" :show="isLoading" variant="light" opacity="0.85" blur="2px" rounded="sm">
+			<div class="modal-content-wrap">
+				<div class="svg-wrap">
+					<div class="svg">
+						<img src="@/assets/svg/meter.svg" alt="" title="" />
+					</div>
+					<div class="svg-input">
+						<ul>
+							<li>
+								<div class="meter-value">10000<span class="blink">.</span>00</div>
+								<input-normal v-model="meter.meterId" :label="$t('equipment.meter.modal.meterId')" :disabled="true" />
+								<input-normal v-model="meter.mac" :label="$t('equipment.meter.modal.mac')" :disabled="true" />
+								<input-normal v-model="meter.deviceName" :label="$t('equipment.meter.modal.deviceName')" :disabled="true" />
+							</li>
+							<li>
+								<input-normal v-model="meter.dcuId" :label="$t('equipment.meter.modal.dcuId')" :disabled="true" />
+								<input-normal v-model="meter.meterReadingDay" :label="$t('equipment.meter.modal.meterReadingDay')" button="검침일" />
+								<input-normal
+									:value="$moment(meter.meterTime).format('YYYY-MM-DD HH:mm:ss')"
+									:label="$t('equipment.meter.modal.meterTime')"
+									button="시각설정"
+								/>
+								<input-normal v-model="meter.lpPeriod" :label="$t('equipment.meter.modal.lpPeriod')" button="수정" />
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
+		</b-overlay>
 	</b-modal>
 </template>
 
 <script>
 import EquipmentMeter from "@/service/equipment/meter";
+import InputNormal from "@/components/InputNormal";
 
 export default {
 	props: { item: { type: Object } },
+	components: { InputNormal },
 	computed: {
 		address() {
 			return "서울 서울아파트 101동 101호";
@@ -92,13 +71,15 @@ export default {
 	},
 	data() {
 		return {
-			meter: {}
+			meter: {},
+			isLoading: true
 		};
 	},
 	methods: {
-		show() {},
+		show() {
+			this.isLoading = true;
+		},
 		shown() {
-			console.log(this.item);
 			this.getMeter({ estateSeq: this.item.estateSeq, meterId: this.item.meterId });
 		},
 		hide() {},
@@ -110,7 +91,10 @@ export default {
 				const response = await EquipmentMeter.info(params);
 				const result = response.data.response;
 				this.meter = result;
+				this.isLoading = false;
 			} catch (error) {
+				this.isLoading = false;
+
 				if (error.response.data.response) {
 					alert(error.response.data.response.error_message);
 					return;
@@ -150,6 +134,27 @@ export default {
 				.catch(error => {
 					console.log(error);
 				});
+		},
+		async settingTime() {
+			try {
+				let params = {};
+				params.dcuId = this.dcu.dcuId;
+				params.dcuIp = this.dcu.dcuIp;
+				const response = await EquipmentMeter.settingReboot(params);
+				const result = response.data.response.result;
+
+				if (!result) {
+					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				}
+			} catch (error) {
+				if (error.response && error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				console.log(error);
+				alert("재부팅 설정도중 오류가 발생하였습니다.");
+			}
 		}
 	}
 };

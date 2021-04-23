@@ -20,7 +20,7 @@
 				:placeholder="$t('common.placeholder.longitude')"
 			/>
 		</b-input-group>
-		<b-button variant="light">확인</b-button>
+		<b-button variant="light" @click="handleModify">확인</b-button>
 	</b-form-group>
 </template>
 
@@ -29,6 +29,11 @@ export default {
 	props: { label: String, placeholder: String, latitude: { type: Number, requried: true }, longitude: { type: Number, requried: true } },
 	data() {
 		return {};
+	},
+	methods: {
+		handleModify() {
+			this.$emit("handle:modify", this.latitude, this.longitude);
+		}
 	}
 };
 </script>

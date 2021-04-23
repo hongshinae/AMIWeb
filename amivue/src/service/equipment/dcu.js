@@ -64,6 +64,13 @@ export default {
 			params: params
 		});
 	},
+	settingReboot(params) {
+		return Send({
+			url: "/device/equipment/dcu/setting/reboot",
+			method: "get",
+			params: params
+		});
+	},
 	settingRescan(params) {
 		return Send({
 			url: "/device/equipment/dcu/setting/rescan",
