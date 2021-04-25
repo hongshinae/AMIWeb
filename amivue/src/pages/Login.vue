@@ -2,6 +2,7 @@
 	<div id="app" class="loginBg">
 		<div class="loginWrap">
 			<div class="logo"></div>
+			<h5>CNU GLOBAL AMI Server System</h5>
 			<div class="lnputWrap">
 				<form action="/dashboard" @submit.prevent="login({ userid, password })">
 					<b-input v-model="userid" placeholder="id" @input="msg = ''"></b-input>
@@ -80,14 +81,13 @@ export default {
 </script>
 
 <style lang="scss">
-$color-bg: #ecf2f6;
 .loginBg {
 	width: 100%;
 	height: 100%;
-	background: $color-bg;
+	background: url("../assets/images/bg.png") 0 0 no-repeat #09172e;
 }
 .loginWrap {
-	width: 500px;
+	width: 400px;
 	height: 520px;
 	margin: 0 auto;
 	padding-top: 100px;
@@ -96,22 +96,27 @@ $color-bg: #ecf2f6;
 		width: 362px;
 		height: 53px;
 		background: url("../assets/images/logo_login.png") 0 0 no-repeat;
-		margin: 10px auto 50px auto;
+		margin: 20px auto 0px auto;
+	}
+	h5 {
+		text-align: center;
+		margin: 15px 0 20px 0;
+		letter-spacing: 5px;
 	}
 	.lnputWrap {
 		input {
 			margin-bottom: 10px;
-			height: 45px;
-			font-size: 14px !important;
+			height: 35px;
+			font-size: 12px !important;
 		}
 		select,
 		button {
-			height: 45px;
-			font-size: 14px !important;
+			height: 35px;
+			font-size: 12px !important;
 		}
 	}
 	ul {
-		width: 500px;
+		width: 400px;
 		height: 30px;
 		margin-top: 20px;
 		margin-bottom: 60px;
@@ -126,17 +131,17 @@ $color-bg: #ecf2f6;
 		margin: 20px;
 		text-align: center;
 		font-weight: 600;
-		color: #b9b9b9;
+		color: #4a4f54;
 	}
 	.error {
 		color: red;
-		background: rgb(255 0 0 / 8%);
+		background: rgba(255, 0, 0, 0.08);
 		margin-top: 10px;
 		height: 34px;
 		line-height: 34px;
 		text-align: center;
 		border-radius: 4px;
-		border: 1px solid #ffafaf;
+		border: 1px solid #ff4a5a;
 	}
 }
 </style>
