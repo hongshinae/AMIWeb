@@ -1,7 +1,7 @@
 <template>
 	<div class="highch">
 		<!-- <chart :constructor-type="'stockChart'" :options="chartOptions" /> -->
-		<high-chart :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" :callback="init" style="width:500px;height:800px" />
+		<high-chart :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" :callback="init" />
 	</div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
 		chartOptions() {
 			return {
 				chart: {
-					height: 800,
+					height: 850,
 					map: koreaMap,
 					events: {
 						load: function() {
@@ -55,10 +55,13 @@ export default {
 					maxColor: "rgba(220,53,69,1)" //max컬러
 				},
 				exporting: { enabled: false },
+				credits: { enabled: false },
 				series: [
 					{
 						data: this.data,
 						name: "DCU Fault",
+						//s borderColor: "black",
+						borderWidth: 0.2,
 						states: {
 							hover: {
 								color: "#14FAB1", // 마우스 오버 색상
@@ -107,8 +110,44 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .highcharts-title {
 	font-size: 14px !important;
+}
+.high-map-wrap {
+	position: relative;
+	.high-map {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.high-table {
+		position: absolute;
+		top: -183px;
+		right: 0;
+		width: 200px;
+		height: 110px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background: linear-gradient(70deg, rgba(13, 24, 25, 0.08), #0f1e35, rgba(13, 24, 25, 0.08));
+		box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 11%);
+		ul li {
+			text-align: center;
+			height: 30px;
+			span {
+				width: 60px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				display: inline-block;
+				font-size: 11px;
+			}
+		}
+		ul li:first-child {
+			border-bottom: 1px solid #1a2a42;
+		}
+	}
 }
 </style>

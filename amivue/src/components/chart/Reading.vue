@@ -55,14 +55,18 @@ export default {
 						symbolRadius: 4,
 						marginTop: 10,
 						align: "right",
-						verticalAlign: "top",
+						verticalAlign: "middle",
 						layout: "vertical",
+						itemMarginTop: 5,
+						itemMarginBottom: 5,
 						itemStyle: {
 							fontSize: "0.9rem",
-							fontWeight: 100
+							fontWeight: 100,
+							lineHeight: "14px"
 						}
 					},
 					plotOptions: {
+						column: { borderRadius: 3 },
 						series: {
 							borderColor: "none",
 							dataLabels: {
@@ -76,13 +80,14 @@ export default {
 					},
 					xAxis: {
 						categories: ["오늘", "어제"],
-						title: {
-							text: null
-						}
+						title: null,
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b"
 					},
 					yAxis: {
 						title: null,
-						gridLineColor: "#232f4b"
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b"
 					},
 					title: "",
 					exporting: { enabled: false },
@@ -91,12 +96,12 @@ export default {
 						{
 							name: "적시율",
 							data: this.timelyRate,
-							color: "#1ee2df"
+							color: "#c45bdb"
 						},
 						{
 							name: "검침률",
 							data: this.readingRate,
-							color: "#75cee2"
+							color: "#a66dee"
 						}
 					]
 				};

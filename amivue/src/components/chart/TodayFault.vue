@@ -46,22 +46,24 @@ export default {
 						symbolWidth: 8,
 						symbolRadius: 4,
 						marginTop: 10,
+						verticalAlign: "top",
+						align: "right",
 						itemStyle: {
 							fontSize: "0.9rem",
 							fontWeight: 100
 						}
 					},
 					plotOptions: {
-						series: {
-							borderColor: "none"
-						}
+						column: { borderRadius: 2 },
+						series: { borderColor: "none" }
 					},
 					credits: {
 						enabled: false
 					},
 					yAxis: {
 						title: null,
-						gridLineColor: "#232f4b"
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b"
 					},
 					title: "",
 					menu: false,
@@ -70,7 +72,7 @@ export default {
 						{
 							name: "오늘",
 							data: this.today.map(item => item.count),
-							color: "#1ee2df"
+							color: "#7383fd"
 						}
 					]
 				};

@@ -47,12 +47,15 @@ export default {
 						symbolWidth: 8,
 						symbolRadius: 4,
 						marginTop: 10,
+						verticalAlign: "top",
+						align: "right",
 						itemStyle: {
 							fontSize: "0.9rem",
 							fontWeight: 100
 						}
 					},
 					plotOptions: {
+						column: { borderRadius: 1 },
 						series: {
 							borderColor: "none"
 						}
@@ -62,7 +65,8 @@ export default {
 					},
 					yAxis: {
 						title: null,
-						gridLineColor: "#232f4b"
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b" //라인컬러
 					},
 					exporting: { enabled: false },
 					title: "",
