@@ -154,7 +154,9 @@
 				"updateDate": "변경일시",
 				"recentlyReadingTime": "최근 검침시각",
 				"reading": "검침량",
-				"revese": "역방향"
+				"revese": "역방향",
+				"connEquip": "연동 장비수",
+				"statusCode": "상태 코드"
 			}
 		}
 	},
