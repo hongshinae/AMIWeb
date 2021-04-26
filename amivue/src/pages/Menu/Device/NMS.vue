@@ -51,11 +51,26 @@
 								<template #cell(test)="row">
 									<b-button size="sm" @click="row.toggleDetails"> {{ row.detailsShowing ? "Hide" : "Show" }} Details </b-button>
 								</template>
-								<template #row-details="row">
+								<template #row-details="">
 									<b-card>
-										<ul>
-											<li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
-										</ul>
+										<div class="basic-table">
+											<table>
+												<thead>
+													<tr class="error">
+														<td>-</td>
+														<td>06090009424 (301호)</td>
+														<td>2020-12-29 12:00:00)</td>
+														<td>12451</td>
+													</tr>
+													<tr>
+														<td>-</td>
+														<td>06090009424 (301호)</td>
+														<td>2020-12-29 12:00:00)</td>
+														<td>12451</td>
+													</tr>
+												</thead>
+											</table>
+										</div>
 									</b-card>
 								</template>
 							</b-table>
@@ -113,7 +128,7 @@ export default {
 					label: this.$t("component.content.table.firmwareVersion")
 				}
 			],
-			meterList: [{ sysMac: "test1", connEquip: "test1", statusCode: "test1" }],
+			meterList: [{ sysMac: "00:00:AC:5E:8C:A0:38:63​", connEquip: "2", statusCode: "비정상​" }],
 			meterFields: [
 				{
 					key: "sysMac",
