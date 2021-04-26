@@ -70,10 +70,32 @@
 						</div>
 					</template>
 					<template #empty="scope">
-						<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
+						<div class="blank-box">
+							<span>
+								<img src="@/assets/svg/monitor_empty.svg" />
+								<b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+							</span>
+							<p>{{ $t("msg.search.emptyText") || scope.emptyText }}</p>
+						</div>
 					</template>
 					<template #emptyfiltered="scope">
-						<h4>{{ $t("msg.search.emptyText") || scope.emptyFilteredText }}</h4>
+						<div class="blank-box" v-if="itemList.length == 0">
+							<span>
+								<img src="@/assets/svg/monitor_empty.svg" />
+								<b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+							</span>
+							<p>{{ $t("msg.search.emptyText") || scope.emptyText }}</p>
+						</div>
+						<h4 v-else>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
+					</template>
+					<template #cell(fap)="row">
+						{{ row.item.fap }}
+					</template>
+					<template #cell(rfap)="row">
+						{{ row.item.rfap }}
+					</template>
+					<template #cell(meterTime)="row">
+						{{ row.item.meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
 					</template>
 					<template #cell(dcuMapp)="row">
 						{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}

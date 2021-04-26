@@ -43,11 +43,21 @@ export default {
 	mounted() {},
 	computed: {
 		result() {
-			return {
-				regionSeq: this.regionSelected,
-				estateSeq: this.estateSelected,
-				date: this.dateSelected
-			};
+			let params = {};
+
+			if (this.shows.join().indexOf("region") > -1) {
+				params.regionSeq = this.regionSelected;
+			}
+
+			if (this.shows.join().indexOf("estate") > -1) {
+				params.estateSeq = this.estateSelected;
+			}
+
+			if (this.shows.join().indexOf("date") > -1) {
+				params.date = this.dateSelected;
+			}
+
+			return params;
 		}
 	},
 	data() {

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<content-search @handle:searchItem="searchItemList" />
+		<content-search :shows="shows" @handle:searchItem="searchItemList" />
 		<content-table
 			:isBusy="isBusy"
 			:items="realtimeList"
@@ -10,13 +10,6 @@
 			:excelFileName="$t('estate.excelFileName')"
 			:excelSheetName="$t('info.tab.realtime')"
 		>
-			<template #table-header-left-head>
-				<b-button v-b-modal="'addBuilding'" variant="light">
-					<b-icon icon="pencil-fill"></b-icon>
-					{{ $t("building.button.add") }}
-				</b-button>
-			</template>
-			<template v-slot:table-header-right> </template>
 		</content-table>
 	</div>
 </template>
@@ -28,6 +21,12 @@ import ContentMixin from "@/components/content/mixin";
 export default {
 	mixins: [ContentMixin],
 	props: {
+		shows: {
+			type: Array,
+			default: function() {
+				return [["region", "estate"]];
+			}
+		},
 		showFilterList: {
 			type: Array,
 			default: function() {
@@ -47,7 +46,7 @@ export default {
 			realtimeFields: [
 				{
 					key: "regionName",
-					label: this.$t("component.content.table.houseName"),
+					label: this.$t("component.content.table.regionName"),
 					sortable: true,
 					sortDirection: "asc"
 				},
@@ -60,34 +59,46 @@ export default {
 					label: this.$t("component.content.table.buildingName")
 				},
 				{
+					key: "houseName",
+					label: this.$t("component.content.table.houseName")
+				},
+				{
 					key: "dcuId",
 					label: this.$t("component.content.table.dcuId")
 				},
 				{
-					key: "statusCode",
-					label: this.$t("component.content.table.statusCode")
+					key: "meterId",
+					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "_remark",
-					label: ""
+					key: "mac",
+					label: this.$t("component.content.table.mac")
+				},
+				{
+					key: "meterTime",
+					label: this.$t("component.content.table.recentlyReadingTime")
+				},
+				{
+					key: "fap",
+					label: this.$t("component.content.table.fap")
+				},
+				{
+					key: "rfap",
+					label: this.$t("component.content.table.rfap")
 				}
 			]
 		};
 	},
 	methods: {
 		async getRealtimeList(params) {
-			if (!params) {
-				params = { regionSeq: "0", estateSeq: "0" };
-			}
-
 			try {
 				this.isBusy = true;
 				const response = await Realtime.realtime(params);
 				const result = response.data.response;
-				this.buildingList = result;
+				this.realtimeList = result;
 			} catch (error) {
 				const result = [];
-				this.buildingList = result;
+				this.realtimeList = result;
 			} finally {
 				this.isBusy = false;
 			}

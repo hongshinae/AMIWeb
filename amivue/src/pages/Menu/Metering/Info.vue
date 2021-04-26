@@ -27,14 +27,18 @@ import RealTimeMetering from "./Info/RealTimeMetering";
 
 export default {
 	props: {
-		tabIndex: {
+		_tabIndex: {
 			type: Number,
 			default: 0
 		}
 	},
 	components: { ContentHeader, CollectionInfo, RealTimeMetering },
+	mounted() {
+		this.tabIndex = this._tabIndex;
+	},
 	data() {
 		return {
+			tabIndex: 0,
 			pageName: this.$t("menu.metering.info"),
 			paths: [
 				{ name: this.$t("menu.title"), bicon: "house", link: "/" },

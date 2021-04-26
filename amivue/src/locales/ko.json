@@ -154,8 +154,8 @@
 				"acca": "누적유효(A)",
 				"updateDate": "변경일시",
 				"recentlyReadingTime": "최근 검침시각",
-				"reading": "검침량",
-				"revese": "역방향",
+				"fap": "검침량",
+				"rfap": "역방향",
 				"connEquip": "연동 장비수",
 				"statusCode": "상태 코드"
 			}
@@ -431,7 +431,7 @@
 	},
 	"msg": {
 		"search": {
-			"emptyText": "검색결과가 없습니다.",
+			"emptyText": "검색결과가 없습니다. 검색을 먼저 진행해주세요.",
 			"emptyFilteredText": "필터결과가 없습니다."
 		},
 		"filter": {
