@@ -10,7 +10,7 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :items="dcuList" :fields="dcuFields" :busy="isDcuBusy">
+							<b-table :items="dcuList" :fields="dcuFields" select-mode="single" selectable @row-selected="onDcuRowSelected" :busy="isDcuBusy">
 								<template #table-busy>
 									<div class="text-center text-danger my-2">
 										<b-spinner class="align-middle"></b-spinner>
@@ -29,7 +29,7 @@
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>Meter ({{ dateSelected }})</span>
-						<small v-if="meterList">금일 최종 수집시간 : {{ moment().format("YYYY-MM-DD HH:mm:ss") }}</small>
+						<small v-if="meterList">금일 최종 수집시간 : {{ $moment().format("YYYY-MM-DD HH:mm:ss") }}</small>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
@@ -178,8 +178,16 @@ export default {
 			this.getDcuList(searchItem);
 			this.dateSelected = searchItem.date;
 		},
-		onDcuRowSelected(items, b, c) {
-			console.log(items, b, c);
+		async onDcuRowSelected(items) {
+			console.log(items);
+			if (items.length > 0) {
+				const params = { estateSeq: items[0].estateSeq, day: this.dateSelected, dcuId: items[0].dcuId };
+				const response = await Collection.meter(params);
+				const result = response.data.response;
+				this.meterList = result;
+			} else {
+				this.meterList = null;
+			}
 		}
 	}
 };
