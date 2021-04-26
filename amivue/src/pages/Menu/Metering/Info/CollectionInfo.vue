@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<content-search @handle:searchItem="searchItemList" />
+		<content-search :shows="shows" @handle:searchItem="searchItemList" />
 		<b-row class="row-wrap">
 			<b-col lg="6" sm="12">
 				<div class="wbox">
@@ -10,11 +10,7 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :items="dcuList" :fields="dcuFields" show-empty>
-								<template #empty="scope">
-									<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
-								</template>
-							</b-table>
+							<b-table :items="dcuList" :fields="dcuFields" select-mode="single" selectable @row-selected="onDcuRowSelected" />
 						</div>
 					</div>
 				</div>
@@ -24,13 +20,19 @@
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>Meter</span>
-						<small>금일 최종 수집시간 : 2020-12-09 19:00</small>
+						<small v-if="meterList">금일 최종 수집시간 : {{ moment().format("YYYY-MM-DD HH:mm:ss") }}</small>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
 							<b-table :items="meterList" :fields="meterFields" show-empty>
 								<template #empty="scope">
-									<h4>{{ $t("msg.search.emptyText") || scope.emptyText }}</h4>
+									<div class="blank-box">
+										<span>
+											<img src="@/assets/svg/monitor_empty.svg" />
+											<b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+										</span>
+										<p>{{ "DCU를 선택해주세요." || scope.emptyText }}</p>
+									</div>
 								</template>
 								<template #cell(_remark)="row">
 									<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
@@ -67,6 +69,12 @@ import ContentMixin from "@/components/content/mixin";
 export default {
 	mixins: [ContentMixin],
 	props: {
+		shows: {
+			type: Array,
+			default: function() {
+				return [["region", "estate", "date"]];
+			}
+		},
 		showFilterList: {
 			type: Array,
 			default: function() {
@@ -95,7 +103,7 @@ export default {
 					label: this.$t("info.collection.table.dcuId")
 				}
 			],
-			meterList: [],
+			meterList: null,
 			meterFields: [
 				{
 					key: "houseName",
@@ -140,8 +148,8 @@ export default {
 				this.isDcuBusy = false;
 			}
 		},
-		async getMeterList(estateSeq, dcuId) {
-			const params = { estateSeq: estateSeq, dcuId: dcuId };
+		async getMeterList(estateSeq, day, dcuId) {
+			const params = { estateSeq: estateSeq, day: day, dcuId: dcuId };
 
 			try {
 				this.isMeterBusy = true;
@@ -156,7 +164,11 @@ export default {
 			}
 		},
 		searchItemList: function(searchItem) {
+			console.log(searchItem);
 			this.getDcuList(searchItem);
+		},
+		onDcuRowSelected(items) {
+			console.log(items);
 		}
 	}
 };

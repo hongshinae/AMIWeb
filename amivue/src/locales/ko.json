@@ -99,6 +99,7 @@
 				"title": "검색",
 				"region": "지역",
 				"estate": "단지명",
+				"date": "조회 날짜",
 				"building": "동명",
 				"dcuId": "DCU ID",
 				"meterId": "METER ID",
