@@ -464,5 +464,6 @@ select {
 }
 /*SVGwrap*/
 .svg-Warp {
-	padding: 20px 40px;
+	padding: 10px 20px;
+	overflow: hidden;
 }
