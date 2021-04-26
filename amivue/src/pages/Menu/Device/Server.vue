@@ -128,14 +128,33 @@
 					</div>
 				</div>
 				<div class="box serve-ex-ip-wrap">
+					<ul>
+						<li><span class="linkage"></span></li>
+						<li class="linkage-text">정상</li>
+					</ul>
 					<div class="serve-ex-ip">
 						<ol>
-							<li>서버 EXTERNAL IP</li>
-							<li>cass.cnuglobal.co.kr</li>
+							<li>WAS 서버</li>
+							<li>192.168.123.123</li>
 						</ol>
 					</div>
-					<div class="svg-wrap">
-						<img src="@/assets/svg/icon_server.svg" />
+					<div class="svg-wrap-text">
+						WAS / WEB
+					</div>
+				</div>
+				<div class="box serve-ex-ip-wrap">
+					<ul>
+						<li><span class="unlinkage"></span></li>
+						<li class="unlinkage-text">오류</li>
+					</ul>
+					<div class="serve-ex-ip">
+						<ol>
+							<li>DB 서버</li>
+							<li>192.168.123.111</li>
+						</ol>
+					</div>
+					<div class="svg-wrap-text">
+						DataBase
 					</div>
 				</div>
 			</b-col>
