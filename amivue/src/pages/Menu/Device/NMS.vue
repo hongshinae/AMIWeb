@@ -157,11 +157,9 @@ export default {
 		},
 		onDcuRowSelected(items) {
 			console.log(items);
-			alert(55);
 		},
 		onMeterRowSelected(items, rows) {
 			console.log(items, rows);
-			items._showDetails = true;
 		}
 	}
 };

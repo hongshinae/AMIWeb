@@ -376,7 +376,21 @@
 			"osCpu": "OS CPU 사용률",
 			"osMemory": "OS CPU 사용률"
 		},
-		"deviceInformation": "장비정보"
+		"deviceInformation": "장비정보",
+		"deviceInformationSub": "5종 검침 관련 모든 계량기 수 모뎀 수 DCU/Gateway 수",
+		"equipmentCount": "등록 장비수",
+		"meterCount": "계량기",
+		"dcuCount": "DCU / GATE",
+		"modemCount": "Modem",
+		"type": {
+			"meter": "전기",
+			"gas": "가스",
+			"water": "수도",
+			"hot": "온수",
+			"heat": "난방"
+		},
+		"statusTrue": "정상",
+		"statusFalse": "오류"
 	},
 	"lookup": {},
 	"info": {

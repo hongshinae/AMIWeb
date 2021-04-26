@@ -10,7 +10,7 @@
 					</h5>
 					<div class="chartWarp">
 						<div class="">
-							<img src="/resources/images/charhimg01.png" alt="" title="" />
+							<high-charts :options="chartOptions" />
 						</div>
 					</div>
 				</div>
@@ -26,17 +26,17 @@
 			<b-col lg="12" xl="4">
 				<div class="presentMenu">
 					<ul>
-						<li>난방</li>
-						<li>온수</li>
-						<li>수도</li>
-						<li>가스</li>
-						<li class="on">전기</li>
+						<li>{{ $t("server.type.heat") }}</li>
+						<li>{{ $t("server.type.hot") }}</li>
+						<li>{{ $t("server.type.water") }}</li>
+						<li>{{ $t("server.type.gas") }}</li>
+						<li class="on">{{ $t("server.type.meter") }}</li>
 					</ul>
 				</div>
 				<div class="box">
 					<h5>
 						<span>{{ $t("server.serverInformation.title") }}</span>
-						<b class="fontC">정상</b>
+						<b class="fontC">{{ system.statusTrue }}</b>
 					</h5>
 					<div class="dutyCycle cpu">
 						<h4>
@@ -95,66 +95,53 @@
 				</div>
 				<div class="box">
 					<h5>
-						<span>등록정보</span>
-						<small>5종 검침 관련 모든 계량기 수 모뎀 수 DCU/Gateway 수</small>
+						<span>{{ $t("server.deviceInformation") }}</span>
+						<small>{{ $t("server.deviceInformationSub") }}</small>
 					</h5>
 					<div class="regist-info">
 						<ul>
 							<li>
 								<div class="serve-box">
-									<h6>등록 장비 수</h6>
-									<b>2개</b>
+									<h6>{{ $t("server.equipmentCount") }}</h6>
+									<b>{{ device.serverCount }}</b>
 								</div>
 							</li>
 							<li>
 								<div class="serve-box">
-									<h6>계량기</h6>
-									<b>41.5천</b>
+									<h6>{{ $t("server.meterCount") }}</h6>
+									<b>{{ device.meterCount }}</b>
 								</div>
 							</li>
 							<li>
 								<div class="serve-box">
-									<h6>DCU / Gate</h6>
-									<b>2,081개</b>
+									<h6>{{ $t("server.dcuCount") }}</h6>
+									<b>{{ device.dcuCount }}</b>
 								</div>
 							</li>
 							<li>
 								<div class="serve-box">
-									<h6>Modem</h6>
-									<b>2,081개</b>
+									<h6>{{ $t("server.modemCount") }}</h6>
+									<b>{{ device.modemCount }}</b>
 								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="box serve-ex-ip-wrap">
+				<div class="box serve-ex-ip-wrap" v-for="(item, key) in serverList" :key="key">
 					<ul>
-						<li><span class="linkage"></span></li>
-						<li class="linkage-text">정상</li>
+						<li><span :class="{ linkage: item.status == 0, unlinkage: item.status == 1 }"></span></li>
+						<li :class="{ 'linkage-text': item.status == 0, 'unlinkage-text': item.status == 1 }">
+							{{ item.status == 0 ? $t("server.statusTrue") : $t("server.statusFalse") }}
+						</li>
 					</ul>
 					<div class="serve-ex-ip">
 						<ol>
-							<li>WAS 서버</li>
-							<li>192.168.123.123</li>
+							<li>{{ item.serverName }}</li>
+							<li>{{ item.ip }}</li>
 						</ol>
 					</div>
 					<div class="svg-wrap-text">
-						WAS / WEB
-					</div>
-				</div>
-				<div class="box serve-ex-ip-wrap">
-					<ul>
-						<li><span class="unlinkage"></span></li>
-						<li class="unlinkage-text">오류</li>
-					</ul>
-					<div class="serve-ex-ip">
-						<ol>
-							<li>DB 서버</li>
-							<li>192.168.123.111</li>
-						</ol>
-					</div>
-					<div class="svg-wrap-text">
-						DataBase
+						{{ item.purpose }}
 					</div>
 				</div>
 			</b-col>
@@ -164,11 +151,75 @@
 <script>
 import Server from "@/service/server";
 import ContentMixin from "@/components/content/mixin";
+import { Chart } from "highcharts-vue";
+let sse;
 
 export default {
 	mixins: [ContentMixin],
+	components: {
+		HighCharts: Chart
+	},
 	mounted() {
 		this.getSystem();
+		this.getDevice();
+		this.getServerList();
+	},
+	computed: {
+		chartOptions: {
+			cache: false,
+			get() {
+				return {
+					chart: {
+						type: "spline",
+						marginRight: 10
+					},
+
+					time: {
+						useUTC: false
+					},
+
+					title: null,
+
+					xAxis: {
+						type: "datetime",
+						tickPixelInterval: 150
+					},
+
+					yAxis: {
+						title: {
+							text: "Value"
+						},
+						plotLines: [
+							{
+								value: 0,
+								width: 1,
+								color: "#808080"
+							}
+						]
+					},
+
+					tooltip: {
+						headerFormat: "<b>{series.name}</b><br/>",
+						pointFormat: "{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}"
+					},
+
+					legend: {
+						enabled: false
+					},
+
+					exporting: {
+						enabled: false
+					},
+
+					series: [
+						{
+							name: this.$t("server.used"),
+							data: this.systemList
+						}
+					]
+				};
+			}
+		}
 	},
 	data() {
 		return {
@@ -178,18 +229,62 @@ export default {
 				{ name: this.$t("menu.device.title") },
 				{ name: this.$t("menu.device.server") }
 			],
-			system: {}
+			system: { jvmFree: 0, jvmMax: 0, jvmTotal: 0, jvmUsed: 0, osCpu: 0, osMemory: 0 },
+			systemList: [],
+			device: {},
+			serverList: []
 		};
 	},
 	methods: {
-		async getSystem() {
+		getSystem() {
+			sse = Server.system(1);
+			sse.onerror = function() {};
+			sse.onopen = function() {};
+			sse.onmessage = e => {
+				const data = JSON.parse(e.data).response;
+				this.system.jvmFree = data.jvmFree;
+				this.system.jvmMax = data.jvmMax;
+				this.system.jvmTotal = data.jvmTotal;
+				this.system.jvmUsed = data.jvmUsed;
+				this.system.osCpu = data.osCpu;
+				this.system.osMemory = data.osMemory;
+
+				if (this.systemList.length >= 20) {
+					this.systemList.shift();
+				}
+
+				// this.systemList.push(data);
+				this.systemList.push({
+					// x: this.$moment(data.date).format("YYYY-MM-DD HH:mm:ss"),
+					x: this.$moment(data.date).valueOf(),
+					y: parseFloat(data.osCpu)
+				});
+				console.log(this.systemList.length, this.systemList);
+			};
+		},
+		async getDevice() {
 			try {
-				const response = await Server.system();
+				const response = await Server.device();
 				const result = response.data.response;
-				this.system = result;
+				this.device = result;
 			} catch (error) {
 				console.log(error);
 			}
+		},
+		async getServerList() {
+			try {
+				const response = await Server.list();
+				const result = response.data.response;
+				this.serverList = result;
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	},
+	beforeDestroy() {
+		if (sse) {
+			sse.close();
+			console.log("Server System SSE Destroyed!!");
 		}
 	}
 };
