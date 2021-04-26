@@ -16,7 +16,7 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :items="dcuList" :fields="dcuFields">
+							<b-table :items="dcuList" :fields="dcuFields" select-mode="single" selectable @row-selected="onDcuRowSelected">
 								<template #cell(sysState)="row">
 									{{ row.item.sysState == 1 ? "정상" : "비정상" }}
 								</template>
@@ -30,55 +30,35 @@
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>Modem <i class="p-Color">4</i> Meter <i class="p-Color">8</i> </span>
-						<div role="group" class="btn-group">
+						<div role="group" class="btn-group" disabled>
 							<b-button variant="light">모뎀리셋</b-button>
 							<b-button variant="light">모뎀펌웨어 업그레이드</b-button>
 						</div>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<table class="table b-table" id="">
-								<thead role="rowgroup" class="">
-									<tr role="row" class="">
-										<th class=""><div>Mac address</div></th>
-										<th class=""><div>연동 장비수</div></th>
-										<th class=""><div></div></th>
-										<th class=""><div>상태코드</div></th>
-									</tr>
-								</thead>
-								<tbody role="rowgroup">
-									<tr role="row" class="">
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">2</td>
-										<td class=""></td>
-										<td class="">정상</td>
-									</tr>
-									<tr role="row" class="">
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">2</td>
-										<td class=""></td>
-										<td class="">정상</td>
-									</tr>
-									<tr role="row" class="">
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">2</td>
-										<td class=""></td>
-										<td class="">정상</td>
-									</tr>
-									<tr role="row" class="">
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">2</td>
-										<td class=""></td>
-										<td class="">정상</td>
-									</tr>
-									<tr role="row" class="">
-										<td class="">00:00:AC:5E:8C:A0:38:63</td>
-										<td class="">2</td>
-										<td class=""></td>
-										<td class="">정상</td>
-									</tr>
-								</tbody>
-							</table>
+							<b-table
+								:items="meterList"
+								:fields="meterFields"
+								select-mode="single"
+								selected-variant=""
+								selectable
+								@row-selected="onMeterRowSelected"
+							>
+								<template #cell(statusCode)="row">
+									{{ row.item.statusCode == 1 ? "정상" : "비정상" }}
+								</template>
+								<template #cell(test)="row">
+									<b-button size="sm" @click="row.toggleDetails"> {{ row.detailsShowing ? "Hide" : "Show" }} Details </b-button>
+								</template>
+								<template #row-details="row">
+									<b-card>
+										<ul>
+											<li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
+										</ul>
+									</b-card>
+								</template>
+							</b-table>
 						</div>
 					</div>
 				</div>
@@ -132,6 +112,25 @@ export default {
 					key: "firmwareVersion",
 					label: this.$t("component.content.table.firmwareVersion")
 				}
+			],
+			meterList: [{ sysMac: "test1", connEquip: "test1", statusCode: "test1" }],
+			meterFields: [
+				{
+					key: "sysMac",
+					label: this.$t("component.content.table.mac")
+				},
+				{
+					key: "connEquip",
+					label: this.$t("component.content.table.connEquip")
+				},
+				{
+					key: "statusCode",
+					label: this.$t("component.content.table.statusCode")
+				},
+				{
+					key: "test",
+					label: "펼치기"
+				}
 			]
 		};
 	},
@@ -153,8 +152,16 @@ export default {
 				this.isBusy = false;
 			}
 		},
-		searchItemList: function(searchItem) {
+		searchItemList(searchItem) {
 			this.getNmsDcuList(searchItem);
+		},
+		onDcuRowSelected(items) {
+			console.log(items);
+			alert(55);
+		},
+		onMeterRowSelected(items, rows) {
+			console.log(items, rows);
+			items._showDetails = true;
 		}
 	}
 };
