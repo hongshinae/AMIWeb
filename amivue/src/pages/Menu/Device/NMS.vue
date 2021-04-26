@@ -52,13 +52,13 @@
 											<table>
 												<thead>
 													<tr class="error">
-														<td>-</td>
+														<td><b-icon icon="arrow-return-right"></b-icon></td>
 														<td>06090009424 (301호)</td>
 														<td>2020-12-29 12:00:00)</td>
 														<td>12451</td>
 													</tr>
 													<tr>
-														<td>-</td>
+														<td><b-icon icon="arrow-return-right"></b-icon></td>
 														<td>06090009424 (301호)</td>
 														<td>2020-12-29 12:00:00)</td>
 														<td>12451</td>
@@ -174,3 +174,18 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+.card {
+	border: 0 none;
+	.card-body {
+		padding: 0;
+		.basic-table {
+			width: 100%;
+			table {
+				width: 100%;
+				background: #ecf2f6;
+			}
+		}
+	}
+}
+</style>
