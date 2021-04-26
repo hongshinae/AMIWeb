@@ -16,7 +16,7 @@
 				<span class="title">{{ $t("dashboard.memoryUsage") }}</span>
 				<span class="deta">{{ osMemory }}%</span>
 			</h4>
-			<b-progress :value="osMemory" :max="100"></b-progress>
+			<b-progress class="progress-bar-2" :value="osMemory" :max="100"></b-progress>
 		</div>
 		<ul class="serveInfo">
 			<li>
@@ -82,6 +82,13 @@ export default {
 .progress-bar {
 	background-image: linear-gradient(to bottom, #1fdede 0, #23bada 100%) !important;
 }
+.progress-bar-2 .progress-bar {
+	background-image: linear-gradient(to bottom, #dedb1f 0, #dab823 100%) !important;
+}
+.progress-bar-3 .progress-bar {
+	background-image: linear-gradient(to bottom, #ff5959 0, #da2323 100%) !important;
+}
+
 .progress {
 	background-image: linear-gradient(to bottom, #07132b 0, #07132b 100%) !important;
 	height: 5px !important;
