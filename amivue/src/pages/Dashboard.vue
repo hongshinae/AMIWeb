@@ -6,10 +6,10 @@
 					<div class="date">{{ Date.now() | moment("YYYY.M.D") }}</div>
 					<dashboard-timer />
 				</div>
-				<total-voltage />
-				<reading />
-				<today-fault />
-				<today-weather />
+				<total-voltage :data="totalVoltage" />
+				<reading :data="reading" />
+				<today-fault :data="todayFault" />
+				<today-weather :data="todayWeather" />
 			</b-col>
 			<b-col xl="4" lg="6" md="12" sm="12">
 				<region-map />
@@ -26,7 +26,7 @@
 					</ul>
 				</div>
 				<server-info />
-				<regist-equipment />
+				<regist-equipment :data="device" />
 				<region-usage />
 			</b-col>
 		</b-row>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import Dashboard from "@/service/dashboard";
 import DashboardTimer from "@/components/DashboardTimer";
 import TotalVoltage from "@/components/chart/TotalVoltage";
 import Reading from "@/components/chart/Reading";
@@ -44,6 +45,7 @@ import ServerInfo from "@/components/chart/ServerInfo";
 import RegionUsage from "@/components/chart/RegionUsage";
 import RegistEquipment from "@/components/chart/RegistEquipment";
 import RegionMap from "@/components/chart/RegionMap";
+let sse;
 
 export default {
 	name: "Home",
@@ -59,16 +61,42 @@ export default {
 		RegistEquipment,
 		RegionMap
 	},
+	async mounted() {
+		sse = Dashboard.allData(30);
+		sse.onerror = function() {};
+		sse.onopen = function() {};
+		sse.onmessage = e => {
+			const data = JSON.parse(e.data);
+			this.totalVoltage = data.useData;
+			this.totalWeather = { todayWeather: data.weather, weatherData: data.wheatherData };
+			this.todayFault = data.failureStatus;
+			this.reading = data.rate;
+			this.device = data.device;
+		};
+		const response = await Dashboard.firstData();
+		const data = response.data;
+		this.totalVoltage = data.useData;
+		this.totalWeather = { todayWeather: data.weather, weatherData: data.wheatherData };
+		this.todayFault = data.failureStatus;
+		this.reading = data.rate;
+		this.device = data.device;
+	},
 	data: function() {
 		return {
-			now: Date.now()
+			now: Date.now(),
+			totalVoltage: null,
+			todayWeather: null,
+			todayFault: null,
+			reading: null,
+			device: null
 		};
 	},
-	computed: {
-		cNow() {
-			return this.now - 86400000 + 1000;
+	methods: {},
+	beforeDestroy() {
+		if (sse) {
+			sse.close();
+			console.log("AllData SSE Destroyed!!");
 		}
-	},
-	methods: {}
+	}
 };
 </script>

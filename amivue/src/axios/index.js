@@ -6,7 +6,7 @@ import locale from "@/locales";
 const axios = Axios.create({
 	baseURL: "/api",
 	// baseURL: "http://localhost:18099",
-	timeout: 20000
+	timeout: 3000
 });
 
 axios.interceptors.request.use(
@@ -37,7 +37,7 @@ axios.interceptors.response.use(
 		// Response Error
 		const errorAPI = error.config;
 
-		if (error && error.response.data.status === 401 && errorAPI.retry === undefined) {
+		if (error && error.response && error.response.data.status === 401 && errorAPI.retry === undefined) {
 			errorAPI.retry = true;
 			// 	console.log("토큰이 이상한 오류일 경우");
 			// 	await Login.refreshToken();

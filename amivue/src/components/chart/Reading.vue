@@ -4,11 +4,11 @@
 			<ul class="inspection">
 				<li>
 					<span>{{ $t("dashboard.timelyRate") }}</span>
-					<b class="fontC">{{ timelyRate[0] }}%</b>
+					<b class="fontC">{{ this.data ? this.data.todayTimelyRate : "" }}%</b>
 				</li>
 				<li>
 					<span>{{ $t("dashboard.readingRate") }}</span>
-					<b class="fontC">{{ readingRate[0] }}%</b>
+					<b class="fontC">{{ this.data ? this.data.todayMeterReadingRate : "" }}%</b>
 				</li>
 			</ul>
 		</h5>
@@ -21,23 +21,12 @@
 </template>
 
 <script>
-import Dashboard from "@/service/dashboard";
 import { Chart } from "highcharts-vue";
-let sse;
 
 export default {
+	props: ["data"],
 	components: {
 		HighCharts: Chart
-	},
-	mounted() {
-		sse = Dashboard.readingRate(1);
-		sse.onerror = function() {};
-		sse.onopen = function() {};
-		sse.onmessage = e => {
-			const data = JSON.parse(e.data).response;
-			this.readingRate = [data.todayMeterReadingRate, data.yesterdayMeterReadingRate];
-			this.timelyRate = [data.todayTimelyRate, data.yesterdayTimelyRate];
-		};
 	},
 	computed: {
 		chartOptions: {
@@ -95,12 +84,12 @@ export default {
 					series: [
 						{
 							name: "적시율",
-							data: this.timelyRate,
+							data: this.data ? [this.data.todayTimelyRate, this.data.yesterdayTimelyRate] : [],
 							color: "#c45bdb"
 						},
 						{
 							name: "검침률",
-							data: this.readingRate,
+							data: this.data ? [this.data.todayMeterReadingRate, this.data.yesterdayMeterReadingRate] : [],
 							color: "#a66dee"
 						}
 					]
@@ -110,16 +99,8 @@ export default {
 	},
 	data() {
 		return {
-			timelyRate: [0],
-			readingRate: [0],
 			chartName: "bar"
 		};
-	},
-	beforeDestroy() {
-		if (sse) {
-			sse.close();
-			console.log("Reading SSE Destroyed!!");
-		}
 	}
 };
 </script>

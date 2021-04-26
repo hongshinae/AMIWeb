@@ -2,7 +2,7 @@
 	<div class="box">
 		<h5>
 			상태 이상 정보
-			<b class="fontC">{{ failureTodayCount }} 건</b>
+			<b class="fontC">{{ data ? data.failureTodayCount : 0 }} 건</b>
 		</h5>
 		<div class="chartWarp">
 			<div class="">
@@ -13,23 +13,12 @@
 </template>
 
 <script>
-import Dashboard from "@/service/dashboard";
 import { Chart } from "highcharts-vue";
-let sse;
 
 export default {
+	props: ["data"],
 	components: {
 		HighCharts: Chart
-	},
-	mounted() {
-		sse = Dashboard.todayFault(1);
-		sse.onerror = function() {};
-		sse.onopen = function() {};
-		sse.onmessage = e => {
-			const data = JSON.parse(e.data).response;
-			this.today = data.arrayData;
-			this.failureTodayCount = data.failureTodayCount;
-		};
 	},
 	computed: {
 		chartOptions: {
@@ -71,7 +60,7 @@ export default {
 					series: [
 						{
 							name: "오늘",
-							data: this.today.map(item => item.count),
+							data: this.data ? this.data.arrayData.map(item => item.count) : [],
 							color: "#7383fd"
 						}
 					]
@@ -81,16 +70,8 @@ export default {
 	},
 	data() {
 		return {
-			today: [],
-			failureTodayCount: 0,
 			chartName: "column"
 		};
-	},
-	beforeDestroy() {
-		if (sse) {
-			sse.close();
-			console.log("TodayFault SSE Destroyed!!");
-		}
 	}
 };
 </script>

@@ -2,7 +2,7 @@
 	<div class="box power">
 		<h5>
 			<span>{{ $t("dashboard.totalVoltage") }}</span>
-			<b class="fontC">{{ todayTotal }} wh</b>
+			<b class="fontC">{{ data ? data.todayUseAll : "" }} wh</b>
 		</h5>
 		<div class="chartWarp">
 			<div class="">
@@ -13,24 +13,12 @@
 </template>
 
 <script>
-import Dashboard from "@/service/dashboard";
 import { Chart } from "highcharts-vue";
-let sse;
 
 export default {
+	props: ["data"],
 	components: {
 		HighCharts: Chart
-	},
-	mounted() {
-		sse = Dashboard.totalVoltage(1);
-		sse.onerror = function() {};
-		sse.onopen = function() {};
-		sse.onmessage = e => {
-			const data = JSON.parse(e.data).response;
-			this.todayTotal = data.todayUseAll;
-			this.todayData = data.todayData.map(item => item.use);
-			this.yesterdayData = data.yesterdayData.map(item => item.use);
-		};
 	},
 	computed: {
 		chartOptions: {
@@ -74,12 +62,12 @@ export default {
 					series: [
 						{
 							name: "오늘",
-							data: this.todayData,
+							data: this.data ? this.data.todayData.map(item => item.use) : [],
 							color: "#1ee2df"
 						},
 						{
 							name: "어제",
-							data: this.yesterdayData,
+							data: this.data ? this.data.yesterdayData.map(item => item.use) : [],
 							color: "#75cee2"
 						}
 					]
@@ -89,17 +77,8 @@ export default {
 	},
 	data() {
 		return {
-			todayTotal: 0,
-			todayData: [],
-			yesterdayData: [],
 			chartName: "column"
 		};
-	},
-	beforeDestroy() {
-		if (sse) {
-			sse.close();
-			console.log("TotalVoltage SSE Destroyed!!");
-		}
 	}
 };
 </script>
