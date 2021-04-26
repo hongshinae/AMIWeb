@@ -93,16 +93,16 @@ export default {
 }
 
 .todayWeather .codeSky1 {
-	background: url("../../assets/svg/weather_sun.svg") 0 0 no-repeat;
+	background: url("~@/assets/svg/weather_sun.svg") 0 0 no-repeat;
 }
 .detaeWeather .codeValue0 {
-	background: url("../../assets/svg/emo_smile2.svg") 0 0 no-repeat;
+	background: url("~@/assets/svg/emo_smile2.svg") 0 0 no-repeat;
 }
 .detaeWeather .codeValue1 {
-	background: url("../../assets/svg/emo_stop.svg") 0 0 no-repeat;
+	background: url("~@/assets/svg/emo_stop.svg") 0 0 no-repeat;
 }
 .detaeWeather .codeValue2 {
-	background: url("../../assets/svg/emo_tear.svg") 0 0 no-repeat;
+	background: url("~@/assets/svg/emo_tear.svg") 0 0 no-repeat;
 }
 
 @media (max-width: 991px) {
