@@ -60,6 +60,15 @@ export default {
 	}
 }
 
+.todayWeather .codeSky1:before {
+	content: "36.5 / 비";
+	float: right;
+	width: 85px;
+	line-height: 32px;
+	height: 32px;
+	color: #94a0b4;
+}
+
 .todayWeather .codeSky1 {
 	background: url("~@/assets/svg/weather_sun.svg") 0 0 no-repeat;
 }
