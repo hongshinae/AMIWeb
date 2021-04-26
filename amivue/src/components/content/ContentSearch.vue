@@ -11,7 +11,7 @@
 						<b-col xl="3" md="12" sm="12" v-for="item in items" :key="item">
 							<content-search-region v-if="item == 'region'" v-model="regionSelected" :selected="regionSelected" />
 							<content-search-estate v-if="item == 'estate'" v-model="estateSelected" :region="regionSelected" />
-							<content-search-date v-if="item == 'date'" v-model="dateSelected" :dateSelected="dateSelected" />
+							<content-search-date v-if="item == 'date'" v-model="dateSelected" />
 						</b-col>
 					</b-row>
 				</form>
@@ -54,7 +54,7 @@ export default {
 		return {
 			regionSelected: null,
 			estateSelected: null,
-			dateSelected: null
+			dateSelected: this.$moment().format("YYYY-MM-DD")
 		};
 	},
 	methods: {

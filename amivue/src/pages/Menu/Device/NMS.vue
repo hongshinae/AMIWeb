@@ -9,9 +9,9 @@
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>DCU <i class="p-Color">4</i> </span>
 						<div role="group" class="btn-group">
-							<b-button variant="light">Reboot</b-button>
-							<b-button variant="light">재스캔</b-button>
-							<b-button variant="light" disabled>DCU펌웨어 업그레이드</b-button>
+							<b-button variant="light">{{ $t("nms.button.reboot") }}</b-button>
+							<b-button variant="light">{{ $t("nms.button.rescan") }}</b-button>
+							<b-button variant="light" disabled>{{ $t("nms.button.dcuFirmwareUpgrade") }}</b-button>
 						</div>
 					</h5>
 					<div class="table-wrap">
@@ -31,25 +31,20 @@
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>Modem <i class="p-Color">4</i> Meter <i class="p-Color">8</i> </span>
 						<div role="group" class="btn-group" disabled>
-							<b-button variant="light">모뎀리셋</b-button>
-							<b-button variant="light">모뎀펌웨어 업그레이드</b-button>
+							<b-button variant="light">{{ $t("nms.button.modemReset") }}</b-button>
+							<b-button variant="light" disabled>{{ $t("nms.button.modemFirmwareUpgrade") }}</b-button>
 						</div>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table
-								:items="meterList"
-								:fields="meterFields"
-								select-mode="single"
-								selected-variant=""
-								selectable
-								@row-selected="onMeterRowSelected"
-							>
+							<b-table :items="meterList" :fields="meterFields">
 								<template #cell(statusCode)="row">
-									{{ row.item.statusCode == 1 ? "정상" : "비정상" }}
+									{{ row.item.statusCode == 1 ? $t("nms.dcuStatusTrue") : $t("nms.dcuStatusFalse") }}
 								</template>
 								<template #cell(test)="row">
-									<b-button size="sm" @click="row.toggleDetails"> {{ row.detailsShowing ? "Hide" : "Show" }} Details </b-button>
+									<b-button size="sm" @click="row.toggleDetails">
+										{{ row.detailsShowing ? $t("nms.collapse") : $t("nms.expand") }}
+									</b-button>
 								</template>
 								<template #row-details="">
 									<b-card>
@@ -144,7 +139,7 @@ export default {
 				},
 				{
 					key: "test",
-					label: "펼치기"
+					label: ""
 				}
 			]
 		};

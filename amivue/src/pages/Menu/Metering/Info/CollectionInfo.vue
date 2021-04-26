@@ -10,7 +10,16 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :items="dcuList" :fields="dcuFields" select-mode="single" selectable @row-selected="onDcuRowSelected" />
+							<b-table :items="dcuList" :fields="dcuFields" :busy="isDcuBusy">
+								<template #table-busy>
+									<div class="text-center text-danger my-2">
+										<b-spinner class="align-middle"></b-spinner>
+										<slot name="table-loading-text">
+											<strong>{{ $t("msg.loading") }}</strong>
+										</slot>
+									</div>
+								</template>
+							</b-table>
 						</div>
 					</div>
 				</div>
@@ -19,19 +28,19 @@
 				<div class="wbox">
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
-						<span>Meter</span>
+						<span>Meter ({{ dateSelected }})</span>
 						<small v-if="meterList">금일 최종 수집시간 : {{ moment().format("YYYY-MM-DD HH:mm:ss") }}</small>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :items="meterList" :fields="meterFields" show-empty>
+							<b-table :items="meterList" :fields="meterFields" :busy="isMeterBusy" show-empty>
 								<template #empty="scope">
 									<div class="blank-box">
 										<span>
 											<img src="@/assets/svg/monitor_empty.svg" />
 											<b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
 										</span>
-										<p>{{ "DCU를 선택해주세요." || scope.emptyText }}</p>
+										<p>{{ $t("msg.selectDcu") || scope.emptyText }}</p>
 									</div>
 								</template>
 								<template #cell(_remark)="row">
@@ -127,7 +136,8 @@ export default {
 				}
 			],
 			isDcuBusy: false,
-			isMeterBusy: false
+			isMeterBusy: false,
+			dateSelected: null
 		};
 	},
 	methods: {
@@ -166,9 +176,10 @@ export default {
 		searchItemList: function(searchItem) {
 			console.log(searchItem);
 			this.getDcuList(searchItem);
+			this.dateSelected = searchItem.date;
 		},
-		onDcuRowSelected(items) {
-			console.log(items);
+		onDcuRowSelected(items, b, c) {
+			console.log(items, b, c);
 		}
 	}
 };

@@ -368,7 +368,19 @@
 			"cancel": "취소"
 		}
 	},
-	"nms": {},
+	"nms": {
+		"button": {
+			"reboot": "Reboot",
+			"rescan": "재스캔",
+			"dcuFirmwareUpgrade": "DCU 펌웨어 업그레이드",
+			"modemReset": "모뎀리셋",
+			"modemFirmwareUpgrade": "모뎀 펌웨어 업그레이드"
+		},
+		"dcuStatusTrue": "정상",
+		"dcuStatusFalse": "비정상",
+		"collapse": "접기",
+		"expand": "상세보기"
+	},
 	"server": {
 		"used": "실시간 사용률",
 		"serverMap": "서버 설치 구성도",
@@ -429,6 +441,7 @@
 			"login": "로그인 후 다시 시도해주세요.",
 			"expired": "세션이 만료되었습니다."
 		},
-		"loading": "Loading..."
+		"loading": "Loading...",
+		"selectDcu": "DCU를 선택해주세요."
 	}
 }

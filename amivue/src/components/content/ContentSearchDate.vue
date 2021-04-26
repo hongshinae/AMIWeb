@@ -5,7 +5,7 @@
 		</b-col>
 		<b-col lg="8">
 			<b-form-datepicker
-				value="dateSelected"
+				:value="value"
 				placeholder="조회날짜"
 				:date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
 				@input="$emit('input', $event)"
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-	props: ["dateSelected"]
+	props: ["value"]
 };
 </script>
 
