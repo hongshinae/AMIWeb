@@ -78,4 +78,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.progress-bar {
+	background-image: linear-gradient(to bottom, #1fdede 0, #23bada 100%) !important;
+}
+.progress {
+	background-image: linear-gradient(to bottom, #07132b 0, #07132b 100%) !important;
+	height: 5px !important;
+}
+</style>

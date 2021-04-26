@@ -98,62 +98,7 @@
 	}
 }
 
-/*메인대시보드닐씨*/
-.double {
-	&.row {
-		.col-lg-6 {
-			&:first-child {
-				padding-left: -15px !important;
-				padding-right: 7px !important;
-			}
-			&:last-child {
-				padding-left: 8px !important;
-				padding-right: -15px !important;
-			}
-		}
-	}
-	h4 {
-		padding: 10px 0 0 25px;
-		font-size: 12px;
-		margin-top: 20px;
-		float: left;
-	}
-}
-.todayWeather,
-.detaeWeather {
-	height: 110px;
-	.pulsate-bck {
-		width: 32px;
-		height: 32px;
-		float: right;
-		margin-top: 32px;
-		margin-right: 25px;
-	}
-}
-
-.todayWeather .codeSky1 {
-	background: url(../svg/weather_sun.svg) 0 0 no-repeat;
-}
-.detaeWeather .codeValue0 {
-	background: url(../svg/emo_smile2.svg) 0 0 no-repeat;
-}
-.detaeWeather .codeValue1 {
-	background: url(../svg/emo_stop.svg) 0 0 no-repeat;
-}
-.detaeWeather .codeValue2 {
-	background: url(../svg/emo_tear.svg) 0 0 no-repeat;
-}
-
-@media (max-width: 991px) {
-	.double.row .col-lg-6:first-child {
-		padding-right: 0px !important;
-	}
-	.double.row .col-lg-6:last-child {
-		padding-left: 0px !important;
-	}
-}
-
-/*메인대시보드 전기*/
+/*메인대시보드 전기 공통으로 사용*/
 .presentMenu {
 	height: 30px;
 	margin: 0px 0 15px 0;
@@ -238,13 +183,6 @@
 		margin-top: 18px;
 	}
 }
-.progress-bar {
-	background-image: linear-gradient(to bottom, #1fdede 0, #23bada 100%) !important;
-}
-.progress {
-	background-image: linear-gradient(to bottom, #07132b 0, #07132b 100%) !important;
-	height: 5px !important;
-}
 
 /*서버현황*/
 .regist-info {
@@ -313,7 +251,7 @@
 	}
 }
 
-//하이차트
+//하이차트 공통
 .highcharts-background {
 	background: none !important;
 	fill: none !important;

@@ -124,4 +124,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.inspection {
+	li {
+		width: 42%;
+		float: left;
+		&:last-child {
+			float: right;
+		}
+	}
+}
+</style>
