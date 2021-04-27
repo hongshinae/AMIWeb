@@ -1,6 +1,7 @@
 <template>
 	<div class="main-bg content">
 		<dcu-modem-1></dcu-modem-1>
+		<router-modem-1></router-modem-1>
 		<div class="main-location-wrap">
 			<h1>네트워크 상태</h1>
 			<div class="main-location">
@@ -70,36 +71,32 @@
 			<b-row>
 				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
 					<div class="wbox">
-						<div class="stats-wrap">
-							<span class="linkage"></span>
-							<span class="unlinkage"></span>
-						</div>
-						<p>DCU</p>
-						<b-button v-b-modal.dcuModem1 variant="light"></b-button>
+						<ul class="stats-wrap">
+							<li><span class="linkage"></span>DCU</li>
+							<li><span class="unlinkage"></span>Router</li>
+						</ul>
+						<p class="dcu-name">DCU ID 1</p>
+						<ul class="dcu-button-wrap">
+							<li><b-button v-b-modal.dcuModem1 block variant="dark">DCU ping</b-button></li>
+							<li><b-button v-b-modal.routerModem1 block variant="dark">Router ping</b-button></li>
+						</ul>
 					</div>
-					<p class="dcu-name">DCU ID 1</p>
 				</b-col>
-				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
-					<div class="wbox">
-						<div class="stats-wrap">
-							<span class="linkage"></span>
-							<span class="linkage"></span>
-						</div>
-						<p>DCU</p>
-					</div>
-					<p class="dcu-name">DCU ID 2</p>
-				</b-col>
+
 				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
 					<b-overlay id="overlay-background" show variant="light" opacity="0.85" blur="2px" rounded="sm">
 						<div class="wbox">
-							<div class="stats-wrap">
-								<span class="linkage"></span>
-								<span class="unlinkage"></span>
-							</div>
-							<p>DCU</p>
+							<ul class="stats-wrap">
+								<li><span class="linkage"></span>DCU</li>
+								<li><span class="unlinkage"></span>Router</li>
+							</ul>
+							<p class="dcu-name">DCU ID 1</p>
+							<ul class="dcu-button-wrap">
+								<li><b-button v-b-modal.dcuModem1 block variant="dark">DCU ping</b-button></li>
+								<li><b-button v-b-modal.routerModem1 block variant="dark">Router ping</b-button></li>
+							</ul>
 						</div>
 					</b-overlay>
-					<p class="dcu-name">DCU ID 3</p>
 				</b-col>
 			</b-row>
 		</div>
@@ -111,10 +108,65 @@
 <script>
 import Vue from "vue";
 import DcuModem1 from "@/components/modal/dcuModem1";
+import RouterModem1 from "@/components/modal/routerModem1";
 
 Vue.component(DcuModem1);
+Vue.component(RouterModem1);
 
 export default {
-	components: { DcuModem1 }
+	components: { DcuModem1, RouterModem1 }
 };
 </script>
+
+<style lang="scss">
+.dcu-list-wrap {
+	.dcu-modem {
+		.wbox {
+			height: 145px;
+			position: relative;
+			background: #293042;
+			p {
+				font-size: 16px;
+				text-align: center;
+				margin-top: 30px;
+				font-weight: 600;
+				color: #fff;
+			}
+			.stats-wrap {
+				position: absolute;
+				top: 16px;
+				right: 16px;
+				li {
+					width: 70px;
+					height: 14px;
+					line-height: 14px;
+					font-size: 11px;
+					margin-bottom: 5px;
+					text-align: right;
+					color: #57668b;
+					.linkage,
+					.unlinkage {
+						float: right;
+						margin-left: 5px;
+						vertical-align: middle;
+						margin-top: 4px;
+					}
+				}
+			}
+			.dcu-button-wrap {
+				height: 20px;
+				margin-top: 20px;
+				li {
+					width: 48%;
+					float: left;
+					margin: 0 1%;
+				}
+				button {
+					background: #293042;
+					border: 1px solid #4e4e4e;
+				}
+			}
+		}
+	}
+}
+</style>

@@ -182,6 +182,16 @@
 	.input-empty-label legend {
 		color: #fff;
 	}
+	.test-wrap {
+		min-height: 200px;
+		margin-top: 10px;
+		background: #373737;
+		border: 1px solid #000;
+		border-radius: 4px;
+		color: #fff;
+		padding: 1rem 1.5rem;
+		font-family: "Malgun Gothic", "맑은 고딕";
+	}
 }
 
 #addEstate .modal-dialog,
@@ -686,18 +696,5 @@
 				margin-left: 10px;
 			}
 		}
-	}
-}
-
-#dcuModem1 {
-	.test-wrap {
-		min-height: 200px;
-		margin-top: 10px;
-		background: #373737;
-		border: 1px solid #000;
-		border-radius: 4px;
-		color: #fff;
-		padding: 1rem 1.5rem;
-		font-family: "Malgun Gothic", "맑은 고딕";
 	}
 }
