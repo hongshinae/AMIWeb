@@ -28,85 +28,75 @@
 			</div>
 			<!-- Button with custom close trigger value -->
 		</template>
-		<div class="modal-content-wrap">
-			<div class="modal-box">
-				<form ref="detailBuildingForm">
-					<b-form-group>
-						<template #label>{{ $t("building.modal.selectRegion") }}<span>*</span></template>
-						<b-form-select
-							v-model="form.regionSeq"
-							:options="regionList"
-							text-field="regionName"
-							value-field="regionSeq"
-							:state="states.regionSeqState"
-							@change="form.estateSeq = 0"
-						>
-						</b-form-select>
-					</b-form-group>
+		<b-overlay id="overlay-background" :show="isLoading" variant="light" opacity="0.85" blur="2px" rounded="sm">
+			<div class="modal-content-wrap">
+				<div class="modal-box">
+					<form ref="detailBuildingForm">
+						<b-form-group>
+							<template #label>{{ $t("building.modal.selectRegion") }}<span>*</span></template>
+							<b-form-select
+								v-model="form.regionSeq"
+								:options="regionList"
+								text-field="regionName"
+								value-field="regionSeq"
+								:state="states.regionSeqState"
+								@change="form.estateSeq = 0"
+							>
+							</b-form-select>
+						</b-form-group>
 
-					<b-form-group>
-						<template #label>{{ $t("building.modal.selectEstate") }}<span>*</span></template>
-						<b-form-select
-							v-model="form.estateSeq"
-							:options="estateOptions"
-							text-field="estateName"
-							value-field="estateSeq"
-							:disabled="estateOptions.length == 0"
-							:state="states.estateSeqState"
-							required
-						>
-							<template #first>
-								<b-form-select-option :value="0" selected>{{ estateSelectMessage }}</b-form-select-option>
-							</template>
-						</b-form-select>
-					</b-form-group>
+						<b-form-group>
+							<template #label>{{ $t("building.modal.selectEstate") }}<span>*</span></template>
+							<b-form-select
+								v-model="form.estateSeq"
+								:options="estateOptions"
+								text-field="estateName"
+								value-field="estateSeq"
+								:disabled="estateOptions.length == 0"
+								:state="states.estateSeqState"
+								required
+							>
+								<template #first>
+									<b-form-select-option :value="0" selected>{{ estateSelectMessage }}</b-form-select-option>
+								</template>
+							</b-form-select>
+						</b-form-group>
 
-					<b-form-group label-for="buildingName" :state="states.buildingNameCheckState">
-						<template #label>{{ $t("building.modal.buildingName") }}<span>*</span></template>
-						<template #invalid-feedback>{{ buildingNameCheckInvalidMessage }}</template>
-						<b-input-group>
-							<b-form-input id="buildingName" placeholder="404동" v-model="form.buildingName" :state="isBuildingNameState" required />
-							<b-input-group-append>
-								<b-button variant="light" @click="buildingNameCheck">{{ $t("building.modal.button.nameCheck") }}</b-button>
-							</b-input-group-append>
-						</b-input-group>
-					</b-form-group>
+						<b-form-group label-for="buildingName" :state="states.buildingNameCheckState">
+							<template #label>{{ $t("building.modal.buildingName") }}<span>*</span></template>
+							<template #invalid-feedback>{{ buildingNameCheckInvalidMessage }}</template>
+							<b-input-group>
+								<b-form-input id="buildingName" placeholder="404동" v-model="form.buildingName" :state="isBuildingNameState" required />
+								<b-input-group-append>
+									<b-button variant="light" @click="buildingNameCheck">{{ $t("building.modal.button.nameCheck") }}</b-button>
+								</b-input-group-append>
+							</b-input-group>
+						</b-form-group>
 
-					<b-form-group label-for="" :state="isDcuIdCheckState">
-						<template #label>{{ $t("building.modal.dcuId") }}<span>*</span></template>
-						<template #invalid-feedback>{{ dcuIdCheckInvalidMessage }}</template>
-						<b-input-group>
-							<b-form-input v-model="form.dcuId" placeholder="0910233546" :state="isDcuIdState"></b-form-input>
-							<b-input-group-append>
-								<b-button variant="light" @click="dcuIdCheck">{{ $t("building.modal.button.dcuCheck") }}</b-button>
-							</b-input-group-append>
-						</b-input-group>
-					</b-form-group>
-
-					<b-form-group label-for="" :state="isDcuIdCheckState">
-						<template #label>{{ $t("building.modal.dcuIdMapping") }}</template>
-						<template #invalid-feedback>{{ dcuIdCheckInvalidMessage }}</template>
-						<b-input-group>
-							<b-form-input v-model="form.dcuId" placeholder="0910233546" :state="isDcuIdState"></b-form-input>
-							<b-input-group-append>
-								<b-button variant="light" @click="dcuIdCheck">{{ $t("building.modal.button.mappingDelete") }}</b-button>
-							</b-input-group-append>
-						</b-input-group>
-					</b-form-group>
-
-					<b-form-group label-for="" :state="isDcuIdCheckState">
-						<template #label>{{ $t("building.modal.dcuIdMapping") }}</template>
-						<template #invalid-feedback>{{ dcuIdCheckInvalidMessage }}</template>
-						<b-input-group>
-							<b-form-input v-model="form.dcuId" placeholder="0910233546" :state="isDcuIdState"></b-form-input>
-							<b-input-group-append>
-								<b-button variant="light" @click="dcuIdCheck">{{ $t("building.modal.button.mappingModify") }}</b-button>
-							</b-input-group-append>
-						</b-input-group>
-					</b-form-group>
-				</form>
+						<b-form-group v-show="dcuList && dcuList.length > 0" label-for="">
+							<template #label>{{ $t("building.modal.dcuIdMapping") }}<span>*</span></template>
+							<b-input-group v-for="(dcuId, index) in dcuList" :key="index">
+								<b-form-input :value="dcuId" disabled></b-form-input>
+								<b-input-group-append>
+									<b-button :value="dcuId" variant="light" @click="deleteDcu(dcuId)">
+										{{ $t("building.modal.button.dcuIdDelete") }}
+									</b-button>
+								</b-input-group-append>
+							</b-input-group>
+						</b-form-group>
+						<b-form-group :label="$t('building.modal.dcuIdAdd')" label-for="" :state="isDcuIdState">
+							<template #invalid-feedback>{{ dcuIdCheckInvalidMessage }}</template>
+							<b-input-group>
+								<b-form-input ref="dcuId" v-model="dcuId" :state="states.dcuIdState && isDcuIdState" @input="resetDcuIdInput"></b-form-input>
+								<b-input-group-append>
+									<b-button variant="light" @click="addDcu">{{ $t("building.modal.button.dcuIdAdd") }}</b-button>
+								</b-input-group-append>
+							</b-input-group>
+						</b-form-group>
+					</form>
+				</div>
 			</div>
-		</div>
+		</b-overlay>
 		<!---->
 	</b-modal>
 </template>
@@ -132,12 +122,6 @@ export default {
 			handler() {
 				this.states.buildingNameState = null;
 				this.states.buildingNameCheckState = null;
-			}
-		},
-		"form.dcuId": {
-			handler() {
-				this.states.dcuIdState = null;
-				this.dcuIdCheckStatus = null;
 			}
 		}
 	},
@@ -172,27 +156,14 @@ export default {
 			}
 		},
 		isDcuIdState() {
-			if (this.states.dcuIdState) {
+			if (this.dcuIdCheckStatus == 0 || this.dcuIdCheckStatus == 1) {
 				return true;
-			}
-
-			return this.isDcuIdCheckState;
-		},
-		isDcuIdCheckState() {
-			if (this.form.dcuId == "" && this.dcuIdCheckStatus != null) {
-				return true;
-			} else if (!this.dcuIdCheckStatus) {
-				return null;
-			} else if (this.dcuIdCheckStatus != "1") {
+			} else {
 				return false;
 			}
-
-			return true;
 		},
 		dcuIdCheckInvalidMessage() {
-			if (this.dcuIdCheckStatus == 0) {
-				return this.$t("building.modal.validation.dcuStatus.error");
-			} else if (this.dcuIdCheckStatus == 2) {
+			if (this.dcuIdCheckStatus == 2) {
 				return this.$t("building.modal.validation.dcuStatus.nothing");
 			} else if (this.dcuIdCheckStatus == 3) {
 				return this.$t("building.modal.validation.dcuStatus.registered");
@@ -204,8 +175,7 @@ export default {
 	data() {
 		return {
 			buildingNameCheckMessage: null,
-			dcuIdCheckMessage: null,
-			dcuIdCheckStatus: null,
+			dcuIdCheckStatus: 1,
 			states: {
 				regionSeqState: null,
 				estateSeqState: null,
@@ -217,9 +187,11 @@ export default {
 				buildingSeq: null,
 				regionSeq: 0,
 				estateSeq: null,
-				buildingName: null,
-				dcuId: null
-			}
+				buildingName: null
+			},
+			dcuList: [],
+			dcuId: null,
+			isLoading: true
 		};
 	},
 	methods: {
@@ -229,13 +201,12 @@ export default {
 			this.states.buildingNameState = null;
 			this.states.buildingNameCheckState = null;
 			this.states.dcuIdState = null;
+			this.dcuList = [];
+			this.dcuId = null;
+			this.isLoading = true;
 		},
 		shown() {
-			this.form.buildingSeq = this.item.buildingSeq;
-			this.form.regionSeq = this.item.regionSeq;
-			this.form.estateSeq = this.item.estateSeq;
-			this.form.buildingName = this.item.buildingName;
-			this.form.dcuId = this.item.dcuId;
+			this.getBuilding(this.item);
 		},
 		hide() {},
 		hidden() {},
@@ -243,6 +214,23 @@ export default {
 			this.handleSubmit(event);
 		},
 		cancel() {},
+		async getBuilding(params) {
+			try {
+				const response = await Building.info(params);
+				const result = response.data.response;
+				this.form = result;
+				this.dcuList = result.dcuMapp.map(v => v.dcuId);
+			} catch (error) {
+				if (error.response.data.response) {
+					alert(error.response.data.response.error_message);
+					return;
+				}
+
+				alert("오류가 발생하였습니다.");
+			} finally {
+				this.isLoading = false;
+			}
+		},
 		checkValidation() {
 			let result = this.$refs.detailBuildingForm.checkValidity();
 			this.states.regionSeqState = this.form.regionSeq && this.form.regionSeq != 0 ? true : false;
@@ -251,12 +239,58 @@ export default {
 
 			return result && this.states.regionSeqState && this.states.estateSeqState && this.states.buildingNameState;
 		},
+		async addDcu() {
+			this.states.dcuIdState = this.dcuId ? true : false;
+
+			if (!this.states.dcuIdState) {
+				return;
+			}
+
+			try {
+				const response = await Building.dcuAdd({ buildingSeq: this.form.buildingSeq, dcuId: this.dcuId });
+				const result = response.data.response;
+
+				if (!result.result) {
+					this.dcuIdCheckStatus = result.returnData.statusCode;
+				} else {
+					this.dcuList.push(result.returnData.dcuId);
+					this.$emit("handle:searchItem");
+					this.dcuId = "";
+					this.states.dcuIdState = null;
+					this.$refs.dcuId.focus();
+				}
+			} catch (error) {
+				console.log(error);
+				throw Error(error);
+			}
+		},
+		async deleteDcu(dcuId) {
+			try {
+				const response = await Building.dcuDelete({ buildingSeq: this.form.buildingSeq, dcuId: dcuId });
+				const result = response.data.response;
+
+				if (result.result) {
+					const index = this.dcuList.indexOf(dcuId);
+					this.dcuList.splice(index, 1);
+					this.$emit("handle:searchItem");
+				} else {
+					alert("삭제 실패하였습니다.");
+				}
+			} catch (error) {
+				throw Error(error);
+			}
+		},
 		async buildingNameCheck() {
 			this.buildingNameCheckMessage = null;
+			const checkResult = this.checkValidation();
 
-			if (this.checkValidation()) {
+			if (checkResult) {
 				try {
-					const response = await Building.namecheck(this.form);
+					const response = await Building.namecheck({
+						buildingSeq: this.form.buildingSeq,
+						estateSeq: this.form.estateSeq,
+						buildingName: this.form.buildingName
+					});
 					this.states.buildingNameCheckState = !response.data.response.result;
 				} catch (error) {
 					this.states.buildingNameCheckState = false;
@@ -267,25 +301,9 @@ export default {
 				}
 			}
 		},
-		async dcuIdCheck() {
-			if (this.form.dcuId == "" || this.form.dcuId == null) {
-				this.states.dcuIdState = true;
-				this.dcuIdCheckStatus = "1";
-				return;
-			}
-
-			if (this.isDcuIdState != false) {
-				const response = await Building.dcucheck(this.form);
-				this.dcuIdCheckStatus = response.data.response.statusCode;
-			}
-		},
 		async handleSubmit(event) {
 			if (!this.states.buildingNameCheckState) {
 				alert(this.$t("building.modal.validation.duplicateNameCheck"));
-				event.preventDefault();
-				return;
-			} else if (!this.isDcuIdCheckState) {
-				alert(this.$t("building.modal.validation.duplicateLinkCheck"));
 				event.preventDefault();
 				return;
 			}
@@ -299,6 +317,10 @@ export default {
 				event.preventDefault();
 				throw Error(error);
 			}
+		},
+		resetDcuIdInput() {
+			this.states.dcuIdState = null;
+			this.dcuIdCheckStatus = 1;
 		}
 	}
 };

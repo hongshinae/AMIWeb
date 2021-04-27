@@ -1,4 +1,6 @@
 import Send from "@/axios";
+import Store from "@/store";
+import { EventSourcePolyfill } from "event-source-polyfill";
 
 export default {
 	list(params) {
@@ -76,6 +78,19 @@ export default {
 			url: "/device/equipment/dcu/setting/rescan",
 			method: "get",
 			params: params
+		});
+	},
+	dcuStatus(dcuId, dcuIp, sec) {
+		if (!sec) {
+			sec = 30;
+		}
+
+		const token = Store.state.userStore.token.accessToken;
+		return new EventSourcePolyfill("/api/device/equipment/dcu/realtime/status?dcuId=" + dcuId + "&dcuIp=" + dcuIp + "&duration=" + sec, {
+			headers: { "x-token": token },
+			format: "json",
+			withCredentials: true,
+			heartbeatTimeout: 300000
 		});
 	}
 };

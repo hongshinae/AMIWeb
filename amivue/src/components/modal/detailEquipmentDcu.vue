@@ -289,6 +289,8 @@ import InputLocation from "@/components/InputLocation";
 import InputNormal from "@/components/InputNormal";
 import EquipmentDcu from "@/service/equipment/dcu";
 
+let sse;
+
 export default {
 	props: { item: { type: Object } },
 	components: { InputIp, InputLocation, InputNormal },
@@ -397,8 +399,20 @@ export default {
 		},
 		shown() {
 			this.getDcu({ dcuId: this.item.dcuId });
+			sse = EquipmentDcu.dcuStatus(this.item.dcuId, this.item.dcuIp, 5);
+			sse.onerror = function() {};
+			sse.onopen = function() {};
+			sse.onmessage = e => {
+				const data = JSON.parse(e.data).response;
+				console.log(data);
+			};
 		},
-		hide() {},
+		hide() {
+			if (sse) {
+				sse.close();
+				console.log("DCU Status SSE Destroyed!!");
+			}
+		},
 		hidden() {},
 		ok() {},
 		cancel() {},

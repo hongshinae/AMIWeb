@@ -49,5 +49,19 @@ export default {
 			method: "get",
 			params: params
 		});
+	},
+	dcuAdd(params) {
+		return Send({
+			url: "/device/building/dcu/mapp/insert",
+			method: "get",
+			params: params
+		});
+	},
+	dcuDelete(params) {
+		return Send({
+			url: "/device/building/dcu/mapp/delete",
+			method: "get",
+			params: params
+		});
 	}
 };
