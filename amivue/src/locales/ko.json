@@ -57,7 +57,8 @@
 			"latitude": "위도",
 			"longitude": "경도"
 		},
-		"unknown": "알 수 없음"
+		"unknown": "알 수 없음",
+		"monthLabels": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
 	},
 	"dashboard": {
 		"ea": "건",
@@ -157,7 +158,17 @@
 				"fap": "검침량",
 				"rfap": "역방향",
 				"connEquip": "연동 장비수",
-				"statusCode": "상태 코드"
+				"statusCode": "상태 코드",
+				"meterReadingDay": "정기검침일",
+				"to_meterTime": "전월검침시각",
+				"to_apt1": "전월정기검침값",
+				"to_rapt1": "전월역방향값",
+				"from_meterTime": "현월검침시각",
+				"from_apt1": "현월정기검침값",
+				"from_rapt1": "현월역방향값",
+				"use": "사용량",
+				"readingDayCompare": "단지 검침일 비교",
+				"readingStatus": "상태"
 			}
 		}
 	},
@@ -442,6 +453,9 @@
 		"realtime": {
 			"excelFileName": "검침 정보_실시간 정보.xlsx"
 		}
+	},
+	"regular": {
+		"excelFileName": "검침 정보_수집정보.xlsx"
 	},
 	"msg": {
 		"search": {

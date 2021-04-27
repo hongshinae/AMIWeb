@@ -97,8 +97,17 @@
 					<template #cell(meterTime)="row">
 						{{ row.item.meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
 					</template>
+					<template #cell(to_meterTime)="row">
+						{{ row.item.to_meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
+					</template>
+					<template #cell(from_meterTime)="row">
+						{{ row.item.from_meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
+					</template>
 					<template #cell(dcuMapp)="row">
 						{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}
+					</template>
+					<template #cell(readingStatus)="row">
+						<span :class="{ linkage: row.item.readingStatus == 0, unlinkage: row.item.readingStatus == 1 }"></span>
 					</template>
 					<template #cell(_remark)="row">
 						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">

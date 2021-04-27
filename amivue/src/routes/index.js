@@ -45,12 +45,6 @@ const routes = [
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "network",
-				name: "Network",
-				component: () => import("@/pages/Menu/Device/Network"),
-				meta: { theme: "theme_white" }
-			},
-			{
 				path: "nms",
 				name: "NMS",
 				component: () => import("@/pages/Menu/Device/NMS"),

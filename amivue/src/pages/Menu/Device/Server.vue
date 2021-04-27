@@ -6,7 +6,7 @@
 				<div class="box">
 					<h5>
 						<span>{{ $t("server.used") }}</span>
-						<b class="fontC">{{ system.jvmUsed }}</b>
+						<b class="fontC">{{ system.osCpu }}</b>
 					</h5>
 					<div class="chartWarp">
 						<div class="">
@@ -263,7 +263,6 @@ export default {
 					x: this.$moment(data.date).valueOf(),
 					y: parseFloat(data.osCpu)
 				});
-				console.log(this.systemList.length, this.systemList);
 			};
 		},
 		async getDevice() {

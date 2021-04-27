@@ -12,6 +12,7 @@
 							<content-search-region v-if="item == 'region'" v-model="regionSelected" :selected="regionSelected" />
 							<content-search-estate v-if="item == 'estate'" v-model="estateSelected" :region="regionSelected" />
 							<content-search-date v-if="item == 'date'" v-model="dateSelected" />
+							<content-search-month v-if="item == 'month'" v-model="monthSelected" />
 						</b-col>
 					</b-row>
 				</form>
@@ -28,6 +29,7 @@
 import ContentSearchRegion from "./ContentSearchRegion";
 import ContentSearchEstate from "./ContentSearchEstate";
 import ContentSearchDate from "./ContentSearchDate";
+import ContentSearchMonth from "./ContentSearchMonth";
 
 export default {
 	props: {
@@ -38,7 +40,7 @@ export default {
 			}
 		}
 	},
-	components: { ContentSearchRegion, ContentSearchEstate, ContentSearchDate },
+	components: { ContentSearchRegion, ContentSearchEstate, ContentSearchDate, ContentSearchMonth },
 	created() {},
 	mounted() {},
 	computed: {
@@ -57,6 +59,10 @@ export default {
 				params.date = this.dateSelected;
 			}
 
+			if (this.shows.join().indexOf("month") > -1) {
+				params.month = this.monthSelected;
+			}
+
 			return params;
 		}
 	},
@@ -64,7 +70,8 @@ export default {
 		return {
 			regionSelected: null,
 			estateSelected: null,
-			dateSelected: this.$moment().format("YYYY-MM-DD")
+			dateSelected: this.$moment().format("YYYY-MM-DD"),
+			monthSelected: this.$moment().format("YYYY-MM")
 		};
 	},
 	methods: {
