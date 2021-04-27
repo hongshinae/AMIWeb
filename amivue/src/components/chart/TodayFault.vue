@@ -49,6 +49,9 @@ export default {
 					credits: {
 						enabled: false
 					},
+					xAxis: {
+						lineColor: "#232f4b"
+					},
 					yAxis: {
 						title: null,
 						gridLineColor: "#232f4b",

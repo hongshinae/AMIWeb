@@ -85,12 +85,12 @@ export default {
 						{
 							name: "적시율",
 							data: this.data ? [this.data.todayTimelyRate, this.data.yesterdayTimelyRate] : [],
-							color: "#c45bdb"
+							color: "#1ee2df"
 						},
 						{
 							name: "검침률",
 							data: this.data ? [this.data.todayMeterReadingRate, this.data.yesterdayMeterReadingRate] : [],
-							color: "#a66dee"
+							color: "#fdff4b"
 						}
 					]
 				};

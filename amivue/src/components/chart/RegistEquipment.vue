@@ -59,7 +59,9 @@ export default {
 					credits: {
 						enabled: false
 					},
-					xAxis: null,
+					xAxis: {
+						lineColor: "#232f4b"
+					},
 					yAxis: {
 						title: null,
 						gridLineColor: "#232f4b",
@@ -72,17 +74,17 @@ export default {
 						{
 							name: "DCU",
 							data: this.data ? [this.data[0].deviceRegConut] : [],
-							color: "#c45bdb"
+							color: "#1ee2df"
 						},
 						{
 							name: "MODEM",
 							data: this.data ? [this.data[1].deviceRegConut] : [],
-							color: "#a66dee"
+							color: "#fdff4b"
 						},
 						{
 							name: "METER",
 							data: this.data ? [this.data[2].deviceRegConut] : [],
-							color: "#a6000e"
+							color: "#ff8931"
 						}
 					]
 				};
