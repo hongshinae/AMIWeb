@@ -76,9 +76,6 @@
 									required
 									disabled
 								>
-									<template #first>
-										<b-form-select-option value="">-- 선택해주세요 --</b-form-select-option>
-									</template>
 								</b-form-select>
 							</b-form-group>
 							<b-form-group :label="$t('estate.modal.manager1')">
@@ -195,7 +192,7 @@
 										</li>
 									</ul>
 									<b-input-group-append>
-										<b-button variant="light">{{ $t("estate.modal.changeDay") }}</b-button>
+										<b-button variant="light" disabled>{{ $t("estate.modal.changeDay") }}</b-button>
 									</b-input-group-append>
 								</b-input-group>
 							</b-form-group>
@@ -211,10 +208,13 @@
 <script>
 import Estate from "@/service/estate";
 
+import { mapGetters } from "vuex";
+
 export default {
-	props: { regionList: { type: Array }, item: { type: Object } },
+	props: { item: { type: Object } },
 	mounted() {},
 	computed: {
+		...mapGetters({ regionList: "getRegions" }),
 		isDayStateValid() {
 			return this.name ? true : false;
 		}
