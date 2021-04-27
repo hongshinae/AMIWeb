@@ -6,18 +6,22 @@
 					<h4>{{ $t("building.modal.detail") }}</h4>
 				</li>
 				<li>
-					<b-button size="sm" variant="outline-light" @click="close()">
-						X
-					</b-button>
+					<b-button size="sm" variant="outline-light" @click="close()">X</b-button>
 				</li>
 			</ul>
 		</template>
 		<template #modal-footer="{ ok, cancel }">
 			<div class="btn-wrap">
 				<ul>
-					<li><!-- Button with custom close trigger value --></li>
 					<li>
-						<b-button variant="light" @click="ok()">{{ $t("building.modal.button.save") }}</b-button>
+						<b-button variant="light" @click="ok()">{{ $t("building.modal.button.buildingDelete") }}</b-button>
+						<b-button variant="light">
+							<b-icon icon="arrow-clockwise"></b-icon>
+							{{ $t("building.modal.button.Reflash") }}
+						</b-button>
+					</li>
+					<li>
+						<b-button variant="light" @click="ok()">{{ $t("building.modal.button.buildingModify") }}</b-button>
 						<b-button variant="light" @click="cancel()">{{ $t("building.modal.button.cancel") }}</b-button>
 					</li>
 				</ul>
@@ -75,6 +79,28 @@
 							<b-form-input v-model="form.dcuId" placeholder="0910233546" :state="isDcuIdState"></b-form-input>
 							<b-input-group-append>
 								<b-button variant="light" @click="dcuIdCheck">{{ $t("building.modal.button.dcuCheck") }}</b-button>
+							</b-input-group-append>
+						</b-input-group>
+					</b-form-group>
+
+					<b-form-group label-for="" :state="isDcuIdCheckState">
+						<template #label>{{ $t("building.modal.dcuIdMapping") }}</template>
+						<template #invalid-feedback>{{ dcuIdCheckInvalidMessage }}</template>
+						<b-input-group>
+							<b-form-input v-model="form.dcuId" placeholder="0910233546" :state="isDcuIdState"></b-form-input>
+							<b-input-group-append>
+								<b-button variant="light" @click="dcuIdCheck">{{ $t("building.modal.button.mappingDelete") }}</b-button>
+							</b-input-group-append>
+						</b-input-group>
+					</b-form-group>
+
+					<b-form-group label-for="" :state="isDcuIdCheckState">
+						<template #label>{{ $t("building.modal.dcuIdMapping") }}</template>
+						<template #invalid-feedback>{{ dcuIdCheckInvalidMessage }}</template>
+						<b-input-group>
+							<b-form-input v-model="form.dcuId" placeholder="0910233546" :state="isDcuIdState"></b-form-input>
+							<b-input-group-append>
+								<b-button variant="light" @click="dcuIdCheck">{{ $t("building.modal.button.mappingModify") }}</b-button>
 							</b-input-group-append>
 						</b-input-group>
 					</b-form-group>
