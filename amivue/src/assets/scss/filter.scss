@@ -58,14 +58,17 @@
 				color: $color-bl;
 			}
 			input[type="text"]::placeholder {
-				color: $color-bl;
+				color: #b3b3b3;
+				font-weight: normal;
 				opacity: 1;
 			}
 			input[type="text"]:-ms-input-placeholder {
-				color: $color-bl;
+				color: #b3b3b3;
+				font-weight: normal;
 			}
 			input[type="text"]::-ms-input-placeholder {
-				color: $color-bl;
+				color: #b3b3b3;
+				font-weight: normal;
 			}
 		}
 	}
