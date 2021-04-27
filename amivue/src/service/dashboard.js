@@ -100,5 +100,18 @@ export default {
 			withCredentials: true,
 			heartbeatTimeout: 300000
 		});
+	},
+	mapInfo(sec) {
+		if (!sec) {
+			sec = 30;
+		}
+
+		const token = Store.state.userStore.token.accessToken;
+		return new EventSourcePolyfill("/api/dashboard/location/failure/mapinfo?duration=" + sec, {
+			headers: { "x-token": token },
+			format: "json",
+			withCredentials: true,
+			heartbeatTimeout: 300000
+		});
 	}
 };

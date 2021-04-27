@@ -29,7 +29,7 @@
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>Meter ({{ dateSelected }})</span>
-						<small v-if="meterList">금일 최종 수집시간 : {{ $moment().format("YYYY-MM-DD HH:mm:ss") }}</small>
+						<small v-show="false">금일 최종 수집시간 : {{ $moment().format("YYYY-MM-DD HH:mm:ss") }}</small>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
@@ -43,6 +43,9 @@
 										<p>{{ $t("msg.selectDcu") || scope.emptyText }}</p>
 									</div>
 								</template>
+								<template #cell(lpPeriod)="row"> {{ row.item.lpPeriod }}분 </template>
+								<template #cell(lpCount)="row"> {{ row.item.countLp }} / {{ row.item.totalLp }} ({{ row.item.rateLp }}) </template>
+								<template #cell(onCount)="row"> {{ row.item.countOn }} / {{ row.item.totalOn }} ({{ row.item.rateOn }}) </template>
 								<template #cell(_remark)="row">
 									<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
 										<slot name="table-cell-remark">{{ $t("common.button.details") }}</slot>
@@ -109,16 +112,16 @@ export default {
 					label: this.$t("info.collection.table.meterId")
 				},
 				{
-					key: "collectionPeriod",
-					label: this.$t("info.collection.table.collectionPeriod")
+					key: "lpPeriod",
+					label: this.$t("info.collection.table.lpPeriod")
 				},
 				{
-					key: "readingCount",
-					label: this.$t("info.collection.table.readingCount")
+					key: "lpCount",
+					label: this.$t("info.collection.table.lpCount")
 				},
 				{
-					key: "accCount",
-					label: this.$t("info.collection.table.accCount")
+					key: "onCount",
+					label: this.$t("info.collection.table.onCount")
 				}
 			],
 			isDcuBusy: false,
@@ -160,14 +163,12 @@ export default {
 			}
 		},
 		searchItemList: function(searchItem) {
-			console.log(searchItem);
 			this.getDcuList(searchItem);
 			this.dateSelected = searchItem.date;
 		},
 		async onDcuRowSelected(items) {
-			console.log(items);
 			if (items.length > 0) {
-				const params = { estateSeq: items[0].estateSeq, day: this.dateSelected, dcuId: items[0].dcuId };
+				const params = { estateSeq: items[0].estateSeq, day: this.$moment(this.dateSelected).format("YYYYMMDD"), dcuId: items[0].dcuId };
 				const response = await Collection.meter(params);
 				const result = response.data.response;
 				this.meterList = result;

@@ -419,9 +419,9 @@
 				"dcuId": "DCU ID",
 				"houseName": "호",
 				"meterId": "Meter ID",
-				"collectionPeriod": "수집 주기",
-				"readingCount": "검침수(검침률)",
-				"accCount": "적시수(적시율)"
+				"lpPeriod": "수집 주기",
+				"lpCount": "검침수(검침률)",
+				"onCount": "적시수(적시율)"
 			},
 			"excelFileName": "검침 정보_수집정보.xlsx"
 		},

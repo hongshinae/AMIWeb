@@ -17,13 +17,21 @@ exportingInit(Highcharts);
 darkUnicaInit(Highcharts);
 
 import { Chart } from "highcharts-vue";
+import Dashboard from "@/service/dashboard";
+let sse;
 
 export default {
 	components: {
 		HighChart: Chart
 	},
-	created() {
-		// console.log(this.chartOptions, this.data);
+	mounted() {
+		sse = Dashboard.mapInfo(30);
+		sse.onerror = function() {};
+		sse.onopen = function() {};
+		sse.onmessage = e => {
+			const data = JSON.parse(e.data).response;
+			this.data = data.map(v => [v.hckey, v.value]);
+		};
 	},
 	computed: {
 		chartOptions() {
@@ -102,9 +110,10 @@ export default {
 			]
 		};
 	},
-	methods: {
-		init() {
-			// console.log(chart);
+	beforeDestroy() {
+		if (sse) {
+			sse.close();
+			console.log("RegionMap SSE Destroyed!!");
 		}
 	}
 };
