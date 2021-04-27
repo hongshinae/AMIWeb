@@ -30,9 +30,7 @@ export default {
 		}
 	},
 	components: { DetailEquipmentMeter },
-	mounted() {
-		this.getMeterList();
-	},
+	mounted() {},
 	data() {
 		return {
 			meterList: [],

@@ -36,9 +36,7 @@ export default {
 		}
 	},
 	components: { AddEquipmentDcu, DetailEquipmentDcu },
-	mounted() {
-		this.getDcuList();
-	},
+	mounted() {},
 	data() {
 		return {
 			dcuList: [],
@@ -91,10 +89,6 @@ export default {
 	},
 	methods: {
 		async getDcuList(params) {
-			if (!params) {
-				params = { regionSeq: "0", estateSeq: "0" };
-			}
-
 			try {
 				this.isBusy = true;
 				const response = await EquipmentDcu.list(params);

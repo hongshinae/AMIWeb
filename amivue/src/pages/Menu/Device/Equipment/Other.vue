@@ -32,9 +32,7 @@ export default {
 	components: {
 		DetailEquipmentOther
 	},
-	mounted() {
-		this.getOtherList();
-	},
+	mounted() {},
 	data() {
 		return {
 			otherList: [],
@@ -83,10 +81,6 @@ export default {
 	},
 	methods: {
 		async getOtherList(params) {
-			if (!params) {
-				params = { regionSeq: "0", estateSeq: "0" };
-			}
-
 			try {
 				this.isBusy = true;
 				const response = await EquipmentOther.list(params);
