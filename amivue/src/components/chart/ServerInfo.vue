@@ -9,14 +9,14 @@
 				<span class="title">{{ $t("dashboard.cpuUsage") }}</span>
 				<span class="deta">{{ osCpu }}%</span>
 			</h4>
-			<b-progress :value="osCpu" :max="100"></b-progress>
+			<b-progress :class="cpuClass" :value="osCpu" :max="100"></b-progress>
 		</div>
 		<div class="dutyCycle">
 			<h4>
 				<span class="title">{{ $t("dashboard.memoryUsage") }}</span>
 				<span class="deta">{{ osMemory }}%</span>
 			</h4>
-			<b-progress class="progress-bar-2" :value="osMemory" :max="100"></b-progress>
+			<b-progress :class="memoryClass" :value="osMemory" :max="100"></b-progress>
 		</div>
 		<ul class="serveInfo">
 			<li>
@@ -58,7 +58,26 @@ export default {
 			this.osMemory = data.osMemory;
 		};
 	},
-	computed: {},
+	computed: {
+		cpuClass() {
+			if (this.osCpu < 50) {
+				return null;
+			} else if (this.osCpu < 80) {
+				return "progress-bar-2";
+			} else {
+				return "progress-bar-3";
+			}
+		},
+		memoryClass() {
+			if (this.osMemory < 50) {
+				return null;
+			} else if (this.osMemory < 80) {
+				return "progress-bar-2";
+			} else {
+				return "progress-bar-3";
+			}
+		}
+	},
 	data() {
 		return {
 			jvmFree: 0,

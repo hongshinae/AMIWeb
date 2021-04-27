@@ -54,20 +54,6 @@
 				</div>
 			</b-col>
 		</b-row>
-		<div class="btn-only-wrap">
-			<div class="btn-wrap">
-				<div role="group" class="btn-group">
-					<b-button variant="light">SNMP read/write</b-button>
-					<b-button variant="light">trap</b-button>
-					<b-button variant="light">상태리스트</b-button>
-					<b-button variant="light">SNMP / FEP 통신 동작 확인</b-button>
-					<b-button variant="light">시간 동기화</b-button>
-				</div>
-				<div role="group" class="btn-group">
-					<b-button variant="light">펌웨어 이미지 관리</b-button>
-				</div>
-			</div>
-		</div>
 	</div>
 </template>
 
