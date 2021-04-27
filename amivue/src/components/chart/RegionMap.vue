@@ -50,16 +50,11 @@ export default {
 					text: "확산사업 운영 정보"
 				},
 
-				mapNavigation: {
-					enabled: true,
-					buttonOptions: {
-						verticalAlign: "bottom"
-					}
-				},
+				mapNavigation: { enabled: false },
 
 				colorAxis: {
 					min: 0,
-					minColor: "rgba(0,0,0,0)", //min컬러
+					minColor: "rgba(220,53,69,0)", //min컬러
 					maxColor: "rgba(220,53,69,1)" //max컬러
 				},
 				exporting: { enabled: false },
@@ -72,7 +67,7 @@ export default {
 						borderWidth: 0.2,
 						states: {
 							hover: {
-								color: "#14FAB1", // 마우스 오버 색상
+								color: "#1ee2df", // 마우스 오버 색상
 								borderColor: "none" // 테두리 색상
 							}
 						},

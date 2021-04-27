@@ -171,6 +171,7 @@ export default {
 				return {
 					chart: {
 						type: "spline",
+						height: 250,
 						marginRight: 10
 					},
 
@@ -182,12 +183,15 @@ export default {
 
 					xAxis: {
 						type: "datetime",
+						gridLineColor: "#232f4b",
 						tickPixelInterval: 150
 					},
 
 					yAxis: {
 						title: {
-							text: "Value"
+							text: null,
+							gridLineColor: "#232f4b",
+							lineColor: "#232f4b" //라인컬러
 						},
 						plotLines: [
 							{
@@ -210,7 +214,7 @@ export default {
 					exporting: {
 						enabled: false
 					},
-
+					credits: { enabled: false },
 					series: [
 						{
 							name: this.$t("server.used"),

@@ -281,7 +281,7 @@
 #addBuilding,
 #detailBuilding {
 	.modal-box {
-		text-align: center;
+		margin: 0 auto;
 		.form-group {
 			//모달 전체 .form-group, label, div제어
 			width: 100%;
@@ -291,6 +291,7 @@
 			legend {
 				width: 150px;
 				float: left;
+				text-align: left;
 			}
 			> div {
 				width: 245px;
