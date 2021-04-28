@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<content-search :shows="shows" @handle:searchItem="searchItemList"> </content-search>
-		<div v-show="this.lpHoursChart.length > 0"><high-charts :options="chartOptions" /></div>
+		<div v-show="this.lpHoursChart.length > 0" class="chart-wrap"><high-charts :options="chartOptions" /></div>
 		<content-table
 			:isBusy="isBusy"
 			:items="lpHoursList"
@@ -46,15 +46,13 @@ export default {
 				return {
 					chart: {
 						type: this.chartName,
-						height: 250
+						height: 300
 					},
 					legend: {
 						symbolHeight: 8,
 						symbolWidth: 8,
 						symbolRadius: 4,
 						marginTop: 10,
-						verticalAlign: "top",
-						align: "right",
 						itemStyle: {
 							fontSize: "0.9rem",
 							fontWeight: 100
@@ -71,8 +69,8 @@ export default {
 					},
 					yAxis: {
 						title: null,
-						gridLineColor: "#232f4b",
-						lineColor: "#232f4b" //라인컬러
+						gridLineColor: "#ddd",
+						lineColor: "#ddd" //라인컬러
 					},
 					exporting: { enabled: false },
 					title: "",
@@ -81,7 +79,7 @@ export default {
 						{
 							name: "오늘",
 							data: this.lpHoursChart.map(item => item.use),
-							color: "#1ee2df"
+							color: "#3b82ec"
 						}
 					]
 				};
@@ -170,4 +168,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.chart-wrap {
+	margin-top: 50px;
+}
+</style>
