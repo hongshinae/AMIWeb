@@ -117,7 +117,7 @@
 				<b-row>
 					<b-col xl="6" lg="12">
 						<div class="box svg">
-							<h6>적시 검침률</h6>
+							<h6>적시율</h6>
 							<div class="data">99.4%</div>
 							<div class="svg-wrap">
 								<img src="@/assets/svg/box.svg" />
@@ -126,7 +126,7 @@
 					</b-col>
 					<b-col xl="6" lg="12">
 						<div class="box svg">
-							<h6>검침 신뢰성</h6>
+							<h6>검침율</h6>
 							<div class="data">99.4%</div>
 							<div class="svg-wrap">
 								<img src="@/assets/svg/sound.svg" />
