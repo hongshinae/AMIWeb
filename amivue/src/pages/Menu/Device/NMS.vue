@@ -9,16 +9,19 @@
 						<b-icon icon="arrow-return-right"></b-icon>
 						<span>DCU <i class="p-Color">4</i> </span>
 						<div role="group" class="btn-group">
-							<b-button variant="light">{{ $t("nms.button.reboot") }}</b-button>
+							<b-button variant="light" @click="sendReboot">{{ $t("nms.button.reboot") }}</b-button>
 							<b-button variant="light">{{ $t("nms.button.rescan") }}</b-button>
 							<b-button variant="light" disabled>{{ $t("nms.button.dcuFirmwareUpgrade") }}</b-button>
 						</div>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :items="dcuList" :fields="dcuFields" select-mode="single" selectable @row-selected="onDcuRowSelected">
+							<b-table :busy="isDcuBusy" :items="dcuList" :fields="dcuFields" select-mode="single" selectable @row-selected="onDcuRowSelected">
 								<template #cell(sysState)="row">
 									{{ row.item.sysState == 1 ? "정상" : "비정상" }}
+								</template>
+								<template #cell(_checkbox)="row">
+									<b-form-checkbox v-model="dcuRebootList" :value="{ dcuId: row.item.dcuId, dcuIp: row.item.dcuIp }" />
 								</template>
 							</b-table>
 						</div>
@@ -37,7 +40,7 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :items="meterList" :fields="meterFields">
+							<b-table :busy="isDcuBusy" :items="modemList" :fields="modemFields">
 								<template #cell(statusCode)="row">
 									{{ row.item.statusCode == 1 ? $t("nms.dcuStatusTrue") : $t("nms.dcuStatusFalse") }}
 								</template>
@@ -99,10 +102,16 @@ export default {
 	mixins: [ContentMixin],
 	data() {
 		return {
+			isDcuBusy: false,
+			isModemBusy: false,
 			pageName: this.$t("menu.device.nms"),
 			paths: [{ name: this.$t("menu.title"), bicon: "house", link: "/" }, { name: this.$t("menu.device.title") }, { name: this.$t("menu.device.nms") }],
 			dcuList: [],
 			dcuFields: [
+				{
+					key: "_checkbox",
+					label: ""
+				},
 				{
 					key: "buildingName",
 					label: this.$t("component.content.table.buildingName")
@@ -113,7 +122,7 @@ export default {
 				},
 				{
 					key: "dcuIp",
-					label: this.$t("component.content.table.dcuId")
+					label: this.$t("component.content.table.dcuIp")
 				},
 				{
 					key: "sysState",
@@ -124,10 +133,10 @@ export default {
 					label: this.$t("component.content.table.firmwareVersion")
 				}
 			],
-			meterList: [{ sysMac: "00:00:AC:5E:8C:A0:38:63​", connEquip: "2", statusCode: "비정상​" }],
-			meterFields: [
+			modemList: [{ sysMac: "00:00:AC:5E:8C:A0:38:63​", connEquip: "2", statusCode: "비정상​" }],
+			modemFields: [
 				{
-					key: "sysMac",
+					key: "stepModem[0].modemMac",
 					label: this.$t("component.content.table.mac")
 				},
 				{
@@ -142,35 +151,57 @@ export default {
 					key: "test",
 					label: ""
 				}
-			]
+			],
+			dcuRebootList: []
 		};
 	},
 	methods: {
-		async getNmsDcuList(params) {
-			if (!params) {
-				params = { regionSeq: "0", estateSeq: "0" };
-			}
-
+		async getDcuList(params) {
 			try {
-				this.isBusy = true;
+				this.isDcuBusy = true;
 				const response = await Nms.dcuList(params);
 				const result = response.data.response;
+				console.log(result);
 				this.dcuList = result;
 			} catch (error) {
 				const result = [];
 				this.dcuList = result;
 			} finally {
-				this.isBusy = false;
+				this.isDcuBusy = false;
+			}
+		},
+		async getModemList(params) {
+			try {
+				this.isModemBusy = true;
+				const response = await Nms.modemList(params);
+				const result = response.data.response;
+				this.modemList = result;
+			} catch (error) {
+				const result = [];
+				this.modemList = result;
+			} finally {
+				this.isModemBusy = false;
 			}
 		},
 		searchItemList(searchItem) {
-			this.getNmsDcuList(searchItem);
+			this.getDcuList(searchItem);
 		},
 		onDcuRowSelected(items) {
-			console.log(items);
+			if (items.length > 0) {
+				this.getModemList({ dcuId: items[0].dcuId });
+			} else {
+				this.modelList = [];
+			}
 		},
-		onMeterRowSelected(items, rows) {
-			console.log(items, rows);
+		async sendReboot() {
+			try {
+				const response = await Nms.dcuRebootList(this.dcuRebootList);
+				const result = response.data.response;
+				this.modemList = result;
+			} catch (error) {
+				const result = [];
+				this.modemList = result;
+			}
 		}
 	}
 };
