@@ -36,7 +36,7 @@ export default {
 	components: { ContentHeader, CycleData, HoursData, DurationData },
 	data() {
 		return {
-			tabIndex: 2,
+			tabIndex: 0,
 			pageName: this.$t("menu.metering.lookup"),
 			paths: [
 				{ name: this.$t("menu.title"), bicon: "house", link: "/" },

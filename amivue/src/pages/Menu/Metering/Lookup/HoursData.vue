@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<content-search :shows="shows" @handle:searchItem="searchItemList"> </content-search>
-		<div>그래프 넣는 영역</div>
+		<div v-show="this.lpHoursChart.length > 0"><high-charts :options="chartOptions" /></div>
 		<content-table
 			:isBusy="isBusy"
 			:items="lpHoursList"
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { Chart } from "highcharts-vue";
+
 import Lookup from "@/service/lookup";
 import ContentMixin from "@/components/content/mixin";
 
@@ -34,9 +36,62 @@ export default {
 			}
 		}
 	},
+	components: {
+		HighCharts: Chart
+	},
+	computed: {
+		chartOptions: {
+			cache: false,
+			get() {
+				return {
+					chart: {
+						type: this.chartName,
+						height: 250
+					},
+					legend: {
+						symbolHeight: 8,
+						symbolWidth: 8,
+						symbolRadius: 4,
+						marginTop: 10,
+						verticalAlign: "top",
+						align: "right",
+						itemStyle: {
+							fontSize: "0.9rem",
+							fontWeight: 100
+						}
+					},
+					plotOptions: {
+						column: { borderRadius: 1 },
+						series: {
+							borderColor: "none"
+						}
+					},
+					credits: {
+						enabled: false
+					},
+					yAxis: {
+						title: null,
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b" //라인컬러
+					},
+					exporting: { enabled: false },
+					title: "",
+					menu: false,
+					series: [
+						{
+							name: "오늘",
+							data: this.lpHoursChart.map(item => item.use),
+							color: "#1ee2df"
+						}
+					]
+				};
+			}
+		}
+	},
 	data() {
 		return {
 			isBusy: false,
+			chartName: "column",
 			lpHoursChart: [],
 			lpHoursList: [],
 			lpHoursFields: [

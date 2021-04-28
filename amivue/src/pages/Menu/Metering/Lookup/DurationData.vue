@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<content-search :shows="shows" @handle:searchItem="searchItemList"> </content-search>
-		<div>그래프 넣는 영역</div>
+		<div v-show="this.lpDurationChart.length > 0"><high-charts :options="chartOptions" /></div>
 		<content-table
 			:isBusy="isBusy"
 			:items="lpDurationList"
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { Chart } from "highcharts-vue";
+
 import Lookup from "@/service/lookup";
 import ContentMixin from "@/components/content/mixin";
 
@@ -37,9 +39,66 @@ export default {
 			}
 		}
 	},
+	components: {
+		HighCharts: Chart
+	},
+	computed: {
+		chartOptions: {
+			cache: false,
+			get() {
+				return {
+					chart: {
+						type: this.chartName,
+						height: 250
+					},
+					legend: {
+						symbolHeight: 8,
+						symbolWidth: 8,
+						symbolRadius: 4,
+						marginTop: 10,
+						verticalAlign: "top",
+						align: "right",
+						itemStyle: {
+							fontSize: "0.9rem",
+							fontWeight: 100
+						}
+					},
+					plotOptions: {
+						column: { borderRadius: 1 },
+						series: {
+							borderColor: "none"
+						}
+					},
+					credits: {
+						enabled: false
+					},
+					xAxis: {
+						categories: this.lpDurationChart.map(item => this.$moment(item.day).format("YYYY-MM-DD")),
+						tickColor: "#0000ff"
+					},
+					yAxis: {
+						title: null,
+						gridLineColor: "#ff2f4b",
+						lineColor: "#ff2f4b" //라인컬러
+					},
+					exporting: { enabled: false },
+					title: "",
+					menu: false,
+					series: [
+						{
+							name: "기간조회",
+							data: this.lpDurationChart.map(item => item.use),
+							color: "#1effdf"
+						}
+					]
+				};
+			}
+		}
+	},
 	data() {
 		return {
 			isBusy: false,
+			chartName: "column",
 			lpDurationChart: [],
 			lpDurationList: [],
 			lpDurationFields: [
@@ -108,6 +167,7 @@ export default {
 		searchItemList: function(searchItem) {
 			searchItem.day = searchItem.date;
 			this.getLpDurationList(searchItem);
+			this.getLpDurationChart(searchItem);
 		}
 	}
 };
