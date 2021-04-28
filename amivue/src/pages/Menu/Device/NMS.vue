@@ -43,9 +43,8 @@
 								</template>
 								<template #cell(test)="row">
 									<b-button size="sm" @click="row.toggleDetails">
-										<b-icon icon="chevron-down"></b-icon>
-										<b-icon icon="chevron-up"></b-icon>
-										{{ row.detailsShowing ? $t("nms.collapse") : $t("nms.expand") }}
+										<b-icon v-show="!row.detailsShowing" icon="chevron-down"></b-icon>
+										<b-icon v-show="row.detailsShowing" icon="chevron-up"></b-icon>
 									</b-button>
 								</template>
 								<template #row-details="">

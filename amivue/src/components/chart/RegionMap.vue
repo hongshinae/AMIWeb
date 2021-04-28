@@ -1,7 +1,7 @@
 <template>
 	<div class="highch">
 		<!-- <chart :constructor-type="'stockChart'" :options="chartOptions" /> -->
-		<high-chart :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" :callback="init" />
+		<high-chart :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
 	</div>
 </template>
 
