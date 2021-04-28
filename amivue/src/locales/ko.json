@@ -19,7 +19,7 @@
 			"MBoard": "검침 현황",
 			"lookup": "검침 조회",
 			"info": "검침 정보",
-			"regular": "정기 검침"
+			"regular": "월 검침"
 		},
 		"failure": {
 			"title": "장애",
