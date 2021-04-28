@@ -24,7 +24,7 @@ export default {
 		shows: {
 			type: Array,
 			default: function() {
-				return [["region", "estate", "building", "date"]];
+				return [["region", "estate", "building"], ["date"]];
 			}
 		},
 		showFilterList: {
@@ -37,43 +37,44 @@ export default {
 	data() {
 		return {
 			isBusy: false,
+			lpHoursChart: [],
 			lpHoursList: [],
 			lpHoursFields: [
 				{
-					key: "dcuId",
-					label: this.$t("component.content.table.dcuId")
+					key: "estateName",
+					label: this.$t("component.content.table.estateName")
 				},
 				{
 					key: "meterId",
 					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "dtime",
-					label: this.$t("component.content.table.dtime")
+					key: "buildingName",
+					label: this.$t("component.content.table.buildingName")
 				},
 				{
-					key: "demand",
-					label: this.$t("component.content.table.demand")
+					key: "houseName",
+					label: this.$t("component.content.table.houseName")
 				},
 				{
-					key: "etime",
-					label: this.$t("component.content.table.etime")
+					key: "day",
+					label: this.$t("component.content.table.day")
 				},
 				{
-					key: "acc",
-					label: this.$t("component.content.table.acc")
+					key: "hour",
+					label: this.$t("component.content.table.hour")
 				},
 				{
-					key: "demanda",
-					label: this.$t("component.content.table.demanda")
+					key: "fap",
+					label: this.$t("component.content.table.fap")
 				},
 				{
-					key: "etimea",
-					label: this.$t("component.content.table.etimea")
+					key: "rfap",
+					label: this.$t("component.content.table.rfap")
 				},
 				{
-					key: "acca",
-					label: this.$t("component.content.table.acca")
+					key: "use",
+					label: this.$t("component.content.table.use")
 				}
 			]
 		};
@@ -82,12 +83,12 @@ export default {
 		async getLpHoursList(params) {
 			try {
 				this.isBusy = true;
-				const response = await Lookup.lpHourList(params);
+				const response = await Lookup.lpHoursList(params);
 				const result = response.data.response;
-				this.regularList = result;
+				this.lpHoursList = result;
 			} catch (error) {
 				const result = [];
-				this.regularList = result;
+				this.lpHoursList = result;
 			} finally {
 				this.isBusy = false;
 			}
@@ -97,16 +98,18 @@ export default {
 				this.isBusy = true;
 				const response = await Lookup.lpHoursChart(params);
 				const result = response.data.response;
-				this.regularList = result;
+				this.lpHoursChart = result;
 			} catch (error) {
 				const result = [];
-				this.regularList = result;
+				this.lpHoursChart = result;
 			} finally {
 				this.isBusy = false;
 			}
 		},
 		searchItemList: function(searchItem) {
+			searchItem.day = searchItem.date;
 			this.getLpHoursList(searchItem);
+			this.getLpHoursChart(searchItem);
 		}
 	}
 };

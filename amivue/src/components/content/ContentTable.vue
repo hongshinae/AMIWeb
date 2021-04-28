@@ -91,6 +91,7 @@
 					<template #cell(day)="row">
 						{{ row.item.day | moment("YYYY-MM-DD") }}
 					</template>
+					<template #cell(hour)="row">{{ row.item.hour }}시</template>
 					<template #cell(fap)="row">
 						{{ row.item.fap }}
 					</template>

@@ -78,7 +78,6 @@ export default {
 			}
 		},
 		handleInput($event) {
-			console.log($event);
 			this.$emit("input", $event);
 		}
 	}

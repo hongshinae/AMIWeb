@@ -23,7 +23,7 @@ export default {
 		shows: {
 			type: Array,
 			default: function() {
-				return [["region", "estate", "building", "date"]];
+				return [["region", "estate", "building"], ["date"]];
 			}
 		},
 		showFilterList: {

@@ -64,18 +64,6 @@ export default {
 					label: this.$t("component.content.table.meterReadingDay")
 				},
 				{
-					key: "to_meterTime",
-					label: this.$t("component.content.table.to_meterTime")
-				},
-				{
-					key: "to_apt1",
-					label: this.$t("component.content.table.to_apt1")
-				},
-				{
-					key: "to_rapt1",
-					label: this.$t("component.content.table.to_rapt1")
-				},
-				{
 					key: "from_meterTime",
 					label: this.$t("component.content.table.from_meterTime")
 				},
@@ -86,6 +74,18 @@ export default {
 				{
 					key: "from_rapt1",
 					label: this.$t("component.content.table.from_rapt1")
+				},
+				{
+					key: "to_meterTime",
+					label: this.$t("component.content.table.to_meterTime")
+				},
+				{
+					key: "to_apt1",
+					label: this.$t("component.content.table.to_apt1")
+				},
+				{
+					key: "to_rapt1",
+					label: this.$t("component.content.table.to_rapt1")
 				},
 				{
 					key: "use",
