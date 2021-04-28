@@ -110,6 +110,9 @@
 					<template #cell(dcuMapp)="row">
 						{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}
 					</template>
+					<template #cell(code)="row">
+						<span :class="{ linkage: row.item.code == 0, unlinkage: row.item.code == 1 }"></span>
+					</template>
 					<template #cell(readingStatus)="row">
 						<span :class="{ linkage: row.item.readingStatus == 0, unlinkage: row.item.readingStatus == 1 }"></span>
 					</template>

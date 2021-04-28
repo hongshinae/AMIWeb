@@ -143,6 +143,7 @@
 				"houseCount": "세대수",
 				"address": "주소",
 				"deviceCount": "설치 장비수",
+				"readingType": "검침 타입",
 				"readingTypeCount": "검침타입",
 				"remark": "비고",
 				"estateId": "단지ID",
@@ -150,7 +151,8 @@
 				"meterId": "계량기 ID",
 				"gatewayId": "게이트웨이 ID",
 				"readingDay": "검침일",
-				"meterType": "검침타입",
+				"meterType": "계량기 타입",
+				"code": "연동 확인",
 				"dcuCheck": "연동 확인",
 				"updateDate": "변경일시",
 				"recentlyReadingTime": "최근 검침시각",
@@ -396,6 +398,12 @@
 			"add": "신규 등록",
 			"save": "등록",
 			"cancel": "취소"
+		},
+		"search": {
+			"meterType": "검침 타입",
+			"region": "지역",
+			"estate": "단지",
+			"search": "검색"
 		}
 	},
 	"nms": {

@@ -1,23 +1,11 @@
 import Send from "@/axios";
 
 export default {
-	region() {
+	mappingList(params) {
 		return Send({
-			url: "/search/region",
-			method: "get"
-		});
-	},
-	estate(params) {
-		return Send({
-			url: "/search/estate",
+			url: "/device/mapping/estate",
 			method: "get",
-			params: params
-		});
-	},
-	estateList() {
-		return Send({
-			url: "/device/estate/list",
-			method: "get"
+			params
 		});
 	}
 };
