@@ -122,7 +122,9 @@ export default {
 			buildingSelected: null,
 			durationType: 1,
 			durationDate: {
-				fromDate: this.$moment().format("YYYY-MM-DD"),
+				fromDate: this.$moment()
+					.date(1)
+					.format("YYYY-MM-DD"),
 				toDate: this.$moment().format("YYYY-MM-DD")
 			}
 		};

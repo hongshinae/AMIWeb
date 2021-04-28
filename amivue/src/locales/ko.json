@@ -167,7 +167,7 @@
 				"meterReadingDay": "정기검침일",
 				"to_meterTime": "현월검침시각",
 				"to_apt1": "현월정기검침값",
-				"to_rapt1": "현월역방향값",
+				"to_rapt1": "현월역정기검침값",
 				"from_meterTime": "전월검침시각",
 				"from_apt1": "전월정기검침값",
 				"from_rapt1": "전월역방향값",

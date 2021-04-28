@@ -7,7 +7,7 @@
 			<b-form-datepicker
 				:value="fromDate"
 				:date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
-				@input="$emit('update:fromDate', $moment($event).format('YYYYMMDD'))"
+				@input="$emit('update:fromDate', $event)"
 				required
 			/>
 		</b-col>
