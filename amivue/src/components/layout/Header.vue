@@ -11,7 +11,8 @@
 					<b-icon icon="question-diamond"></b-icon>
 					<!--<b-badge pill variant="danger">1</b-badge>-->
 				</b-nav-item>
-				<b-nav-item class="aram on">
+				<b-nav-item class="aram">
+					<!--on -->
 					<b-icon icon="bell" id="tooltip-button-interactive"></b-icon>
 					<b-badge pill variant="danger">2</b-badge>
 				</b-nav-item>
