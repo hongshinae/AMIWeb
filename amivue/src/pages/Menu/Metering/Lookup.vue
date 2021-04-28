@@ -2,25 +2,25 @@
 	<div class="main-bg">
 		<content-header :paths="paths" :pageName="pageName">
 			<div class="tap-wrap">
-				<b-button pill :variant="activeTab(0)" @click="tabIndex = 0">검침주기별 데이터</b-button>
-				<b-button pill :variant="activeTab(1)" @click="tabIndex = 1">1시간 데이터</b-button>
-				<b-button pill :variant="activeTab(2)" @click="tabIndex = 2">기간조회</b-button>
+				<b-button pill :variant="activeTab(0)" @click="tabIndex = 0">{{ $t("lookup.tab.lpCycle") }}</b-button>
+				<b-button pill :variant="activeTab(1)" @click="tabIndex = 1">{{ $t("lookup.tab.lpHours") }}</b-button>
+				<b-button pill :variant="activeTab(2)" @click="tabIndex = 2">{{ $t("lookup.tab.lpDuration") }}</b-button>
 			</div>
 		</content-header>
 		<b-tabs v-model="tabIndex" :no-nav-style="true">
 			<b-tab>
 				<template #title> </template>
-				<metering-period-data></metering-period-data>
+				<cycle-data></cycle-data>
 			</b-tab>
 
-			<b-tab active>
-				<template #title style="display:none"> </template>
+			<b-tab>
+				<template #title> </template>
 				<hours-data></hours-data>
 			</b-tab>
 
 			<b-tab>
 				<template #title> </template>
-				<period-lookup></period-lookup>
+				<duration-data></duration-data>
 			</b-tab>
 		</b-tabs>
 	</div>
@@ -28,11 +28,12 @@
 
 <script>
 import ContentHeader from "@/components/content/ContentHeader";
-import MeteringPeriodData from "./Lookup/MeteringPeriodData";
-import HoursData from "./Lookup/HoursData.vue";
-import PeriodLookup from "./Lookup/PeriodLookup";
+import CycleData from "./Lookup/CycleData";
+import HoursData from "./Lookup/HoursData";
+import DurationData from "./Lookup/DurationData";
+
 export default {
-	components: { ContentHeader, MeteringPeriodData, HoursData, PeriodLookup },
+	components: { ContentHeader, CycleData, HoursData, DurationData },
 	data() {
 		return {
 			tabIndex: 0,

@@ -117,7 +117,6 @@ export default {
 			}
 		},
 		searchItemList: function(searchItem) {
-			searchItem.yearMonth = this.$moment(searchItem.month).format("YYYYMM");
 			this.getRegularList(searchItem);
 		}
 	}

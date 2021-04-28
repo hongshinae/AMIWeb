@@ -13,5 +13,12 @@ export default {
 			method: "get",
 			params: params
 		});
+	},
+	building(params) {
+		return Send({
+			url: "/search/building",
+			method: "get",
+			params: params
+		});
 	}
 };

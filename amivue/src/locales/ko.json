@@ -19,7 +19,7 @@
 			"MBoard": "검침 현황",
 			"lookup": "검침 조회",
 			"info": "검침 정보",
-			"regular": "월 검침"
+			"regular": "정기 검침"
 		},
 		"failure": {
 			"title": "장애",
@@ -146,17 +146,13 @@
 				"readingDay": "검침일",
 				"meterType": "검침타입",
 				"dcuCheck": "연동 확인",
-				"dtime": "계시시각",
-				"demand": "유효수요",
-				"etime": "발생시각",
-				"acc": "누적유효",
-				"demanda": "유효수요(A)",
-				"etimea": "발생시각",
-				"acca": "누적유효(A)",
 				"updateDate": "변경일시",
 				"recentlyReadingTime": "최근 검침시각",
-				"fap": "검침량",
-				"rfap": "역방향",
+				"day": "날짜",
+				"date": "날짜",
+				"time": "시간",
+				"fap": "누적유효량",
+				"rfap": "역누적유효량",
 				"connEquip": "연동 장비수",
 				"statusCode": "상태 코드",
 				"meterReadingDay": "정기검침일",
@@ -430,7 +426,22 @@
 		"statusTrue": "정상",
 		"statusFalse": "오류"
 	},
-	"lookup": {},
+	"lookup": {
+		"tab": {
+			"lpCycle": "검침주기별 데이터",
+			"lpHours": "1시간 데이터",
+			"lpDuration": "기간조회"
+		},
+		"lpCycle": {
+			"excelFileName": "검침 조회_검침주기별.xlsx"
+		},
+		"lpHours": {
+			"excelFileName": "검침 조회_1시간.xlsx"
+		},
+		"lpDuration": {
+			"excelFileName": "검침 조회_기간.xlsx"
+		}
+	},
 	"info": {
 		"tab": {
 			"collection": "수집 정보",

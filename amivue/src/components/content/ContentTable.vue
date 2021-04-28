@@ -88,6 +88,9 @@
 						</div>
 						<h4 v-else>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
+					<template #cell(day)="row">
+						{{ row.item.day | moment("YYYY-MM-DD") }}
+					</template>
 					<template #cell(fap)="row">
 						{{ row.item.fap }}
 					</template>

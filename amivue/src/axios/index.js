@@ -6,7 +6,7 @@ import locale from "@/locales";
 const axios = Axios.create({
 	baseURL: "/api",
 	// baseURL: "http://localhost:18099",
-	timeout: 3000
+	timeout: 5000
 });
 
 axios.interceptors.request.use(

@@ -13,6 +13,7 @@
 							<content-search-estate v-if="item == 'estate'" v-model="estateSelected" :region="regionSelected" />
 							<content-search-date v-if="item == 'date'" v-model="dateSelected" />
 							<content-search-month v-if="item == 'month'" v-model="monthSelected" />
+							<content-search-building v-if="item == 'building'" v-model="buildingSelected" :region="regionSelected" :estate="estateSelected" />
 						</b-col>
 					</b-row>
 				</form>
@@ -30,6 +31,7 @@ import ContentSearchRegion from "./ContentSearchRegion";
 import ContentSearchEstate from "./ContentSearchEstate";
 import ContentSearchDate from "./ContentSearchDate";
 import ContentSearchMonth from "./ContentSearchMonth";
+import ContentSearchBuilding from "./ContentSearchBuilding";
 
 export default {
 	props: {
@@ -40,7 +42,7 @@ export default {
 			}
 		}
 	},
-	components: { ContentSearchRegion, ContentSearchEstate, ContentSearchDate, ContentSearchMonth },
+	components: { ContentSearchRegion, ContentSearchEstate, ContentSearchDate, ContentSearchMonth, ContentSearchBuilding },
 	created() {},
 	mounted() {},
 	computed: {
@@ -56,11 +58,17 @@ export default {
 			}
 
 			if (this.shows.join().indexOf("date") > -1) {
-				params.date = this.dateSelected;
+				params.date = this.$moment(this.dateSelected).format("YYYYMMDD");
 			}
 
 			if (this.shows.join().indexOf("month") > -1) {
-				params.month = this.monthSelected;
+				params.yearMonth = this.$moment(this.monthSelected).format("YYYYMM");
+			}
+
+			if (this.shows.join().indexOf("building") > -1) {
+				// params.dcuId = this.buildingSelected;
+				// params = {...params, ...this.buildingSelected}
+				Object.assign(params, this.buildingSelected);
 			}
 
 			return params;
@@ -71,7 +79,8 @@ export default {
 			regionSelected: null,
 			estateSelected: null,
 			dateSelected: this.$moment().format("YYYY-MM-DD"),
-			monthSelected: this.$moment().format("YYYY-MM")
+			monthSelected: this.$moment().format("YYYY-MM"),
+			buildingSelected: null
 		};
 	},
 	methods: {

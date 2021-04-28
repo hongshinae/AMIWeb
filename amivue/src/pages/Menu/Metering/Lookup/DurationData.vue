@@ -4,12 +4,12 @@
 		<div>그래프 넣는 영역</div>
 		<content-table
 			:isBusy="isBusy"
-			:items="lpHoursList"
-			:fields="lpHoursFields"
+			:items="lpDurationList"
+			:fields="lpDurationFields"
 			:perpage="true"
 			:showFilterList="showFilterList"
-			:excelFileName="$t('estate.excelFileName')"
-			:excelSheetName="$t('menu.metering.lookup')"
+			:excelFileName="$t('lookup.lpCycle.excelFileName')"
+			:excelSheetName="$t('lookup.tab.lpCycle')"
 		/>
 	</div>
 </template>
@@ -37,8 +37,8 @@ export default {
 	data() {
 		return {
 			isBusy: false,
-			lpHoursList: [],
-			lpHoursFields: [
+			lpDurationList: [],
+			lpDurationFields: [
 				{
 					key: "dcuId",
 					label: this.$t("component.content.table.dcuId")
@@ -79,7 +79,7 @@ export default {
 		};
 	},
 	methods: {
-		async getLpHoursList(params) {
+		async getLpDurationList(params) {
 			try {
 				this.isBusy = true;
 				const response = await Lookup.lpHourList(params);
@@ -106,7 +106,7 @@ export default {
 			}
 		},
 		searchItemList: function(searchItem) {
-			this.getLpHoursList(searchItem);
+			this.getLpDurationList(searchItem);
 		}
 	}
 };
