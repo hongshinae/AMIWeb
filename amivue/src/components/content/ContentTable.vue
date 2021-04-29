@@ -37,6 +37,7 @@
 						debounce="100"
 					/>
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
+					<content-table-filter-estate-id v-if="item == 'estateId'" v-model="filter.estateId" debounce="100" />
 					<content-table-filter-building v-if="item == 'building'" v-model="filter.building" debounce="100" />
 					<content-table-filter-gateway v-if="item == 'gateway'" v-model="filter.gateway" debounce="100" />
 					<content-table-filter-dcu-id v-if="item == 'dcuId'" v-model="filter.dcuId" debounce="100" />
@@ -138,6 +139,7 @@
 <script>
 import ContentTableFilterRegion from "./ContentTableFilterRegion";
 import ContentTableFilterEstate from "./ContentTableFilterEstate";
+import ContentTableFilterEstateId from "./ContentTableFilterEstateId";
 import ContentTableFilterBuilding from "./ContentTableFilterBuilding";
 import ContentTableFilterGateway from "./ContentTableFilterGateway";
 import ContentTableFilterFirmware from "./ContentTableFilterFirmware";
@@ -150,6 +152,7 @@ export default {
 	components: {
 		ContentTableFilterRegion,
 		ContentTableFilterEstate,
+		ContentTableFilterEstateId,
 		ContentTableFilterBuilding,
 		ContentTableFilterGateway,
 		ContentTableFilterFirmware,
@@ -219,6 +222,9 @@ export default {
 		useEstate() {
 			return this.showFilterList.find(row => row == "estate") == undefined ? false : true;
 		},
+		useEstateId() {
+			return this.showFilterList.find(row => row == "estateId") == undefined ? false : true;
+		},
 		useBuilding() {
 			return this.showFilterList.find(row => row == "building") == undefined ? false : true;
 		},
@@ -252,6 +258,7 @@ export default {
 			filter: {
 				region: 0,
 				estate: "",
+				estateId: "",
 				building: "",
 				gateway: "",
 				dcuId: "",
@@ -266,6 +273,7 @@ export default {
 		initFilter() {
 			this.filter.region = 0;
 			this.filter.estate = "";
+			this.filter.estateId = "";
 			this.filter.building = "";
 			this.filter.gateway = "";
 			this.filter.dcuId = "";
@@ -297,6 +305,7 @@ export default {
 		onFilter(row, filter) {
 			let region = true;
 			let estate = true;
+			let estateId = true;
 			let building = true;
 			let dcuId = true;
 			let meterId = true;
@@ -314,6 +323,10 @@ export default {
 
 			if (this.useEstate) {
 				estate = row.estateName.indexOf(filter.estate) != -1;
+			}
+
+			if (this.useEstateId) {
+				estateId = row.estateId.toUpperCase().indexOf(filter.estateId.toUpperCase()) != -1;
 			}
 
 			if (this.useDcuId) {
@@ -348,7 +361,7 @@ export default {
 				}
 			}
 
-			return region && estate && building && dcuId && meterId && gateway && firmware && readingDay;
+			return region && estate && estateId && building && dcuId && meterId && gateway && firmware && readingDay;
 		}
 	}
 };

@@ -48,6 +48,7 @@
 		},
 		"placeholder": {
 			"estate": "아파트 이름",
+			"estateId": "SE001",
 			"region": "101동",
 			"gateway": "Gate_1",
 			"dcuId": "NS09_0101A",
@@ -149,6 +150,7 @@
 			"filter": {
 				"region": "지역",
 				"estate": "단지명",
+				"estateId": "단지 ID",
 				"building": "동명",
 				"gateway": "게이트웨이",
 				"dcuId": "DCU ID",

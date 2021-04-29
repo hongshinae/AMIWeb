@@ -35,7 +35,7 @@ export default {
 		showFilterList: {
 			type: Array,
 			default: function() {
-				return ["region", "estate"];
+				return ["region", "estate", "estateId"];
 			}
 		}
 	},
