@@ -9,6 +9,7 @@
 import "@/assets/scss/main_common.scss";
 import "@/assets/scss/main.scss";
 import "@/assets/scss/main_wh.scss";
+import "@/assets/scss/maintitle.scss";
 import "@/assets/scss/filter.scss"; // - ContentTable.vue
 import "@/assets/scss/modal_wh.scss";
 export default {};
