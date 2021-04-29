@@ -24,11 +24,15 @@
 						:readingTypeList="$t('component.content.filter.readingTypeList')"
 						debounce="100"
 					/>
+					<content-table-filter-day v-if="item == 'day'" v-model="filter.day" :dayList="dayList" debounce="100" />
+					<content-table-filter-time v-if="item == 'time'" v-model="filter.time" :timeList="timeList" debounce="100" />
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
 					<content-table-filter-estate-id v-if="item == 'estateId'" v-model="filter.estateId" debounce="100" />
 					<content-table-filter-building v-if="item == 'building'" v-model="filter.building" debounce="100" />
+					<content-table-filter-house v-if="item == 'house'" v-model="filter.house" debounce="100" />
 					<content-table-filter-gateway v-if="item == 'gateway'" v-model="filter.gateway" debounce="100" />
 					<content-table-filter-dcu-id v-if="item == 'dcuId'" v-model="filter.dcuId" debounce="100" />
+					<content-table-filter-mac v-if="item == 'mac'" v-model="filter.mac" debounce="100" />
 					<content-table-filter-meter-id v-if="item == 'meterId'" v-model="filter.meterId" debounce="100" />
 				</b-form-group>
 				<b-form-group v-if="isPerPage">
@@ -132,12 +136,16 @@ import ContentTableFilterRegion from "./ContentTableFilterRegion";
 import ContentTableFilterEstate from "./ContentTableFilterEstate";
 import ContentTableFilterEstateId from "./ContentTableFilterEstateId";
 import ContentTableFilterBuilding from "./ContentTableFilterBuilding";
+import ContentTableFilterHouse from "./ContentTableFilterHouse";
 import ContentTableFilterGateway from "./ContentTableFilterGateway";
 import ContentTableFilterFirmware from "./ContentTableFilterFirmware";
 import ContentTableFilterMeterId from "./ContentTableFilterMeterId";
 import ContentTableFilterDcuId from "./ContentTableFilterDcuId";
+import ContentTableFilterMac from "./ContentTableFilterMac";
 import ContentTableFilterReadingDay from "./ContentTableFilterReadingDay";
 import ContentTableFilterReadingType from "./ContentTableFilterReadingType";
+import ContentTableFilterDay from "./ContentTableFilterDay";
+import ContentTableFilterTime from "./ContentTableFilterTime";
 import XLSX from "xlsx";
 
 export default {
@@ -146,12 +154,16 @@ export default {
 		ContentTableFilterEstate,
 		ContentTableFilterEstateId,
 		ContentTableFilterBuilding,
+		ContentTableFilterHouse,
 		ContentTableFilterGateway,
 		ContentTableFilterFirmware,
 		ContentTableFilterDcuId,
+		ContentTableFilterMac,
 		ContentTableFilterMeterId,
 		ContentTableFilterReadingDay,
-		ContentTableFilterReadingType
+		ContentTableFilterReadingType,
+		ContentTableFilterDay,
+		ContentTableFilterTime
 	},
 	props: {
 		isPerPage: { type: Boolean, default: true },
@@ -211,6 +223,18 @@ export default {
 			const readingDayList = this.items.map(item => item.meterReadingDay);
 			return readingDayList.filter((item, index, array) => array.indexOf(item) === index);
 		},
+		dayList() {
+			let dayList = this.items.map(item => item.day);
+			dayList = dayList.filter((item, index, array) => array.indexOf(item) === index);
+
+			return dayList.map(item => {
+				return { value: item, text: this.$moment(item).format("YYYY-MM-DD") };
+			});
+		},
+		timeList() {
+			const timeList = this.items.map(item => item.time);
+			return timeList.filter((item, index, array) => array.indexOf(item) === index);
+		},
 		excelList: function() {
 			return this.items.map(item => {
 				let o = {};
@@ -238,11 +262,17 @@ export default {
 		useBuilding() {
 			return this.showFilterList.some(row => row == "building");
 		},
+		useHouse() {
+			return this.showFilterList.some(row => row == "house");
+		},
 		useGateway() {
 			return this.showFilterList.some(row => row == "gateway");
 		},
 		useDcuId() {
 			return this.showFilterList.some(row => row == "dcuId");
+		},
+		useMac() {
+			return this.showFilterList.some(row => row == "mac");
 		},
 		useMeterId() {
 			return this.showFilterList.some(row => row == "meterId");
@@ -255,6 +285,12 @@ export default {
 		},
 		useReadingType() {
 			return this.showFilterList.some(row => row == "readingType");
+		},
+		useDay() {
+			return this.showFilterList.some(row => row == "day");
+		},
+		useTime() {
+			return this.showFilterList.some(row => row == "time");
 		}
 	},
 	data() {
@@ -273,12 +309,16 @@ export default {
 				estate: "",
 				estateId: "",
 				building: "",
+				house: "",
 				gateway: "",
 				dcuId: "",
+				mac: "",
 				meterId: "",
 				firmware: null,
 				readingDay: null,
-				readingType: null
+				readingType: null,
+				day: null,
+				time: null
 			},
 			totalRow: this.itemsTotalCount
 		};
@@ -289,12 +329,16 @@ export default {
 			this.filter.estate = "";
 			this.filter.estateId = "";
 			this.filter.building = "";
+			this.filter.house = "";
 			this.filter.gateway = "";
 			this.filter.dcuId = "";
+			this.filter.mac = "";
 			this.filter.meterId = "";
 			this.filter.firmware = null;
 			this.filter.readingDay = null;
 			this.filter.readingType = null;
+			this.filter.day = null;
+			this.filter.time = null;
 		},
 		onFiltered(filteredItems) {
 			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
@@ -318,8 +362,8 @@ export default {
 			XLSX.writeFile(wb, this.excelFileName);
 		},
 		onFilter(row, filter) {
-			let region, estate, estateId, building, dcuId, meterId, gateway, firmware, readingDay, readingType;
-			region = estate = estateId = building = dcuId = meterId = gateway = firmware = readingDay = readingType = true;
+			let region, estate, estateId, building, house, dcuId, mac, meterId, gateway, firmware, readingDay, readingType, time, day;
+			region = estate = estateId = building = house = dcuId = mac = meterId = gateway = firmware = readingDay = readingType = time = day = true;
 
 			if (this.useRegion && filter.region) {
 				region = row.regionSeq == filter.region;
@@ -337,6 +381,10 @@ export default {
 				dcuId = row.dcuId.toUpperCase().indexOf(filter.dcuId.toUpperCase()) != -1;
 			}
 
+			if (this.useMac) {
+				mac = row.mac.toUpperCase().indexOf(filter.mac.toUpperCase()) != -1;
+			}
+
 			if (this.useMeterId) {
 				meterId = row.meterId.toUpperCase().indexOf(filter.meterId.toUpperCase()) != -1;
 			}
@@ -347,6 +395,10 @@ export default {
 
 			if (this.useBuilding) {
 				building = row.buildingName.toUpperCase().indexOf(filter.building.toUpperCase()) != -1;
+			}
+
+			if (this.useHouse) {
+				house = row.houseName.toUpperCase().indexOf(filter.house.toUpperCase()) != -1;
 			}
 
 			if (this.useFirmware && filter.firmware) {
@@ -361,7 +413,17 @@ export default {
 				readingType = row.readingType == filter.readingType;
 			}
 
-			return region && estate && estateId && building && dcuId && meterId && gateway && firmware && readingDay && readingType;
+			if (this.useDay && filter.day) {
+				day = row.day == filter.day;
+			}
+
+			if (this.useTime && filter.time) {
+				time = row.time == filter.time;
+			}
+
+			return (
+				region && estate && estateId && building && house && dcuId && mac && meterId && gateway && firmware && readingDay && readingType && day && time
+			);
 		}
 	}
 };

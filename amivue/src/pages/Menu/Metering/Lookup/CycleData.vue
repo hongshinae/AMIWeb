@@ -29,7 +29,7 @@ export default {
 		showFilterList: {
 			type: Array,
 			default: function() {
-				return [];
+				return ["meterId", "mac", "house", "time"];
 			}
 		}
 	},

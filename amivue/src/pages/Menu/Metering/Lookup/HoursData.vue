@@ -42,7 +42,7 @@ export default {
 		showFilterList: {
 			type: Array,
 			default: function() {
-				return [];
+				return ["meterId", "building", "house", "time"];
 			}
 		}
 	},
