@@ -7,7 +7,9 @@
 				<div class="wbox">
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
-						<span>DCU <i class="p-Color">4</i> </span>
+						<span>
+							DCU <i class="p-Color">{{ dcuList.length > 0 ? dcuList.length : 0 }}</i>
+						</span>
 						<div role="group" class="btn-group">
 							<b-button variant="light" @click="sendReboot">{{ $t("nms.button.reboot") }}</b-button>
 							<b-button variant="light">{{ $t("nms.button.rescan") }}</b-button>
@@ -17,6 +19,14 @@
 					<div class="table-wrap">
 						<div class="basic-table">
 							<b-table :busy="isDcuBusy" :items="dcuList" :fields="dcuFields" select-mode="single" selectable @row-selected="onDcuRowSelected">
+								<template #table-busy>
+									<div class="text-center text-danger my-2">
+										<b-spinner class="align-middle"></b-spinner>
+										<slot name="table-loading-text">
+											<strong>{{ $t("msg.loading") }}</strong>
+										</slot>
+									</div>
+								</template>
 								<template #cell(sysState)="row">
 									{{ row.item.sysState == 1 ? "정상" : "비정상" }}
 								</template>
@@ -32,7 +42,11 @@
 				<div class="wbox">
 					<h5 class="tltle">
 						<b-icon icon="arrow-return-right"></b-icon>
-						<span>Modem <i class="p-Color">4</i> Meter <i class="p-Color">8</i> </span>
+						<span>
+							Modem <i class="p-Color">{{ this.modemData ? this.modemData.modemCount : 0 }}</i> Meter
+							<i class="p-Color">{{ this.modemData ? this.modemData.meterCount : 0 }}</i>
+							({{ this.modemData ? this.modemData.masterModemMac : "" }})
+						</span>
 						<div role="group" class="btn-group" disabled>
 							<b-button variant="light">{{ $t("nms.button.modemReset") }}</b-button>
 							<b-button variant="light" disabled>{{ $t("nms.button.modemFirmwareUpgrade") }}</b-button>
@@ -40,33 +54,41 @@
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<b-table :busy="isDcuBusy" :items="modemList" :fields="modemFields">
+							<b-table :busy="isModemBusy" :items="modemList" :fields="modemFields">
+								<template #table-busy>
+									<div class="text-center text-danger my-2">
+										<b-spinner class="align-middle"></b-spinner>
+										<slot name="table-loading-text">
+											<strong>{{ $t("msg.loading") }}</strong>
+										</slot>
+									</div>
+								</template>
 								<template #cell(statusCode)="row">
 									{{ row.item.statusCode == 1 ? $t("nms.dcuStatusTrue") : $t("nms.dcuStatusFalse") }}
 								</template>
-								<template #cell(test)="row">
+								<template #cell(expand)="row">
 									<b-button size="sm" @click="row.toggleDetails">
 										<b-icon v-show="!row.detailsShowing" icon="chevron-down"></b-icon>
 										<b-icon v-show="row.detailsShowing" icon="chevron-up"></b-icon>
 									</b-button>
 								</template>
-								<template #row-details="">
+								<template #row-details="row">
 									<b-card>
 										<div class="basic-table">
 											<table>
 												<thead>
-													<tr class="error">
+													<tr :class="{ error: item.status == 1 }" v-for="(item, index) in row.item.stepMeter" :key="index">
+														<td><b-icon icon="arrow-return-right"></b-icon></td>
+														<td>{{ item.meterId }} ({{ item.houseName }})</td>
+														<td>{{ item.meterTime }}</td>
+														<td>{{ item.fap }}</td>
+													</tr>
+													<!-- <tr>
 														<td><b-icon icon="arrow-return-right"></b-icon></td>
 														<td>06090009424 (301호)</td>
 														<td>2020-12-29 12:00:00)</td>
 														<td>12451</td>
-													</tr>
-													<tr>
-														<td><b-icon icon="arrow-return-right"></b-icon></td>
-														<td>06090009424 (301호)</td>
-														<td>2020-12-29 12:00:00)</td>
-														<td>12451</td>
-													</tr>
+													</tr> -->
 												</thead>
 											</table>
 										</div>
@@ -100,6 +122,11 @@ import ContentMixin from "@/components/content/mixin";
 
 export default {
 	mixins: [ContentMixin],
+	computed: {
+		modemList() {
+			return this.modemData ? this.modemData.stepModem : [];
+		}
+	},
 	data() {
 		return {
 			isDcuBusy: false,
@@ -131,24 +158,36 @@ export default {
 				{
 					key: "firmwareVersion",
 					label: this.$t("component.content.table.firmwareVersion")
+				},
+				{
+					key: "nmsVersion",
+					label: this.$t("component.content.table.nmsVersion")
 				}
 			],
-			modemList: [{ sysMac: "00:00:AC:5E:8C:A0:38:63​", connEquip: "2", statusCode: "비정상​" }],
+			modemData: null,
 			modemFields: [
 				{
-					key: "stepModem[0].modemMac",
+					key: "modemMac",
 					label: this.$t("component.content.table.mac")
 				},
 				{
-					key: "connEquip",
-					label: this.$t("component.content.table.connEquip")
+					key: "stepCount",
+					label: this.$t("component.content.table.stepCount")
+				},
+				{
+					key: "hardwareVersion",
+					label: this.$t("component.content.table.hardwareVersion")
+				},
+				{
+					key: "programVersion",
+					label: this.$t("component.content.table.programVersion")
 				},
 				{
 					key: "statusCode",
 					label: this.$t("component.content.table.statusCode")
 				},
 				{
-					key: "test",
+					key: "expand",
 					label: ""
 				}
 			],
@@ -161,7 +200,6 @@ export default {
 				this.isDcuBusy = true;
 				const response = await Nms.dcuList(params);
 				const result = response.data.response;
-				console.log(result);
 				this.dcuList = result;
 			} catch (error) {
 				const result = [];
@@ -175,10 +213,10 @@ export default {
 				this.isModemBusy = true;
 				const response = await Nms.modemList(params);
 				const result = response.data.response;
-				this.modemList = result;
+				console.log(result[0]);
+				this.modemData = result[0];
 			} catch (error) {
-				const result = [];
-				this.modemList = result;
+				this.modemData = null;
 			} finally {
 				this.isModemBusy = false;
 			}
@@ -195,12 +233,12 @@ export default {
 		},
 		async sendReboot() {
 			try {
+				console.log(this.dcuRebootList);
 				const response = await Nms.dcuRebootList(this.dcuRebootList);
 				const result = response.data.response;
-				this.modemList = result;
+				console.log(result);
 			} catch (error) {
-				const result = [];
-				this.modemList = result;
+				console.log(error);
 			}
 		}
 	}

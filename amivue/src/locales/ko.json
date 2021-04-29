@@ -198,7 +198,7 @@
 				"rfap": "역누적 유효량",
 				"fapUse": "정방향 사용량",
 				"rfapUse": "역방향 사용량",
-				"connEquip": "연동 장비수",
+				"stepCount": "연동 장비수",
 				"statusCode": "상태 코드",
 				"meterReadingDay": "정기검침일",
 				"to_meterTime": "현월검침시각",
@@ -209,7 +209,10 @@
 				"from_rapt1": "전월역방향값",
 				"use": "사용량",
 				"readingDayCompare": "단지 검침일 비교",
-				"readingStatus": "상태"
+				"readingStatus": "상태",
+				"nmsVersion": "NMS 버전",
+				"hardwareVersion": "하드웨어 버전",
+				"programVersion": "프로그램 버전"
 			}
 		}
 	},
