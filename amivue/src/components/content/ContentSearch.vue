@@ -14,12 +14,13 @@
 							<content-search-date v-if="item == 'date'" v-model="dateSelected" />
 							<content-search-month v-if="item == 'month'" v-model="monthSelected" />
 							<content-search-building v-if="item == 'building'" v-model="buildingSelected" :region="regionSelected" :estate="estateSelected" />
-							<content-search-duration-type v-if="item == 'durationType'" v-model="durationType" />
+							<content-search-duration-type v-if="item == 'durationType'" v-model="durationTypeSelected" />
 							<content-search-duration-date
 								v-if="item == 'durationDate'"
 								:fromDate.sync="durationDate.fromDate"
 								:toDate.sync="durationDate.toDate"
 							/>
+							<content-search-status-code v-if="item == 'dcuCode'" v-model="dcuCodeSelected" />
 						</b-col>
 					</b-row>
 				</form>
@@ -40,6 +41,7 @@ import ContentSearchMonth from "./ContentSearchMonth";
 import ContentSearchBuilding from "./ContentSearchBuilding";
 import ContentSearchDurationType from "./ContentSearchDurationType";
 import ContentSearchDurationDate from "./ContentSearchDurationDate";
+import ContentSearchStatusCode from "./ContentSearchStatusCode";
 
 export default {
 	props: {
@@ -57,7 +59,8 @@ export default {
 		ContentSearchMonth,
 		ContentSearchBuilding,
 		ContentSearchDurationType,
-		ContentSearchDurationDate
+		ContentSearchDurationDate,
+		ContentSearchStatusCode
 	},
 	created() {},
 	mounted() {},
@@ -85,6 +88,7 @@ export default {
 
 			if (this.shows.join().indexOf("estate") > -1) {
 				params.estateSeq = this.estateSelected;
+				params.gseq = this.estateSelected;
 			}
 
 			if (this.shows.join().indexOf("date") > -1) {
@@ -100,14 +104,20 @@ export default {
 			}
 
 			if (this.shows.join().indexOf("durationType") > -1) {
-				params.durationType = this.durationType;
+				params.durationType = this.durationTypeSelected;
 			}
 
 			if (this.shows.join().indexOf("durationDate") > -1) {
 				Object.assign(params, {
 					fromDate: this.$moment(this.durationDate.fromDate).format("YYYYMMDD"),
-					toDate: this.$moment(this.durationDate.toDate).format("YYYYMMDD")
+					startDay: this.$moment(this.durationDate.fromDate).format("YYYYMMDD"),
+					toDate: this.$moment(this.durationDate.toDate).format("YYYYMMDD"),
+					endDay: this.$moment(this.durationDate.toDate).format("YYYYMMDD")
 				});
+			}
+
+			if (this.shows.join().indexOf("dcuCode") > -1) {
+				params.statusCode = this.dcuCodeSelected;
 			}
 
 			return params;
@@ -120,13 +130,14 @@ export default {
 			dateSelected: this.$moment().format("YYYY-MM-DD"),
 			monthSelected: this.$moment().format("YYYY-MM"),
 			buildingSelected: null,
-			durationType: 1,
+			durationTypeSelected: 1,
 			durationDate: {
 				fromDate: this.$moment()
 					.date(1)
 					.format("YYYY-MM-DD"),
 				toDate: this.$moment().format("YYYY-MM-DD")
-			}
+			},
+			dcuCodeSelected: null
 		};
 	},
 	methods: {
