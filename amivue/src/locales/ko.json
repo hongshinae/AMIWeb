@@ -113,6 +113,37 @@
 				"durationTypeOptions": [
 					{ "text": "일별", "value": "1" },
 					{ "text": "월별", "value": "2" }
+				],
+				"statusCode": "상태코드",
+				"statusCodeOptions": [
+					{ "value": "1", "text": "과전류" },
+					{ "value": "2", "text": "정기검침" },
+					{ "value": "3", "text": "계절변경" },
+					{ "value": "4", "text": "모뎀 커버" },
+					{ "value": "5", "text": "터미널 커버" },
+					{ "value": "6", "text": "Latch ON" },
+					{ "value": "7", "text": "Latch OFF" },
+					{ "value": "8", "text": "Latch ERROR" },
+					{ "value": "9", "text": "Sag / Swell" },
+					{ "value": "10", "text": "오결선" },
+					{ "value": "11", "text": "온도" },
+					{ "value": "12", "text": "DST" },
+					{ "value": "13", "text": "자계 감지" },
+					{ "value": "14", "text": "부하제한 차단" },
+					{ "value": "15", "text": "현재 Tariff" },
+					{ "value": "16", "text": "현재 Tariff" },
+					{ "value": "17", "text": "SR" },
+					{ "value": "18", "text": "정전" },
+					{ "value": "19", "text": "시각 변경" },
+					{ "value": "20", "text": "수동 검침" },
+					{ "value": "21", "text": "DR" },
+					{ "value": "22", "text": "배터리 없음" },
+					{ "value": "23", "text": "전압 결상" },
+					{ "value": "24", "text": "프로그램 변경" },
+					{ "value": "25", "text": "과전압" },
+					{ "value": "26", "text": "저전압" },
+					{ "value": "27", "text": "비설정 LP 기록주기" },
+					{ "value": "28", "text": "비정기검침" }
 				]
 			},
 			"filter": {
@@ -483,7 +514,13 @@
 		}
 	},
 	"regular": {
-		"excelFileName": "검침 정보_수집정보.xlsx"
+		"excelFileName": "정기검침.xlsx"
+	},
+	"code": {
+		"excelFileName": "상태코드관리.xlsx"
+	},
+	"reading": {
+		"excelFileName": "미 검침 정보.xlsx"
 	},
 	"msg": {
 		"search": {
