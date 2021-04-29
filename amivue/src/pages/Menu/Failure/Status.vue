@@ -1,120 +1,89 @@
 <template>
 	<div class="main-bg content">
-		<dcu-modem-1></dcu-modem-1>
-		<router-modem-1></router-modem-1>
-		<div class="main-location-wrap">
-			<h1>네트워크 상태</h1>
-			<div class="main-location">
-				<b-breadcrumb>
-					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house"></b-icon>
-						홈
-					</b-breadcrumb-item>
-					<b-breadcrumb-item>장애</b-breadcrumb-item>
-					<b-breadcrumb-item active>네트워크 상태</b-breadcrumb-item>
-				</b-breadcrumb>
-			</div>
-		</div>
-		<div class="search-wrap">
-			<div class="wbox">
-				<div class="search-img">
-					<b-icon icon="search" variant="primary"></b-icon>
-				</div>
-				<div class="search">
-					<!--검색영역-->
-					<b-row>
-						<b-col xl="3" md="12" sm="12">
-							<b-row>
-								<b-col lg="4">
-									<label class="d-block">지역 이름</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-select v-model="selected">
-										<b-form-select-option>서울시</b-form-select-option>
-										<b-form-select-option>경기도</b-form-select-option>
-									</b-form-select>
-								</b-col>
-							</b-row>
-						</b-col>
-						<b-col xl="3" md="12" sm="12">
-							<b-row>
-								<b-col lg="4">
-									<label class="d-block">단지 명</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-select v-model="selected">
-										<b-form-select-option>1단지</b-form-select-option>
-										<b-form-select-option>2단지</b-form-select-option>
-									</b-form-select>
-								</b-col>
-							</b-row>
-						</b-col>
-						<b-col xl="3" md="12" sm="12">
-							<b-row>
-								<b-col lg="4">
-									<label class="d-block">DCU ID</label>
-								</b-col>
-								<b-col lg="8">
-									<b-form-input v-model="text" placeholder="DCU ID"></b-form-input>
-								</b-col>
-							</b-row>
-						</b-col>
-					</b-row>
-					<!--//검색영역-->
-				</div>
-				<div class="btn-wrap ml-auto">
-					<b-button block variant="primary">검색</b-button>
-				</div>
-			</div>
-		</div>
+		<dcu-ping :dcuId="selectedItem.dcuId" :dcuIp="selectedItem.dcuIp"></dcu-ping>
+		<router-ping :dcuId="selectedItem.dcuId" :dcuIp="selectedItem.dcuIp" :routerIp="selectedItem.routerIp"></router-ping>
+		<content-header :pageName="pageName" :paths="paths" />
+		<content-search :shows="shows" @handle:searchItem="searchItemList"> </content-search>
 		<div class="dcu-list-wrap">
+			<div class="blank-box" v-show="statusList.length == 0">
+				<span>
+					<img src="@/assets/svg/monitor_empty.svg" />
+					<b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+				</span>
+				<p>{{ $t("msg.search.emptyText") }}</p>
+			</div>
 			<b-row>
-				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
-					<div class="wbox">
-						<ul class="stats-wrap">
-							<li><span class="linkage"></span>DCU</li>
-							<li><span class="unlinkage"></span>Router</li>
-						</ul>
-						<p class="dcu-name">DCU ID 1</p>
-						<ul class="dcu-button-wrap">
-							<li><b-button v-b-modal.dcuModem1 block variant="dark">DCU ping</b-button></li>
-							<li><b-button v-b-modal.routerModem1 block variant="dark">Router ping</b-button></li>
-						</ul>
-					</div>
-				</b-col>
-
-				<b-col class="dcu-modem" xl="2" lg="2" sm="3">
-					<b-overlay id="overlay-background" show variant="light" opacity="0.85" blur="2px" rounded="sm">
-						<div class="wbox">
-							<ul class="stats-wrap">
-								<li><span class="linkage"></span>DCU</li>
-								<li><span class="unlinkage"></span>Router</li>
-							</ul>
-							<p class="dcu-name">DCU ID 1</p>
-							<ul class="dcu-button-wrap">
-								<li><b-button v-b-modal.dcuModem1 block variant="dark">DCU ping</b-button></li>
-								<li><b-button v-b-modal.routerModem1 block variant="dark">Router ping</b-button></li>
-							</ul>
-						</div>
-					</b-overlay>
-				</b-col>
+				<dcu-status
+					v-for="(item, index) in statusList"
+					:key="index"
+					:item="item"
+					@handle:dcuPing="handleDcuPing"
+					@handle:routerPing="handleRouterPing"
+				/>
 			</b-row>
 		</div>
 		<div class="overlay-wrap">
-			<b-overlay id="overlay-background" show variant="light" opacity="0.85" blur="2px" rounded="sm"></b-overlay>
+			<b-overlay id="overlay-background" :show="isLoading" variant="light" opacity="0.85" blur="2px" rounded="sm" />
 		</div>
 	</div>
 </template>
 <script>
-import Vue from "vue";
-import DcuModem1 from "@/components/modal/dcuModem1";
-import RouterModem1 from "@/components/modal/routerModem1";
-
-Vue.component(DcuModem1);
-Vue.component(RouterModem1);
+import Status from "@/service/status";
+import ContentMixin from "@/components/content/mixin";
+import DcuPing from "@/components/modal/DcuPing";
+import RouterPing from "@/components/modal/RouterPing";
+import DcuStatus from "@/components/DcuStatus";
 
 export default {
-	components: { DcuModem1, RouterModem1 }
+	mixins: [ContentMixin],
+	props: {
+		shows: {
+			type: Array,
+			default: function() {
+				return [["region", "estate"]];
+			}
+		}
+	},
+	components: { DcuPing, RouterPing, DcuStatus },
+	data() {
+		return {
+			pageName: this.$t("menu.failure.status"),
+			paths: [
+				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
+				{ name: this.$t("menu.failure.title") },
+				{ name: this.$t("menu.failure.status") }
+			],
+			statusList: [],
+			isLoading: false,
+			selectedItem: {}
+		};
+	},
+	methods: {
+		async getReadingList(params) {
+			try {
+				this.isLoading = true;
+				const response = await Status.list(params);
+				const result = response.data.response;
+				this.statusList = result;
+			} catch (error) {
+				const result = [];
+				this.statusList = result;
+			} finally {
+				this.isLoading = false;
+			}
+		},
+		handleDcuPing(selectedItem) {
+			this.selectedItem = selectedItem;
+			this.$bvModal.show("dcuPing");
+		},
+		handleRouterPing(selectedItem) {
+			this.selectedItem = selectedItem;
+			this.$bvModal.show("routerPing");
+		},
+		searchItemList(searchItem) {
+			this.getReadingList(searchItem);
+		}
+	}
 };
 </script>
 
