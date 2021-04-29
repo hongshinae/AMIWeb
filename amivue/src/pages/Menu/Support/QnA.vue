@@ -121,9 +121,63 @@
 	</div>
 </template>
 <script></script>
-<style>
+<style lang="scss">
 .collapsed > .when-open,
 .not-collapsed > .when-closed {
 	display: none;
+}
+/*아코디언*/
+.accordion-wrap .wbox {
+	margin-bottom: 30px;
+	padding: 0;
+	button.collapsed,
+	button.not-collapsed {
+		border-radius: 0;
+		width: 100%;
+		height: 70px;
+		line-height: 70px;
+		text-align: left;
+
+		ul {
+			width: 100%;
+			.icon-bg {
+				width: 50px;
+				height: 44px;
+				float: left;
+				margin: 10px;
+				span {
+					background: #ecf2f6;
+					color: #287fff;
+					border-radius: 20px;
+					font-size: 23px;
+					line-height: 24px;
+					text-align: center;
+					width: 40px;
+					height: 40px;
+					padding-top: 7px;
+					display: inline-block;
+				}
+			}
+			.title {
+				float: left;
+				font-size: 18px;
+				font-weight: 600;
+				height: 44px;
+				line-height: 44px;
+				margin: 10px;
+			}
+		}
+	}
+	.collapse {
+		border-top: 1px solid #d6d6d6;
+		padding: 1.375rem 1.75rem;
+		.icon-bg {
+			width: 50px;
+			height: 60px;
+			float: left;
+			font-size: 23px;
+			margin-left: 9px;
+		}
+	}
 }
 </style>
