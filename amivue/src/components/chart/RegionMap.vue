@@ -38,6 +38,9 @@ export default {
 			return {
 				chart: {
 					height: 850,
+					borderWidth: 0,
+					plotBackgroundColor: false,
+					plotBorderWidth: false,
 					map: koreaMap,
 					events: {
 						load: function() {
