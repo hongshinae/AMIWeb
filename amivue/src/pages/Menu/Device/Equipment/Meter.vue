@@ -66,7 +66,7 @@ export default {
 					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "readingDay",
+					key: "meterReadingDay",
 					label: this.$t("component.content.table.readingDay")
 				},
 				{

@@ -3,13 +3,13 @@
 		<b-form-select
 			text-field="regionName"
 			value-field="regionSeq"
-			:value="selected"
+			:value="value"
 			:options="regionList"
 			@input="$emit('input', $event)"
 			@change="$emit('init-filter-text')"
 		>
 			<template #first>
-				<b-form-select-option :value="0" selected>{{ $t("component.content.filter.all") }}</b-form-select-option>
+				<b-form-select-option :value="null" selected>{{ $t("component.content.filter.all") }}</b-form-select-option>
 			</template>
 		</b-form-select>
 	</b-form-group>
@@ -19,7 +19,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-	props: ["selected"],
+	props: ["value"],
 	computed: {
 		...mapGetters({ regionList: "getRegions" })
 	}

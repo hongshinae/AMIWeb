@@ -25,7 +25,7 @@ export default {
 		showFilterList: {
 			type: Array,
 			default: function() {
-				return ["building", "gateway"];
+				return ["building", "gateway", "readingType"];
 			}
 		}
 	},
@@ -33,6 +33,25 @@ export default {
 		DetailEquipmentOther
 	},
 	mounted() {},
+	computed: {
+		readingType() {
+			return readingType => {
+				if (readingType === 1) {
+					return "전기";
+				} else if (readingType === 2) {
+					return "가스";
+				} else if (readingType === 3) {
+					return "수도";
+				} else if (readingType === 4) {
+					return "온수";
+				} else if (readingType === 5) {
+					return "난방";
+				}
+
+				return this.$t("common.unknown");
+			};
+		}
+	},
 	data() {
 		return {
 			otherList: [],
@@ -64,12 +83,12 @@ export default {
 					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "updateDate",
-					label: this.$t("component.content.table.updateDate")
+					key: "readingType",
+					label: this.$t("component.content.table.readingType")
 				},
 				{
-					key: "meterType",
-					label: this.$t("component.content.table.meterType")
+					key: "updateDate",
+					label: this.$t("component.content.table.updateDate")
 				},
 				{
 					key: "_remark",

@@ -15,25 +15,13 @@
 			<div class="filter-wrap">
 				<slot name="table-header-right" />
 				<b-form-group v-for="(item, index) in showFilterList" :key="index">
-					<content-table-filter-region
-						v-if="item == 'region'"
-						v-model="filter.region"
-						:selected="filter.region"
-						@init-filter-text="filter.estate = ''"
-						debounce="100"
-					/>
-					<content-table-filter-firmware
-						v-if="item == 'firmware'"
-						v-model="filter.firmware"
-						:selected="filter.firmware"
-						:firmwareList="firmwareList"
-						debounce="100"
-					/>
-					<content-table-filter-reading-day
-						v-if="item == 'readingDay'"
-						v-model="filter.readingDay"
-						:selected="filter.readingDay"
-						:readingDayList="readingDayList"
+					<content-table-filter-region v-if="item == 'region'" v-model="filter.region" @init-filter-text="filter.estate = ''" debounce="100" />
+					<content-table-filter-firmware v-if="item == 'firmware'" v-model="filter.firmware" :firmwareList="firmwareList" debounce="100" />
+					<content-table-filter-reading-day v-if="item == 'readingDay'" v-model="filter.readingDay" :readingDayList="readingDayList" debounce="100" />
+					<content-table-filter-reading-type
+						v-if="item == 'readingType'"
+						v-model="filter.readingType"
+						:readingTypeList="$t('component.content.filter.readingTypeList')"
 						debounce="100"
 					/>
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
@@ -88,6 +76,9 @@
 							<p>{{ $t("msg.search.emptyText") || scope.emptyText }}</p>
 						</div>
 						<h4 v-else>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
+					</template>
+					<template #cell(readingType)="row">
+						{{ readingType(row.item.readingType) }}
 					</template>
 					<template #cell(day)="row">
 						{{ row.item.day | moment("YYYY-MM-DD") }}
@@ -146,6 +137,7 @@ import ContentTableFilterFirmware from "./ContentTableFilterFirmware";
 import ContentTableFilterMeterId from "./ContentTableFilterMeterId";
 import ContentTableFilterDcuId from "./ContentTableFilterDcuId";
 import ContentTableFilterReadingDay from "./ContentTableFilterReadingDay";
+import ContentTableFilterReadingType from "./ContentTableFilterReadingType";
 import XLSX from "xlsx";
 
 export default {
@@ -158,7 +150,8 @@ export default {
 		ContentTableFilterFirmware,
 		ContentTableFilterDcuId,
 		ContentTableFilterMeterId,
-		ContentTableFilterReadingDay
+		ContentTableFilterReadingDay,
+		ContentTableFilterReadingType
 	},
 	props: {
 		isPerPage: { type: Boolean, default: true },
@@ -193,12 +186,29 @@ export default {
 		itemList() {
 			return this.items;
 		},
+		readingType() {
+			return readingType => {
+				if (readingType === 1) {
+					return "전기";
+				} else if (readingType === 2) {
+					return "가스";
+				} else if (readingType === 3) {
+					return "수도";
+				} else if (readingType === 4) {
+					return "온수";
+				} else if (readingType === 5) {
+					return "난방";
+				}
+
+				return this.$t("common.unknown");
+			};
+		},
 		firmwareList() {
 			const firmwareList = this.items.map(item => item.firmwareVersion);
 			return firmwareList.filter((item, index, array) => array.indexOf(item) === index);
 		},
 		readingDayList() {
-			const readingDayList = this.items.map(item => item.readingDay);
+			const readingDayList = this.items.map(item => item.meterReadingDay);
 			return readingDayList.filter((item, index, array) => array.indexOf(item) === index);
 		},
 		excelList: function() {
@@ -217,31 +227,34 @@ export default {
 			});
 		},
 		useRegion() {
-			return this.showFilterList.find(row => row == "region") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "region");
 		},
 		useEstate() {
-			return this.showFilterList.find(row => row == "estate") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "estate");
 		},
 		useEstateId() {
-			return this.showFilterList.find(row => row == "estateId") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "estateId");
 		},
 		useBuilding() {
-			return this.showFilterList.find(row => row == "building") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "building");
 		},
 		useGateway() {
-			return this.showFilterList.find(row => row == "gateway") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "gateway");
 		},
 		useDcuId() {
-			return this.showFilterList.find(row => row == "dcuId") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "dcuId");
 		},
 		useMeterId() {
-			return this.showFilterList.find(row => row == "meterId") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "meterId");
 		},
 		useFirmware() {
-			return this.showFilterList.find(row => row == "firmware") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "firmware");
 		},
 		useReadingDay() {
-			return this.showFilterList.find(row => row == "readingDay") == undefined ? false : true;
+			return this.showFilterList.some(row => row == "readingDay");
+		},
+		useReadingType() {
+			return this.showFilterList.some(row => row == "readingType");
 		}
 	},
 	data() {
@@ -256,30 +269,32 @@ export default {
 				{ value: 50, text: this.$t("common.filter.page50") }
 			],
 			filter: {
-				region: 0,
+				region: null,
 				estate: "",
 				estateId: "",
 				building: "",
 				gateway: "",
 				dcuId: "",
 				meterId: "",
-				firmware: 0,
-				readingDay: 0
+				firmware: null,
+				readingDay: null,
+				readingType: null
 			},
 			totalRow: this.itemsTotalCount
 		};
 	},
 	methods: {
 		initFilter() {
-			this.filter.region = 0;
+			this.filter.region = null;
 			this.filter.estate = "";
 			this.filter.estateId = "";
 			this.filter.building = "";
 			this.filter.gateway = "";
 			this.filter.dcuId = "";
 			this.filter.meterId = "";
-			this.filter.firmware = 0;
-			this.filter.readingDay = 0;
+			this.filter.firmware = null;
+			this.filter.readingDay = null;
+			this.filter.readingType = null;
 		},
 		onFiltered(filteredItems) {
 			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
@@ -303,22 +318,11 @@ export default {
 			XLSX.writeFile(wb, this.excelFileName);
 		},
 		onFilter(row, filter) {
-			let region = true;
-			let estate = true;
-			let estateId = true;
-			let building = true;
-			let dcuId = true;
-			let meterId = true;
-			let gateway = true;
-			let firmware = true;
-			let readingDay = true;
+			let region, estate, estateId, building, dcuId, meterId, gateway, firmware, readingDay, readingType;
+			region = estate = estateId = building = dcuId = meterId = gateway = firmware = readingDay = readingType = true;
 
-			if (this.useRegion) {
-				region = filter.region == 0 ? true : false;
-
-				if (!region) {
-					region = row.regionSeq == filter.region;
-				}
+			if (this.useRegion && filter.region) {
+				region = row.regionSeq == filter.region;
 			}
 
 			if (this.useEstate) {
@@ -345,23 +349,19 @@ export default {
 				building = row.buildingName.toUpperCase().indexOf(filter.building.toUpperCase()) != -1;
 			}
 
-			if (this.useFirmware) {
-				firmware = filter.firmware == 0 ? true : false;
-
-				if (!firmware) {
-					firmware = row.firmwareVersion == filter.firmware;
-				}
+			if (this.useFirmware && filter.firmware) {
+				firmware = row.firmwareVersion == filter.firmware;
 			}
 
-			if (this.useReadingDay) {
-				readingDay = filter.readingDay == 0 ? true : false;
-
-				if (!readingDay) {
-					readingDay = row.readingDay == filter.readingDay;
-				}
+			if (this.useReadingDay && filter.readingDay) {
+				readingDay = row.meterReadingDay == filter.readingDay;
 			}
 
-			return region && estate && estateId && building && dcuId && meterId && gateway && firmware && readingDay;
+			if (this.useReadingType && filter.readingType) {
+				readingType = row.readingType == filter.readingType;
+			}
+
+			return region && estate && estateId && building && dcuId && meterId && gateway && firmware && readingDay && readingType;
 		}
 	}
 };

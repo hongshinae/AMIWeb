@@ -157,6 +157,14 @@
 				"meterId": "METER ID",
 				"firmware": "펌웨어버전",
 				"readingDay": "검침일",
+				"readingType": "검침타입",
+				"readingTypeList": [
+					{ "text": "전기", "value": "1" },
+					{ "text": "가스", "value": "2" },
+					{ "text": "수도", "value": "3" },
+					{ "text": "온수", "value": "4" },
+					{ "text": "난방", "value": "5" }
+				],
 				"all": "--전체--",
 				"day": "일"
 			},

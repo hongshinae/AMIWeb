@@ -1,8 +1,8 @@
 <template>
 	<b-form-group :label="$t('component.content.filter.firmware')">
-		<b-form-select :value="selected" :options="firmwareList" @input="$emit('input', $event)">
+		<b-form-select :value="value" :options="firmwareList" @input="$emit('input', $event)">
 			<template #first>
-				<b-form-select-option :value="0" selected>{{ $t("component.content.filter.all") }}</b-form-select-option>
+				<b-form-select-option :value="null" selected>{{ $t("component.content.filter.all") }}</b-form-select-option>
 			</template>
 		</b-form-select>
 	</b-form-group>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-	props: ["selected", "firmwareList"]
+	props: ["value", "firmwareList"]
 };
 </script>
 
