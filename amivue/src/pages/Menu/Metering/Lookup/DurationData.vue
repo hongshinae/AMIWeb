@@ -49,7 +49,8 @@ export default {
 				return {
 					chart: {
 						type: this.chartName,
-						height: 350
+						height: 350,
+						borderWidth: 0
 					},
 					legend: {
 						symbolHeight: 8,
@@ -71,6 +72,9 @@ export default {
 					},
 					xAxis: {
 						categories: this.lpDurationChart.map(item => this.$moment(item.day).format("YYYY-MM-DD")),
+						title: null,
+						gridLineColor: false,
+						lineColor: false, //라인컬러
 						tickColor: "#0000ff"
 					},
 					yAxis: {

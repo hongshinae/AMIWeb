@@ -56,40 +56,46 @@ export default {
 				return {
 					chart: {
 						type: this.chartName,
-						height: 280
+						height: 300,
+						borderWidth: 0
 					},
-					// legend: {
-					// 	symbolHeight: 8,
-					// 	symbolWidth: 8,
-					// 	symbolRadius: 4,
-					// 	marginTop: 10,
-					// 	itemStyle: {
-					// 		fontSize: "0.9rem",
-					// 		fontWeight: 100
-					// 	}
-					// },
-					// plotOptions: {
-					// 	column: { borderRadius: 1 },
-					// 	series: {
-					// 		borderColor: "none"
-					// 	}
-					// },
-					// credits: {
-					// 	enabled: false
-					// },
-					// yAxis: {
-					// 	title: null,
-					// 	gridLineColor: "#ddd",
-					// 	lineColor: "#000" //라인컬러
-					// },
-					// exporting: { enabled: false },
-					// title: "",
-					// menu: false,
+					legend: {
+						symbolHeight: 8,
+						symbolWidth: 8,
+						symbolRadius: 4,
+						marginTop: 10,
+						itemStyle: {
+							fontSize: "0.9rem",
+							fontWeight: 100
+						}
+					},
+					plotOptions: {
+						column: { borderRadius: 1 },
+						series: {
+							borderColor: "none"
+						}
+					},
+					credits: {
+						enabled: false
+					},
+					yAxis: {
+						title: null,
+						gridLineColor: "#ddd",
+						lineColor: "ddd" //라인컬러
+					},
+					xAxis: {
+						title: null,
+						gridLineColor: false,
+						lineColor: false //라인컬러
+					},
+					exporting: { enabled: false },
+					title: "",
+					menu: false,
 					series: [
 						{
-							// name: "오늘",
-							data: this.lpHoursChart.map(item => item.use)
-							// color: "#3b82ec"
+							name: "오늘",
+							data: this.lpHoursChart.map(item => item.use),
+							color: "#3b82ec"
 						}
 					]
 				};
@@ -180,6 +186,6 @@ export default {
 
 <style>
 .chart-wrap {
-	margin-top: 50px;
+	margin: 50px 20px;
 }
 </style>

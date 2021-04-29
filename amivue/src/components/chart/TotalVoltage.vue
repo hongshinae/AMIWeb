@@ -28,7 +28,13 @@ export default {
 					chart: {
 						//전국 전력 사용량
 						type: this.chartName,
-						height: 150
+						height: 150,
+						borderWidth: 0,
+						plotBackgroundColor: false,
+						plotBorderWidth: false,
+						style: {
+							fontFamily: "san-serif"
+						}
 					},
 					legend: {
 						symbolHeight: 8,
@@ -55,6 +61,10 @@ export default {
 						title: null,
 						gridLineColor: "#232f4b",
 						lineColor: "#232f4b" //라인컬러
+					},
+					xAxis: {
+						title: null,
+						gridLineColor: null
 					},
 					exporting: { enabled: false },
 					title: "",
@@ -83,4 +93,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.chartWarp .text {
+	font-family: sans-serif;
+}
+</style>

@@ -36,7 +36,9 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: 150
+						height: 150,
+						borderWidth: 0,
+						plotBackgroundColor: false
 					},
 					legend: {
 						symbolHeight: 8,
