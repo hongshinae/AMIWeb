@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<content-search :shows="shows" @handle:searchItem="searchItemList"> </content-search>
-		<div v-show="this.lpHoursChart.length > 0" class="chart-wrap"><high-charts :options="chartOptions" /></div>
+		<high-charts :options="chartOptions" style="height:250px" v-show="this.lpHoursChart.length > 0" class="chart-wrap" />
 		<content-table
 			:isBusy="isBusy"
 			:items="lpHoursList"
@@ -16,9 +16,19 @@
 
 <script>
 import { Chart } from "highcharts-vue";
-
 import Lookup from "@/service/lookup";
 import ContentMixin from "@/components/content/mixin";
+import Highcharts from "highcharts";
+import darkGreenInit from "highcharts/themes/dark-green";
+darkGreenInit(Highcharts);
+// import darkBlueInit from "highcharts/themes/dark-blue";
+// darkBlueInit(Highcharts);
+// import avocadoInit from "highcharts/themes/avocado";
+// avocadoInit(Highcharts);
+// import darkUnicaInit from "highcharts/themes/dark-unica";
+// darkUnicaInit(Highcharts);
+
+// Highcharts.setOptions(Highcharts.theme);
 
 export default {
 	mixins: [ContentMixin],
@@ -46,40 +56,40 @@ export default {
 				return {
 					chart: {
 						type: this.chartName,
-						height: 300
+						height: 280
 					},
-					legend: {
-						symbolHeight: 8,
-						symbolWidth: 8,
-						symbolRadius: 4,
-						marginTop: 10,
-						itemStyle: {
-							fontSize: "0.9rem",
-							fontWeight: 100
-						}
-					},
-					plotOptions: {
-						column: { borderRadius: 1 },
-						series: {
-							borderColor: "none"
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					yAxis: {
-						title: null,
-						gridLineColor: "#ddd",
-						lineColor: "#ddd" //라인컬러
-					},
-					exporting: { enabled: false },
-					title: "",
-					menu: false,
+					// legend: {
+					// 	symbolHeight: 8,
+					// 	symbolWidth: 8,
+					// 	symbolRadius: 4,
+					// 	marginTop: 10,
+					// 	itemStyle: {
+					// 		fontSize: "0.9rem",
+					// 		fontWeight: 100
+					// 	}
+					// },
+					// plotOptions: {
+					// 	column: { borderRadius: 1 },
+					// 	series: {
+					// 		borderColor: "none"
+					// 	}
+					// },
+					// credits: {
+					// 	enabled: false
+					// },
+					// yAxis: {
+					// 	title: null,
+					// 	gridLineColor: "#ddd",
+					// 	lineColor: "#000" //라인컬러
+					// },
+					// exporting: { enabled: false },
+					// title: "",
+					// menu: false,
 					series: [
 						{
-							name: "오늘",
-							data: this.lpHoursChart.map(item => item.use),
-							color: "#3b82ec"
+							// name: "오늘",
+							data: this.lpHoursChart.map(item => item.use)
+							// color: "#3b82ec"
 						}
 					]
 				};
