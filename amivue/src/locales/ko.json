@@ -172,6 +172,9 @@
 				"modemCount": "Modem",
 				"meterCount": "Meter",
 				"houseCount": "세대수",
+				"statusCodeCount": "상태 발생 수",
+				"dcuNetworkFailureCount": "통신장애 DCU",
+				"meterFailureCount": "장애 METER",
 				"address": "주소",
 				"deviceCount": "설치 장비수",
 				"readingType": "검침 타입",
@@ -515,6 +518,12 @@
 	},
 	"regular": {
 		"excelFileName": "정기검침.xlsx"
+	},
+	"FBoard": {
+		"failureDayHours": "시간별 장애 발생 건수",
+		"failureRegionBoard": "지역별 현황",
+		"comparePersent": "전일 대비 장애 증감율",
+		"restorePersent": "장애 복구율"
 	},
 	"code": {
 		"excelFileName": "상태코드관리.xlsx"
