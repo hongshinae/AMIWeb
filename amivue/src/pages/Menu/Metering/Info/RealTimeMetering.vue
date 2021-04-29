@@ -30,7 +30,7 @@ export default {
 		showFilterList: {
 			type: Array,
 			default: function() {
-				return ["region", "estate"];
+				return ["building", "house", "meterId"];
 			}
 		}
 	},
@@ -46,9 +46,7 @@ export default {
 			realtimeFields: [
 				{
 					key: "regionName",
-					label: this.$t("component.content.table.regionName"),
-					sortable: true,
-					sortDirection: "asc"
+					label: this.$t("component.content.table.regionName")
 				},
 				{
 					key: "estateName",
@@ -76,7 +74,9 @@ export default {
 				},
 				{
 					key: "meterTime",
-					label: this.$t("component.content.table.recentlyReadingTime")
+					label: this.$t("component.content.table.recentlyReadingTime"),
+					sortable: true,
+					sortDirection: "desc"
 				},
 				{
 					key: "fap",

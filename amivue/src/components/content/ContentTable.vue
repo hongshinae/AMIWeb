@@ -18,6 +18,12 @@
 					<content-table-filter-region v-if="item == 'region'" v-model="filter.region" @init-filter-text="filter.estate = ''" debounce="100" />
 					<content-table-filter-firmware v-if="item == 'firmware'" v-model="filter.firmware" :firmwareList="firmwareList" debounce="100" />
 					<content-table-filter-reading-day v-if="item == 'readingDay'" v-model="filter.readingDay" :readingDayList="readingDayList" debounce="100" />
+					<content-table-filter-meter-reading-day
+						v-if="item == 'meterReadingDay'"
+						v-model="filter.meterReadingDay"
+						:meterReadingDayList="meterReadingDayList"
+						debounce="100"
+					/>
 					<content-table-filter-reading-type
 						v-if="item == 'readingType'"
 						v-model="filter.readingType"
@@ -112,6 +118,9 @@
 					<template #cell(readingStatus)="row">
 						<span :class="{ linkage: row.item.readingStatus == 0, unlinkage: row.item.readingStatus == 1 }"></span>
 					</template>
+					<template #cell(readingDayCompare)="row">
+						{{ row.item.readingDayCompare ? "일치" : "불일치" }}
+					</template>
 					<template #cell(_remark)="row">
 						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
 							<slot name="table-cell-remark">{{ $t("common.button.details") }}</slot>
@@ -143,6 +152,7 @@ import ContentTableFilterMeterId from "./ContentTableFilterMeterId";
 import ContentTableFilterDcuId from "./ContentTableFilterDcuId";
 import ContentTableFilterMac from "./ContentTableFilterMac";
 import ContentTableFilterReadingDay from "./ContentTableFilterReadingDay";
+import ContentTableFilterMeterReadingDay from "./ContentTableFilterMeterReadingDay";
 import ContentTableFilterReadingType from "./ContentTableFilterReadingType";
 import ContentTableFilterDay from "./ContentTableFilterDay";
 import ContentTableFilterTime from "./ContentTableFilterTime";
@@ -161,6 +171,7 @@ export default {
 		ContentTableFilterMac,
 		ContentTableFilterMeterId,
 		ContentTableFilterReadingDay,
+		ContentTableFilterMeterReadingDay,
 		ContentTableFilterReadingType,
 		ContentTableFilterDay,
 		ContentTableFilterTime
@@ -223,6 +234,10 @@ export default {
 			const readingDayList = this.items.map(item => item.meterReadingDay);
 			return readingDayList.filter((item, index, array) => array.indexOf(item) === index);
 		},
+		meterReadingDayList() {
+			const meterReadingDayList = this.items.map(item => item.meterReadingDay);
+			return meterReadingDayList.filter((item, index, array) => array.indexOf(item) === index);
+		},
 		dayList() {
 			let dayList = this.items.map(item => item.day);
 			dayList = dayList.filter((item, index, array) => array.indexOf(item) === index);
@@ -283,6 +298,9 @@ export default {
 		useReadingDay() {
 			return this.showFilterList.some(row => row == "readingDay");
 		},
+		useMeterReadingDay() {
+			return this.showFilterList.some(row => row == "meterReadingDay");
+		},
 		useReadingType() {
 			return this.showFilterList.some(row => row == "readingType");
 		},
@@ -316,6 +334,7 @@ export default {
 				meterId: "",
 				firmware: null,
 				readingDay: null,
+				meterReadingDay: null,
 				readingType: null,
 				day: null,
 				time: null
@@ -336,6 +355,7 @@ export default {
 			this.filter.meterId = "";
 			this.filter.firmware = null;
 			this.filter.readingDay = null;
+			this.filter.meterReadingDay = null;
 			this.filter.readingType = null;
 			this.filter.day = null;
 			this.filter.time = null;
@@ -362,8 +382,8 @@ export default {
 			XLSX.writeFile(wb, this.excelFileName);
 		},
 		onFilter(row, filter) {
-			let region, estate, estateId, building, house, dcuId, mac, meterId, gateway, firmware, readingDay, readingType, time, day;
-			region = estate = estateId = building = house = dcuId = mac = meterId = gateway = firmware = readingDay = readingType = time = day = true;
+			let region, estate, estateId, building, house, dcuId, mac, meterId, gateway, firmware, readingDay, meterReadingDay, readingType, time, day;
+			region = estate = estateId = building = house = dcuId = mac = meterId = gateway = firmware = readingDay = meterReadingDay = readingType = time = day = true;
 
 			if (this.useRegion && filter.region) {
 				region = row.regionSeq == filter.region;
@@ -409,6 +429,10 @@ export default {
 				readingDay = row.meterReadingDay == filter.readingDay;
 			}
 
+			if (this.useMeterReadingDay && filter.meterReadingDay) {
+				meterReadingDay = row.meterReadingDay == filter.meterReadingDay;
+			}
+
 			if (this.useReadingType && filter.readingType) {
 				readingType = row.readingType == filter.readingType;
 			}
@@ -421,9 +445,9 @@ export default {
 				time = row.time == filter.time;
 			}
 
-			return (
-				region && estate && estateId && building && house && dcuId && mac && meterId && gateway && firmware && readingDay && readingType && day && time
-			);
+			const result1 = region && estate && estateId && building && house && dcuId && mac && meterId;
+			const result2 = gateway && firmware && readingDay && meterReadingDay && readingType && day && time;
+			return result1 && result2;
 		}
 	}
 };

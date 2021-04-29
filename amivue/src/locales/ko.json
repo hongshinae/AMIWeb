@@ -160,6 +160,7 @@
 				"mac": "MAC",
 				"meterId": "METER ID",
 				"firmware": "펌웨어버전",
+				"meterReadingDay": "정기검침일",
 				"readingDay": "검침일",
 				"readingType": "검침타입",
 				"readingTypeList": [
