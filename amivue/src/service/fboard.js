@@ -1,7 +1,14 @@
+import Send from "@/axios";
 import Store from "@/store";
 import { EventSourcePolyfill } from "event-source-polyfill";
 
 export default {
+	firstData() {
+		return Send({
+			url: "/failure/fboard/all/firstdata",
+			method: "get"
+		});
+	},
 	dayHour(sec) {
 		if (!sec) {
 			sec = 30;

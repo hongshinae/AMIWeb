@@ -17,6 +17,12 @@ import Fboard from "@/service/fboard";
 let sse;
 
 export default {
+	props: ["allData"],
+	watch: {
+		allData: function(value) {
+			this.itemList = value.failureRegion;
+		}
+	},
 	mounted() {
 		sse = Fboard.aggregations();
 		sse.onerror = function() {};

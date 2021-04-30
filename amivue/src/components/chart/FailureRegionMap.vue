@@ -1,7 +1,7 @@
 <template>
 	<div class="highch">
 		<!-- <chart :constructor-type="'stockChart'" :options="chartOptions" /> -->
-		<high-chart :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
+		<high-charts :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
 	</div>
 </template>
 
@@ -21,11 +21,18 @@ import Fboard from "@/service/fboard";
 let sse;
 
 export default {
+	props: ["allData"],
 	components: {
-		HighChart: Chart
+		HighCharts: Chart
+	},
+	watch: {
+		allData: function(value) {
+			console.log(value);
+			this.data = value.map.map(v => [v.hckey, v.value]);
+		}
 	},
 	mounted() {
-		sse = Fboard.mapInfo(1);
+		sse = Fboard.mapInfo(5);
 		sse.onerror = function() {};
 		sse.onopen = function() {};
 		sse.onmessage = e => {

@@ -18,8 +18,14 @@ import Fboard from "@/service/fboard";
 let sse;
 
 export default {
+	props: ["allData"],
 	components: {
 		HighCharts: Chart
+	},
+	watch: {
+		allData: function(value) {
+			this.data = value.failureStatus;
+		}
 	},
 	mounted() {
 		sse = Fboard.dayHour();

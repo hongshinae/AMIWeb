@@ -26,6 +26,12 @@ import Fboard from "@/service/fboard";
 let sse;
 
 export default {
+	props: ["allData"],
+	watch: {
+		allData: function(value) {
+			this.data = value.failureCompare;
+		}
+	},
 	mounted() {
 		sse = Fboard.rate();
 		sse.onerror = function() {};
