@@ -10,13 +10,13 @@
 				</li>
 				<li>
 					<span>DCU</span>
-					<span>{{ data.dcuOperationCount }}</span>
-					<span class="r-color">{{ data.dcuErrorCount }}</span>
+					<span>{{ data ? data.dcuOperationCount : 0 }}</span>
+					<span class="r-color">{{ data ? data.dcuErrorCount : 0 }}</span>
 				</li>
 				<li>
 					<span>Meter</span>
-					<span>{{ data.meterOperationCount }}</span>
-					<span class="r-color">{{ data.meterErrorCount }}</span>
+					<span>{{ data ? data.meterOperationCount : 0 }}</span>
+					<span class="r-color">{{ data ? data.meterErrorCount : 0 }}</span>
 				</li>
 			</ul>
 		</div>
