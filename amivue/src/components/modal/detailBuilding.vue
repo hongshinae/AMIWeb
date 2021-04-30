@@ -14,11 +14,7 @@
 			<div class="btn-wrap">
 				<ul>
 					<li>
-						<b-button variant="light" @click="ok()">{{ $t("building.modal.button.buildingDelete") }}</b-button>
-						<b-button variant="light">
-							<b-icon icon="arrow-clockwise"></b-icon>
-							{{ $t("building.modal.button.Reflash") }}
-						</b-button>
+						<b-button variant="light" @click="deleteBuilding()">{{ $t("building.modal.button.buildingDelete") }}</b-button>
 					</li>
 					<li>
 						<b-button variant="light" @click="ok()">{{ $t("building.modal.button.buildingModify") }}</b-button>
@@ -189,6 +185,7 @@ export default {
 				estateSeq: null,
 				buildingName: null
 			},
+			data: null,
 			dcuList: [],
 			dcuId: null,
 			isLoading: true
@@ -219,6 +216,7 @@ export default {
 				const response = await Building.info(params);
 				const result = response.data.response;
 				this.form = result;
+				this.data = result;
 				this.dcuList = result.dcuMapp.map(v => v.dcuId);
 			} catch (error) {
 				if (error.response.data.response) {
@@ -261,6 +259,21 @@ export default {
 				}
 			} catch (error) {
 				console.log(error);
+				throw Error(error);
+			}
+		},
+		async deleteBuilding() {
+			try {
+				const response = await Building.delete({ buildingSeq: this.data.buildingSeq });
+				const result = response.data.response;
+
+				if (result.result) {
+					this.$bvModal.hide("detailBuilding");
+				} else {
+					alert(this.$t("msg.delete.fail"));
+				}
+			} catch (error) {
+				alert(this.$t("common.unknown"));
 				throw Error(error);
 			}
 		},

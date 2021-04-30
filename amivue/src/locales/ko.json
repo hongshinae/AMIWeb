@@ -314,7 +314,6 @@
 				"buildingModify": "동 수정",
 				"mappingDelete": "매핑 삭제",
 				"mappingModify": "매핑 수정",
-				"Reflash": "리플래시",
 				"dcuIdAdd": "추가",
 				"dcuIdDelete": "삭제"
 			},
@@ -565,6 +564,10 @@
 			"expired": "세션이 만료되었습니다."
 		},
 		"loading": "Loading...",
-		"selectDcu": "DCU를 선택해주세요."
+		"selectDcu": "DCU를 선택해주세요.",
+		"delete": {
+			"success": "삭제에 성공하였습니다.",
+			"fail": "삭제에 실패하였습니다."
+		}
 	}
 }
