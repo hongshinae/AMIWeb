@@ -228,7 +228,9 @@
 				"readingStatus": "상태",
 				"nmsVersion": "NMS 버전",
 				"hardwareVersion": "하드웨어 버전",
-				"programVersion": "프로그램 버전"
+				"programVersion": "프로그램 버전",
+				"meterDate": "발생 시각",
+				"codeValue": "상태"
 			}
 		}
 	},

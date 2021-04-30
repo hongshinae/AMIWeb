@@ -101,6 +101,9 @@
 					<template #cell(rfap)="row">
 						{{ row.item.rfap }}
 					</template>
+					<template #cell(meterDate)="row">
+						{{ row.item.meterDate | moment("YYYY-MM-DD HH:mm:ss") }}
+					</template>
 					<template #cell(meterTime)="row">
 						{{ row.item.meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
 					</template>

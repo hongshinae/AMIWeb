@@ -51,56 +51,32 @@ export default {
 			codeList: [],
 			codeFields: [
 				{
-					key: "buildingName",
-					label: this.$t("component.content.table.buildingName")
+					key: "meterDate",
+					label: this.$t("component.content.table.meterDate")
 				},
 				{
-					key: "houseName",
-					label: this.$t("component.content.table.houseName")
+					key: "regionName",
+					label: this.$t("component.content.table.regionName")
+				},
+				{
+					key: "estateName",
+					label: this.$t("component.content.table.estateName")
+				},
+				{
+					key: "dcuId",
+					label: this.$t("component.content.table.dcuId")
 				},
 				{
 					key: "meterId",
 					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "meterReadingDay",
-					label: this.$t("component.content.table.meterReadingDay")
+					key: "meterType",
+					label: this.$t("component.content.table.meterType")
 				},
 				{
-					key: "from_meterTime",
-					label: this.$t("component.content.table.from_meterTime")
-				},
-				{
-					key: "from_apt1",
-					label: this.$t("component.content.table.from_apt1")
-				},
-				{
-					key: "from_rapt1",
-					label: this.$t("component.content.table.from_rapt1")
-				},
-				{
-					key: "to_meterTime",
-					label: this.$t("component.content.table.to_meterTime")
-				},
-				{
-					key: "to_apt1",
-					label: this.$t("component.content.table.to_apt1")
-				},
-				{
-					key: "to_rapt1",
-					label: this.$t("component.content.table.to_rapt1")
-				},
-				{
-					key: "use",
-					label: this.$t("component.content.table.use")
-				},
-				{
-					key: "readingDayCompare",
-					label: this.$t("component.content.table.readingDayCompare")
-				},
-				{
-					key: "readingStatus",
-					label: this.$t("component.content.table.readingStatus")
+					key: "codeValue",
+					label: this.$t("component.content.table.codeValue")
 				}
 			]
 		};
