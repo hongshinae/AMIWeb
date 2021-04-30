@@ -7,7 +7,6 @@
 					<dashboard-timer />
 				</div>
 				<total-voltage :data="totalVoltage" />
-				<reading :data="reading" />
 				<today-fault :data="todayFault" />
 				<today-weather :data="todayWeather" />
 			</b-col>
@@ -26,6 +25,7 @@
 					</ul>
 				</div>
 				<server-info />
+				<reading :data="reading" />
 				<regist-equipment :data="device" />
 				<region-usage />
 			</b-col>

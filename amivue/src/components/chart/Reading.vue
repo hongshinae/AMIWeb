@@ -73,12 +73,23 @@ export default {
 						categories: ["오늘", "어제"],
 						title: null,
 						gridLineColor: "#232f4b",
-						lineColor: "#232f4b"
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					yAxis: {
 						title: null,
+						tickColor: "#232f4b",
 						gridLineColor: "#232f4b",
-						lineColor: "#232f4b"
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					title: "",
 					exporting: { enabled: false },

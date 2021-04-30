@@ -26,7 +26,7 @@ export default {
 			get() {
 				return {
 					chart: {
-						//검침률
+						//등록장비
 						type: this.chartName,
 						height: 150,
 						borderWidth: 0,
@@ -62,12 +62,23 @@ export default {
 						enabled: false
 					},
 					xAxis: {
-						lineColor: "#232f4b"
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					yAxis: {
 						title: null,
 						gridLineColor: "#232f4b",
-						lineColor: "#232f4b"
+						tickColor: "#232f4b",
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					title: "",
 					exporting: { enabled: false },

@@ -90,4 +90,8 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.box {
+	display: none;
+}
+</style>

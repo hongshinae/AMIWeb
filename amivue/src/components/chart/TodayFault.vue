@@ -28,7 +28,7 @@ export default {
 					chart: {
 						//상태이상정보
 						type: this.chartName,
-						height: 150,
+						height: 220,
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},
@@ -52,12 +52,23 @@ export default {
 						enabled: false
 					},
 					xAxis: {
-						lineColor: "#232f4b"
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					yAxis: {
 						title: null,
+						tickColor: "#232f4b",
 						gridLineColor: "#232f4b",
-						lineColor: "#232f4b"
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					title: "",
 					menu: false,
