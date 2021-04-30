@@ -32,6 +32,7 @@
 					/>
 					<content-table-filter-day v-if="item == 'day'" v-model="filter.day" :dayList="dayList" debounce="100" />
 					<content-table-filter-time v-if="item == 'time'" v-model="filter.time" :timeList="timeList" debounce="100" />
+					<content-table-filter-hour v-if="item == 'hour'" v-model="filter.hour" :hourList="hourList" debounce="100" />
 					<content-table-filter-estate v-if="item == 'estate'" v-model="filter.estate" debounce="100" />
 					<content-table-filter-estate-id v-if="item == 'estateId'" v-model="filter.estateId" debounce="100" />
 					<content-table-filter-building v-if="item == 'building'" v-model="filter.building" debounce="100" />
@@ -156,6 +157,7 @@ import ContentTableFilterMeterReadingDay from "./ContentTableFilterMeterReadingD
 import ContentTableFilterReadingType from "./ContentTableFilterReadingType";
 import ContentTableFilterDay from "./ContentTableFilterDay";
 import ContentTableFilterTime from "./ContentTableFilterTime";
+import ContentTableFilterHour from "./ContentTableFilterHour";
 import XLSX from "xlsx";
 
 export default {
@@ -174,7 +176,8 @@ export default {
 		ContentTableFilterMeterReadingDay,
 		ContentTableFilterReadingType,
 		ContentTableFilterDay,
-		ContentTableFilterTime
+		ContentTableFilterTime,
+		ContentTableFilterHour
 	},
 	props: {
 		isPerPage: { type: Boolean, default: true },
@@ -250,6 +253,14 @@ export default {
 			const timeList = this.items.map(item => item.time);
 			return timeList.filter((item, index, array) => array.indexOf(item) === index);
 		},
+		hourList() {
+			let hourList = this.items.map(item => item.hour);
+			hourList = hourList.filter((item, index, array) => array.indexOf(item) === index);
+
+			return hourList.map(item => {
+				return { value: item, text: item + "시" };
+			});
+		},
 		excelList: function() {
 			return this.items.map(item => {
 				let o = {};
@@ -309,6 +320,9 @@ export default {
 		},
 		useTime() {
 			return this.showFilterList.some(row => row == "time");
+		},
+		useHour() {
+			return this.showFilterList.some(row => row == "hour");
 		}
 	},
 	data() {
@@ -337,7 +351,8 @@ export default {
 				meterReadingDay: null,
 				readingType: null,
 				day: null,
-				time: null
+				time: null,
+				hour: null
 			},
 			totalRow: this.itemsTotalCount
 		};
@@ -359,6 +374,7 @@ export default {
 			this.filter.readingType = null;
 			this.filter.day = null;
 			this.filter.time = null;
+			this.filter.hour = null;
 		},
 		onFiltered(filteredItems) {
 			// 필터링으로 인해 페이지 매김을 트리거하여 버튼 / 페이지 수 업데이트
@@ -382,8 +398,8 @@ export default {
 			XLSX.writeFile(wb, this.excelFileName);
 		},
 		onFilter(row, filter) {
-			let region, estate, estateId, building, house, dcuId, mac, meterId, gateway, firmware, readingDay, meterReadingDay, readingType, time, day;
-			region = estate = estateId = building = house = dcuId = mac = meterId = gateway = firmware = readingDay = meterReadingDay = readingType = time = day = true;
+			let region, estate, estateId, building, house, dcuId, mac, meterId, gateway, firmware, readingDay, meterReadingDay, readingType, time, day, hour;
+			region = estate = estateId = building = house = dcuId = mac = meterId = gateway = firmware = readingDay = meterReadingDay = readingType = time = day = hour = true;
 
 			if (this.useRegion && filter.region) {
 				region = row.regionSeq == filter.region;
@@ -445,8 +461,12 @@ export default {
 				time = row.time == filter.time;
 			}
 
+			if (this.useHour && (filter.hour || filter.hour == 0)) {
+				hour = row.hour == filter.hour;
+			}
+
 			const result1 = region && estate && estateId && building && house && dcuId && mac && meterId;
-			const result2 = gateway && firmware && readingDay && meterReadingDay && readingType && day && time;
+			const result2 = gateway && firmware && readingDay && meterReadingDay && readingType && day && time && hour;
 			return result1 && result2;
 		}
 	}
