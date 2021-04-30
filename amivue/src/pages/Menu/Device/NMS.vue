@@ -12,7 +12,7 @@
 						</span>
 						<div role="group" class="btn-group">
 							<b-button variant="light" @click="sendReboot">{{ $t("nms.button.reboot") }}</b-button>
-							<b-button variant="light">{{ $t("nms.button.rescan") }}</b-button>
+							<b-button variant="light" disabled>{{ $t("nms.button.rescan") }}</b-button>
 							<b-button variant="light" disabled>{{ $t("nms.button.dcuFirmwareUpgrade") }}</b-button>
 						</div>
 					</h5>
@@ -48,7 +48,7 @@
 							({{ this.modemData ? this.modemData.masterModemMac : "" }})
 						</span>
 						<div role="group" class="btn-group" disabled>
-							<b-button variant="light">{{ $t("nms.button.modemReset") }}</b-button>
+							<b-button variant="light" disabled>{{ $t("nms.button.modemReset") }}</b-button>
 							<b-button variant="light" disabled>{{ $t("nms.button.modemFirmwareUpgrade") }}</b-button>
 						</div>
 					</h5>
@@ -100,17 +100,17 @@
 				</div>
 			</b-col>
 		</b-row>
-		<div class="btn-only-wrap" style="display:none">
+		<div class="btn-only-wrap" v-show="false">
 			<div class="btn-wrap">
 				<div role="group" class="btn-group">
-					<b-button variant="light">SNMP read/write</b-button>
-					<b-button variant="light">trap</b-button>
-					<b-button variant="light">상태리스트</b-button>
-					<b-button variant="light">SNMP / FEP 통신 동작 확인</b-button>
-					<b-button variant="light">시간 동기화</b-button>
+					<b-button variant="light" disabled>SNMP read/write</b-button>
+					<b-button variant="light" disabled>trap</b-button>
+					<b-button variant="light" disabled>상태리스트</b-button>
+					<b-button variant="light" disabled>SNMP / FEP 통신 동작 확인</b-button>
+					<b-button variant="light" disabled>시간 동기화</b-button>
 				</div>
 				<div role="group" class="btn-group">
-					<b-button variant="light">펌웨어 이미지 관리</b-button>
+					<b-button variant="light" disabled>펌웨어 이미지 관리</b-button>
 				</div>
 			</div>
 		</div>
