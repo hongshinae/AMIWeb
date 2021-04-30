@@ -273,7 +273,6 @@ export default {
 					alert(this.$t("msg.delete.fail"));
 				}
 			} catch (error) {
-				alert(this.$t("common.unknown"));
 				throw Error(error);
 			}
 		},

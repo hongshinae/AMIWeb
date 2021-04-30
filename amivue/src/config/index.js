@@ -11,6 +11,7 @@ Vue.config.errorHandler = function(err, vm, info) {
 	console.log(err);
 	console.log(vm);
 	console.log(info);
+	alert(vm.$t("msg.unknown.error"));
 };
 Vue.config.warnHandler = function(msg, vm, trace) {
 	// trace는 컴포넌트 계층 구조를 추적합니다.
