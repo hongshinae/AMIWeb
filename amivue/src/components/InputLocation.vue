@@ -1,5 +1,5 @@
 <template>
-	<b-form-group :label="label" label-for="" class="install-Location">
+	<b-form-group :label="label" label-for="" class="install-Location" :class="{ hideModify: !modifyShow }">
 		<b-input-group :prepend="$t('common.placeholder.latitude')">
 			<b-form-input
 				type="number"
@@ -20,13 +20,19 @@
 				:placeholder="$t('common.placeholder.longitude')"
 			/>
 		</b-input-group>
-		<b-button variant="light" @click="handleModify">확인</b-button>
+		<b-button v-show="modifyShow" variant="light" @click="handleModify">확인</b-button>
 	</b-form-group>
 </template>
 
 <script>
 export default {
-	props: { label: String, placeholder: String, latitude: { type: Number, requried: true }, longitude: { type: Number, requried: true } },
+	props: {
+		label: String,
+		placeholder: String,
+		latitude: { type: Number, requried: true },
+		longitude: { type: Number, requried: true },
+		modifyShow: { type: Boolean, requried: true }
+	},
 	data() {
 		return {};
 	},

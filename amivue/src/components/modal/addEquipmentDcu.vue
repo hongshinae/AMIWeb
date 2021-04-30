@@ -50,7 +50,12 @@
 						</b-input-group>
 					</b-form-group>
 					<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />
-					<input-location :label="$t('equipment.dcu.modal.installLocation')" :latitude.sync="form.latitude" :longitude.sync="form.longitude" />
+					<input-location
+						:label="$t('equipment.dcu.modal.installLocation')"
+						:latitude.sync="form.latitude"
+						:longitude.sync="form.longitude"
+						:modifyShow="false"
+					/>
 				</div>
 			</div>
 		</div>
