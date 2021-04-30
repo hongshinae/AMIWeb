@@ -133,7 +133,7 @@ export default {
 			durationTypeSelected: 1,
 			durationDate: {
 				fromDate: this.$moment()
-					.date(1)
+					.subtract(1, "week")
 					.format("YYYY-MM-DD"),
 				toDate: this.$moment().format("YYYY-MM-DD")
 			},
