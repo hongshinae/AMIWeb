@@ -12,7 +12,7 @@
 			</b-col>
 			<b-col xl="4" lg="6" md="12" sm="12">
 				<region-map />
-				<equipment-state />
+				<equipment-state :data="deviceMapErrorCount" />
 			</b-col>
 			<b-col xl="4" lg="12" md="12" sm="12">
 				<div class="presentMenu">
@@ -72,6 +72,7 @@ export default {
 			this.todayFault = data.failureStatus;
 			this.reading = data.rate;
 			this.device = data.device;
+			this.deviceMapErrorCount = data.deviceMapErrorCount;
 		};
 		const response = await Dashboard.firstData();
 		const data = response.data;
@@ -80,6 +81,7 @@ export default {
 		this.todayFault = data.failureStatus;
 		this.reading = data.rate;
 		this.device = data.device;
+		this.deviceMapErrorCount = data.deviceMapErrorCount;
 	},
 	data: function() {
 		return {
@@ -88,7 +90,8 @@ export default {
 			todayWeather: null,
 			todayFault: null,
 			reading: null,
-			device: null
+			device: null,
+			deviceMapErrorCount: null
 		};
 	},
 	methods: {},

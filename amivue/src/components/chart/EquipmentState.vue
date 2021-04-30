@@ -10,13 +10,13 @@
 				</li>
 				<li>
 					<span>DCU</span>
-					<span>2081</span>
-					<span class="r-color">40</span>
+					<span>{{ data.dcuOperationCount }}</span>
+					<span class="r-color">{{ data.dcuErrorCount }}</span>
 				</li>
 				<li>
 					<span>Meter</span>
-					<span>2081</span>
-					<span>40</span>
+					<span>{{ data.meterOperationCount }}</span>
+					<span class="r-color">{{ data.meterErrorCount }}</span>
 				</li>
 			</ul>
 		</div>
@@ -24,7 +24,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+	props: ["data"]
+};
 </script>
 
 <style></style>
