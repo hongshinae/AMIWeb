@@ -152,11 +152,14 @@
 }
 
 .serve-ex-ip-wrap {
-	min-height: inherit;
+	height: 65px;
+	background: #070e1f;
+	margin: 10px 15px;
+	border-radius: 4px;
 	> ul {
 		padding: 8px 5px 5px 5px;
 		border-radius: 20px;
-		margin-top: 17px;
+		margin-top: 15px;
 		margin-left: 20px;
 		width: 36px;
 		float: left;
@@ -175,7 +178,7 @@
 	}
 	.serve-ex-ip {
 		float: left;
-		margin-top: 17px;
+		margin-top: 15px;
 		li {
 			margin-left: 20px;
 		}
@@ -186,9 +189,9 @@
 	.svg-wrap-text {
 		float: right;
 		width: 67px;
-		height: 70px;
-		line-height: 70px;
-		margin-right: 20px;
+		height: 65px;
+		line-height: 65px;
+		margin-right: 15px;
 	}
 }
 

@@ -24,15 +24,6 @@
 				</div>
 			</b-col>
 			<b-col lg="12" xl="4">
-				<div class="presentMenu">
-					<ul>
-						<li>{{ $t("server.type.heat") }}</li>
-						<li>{{ $t("server.type.hot") }}</li>
-						<li>{{ $t("server.type.water") }}</li>
-						<li>{{ $t("server.type.gas") }}</li>
-						<li class="on">{{ $t("server.type.meter") }}</li>
-					</ul>
-				</div>
 				<div class="box">
 					<h5>
 						<span>{{ $t("server.serverInformation.title") }}</span>
@@ -127,21 +118,23 @@
 						</ul>
 					</div>
 				</div>
-				<div class="box serve-ex-ip-wrap" v-for="(item, key) in serverList" :key="key">
-					<ul>
-						<li><span :class="{ linkage: item.status == 0, unlinkage: item.status == 1 }"></span></li>
-						<li :class="{ 'linkage-text': item.status == 0, 'unlinkage-text': item.status == 1 }">
-							{{ item.status == 0 ? $t("server.statusTrue") : $t("server.statusFalse") }}
-						</li>
-					</ul>
-					<div class="serve-ex-ip">
-						<ol>
-							<li>{{ item.serverName }}</li>
-							<li>{{ item.ip }}</li>
-						</ol>
-					</div>
-					<div class="svg-wrap-text">
-						{{ item.purpose }}
+				<div class="box">
+					<div class="serve-ex-ip-wrap" v-for="(item, key) in serverList" :key="key">
+						<ul>
+							<li><span :class="{ linkage: item.status == 0, unlinkage: item.status == 1 }"></span></li>
+							<li :class="{ 'linkage-text': item.status == 0, 'unlinkage-text': item.status == 1 }">
+								{{ item.status == 0 ? $t("server.statusTrue") : $t("server.statusFalse") }}
+							</li>
+						</ul>
+						<div class="serve-ex-ip">
+							<ol>
+								<li>{{ item.serverName }}</li>
+								<li>{{ item.ip }}</li>
+							</ol>
+						</div>
+						<div class="svg-wrap-text">
+							{{ item.purpose }}
+						</div>
 					</div>
 				</div>
 			</b-col>
@@ -172,7 +165,13 @@ export default {
 					chart: {
 						type: "spline",
 						height: 250,
-						marginRight: 10
+						marginRight: 10,
+						borderWidth: 0,
+						plotBackgroundColor: false,
+						plotBorderWidth: false,
+						style: {
+							fontFamily: "san-serif"
+						}
 					},
 
 					time: {
