@@ -120,7 +120,7 @@
 						<span :class="{ linkage: row.item.readingStatus == 0, unlinkage: row.item.readingStatus == 1 }"></span>
 					</template>
 					<template #cell(readingDayCompare)="row">
-						{{ row.item.readingDayCompare ? "일치" : "불일치" }}
+						{{ row.item.readingDayCompare ? "일치" : "불일치 (계량기:" + row.item.meterReadingDay + "일)" }}
 					</template>
 					<template #cell(_remark)="row">
 						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">

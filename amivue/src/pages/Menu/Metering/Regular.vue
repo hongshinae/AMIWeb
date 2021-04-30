@@ -60,8 +60,8 @@ export default {
 					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "meterReadingDay",
-					label: this.$t("component.content.table.meterReadingDay")
+					key: "estateReadingDay",
+					label: this.$t("component.content.table.estateReadingDay")
 				},
 				{
 					key: "from_meterTime",

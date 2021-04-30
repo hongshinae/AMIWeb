@@ -216,7 +216,7 @@
 				"rfapUse": "역방향 사용량",
 				"stepCount": "연동 장비수",
 				"statusCode": "상태 코드",
-				"meterReadingDay": "정기검침일",
+				"estateReadingDay": "정기검침일",
 				"to_meterTime": "현월검침시각",
 				"to_apt1": "현월정기검침값",
 				"to_rapt1": "현월역정기검침값",
