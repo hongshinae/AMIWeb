@@ -47,7 +47,7 @@ export default {
 <style lang="scss">
 .install-Location {
 	.input-group {
-		width: 170px !important;
+		// width: 170px !important;
 		float: left;
 	}
 	.input-group:first-child {
