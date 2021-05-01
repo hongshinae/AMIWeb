@@ -44,16 +44,11 @@ export default {
 		chartOptions() {
 			return {
 				chart: {
-					height: 850,
+					height: 550,
 					borderWidth: 0,
 					plotBackgroundColor: false,
 					plotBorderWidth: false,
-					map: koreaMap,
-					events: {
-						load: function() {
-							this.mapZoom(0.8);
-						}
-					}
+					map: koreaMap
 				},
 
 				title: {
