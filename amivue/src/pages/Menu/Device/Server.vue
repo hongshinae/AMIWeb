@@ -164,7 +164,7 @@ export default {
 				return {
 					chart: {
 						type: "spline",
-						height: 250,
+						height: 228,
 						marginRight: 10,
 						borderWidth: 0,
 						plotBackgroundColor: false,
@@ -183,7 +183,14 @@ export default {
 					xAxis: {
 						type: "datetime",
 						gridLineColor: "#232f4b",
-						tickPixelInterval: 150
+						tickPixelInterval: 150,
+						tickColor: "#232f4b",
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 
 					yAxis: {
@@ -198,7 +205,15 @@ export default {
 								width: 1,
 								color: "#808080"
 							}
-						]
+						],
+						tickColor: "#232f4b",
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 
 					tooltip: {
@@ -217,7 +232,8 @@ export default {
 					series: [
 						{
 							name: this.$t("server.used"),
-							data: this.systemList
+							data: this.systemList,
+							color: "#7383fd"
 						}
 					]
 				};
