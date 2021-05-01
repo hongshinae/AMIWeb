@@ -89,4 +89,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#dcuPing small {
+	height: 28px;
+	line-height: 28px;
+	margin-left: 10px;
+}
+</style>
