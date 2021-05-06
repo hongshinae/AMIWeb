@@ -3,7 +3,7 @@
 		<b-col xl="6" lg="12">
 			<div class="box svg">
 				<h6>{{ $t("MBoard.readingTimelyRate") }}</h6>
-				<div class="data">{{ data ? data.todayTimelyRate : 0 }}%</div>
+				<div class="data">{{ data ? Math.floor(data.todayTimelyRate * 100) / 100 : 0 }}%</div>
 				<div class="svg-wrap">
 					<img src="@/assets/svg/box.svg" />
 				</div>
@@ -12,7 +12,7 @@
 		<b-col xl="6" lg="12">
 			<div class="box svg">
 				<h6>{{ $t("MBoard.readingRate") }}</h6>
-				<div class="data">{{ data ? data.todayMeterReadingRate : 0 }}%</div>
+				<div class="data">{{ data ? Math.floor(data.todayMeterReadingRate * 100) / 100 : 0 }}%</div>
 				<div class="svg-wrap">
 					<img src="@/assets/svg/sound.svg" />
 				</div>

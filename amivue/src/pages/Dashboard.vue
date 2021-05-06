@@ -1,5 +1,5 @@
 <template>
-	<div class="content">
+	<div class="content" :class="{ dashboard }">
 		<b-row class="row-wrap">
 			<b-col xl="4" lg="6" md="12" sm="12">
 				<div class="timeWrap">
@@ -49,6 +49,7 @@ let sse;
 
 export default {
 	name: "Home",
+	props: ["dashboard"],
 	components: {
 		DashboardTimer,
 		TotalVoltage,

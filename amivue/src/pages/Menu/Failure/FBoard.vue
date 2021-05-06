@@ -1,5 +1,5 @@
 <template>
-	<div class="content">
+	<div class="content" :class="{ dashboard }">
 		<content-header :pageName="pageName" :paths="paths" />
 		<b-row class="row-wrap">
 			<b-col xl="7" lg="7">
@@ -23,6 +23,7 @@ import ContentMixin from "@/components/content/mixin";
 
 export default {
 	mixins: [ContentMixin],
+	props: ["dashboard"],
 	components: { FailureDayHours, FailureRegionBoard, FailureRate, FailureRegionMap },
 	mounted() {
 		this.getFirstData();

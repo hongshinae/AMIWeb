@@ -121,7 +121,26 @@ const routes = [
 	{
 		path: "/mainDashboard",
 		name: "MainDashboard",
-		component: () => import("@/pages/Dashboard")
+		component: () => import("@/pages/Dashboard"),
+		props: {
+			dashboard: true
+		}
+	},
+	{
+		path: "/readingDashboard",
+		name: "ReadingDashboard",
+		component: () => import("@/pages/Menu/Metering/MBoard"),
+		props: {
+			dashboard: true
+		}
+	},
+	{
+		path: "/failDashboard",
+		name: "FailDashboard",
+		component: () => import("@/pages/Menu/Failure/FBoard"),
+		props: {
+			dashboard: true
+		}
 	},
 	{
 		path: "/login",
