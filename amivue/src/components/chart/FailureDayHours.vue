@@ -44,7 +44,7 @@ export default {
 					chart: {
 						//전국 전력 사용량
 						type: this.chartName,
-						height: 150,
+						height: 250,
 						borderWidth: 0,
 						plotBackgroundColor: false,
 						plotBorderWidth: false,
@@ -75,12 +75,26 @@ export default {
 					},
 					yAxis: {
 						title: null,
+						tickColor: "#232f4b",
 						gridLineColor: "#232f4b",
-						lineColor: "#232f4b" //라인컬러
+						min: "0",
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					xAxis: {
 						title: null,
-						gridLineColor: null
+						tickColor: "#232f4b",
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
 					},
 					exporting: { enabled: false },
 					title: "",
