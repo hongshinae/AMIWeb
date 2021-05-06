@@ -42,7 +42,7 @@ export default {
 		chartOptions() {
 			return {
 				chart: {
-					height: 550,
+					height: 630,
 					borderWidth: 0,
 					plotBackgroundColor: false,
 					plotBorderWidth: false,
