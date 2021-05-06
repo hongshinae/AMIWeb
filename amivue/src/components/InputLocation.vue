@@ -1,6 +1,6 @@
 <template>
-	<b-form-group :label="label" label-for="" class="install-Location" :class="{ hideModify: !modifyShow }">
-		<b-input-group :prepend="$t('common.placeholder.latitude')">
+	<b-form-group :label="label" label-for="" class="install-Location">
+		<b-input-group :prepend="$t('common.placeholder.latitude')" :class="{ modify }">
 			<b-form-input
 				type="number"
 				:value="latitude"
@@ -10,7 +10,7 @@
 				:placeholder="$t('common.placeholder.latitude')"
 			/>
 		</b-input-group>
-		<b-input-group :prepend="$t('common.placeholder.longitude')">
+		<b-input-group :prepend="$t('common.placeholder.longitude')" :class="{ modify }">
 			<b-form-input
 				type="number"
 				:value="longitude"
@@ -20,7 +20,7 @@
 				:placeholder="$t('common.placeholder.longitude')"
 			/>
 		</b-input-group>
-		<b-button v-show="modifyShow" variant="light" @click="handleModify">확인</b-button>
+		<b-button v-show="modify" variant="light" @click="handleModify">확인</b-button>
 	</b-form-group>
 </template>
 
@@ -31,7 +31,7 @@ export default {
 		placeholder: String,
 		latitude: { type: Number, requried: true },
 		longitude: { type: Number, requried: true },
-		modifyShow: { type: Boolean, requried: true }
+		modify: { type: Boolean, requried: true }
 	},
 	data() {
 		return {};
@@ -47,8 +47,10 @@ export default {
 <style lang="scss">
 .install-Location {
 	.input-group {
-		// width: 170px !important;
 		float: left;
+	}
+	.input-group.modify {
+		width: 170px !important;
 	}
 	.input-group:first-child {
 		margin-bottom: 10px;

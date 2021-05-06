@@ -262,6 +262,7 @@
 								:label="$t('equipment.dcu.modal.installLocation')"
 								:latitude.sync="dcu.latitude"
 								:longitude.sync="dcu.longitude"
+								:modify="true"
 								@handle:modify="modifyLocation"
 							/>
 
