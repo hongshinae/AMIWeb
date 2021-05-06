@@ -4,12 +4,20 @@
 			<div class="todayWeather box">
 				<h4>오늘의<br />날씨</h4>
 				<span class="codeSky1 pulsate-bck"></span>
+				<ul>
+					<li>36.5</li>
+					<li>/</li>
+					<li>흐림</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-lg-6">
 			<div class="detaeWeather box">
 				<h4>데이터<br />날씨</h4>
 				<span class="codeValue0 pulsate-bck"></span>
+				<ul>
+					<li>GOOD</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -29,24 +37,6 @@ export default {
 <style lang="scss">
 /*메인대시보드닐씨*/
 .double {
-	&.row {
-		.col-lg-6 {
-			&:first-child {
-				padding-left: -15px !important;
-				padding-right: 7px !important;
-				.pulsate-bck:before {
-					content: "36.5 / 흐림";
-				}
-			}
-			&:last-child {
-				padding-left: 8px !important;
-				padding-right: -15px !important;
-				.pulsate-bck:before {
-					content: "GOOD";
-				}
-			}
-		}
-	}
 	h4 {
 		padding: 10px 0 0 25px;
 		font-size: 12px;
@@ -64,13 +54,15 @@ export default {
 		margin-top: 32px;
 		margin-right: 25px;
 	}
-	.pulsate-bck:before {
-		float: right;
-		width: max-content;
-		line-height: 32px;
-		height: 32px;
-		margin-right: 50px;
+	ul {
 		color: #94a0b4;
+		margin-top: 41px;
+		margin-right: 7px;
+		font-size: 11px;
+		float: right;
+		li {
+			float: left;
+		}
 	}
 }
 
