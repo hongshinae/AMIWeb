@@ -3,11 +3,11 @@
 		<div class="col-lg-6">
 			<div class="todayWeather box">
 				<h4>오늘의<br />날씨</h4>
-				<span class="codeSky1 pulsate-bck"></span>
+				<span class="pulsate-bck" :class="codeSky"></span>
 				<ul>
-					<li>36.5</li>
+					<li>{{ data ? data.todayWeather.temperature : "" }}℃</li>
 					<li>/</li>
-					<li>흐림</li>
+					<li>{{ data ? $t("dashboard.codeSky")[data.todayWeather.codeSky] : "" }}</li>
 				</ul>
 			</div>
 		</div>
@@ -16,7 +16,7 @@
 				<h4>데이터<br />날씨</h4>
 				<span class="codeValue0 pulsate-bck"></span>
 				<ul>
-					<li>GOOD</li>
+					<li>{{ data ? $t("dashboard.codeValue")[data.weatherData.codeValue] : "" }}</li>
 				</ul>
 			</div>
 		</div>
@@ -26,10 +26,14 @@
 <script>
 export default {
 	props: ["data"],
-	data() {
-		return {
-			chartName: "column"
-		};
+	computed: {
+		codeSky() {
+			if (this.data == null) {
+				return "codeSky";
+			}
+
+			return "codeSky" + this.data.todayWeather.codeSky;
+		}
 	}
 };
 </script>

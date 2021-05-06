@@ -68,7 +68,7 @@ export default {
 		sse.onmessage = e => {
 			const data = JSON.parse(e.data);
 			this.totalVoltage = data.useData;
-			this.totalWeather = { todayWeather: data.weather, weatherData: data.wheatherData };
+			this.todayWeather = { todayWeather: data.weather, weatherData: data.weatherData };
 			this.todayFault = data.failureStatus;
 			this.reading = data.rate;
 			this.device = data.device;
@@ -77,7 +77,7 @@ export default {
 		const response = await Dashboard.firstData();
 		const data = response.data;
 		this.totalVoltage = data.useData;
-		this.totalWeather = { todayWeather: data.weather, weatherData: data.wheatherData };
+		this.todayWeather = { todayWeather: data.weather, weatherData: data.weatherData };
 		this.todayFault = data.failureStatus;
 		this.reading = data.rate;
 		this.device = data.device;
