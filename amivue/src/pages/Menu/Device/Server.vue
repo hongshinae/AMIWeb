@@ -307,3 +307,8 @@ export default {
 	}
 };
 </script>
+<style lang="scss" scoped>
+.svg-Warp img {
+	width: 880px;
+}
+</style>
