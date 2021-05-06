@@ -64,7 +64,7 @@
 									</div>
 								</template>
 								<template #cell(statusCode)="row">
-									{{ row.item.statusCode == 1 ? $t("nms.dcuStatusTrue") : $t("nms.dcuStatusFalse") }}
+									{{ $t("nms.modemStatus")[row.item.modemStatus] }}
 								</template>
 								<template #cell(expand)="row">
 									<b-button size="sm" @click="row.toggleDetails">

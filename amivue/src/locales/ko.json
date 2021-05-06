@@ -471,7 +471,8 @@
 		"dcuStatusTrue": "정상",
 		"dcuStatusFalse": "비정상",
 		"collapse": "접기",
-		"expand": "상세보기"
+		"expand": "상세보기",
+		"modemStatus": ["unknown", "default(초기상태)", "Active(정상)", "Suspend(통신금지)", "Regist(등록 중)", "Fault(통신실패)"]
 	},
 	"server": {
 		"used": "실시간 사용률",
