@@ -113,6 +113,9 @@
 					<template #cell(from_meterTime)="row">
 						{{ row.item.from_meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
 					</template>
+					<template #cell(updateDate)="row">
+						{{ row.item.updateDate | moment("YYYY-MM-DD HH:mm:ss") }}
+					</template>
 					<template #cell(dcuMapp)="row">
 						{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}
 					</template>
