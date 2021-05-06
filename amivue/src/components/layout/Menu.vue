@@ -180,11 +180,11 @@ export default {
 					title: this.$t("menu.support.title"),
 					bicon: "person-fill",
 					child: [
-						{
-							href: "/ask",
-							title: this.$t("menu.support.ask"),
-							icon: ""
-						},
+						// {
+						// 	href: "/ask",
+						// 	title: this.$t("menu.support.ask"),
+						// 	icon: ""
+						// },
 						{
 							href: "/qna",
 							title: this.$t("menu.support.qna"),
