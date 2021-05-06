@@ -6,7 +6,7 @@
 				<span class="pulsate-bck" :class="[codeSky, codeRain]"></span>
 				<ul>
 					<li v-show="!data || !data.todayWeather">연동실패</li>
-					<li>{{ data && data.todayWeather ? data.todayWeather.temperature : "" }}℃</li>
+					<li>{{ data && data.todayWeather ? data.todayWeather.temperature : 0 }} ℃</li>
 					<li>{{ data && data.todayWeather ? $t("dashboard.codeSky")[data.todayWeather.codeSky] : "" }}</li>
 					<li>{{ data && data.todayWeather ? $t("dashboard.codeRain")[data.todayWeather.codeRain] : "" }}</li>
 				</ul>
