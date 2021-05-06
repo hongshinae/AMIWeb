@@ -1,19 +1,7 @@
 <template>
 	<div class="main-bg content">
-		<div class="main-location-wrap">
-			<h1>Q&A</h1>
-			<div class="main-location">
-				<b-breadcrumb>
-					<b-breadcrumb-item to="/dashboard">
-						<b-icon icon="house" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
-						홈
-					</b-breadcrumb-item>
-					<b-breadcrumb-item>고객지원</b-breadcrumb-item>
-					<b-breadcrumb-item active>Q&A</b-breadcrumb-item>
-				</b-breadcrumb>
-			</div>
-		</div>
-		<div class="btn-filter-wrap">
+		<content-header :paths="paths" :pageName="pageName" />
+		<div class="btn-filter-wrap" v-show="false">
 			<div class="btn-wrap">
 				<b-button-group>
 					<b-button variant="light btn-excel"><img src="@/assets/svg/excel.svg" />엑셀 다운로드</b-button>
@@ -22,7 +10,7 @@
 		</div>
 		<div class="accordion-wrap">
 			<div class="wbox">
-				<b-button v-b-toggle:collapse1 variant="none">
+				<b-button v-b-toggle.collapse1 variant="none">
 					<ul>
 						<li class="icon-bg"><span>Q</span></li>
 						<li class="title">스마트그리드 문의는 어디로 하나요?</li>
@@ -138,7 +126,19 @@
 		</div>
 	</div>
 </template>
-<script></script>
+<script>
+import ContentHeader from "@/components/content/ContentHeader";
+
+export default {
+	components: { ContentHeader },
+	data() {
+		return {
+			pageName: this.$t("menu.support.qna"),
+			paths: [{ name: this.$t("menu.title"), bicon: "house", link: "/" }, { name: this.$t("menu.support.title") }, { name: this.$t("menu.support.qna") }]
+		};
+	}
+};
+</script>
 <style lang="scss">
 .collapsed > .when-open,
 .not-collapsed > .when-closed {
