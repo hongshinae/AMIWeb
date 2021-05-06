@@ -126,11 +126,11 @@ export default {
 					title: this.$t("menu.metering.title"),
 					bicon: "calendar2-event",
 					child: [
-						// {
-						// 	href: "/MBoard",
-						// 	title: this.$t("menu.metering.MBoard"),
-						// 	icon: ""
-						// },
+						{
+							href: "/MBoard",
+							title: this.$t("menu.metering.MBoard"),
+							icon: ""
+						},
 						{
 							href: "/lookup",
 							title: this.$t("menu.metering.lookup"),

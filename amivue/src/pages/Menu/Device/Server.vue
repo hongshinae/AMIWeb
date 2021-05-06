@@ -34,7 +34,7 @@
 							<span class="title">{{ $t("server.serverInformation.osCpu") }}</span>
 							<span class="deta">{{ system.osCpu }}%</span>
 						</h4>
-						<div class="progress">
+						<div class="progress" :class="cpuClass">
 							<div
 								class="progress-bar"
 								role="progressbar"
@@ -52,7 +52,7 @@
 							<span class="title">{{ $t("server.serverInformation.osMemory") }}</span>
 							<span class="deta">{{ system.osMemory }}%</span>
 						</h4>
-						<div class="progress">
+						<div class="progress" :class="memoryClass">
 							<div
 								class="progress-bar"
 								role="progressbar"
@@ -158,6 +158,24 @@ export default {
 		this.getServerList();
 	},
 	computed: {
+		cpuClass() {
+			if (this.system.osCpu < 50) {
+				return null;
+			} else if (this.system.osCpu < 80) {
+				return "progress-bar-2";
+			} else {
+				return "progress-bar-3";
+			}
+		},
+		memoryClass() {
+			if (this.system.osMemory < 50) {
+				return null;
+			} else if (this.system.osMemory < 80) {
+				return "progress-bar-2";
+			} else {
+				return "progress-bar-3";
+			}
+		},
 		chartOptions: {
 			cache: false,
 			get() {
