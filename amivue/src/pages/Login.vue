@@ -84,7 +84,7 @@ export default {
 .loginBg {
 	width: 100%;
 	height: 100%;
-	background: url("../assets/images/bg.png") 0 0 no-repeat #09172e;
+	background: url("../assets/images/bg.png") 0 0 no-repeat #091429;
 }
 .loginWrap {
 	width: 400px;
