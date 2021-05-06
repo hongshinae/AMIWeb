@@ -3,18 +3,18 @@
 		<div class="col-lg-6">
 			<div class="todayWeather box">
 				<h4>오늘의<br />날씨</h4>
-				<span class="pulsate-bck" :class="codeSky"></span>
+				<span class="pulsate-bck" :class="[codeSky, codeRain]"></span>
 				<ul>
 					<li>{{ data ? data.todayWeather.temperature : "" }}℃</li>
-					<li>/</li>
 					<li>{{ data ? $t("dashboard.codeSky")[data.todayWeather.codeSky] : "" }}</li>
+					<li>{{ data ? $t("dashboard.codeRain")[data.todayWeather.codeRain] : "" }}</li>
 				</ul>
 			</div>
 		</div>
 		<div class="col-lg-6">
 			<div class="detaeWeather box">
 				<h4>데이터<br />날씨</h4>
-				<span class="codeValue0 pulsate-bck"></span>
+				<span class="pulsate-bck" :class="codeValue"></span>
 				<ul>
 					<li>{{ data ? $t("dashboard.codeValue")[data.weatherData.codeValue] : "" }}</li>
 				</ul>
@@ -33,6 +33,20 @@ export default {
 			}
 
 			return "codeSky" + this.data.todayWeather.codeSky;
+		},
+		codeRain() {
+			if (this.data == null) {
+				return "codeRain";
+			}
+
+			return "codeRain" + this.data.todayWeather.codeRain;
+		},
+		codeValue() {
+			if (this.data == null) {
+				return "codeValue";
+			}
+
+			return "codeValue" + this.data.weatherData.codeValue;
 		}
 	}
 };
