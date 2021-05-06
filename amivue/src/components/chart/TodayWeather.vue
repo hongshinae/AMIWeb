@@ -66,38 +66,102 @@ export default {
 .detaeWeather {
 	height: 110px;
 	.pulsate-bck {
-		width: 38px;
-		height: 38px;
+		width: 40px;
+		height: 40px;
 		float: right;
-		margin-top: 32px;
+		margin-top: 30px;
 		margin-right: 25px;
 	}
 	ul {
 		color: #94a0b4;
-		margin-top: 41px;
-		margin-right: 7px;
+		margin-top: 25px;
+		margin-right: 10px;
 		font-size: 11px;
 		float: right;
 		li {
-			float: left;
+			margin-bottom: 1px;
 		}
 	}
 }
+.detaeWeather ul {
+	margin-top: 41px !important;
+}
 
-.todayWeather .codeSky0 {
-	background: url("~@/assets/svg/weather_sun.svg") 0 0 no-repeat; //맑음
-}
-.todayWeather .codeSky1 {
-	background: url("~@/assets/svg/weather_cloudsun.svg") 0 0 no-repeat; //구름조금
-}
-.todayWeather .codeSky2 {
-	background: url("~@/assets/svg/weather_cloud.svg") 0 0 no-repeat; //흐림
-}
-.todayWeather .codeSky3 {
-	background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //비
-}
-.todayWeather .codeSky4 {
-	background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //눈
+.todayWeather {
+	.codeSky1.codeRain0 {
+		background: url("~@/assets/svg/weather_sun.svg") 0 0 no-repeat; //맑음//없음
+	}
+	.codeSky1.codeRain1 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //맑음//비
+	}
+	.codeSky1.codeRain2 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //맑음//비눈진눈꺠비
+	}
+	.codeSky1.codeRain3 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //맑음//눈
+	}
+	.codeSky1.codeRain4 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //맑음//소나기
+	}
+	.codeSky1.codeRain5 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //맑음//빗방울
+	}
+	.codeSky1.codeRain6 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //맑음//빗방울/눈날림
+	}
+	.codeSky1.codeRain7 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //맑음/눈날림
+	}
+
+	.codeSky3.codeRain0 {
+		background: url("~@/assets/svg/weather_cloud.svg") 0 0 no-repeat; //구름많음//없음
+	}
+	.codeSky3.codeRain1 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //구름많음//비
+	}
+	.codeSky3.codeRain2 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //구름많음//비눈진눈꺠비
+	}
+	.codeSky3.codeRain3 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //구름많음//눈
+	}
+	.codeSky3.codeRain4 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //구름많음//소나기
+	}
+	.codeSky3.codeRain5 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //구름많음//빗방울
+	}
+	.codeSky3.codeRain6 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //구름많음//빗방울/눈날림
+	}
+	.codeSky3.codeRain7 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //구름많음/눈날림
+	}
+
+	.codeSky4.codeRain0 {
+		background: url("~@/assets/svg/weather_cloud.svg") 0 0 no-repeat; //흐림//없음
+	}
+	.codeSky4.codeRain1 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //흐림//비
+	}
+	.codeSky4.codeRain2 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //흐림//비눈진눈꺠비
+	}
+	.codeSky4.codeRain3 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //흐림//눈
+	}
+	.codeSky4.codeRain4 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //흐림//소나기
+	}
+	.codeSky4.codeRain5 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //흐림//빗방울
+	}
+	.codeSky4.codeRain6 {
+		background: url("~@/assets/svg/weather_rain.svg") 0 0 no-repeat; //흐림//빗방울/눈날림
+	}
+	.codeSky4.codeRain7 {
+		background: url("~@/assets/svg/weather_snow.svg") 0 0 no-repeat; //흐림/눈날림
+	}
 }
 
 .detaeWeather .codeValue0 {
