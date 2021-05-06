@@ -199,6 +199,7 @@ export default {
 
 			try {
 				await Building.registration(this.form);
+				this.$bvToast.toast(`${this.form.buildingName} 등록되었습니다.`, { title: "알림", variant: "primary", solid: true });
 				this.$emit("handle:searchItem");
 			} catch (error) {
 				this.states.buildingNameCheckState = false;

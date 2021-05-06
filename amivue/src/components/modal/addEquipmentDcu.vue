@@ -115,6 +115,7 @@ export default {
 					throw Error("저장에 실패하였습니다.");
 				}
 
+				this.$bvToast.toast(`${this.form.dcuId} 등록되었습니다.`, { title: "알림", variant: "primary", solid: true });
 				this.$emit("handle:searchItem");
 			} catch (error) {
 				alert(error);

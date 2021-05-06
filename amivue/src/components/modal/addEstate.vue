@@ -16,12 +16,6 @@
 					<h4>{{ $t("estate.modal.add") }}</h4>
 				</li>
 				<li>
-					<b-button size="sm" variant="modal-header" @click="$bvToast.show('toast-ip-modify')">
-						test
-					</b-button>
-					<b-toast id="toast-ip-modify" title="수정" variant="primary">
-						ip가 수정 되었습니다.
-					</b-toast>
 					<b-button size="sm" variant="outline-light" @click="close()">
 						X
 					</b-button>
@@ -343,6 +337,7 @@ export default {
 							throw Error("알수 없는 오류");
 						}
 
+						this.$bvToast.toast(`${this.form.estateName} 등록되었습니다.`, { title: "알림", variant: "primary", solid: true });
 						this.$emit("handle:search-estate-list");
 						this.$bvModal.hide("addEstate");
 					})

@@ -142,7 +142,8 @@ export default {
 						const result = response.data.response;
 
 						if (result.result) {
-							alert("삭제 되었습니다.");
+							this.$bvToast.toast(`삭제 되었습니다.`, { title: "알림", variant: "primary", solid: true });
+							this.$bvModal.hide("detailEquipmentMeter");
 						} else {
 							alert("삭제 실패하였습니다.");
 						}
@@ -172,6 +173,8 @@ export default {
 
 				if (!result) {
 					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				} else {
+					this.$bvToast.toast(`시각설정 요청하였습니다.`, { title: "알림", variant: "primary", solid: true });
 				}
 			} catch (error) {
 				if (error.response && error.response.data.response) {
@@ -195,6 +198,8 @@ export default {
 
 				if (!result) {
 					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				} else {
+					this.$bvToast.toast(`검침일 요청되었습니다.`, { title: "알림", variant: "primary", solid: true });
 				}
 			} catch (error) {
 				if (error.response && error.response.data.response) {
@@ -218,6 +223,8 @@ export default {
 
 				if (!result) {
 					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				} else {
+					this.$bvToast.toast(`LP주기 변경 요청되었습니다.`, { title: "알림", variant: "primary", solid: true });
 				}
 			} catch (error) {
 				if (error.response && error.response.data.response) {

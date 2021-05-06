@@ -439,6 +439,7 @@ export default {
 				params.dcuId = this.dcu.dcuId;
 				params.dcuIp = dcuIp;
 				await EquipmentDcu.updateDcuIp(params);
+				this.$bvToast.toast(dcuIp + " 수정 요청하였습니다.", { title: "알림", variant: "primary", solid: true });
 			} catch (error) {
 				if (error.response.data.response) {
 					alert(error.response.data.response.error_message);
@@ -455,6 +456,7 @@ export default {
 				params.dcuId = this.dcu.dcuId;
 				params.dcuPort = port;
 				await EquipmentDcu.updateDcuPort(params);
+				this.$bvToast.toast(port + " 수정 요청하였습니다.", { title: "알림", variant: "primary", solid: true });
 			} catch (error) {
 				if (error.response && error.response.data.response) {
 					alert(error.response.data.response.error_message);
@@ -471,6 +473,7 @@ export default {
 				params.dcuId = this.dcu.dcuId;
 				params.routerIp = routerIp;
 				await EquipmentDcu.updateRouterIp(params);
+				this.$bvToast.toast(routerIp + " 수정 요청하였습니다.", { title: "알림", variant: "primary", solid: true });
 			} catch (error) {
 				if (error.response && error.response.data.response) {
 					alert(error.response.data.response.error_message);
@@ -488,6 +491,7 @@ export default {
 				params.latitude = latitude;
 				params.longitude = longitude;
 				await EquipmentDcu.updateLocation(params);
+				this.$bvToast.toast(`위도:${latitude}, 경도:${longitude} 수정 요청하였습니다.`, { title: "알림", variant: "primary", solid: true });
 			} catch (error) {
 				if (error.response && error.response.data.response) {
 					alert(error.response.data.response.error_message);
@@ -508,6 +512,8 @@ export default {
 
 				if (!result) {
 					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				} else {
+					this.$bvToast.toast(`시간설정 요청하였습니다.`, { title: "알림", variant: "primary", solid: true });
 				}
 			} catch (error) {
 				if (error.response && error.response.data.response) {
@@ -529,6 +535,8 @@ export default {
 
 				if (!result) {
 					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				} else {
+					this.$bvToast.toast(`DCU Reboot 요청하였습니다.`, { title: "알림", variant: "primary", solid: true });
 				}
 			} catch (error) {
 				if (error.response && error.response.data.response) {
@@ -550,6 +558,8 @@ export default {
 
 				if (!result) {
 					alert("실패하였습니다. 관리자에게 문의해주세요.");
+				} else {
+					this.$bvToast.toast(`모뎀 재스캔 요청하였습니다.`, { title: "알림", variant: "primary", solid: true });
 				}
 			} catch (error) {
 				if (error.response && error.response.data.response) {
