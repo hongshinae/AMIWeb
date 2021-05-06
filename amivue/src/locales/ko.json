@@ -233,7 +233,11 @@
 				"hardwareVersion": "하드웨어 버전",
 				"programVersion": "프로그램 버전",
 				"meterDate": "발생 시각",
-				"codeValue": "상태"
+				"codeValue": "상태",
+				"allCollectionCount": "전체 수집건 수",
+				"readingCount": "검침 건",
+				"errorReadingCount": "미 검침 건",
+				"networkCount": "네트워크"
 			}
 		}
 	},
@@ -500,6 +504,12 @@
 		},
 		"statusTrue": "정상",
 		"statusFalse": "오류"
+	},
+	"MBoard": {
+		"collectionCount": "데이터 수집 수",
+		"regionBoard": "지역별 현황",
+		"readingRate": "검침률",
+		"readingTimelyRate": "적시율"
 	},
 	"lookup": {
 		"tab": {

@@ -1,6 +1,5 @@
 <template>
 	<div class="highch">
-		<!-- <chart :constructor-type="'stockChart'" :options="chartOptions" /> -->
 		<high-charts :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
 	</div>
 </template>
@@ -17,7 +16,7 @@ exportingInit(Highcharts);
 darkUnicaInit(Highcharts);
 
 import { Chart } from "highcharts-vue";
-import Fboard from "@/service/fboard";
+import Mboard from "@/service/mboard";
 let sse;
 
 export default {
@@ -31,7 +30,7 @@ export default {
 		}
 	},
 	mounted() {
-		sse = Fboard.mapInfo(5);
+		sse = Mboard.mapInfo(5);
 		sse.onerror = function() {};
 		sse.onopen = function() {};
 		sse.onmessage = e => {
