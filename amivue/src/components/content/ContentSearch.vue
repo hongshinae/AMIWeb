@@ -203,7 +203,6 @@ export default {
 		padding: 0;
 	}
 	.search-wrap {
-		height: inherit !important;
 		.wbox {
 			height: inherit !important;
 			.col-lg-4 {
