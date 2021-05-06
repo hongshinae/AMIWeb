@@ -36,7 +36,7 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: 150,
+						height: 190,
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},

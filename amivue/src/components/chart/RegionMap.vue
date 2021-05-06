@@ -37,7 +37,7 @@ export default {
 		chartOptions() {
 			return {
 				chart: {
-					height: 770,
+					height: 850,
 					borderWidth: 0,
 					plotBackgroundColor: false,
 					plotBorderWidth: false,

@@ -28,7 +28,7 @@ export default {
 					chart: {
 						//전국 전력 사용량
 						type: this.chartName,
-						height: 220,
+						height: 260,
 						borderWidth: 0,
 						plotBackgroundColor: false,
 						plotBorderWidth: false,

@@ -28,7 +28,7 @@ export default {
 					chart: {
 						//등록장비
 						type: this.chartName,
-						height: 150,
+						height: 190,
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},
@@ -63,6 +63,8 @@ export default {
 					},
 					xAxis: {
 						lineColor: "#232f4b",
+						title: null,
+						gridLineColor: null,
 						labels: {
 							style: {
 								color: "#61719e"
