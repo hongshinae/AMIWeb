@@ -27,7 +27,8 @@
 				<!--//검색영역-->
 			</div>
 			<div class="btn-wrap ml-auto">
-				<b-button block variant="primary" @click="search()">{{ $t("component.content.search.title") }}</b-button>
+				<b-button variant="primary" @click="search()">{{ $t("component.content.search.title") }}</b-button>
+				<b-button variant="blight" @click="search()">미 매핑 정보 불러오기</b-button>
 			</div>
 		</div>
 	</div>
@@ -179,13 +180,17 @@ export default {
 	.btn-wrap {
 		right: 19px;
 		bottom: 15px;
-		width: 80px;
 		height: unset;
 		position: absolute;
 		margin-bottom: 0 !important;
 		top: 15px;
 		button {
+			padding: 0 20px;
 			height: 100%;
+		}
+		button:first-child {
+			// display: none;
+			margin-right: 10px;
 		}
 	}
 	.b-form-datepicker label {

@@ -109,3 +109,8 @@ export default {
 	}
 };
 </script>
+<style lang="scss" scoped>
+.search-wrap .btn-wrap button.btn.btn-light {
+	display: block !important;
+}
+</style>
