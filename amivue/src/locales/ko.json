@@ -492,11 +492,11 @@
 		"serverInformation": {
 			"title": "서버운용정보",
 			"osCpu": "OS CPU 사용률",
-			"osMemory": "OS CPU 사용률"
+			"osMemory": "OS Memory 사용률"
 		},
 		"deviceInformation": "장비정보",
-		"deviceInformationSub": "5종 검침 관련 모든 계량기 수 모뎀 수 DCU/Gateway 수",
-		"equipmentCount": "등록 장비수",
+		"deviceInformationSub": "등록 장비수",
+		"equipmentCount": "서버",
 		"meterCount": "계량기",
 		"dcuCount": "DCU / GATE",
 		"modemCount": "Modem",
