@@ -5,8 +5,8 @@ const initialState = {
 		userid: null,
 		name: null,
 		email: null,
-		gseq: null,
-		gname: null,
+		estateSeq: null,
+		estateName: null,
 		phone: null,
 		position: null,
 		level: null,
@@ -20,8 +20,8 @@ const state = {
 		userid: null,
 		name: null,
 		email: null,
-		gseq: null,
-		gname: null,
+		estateSeq: null,
+		estateName: null,
 		phone: null,
 		position: null,
 		level: null,
@@ -42,8 +42,8 @@ const getters = {
 	},
 	getName: state => state.user.name,
 	getEmail: state => state.user.email,
-	getGseq: state => state.user.gseq,
-	getGname: state => state.user.gname,
+	getEstateSeq: state => state.user.estateSeq,
+	getEstateName: state => state.user.estateName,
 	getPhone: state => state.user.phone,
 	getPosition: state => state.user.position,
 	getLevel: state => state.user.level,
@@ -63,12 +63,12 @@ const mutations = {
 			state[prop] = initialState[prop];
 		}
 	},
-	USER(state, { userid, name, email, gseq, gname, phone, position, level, regDate, updateDate }) {
+	USER(state, { userid, name, email, estateSeq, estateName, phone, position, level, regDate, updateDate }) {
 		state.user.userid = userid;
 		state.user.name = name;
 		state.user.email = email;
-		state.user.gseq = gseq;
-		state.user.gname = gname;
+		state.user.estateSeq = estateSeq;
+		state.user.estateName = estateName;
 		state.user.phone = phone;
 		state.user.position = position;
 		state.user.level = level;

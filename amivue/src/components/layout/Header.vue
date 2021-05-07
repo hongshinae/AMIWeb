@@ -34,7 +34,7 @@ import { mapGetters } from "vuex";
 export default {
 	name: "Header",
 	computed: {
-		...mapGetters({ apartName: "getGname", userName: "getName" })
+		...mapGetters({ apartName: "getEstateName", userName: "getName" })
 	},
 	methods: {
 		toggleMenu() {
