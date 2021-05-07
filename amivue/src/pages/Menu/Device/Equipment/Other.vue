@@ -88,7 +88,8 @@ export default {
 				},
 				{
 					key: "updateDate",
-					label: this.$t("component.content.table.updateDate")
+					label: this.$t("component.content.table.updateDate"),
+					datetimeable: true
 				},
 				{
 					key: "_remark",

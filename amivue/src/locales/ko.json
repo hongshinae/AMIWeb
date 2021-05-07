@@ -237,7 +237,10 @@
 				"allCollectionCount": "전체 수집건 수",
 				"readingCount": "검침 건",
 				"errorReadingCount": "미 검침 건",
-				"networkCount": "네트워크"
+				"networkCount": "네트워크",
+				"mappingSeq": "번호",
+				"dateTime": "이력날짜",
+				"checkCount": "변경수"
 			}
 		}
 	},
@@ -457,7 +460,8 @@
 	"mapping": {
 		"button": {
 			"add": "신규 등록",
-			"save": "등록",
+			"linkageCheck": "전체연동 확인",
+			"save": "저장",
 			"cancel": "취소"
 		},
 		"search": {
@@ -465,7 +469,8 @@
 			"region": "지역",
 			"estate": "단지",
 			"search": "검색"
-		}
+		},
+		"excelFileName": "매핑정보.xlsx"
 	},
 	"nms": {
 		"button": {

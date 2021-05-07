@@ -26,43 +26,59 @@
 						}}</b-button>
 					</div>
 				</div>
-				<div class="wbox" style="display:none">
-					<h5 class="tltle">
+				<div class="wbox">
+					<h5 class="tltle" v-show="historyList.length > 0">
 						<b-icon icon="arrow-return-right"></b-icon>
-						<span>서울아파트 : <i class="p-Color">1007</i> 세대 검침일 : <i class="p-Color">1</i>일</span>
+						<span>
+							{{ estateName }} :
+							<i class="p-Color">{{ houseCount }}</i>
+							세대, 검침일 :
+							<i class="p-Color">{{ readingDay }}</i> 일
+						</span>
 					</h5>
 					<div class="table-wrap">
 						<div class="basic-table">
-							<table class="table b-table " id="">
-								<thead role="rowgroup" class="">
-									<tr role="row" class="">
-										<th class=""><div>번호</div></th>
-										<th class=""><div>이력날짜</div></th>
-										<th class=""><div>변경수</div></th>
-									</tr>
-								</thead>
-								<tbody role="rowgroup"></tbody>
-							</table>
+							<b-table
+								ref="table"
+								:busy="isHistoryBusy"
+								:items="historyList"
+								:fields="historyFields"
+								select-mode="single"
+								selectable
+								@row-selected="onHistoryRowSelected"
+							>
+								<template #table-busy>
+									<div class="text-center text-danger my-2">
+										<b-spinner class="align-middle"></b-spinner>
+										<slot name="table-loading-text">
+											<strong>{{ $t("msg.loading") }}</strong>
+										</slot>
+									</div>
+								</template>
+								<template #cell(dateTime)="row">
+									{{ $moment(row.item.dateTime).format("YYYY-MM-DD HH:mm:ss") }}
+								</template>
+							</b-table>
 						</div>
 					</div>
 				</div>
 			</b-col>
 			<b-col col lg="12" xl="8">
 				<content-table
-					:isBusy="isBusy"
+					:isBusy="isMappingBusy"
 					:items="mappingList"
 					:fields="mappingFields"
 					:isPerPage="true"
 					:showFilterList="showFilterList"
-					:excelFileName="$t('estate.excelFileName')"
-					:excelSheetName="$t('menu.device.estate')"
+					:excelFileName="$t('mapping.excelFileName')"
+					:excelSheetName="$t('menu.device.mapping')"
 				>
 					<template #table-header-left-head v-if="false">
 						<b-button v-b-modal="'addMapping'" variant="light"><b-icon icon="pencil-fill" />{{ $t("mapping.button.add") }}</b-button>
 					</template>
-					<template v-slot:table-header-right> </template>
-					<template #table-cell-remark>
-						{{ $t("estate.details") }}
+					<template v-slot:table-header-left-tail>
+						<b-button variant="light" v-if="false" :disabled="mappingData != null">{{ $t("mapping.button.linkageCheck") }}</b-button>
+						<b-button variant="light" @click="addHistoryDetail" :disabled="mappingData == null">{{ $t("mapping.button.save") }}</b-button>
 					</template>
 				</content-table>
 			</b-col>
@@ -83,11 +99,15 @@ export default {
 		...mapGetters({ regionList: "getRegions", getEstate: "getEstateByRegion" }),
 		estateList() {
 			return this.getEstate(this.region);
+		},
+		mappingList() {
+			return this.mappingData ? this.mappingData.mappingData : [];
 		}
 	},
 	data() {
 		return {
-			isBusy: false,
+			isMappingBusy: false,
+			isHistoryBusy: false,
 			pageName: this.$t("menu.device.mapping"),
 			paths: [
 				{ name: this.$t("menu.title"), bicon: "house", link: "/" },
@@ -97,20 +117,41 @@ export default {
 			meterType: "1",
 			region: 1,
 			estate: 1,
+			estateName: "",
+			houseCount: 0,
+			readingDay: 1,
 			showFilterList: [],
-			mappingList: [],
+			historyList: [],
+			historyFields: [
+				{
+					key: "mappingSeq",
+					label: this.$t("component.content.table.mappingSeq")
+				},
+				{
+					key: "dateTime",
+					label: this.$t("component.content.table.dateTime")
+				},
+				{
+					key: "checkCount",
+					label: this.$t("component.content.table.checkCount")
+				}
+			],
+			mappingData: null,
 			mappingFields: [
 				{
 					key: "buildingName",
-					label: this.$t("component.content.table.buildingName")
+					label: this.$t("component.content.table.buildingName"),
+					editable: true
 				},
 				{
 					key: "houseName",
-					label: this.$t("component.content.table.houseName")
+					label: this.$t("component.content.table.houseName"),
+					editable: true
 				},
 				{
 					key: "meterId",
-					label: this.$t("component.content.table.meterId")
+					label: this.$t("component.content.table.meterId"),
+					editable: true
 				},
 				{
 					key: "meterReadingDay",
@@ -138,15 +179,59 @@ export default {
 	methods: {
 		async getMappingList(params) {
 			try {
-				this.isBusy = true;
+				this.isMappingBusy = true;
 				const response = await Mapping.mappingList(params);
 				const result = response.data.response;
-				this.mappingList = result.mappingData;
+				this.mappingData = result;
+			} catch (error) {
+				this.mappingData = null;
+			} finally {
+				this.isMappingBusy = false;
+			}
+		},
+		async getHistoryList(params) {
+			try {
+				this.isHistoryBusy = true;
+				const response = await Mapping.historyList(params);
+				const result = response.data.response;
+				this.historyList = result.mappingHistory;
+				this.estateName = result.estateName;
+				this.houseCount = result.houseCount;
+				this.readingDay = result.readingDay;
 			} catch (error) {
 				const result = [];
-				this.mappingList = result;
+				this.historyList = result;
 			} finally {
-				this.isBusy = false;
+				this.isHistoryBusy = false;
+			}
+		},
+		async getHistoryDetail(params) {
+			try {
+				this.isMappingBusy = true;
+				const response = await Mapping.historyDetail(params);
+				const result = response.data.response;
+				this.mappingData = result;
+			} catch (error) {
+				this.mappingData = null;
+			} finally {
+				this.isMappingBusy = false;
+			}
+		},
+		async addHistoryDetail() {
+			try {
+				this.isMappingBusy = true;
+				const response = await Mapping.insert(this.mappingData);
+				const result = response.data.response;
+
+				if (result) {
+					this.$bvToast.toast(this.mappingData.estateName + "를 저장하였습니다.", { title: "알림", variant: "primary", solid: true });
+					await this.getHistoryList({ estateSeq: this.mappingData.estateSeq });
+					this.$refs.table.selectRow(0);
+				}
+			} catch (error) {
+				console.log(error);
+			} finally {
+				this.isMappingBusy = false;
 			}
 		},
 		updateEstate() {
@@ -158,6 +243,14 @@ export default {
 		},
 		searchMappingList() {
 			this.getMappingList({ estateSeq: this.estate });
+			this.getHistoryList({ estateSeq: this.estate });
+		},
+		onHistoryRowSelected(items) {
+			if (items.length > 0) {
+				this.getHistoryDetail({ mappingId: items[0].mappingId });
+			} else {
+				this.mappingData = null;
+			}
 		}
 	}
 };

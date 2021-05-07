@@ -65,7 +65,8 @@ export default {
 				},
 				{
 					key: "from_meterTime",
-					label: this.$t("component.content.table.from_meterTime")
+					label: this.$t("component.content.table.from_meterTime"),
+					datetimeable: true
 				},
 				{
 					key: "from_apt1",
@@ -77,7 +78,8 @@ export default {
 				},
 				{
 					key: "to_meterTime",
-					label: this.$t("component.content.table.to_meterTime")
+					label: this.$t("component.content.table.to_meterTime"),
+					datetimeable: true
 				},
 				{
 					key: "to_apt1",

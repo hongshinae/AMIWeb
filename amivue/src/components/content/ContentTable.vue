@@ -88,39 +88,14 @@
 						</div>
 						<h4 v-else>{{ $t("msg.search.emptyFilteredText") || scope.emptyFilteredText }}</h4>
 					</template>
-					<template #cell(readingType)="row">
-						{{ readingType(row.item.readingType) }}
+					<template v-for="(field1, index1) in editableFields" v-slot:[`cell(${field1.key})`]="{ item }">
+						<b-input v-model="item[field1.key]" :key="index1" />
 					</template>
-					<template #cell(day)="row">
-						{{ row.item.day | moment("YYYY-MM-DD") }}
+					<template v-for="(field2, index2) in datetimeableFields" v-slot:[`cell(${field2.key})`]="{ item }">
+						<span :key="'date' + index2">{{ item[field2.key] | moment("YYYY-MM-DD HH:mm:ss") }}</span>
 					</template>
-					<template #cell(hour)="row">{{ row.item.hour }}시</template>
-					<template #cell(fap)="row">
-						{{ row.item.fap }}
-					</template>
-					<template #cell(rfap)="row">
-						{{ row.item.rfap }}
-					</template>
-					<template #cell(meterDate)="row">
-						{{ row.item.meterDate | moment("YYYY-MM-DD HH:mm:ss") }}
-					</template>
-					<template #cell(meterTime)="row">
-						{{ row.item.meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
-					</template>
-					<template #cell(to_meterTime)="row">
-						{{ row.item.to_meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
-					</template>
-					<template #cell(from_meterTime)="row">
-						{{ row.item.from_meterTime | moment("YYYY-MM-DD HH:mm:ss") }}
-					</template>
-					<template #cell(updateDate)="row">
-						{{ row.item.updateDate | moment("YYYY-MM-DD HH:mm:ss") }}
-					</template>
-					<template #cell(dcuMapp)="row">
-						{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}
-					</template>
-					<template #cell(code)="row">
-						<span :class="{ linkage: row.item.code == 0, unlinkage: row.item.code == 1 }"></span>
+					<template v-for="(field3, index3) in dateableFields" v-slot:[`cell(${field3.key})`]="{ item }">
+						<span :key="'datetime' + index3">{{ item[field3.key] | moment("YYYY-MM-DD") }}</span>
 					</template>
 					<template #cell(readingStatus)="row">
 						<span :class="{ linkage: row.item.readingStatus == 0, unlinkage: row.item.readingStatus == 1 }"></span>
@@ -128,6 +103,10 @@
 					<template #cell(readingDayCompare)="row">
 						{{ row.item.readingDayCompare ? "일치" : "불일치 (계량기:" + row.item.meterReadingDay + "일)" }}
 					</template>
+					<template #cell(readingType)="row">{{ readingType(row.item.readingType) }}</template>
+					<template #cell(hour)="row">{{ row.item.hour }}시</template>
+					<template #cell(dcuMapp)="row">{{ row.item.dcuMapp.map(item => item.dcuId).join(", ") }}</template>
+					<template #cell(code)="row"><span :class="{ linkage: row.item.code == 0, unlinkage: row.item.code == 1 }"></span></template>
 					<template #cell(_remark)="row">
 						<b-button @click="_detail(row.item, row.index, $event.target)" variant="outline-primary" size="sm">
 							<slot name="table-cell-remark">{{ $t("common.button.details") }}</slot>
@@ -217,6 +196,15 @@ export default {
 		},
 		itemList() {
 			return this.items;
+		},
+		editableFields() {
+			return this.fields.filter(field => field.editable);
+		},
+		datetimeableFields() {
+			return this.fields.filter(field => field.datetimeable);
+		},
+		dateableFields() {
+			return this.fields.filter(field => field.dateable);
 		},
 		readingType() {
 			return readingType => {

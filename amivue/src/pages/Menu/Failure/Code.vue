@@ -52,7 +52,8 @@ export default {
 			codeFields: [
 				{
 					key: "meterDate",
-					label: this.$t("component.content.table.meterDate")
+					label: this.$t("component.content.table.meterDate"),
+					datetimeable: true
 				},
 				{
 					key: "regionName",

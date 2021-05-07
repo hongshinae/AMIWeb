@@ -76,7 +76,8 @@ export default {
 					key: "meterTime",
 					label: this.$t("component.content.table.recentlyReadingTime"),
 					sortable: true,
-					sortDirection: "desc"
+					sortDirection: "desc",
+					datetimeable: true
 				},
 				{
 					key: "fap",

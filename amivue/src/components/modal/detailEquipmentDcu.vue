@@ -405,7 +405,6 @@ export default {
 			sse.onopen = function() {};
 			sse.onmessage = e => {
 				const data = JSON.parse(e.data).response;
-				console.log(data);
 			};
 		},
 		hide() {

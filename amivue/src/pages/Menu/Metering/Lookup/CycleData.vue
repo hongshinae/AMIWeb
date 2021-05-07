@@ -64,7 +64,8 @@ export default {
 				},
 				{
 					key: "day",
-					label: this.$t("component.content.table.day")
+					label: this.$t("component.content.table.day"),
+					dateable: true
 				},
 				{
 					key: "time",
