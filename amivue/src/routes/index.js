@@ -115,6 +115,12 @@ const routes = [
 				name: "QnA",
 				component: () => import("@/pages/Menu/Support/QnA"),
 				meta: { theme: "theme_white" }
+			},
+			{
+				path: "about",
+				name: "About",
+				component: () => import("@/pages/About"),
+				meta: { theme: "theme_white" }
 			}
 		]
 	},
