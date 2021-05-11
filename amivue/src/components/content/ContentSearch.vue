@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import "@/assets/scss/search.scss";
 import ContentSearchRegion from "./ContentSearchRegion";
 import ContentSearchEstate from "./ContentSearchEstate";
 import ContentSearchDate from "./ContentSearchDate";
@@ -155,86 +156,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss">
-.search-wrap {
-	position: relative;
-	.search-img {
-		background: #ecf2f6;
-		border-radius: 20px;
-		padding: 8px 6px;
-		width: 34px;
-		height: 34px;
-		margin-right: 10px;
-		float: left;
-		svg {
-			margin-top: 0px;
-			margin-left: 4px;
-			font-size: 14px;
-		}
-	}
-	.search {
-		padding-left: 65px;
-		padding-right: 85px;
-	}
-	.btn-wrap {
-		right: 19px;
-		bottom: 15px;
-		height: unset;
-		position: absolute;
-		margin-bottom: 0 !important;
-		top: 15px;
-		button {
-			padding: 0 20px;
-			height: 100%;
-		}
-		button:first-child {
-			// display: none;
-			margin-right: 10px;
-		}
-	}
-	.b-form-datepicker label {
-		white-space: nowrap !important;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-}
-
-@media (max-width: 1200px) {
-	.search-wrap .search-img {
-		display: none;
-	}
-	.search-wrap .search {
-		padding: 0;
-	}
-	.search-wrap {
-		.wbox {
-			height: inherit !important;
-			.col-lg-4 {
-				width: 30% !important;
-				max-width: 30% !important;
-				flex: 30%;
-			}
-			.col-lg-8 {
-				width: 70% !important;
-				max-width: 70% !important;
-				flex: 70%;
-			}
-		}
-		.btn-wrap {
-			margin-top: 10px;
-			width: 100%;
-			left: inherit !important;
-			top: inherit !important;
-			right: inherit !important;
-			bottom: inherit !important;
-			position: inherit !important;
-			button {
-				background: #ffffff !important;
-				border: 1px solid #ced4da !important;
-				color: #212529;
-			}
-		}
-	}
-}
-</style>
