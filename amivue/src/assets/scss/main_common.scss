@@ -11,6 +11,41 @@
 	color: $color-main-gy !important;
 }
 
+table {
+	//기본 테이블
+	margin-bottom: 0 !important;
+	font-size: 12px !important;
+	.error td {
+		color: $color-rd !important;
+	}
+	.custom-control {
+		//체크박스
+		padding-left: 0;
+		height: 20px;
+		line-height: 20px;
+	}
+	.custom-control-label {
+		//체크박스 클릭 영역
+		height: 24px;
+		width: 24px;
+		left: 7px;
+		z-index: 1;
+		position: absolute;
+		margin-bottom: 0;
+		vertical-align: top;
+	}
+	input[type="checkbox"] {
+		vertical-align: middle;
+		line-height: 16px;
+	}
+	input[type="text"] {
+		width: 100px;
+		padding: 0.2rem 0.5rem;
+		height: calc(1.5em + 0.75rem);
+		margin: 0 auto;
+	}
+}
+
 .main-location-wrap,
 .search-wrap,
 .btn-filter-wrap,

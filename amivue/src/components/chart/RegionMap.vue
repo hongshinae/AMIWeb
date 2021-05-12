@@ -118,9 +118,6 @@ export default {
 </script>
 
 <style lang="scss">
-.highcharts-title {
-	font-size: 14px !important;
-}
 .high-map-wrap {
 	position: relative;
 	.high-map {

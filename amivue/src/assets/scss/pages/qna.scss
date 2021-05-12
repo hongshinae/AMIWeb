@@ -1,0 +1,54 @@
+.accordion-wrap {
+	.collapsed > .when-open,
+	.not-collapsed > .when-closed {
+		display: none;
+	}
+	.card-header {
+		background: #fff;
+	}
+	.card-header button {
+		border: 0;
+	}
+	.icon-bg {
+		width: 50px;
+		height: 44px;
+		float: left;
+		span {
+			background: #ecf2f6;
+			color: #287fff;
+			border-radius: 20px;
+			font-size: 23px;
+			line-height: 24px;
+			text-align: center;
+			width: 40px;
+			height: 40px;
+			padding-top: 7px;
+			display: inline-block;
+		}
+	}
+	.title {
+		float: left;
+		margin-left: 10px;
+		font-size: 16px;
+		font-weight: 600;
+		height: 44px;
+		line-height: 44px;
+	}
+	.collapse {
+		.icon-bg {
+			width: 67px;
+			float: left;
+			font-size: 23px;
+			margin-top: 8px;
+			text-align: center;
+		}
+		.accordion-content {
+			margin-left: 70px;
+		}
+	}
+	.img_flow_LTE {
+		width: 479px;
+		height: 117px;
+		background: url("~@/assets/images/img_flow_LTE.png") 0 0 no-repeat;
+	}
+}

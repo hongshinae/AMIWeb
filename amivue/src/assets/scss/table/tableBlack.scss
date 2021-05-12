@@ -1,0 +1,25 @@
+//대시보드 테이블 -블랙
+.tableContainer {
+	width: 90%;
+	margin: 10px auto 0 auto;
+	height: 241px;
+	overflow: auto;
+	table {
+		border-top: 1px solid $color-ny !important;
+		tr th {
+			border-top: 1px solid $color-ny-table !important;
+			background: #172137;
+			border-bottom: 1px solid $color-ny-table !important;
+			font-weight: normal;
+			height: 24px;
+			padding: 0.5rem;
+			color: #ffffff !important;
+		}
+		tr td {
+			border-top: 1px solid $color-ny-table !important;
+			height: 18px;
+			padding: 0.5rem;
+			color: #737d85 !important;
+		}
+	}
+}

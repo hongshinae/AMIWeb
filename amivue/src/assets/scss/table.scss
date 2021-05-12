@@ -1,11 +1,7 @@
 @import "style";
-
-.table {
-	margin-bottom: 0 !important;
-}
-
 table {
 	//기본 테이블
+	margin-bottom: 0 !important;
 	font-size: 12px !important;
 	.error td {
 		color: $color-rd !important;

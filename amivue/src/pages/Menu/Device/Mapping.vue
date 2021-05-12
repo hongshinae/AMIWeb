@@ -256,22 +256,5 @@ export default {
 };
 </script>
 <style lang="scss">
-.one-row .form-group {
-	height: 34px;
-	margin-bottom: 5px !important;
-	legend,
-	label {
-		width: 40%;
-		float: left;
-	}
-	> div {
-		width: 60%;
-		float: left;
-	}
-}
-@media (max-width: 996px) {
-	.col-sm-12:first-child .wbox {
-		margin-bottom: 30px;
-	}
-}
+@import "~@/assets/scss/pages/mapping.scss";
 </style>

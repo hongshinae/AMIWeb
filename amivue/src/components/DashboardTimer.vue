@@ -32,7 +32,5 @@ export default {
 </script>
 
 <style lang="scss">
-@charset "UTF-8";
-@import "~@/assets/scss/main.scss";
-//@import "~@/assets/scss/dashboard/DashboardTimer.scss";
+@import "~@/assets/scss/components/DashboardTimer.scss";
 </style>

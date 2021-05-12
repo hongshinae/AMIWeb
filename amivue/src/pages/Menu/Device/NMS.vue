@@ -245,17 +245,5 @@ export default {
 };
 </script>
 <style lang="scss">
-.card {
-	border: 0 none;
-	.card-body {
-		padding: 0;
-		.basic-table {
-			width: 100%;
-			table {
-				width: 100%;
-				background: #ecf2f6;
-			}
-		}
-	}
-}
+@import "~@/assets/scss/pages/nms.scss";
 </style>

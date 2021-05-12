@@ -1,0 +1,20 @@
+.bgtable {
+	table {
+		background: #fff;
+		color: $color-main-gy !important;
+		text-align: center;
+		border-bottom: 1px solid $color-gr;
+		tr th {
+			border-top: 1px solid $color-bl !important;
+			border-bottom: 3px solid $color-gr !important;
+			height: 24px;
+			padding: 0.9rem;
+		}
+		tr td {
+			vertical-align: middle;
+		}
+		tr td.br {
+			border-right: 1px solid $color-gr;
+		}
+	}
+}

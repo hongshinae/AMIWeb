@@ -121,9 +121,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss">
-.chartWarp .text {
-	font-family: sans-serif;
-}
-</style>

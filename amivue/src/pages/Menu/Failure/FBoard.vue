@@ -47,8 +47,3 @@ export default {
 	}
 };
 </script>
-<style type="text/css">
-.st0 {
-	fill: #ffffff;
-}
-</style>

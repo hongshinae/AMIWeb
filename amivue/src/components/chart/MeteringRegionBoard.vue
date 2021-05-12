@@ -70,9 +70,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.chartWarp .text {
-	font-family: sans-serif;
-}
 .mboard-table,
 .tableContainer {
 	height: inherit !important;
