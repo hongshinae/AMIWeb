@@ -139,28 +139,7 @@ export default {
 };
 </script>
 
-<style>
-/* for MS계열 브라우저 */
-@keyframes blink {
-	0% {
-		color: rgba(255, 255, 255, 0.5);
-	}
-	50% {
-		color: rgba(255, 255, 255, 1);
-	}
-}
-
-/* for Chrome, Safari */
-@-webkit-keyframes blink {
-	0% {
-		color: rgba(255, 255, 255, 0.5);
-	}
-	50% {
-		color: rgba(255, 255, 255, 1);
-	}
-}
-.blink {
-	animation: blink 1s step-end infinite;
-	-webkit-animation: blink 1s step-end infinite;
-}
+<style lang="scss">
+@import "~@/assets/scss/modal/modalCommon.scss";
+@import "~@/assets/scss/modal/modalDetailEquipmentOther.scss";
 </style>

@@ -574,3 +574,7 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+@import "~@/assets/scss/modal/modalCommon.scss";
+@import "~@/assets/scss/modal/modalDetailEquipmentDcu.scss";
+</style>

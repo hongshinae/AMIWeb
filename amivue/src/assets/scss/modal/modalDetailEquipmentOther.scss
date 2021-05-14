@@ -1,0 +1,78 @@
+@import "@/assets/scss/style.scss";
+
+#detailEquipmentOther {
+	.svg-wrap {
+		width: 760px;
+		height: 400px;
+		position: relative;
+		img {
+			width: 368px;
+			position: absolute;
+			top: 16px;
+			left: 10px;
+			right: 0;
+			bottom: 0;
+		}
+		.svg-input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			ul {
+				margin: 24px auto;
+				li {
+					float: left;
+				}
+				li:first-child {
+					width: 268px;
+					margin-left: 59px;
+					margin-right: 85px;
+					.form-group label,
+					.form-group legend {
+						width: 93px;
+					}
+					.form-group > div {
+						width: 175px;
+					}
+					.meter-value {
+						font-size: 45px;
+						height: 67px;
+						margin-top: 49px;
+						text-align: center;
+						color: #fff;
+						margin-bottom: 70px;
+						font-family: "alarm_clock";
+					}
+				}
+			}
+		}
+	}
+}
+
+#detailEquipmentOther .other {
+	ul li:first-child {
+		width: 260px;
+		.form-group {
+			padding: 0 10px;
+			> div {
+				width: 150px !important;
+			}
+		}
+	}
+	h4 {
+		margin-top: 49px;
+		height: 24px;
+		line-height: 24px;
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.meter-value {
+		margin-top: 7px !important;
+		margin-bottom: 22px !important;
+	}
+	.form-group {
+		margin-bottom: 0 !important;
+	}
+}

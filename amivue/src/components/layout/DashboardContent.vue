@@ -11,7 +11,6 @@ import "@/assets/scss/layout/main.scss";
 import "@/assets/scss/layout/main_wh.scss";
 import "@/assets/scss/components/maintitle.scss";
 import "@/assets/scss/components/filter.scss";
-import "@/assets/scss/modal/modal_wh.scss";
 export default {};
 </script>
 

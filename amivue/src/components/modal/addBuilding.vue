@@ -212,4 +212,7 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+@import "~@/assets/scss/modal/modalCommon.scss";
+@import "~@/assets/scss/modal/modalBuilding.scss";
+</style>
