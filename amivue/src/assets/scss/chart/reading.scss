@@ -1,0 +1,9 @@
+.inspection {
+	li {
+		width: 42%;
+		float: left;
+		&:last-child {
+			float: right;
+		}
+	}
+}

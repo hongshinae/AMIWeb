@@ -116,42 +116,6 @@ export default {
 	}
 };
 </script>
-
 <style lang="scss">
-.high-map-wrap {
-	position: relative;
-	.high-map {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
-	.high-table {
-		position: absolute;
-		top: -183px;
-		right: 0;
-		width: 200px;
-		height: 110px;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		background: linear-gradient(70deg, rgba(13, 24, 25, 0.08), #0f1e35, rgba(13, 24, 25, 0.08));
-		box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 11%);
-		ul li {
-			text-align: center;
-			height: 30px;
-			span {
-				width: 60px;
-				height: 30px;
-				line-height: 30px;
-				text-align: center;
-				display: inline-block;
-				font-size: 11px;
-			}
-		}
-		ul li:first-child {
-			border-bottom: 1px solid #1a2a42;
-		}
-	}
-}
+@import "~@/assets/scss/chart/regionMap.scss";
 </style>

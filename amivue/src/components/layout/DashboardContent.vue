@@ -6,12 +6,12 @@
 
 <script>
 // Main css
-import "@/assets/scss/main_common.scss";
-import "@/assets/scss/main.scss";
-import "@/assets/scss/main_wh.scss";
-import "@/assets/scss/maintitle.scss";
-import "@/assets/scss/filter.scss"; // - ContentTable.vue
-import "@/assets/scss/modal_wh.scss";
+import "@/assets/scss/layout/main_common.scss";
+import "@/assets/scss/layout/main.scss";
+import "@/assets/scss/layout/main_wh.scss";
+import "@/assets/scss/components/maintitle.scss";
+import "@/assets/scss/components/filter.scss";
+import "@/assets/scss/modal/modal_wh.scss";
 export default {};
 </script>
 

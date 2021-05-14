@@ -119,13 +119,5 @@ export default {
 </script>
 
 <style lang="scss">
-.inspection {
-	li {
-		width: 42%;
-		float: left;
-		&:last-child {
-			float: right;
-		}
-	}
-}
+@import "~@/assets/scss/chart/reading.scss";
 </style>

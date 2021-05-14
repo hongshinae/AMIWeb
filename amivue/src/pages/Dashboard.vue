@@ -104,3 +104,6 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+@import "~@/assets/scss/pages/dashboard.scss";
+</style>

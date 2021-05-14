@@ -1,4 +1,4 @@
-//대시보드 테이블 -블랙
+@import "@/assets/scss/style.scss";
 .tableContainer {
 	width: 90%;
 	margin: 10px auto 0 auto;
@@ -22,4 +22,21 @@
 			color: #737d85 !important;
 		}
 	}
+}
+
+.mboard-table {
+	width: 95%;
+	height: 350px;
+	.linkage,
+	.unlinkage,
+	.normal {
+		margin: 0 10px;
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+.mboard-table,
+.tableContainer {
+	height: inherit !important;
 }

@@ -1,11 +1,11 @@
-@import "style";
+@import "@/assets/scss/style.scss";
 
 @font-face {
 	font-family: alarm_clock;
 	font-style: normal;
 	font-weight: normal;
-	src: url(../font/alarm_clock.eot);
-	src: url(../font/alarm_clock.woff);
+	src: url(~@/assets/font/alarm_clock.eot);
+	src: url(~@/assets/font/alarm_clock.woff);
 }
 
 /* CSS Document */

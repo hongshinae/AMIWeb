@@ -467,7 +467,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "~@/assets/scss/table/tableCommon.scss";
+@import "~@/assets/scss/table/tableBasic.scss";
+
 table.b-table[aria-busy="true"] {
 	opacity: 0.6;
 }

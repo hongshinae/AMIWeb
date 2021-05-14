@@ -1,0 +1,73 @@
+@import "@/assets/scss/style.scss";
+
+.dutyCycle {
+	padding: 2px 20px;
+	&.cpu {
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
+	h4 {
+		width: 100%;
+		height: 13px;
+		font-size: 0.9em;
+		color: #94a0b4;
+		margin: 0px 0px 7px 0px;
+		span {
+			min-width: 30px;
+			height: 12px;
+			display: inline-block;
+		}
+		progress {
+			display: block !important;
+		}
+		.title {
+			float: left;
+		}
+		.deta {
+			float: right;
+		}
+	}
+}
+.serveInfo {
+	min-height: 95px;
+	padding: 6px 20px;
+	margin-top: 20px;
+	li {
+		padding: 0 2%;
+		height: 78px;
+		border-radius: 4px;
+		float: left;
+		width: 23%;
+		border: solid 1px $color-gn;
+		background: rgb(117, 206, 226);
+		background: linear-gradient(45deg, rgba(117, 206, 226, 1) 9%, rgba(19, 183, 216, 1) 44%, rgba(35, 255, 240, 1) 78%, rgba(30, 228, 223, 1) 100%);
+		margin: 0 1%;
+	}
+	h6 {
+		color: #202c51;
+		font-size: 0.9em;
+		margin-top: 10px;
+	}
+	span {
+		font-size: 1.4em;
+		float: right;
+		font-weight: bold;
+		color: #202c51;
+		font-family: none;
+		margin-top: 18px;
+	}
+}
+
+.progress {
+	background-image: linear-gradient(to bottom, #07132b 0, #07132b 100%) !important;
+	height: 5px !important;
+}
+.progress-bar {
+	background-image: linear-gradient(to bottom, #1fdede 0, #23bada 100%) !important;
+}
+.progress-bar-2 .progress-bar {
+	background-image: linear-gradient(to bottom, #dedb1f 0, #dab823 100%) !important;
+}
+.progress-bar-3 .progress-bar {
+	background-image: linear-gradient(to bottom, #ff5959 0, #da2323 100%) !important;
+}

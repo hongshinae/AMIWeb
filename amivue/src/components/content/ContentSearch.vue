@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import "@/assets/scss/search.scss";
 import ContentSearchRegion from "./ContentSearchRegion";
 import ContentSearchEstate from "./ContentSearchEstate";
 import ContentSearchDate from "./ContentSearchDate";
@@ -156,3 +155,6 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+@import "~@/assets/scss/components/search.scss";
+</style>

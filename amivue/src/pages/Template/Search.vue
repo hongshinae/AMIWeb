@@ -62,5 +62,5 @@
 	</div>
 </template>
 <style lang="scss">
-@import "~@/assets/scss/search.scss";
+@import "~@/assets/scss/components/search.scss";
 </style>

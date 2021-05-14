@@ -68,3 +68,7 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+@import "~@/assets/scss/table/tableCommon.scss";
+@import "~@/assets/scss/table/tableBlack.scss";
+</style>

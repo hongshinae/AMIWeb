@@ -15,7 +15,7 @@
 
 <script>
 // Menu css
-import "@/assets/scss/menu.scss";
+import "@/assets/scss/layout/menu.scss";
 import Vue from "vue";
 import VueSideBar from "@/components/plugin/VueSideBar";
 import Logo from "@/components/Logo";

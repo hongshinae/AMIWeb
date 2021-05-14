@@ -246,4 +246,6 @@ export default {
 </script>
 <style lang="scss">
 @import "~@/assets/scss/pages/nms.scss";
+@import "~@/assets/scss/table/tableCommon.scss";
+@import "~@/assets/scss/table/tableWhite.scss";
 </style>

@@ -69,9 +69,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.mboard-table,
-.tableContainer {
-	height: inherit !important;
-}
+<style lang="scss">
+@import "~@/assets/scss/table/tableCommon.scss";
+@import "~@/assets/scss/table/tableBlack.scss";
 </style>

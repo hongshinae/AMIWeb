@@ -1,0 +1,27 @@
+@import "@/assets/scss/style.scss";
+
+.presentMenu {
+	height: 30px;
+	margin: 0px 0 15px 0;
+	width: 100%;
+	ul {
+		height: 30px;
+		line-height: 30px;
+		font-size: 0.9em;
+		box-shadow: 0px 1px 1px 0 rgb(255 255 255 / 11%), inset 0px 1px 1px 0 rgb(0 0 0 / 50%);
+		background-color: #0d192d;
+		display: block;
+		float: right;
+		border-radius: 5px;
+
+		li {
+			cursor: default;
+			margin: 0 10px 0 10px;
+			float: right;
+			color: #2e4664;
+			&.on {
+				color: $color-gn;
+			}
+		}
+	}
+}

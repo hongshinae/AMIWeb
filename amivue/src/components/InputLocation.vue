@@ -45,27 +45,5 @@ export default {
 </script>
 
 <style lang="scss">
-.install-Location {
-	.input-group {
-		float: left;
-	}
-	.input-group.modify {
-		width: 170px !important;
-	}
-	.input-group:first-child {
-		margin-bottom: 10px;
-	}
-	button {
-		width: 43px;
-		height: 68px;
-		margin-left: 10px;
-	}
-}
-#detailEquipmentDcu .install-Location {
-	height: 70px;
-	margin-bottom: 15px !important;
-	> div {
-		width: 224px;
-	}
-}
+@import "~@/assets/scss/components/location​.scss";
 </style>

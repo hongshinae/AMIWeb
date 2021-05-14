@@ -28,8 +28,8 @@
 
 <script>
 // Header css
-import "@/assets/scss/header.scss";
-import "@/assets/scss/header_wh.scss";
+import "@/assets/scss/layout/header.scss";
+import "@/assets/scss/layout/header_wh.scss";
 import { mapGetters } from "vuex";
 
 export default {
