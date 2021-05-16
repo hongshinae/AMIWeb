@@ -1,0 +1,10 @@
+@import "@/assets/scss/style.scss";
+
+//하이차트 공통
+.highcharts-background {
+	background: none !important;
+	fill: none !important;
+}
+rect.highcharts-legend-box {
+	fill: none;
+}

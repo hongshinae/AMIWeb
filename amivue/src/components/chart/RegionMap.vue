@@ -116,6 +116,6 @@ export default {
 	}
 };
 </script>
-<style lang="scss">
-@import "~@/assets/scss/chart/regionMap.scss";
+<style lang="scss" scope>
+@import "~@/assets/scss/chart/chartClear.scss";
 </style>

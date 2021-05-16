@@ -40,3 +40,6 @@ export default {
 	}
 };
 </script>
+<style lang="scss" scope>
+@import "~@/assets/scss/components/maintitle.scss";
+</style>

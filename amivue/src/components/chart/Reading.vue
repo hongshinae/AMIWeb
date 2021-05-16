@@ -118,6 +118,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 @import "~@/assets/scss/chart/reading.scss";
+@import "~@/assets/scss/chart/chartClear.scss";
 </style>

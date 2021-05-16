@@ -23,3 +23,6 @@
 		</fieldset>
 	</div>
 </template>
+<style lang="scss" scope>
+@import "~@/assets/scss/components/filter.scss";
+</style>

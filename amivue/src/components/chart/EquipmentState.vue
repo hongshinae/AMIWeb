@@ -29,4 +29,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scope>
+@import "~@/assets/scss/chart/EquipmentState.scss";
+</style>
