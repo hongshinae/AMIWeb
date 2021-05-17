@@ -29,7 +29,7 @@
 <script>
 // Header css
 import "@/assets/scss/layout/header.scss";
-import "@/assets/scss/layout/header_wh.scss";
+import "@/assets/scss/layout/headerWhite.scss";
 import { mapGetters } from "vuex";
 
 export default {

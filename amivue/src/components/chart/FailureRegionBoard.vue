@@ -68,9 +68,7 @@ export default {
 	}
 };
 </script>
-<style lang="scss" scope>
-@import "~@/assets/scss/chart/boxblackCommon.scss";
-@import "~@/assets/scss/chart/chartClear.scss";
+<style lang="scss">
 @import "~@/assets/scss/table/tableCommon.scss";
 @import "~@/assets/scss/table/tableBlack.scss";
 </style>

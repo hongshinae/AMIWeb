@@ -89,10 +89,6 @@ export default {
 };
 </script>
 
-<style>
-#dcuPing small {
-	height: 28px;
-	line-height: 28px;
-	margin-left: 10px;
-}
+<style lang="scss">
+@import "~@/assets/scss/modal/modalDcuPing.scss";
 </style>

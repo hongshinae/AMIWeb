@@ -1,4 +1,8 @@
 @import "@/assets/scss/style.scss";
+@import "@/assets/scss/components/boxblack.scss";
+@import "@/assets/scss/components/boxWhite.scss";
+@import "@/assets/scss/chart/chartClear.scss";
+@import "@/assets/scss/modal/modalCommon.scss";
 
 .content {
 	padding: 15px 40px 0px 40px;
@@ -143,4 +147,28 @@ table {
 		margin-top: 10px;
 		color: #c4c4c4;
 	}
+}
+
+/* for MS계열 브라우저 */
+@keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+
+/* for Chrome, Safari */
+@-webkit-keyframes blink {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: rgba(255, 255, 255, 1);
+	}
+}
+.blink {
+	animation: blink 1s step-end infinite;
+	-webkit-animation: blink 1s step-end infinite;
 }

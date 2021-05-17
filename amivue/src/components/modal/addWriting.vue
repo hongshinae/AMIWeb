@@ -97,6 +97,5 @@ export default {};
 </script>
 
 <style lang="scss">
-@import "~@/assets/scss/modal/modalCommon.scss";
 @import "~@/assets/scss/modal/modalAddWriting.scss";
 </style>

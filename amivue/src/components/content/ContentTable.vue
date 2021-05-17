@@ -117,10 +117,10 @@
 		</div>
 		<div class="pa-wrap">
 			<b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" :limit="10">
-				<template #first-text><span class="text-success">«</span></template>
-				<template #prev-text><span class="text-danger">‹</span></template>
-				<template #next-text><span class="text-warning">›</span></template>
-				<template #last-text><span class="text-info">»</span></template>
+				<template #first-text><span class="text-secondary">«</span></template>
+				<template #prev-text><span class="text-secondary">‹</span></template>
+				<template #next-text><span class="text-secondary">›</span></template>
+				<template #last-text><span class="text-secondary">»</span></template>
 			</b-pagination>
 		</div>
 	</div>

@@ -49,6 +49,6 @@
 	</div>
 </template>
 <script></script>
-<style lang="scss" scope>
+<style lang="scss">
 @import "~@/assets/scss/components/maintitle.scss";
 </style>

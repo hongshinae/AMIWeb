@@ -64,7 +64,6 @@ export default {
 	}
 };
 </script>
-<style lang="scss" scope>
-@import "~@/assets/scss/chart/boxblackCommon.scss";
+<style lang="scss">
 @import "~@/assets/scss/chart/todayWeather.scss";
 </style>

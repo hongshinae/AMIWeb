@@ -108,7 +108,3 @@ export default {
 	}
 };
 </script>
-<style lang="scss" scope>
-@import "~@/assets/scss/chart/boxblackCommon.scss";
-@import "~@/assets/scss/chart/chartClear.scss";
-</style>

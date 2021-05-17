@@ -126,7 +126,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@/assets/scss/modal/modalCommon.scss";
 @import "~@/assets/scss/modal/modalAddEquipmentDcu.scss";
 @import "~@/assets/scss/table/tableCommon.scss";
 @import "~@/assets/scss/table/tableWhite.scss";

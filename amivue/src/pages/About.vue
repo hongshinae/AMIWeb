@@ -58,10 +58,6 @@
 				<span class="normal"></span>
 				<span class="linkage"></span>
 				<span class="unlinkage"></span>
-				<p>text입니다.</p>
-				<p>text입니다.</p>
-				<p>text입니다.</p>
-				<p>text입니다.</p>
 			</div>
 		</div>
 		<button />

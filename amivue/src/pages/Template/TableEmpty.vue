@@ -46,7 +46,7 @@
 		</div>
 	</div>
 </template>
-<style lang="scss" scope>
+<style lang="scss">
 @import "~@/assets/scss/table/tableCommon.scss";
 @import "~@/assets/scss/table/tableBasic.scss";
 </style>

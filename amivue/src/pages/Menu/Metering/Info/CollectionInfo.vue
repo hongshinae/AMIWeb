@@ -180,7 +180,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 @import "~@/assets/scss/table/tableCommon.scss";
 @import "~@/assets/scss/table/tableWhite.scss";
 </style>

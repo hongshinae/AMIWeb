@@ -6,8 +6,7 @@
 
 <script>
 // Main css
-import "@/assets/scss/layout/main_common.scss";
-import "@/assets/scss/layout/main_wh.scss";
+import "@/assets/scss/layout/mainCommon.scss";
 export default {};
 </script>
 
