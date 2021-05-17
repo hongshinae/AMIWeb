@@ -470,7 +470,7 @@ export default {
 <style lang="scss">
 @import "~@/assets/scss/table/tableCommon.scss";
 @import "~@/assets/scss/table/tableBasic.scss";
-@import "~@/assets/scss/components/filter.scss";
+@import "~@/assets/scss/components/filterWrap.scss";
 
 table.b-table[aria-busy="true"] {
 	opacity: 0.6;

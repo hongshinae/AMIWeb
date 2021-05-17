@@ -26,6 +26,9 @@
 			<b-tab>
 				<sample5 />
 			</b-tab>
+			<b-tab>
+				<sample6 />
+			</b-tab>
 		</b-tabs>
 	</div>
 </template>
@@ -36,6 +39,7 @@ import Sample2 from "./pages/Sample2";
 import Sample3 from "./pages/Sample3";
 import Sample4 from "./pages/Sample4";
 import Sample5 from "./pages/Sample5";
+import Sample6 from "./pages/Sample6";
 
 export default {
 	props: {
@@ -44,7 +48,7 @@ export default {
 			default: 0
 		}
 	},
-	components: { ContentHeader, Sample1, Sample2, Sample3, Sample4, Sample5 },
+	components: { ContentHeader, Sample1, Sample2, Sample3, Sample4, Sample5, Sample6 },
 	computed: {
 		activeTab() {
 			return currentTab => (this.tabIndex == currentTab ? "primary" : "outline-primary");

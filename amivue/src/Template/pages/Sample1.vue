@@ -1,9 +1,17 @@
 <template>
-	<div>Sample Page 1</div>
+	<div>
+		<search />
+		<filterWrap />
+	</div>
 </template>
 
 <script>
-export default {};
+import Search from "@/Template/components/Search";
+import FilterWrap from "@/Template/components/Filter";
+
+export default {
+	components: { Search, FilterWrap }
+};
 </script>
 
 <style></style>
