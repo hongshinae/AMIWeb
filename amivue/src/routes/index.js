@@ -118,8 +118,14 @@ const routes = [
 			},
 			{
 				path: "templateComponents",
-				name: "About",
+				name: "TemplateComponents",
 				component: () => import("@/Template/Components"),
+				meta: { theme: "theme_white" }
+			},
+			{
+				path: "templatePages",
+				name: "TemplatePages",
+				component: () => import("@/Template/Pages"),
 				meta: { theme: "theme_white" }
 			}
 		]
