@@ -2,12 +2,9 @@
 	<div class="main-location-wrap">
 		<h1>기본 페이지</h1>
 		<div class="tap-wrap">
-			<button type="button" class="btn btn-primary rounded-pill">레이아웃 1</button>
-			<button type="button" class="btn btn-outline-primary rounded-pill">레이아웃 2</button>
-			<button type="button" class="btn btn-outline-primary rounded-pill">레이아웃 3</button>
-			<button type="button" class="btn btn-outline-primary rounded-pill">레이아웃 3</button>
-			<button type="button" class="btn btn-outline-primary rounded-pill">레이아웃 5</button>
-			<button type="button" class="btn btn-outline-primary rounded-pill">로그인</button>
+			<button type="button" class="btn btn-primary rounded-pill">tap 1</button>
+			<button type="button" class="btn btn-outline-primary rounded-pill">tap 2</button>
+			<button type="button" class="btn btn-outline-primary rounded-pill">tap 3</button>
 		</div>
 		<div class="main-location">
 			<ol class="breadcrumb">
