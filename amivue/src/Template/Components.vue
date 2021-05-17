@@ -32,7 +32,7 @@
 						</button>
 					</div>
 				</div>
-				<filter />
+				<filters />
 			</div>
 			<h5>4. 기본 테이블</h5>
 			<table-basic />
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<h5>8. 버튼 디자인</h5>
-			<button />
+			<buttons />
 			<h5>9. 폰트컬러</h5>
 			<text />
 			<h5>9. 원</h5>
@@ -62,23 +62,23 @@
 		</div>
 		<button />
 
-		<text />
+		<texts />
 	</div>
 </template>
 <script>
-import MainTitle from "@/pages/Template/MainTitle";
-import Search from "@/pages/Template/Search";
-import Button from "@/pages/Template/Button";
-import ButtonGroup from "@/pages/Template/ButtonGroup";
-import Filter from "@/pages/Template/Filter";
-import Pagination from "@/pages/Template/Pagination";
-import TableBasic from "@/pages/Template/TableBasic";
-import TableEmpty from "@/pages/Template/TableEmpty";
-import TableWhite from "@/pages/Template/TableWhite";
-import Text from "@/pages/Template/Text";
+import MainTitle from "@/Template/components/MainTitle";
+import Search from "@/Template/components/Search";
+import Buttons from "@/Template/components/Button";
+import ButtonGroup from "@/Template/components/ButtonGroup";
+import Filters from "@/Template/components/Filter";
+import Pagination from "@/Template/components/Pagination";
+import TableBasic from "@/Template/components/TableBasic";
+import TableEmpty from "@/Template/components/TableEmpty";
+import TableWhite from "@/Template/components/TableWhite";
+import Texts from "@/Template/components/Text";
 
 export default {
-	components: { MainTitle, Search, Button, ButtonGroup, Filter, Pagination, TableBasic, TableEmpty, TableWhite, Text }
+	components: { MainTitle, Search, Buttons, ButtonGroup, Filters, Pagination, TableBasic, TableEmpty, TableWhite, Texts }
 };
 </script>
 

@@ -117,9 +117,9 @@ const routes = [
 				meta: { theme: "theme_white" }
 			},
 			{
-				path: "about",
+				path: "templateComponents",
 				name: "About",
-				component: () => import("@/pages/About"),
+				component: () => import("@/Template/Components"),
 				meta: { theme: "theme_white" }
 			}
 		]
