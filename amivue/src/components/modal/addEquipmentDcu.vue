@@ -127,6 +127,5 @@ export default {
 
 <style lang="scss">
 @import "~@/assets/scss/modal/modalAddEquipmentDcu.scss";
-@import "~@/assets/scss/table/tableCommon.scss";
 @import "~@/assets/scss/table/tableWhite.scss";
 </style>
