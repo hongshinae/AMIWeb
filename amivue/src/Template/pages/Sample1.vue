@@ -1,16 +1,16 @@
 <template>
 	<div>
 		<search />
-		<filterWrap />
+		<content-table />
 	</div>
 </template>
 
 <script>
 import Search from "@/Template/components/Search";
-import FilterWrap from "@/Template/components/Filter";
+import ContentTable from "@/Template/components/ContentTable";
 
 export default {
-	components: { Search, FilterWrap }
+	components: { Search, ContentTable }
 };
 </script>
 

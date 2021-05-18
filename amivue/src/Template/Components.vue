@@ -2,7 +2,7 @@
 	<div class="main-bg content">
 		<main-title />
 		<search />
-		<filter />
+		<filter-wrap />
 		<h5>4. 기본 테이블</h5>
 		<table-basic />
 		<h5>5. 내용이 없는 테이블</h5>
@@ -29,7 +29,6 @@
 			<span class="unlinkage"></span>
 		</div>
 		<button />
-
 		<texts />
 	</div>
 </template>
@@ -38,7 +37,7 @@ import MainTitle from "@/Template/components/MainTitle";
 import Search from "@/Template/components/Search";
 import Buttons from "@/Template/components/Button";
 import ButtonGroup from "@/Template/components/ButtonGroup";
-import Filter from "@/Template/components/Filter";
+import FilterWrap from "@/Template/components/FilterWrap";
 import Pagination from "@/Template/components/Pagination";
 import TableBasic from "@/Template/components/TableBasic";
 import TableEmpty from "@/Template/components/TableEmpty";
@@ -46,6 +45,6 @@ import TableWhite from "@/Template/components/TableWhite";
 import Texts from "@/Template/components/Text";
 
 export default {
-	components: { MainTitle, Search, Buttons, ButtonGroup, Filter, Pagination, TableBasic, TableEmpty, TableWhite, Texts }
+	components: { MainTitle, Search, Buttons, ButtonGroup, FilterWrap, Pagination, TableBasic, TableEmpty, TableWhite, Texts }
 };
 </script>
