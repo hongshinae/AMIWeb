@@ -53,7 +53,6 @@ export default {
 						series: {
 							borderColor: "none",
 							dataLabels: {
-								align: "left",
 								enabled: true
 							}
 						}
@@ -94,7 +93,7 @@ export default {
 						{
 							name: "어제",
 							data: this.data ? this.data.yesterdayData.map(item => item.use) : [],
-							color: "#75cee2"
+							color: "#fdff4b"
 						}
 					]
 				};
