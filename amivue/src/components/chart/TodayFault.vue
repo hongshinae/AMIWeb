@@ -46,7 +46,12 @@ export default {
 					},
 					plotOptions: {
 						column: { borderRadius: 2 },
-						series: { borderColor: "none" }
+						series: {
+							borderColor: "none",
+							dataLabels: {
+								enabled: true
+							}
+						}
 					},
 					credits: {
 						enabled: false
