@@ -30,5 +30,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@/assets/scss/chart/EquipmentState.scss";
+@import "~@/assets/scss/chart/equipmentState.scss";
 </style>
