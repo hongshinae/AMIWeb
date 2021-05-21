@@ -1,4 +1,6 @@
 @import "@/assets/scss/style.scss";
+@import "@/assets/scss/components/filterText.scss";
+@import "@/assets/scss/components/filterSelect.scss";
 
 .btn-filter-wrap {
 	height: 32px;
@@ -82,16 +84,6 @@
 		}
 		.btn-group {
 			margin: 0 10px 0 0px;
-		}
-	}
-}
-.btn-only-wrap {
-	.btn-wrap {
-		.btn-group:first-child {
-			float: left;
-		}
-		.btn-group:last-child {
-			float: right;
 		}
 	}
 }

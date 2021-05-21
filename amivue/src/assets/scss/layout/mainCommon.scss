@@ -172,3 +172,14 @@ table {
 	animation: blink 1s step-end infinite;
 	-webkit-animation: blink 1s step-end infinite;
 }
+
+.btn-only-wrap {
+	.btn-wrap {
+		.btn-group:first-child {
+			float: left;
+		}
+		.btn-group:last-child {
+			float: right;
+		}
+	}
+}

@@ -28,7 +28,7 @@
 			<span class="linkage"></span>
 			<span class="unlinkage"></span>
 		</div>
-		<button />
+		<buttons />
 		<texts />
 	</div>
 </template>

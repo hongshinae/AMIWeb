@@ -20,9 +20,5 @@
 			</svg>
 			등록
 		</button>
-		<button type="button" class="btn btn-light">button1</button>
-		<button type="button" class="btn btn-blight">button2</button>
-		<button type="button" class="btn btn-primary">button3</button>
-		<button type="button" disabled="disabled" class="btn btn-light disabled">button4</button>
 	</div>
 </template>
