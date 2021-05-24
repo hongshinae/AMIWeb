@@ -1,12 +1,11 @@
 <template>
 	<div class="box power">
 		<h5>
-			<span>d</span>
-			<b class="fontC">ㅇㅇㅇ wh</b>
+			<span>차트제목</span>
+			<b class="fontC">추가정보란</b>
 		</h5>
 		<div class="chartWarp">
 			<div class="">
-				차트데이터를 나보고 넣으라니 너무해요
 				<high-charts :options="chartOptions" />
 			</div>
 		</div>
@@ -17,7 +16,6 @@
 import { Chart } from "highcharts-vue";
 
 export default {
-	props: ["data"],
 	components: {
 		HighCharts: Chart
 	},
@@ -28,7 +26,7 @@ export default {
 				return {
 					chart: {
 						//전국 전력 사용량
-						type: this.chartName,
+						type: "column",
 						height: 260,
 						borderWidth: 0,
 						plotBackgroundColor: false,
@@ -88,23 +86,18 @@ export default {
 					series: [
 						{
 							name: "오늘",
-							data: this.data ? this.data.todayData.map(item => item.use) : [],
+							data: [11, 13, 12, 12, 13, 11, 13, 11, 12, 73, 156, 157, 157, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 							color: "#1ee2df"
 						},
 						{
 							name: "어제",
-							data: this.data ? this.data.yesterdayData.map(item => item.use) : [],
+							data: [12, 12, 12, 13, 10, 14, 12, 11, 14, 11, 12, 11, 14, 12, 11, 14, 11, 12, 12, 13, 11, 12, 13, 12],
 							color: "#fdff4b"
 						}
 					]
 				};
 			}
 		}
-	},
-	data() {
-		return {
-			chartName: "column"
-		};
 	}
 };
 </script>
