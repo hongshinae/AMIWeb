@@ -84,4 +84,8 @@ export default {
 	}
 };
 </script>
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+h5 {
+	margin: 5px;
+}
+</style>
