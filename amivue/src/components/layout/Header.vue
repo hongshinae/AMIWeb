@@ -16,6 +16,7 @@
 					<b-icon icon="bell" id="tooltip-button-interactive"></b-icon>
 					<b-badge pill variant="danger">2</b-badge>
 				</b-nav-item>
+				<b-nav-item href="/templateDashboard">대시보드 컴포넌트</b-nav-item>
 				<b-nav-item href="/templateComponents">컴포넌트모음</b-nav-item>
 				<b-nav-item href="/templatePages">레이아웃모음</b-nav-item>
 				<b-nav-item class="user" disabled>{{ apartName ? apartName : "아파트 없음" }}</b-nav-item>

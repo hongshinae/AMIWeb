@@ -127,6 +127,11 @@ const routes = [
 				name: "TemplatePages",
 				component: () => import("@/Template/Pages"),
 				meta: { theme: "theme_white" }
+			},
+			{
+				path: "templateDashboard",
+				name: "TemplateDashboard",
+				component: () => import("@/Template/DashBoard")
 			}
 		]
 	},
