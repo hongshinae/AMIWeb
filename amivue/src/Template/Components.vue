@@ -1,6 +1,6 @@
 <template>
 	<div class="main-bg content">
-		<modal-commom />
+		<modal-common />
 		<modal-add-equipment-dcu />
 		<modal-detail-equipment-dcu />
 		<modal-detail-equipment-meter />
@@ -57,7 +57,7 @@ import TableEmpty from "@/Template/components/TableEmpty";
 import TableWhite from "@/Template/components/TableWhite";
 import Texts from "@/Template/components/Text";
 import ModalAddEquipmentDcu from "@/Template/components/ModalAddEquipmentDcu";
-import ModalCommom from "@/Template/components/ModalCommom";
+import ModalCommon from "@/Template/components/ModalCommon";
 import ModalDetailEquipmentDcu from "@/Template/components/ModalDetailEquipmentDcu";
 import ModalDetailEquipmentMeter from "@/Template/components/ModalDetailEquipmentMeter";
 import ModalDetailEquipmentOther from "@/Template/components/ModalDetailEquipmentOther";
@@ -75,7 +75,7 @@ export default {
 		TableEmpty,
 		TableWhite,
 		Texts,
-		ModalCommom,
+		ModalCommon,
 		ModalAddEquipmentDcu,
 		ModalDetailEquipmentDcu,
 		ModalDetailEquipmentMeter,
