@@ -43,7 +43,6 @@ export default {
 	}
 };
 </script>
-
 <style lang="scss">
-@import "~@/assets/scss/components/location​.scss";
+@import "~@/assets/scss/components/inputLocation.scss";
 </style>
