@@ -28,7 +28,7 @@
 			</div>
 			<div class="btn-wrap ml-auto">
 				<b-button variant="primary" @click="search()">{{ $t("component.content.search.title") }}</b-button>
-				<b-button variant="blight" @click="search()">미 매핑 정보 불러오기</b-button>
+				<b-button variant="blight" v-show="useCustomButton" @click="customSearch()"><slot>미 매핑 정보 불러오기</slot></b-button>
 			</div>
 		</div>
 	</div>
@@ -51,6 +51,10 @@ export default {
 			default: () => {
 				return [["region", "estate"]];
 			}
+		},
+		useCustomButton: {
+			type: Boolean,
+			default: false
 		}
 	},
 	components: {
@@ -151,6 +155,22 @@ export default {
 			}
 
 			this.$emit("handle:searchItem", this.result);
+		},
+		customSearch() {
+			this.$emit("handle:customSearch");
+			this.regionSelected = null;
+			this.estateSelected = null;
+			this.dateSelected = this.$moment().format("YYYY-MM-DD");
+			this.monthSelected = this.$moment().format("YYYY-MM");
+			this.buildingSelected = null;
+			this.durationTypeSelected = 1;
+			this.durationDate = {
+				fromDate: this.$moment()
+					.subtract(1, "week")
+					.format("YYYY-MM-DD"),
+				toDate: this.$moment().format("YYYY-MM-DD")
+			};
+			this.dcuCodeSelected = null;
 		}
 	}
 };

@@ -2,7 +2,7 @@
 	<div>
 		<add-equipment-dcu @handle:searchItem="searchItemList" />
 		<detail-equipment-dcu :item="selectedItem" @handle:searchItem="searchItemList" />
-		<content-search @handle:searchItem="searchItemList" />
+		<content-search @handle:searchItem="searchItemList" @handle:customSearch="searchNoMappingList" :useCustomButton="true" />
 		<content-table
 			:isBusy="isBusy"
 			:items="dcuList"
@@ -107,6 +107,9 @@ export default {
 		},
 		searchItemList: function(searchItem) {
 			this.getDcuList(searchItem);
+		},
+		searchNoMappingList: function() {
+			this.getDcuList({ region: 0, estate: 0 });
 		}
 	}
 };
