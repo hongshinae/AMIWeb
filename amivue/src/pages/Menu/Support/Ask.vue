@@ -155,7 +155,7 @@
 </template>
 <script>
 import Vue from "vue";
-import AddWriting from "@/components/modal/addWriting";
+import AddWriting from "@/components/modal/AddWriting";
 
 Vue.component(AddWriting);
 
