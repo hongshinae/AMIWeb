@@ -89,7 +89,8 @@ export default {
 							style: {
 								color: "#61719e"
 							}
-						}
+						},
+						max: 100
 					},
 					title: "",
 					exporting: { enabled: false },
