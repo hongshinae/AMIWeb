@@ -86,8 +86,7 @@
 				</div>
 				<div class="box">
 					<h5>
-						<span>{{ $t("server.deviceInformation") }}</span>
-						<small>{{ $t("server.deviceInformationSub") }}</small>
+						<span>{{ $t("server.deviceInformationSub") }}</span>
 					</h5>
 					<div class="regist-info">
 						<ul>
