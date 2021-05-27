@@ -11,7 +11,7 @@
 				<today-weather :data="todayWeather" />
 			</b-col>
 			<b-col xl="4" lg="6" md="12" sm="12">
-				<region-map />
+				<region-map :data="regionMap" />
 				<equipment-state :data="deviceMapErrorCount" />
 			</b-col>
 			<b-col xl="4" lg="12" md="12" sm="12">
@@ -74,6 +74,7 @@ export default {
 			this.reading = data.rate;
 			this.device = data.device;
 			this.deviceMapErrorCount = data.deviceMapErrorCount;
+			this.regionMap = data.map;
 		};
 		const response = await Dashboard.firstData();
 		const data = response.data;
@@ -83,6 +84,7 @@ export default {
 		this.reading = data.rate;
 		this.device = data.device;
 		this.deviceMapErrorCount = data.deviceMapErrorCount;
+		this.regionMap = data.map;
 	},
 	data: function() {
 		return {
@@ -92,7 +94,26 @@ export default {
 			todayFault: null,
 			reading: null,
 			device: null,
-			deviceMapErrorCount: null
+			deviceMapErrorCount: null,
+			regionMap: [
+				{ hckey: "kr-so", value: 0 },
+				{ hckey: "kr-pu", value: 0 },
+				{ hckey: "kr-tg", value: 0 },
+				{ hckey: "kr-in", value: 0 },
+				{ hckey: "kr-kj", value: 0 },
+				{ hckey: "kr-tj", value: 0 },
+				{ hckey: "kr-ul", value: 0 },
+				{ hckey: "kr-kg", value: 0 },
+				{ hckey: "kr-kw", value: 0 },
+				{ hckey: "kr-gb", value: 0 },
+				{ hckey: "kr-gn", value: 0 },
+				{ hckey: "kr-cb", value: 0 },
+				{ hckey: "kr-2685", value: 0 },
+				{ hckey: "kr-2688", value: 0 },
+				{ hckey: "kr-kn", value: 0 },
+				{ hckey: "kr-cj", value: 0 },
+				{ hckey: "kr-sj", value: 0 }
+			]
 		};
 	},
 	methods: {},

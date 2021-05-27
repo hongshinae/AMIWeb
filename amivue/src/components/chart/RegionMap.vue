@@ -17,21 +17,11 @@ exportingInit(Highcharts);
 darkUnicaInit(Highcharts);
 
 import { Chart } from "highcharts-vue";
-import Dashboard from "@/service/dashboard";
-let sse;
 
 export default {
+	props: ["data"],
 	components: {
 		HighChart: Chart
-	},
-	mounted() {
-		sse = Dashboard.mapInfo(30);
-		sse.onerror = function() {};
-		sse.onopen = function() {};
-		sse.onmessage = e => {
-			const data = JSON.parse(e.data).response;
-			this.data = data.map(v => [v.hckey, v.value]);
-		};
 	},
 	computed: {
 		chartOptions() {
@@ -57,6 +47,7 @@ export default {
 
 				colorAxis: {
 					min: 0,
+					max: 100,
 					minColor: "rgba(220,53,69,0)", //min컬러
 					maxColor: "rgba(220,53,69,1)" //max컬러
 				},
@@ -64,7 +55,7 @@ export default {
 				credits: { enabled: false },
 				series: [
 					{
-						data: this.data,
+						data: this.data ? this.data.map(v => [v.hckey, v.value]) : null,
 						name: "DCU Fault",
 						//s borderColor: "black",
 						borderWidth: 0.2,
@@ -85,34 +76,8 @@ export default {
 	},
 	data() {
 		return {
-			hcInstance: Highcharts,
-			data: [
-				["kr-4194", 0], // 전국
-				["kr-kg", 1], // 경기도
-				["kr-cb", 2], // 전라북도
-				["kr-kn", 3], // 경상남도
-				["kr-2685", 4], // 전라남도
-				["kr-pu", 5], // 부산광역시
-				["kr-2688", 6], // 경상북도
-				["kr-sj", 7], // 세종특별자치시
-				["kr-tj", 8], // 대전광역시
-				["kr-ul", 9], // 울산광역시
-				["kr-in", 10], // 인천광역시
-				["kr-kw", 11], // 강원도
-				["kr-gn", 12], // 충청남도
-				["kr-cj", 13], // 제주도
-				["kr-gb", 14], // 충청북도
-				["kr-so", 15], // 서울
-				["kr-tg", 16], // 대구광역시
-				["kr-kj", 17] // 광주광역시
-			]
+			hcInstance: Highcharts
 		};
-	},
-	beforeDestroy() {
-		if (sse) {
-			sse.close();
-			console.log("RegionMap SSE Destroyed!!");
-		}
 	}
 };
 </script>
