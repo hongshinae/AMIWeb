@@ -182,7 +182,7 @@ export default {
 					href: "",
 					title: this.$t("menu.components.title"),
 					bicon: "card-heading",
-					hidden: this.userLevel ? this.userLevel == 0 : false,
+					hidden: this.userLevel != 0,
 					child: [
 						{
 							href: "/templateDashboard",
