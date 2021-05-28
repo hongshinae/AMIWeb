@@ -4,7 +4,7 @@
 			<div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
 				<dashboard-timer />
 				<total-voltage />
-				<today-fault />
+				<reading />
 				<today-weather />
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
@@ -14,8 +14,8 @@
 			<div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
 				<dashboard-type />
 				<server-info />
-				<reading />
 				<regist-equipment />
+				<today-fault />
 				<region-usage />
 			</div>
 		</div>

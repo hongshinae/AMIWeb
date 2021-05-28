@@ -5,18 +5,7 @@
 			<b class="fontC">정상</b>
 		</h5>
 		<div class="dutyCycle cpu">
-			<h4>
-				<span class="title">{{ $t("dashboard.cpuUsage") }}</span>
-				<span class="deta">{{ osCpu }}%</span>
-			</h4>
-			<b-progress :class="cpuClass" :value="osCpu" :max="100"></b-progress>
-		</div>
-		<div class="dutyCycle">
-			<h4>
-				<span class="title">{{ $t("dashboard.memoryUsage") }}</span>
-				<span class="deta">{{ osMemory }}%</span>
-			</h4>
-			<b-progress :class="memoryClass" :value="osMemory" :max="100"></b-progress>
+			<high-charts :options="chartOptions" />
 		</div>
 		<ul class="serveInfo">
 			<li>
@@ -41,9 +30,13 @@
 
 <script>
 import Dashboard from "@/service/dashboard";
+import { Chart } from "highcharts-vue";
 let sse;
 
 export default {
+	components: {
+		HighCharts: Chart
+	},
 	mounted() {
 		sse = Dashboard.serverInfo(1);
 		sse.onerror = function() {};
@@ -56,6 +49,15 @@ export default {
 			this.jvmUsed = data.jvmUsed;
 			this.osCpu = data.osCpu;
 			this.osMemory = data.osMemory;
+
+			if (this.systemList.length >= 20) {
+				this.systemList.shift();
+			}
+			this.systemList.push({
+				// x: this.$moment(data.date).format("YYYY-MM-DD HH:mm:ss"),
+				x: this.$moment(data.date).valueOf(),
+				y: parseFloat(data.osCpu)
+			});
 		};
 	},
 	computed: {
@@ -76,6 +78,87 @@ export default {
 			} else {
 				return "progress-bar-3";
 			}
+		},
+		chartOptions: {
+			cache: false,
+			get() {
+				return {
+					chart: {
+						type: "spline",
+						height: 150,
+						marginRight: 10,
+						borderWidth: 0,
+						plotBackgroundColor: false,
+						plotBorderWidth: false,
+						style: {
+							fontFamily: "san-serif"
+						}
+					},
+
+					time: {
+						useUTC: false
+					},
+
+					title: null,
+
+					xAxis: {
+						type: "datetime",
+						gridLineColor: "#232f4b",
+						tickPixelInterval: 150,
+						tickColor: "#232f4b",
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
+					},
+
+					yAxis: {
+						title: {
+							text: null,
+							gridLineColor: "#232f4b",
+							lineColor: "#232f4b" //라인컬러
+						},
+						plotLines: [
+							{
+								value: 0,
+								width: 1,
+								color: "#808080"
+							}
+						],
+						tickColor: "#232f4b",
+						gridLineColor: "#232f4b",
+						lineColor: "#232f4b",
+						labels: {
+							style: {
+								color: "#61719e"
+							}
+						}
+					},
+
+					tooltip: {
+						headerFormat: "<b>{series.name}</b><br/>",
+						pointFormat: "{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}"
+					},
+
+					legend: {
+						enabled: false
+					},
+
+					exporting: {
+						enabled: false
+					},
+					credits: { enabled: false },
+					series: [
+						{
+							name: this.$t("server.used"),
+							data: this.systemList,
+							color: "#7383fd"
+						}
+					]
+				};
+			}
 		}
 	},
 	data() {
@@ -85,7 +168,8 @@ export default {
 			jvmTotal: 0,
 			jvmUsed: 0,
 			osCpu: 0,
-			osMemory: 0
+			osMemory: 0,
+			systemList: []
 		};
 	},
 	beforeDestroy() {
