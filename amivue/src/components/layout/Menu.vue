@@ -19,6 +19,7 @@ import "@/assets/scss/layout/menu.scss";
 import Vue from "vue";
 import VueSideBar from "@/components/plugin/VueSideBar";
 import Logo from "@/components/Logo";
+import { mapGetters } from "vuex";
 
 Vue.use(VueSideBar);
 export default {
@@ -49,25 +50,10 @@ export default {
 			}
 		}
 	},
-	data() {
-		return {
-			width: "260px",
-			widthCollapsed: "50px",
-			footHideToggle: true,
-			isCollapsed: true,
-			themes: [
-				{
-					name: "Default theme",
-					input: ""
-				},
-				{
-					name: "White theme",
-					input: "white-theme"
-				}
-			],
-			selectedTheme: "black-theme",
-			isOnMobile: false,
-			menu: [
+	computed: {
+		...mapGetters({ userLevel: "getLevel" }),
+		menu() {
+			return [
 				{
 					component: Logo
 				},
@@ -196,6 +182,7 @@ export default {
 					href: "",
 					title: this.$t("menu.components.title"),
 					bicon: "card-heading",
+					hidden: this.userLevel ? this.userLevel == 0 : false,
 					child: [
 						{
 							href: "/templateDashboard",
@@ -214,7 +201,27 @@ export default {
 						}
 					]
 				}
-			]
+			];
+		}
+	},
+	data() {
+		return {
+			width: "260px",
+			widthCollapsed: "50px",
+			footHideToggle: true,
+			isCollapsed: true,
+			themes: [
+				{
+					name: "Default theme",
+					input: ""
+				},
+				{
+					name: "White theme",
+					input: "white-theme"
+				}
+			],
+			selectedTheme: "black-theme",
+			isOnMobile: false
 		};
 	}
 };
