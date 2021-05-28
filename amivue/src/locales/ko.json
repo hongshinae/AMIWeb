@@ -32,6 +32,12 @@
 			"title": "고객 지원",
 			"ask": "문의 게시판",
 			"qna": "QnA"
+		},
+		"components": {
+			"title": "컴포넌트",
+			"dashboard": "대시보드 컴포넌트",
+			"components": "컴포넌트 모음",
+			"layout": "레이아웃 모음"
 		}
 	},
 	"common": {

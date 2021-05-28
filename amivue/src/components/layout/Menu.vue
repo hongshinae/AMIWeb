@@ -191,6 +191,28 @@ export default {
 							icon: ""
 						}
 					]
+				},
+				{
+					href: "",
+					title: this.$t("menu.components.title"),
+					bicon: "card-heading",
+					child: [
+						{
+							href: "/templateDashboard",
+							title: this.$t("menu.components.dashboard"),
+							icon: ""
+						},
+						{
+							href: "/templateComponents",
+							title: this.$t("menu.components.components"),
+							icon: ""
+						},
+						{
+							href: "/templatePages",
+							title: this.$t("menu.components.layout"),
+							icon: ""
+						}
+					]
 				}
 			]
 		};
