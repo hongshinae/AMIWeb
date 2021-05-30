@@ -56,7 +56,7 @@ export default {
 				series: [
 					{
 						data: this.data ? this.data.map(v => [v.hckey, v.value]) : null,
-						name: "DCU Fault",
+						name: "검침율",
 						//s borderColor: "black",
 						borderWidth: 0.2,
 						states: {

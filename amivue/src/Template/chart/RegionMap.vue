@@ -53,7 +53,7 @@ export default {
 				series: [
 					{
 						data: this.data,
-						name: "DCU Fault",
+						name: "검침율",
 						//s borderColor: "black",
 						borderWidth: 0.2,
 						states: {

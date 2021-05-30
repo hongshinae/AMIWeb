@@ -66,7 +66,7 @@ export default {
 				series: [
 					{
 						data: this.data,
-						name: "DCU Fault",
+						name: "장애수",
 						//s borderColor: "black",
 						borderWidth: 0.2,
 						states: {
