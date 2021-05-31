@@ -32,7 +32,7 @@ export default {
 					map: koreaMap,
 					events: {
 						load: function() {
-							this.mapZoom(0.8);
+							this.mapZoom(0.7);
 						}
 					}
 				},
@@ -45,15 +45,15 @@ export default {
 
 				colorAxis: {
 					min: 0,
-					minColor: "rgba(220,53,69,0)", //min컬러
-					maxColor: "rgba(220,53,69,1)" //max컬러
+					minColor: "rgba(116,132,255,0)", //min컬러
+					maxColor: "rgba(116,132,255,1)" //max컬러
 				},
 				exporting: { enabled: false },
 				credits: { enabled: false },
 				series: [
 					{
 						data: this.data,
-						name: "검침율",
+						name: "DCU Fault",
 						//s borderColor: "black",
 						borderWidth: 0.2,
 						states: {
