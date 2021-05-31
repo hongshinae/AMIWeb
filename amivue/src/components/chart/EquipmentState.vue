@@ -1,5 +1,5 @@
 <template>
-	<div class="high-map-wrap">
+	<div class="high-map-wrap" style="display:none">
 		<div class="high-map"></div>
 		<div class="high-table">
 			<ul>
