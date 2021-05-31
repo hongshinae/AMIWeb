@@ -1,7 +1,7 @@
 <template>
 	<div class="box">
 		<h5>
-			<span></span>
+			<span>서버운영정보</span>
 			<b class="fontC">정상</b>
 		</h5>
 		<div class="dutyCycle cpu">

@@ -32,7 +32,7 @@ export default {
 					map: koreaMap,
 					events: {
 						load: function() {
-							this.mapZoom(0.7);
+							this.mapZoom(0.8);
 						}
 					}
 				},

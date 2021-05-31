@@ -1,11 +1,9 @@
 <template>
 	<div class="box">
-		<h5>
-			<ul class="inspection">
-				<li><span>적시율</span><b class="fontC">100%</b></li>
-				<li><span>검침률</span><b class="fontC">100%</b></li>
-			</ul>
-		</h5>
+		<ul class="inspection">
+			<li><read1 /></li>
+			<li><read2 /></li>
+		</ul>
 		<div class="chartWarp">
 			<div class="">
 				<high-charts :options="chartOptions" />
@@ -15,11 +13,16 @@
 </template>
 
 <script>
+import Read1 from "@/Template/chart/Read1";
+import Read2 from "@/Template/chart/Read2";
+
 import { Chart } from "highcharts-vue";
 
 export default {
 	components: {
-		HighCharts: Chart
+		HighCharts: Chart,
+		Read1,
+		Read2
 	},
 	computed: {
 		chartOptions: {
@@ -29,7 +32,7 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: 190,
+						height: 210,
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},

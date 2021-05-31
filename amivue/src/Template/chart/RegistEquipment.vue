@@ -1,5 +1,5 @@
 <template>
-	<div class="box">
+	<div class="box" style="display:none">
 		<h5>
 			<span>등록장비</span>
 			<b class="fontC">11건</b>
