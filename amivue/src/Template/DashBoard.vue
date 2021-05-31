@@ -14,9 +14,11 @@
 			<div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
 				<dashboard-type />
 				<server-info />
+				<region-usage />
 				<regist-equipment />
 				<today-fault />
-				<region-usage />
+				<ami-status-board />
+				<today-fault-board />
 			</div>
 		</div>
 	</div>
@@ -33,6 +35,9 @@ import ServerInfo from "@/Template/chart/ServerInfo";
 import RegionUsage from "@/Template/chart/RegionUsage";
 import RegistEquipment from "@/Template/chart/RegistEquipment";
 import RegionMap from "@/Template/chart/RegionMap";
+import AmiStatusBoard from "@/Template/chart/AmiStatusBoard";
+import TodayFaultBoard from "@/Template/chart/TodayFaultBoard";
+
 export default {
 	components: {
 		TotalVoltage,
@@ -45,7 +50,9 @@ export default {
 		RegionUsage,
 		RegistEquipment,
 		RegionMap,
-		DashboardType
+		DashboardType,
+		AmiStatusBoard,
+		TodayFaultBoard
 	}
 };
 </script>
