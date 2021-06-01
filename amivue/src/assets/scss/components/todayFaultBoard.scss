@@ -1,0 +1,27 @@
+.faultWrap {
+	margin: 10px 30px;
+	li {
+		width: 20%;
+		float: left;
+		text-align: center;
+		margin: 0 0 15px 0;
+		p {
+			margin: 2px 0;
+		}
+		p:first-child {
+			color: #9fa9c7;
+		}
+		p:last-child {
+			background: #29396e;
+			color: #6979a9;
+			border-radius: 4px;
+			display: inline-block;
+			padding: 5px 10px;
+		}
+		p.on:last-child {
+			background: #eb6297;
+			color: #000;
+			font-weight: bold;
+		}
+	}
+}

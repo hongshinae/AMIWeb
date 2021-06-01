@@ -1,0 +1,27 @@
+.amiBoard {
+	margin: 10px 20px;
+	color: #9fa9c7;
+	> li {
+		width: 100%;
+		height: 45px;
+		margin-bottom: 10px;
+		float: left;
+		ul {
+			width: 100%;
+			height: 44px;
+			line-height: 44px;
+			background: #192541;
+			border-radius: 4px;
+			padding: 0 10px;
+			li:nth-child(1) {
+				float: left;
+			}
+			li:nth-child(2) {
+				float: left;
+			}
+			li:nth-child(3) {
+				float: right;
+			}
+		}
+	}
+}
