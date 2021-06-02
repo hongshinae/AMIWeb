@@ -18,17 +18,6 @@
 import { Chart } from "highcharts-vue";
 import Lookup from "@/service/lookup";
 import ContentMixin from "@/components/content/mixin";
-import Highcharts from "highcharts";
-import darkGreenInit from "highcharts/themes/dark-green";
-darkGreenInit(Highcharts);
-// import darkBlueInit from "highcharts/themes/dark-blue";
-// darkBlueInit(Highcharts);
-// import avocadoInit from "highcharts/themes/avocado";
-// avocadoInit(Highcharts);
-// import darkUnicaInit from "highcharts/themes/dark-unica";
-// darkUnicaInit(Highcharts);
-
-// Highcharts.setOptions(Highcharts.theme);
 
 export default {
 	mixins: [ContentMixin],
