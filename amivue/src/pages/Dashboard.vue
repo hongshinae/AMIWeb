@@ -17,11 +17,21 @@
 			<b-col xl="4" lg="12" md="12" sm="12">
 				<div class="presentMenu">
 					<ul>
-						<li>{{ $t("dashboard.type.heat") }}</li>
-						<li>{{ $t("dashboard.type.hot") }}</li>
-						<li>{{ $t("dashboard.type.water") }}</li>
-						<li>{{ $t("dashboard.type.gas") }}</li>
-						<li class="on">{{ $t("dashboard.type.meter") }}</li>
+						<li class="on pulsate-fwd">
+							<button type="button" class="btn">{{ $t("dashboard.type.meter") }}</button>
+						</li>
+						<li>
+							<button type="button" class="btn">{{ $t("dashboard.type.gas") }}</button>
+						</li>
+						<li>
+							<button type="button" class="btn">{{ $t("dashboard.type.water") }}</button>
+						</li>
+						<li>
+							<button type="button" class="btn">{{ $t("dashboard.type.hot") }}</button>
+						</li>
+						<li>
+							<button type="button" class="btn">{{ $t("dashboard.type.heat") }}</button>
+						</li>
 					</ul>
 				</div>
 				<server-info />
