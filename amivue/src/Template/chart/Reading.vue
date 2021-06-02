@@ -1,8 +1,8 @@
 <template>
 	<div class="box">
 		<ul class="inspection">
-			<li><read1 /></li>
-			<li><read2 /></li>
+			<li><reading-rate /></li>
+			<li><reading-timely-rate /></li>
 		</ul>
 		<div class="chartWarp">
 			<div class="">
@@ -13,16 +13,16 @@
 </template>
 
 <script>
-import Read1 from "@/Template/chart/Read1";
-import Read2 from "@/Template/chart/Read2";
+import ReadingRate from "@/Template/chart/ReadingRate";
+import ReadingTimelyRate from "@/Template/chart/ReadingTimelyRate";
 
 import { Chart } from "highcharts-vue";
 
 export default {
 	components: {
 		HighCharts: Chart,
-		Read1,
-		Read2
+		ReadingRate,
+		ReadingTimelyRate
 	},
 	computed: {
 		chartOptions: {
