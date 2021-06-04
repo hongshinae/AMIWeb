@@ -1,7 +1,10 @@
 <template>
-	<div style="height: 130px;">
-		<high-charts :options="chartOptions" />
-	</div>
+	<ul class="inspection">
+		<li class="title">검침률</li>
+		<li class="chart"><high-charts :options="chartOptions" /></li>
+		<li class="title">적시율</li>
+		<li class="chart"><high-charts :options="chartOptions" /></li>
+	</ul>
 </template>
 <script>
 import Highcharts from "highcharts";
@@ -23,7 +26,7 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: "80%",
+						height: "120",
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},
@@ -31,6 +34,7 @@ export default {
 						borderWidth: 0,
 						backgroundColor: "none",
 						shadow: false,
+						stickOnContact: true,
 						style: {
 							fontSize: "7px"
 						},
@@ -51,10 +55,9 @@ export default {
 								// Track for Move
 								outerRadius: "92%",
 								innerRadius: "68%",
-								backgroundColor: Highcharts.color(Highcharts.getOptions().colors[0])
-									.setOpacity(0.3)
-									.get(),
-								borderWidth: 0
+								backgroundColor: "#10182a",
+								borderWidth: 1,
+								borderColor: "#10182a"
 							}
 						]
 					},
@@ -76,15 +79,16 @@ export default {
 					},
 					title: "",
 					exporting: { enabled: false },
+					credits: { enabled: false },
 					menu: false,
 					series: [
 						{
 							name: "적시율",
 							data: [
 								{
-									color: Highcharts.getOptions().colors[2],
-									radius: "88%",
-									innerRadius: "64%",
+									color: "#04d47d",
+									radius: "92%",
+									innerRadius: "68%",
 									y: 70
 								}
 							]
