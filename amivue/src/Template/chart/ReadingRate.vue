@@ -1,8 +1,8 @@
 <template>
 	<ul class="inspection">
-		<!-- <li class="title">검침률</li> -->
+		<li class="title">검침률</li>
 		<li class="chart"><high-charts :options="chartOptions" /></li>
-		<!-- <li class="title">적시율</li> -->
+		<li class="title">적시율</li>
 		<li class="chart"><high-charts :options="chartOptions" /></li>
 	</ul>
 </template>
@@ -26,7 +26,7 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: "120",
+						height: "140",
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},
@@ -77,10 +77,15 @@ export default {
 							],
 							dataLabels: {
 								enabled: true,
+								borderWidth: 0,
+								y: -16,
+								x: 2,
+								// fontSize: "11px",
 								style: {
-									fontSize: "7px"
+									fontSize: "14px",
+									fontFamily: "sans-serif"
 								},
-								format: "<b>{series.name}</b><br>{point.y:.1f} %"
+								format: "{point.y:.1f} %"
 							}
 						}
 					]
