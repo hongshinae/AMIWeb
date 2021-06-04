@@ -1,12 +1,19 @@
 .inspection {
 	li {
 		height: 130px;
-		text-align: center;
 		line-height: 130px;
-		width: 42%;
+		width: 15%;
 		float: left;
-		&:last-child {
-			float: right;
+	}
+	.title {
+		width: 15%;
+		text-align: right;
+	}
+	.chart {
+		width: 35%;
+		text-align: center;
+		svg {
+			width: 77px;
 		}
 	}
 }
