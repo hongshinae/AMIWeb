@@ -42,12 +42,20 @@ export default {
 				},
 
 				mapNavigation: { enabled: false },
-
 				colorAxis: {
 					min: 0,
-					minColor: "rgba(116,132,255,0)", //min컬러
-					maxColor: "rgba(116,132,255,1)" //max컬러
+					//max: 100,
+					labels: {
+						format: "{value}%"
+					},
+					stops: [
+						[0, "rgba(246,81,100,1)"],
+						[0.8, "rgba(246,81,100,0)"],
+						[0.9, "rgba(9,24,46,0)"],
+						[1, "rgba(9,24,46,1)"]
+					]
 				},
+
 				exporting: { enabled: false },
 				credits: { enabled: false },
 				series: [
@@ -78,21 +86,21 @@ export default {
 				["kr-4194", 0], // 전국
 				["kr-kg", 1], // 경기도
 				["kr-cb", 2], // 전라북도
-				["kr-kn", 3], // 경상남도
+				["kr-kn", 100], // 경상남도
 				["kr-2685", 4], // 전라남도
 				["kr-pu", 5], // 부산광역시
 				["kr-2688", 6], // 경상북도
-				["kr-sj", 7], // 세종특별자치시
+				["kr-sj", 0], // 세종특별자치시
 				["kr-tj", 8], // 대전광역시
 				["kr-ul", 9], // 울산광역시
-				["kr-in", 10], // 인천광역시
-				["kr-kw", 11], // 강원도
+				["kr-in", 100], // 인천광역시
+				["kr-kw", 100], // 강원도
 				["kr-gn", 12], // 충청남도
-				["kr-cj", 13], // 제주도
+				["kr-cj", 100], // 제주도
 				["kr-gb", 14], // 충청북도
-				["kr-so", 15], // 서울
+				["kr-so", 100], // 서울
 				["kr-tg", 16], // 대구광역시
-				["kr-kj", 17] // 광주광역시
+				["kr-kj", 0] // 광주광역시
 			]
 		};
 	}
