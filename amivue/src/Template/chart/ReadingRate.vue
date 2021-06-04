@@ -1,8 +1,8 @@
 <template>
 	<ul class="inspection">
-		<li class="title">검침률</li>
+		<!-- <li class="title">검침률</li> -->
 		<li class="chart"><high-charts :options="chartOptions" /></li>
-		<li class="title">적시율</li>
+		<!-- <li class="title">적시율</li> -->
 		<li class="chart"><high-charts :options="chartOptions" /></li>
 	</ul>
 </template>
@@ -29,23 +29,6 @@ export default {
 						height: "120",
 						borderWidth: 0,
 						plotBackgroundColor: false
-					},
-					tooltip: {
-						borderWidth: 0,
-						backgroundColor: "none",
-						shadow: false,
-						stickOnContact: true,
-						style: {
-							fontSize: "7px"
-						},
-						valueSuffix: "%",
-						pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}</span>',
-						positioner: function(labelWidth) {
-							return {
-								x: (this.chart.chartWidth - labelWidth) / 2,
-								y: this.chart.plotHeight / 2 - 15
-							};
-						}
 					},
 					pane: {
 						startAngle: 0,
@@ -91,7 +74,14 @@ export default {
 									innerRadius: "68%",
 									y: 70
 								}
-							]
+							],
+							dataLabels: {
+								enabled: true,
+								style: {
+									fontSize: "7px"
+								},
+								format: "<b>{series.name}</b><br>{point.y:.1f} %"
+							}
 						}
 					]
 				};
