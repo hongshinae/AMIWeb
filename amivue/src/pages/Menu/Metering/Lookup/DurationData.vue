@@ -15,12 +15,10 @@
 </template>
 
 <script>
-import Highcharts from "highcharts";
 import { Chart } from "highcharts-vue";
 
 import Lookup from "@/service/lookup";
 import ContentMixin from "@/components/content/mixin";
-delete Highcharts.theme;
 
 export default {
 	mixins: [ContentMixin],

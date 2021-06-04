@@ -55,6 +55,9 @@ import ServerInfo from "@/components/chart/ServerInfo";
 import RegionUsage from "@/components/chart/RegionUsage";
 import RegistEquipment from "@/components/chart/RegistEquipment";
 import RegionMap from "@/components/chart/RegionMap";
+import Highcharts from "highcharts";
+import theme from "highcharts/themes/dark-unica";
+theme(Highcharts);
 let sse;
 
 export default {

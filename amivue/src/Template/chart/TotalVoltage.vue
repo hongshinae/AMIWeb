@@ -52,7 +52,8 @@ export default {
 						series: {
 							borderColor: "none",
 							dataLabels: {
-								enabled: true
+								enabled: true,
+								style: { fontWeight: "none", fontSize: "8", fontColor: "#232f4b" }
 							}
 						}
 					},
@@ -93,12 +94,6 @@ export default {
 							name: "오늘",
 							data: [11, 13, 12, 12, 13, 11, 13, 11, 12, 73, 156, 157, 157, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 							color: "#1ee2df"
-						},
-						{
-							name: "피크",
-							type: "spline",
-							data: [125, 121, 122, 138, 103, 142, 122, 112, 142, 112, 122, 112, 142, 122, 112, 142, 112, 122, 122, 132, 112, 122, 132, 129],
-							color: "#ff004b"
 						}
 					]
 				};

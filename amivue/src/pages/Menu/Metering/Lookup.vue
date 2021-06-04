@@ -31,6 +31,9 @@ import ContentHeader from "@/components/content/ContentHeader";
 import CycleData from "./Lookup/CycleData";
 import HoursData from "./Lookup/HoursData";
 import DurationData from "./Lookup/DurationData";
+import Highcharts from "highcharts";
+import theme from "highcharts/themes/avocado";
+theme(Highcharts);
 
 export default {
 	components: { ContentHeader, CycleData, HoursData, DurationData },
