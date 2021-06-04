@@ -44,10 +44,14 @@
 						<b-form-input v-model="form.dcuId" :placeholder="$t('common.placeholder.dcuId')"></b-form-input>
 					</b-form-group>
 					<input-ip v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuIp')" />
-					<b-form-group v-model="form.dcuIp" :label="$t('equipment.dcu.modal.dcuPort')">
-						<b-input-group>
-							<b-form-input placeholder="88080"></b-form-input>
-						</b-input-group>
+					<b-form-group :label="$t('equipment.dcu.modal.dcuPort')">
+						<b-form-input
+							v-model.number="form.dcuPort"
+							type="number"
+							min="0"
+							max="99999"
+							:placeholder="$t('common.placeholder.dcuPort')"
+						></b-form-input>
 					</b-form-group>
 					<input-ip v-model="form.routerIp" :label="$t('equipment.dcu.modal.routerIp')" />
 					<input-location
@@ -74,6 +78,7 @@ export default {
 			form: {
 				dcuId: "",
 				dcuIp: "",
+				dcuPort: "",
 				routerIp: "",
 				latitude: 3,
 				longitude: 3

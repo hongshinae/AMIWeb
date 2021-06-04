@@ -61,6 +61,7 @@
 			"mac": "A1:B2:C3:D4:E5:AA",
 			"meterId": "0619010031",
 			"dcuIp": "20.101.235.100",
+			"dcuPort": "88088",
 			"routerIp": "20.101.235.254",
 			"latitude": "위도",
 			"longitude": "경도",
