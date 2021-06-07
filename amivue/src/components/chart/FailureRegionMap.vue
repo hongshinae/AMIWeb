@@ -1,7 +1,9 @@
 <template>
-	<div class="highch">
-		<!-- <chart :constructor-type="'stockChart'" :options="chartOptions" /> -->
-		<high-charts :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
+	<div class="box">
+		<div class="highch">
+			<!-- <chart :constructor-type="'stockChart'" :options="chartOptions" /> -->
+			<high-charts :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
+		</div>
 	</div>
 </template>
 

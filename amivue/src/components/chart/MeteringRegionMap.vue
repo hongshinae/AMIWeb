@@ -1,6 +1,8 @@
 <template>
-	<div class="highch">
-		<high-charts :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
+	<div class="box">
+		<div class="highch">
+			<high-charts :constructor-type="'mapChart'" :options="chartOptions" :highcharts="hcInstance" />
+		</div>
 	</div>
 </template>
 
