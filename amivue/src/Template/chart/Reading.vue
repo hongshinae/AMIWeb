@@ -61,7 +61,7 @@ export default {
 						enabled: false
 					},
 					xAxis: {
-						categories: ["오늘", "어제"],
+						categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
 						title: null,
 						gridLineColor: "#232f4b",
 						lineColor: "#232f4b",
@@ -86,8 +86,8 @@ export default {
 					exporting: { enabled: false },
 					menu: false,
 					series: [
-						{ name: "적시율", data: [100, 100], color: "#1ee2df" },
-						{ name: "검침률", data: [100, 100], color: "#fdff4b" }
+						{ name: "적시율", data: [100, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100], color: "#1ee2df" },
+						{ name: "검침률", data: [100, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100], color: "#fdff4b" }
 					]
 				};
 			}
@@ -95,7 +95,7 @@ export default {
 	},
 	data() {
 		return {
-			chartName: "bar"
+			chartName: "column"
 		};
 	}
 };
