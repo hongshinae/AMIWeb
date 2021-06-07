@@ -1,5 +1,5 @@
 <template>
-	<div class="box">
+	<div class="box" style="display:none">
 		<h5>
 			<span>상태 정보</span>
 			<b class="fontC">총 104건</b>

@@ -18,6 +18,7 @@
 				<regist-equipment />
 				<today-fault />
 				<ami-status-board />
+				<regular-board />
 				<today-fault-board />
 			</div>
 		</div>
@@ -36,6 +37,7 @@ import RegionUsage from "@/Template/chart/RegionUsage";
 import RegistEquipment from "@/Template/chart/RegistEquipment";
 import RegionMap from "@/Template/chart/RegionMap";
 import AmiStatusBoard from "@/Template/chart/AmiStatusBoard";
+import RegularBoard from "@/Template/chart/RegularBoard";
 import TodayFaultBoard from "@/Template/chart/TodayFaultBoard";
 
 export default {
@@ -52,6 +54,7 @@ export default {
 		RegionMap,
 		DashboardType,
 		AmiStatusBoard,
+		RegularBoard,
 		TodayFaultBoard
 	}
 };

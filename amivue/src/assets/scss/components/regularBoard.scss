@@ -1,0 +1,43 @@
+.regularBoard {
+	margin: 10px 20px;
+	color: #9fa9c7;
+	ul li {
+		width: 33.333%;
+		float: left;
+		text-align: center;
+		margin-bottom: 20px;
+		.font24 {
+			font-size: 24px;
+		}
+		.regularSvgWrap::before {
+			display: inline-block;
+			content: "";
+			height: 100%;
+			vertical-align: middle;
+		}
+		.regularSvgWrap {
+			height: 100px;
+			img {
+				display: inline-block;
+				vertical-align: middle;
+				width: 41px;
+				margin-right: 10px;
+			}
+			div {
+				display: inline-block;
+				vertical-align: middle;
+				p:first-child {
+					font-size: 16px;
+					color: #fdff4b;
+					font-weight: bold;
+					text-align: left;
+				}
+				p:last-child {
+					color: #fdff4b;
+					font-size: 11px;
+					text-align: left;
+				}
+			}
+		}
+	}
+}
