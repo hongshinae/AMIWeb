@@ -29,12 +29,9 @@
 	}
 }
 .serveInfo {
-	min-height: 95px;
 	padding: 6px 20px;
-	margin-top: 20px;
 	li {
 		padding: 0 2%;
-		height: 78px;
 		border-radius: 4px;
 		float: left;
 		width: 23%;
@@ -42,6 +39,7 @@
 		background: rgb(117, 206, 226);
 		background: linear-gradient(45deg, rgba(117, 206, 226, 1) 9%, rgba(19, 183, 216, 1) 44%, rgba(35, 255, 240, 1) 78%, rgba(30, 228, 223, 1) 100%);
 		margin: 0 1%;
+		margin-bottom: 10px;
 	}
 	h6 {
 		color: #202c51;
@@ -54,7 +52,8 @@
 		font-weight: bold;
 		color: #202c51;
 		font-family: none;
-		margin-top: 18px;
+		margin-top: 6px;
+		margin-bottom: 6px;
 	}
 }
 

@@ -9,20 +9,20 @@
 		</div>
 		<ul class="serveInfo">
 			<li>
-				<h6>JVMUSED</h6>
+				<h6>OS CPU</h6>
 				<span>1.272</span>
 			</li>
 			<li>
-				<h6>JVMFREE</h6>
-				<span>0.982</span>
+				<h6>OS MEMORY</h6>
+				<span>1.573</span>
+			</li>
+			<li>
+				<h6>JVMUSED</h6>
+				<span>0.330</span>
 			</li>
 			<li>
 				<h6>JVMTOTAL</h6>
-				<span>2.225</span>
-			</li>
-			<li>
-				<h6>JVMMAX</h6>
-				<span>26.65</span>
+				<span>1.573</span>
 			</li>
 		</ul>
 	</div>
@@ -42,7 +42,7 @@ export default {
 				return {
 					chart: {
 						type: "spline",
-						height: 150,
+						height: 190,
 						marginRight: 10,
 						borderWidth: 0,
 						plotBackgroundColor: false,
