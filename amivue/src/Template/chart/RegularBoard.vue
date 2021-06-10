@@ -99,9 +99,9 @@ export default {
 							data: [
 								{
 									color: "#fdff4b",
-									radius: "92%",
-									innerRadius: "68%",
-									y: 90
+									radius: "80%",
+									innerRadius: "70%",
+									y: 40
 								}
 							],
 							dataLabels: {

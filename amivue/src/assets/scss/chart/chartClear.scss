@@ -8,3 +8,10 @@
 rect.highcharts-legend-box {
 	fill: none;
 }
+
+.highcharts-container {
+	width: 100% !important;
+	.highcharts-root {
+		width: 100% !important;
+	}
+}

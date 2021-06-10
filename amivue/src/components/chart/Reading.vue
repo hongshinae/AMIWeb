@@ -1,17 +1,6 @@
 <template>
 	<div class="box">
-		<h5>
-			<ul class="inspection">
-				<li>
-					<span>{{ $t("dashboard.timelyRate") }}</span>
-					<b class="fontC">{{ this.data ? this.data.todayTimelyRate : "" }}%</b>
-				</li>
-				<li>
-					<span>{{ $t("dashboard.readingRate") }}</span>
-					<b class="fontC">{{ this.data ? this.data.todayMeterReadingRate : "" }}%</b>
-				</li>
-			</ul>
-		</h5>
+		<reading-rate />
 		<div class="chartWarp">
 			<div class="">
 				<high-charts :options="chartOptions" />
@@ -21,12 +10,14 @@
 </template>
 
 <script>
+import ReadingRate from "@/components/chart/ReadingRate";
+
 import { Chart } from "highcharts-vue";
 
 export default {
-	props: ["data"],
 	components: {
-		HighCharts: Chart
+		HighCharts: Chart,
+		ReadingRate
 	},
 	computed: {
 		chartOptions: {
@@ -36,7 +27,7 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: 190,
+						height: 210,
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},
@@ -45,24 +36,24 @@ export default {
 						symbolWidth: 8,
 						symbolRadius: 4,
 						marginTop: 10,
-						align: "right",
-						verticalAlign: "middle",
-						layout: "vertical",
-						itemMarginTop: 5,
-						itemMarginBottom: 5,
 						itemStyle: {
 							fontSize: "0.9rem",
 							fontWeight: 100,
 							lineHeight: "14px"
-						}
+						},
+						align: "right",
+						verticalAlign: "top",
+						x: 0,
+						y: 0,
+						floating: true
 					},
 					plotOptions: {
 						column: { borderRadius: 3 },
 						series: {
 							borderColor: "none",
 							dataLabels: {
-								align: "left",
-								enabled: true
+								enabled: true,
+								style: { fontWeight: "none", fontSize: "8", fontColor: "#232f4b" }
 							}
 						}
 					},
@@ -70,7 +61,7 @@ export default {
 						enabled: false
 					},
 					xAxis: {
-						categories: ["오늘", "어제"],
+						categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
 						title: null,
 						gridLineColor: "#232f4b",
 						lineColor: "#232f4b",
@@ -89,23 +80,14 @@ export default {
 							style: {
 								color: "#61719e"
 							}
-						},
-						max: 100
+						}
 					},
 					title: "",
 					exporting: { enabled: false },
 					menu: false,
 					series: [
-						{
-							name: "적시율",
-							data: this.data ? [this.data.todayTimelyRate, this.data.yesterdayTimelyRate] : [],
-							color: "#1ee2df"
-						},
-						{
-							name: "검침률",
-							data: this.data ? [this.data.todayMeterReadingRate, this.data.yesterdayMeterReadingRate] : [],
-							color: "#fdff4b"
-						}
+						{ name: "적시율", data: [100, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100], color: "#1ee2df" },
+						{ name: "검침률", data: [100, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100, 99, 100], color: "#fdff4b" }
 					]
 				};
 			}
@@ -113,7 +95,7 @@ export default {
 	},
 	data() {
 		return {
-			chartName: "bar"
+			chartName: "column"
 		};
 	}
 };

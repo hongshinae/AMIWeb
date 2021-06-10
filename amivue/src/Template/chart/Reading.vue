@@ -29,7 +29,10 @@ export default {
 						type: this.chartName,
 						height: 210,
 						borderWidth: 0,
-						plotBackgroundColor: false
+						plotBackgroundColor: false,
+						style: {
+							fontFamily: "san-serif"
+						}
 					},
 					legend: {
 						symbolHeight: 8,
@@ -48,7 +51,7 @@ export default {
 						floating: true
 					},
 					plotOptions: {
-						column: { borderRadius: 3 },
+						column: { borderRadius: 1 },
 						series: {
 							borderColor: "none",
 							dataLabels: {

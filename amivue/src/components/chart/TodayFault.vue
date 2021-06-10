@@ -1,5 +1,5 @@
 <template>
-	<div class="box">
+	<div class="box" style="display: none;">
 		<h5>
 			상태 이상 정보
 			<b class="fontC">{{ data ? data.failureTodayCount : 0 }} 건</b>

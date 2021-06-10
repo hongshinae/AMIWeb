@@ -1,8 +1,8 @@
 <template>
 	<ul class="inspection">
-		<li class="title">검침률</li>
+		<li class="title">{{ $t("dashboard.timelyRate") }}</li>
 		<li class="chart"><high-charts :options="chartOptions" /></li>
-		<li class="title">적시율</li>
+		<li class="title">{{ $t("dashboard.readingRate") }}</li>
 		<li class="chart"><high-charts :options="chartOptions" /></li>
 	</ul>
 </template>
@@ -26,7 +26,7 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: "120",
+						height: "110",
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},
@@ -69,7 +69,7 @@ export default {
 							name: "적시율",
 							data: [
 								{
-									color: "#7383fd",
+									color: "#04d47d",
 									radius: "90%",
 									innerRadius: "80%",
 									y: 70

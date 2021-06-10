@@ -78,6 +78,8 @@ export default {
 					xAxis: {
 						title: null,
 						gridLineColor: null,
+						tickColor: "#232f4b",
+						lineColor: "#232f4b",
 						labels: {
 							style: {
 								color: "#61719e"

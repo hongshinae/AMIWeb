@@ -7,6 +7,7 @@
 					<dashboard-timer />
 				</div>
 				<total-voltage :data="totalVoltage" />
+				<reading :data="reading" />
 				<today-fault :data="todayFault" />
 				<today-weather :data="todayWeather" />
 			</b-col>
@@ -35,9 +36,10 @@
 					</ul>
 				</div>
 				<server-info />
-				<reading :data="reading" />
 				<regist-equipment :data="device" />
 				<region-usage />
+				<ami-status-board />
+				<regular-board />
 			</b-col>
 		</b-row>
 	</div>
@@ -55,6 +57,8 @@ import ServerInfo from "@/components/chart/ServerInfo";
 import RegionUsage from "@/components/chart/RegionUsage";
 import RegistEquipment from "@/components/chart/RegistEquipment";
 import RegionMap from "@/components/chart/RegionMap";
+import AmiStatusBoard from "@/components/chart/AmiStatusBoard";
+import RegularBoard from "@/components/chart/RegularBoard";
 import Highcharts from "highcharts";
 import theme from "highcharts/themes/dark-unica";
 theme(Highcharts);
@@ -73,7 +77,9 @@ export default {
 		ServerInfo,
 		RegionUsage,
 		RegistEquipment,
-		RegionMap
+		RegionMap,
+		AmiStatusBoard,
+		RegularBoard
 	},
 	async mounted() {
 		sse = Dashboard.allData(30);

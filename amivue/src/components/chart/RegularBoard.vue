@@ -1,11 +1,40 @@
 <template>
-	<ul class="inspection">
-		<li class="title">검침률</li>
-		<li class="chart"><high-charts :options="chartOptions" /></li>
-		<li class="title">적시율</li>
-		<li class="chart"><high-charts :options="chartOptions" /></li>
-	</ul>
+	<div class="box">
+		<h5>
+			<span>정기 검침 현황</span>
+			<b>2021년 1월 4일 정기 검침일</b>
+		</h5>
+		<div class="regularBoard">
+			<ul>
+				<li>
+					<div class="regularSvgWrap">
+						<img src="~@/assets/svg/icon_building.svg" alt="" title="" />
+						<div>
+							<p>124,112</p>
+							<p>세대</p>
+						</div>
+					</div>
+					<p>검침 수용가 수</p>
+				</li>
+				<li>
+					<div class="regularSvgWrap">
+						<img src="~@/assets/svg/icon_building.svg" alt="" title="" />
+						<div>
+							<p><b>1</b></p>
+							<p><span>세대</span></p>
+						</div>
+					</div>
+					<p>미 검침 수용가 수</p>
+				</li>
+				<li>
+					<div><high-charts :options="chartOptions" /></div>
+					<p>정기 검침 성공률</p>
+				</li>
+			</ul>
+		</div>
+	</div>
 </template>
+
 <script>
 import Highcharts from "highcharts";
 import HighChartsMoreInit from "highcharts/highcharts-more";
@@ -26,7 +55,7 @@ export default {
 					chart: {
 						//검침률
 						type: this.chartName,
-						height: "120",
+						height: "100",
 						borderWidth: 0,
 						plotBackgroundColor: false
 					},
@@ -36,8 +65,8 @@ export default {
 						background: [
 							{
 								// Track for Move
-								outerRadius: "90%",
-								innerRadius: "80%",
+								outerRadius: "80%",
+								innerRadius: "70%",
 								backgroundColor: "#10182a",
 								borderWidth: 1,
 								borderColor: "#10182a"
@@ -69,23 +98,23 @@ export default {
 							name: "적시율",
 							data: [
 								{
-									color: "#7383fd",
-									radius: "90%",
-									innerRadius: "80%",
-									y: 70
+									color: "#fdff4b",
+									radius: "80%",
+									innerRadius: "70%",
+									y: 90
 								}
 							],
 							dataLabels: {
 								enabled: true,
 								borderWidth: 0,
-								y: -16,
+								y: -14,
 								x: 2,
 								// fontSize: "11px",
 								style: {
-									fontSize: "14px",
+									fontSize: "12px",
 									fontFamily: "sans-serif"
 								},
-								format: "{point.y:.1f} %"
+								format: "{point.y} %"
 							}
 						}
 					]
@@ -100,3 +129,6 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+@import "~@/assets/scss/components/regularBoard.scss";
+</style>
