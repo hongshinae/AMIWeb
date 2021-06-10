@@ -36,24 +36,24 @@ export default {
 						symbolWidth: 8,
 						symbolRadius: 4,
 						marginTop: 10,
-						align: "right",
-						verticalAlign: "middle",
-						layout: "vertical",
-						itemMarginTop: 5,
-						itemMarginBottom: 5,
 						itemStyle: {
 							fontSize: "0.9rem",
 							fontWeight: 100,
 							lineHeight: "14px"
-						}
+						},
+						align: "right",
+						verticalAlign: "top",
+						x: 0,
+						y: 0,
+						floating: true
 					},
 					plotOptions: {
 						column: { borderRadius: 3 },
 						series: {
 							borderColor: "none",
 							dataLabels: {
-								align: "left",
-								enabled: true
+								enabled: true,
+								style: { fontWeight: "none", fontSize: "8", fontColor: "#232f4b" }
 							}
 						}
 					},

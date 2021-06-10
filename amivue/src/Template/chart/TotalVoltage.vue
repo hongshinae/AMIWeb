@@ -40,8 +40,11 @@ export default {
 						symbolWidth: 8,
 						symbolRadius: 4,
 						marginTop: 10,
-						verticalAlign: "top",
 						align: "right",
+						verticalAlign: "top",
+						x: 0,
+						y: 0,
+						floating: true,
 						itemStyle: {
 							fontSize: "0.9rem",
 							fontWeight: 100
