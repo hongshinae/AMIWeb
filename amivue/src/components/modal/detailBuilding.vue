@@ -213,7 +213,8 @@ export default {
 		cancel() {},
 		async getBuilding(params) {
 			try {
-				const response = await Building.info(params);
+				const param = { estateSeq: params["estateSeq"], buildingSeq: params["buildingSeq"] };
+				const response = await Building.info(param);
 				const result = response.data.response;
 				this.form = result;
 				this.data = result;
