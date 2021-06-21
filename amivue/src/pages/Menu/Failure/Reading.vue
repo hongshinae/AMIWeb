@@ -10,8 +10,8 @@
 					:fields="readingFields"
 					:isPerPage="true"
 					:showFilterList="showFilterList"
-					:excelFileName="$t('regular.excelFileName')"
-					:excelSheetName="$t('menu.metering.regular')"
+					:excelFileName="$t('reading.excelFileName')"
+					:excelSheetName="$t('menu.failure.reading')"
 				/>
 			</div>
 		</div>
@@ -47,10 +47,10 @@ export default {
 			],
 			readingList: [],
 			readingFields: [
-				{
-					key: "regionName",
-					label: this.$t("component.content.table.regionName")
-				},
+				// {
+				// 	key: "regionName",
+				// 	label: this.$t("component.content.table.regionName")
+				// },
 				{
 					key: "estateName",
 					label: this.$t("component.content.table.estateName")
@@ -68,7 +68,7 @@ export default {
 					label: this.$t("component.content.table.meterId")
 				},
 				{
-					key: "recentlyReadingTime",
+					key: "meterTime",
 					label: this.$t("component.content.table.recentlyReadingTime")
 				},
 				{
@@ -80,7 +80,7 @@ export default {
 					label: this.$t("component.content.table.mac")
 				},
 				{
-					key: "readingStatus",
+					key: "status",
 					label: this.$t("component.content.table.readingStatus")
 				}
 			]
@@ -92,10 +92,10 @@ export default {
 				this.isBusy = true;
 				const response = await Reading.list(params);
 				const result = response.data.response;
-				this.regularList = result;
+				this.readingList = result;
 			} catch (error) {
 				const result = [];
-				this.regularList = result;
+				this.readingList = result;
 			} finally {
 				this.isBusy = false;
 			}
