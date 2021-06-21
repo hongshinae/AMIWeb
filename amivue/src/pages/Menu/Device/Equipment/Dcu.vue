@@ -64,20 +64,12 @@ export default {
 					label: this.$t("component.content.table.dcuIp")
 				},
 				{
-					key: "fepIp",
-					label: this.$t("component.content.table.fepIp")
+					key: "routerIp",
+					label: this.$t("component.content.table.routerIp")
 				},
 				{
 					key: "firmwareVersion",
 					label: this.$t("component.content.table.firmwareVersion")
-				},
-				{
-					key: "modemCount",
-					label: this.$t("component.content.table.modemCount")
-				},
-				{
-					key: "meterCount",
-					label: this.$t("component.content.table.meterCount")
 				},
 				{
 					key: "_remark",

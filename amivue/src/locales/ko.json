@@ -193,7 +193,7 @@
 				"dcuIp": "DCU IP",
 				"dcuStatus": "DCU 상태",
 				"mac": "MAC",
-				"fepIp": "LTE 장비 IP",
+				"routerIp": "LTE 장비 IP",
 				"firmwareVersion": "펌웨어버전",
 				"modemCount": "Modem",
 				"meterCount": "Meter",
