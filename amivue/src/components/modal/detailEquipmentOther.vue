@@ -2,7 +2,9 @@
 	<b-modal id="detailEquipmentOther" size="lg" @shown="shown" @show="show" @hide="hide" @hidden="hidden" @ok="ok" @cancel="cancel" no-close-on-backdrop>
 		<template #modal-header="{ close }">
 			<ul>
-				<li><h4>서울 서울아파트 101동 101호</h4></li>
+				<li>
+					<h4>{{ address }}</h4>
+				</li>
 				<li>
 					<b-form-group>
 						<b-form-input id="" placeholder="NS09_0101A"></b-form-input>
@@ -85,7 +87,7 @@ export default {
 			}
 		},
 		address() {
-			return "서울 서울아파트 101동 101호";
+			return this.other.regionName + " " + this.other.estateName + " " + this.other.buildingName + "동 " + this.other.houseName + "호";
 		},
 		readingType() {
 			if (this.other.readingType === 2) {

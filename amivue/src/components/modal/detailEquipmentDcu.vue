@@ -304,7 +304,7 @@ export default {
 			}
 		},
 		address() {
-			return "서울 서울아파트 101동 101호";
+			return this.dcu.regionName + " " + this.dcu.estateName + " " + this.dcu.buildingName + "동";
 		},
 		dcuType() {
 			if (this.dcu.sysDcuType == "1") {

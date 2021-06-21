@@ -92,7 +92,7 @@ export default {
 			}
 		},
 		address() {
-			return "서울 서울아파트 101동 101호";
+			return this.item.regionName + " " + this.item.estateName + " " + this.item.buildingName + "동 " + this.item.houseName + "호";
 		}
 	},
 	data() {
