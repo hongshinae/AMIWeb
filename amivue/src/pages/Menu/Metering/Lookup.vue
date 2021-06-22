@@ -32,7 +32,7 @@ import CycleData from "./Lookup/CycleData";
 import HoursData from "./Lookup/HoursData";
 import DurationData from "./Lookup/DurationData";
 import Highcharts from "highcharts";
-import theme from "highcharts/themes/avocado";
+import theme from "highcharts/themes/dark-unica";
 theme(Highcharts);
 
 export default {
