@@ -59,8 +59,14 @@ export default {
 
 				colorAxis: {
 					min: 0,
-					minColor: "rgba(220,53,69,0)", //min컬러
-					maxColor: "rgba(220,53,69,1)" //max컬러
+					//max: 100,
+					labels: {
+						format: "{value}%"
+					},
+					stops: [
+						[0, "rgba(0,123,255,0)"],
+						[1, "rgba(0,123,255,1)"]
+					]
 				},
 				exporting: { enabled: false },
 				credits: { enabled: false },
