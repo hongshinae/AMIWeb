@@ -10,11 +10,11 @@
 		<ul class="serveInfo">
 			<li>
 				<h6>OS CPU</h6>
-				<span>1.272</span>
+				<span>{{ osCpu }}</span>
 			</li>
 			<li>
 				<h6>OS MEMORY</h6>
-				<span>1.573</span>
+				<span>{{ osMemory }}</span>
 			</li>
 			<li>
 				<h6>JVMUSED</h6>
