@@ -377,9 +377,9 @@ export default {
 			return this.$t("common.unknown");
 		},
 		dcuCoverStatus() {
-			if (this.dcu.sysState == "0") {
+			if (this.dcu.sysDcuCoverStatus == "0") {
 				return "열림";
-			} else if (this.dcu.sysState == "1") {
+			} else if (this.dcu.sysDcuCoverStatus == "1") {
 				return "닫힘";
 			}
 
@@ -405,6 +405,13 @@ export default {
 			sse.onopen = function() {};
 			sse.onmessage = e => {
 				const data = JSON.parse(e.data).response;
+				this.dcu.sysState = data.sysState;
+				this.dcu.sysDcuCoverStatus = data.sysDcuCoverStatus;
+				this.dcu.sysTempValue = data.sysTempValue;
+				this.dcu.sysCpuUsage = data.sysCpuUsage;
+				this.dcu.sysMemoryUsage = data.sysMemoryUsage;
+				this.dcu.sysUpBps = data.sysUpBps;
+				this.dcu.sysDownBps = data.sysDownBps;
 				console.log(data);
 			};
 		},
